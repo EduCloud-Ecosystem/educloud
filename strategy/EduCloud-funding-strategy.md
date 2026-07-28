@@ -1,5 +1,9 @@
 # EduCloud — Diversified Funding Strategy
 
+> **Name note (July 2026).** Module names have settled
+> (Cairn/Belay/Waypoint/Portage/Outfitter) — see `SYSTEM.md` §1; prior names
+> (Quad/Sol/Commons/claude-lanes/HOST) appear below unrevised.
+
 *June 2026 · ranked by viability, not by lane · companion to the business plan and financial model*
 *Updated July 2026: master funding calendar added (§2); PESOSE corrected to the confirmed NSF 26-506 Track 1 deadline of March 2, 2027; NLnet call cadence and Spencer cycle added from funder sites.*
 

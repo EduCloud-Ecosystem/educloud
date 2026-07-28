@@ -1,4 +1,8 @@
 # Tenure-Track Proposal — [Your Name]
+
+> **Name note (July 2026).** Module names have settled
+> (Cairn/Belay/Waypoint/Portage/Outfitter) — see `SYSTEM.md` §1; prior names
+> (Quad/Sol/Commons/claude-lanes/HOST) appear below unrevised.
 ### Bringing external funding, a national open-source platform, and a transfer pipeline to Willamette's School of Computing & Information Sciences
 
 **The ask:** a tenure-track appointment in data science / computing, with a structured hybrid arrangement.

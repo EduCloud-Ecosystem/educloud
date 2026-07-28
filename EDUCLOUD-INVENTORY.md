@@ -1,5 +1,9 @@
 # EduCloud — Repository & Document Inventory
 
+> **Name note (July 2026).** Module names have settled
+> (Cairn/Belay/Waypoint/Portage/Outfitter) — see `SYSTEM.md` §1; prior names
+> (Quad/Sol/Commons/claude-lanes/HOST) appear below unrevised.
+
 *Read-only orientation pass · generated 2026-07-21 · no files edited, renamed, moved, or resolved*
 
 ## 0. Scope and headline findings
