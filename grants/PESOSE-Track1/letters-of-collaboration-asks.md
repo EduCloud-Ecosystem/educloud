@@ -1,5 +1,12 @@
 # Letters of Collaboration — Ready to Send (September PESOSE)
 
+> **STATUS: SUPERSEDED (July 2026).** These templates were written for the
+> abandoned September 1, 2026 acceleration. PESOSE Track 1 submits at the
+> standard NSF 26-506 deadline, **March 2, 2027** (UA OSP internal ~mid-Feb).
+> Do not send any email below without rewriting its dates and deadline
+> references to the March calendar. Retained for the recipient list and the
+> letter mechanics, which still apply.
+
 *The gating item. Send all asks the week of June 16 with an **August 7** due date.*
 
 PESOSE Track 1 requires **at least 3 and at most 5** letters of collaboration from **external** users or contributors who are **not** on the proposing team. Because Fall 2026 pilots will not have run by September 1, these are **forward-looking commitment letters**: the writer states who they are, why EduCloud matters to them (typically the GitHub Classroom migration), and that they commit to adopt, test, or contribute in Fall 2026 and beyond. For a *planning*-grant Track 1, that posture is appropriate — but confirm the framing with John before sending, since he knows how a panel reads these.

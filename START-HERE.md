@@ -27,10 +27,10 @@ educloud/
 │   └── willamette-pitch.md                    Willamette positioning — names the faculty bench + Chemeketa pilot
 │
 ├── grants/
-│   ├── PESOSE-Track1/                          *** ACCELERATED to Sept 1, 2026 — see sprint plan ***
+│   ├── PESOSE-Track1/                          (deadline March 2, 2027 — Sept 1 acceleration abandoned; see banner above)
 │   │   ├── SEPTEMBER-sprint-plan.md           critical path, week-by-week, full NSF checklist
 │   │   ├── letters-of-collaboration-asks.md   the gating item — templates + recipients + emails, send now
-│   │   ├── EduCloud-PESOSE-Track1-draft.md    Project Description — reframed for Sept 1, 2026
+│   │   ├── EduCloud-PESOSE-Track1-draft.md    Project Description — March 2, 2027 target
 │   │   └── EduCloud-PESOSE-Track1-budget.md   1-yr ≤$300K budget (~$290K) — lean team
 │   ├── IUSE-ESL-Level1/
 │   │   ├── EduCloud-IUSE-ESL-Level1-draft.md  Project Description — target ~Jan 20, 2027
@@ -51,7 +51,7 @@ educloud/
 │   └── EduCloud-hosting-reconciliation.md          reconciliation → Coolify as the hosting engine
 │
 ├── onboarding/
-│   ├── John-Chen-orientation.md               read-in for John Chen (early collaborator; PESOSE-Sept question teed up)
+│   ├── John-Chen-orientation.md               read-in for John Chen (early collaborator; PESOSE now targets March 2, 2027)
 │   ├── EduCloud-Brief-for-Ben-Markwart.docx   formal brief: project, Sept timeline, Ben's role, CALES F&A + benefits
 │   └── EduCloud-Brief-for-Ben-Markwart.pdf    same, send-ready PDF
 │
