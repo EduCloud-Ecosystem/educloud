@@ -105,7 +105,16 @@ for an outcome is out of contract.
 8. **Measurement discipline.** No efficiency or quality claim without a
    preregistered gate; availability failures (`unavailable`) are never scored
    as quality failures.
-9. **Bounded AI management.** Models with system-level knowledge manage the
+9. **The endpoint manifest (stub, CW02 §5).** The Portage↔Outfitter seam:
+   Outfitter emits a manifest of provisioned inference capacity (endpoint id,
+   OpenAI-compatible base_url, pinned model IDs, health, allocation remaining
+   against a ceiling, lifetime with guaranteed teardown, policy tags);
+   Portage's registry render consumes it. Normative spec:
+   `outfitter/specs/07-endpoint-manifest.md` (producer owns; to be authored
+   when sovereign wiring approaches, post-Aug-28). Invariants: no endpoint
+   without ceiling/lifetime/teardown; the manifest never overrides a
+   workspace's sensitivity pin — config absence still wins.
+10. **Bounded AI management.** Models with system-level knowledge manage the
    platform's resources: Portage's steward and learning loop decide model
    routing, and Outfitter's allocation planner (its `specs/06`) decides
    compute placement, swaps, and pre-provisioning. They act only inside
