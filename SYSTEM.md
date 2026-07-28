@@ -19,10 +19,10 @@ June corpus and in repo paths; they map as follows.
 | Current | Prior names | Repo (local) | Remote |
 |---|---|---|---|
 | **Cairn** | Quad | `~/dev/quad` | `EduCloud-Ecosystem/cairn` |
-| **Belay** | Sol; repo placeholder "peer-tutor-framework" | `~/dev/peer-tutor-framework` | `Gchism94/peer-tutor-framework` (org move pending) |
-| **Waypoint** | "HOST"; the EduCloud Registry | `~/dev/HOST` | `EduCloud-Ecosystem/HOST` (rename pending) |
-| **Portage** | Commons; claude-lanes; "inference plane" | `~/dev/claude-lanes` | `EduCloud-Ecosystem/portage` (push pending) |
-| **Outfitter** | "compute brokering layer" | `~/dev/outfitter` | `EduCloud-Ecosystem/outfitter` (push pending) |
+| **Belay** | Sol; repo placeholder "peer-tutor-framework" | `~/dev/belay` (renamed 2026-07-28) | `EduCloud-Ecosystem/belay` (GitHub transfer + rename pending) |
+| **Waypoint** | "HOST"; the EduCloud Registry | `~/dev/waypoint` (renamed 2026-07-28) | `EduCloud-Ecosystem/waypoint` (GitHub rename pending) |
+| **Portage** | Commons; claude-lanes; "inference plane" | `~/dev/portage` | `EduCloud-Ecosystem/portage` (pushed; local commits ahead) |
+| **Outfitter** | "compute brokering layer" | `~/dev/outfitter` | `EduCloud-Ecosystem/outfitter` (pushed; local commits ahead) |
 
 Repo directory renames are deliberate, separate decisions; the remote names
 are canonical. New documents use current names; old documents get a mapping
