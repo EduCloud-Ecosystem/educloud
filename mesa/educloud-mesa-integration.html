@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduCloud × MESA — Integration</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root{
+    --bg:#131419; --bg2:#171922; --panel:#1c1e27; --panel2:#23262f; --panel3:#2a2d38;
+    --line:#31343f; --line-soft:#272a33;
+    --txt:#e9eaee; --txt2:#9aa0ad; --txt3:#6b7080;
+    --iris:#8f8ad6; --iris-bg:#231f3a;
+    --green:#6ba38b; --green-bg:#1c2b26;
+    --blue:#6e93c2; --blue-bg:#1b2737;
+    --clay:#c68a5e; --clay-bg:#2d2318;
+    --cyan:#5aa6ad; --cyan-bg:#152a2c;
+    --gold:#c2a35a; --gold-bg:#292312;
+    --rose:#c98aa0; --rose-bg:#2b1e25;
+    --mono:'JetBrains Mono',monospace; --sans:'Space Grotesk',sans-serif; --disp:'Fraunces',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.5;
+    background-image:radial-gradient(1200px 720px at 50% -8%, rgba(143,138,214,.07), transparent 70%),
+      linear-gradient(var(--bg2) 1px,transparent 1px),linear-gradient(90deg,var(--bg2) 1px,transparent 1px);
+    background-size:auto,52px 52px,52px 52px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:46px 30px 80px}
+  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;
+    padding-bottom:22px;border-bottom:1px solid var(--line-soft);margin-bottom:28px}
+  .brand .mark{font-family:var(--disp);font-size:30px;font-weight:600;letter-spacing:-.01em}
+  .brand .mark em{font-style:normal;color:var(--iris)}
+  .brand .sub{font-size:12.5px;color:var(--txt2);font-family:var(--mono);margin-top:5px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:540px}
+  .badge{font-family:var(--mono);font-size:10.5px;color:var(--txt2);background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:5px 10px}
+  .badge b{color:var(--txt);font-weight:500}
+  .thesis{font-family:var(--disp);font-size:20px;font-weight:400;line-height:1.55;color:#d7d9e0;margin-bottom:8px;max-width:910px}
+  .thesis b{color:var(--iris);font-weight:600}.thesis .m{color:var(--cyan);font-weight:500}.thesis .e{color:var(--green);font-weight:500}
+  .note{font-size:12px;color:var(--txt3);font-family:var(--mono);margin-bottom:32px}
+
+  .boundary{display:grid;grid-template-columns:1fr 64px 1fr;align-items:stretch;margin-bottom:14px}
+  .bx{border-radius:16px;padding:17px 20px;border:1px solid var(--line)}
+  .bx.edu{border-style:dashed;border-color:color-mix(in srgb,var(--iris) 45%,var(--line));background:linear-gradient(180deg,var(--iris-bg),transparent)}
+  .bx.mesa{border-color:color-mix(in srgb,var(--cyan) 42%,var(--line));background:linear-gradient(180deg,var(--cyan-bg),transparent)}
+  .bx h3{font-size:15px;font-weight:600;margin-bottom:4px}
+  .bx .who{font-family:var(--mono);font-size:10.5px;color:var(--txt3);margin-bottom:9px}
+  .bx.edu h3{color:#b9b4ec}.bx.mesa h3{color:#9ec9cf}
+  .bx p{font-size:12px;color:var(--txt2);line-height:1.55}
+  .arrows{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+  .arrows .a{font-family:var(--mono);font-size:9px;color:var(--txt3);text-align:center;line-height:1.3}
+  .arrows .down{color:var(--cyan)}.arrows .up{color:var(--green)}
+  .arrows svg{width:20px;height:20px;stroke-width:1.6;fill:none}
+  .exchange{font-family:var(--mono);font-size:11px;color:var(--txt3);text-align:center;margin-bottom:34px;padding-top:4px}
+  .exchange b{color:var(--green);font-weight:500}
+
+  .sec{margin-bottom:28px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+  .sec-badge{font-family:var(--mono);font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;padding:3px 9px;border-radius:6px}
+  .sec-name{font-size:16px;font-weight:600;letter-spacing:-.01em}
+  .sec-desc{font-family:var(--mono);font-size:11px;color:var(--txt3);margin-left:auto;text-align:right}
+  .grid{display:grid;gap:13px;grid-template-columns:repeat(auto-fill,minmax(255px,1fr))}
+
+  .card{position:relative;border:1px solid var(--line);border-radius:13px;background:var(--panel);padding:15px 16px;cursor:pointer;overflow:hidden;
+    transition:transform .22s,border-color .22s,background .22s,box-shadow .22s;opacity:0;transform:translateY(10px);animation:rise .5s forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ac,var(--cyan));opacity:.55;transition:.22s}
+  .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--ac,var(--cyan)) 50%,var(--line));background:var(--panel2);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .card:hover::before{opacity:1;width:4px}
+  .card.open{border-color:color-mix(in srgb,var(--ac,var(--cyan)) 60%,var(--line));background:var(--panel2)}
+  .card .top{display:flex;align-items:center;gap:10px;margin-bottom:3px}
+  .chip-ic{width:26px;height:26px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--ac-bg,var(--cyan-bg));border:1px solid color-mix(in srgb,var(--ac,var(--cyan)) 30%,transparent)}
+  .chip-ic svg{width:15px;height:15px;stroke:var(--ac,var(--cyan));fill:none;stroke-width:1.6}
+  .card h4{font-size:13.5px;font-weight:600}
+  .card .meta{font-family:var(--mono);font-size:10.5px;color:var(--txt3);line-height:1.5}
+  .pill{display:inline-block;font-family:var(--mono);font-size:9.5px;margin-top:9px;margin-right:5px;padding:2px 7px;border-radius:5px;background:var(--panel3);color:var(--txt2);border:1px solid var(--line)}
+  .pill.hot{color:var(--ac,var(--cyan));border-color:color-mix(in srgb,var(--ac,var(--cyan)) 38%,transparent);background:color-mix(in srgb,var(--ac,var(--cyan)) 12%,transparent)}
+  .detail{max-height:0;opacity:0;overflow:hidden;transition:max-height .4s cubic-bezier(.2,.6,.3,1),opacity .3s,margin .3s}
+  .card.open .detail{max-height:380px;opacity:1;margin-top:11px}
+  .detail p{font-size:12px;color:var(--txt2);line-height:1.6;border-top:1px solid var(--line-soft);padding-top:10px}
+  .detail .seam{font-family:var(--mono);font-size:10px;color:var(--ac,var(--cyan));margin-top:8px;display:block}
+  .expand{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:10px;color:var(--txt3)}
+
+  .eot{border:1px solid color-mix(in srgb,var(--green) 30%,var(--line));border-radius:16px;background:linear-gradient(180deg,var(--green-bg),transparent);padding:22px 24px;margin-bottom:28px}
+  .eot h3{font-family:var(--disp);font-size:19px;font-weight:500;margin-bottom:3px;color:#aacebb}
+  .eot .lead{font-size:12px;color:var(--txt3);font-family:var(--mono);margin-bottom:16px}
+  .eot-grid{display:grid;gap:13px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .eg{border:1px solid color-mix(in srgb,var(--green) 22%,var(--line));border-radius:11px;background:var(--panel2);padding:13px 15px}
+  .eg h5{font-size:12.5px;font-weight:600;color:#aacebb;margin-bottom:5px}
+  .eg p{font-size:11.5px;color:var(--txt2);line-height:1.55}
+  .eg .tgt{font-family:var(--mono);font-size:9.5px;color:var(--green);margin-top:7px;display:block}
+
+  .idss{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:18px 22px;font-size:12.5px;color:var(--txt2);line-height:1.6}
+  .idss b{color:var(--txt);font-weight:600}.idss .g{color:#aacebb}
+  footer{margin-top:26px;font-family:var(--mono);font-size:10.5px;color:var(--txt3);text-align:center;line-height:1.7}
+  @media(max-width:680px){.boundary{grid-template-columns:1fr;gap:12px}.arrows{flex-direction:row;padding:4px 0}.sec-desc{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <div class="mark">EduCloud <em>× MESA</em></div>
+      <div class="sub">the teaching &amp; workforce-development layer for MESA's Open Science cyberinfrastructure</div>
+    </div>
+    <div class="badges">
+      <span class="badge"><b>Independent</b> open-source</span>
+      <span class="badge">delivers <b>MESA training</b></span>
+      <span class="badge">reuses <b>AI Sandboxes</b></span>
+      <span class="badge">usernames, <b>not PII</b> (FERPA)</span>
+    </div>
+  </header>
+
+  <div class="thesis">
+    <b>EduCloud</b> is an independent, self-hostable teaching platform that becomes the graded, autograded assignment layer for <span class="m">MESA</span>'s training program — running on MESA's <span class="m">agentic-AI and data cyberinfrastructure</span> (AI Sandboxes, AI-Verde inference, CyVerse/Jetstream2, iRODS, CI-Logon) and advancing its <span class="e">education, workforce, and broadening-participation</span> goals. It plugs into MESA; MESA does not own it.
+  </div>
+  <div class="note">click any component to expand · MESA layers reflect the IDSS proposal (Fig. 1); seams show where EduCloud connects</div>
+
+  <div class="boundary">
+    <div class="bx edu">
+      <h3>EduCloud — the project</h3>
+      <div class="who">independent OSS · own IP &amp; governance</div>
+      <p>Distributes assignments to per-student Git repos, autogrades them in sandboxed containers, and optionally runs the Sol tutor. Git-host-agnostic, privacy-minimal. AGPL control plane + Apache-2.0 primitives. Home-able at a partner institution. A parallel <b>Registry &amp; federation layer</b> (object catalog + Coolify-backed deployment + Keycloak identity) is in design — federating existing open-source infrastructure rather than rebuilding it.</p>
+    </div>
+    <div class="arrows">
+      <div class="a down"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 4v15M6 13l6 6 6-6"/></svg>runs on</div>
+      <div class="a up"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 20V5M6 11l6-6 6 6"/></svg>delivers</div>
+    </div>
+    <div class="bx mesa">
+      <h3>MESA — the platform</h3>
+      <div class="who">NSF IDSS · open-science CI · T. Swetnam (UArizona)</div>
+      <p>An AI-driven Data Lakehouse + Data Mesh + Agentic AI framework for federated scientific data — DuckLake/PostgreSQL, iRODS (RENCI), MCP/RAG/AI-Verde inference and AI Sandboxes, on CyVerse + ACCESS-CI. ~13k users, 5.2 PB, $9M / 3 yr.</p>
+    </div>
+  </div>
+  <div class="exchange">EduCloud runs on MESA's agentic-AI &amp; data infrastructure &nbsp;·&nbsp; <b>MESA gains an education use-case, a training delivery layer, and workforce evidence</b></div>
+
+  <!-- MESA -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-badge" style="background:var(--cyan-bg);color:var(--cyan)">MESA</span>
+      <span class="sec-name">What MESA is building — five integrated layers</span>
+      <span class="sec-desc">data-to-decision, not a compute cloud</span>
+    </div>
+    <div class="grid">
+      <div class="card" style="--ac:var(--green);--ac-bg:var(--green-bg);animation-delay:.02s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/></svg></span><div><h4>Agentic AI layer</h4><div class="meta">MCP · RAG · AI Sandboxes · AI-Verde</div></div></div>
+        <span class="pill hot">AI Sandboxes</span><span class="pill">AI-Verde / liteLLM</span>
+        <div class="detail"><p>Intelligent request processing: MCP tool integrations, RAG, and reasoning agents. <b>AI Sandboxes</b> give defense-in-depth isolation (gVisor, Falco, Calico/Istio mTLS, OPA policy, Prompt Guard) for untrusted AI-generated code. <b>AI-Verde</b> (UA's open-source liteLLM) serves commercial + open-weight LLMs across CyVerse, Jetstream2, NRP, and Anvil.</p></div>
+      </div>
+      <div class="card" style="--ac:var(--blue);--ac-bg:var(--blue-bg);animation-delay:.05s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><path d="M3 13h8V3H3zM13 21h8V8h-8zM3 21h8v-5H3zM13 5h8V3h-8z"/></svg></span><div><h4>Data Lakehouse</h4><div class="meta">DuckLake · DuckDB · PostgreSQL</div></div></div>
+        <span class="pill hot">time-travel + ACID</span><span class="pill">schema-on-read</span>
+        <div class="detail"><p>The first open-source data lakehouse for large NSF programs. DuckLake stores table metadata in SQL (PostgreSQL) with data files in Parquet on S3-compatible storage; Apache Iceberg / Delta compatible. Schema-on-read ingestion, ACID transactions, and time-travel versioning for reproducible science.</p></div>
+      </div>
+      <div class="card" style="--ac:var(--cyan);--ac-bg:var(--cyan-bg);animation-delay:.08s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><path d="M6 3v6M6 15v6M18 3v6M18 15v6"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.5 12h7"/></svg></span><div><h4>Data Mesh</h4><div class="meta">iRODS zones · policy engine</div></div></div>
+        <span class="pill hot">FAIR / CARE / TRUST</span><span class="pill">RENCI</span>
+        <div class="detail"><p>Federated, domain-owned data-as-product across institutions, governed by <b>iRODS</b> zones and its rule engine (replication, access control, metadata extraction) — re-developed by the RENCI / iRODS Consortium (Co-PI Russell). KeyCloak + CI-Logon auth; CKAN catalogs with DOI/RAiD; full provenance and audit.</p></div>
+      </div>
+      <div class="card" style="--ac:var(--blue);--ac-bg:var(--blue-bg);animation-delay:.11s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v6H4zM4 14h16v6H4z"/><circle cx="7" cy="7" r="1"/><circle cx="7" cy="17" r="1"/></svg></span><div><h4>Compute</h4><div class="meta">CyVerse K8s · Jetstream2 · TACC</div></div></div>
+        <span class="pill">ACCESS-CI · NAIRR</span><span class="pill">H200 inference</span>
+        <div class="detail"><p>Existing national cyberinfrastructure: CyVerse Kubernetes (~13k annual users), Jetstream2, TACC, ACCESS-CI, NAIRR Pilot — plus local 4&#215; 8&#215;H200 GPU servers for vLLM/TensorRT-LLM inference, with horizontal scale-out to ACCESS-CI and commercial clouds.</p></div>
+      </div>
+      <div class="card" style="--ac:var(--gold);--ac-bg:var(--gold-bg);animation-delay:.14s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></span><div><h4>Object Storage</h4><div class="meta">OSN Ceph · VAST · S3 · Lustre</div></div></div>
+        <span class="pill">petabyte–exabyte</span><span class="pill">S3-compatible</span>
+        <div class="detail"><p>Federated, high-bandwidth object storage: OSN (Ceph), VAST all-flash, AWS S3, CloudFlare R2, Qumulo, Lustre — a multi-site fabric handling national-scale data volume, virtualized under iRODS logical namespaces.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEAMS -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-badge" style="background:var(--iris-bg);color:var(--iris)">EduCloud</span>
+      <span class="sec-name">Where EduCloud plugs in</span>
+      <span class="sec-desc">reuse, don't rebuild</span>
+    </div>
+    <div class="grid">
+      <div class="card" style="--ac:var(--iris);--ac-bg:var(--iris-bg);animation-delay:.02s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Autograding</h4><div class="meta">untrusted student code</div></div></div>
+        <span class="pill hot">→ AI Sandboxes</span>
+        <div class="detail"><p>EduCloud grades student submissions by running untrusted code in ephemeral, isolated containers — the exact problem MESA's AI Sandboxes solve for untrusted AI-generated code. EduCloud's runner becomes a concrete instance of MESA's sandbox tech, inheriting its isolation and policy controls.</p><span class="seam">EduCloud runner → MESA AI Sandboxes (gVisor / Falco / OPA)</span></div>
+      </div>
+      <div class="card" style="--ac:var(--iris);--ac-bg:var(--iris-bg);animation-delay:.05s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><div><h4>Sol tutor + AI grading</h4><div class="meta">optional · off by default</div></div></div>
+        <span class="pill hot">→ AI-Verde / MCP</span>
+        <div class="detail"><p>The optional Sol peer-tutor and AI-assisted grading call MESA's open-weight inference (AI-Verde / liteLLM on Jetstream2) and use MCP tools — rather than a separate inference stack. Off by default; never the final word on a grade.</p><span class="seam">EduCloud Sol/AI → AI-Verde (liteLLM) + MCP servers</span></div>
+      </div>
+      <div class="card" style="--ac:var(--iris);--ac-bg:var(--iris-bg);animation-delay:.08s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/><circle cx="8" cy="7" r="1"/><circle cx="14" cy="12" r="1"/><circle cx="10" cy="17" r="1"/></svg></span><div><h4>Sessions &amp; grading jobs</h4><div class="meta">provision + execute</div></div></div>
+        <span class="pill hot">→ CyVerse K8s / JS2</span>
+        <div class="detail"><p>Interactive sessions and batch grading run on the same Kubernetes and cloud MESA already operates — CyVerse K8s namespaces and Jetstream2, with horizontal scale-out. No bespoke compute layer.</p><span class="seam">EduCloud provisioner → CyVerse Kubernetes · Jetstream2</span></div>
+      </div>
+      <div class="card" style="--ac:var(--iris);--ac-bg:var(--iris-bg);animation-delay:.11s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><path d="M4 9h13l-4-4M20 15H7l4 4"/></svg></span><div><h4>Datasets &amp; curriculum</h4><div class="meta">assignment content</div></div></div>
+        <span class="pill hot">→ iRODS / Lakehouse</span>
+        <div class="detail"><p>Assignment datasets and artifacts live in iRODS zones; and the curriculum students complete in EduCloud <i>is</i> MESA's lakehouse/mesh skills — "from dataset to DuckLake table," metadata harmonization, federated queries. EduCloud teaches MESA.</p><span class="seam">EduCloud assignments ↔ iRODS zones · DuckLake exercises</span></div>
+      </div>
+      <div class="card" style="--ac:var(--iris);--ac-bg:var(--iris-bg);animation-delay:.14s">
+        <span class="expand">view ↗</span>
+        <div class="top"><span class="chip-ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></span><div><h4>Sign-in</h4><div class="meta">federated identity</div></div></div>
+        <span class="pill">→ CI-Logon / KeyCloak</span>
+        <div class="detail"><p>Optional InCommon federation via CI-Logon / KeyCloak — the same auth MESA uses. EduCloud's privacy model can also rely purely on Git-host identity, storing usernames and never student records, reinforcing MESA's FERPA posture as the student-facing layer.</p><span class="seam">EduCloud auth → CI-Logon / KeyCloak (InCommon) · or Git identity</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EOT value -->
+  <div class="eot">
+    <h3>What EduCloud delivers to MESA — the EOT / workforce pillar (§3.2.1)</h3>
+    <div class="lead">MESA's training is self-paced notebooks + Carpentries workshops today; EduCloud adds the graded, autograded, version-controlled assignment layer</div>
+    <div class="eot-grid">
+      <div class="eg"><h5>Training delivery (Tier 1–3)</h5><p>Distributes and autogrades the Foundations, Applied Skills, and Educator-Fellow curricula as real assignments — "dataset → Lakehouse table," metadata harmonization, anomaly detection.<span class="tgt">feeds EOT 1–6</span></p></div>
+      <div class="eg"><h5>Assessment backbone</h5><p>Pre/post competency and autograded checks give the Kirkpatrick <i>Learning</i> and <i>Behavior</i> levels hard data, not just satisfaction surveys.<span class="tgt">≥25% skill gain · ≥50% reuse</span></p></div>
+      <div class="eg"><h5>Workforce + participation</h5><p>Version-controlled, contributable modules let Educator Fellows teach MESA methods at home institutions and broaden participation.<span class="tgt">~500 trained · ~10 institutions · micro-credentials</span></p></div>
+      <div class="eg"><h5>Use-case + reusable pattern</h5><p>A CISE/education use-case and reproducible teaching testbed on MESA — plus a reusable autograding-sandbox pattern for the community.<span class="tgt">broader impacts · Goal 3</span></p></div>
+    </div>
+  </div>
+
+  <div class="idss">
+    <b class="g">Why it fits IDSS:</b> EduCloud advances MESA's <b>Goal 3</b> (agentic AI) as a concrete education use-case, carries the <b>§3.2.1 EOT / workforce-development mission</b>, and strengthens broader impacts — while its privacy-by-architecture reinforces MESA's <b>FERPA</b> posture. It is <b>not a single-application tool MESA funds</b>; it is a capability on the CI and a delivery layer for the training MESA must run anyway. <b>Independence holds</b> — both are permissive/AGPL+Apache open source; EduCloud partners with and runs on MESA, so it can also be home-based at a partner institution.
+  </div>
+
+  <footer>
+    EduCloud is a working project name · component &amp; resource names per the MESA IDSS proposal, to be confirmed with the team<br>
+    independent open-source · AGPL-3.0 control plane + Apache-2.0 interoperability primitives
+  </footer>
+</div>
+<script>document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<svg viewBox="0 0 1280 920" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <style>
+    .title{font-size:27px;font-weight:700;fill:#0f172a;}
+    .sub{font-size:13px;fill:#64748b;}
+    .stamp{font-size:11px;fill:#94a3b8;}
+    .phase{font-size:15.5px;font-weight:700;fill:#1e293b;}
+    .month{font-size:10px;font-weight:600;fill:#94a3b8;letter-spacing:1px;}
+    .lane{font-size:14px;font-weight:700;}
+    .cell{font-size:11px;fill:#334155;}
+    .pill1{font-size:11.5px;font-weight:700;fill:#7c2d12;}
+    .pill2{font-size:9.7px;fill:#9a3412;}
+    .rlabel{font-size:10px;font-weight:700;fill:#b45309;letter-spacing:1px;}
+    .ghc{font-size:9.8px;font-weight:700;fill:#dc2626;}
+    .foot1{font-size:11px;fill:#334155;}
+    .foot2{font-size:10.5px;font-weight:600;fill:#b45309;}
+  </style>
+
+  <!-- backdrop + card -->
+  <rect x="0" y="0" width="1280" height="920" fill="#eef2f7"/>
+  <rect x="12" y="12" width="1256" height="896" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- title -->
+  <text class="title" x="40" y="46">Quad — Launch &amp; Ecosystem Roadmap</text>
+  <text class="sub" x="40" y="69">Sequenced for funding viability  ·  2026–2028  ·  “Quad” is a working name</text>
+  <text class="stamp" x="1244" y="46" text-anchor="end">draft · Jun 2026</text>
+  <line x1="24" y1="84" x2="1256" y2="84" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- column dividers (gray) + gutter line -->
+  <line x1="176" y1="90" x2="176" y2="854" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="608" y1="90" x2="608" y2="854" stroke="#eef2f5" stroke-width="1"/>
+  <line x1="824" y1="90" x2="824" y2="854" stroke="#eef2f5" stroke-width="1"/>
+  <line x1="1040" y1="90" x2="1040" y2="854" stroke="#eef2f5" stroke-width="1"/>
+
+  <!-- phase headers -->
+  <text class="phase" x="284" y="110" text-anchor="middle">Summer 2026</text>
+  <text class="month" x="284" y="126" text-anchor="middle">JUN–AUG</text>
+  <text class="phase" x="500" y="110" text-anchor="middle">Fall 2026</text>
+  <text class="month" x="500" y="126" text-anchor="middle">SEP–DEC</text>
+  <text class="phase" x="716" y="110" text-anchor="middle">Spring 2027</text>
+  <text class="month" x="716" y="126" text-anchor="middle">JAN–MAY</text>
+  <text class="phase" x="932" y="110" text-anchor="middle">Summer 2027</text>
+  <text class="month" x="932" y="126" text-anchor="middle">JUN–AUG</text>
+  <text class="phase" x="1148" y="110" text-anchor="middle">2027–2028</text>
+  <text class="month" x="1148" y="126" text-anchor="middle">ACADEMIC YEAR +</text>
+
+  <!-- ribbon: funding milestones -->
+  <rect x="176" y="144" width="1080" height="76" rx="10" fill="#fff7ed" stroke="#fde68a" stroke-width="1"/>
+  <text class="rlabel" x="96" y="178" text-anchor="middle">FUNDING</text>
+  <text class="rlabel" x="96" y="192" text-anchor="middle">MILESTONES</text>
+
+  <!-- subtle progression connector behind pills -->
+  <line x1="384" y1="184" x2="1050" y2="184" stroke="#fcd34d" stroke-width="2" stroke-dasharray="2 6"/>
+
+  <!-- ACCESS pill (free / now: dashed outline) -->
+  <rect x="186" y="158" width="196" height="50" rx="9" fill="#ffffff" stroke="#d97706" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text class="pill1" x="284" y="180" text-anchor="middle">ACCESS Discover</text>
+  <text class="pill2" x="284" y="196" text-anchor="middle">free compute · start now</text>
+
+  <!-- GHC shutdown flag (inside ribbon, empty Fall column) -->
+  <text class="ghc" x="400" y="162">⚑ GitHub Classroom shutdown — Aug 28</text>
+
+  <!-- IUSE pill -->
+  <rect x="618" y="158" width="196" height="50" rx="9" fill="#fde68a" stroke="#d97706" stroke-width="1.3"/>
+  <text class="pill1" x="716" y="180" text-anchor="middle">NSF IUSE L1 · ~Jan 20, 2027</text>
+  <text class="pill2" x="716" y="196" text-anchor="middle">pedagogy + course buyout</text>
+
+  <!-- PESOSE pill -->
+  <rect x="834" y="158" width="196" height="50" rx="9" fill="#fde68a" stroke="#d97706" stroke-width="1.3"/>
+  <text class="pill1" x="932" y="180" text-anchor="middle">PESOSE Track 1 · Mar 2, 2027</text>
+  <text class="pill2" x="932" y="196" text-anchor="middle">ecosystem + managing org</text>
+
+  <!-- IDSS pill (the big one) -->
+  <rect x="1050" y="158" width="196" height="50" rx="9" fill="#fcd34d" stroke="#b45309" stroke-width="1.6"/>
+  <text class="pill1" x="1148" y="180" text-anchor="middle">IDSS Cat I (via MESA)</text>
+  <text class="pill2" x="1148" y="196" text-anchor="middle">$10–30M · ~Jul ’27 or ’28</text>
+
+  <!-- ===== SWIMLANES ===== -->
+
+  <!-- Lane 1: Product (blue) top=230 -->
+  <rect x="24" y="231" width="1232" height="154" fill="#eff6ff"/>
+  <rect x="24" y="231" width="5" height="154" fill="#2563eb"/>
+  <text class="lane" x="98" y="313" text-anchor="middle" fill="#1d4ed8">Product</text>
+  <text class="cell" x="188" y="260"><tspan x="188" dy="0">• Harden core slice</tspan><tspan x="188" dy="16">• Feedback loop + webhook grade</tspan><tspan x="188" dy="16">• GHC importer (before fall)</tspan><tspan x="188" dy="16">• Public v0.x release</tspan></text>
+  <text class="cell" x="404" y="260"><tspan x="404" dy="0">• Capstone pilot (small, real)</tspan><tspan x="404" dy="16">• Instrument for metrics</tspan><tspan x="404" dy="16">• Begin GitLab adapter</tspan></text>
+  <text class="cell" x="620" y="260"><tspan x="620" dy="0">• Multi-course rollout (full test)</tspan><tspan x="620" dy="16">• GitLab adapter ships</tspan><tspan x="620" dy="16">• Inst.-readiness: export, etc.</tspan></text>
+  <text class="cell" x="836" y="260"><tspan x="836" dy="0">• Stabilize on a year of use</tspan></text>
+  <text class="cell" x="1052" y="260"><tspan x="1052" dy="0">• Scale with adoption</tspan><tspan x="1052" dy="16">• Phase-5 Sol layer (as funded)</tspan></text>
+
+  <!-- Lane 2: Community & Ecosystem (emerald) top=386 -->
+  <rect x="24" y="387" width="1232" height="154" fill="#ecfdf5"/>
+  <rect x="24" y="387" width="5" height="154" fill="#059669"/>
+  <text class="lane" x="98" y="457" text-anchor="middle" fill="#047857"><tspan x="98" dy="0">Community</tspan><tspan x="98" dy="17">&amp; Ecosystem</tspan></text>
+  <text class="cell" x="188" y="416"><tspan x="188" dy="0">• OSE repo: gov, CoC, SECURITY</tspan><tspan x="188" dy="16">• Open Source Collective host</tspan><tspan x="188" dy="16" fill="#b45309" font-weight="700">★ UArizona IP waiver</tspan></text>
+  <text class="cell" x="404" y="416"><tspan x="404" dy="0">• GHC-migration adopters</tspan><tspan x="404" dy="16">• Public changelog + community</tspan><tspan x="404" dy="16">• Collect adoption metrics</tspan></text>
+  <text class="cell" x="620" y="416"><tspan x="620" dy="0">• Grow contributors</tspan><tspan x="620" dy="16">• Case studies + testimonials</tspan></text>
+  <text class="cell" x="836" y="416"><tspan x="836" dy="0">• Consolidate full-year evidence</tspan></text>
+  <text class="cell" x="1052" y="416"><tspan x="1052" dy="0">• Formalize managing org</tspan><tspan x="1052" dy="16">• (foundation or nonprofit)</tspan></text>
+
+  <!-- Lane 3: Funding (amber) top=542 -->
+  <rect x="24" y="543" width="1232" height="154" fill="#fffbeb"/>
+  <rect x="24" y="543" width="5" height="154" fill="#d97706"/>
+  <text class="lane" x="98" y="625" text-anchor="middle" fill="#b45309">Funding</text>
+  <text class="cell" x="188" y="572"><tspan x="188" dy="0">• File ACCESS Discover (now)</tspan><tspan x="188" dy="16">• Line up submitting institution</tspan></text>
+  <text class="cell" x="404" y="572"><tspan x="404" dy="0">• Draft IUSE</tspan><tspan x="404" dy="16">• Lock institution by Dec</tspan></text>
+  <text class="cell" x="620" y="572"><tspan x="620" dy="0">• Submit IUSE (~late Jan)</tspan><tspan x="620" dy="16">• [opt.] PESOSE Phase I</tspan></text>
+  <text class="cell" x="836" y="572"><tspan x="836" dy="0">• Submit PESOSE (~early Sep)</tspan><tspan x="836" dy="16">• Feed Quad into IDSS Cat I</tspan></text>
+  <text class="cell" x="1052" y="572"><tspan x="1052" dy="0">• PESOSE funds org standup</tspan><tspan x="1052" dy="16">• IDSS Cat I award (if won)</tspan></text>
+
+  <!-- Lane 4: Career (violet) top=698 -->
+  <rect x="24" y="699" width="1232" height="154" fill="#f5f3ff"/>
+  <rect x="24" y="699" width="5" height="154" fill="#7c3aed"/>
+  <text class="lane" x="98" y="769" text-anchor="middle" fill="#6d28d9"><tspan x="98" dy="0">Career</tspan><tspan x="98" dy="17">(Willamette)</tspan></text>
+  <text class="cell" x="188" y="728"><tspan x="188" dy="0">• Open conversation</tspan><tspan x="188" dy="16">• Position: home + submitter</tspan></text>
+  <text class="cell" x="404" y="728"><tspan x="404" dy="0">• Move to concrete arrangement</tspan></text>
+  <text class="cell" x="620" y="728"><tspan x="620" dy="0">• Finalize TT + remote</tspan></text>
+  <text class="cell" x="836" y="728"><tspan x="836" dy="0">• Start appointment (fall ’27)</tspan></text>
+  <text class="cell" x="1052" y="728"><tspan x="1052" dy="0">• Willamette = ecosystem home</tspan></text>
+
+  <!-- GHC shutdown line (drawn last so it sits on top) -->
+  <line x1="392" y1="144" x2="392" y2="853" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="5 4"/>
+
+  <!-- footer -->
+  <rect x="24" y="862" width="1232" height="44" rx="8" fill="#f8fafc" stroke="#eef2f5" stroke-width="1"/>
+  <text class="foot1" x="40" y="881">How the dates are chosen: each proposal is submitted at its peak-evidence moment — the GitHub Classroom shutdown (Aug 28, 2026) is the clock.</text>
+  <text class="foot2" x="40" y="899">★ Critical path: secure the UArizona IP waiver this summer — the nonprofit option, the Willamette home, and the no-lock-in story all rest on it.</text>
+</svg>
