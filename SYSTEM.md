@@ -124,6 +124,19 @@ for an outcome is out of contract.
    gate. Models decide allocations; deterministic systems define the limits
    and verify the outcomes.
 
+11. **Data destinations (Axis B).** Contract 2 above governs where inference
+   *payloads* may go. This one governs where *records* may live, and the two
+   are deliberately not the same question: opaque attribution labels
+   de-identify a payload because a model never needs a name, and do nothing
+   for a store an instructor uses to grade named humans. Destination tiers,
+   strongest first for education records: D1 institutional, D2
+   self-stewarded, D3 shared sovereign (Jetstream2), D4 commercial cloud.
+   Education records (R2) live on D1 or D2 only, absent a recorded
+   authorization from the responsible administrator. Home:
+   `docs/policy/data-destinations.md`; enforced by
+   `docs/policy/check_destinations.py` against that document's own register.
+   Module pointers: `cairn/PRIVACY.md`, `belay/PRIVACY.md`.
+
 ## 5. Dates that govern planning
 
 - **August 28, 2026** — GitHub Classroom shutdown (final data deletion
