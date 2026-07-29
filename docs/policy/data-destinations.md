@@ -235,26 +235,53 @@ The operational record. This is the table to show a reviewer.
 
 **Machine-checked today.**
 
-- `portage/tests/test_scale2_profile.py` — 10 tests asserting the student
-  inference lane contains no off-institution deployment, that disabling a row
-  is not an isolation mechanism, that endpoints are environment references
-  rather than literals, and that no `regulated` deployment exists. Verified in
-  both directions: injecting an off-institution row fails four tests even when
-  that row is disabled.
-- `render_config.py --check` in CI re-renders both EduCloud lanes, so a
-  hand-edit to a generated `model_list` fails the build.
+- **Axis A** — `portage/tests/test_scale2_profile.py`, 10 tests asserting the
+  student inference lane contains no off-institution deployment, that
+  disabling a row is not an isolation mechanism, that endpoints are
+  environment references rather than literals, and that no `regulated`
+  deployment exists. Verified in both directions: injecting an
+  off-institution row fails four tests even when that row is disabled.
+- **Axis A** — `render_config.py --check` in CI re-renders both EduCloud
+  lanes, so a hand-edit to a generated `model_list` fails the build.
+- **Axis B** — `check_destinations.py`, in this directory, parses **§6's
+  register directly** and fails when an R2 service is placed on D3 or D4
+  without either a synthetic-data-only marking or a recorded authorization.
+  It reads the register rather than a parallel manifest on purpose: a second
+  copy would drift from the one a human maintains, and the register exists to
+  be shown to a reviewer. The table you show and the table CI checks are the
+  same table. Standard library only; run it with
+  `python docs/policy/check_destinations.py`.
+
+  Verified in four directions — clean against the live register; fails when a
+  pilot destination moves to D4; fails when a synthetic-only marking is
+  dropped from a D3 placement; and fails loudly if §6's heading is renamed
+  rather than silently checking nothing. That last case is the one that
+  matters: a check examining zero rows and reporting success is worse than no
+  check, so an empty result set is treated as a failure.
 
 **Convention, not yet enforced.**
 
-- Axis B entirely. Which host a service runs on is a deployment fact that no
-  repository test can observe. §8 proposes the smallest useful check.
-- Retention and deletion — no implementation exists.
-- Backup destinations — no implementation exists.
+- **CI wiring for the Axis B check.** The script exists and passes; it is not
+  yet a required check. CC-P2 Step 2 wires it into the network-denied
+  workflow alongside `check-pins.py` and `check-spdx.py`.
+- **Retention and deletion** — no implementation exists in any repository.
+- **Backup destinations** — no implementation exists.
+- **Whether a service actually runs where the register says.** The register
+  records intent; nothing observes the running deployment. Closing that would
+  need deployment-time attestation, which is out of scope until the platform
+  has more than one operator.
 
-**Cross-references.** Cairn DESIGN.md §5, §6 and §10 (schema minimization,
-browser-side name mapping, compliance posture); Belay PRIVACY.md;
-`portage/config/profiles/scale2.educloud.md` (the Scale-2 lane split);
-`educloud/SYSTEM.md` §4 shared contracts.
+**Cross-references — one home, two pointers**, per CC-P2 Step 5. This document
+is the home.
+
+- `cairn/PRIVACY.md` — the Cairn-side pointer, and Cairn's as-built posture:
+  schema minimization, the browser-side name map, and the statement that Cairn
+  is a working store rather than the gradebook of record.
+- `belay/PRIVACY.md` — the Belay-side pointer, above its IRB-facing posture.
+- `educloud/SYSTEM.md` §4 contract 11 — the platform-level statement of the
+  Axis A / Axis B distinction.
+- Also: Cairn `DESIGN.md` §5, §6, §10; and
+  `portage/config/profiles/scale2.educloud.md` for the Scale-2 lane split.
 
 ---
 
@@ -275,13 +302,16 @@ Ordered by what blocks the pilot.
 3. **Implement grade purge-after-export in Cairn.** Small, and it makes the
    white paper's claim exact.
 4. **Implement roster-entry deletion** with dependent rows.
-5. **Add a deployment manifest and a test.** The smallest useful Axis B check:
-   a checked-in file declaring each service's destination tier and highest data
-   class, plus a test asserting no R2 service is declared on D3 or D4 without a
-   recorded authorization. Turns §6 from a table someone maintains into a table
-   CI maintains.
+5. ~~Add a deployment manifest and a test.~~ **Done** — `check_destinations.py`,
+   §7. It parses §6 directly rather than introducing a second manifest, so the
+   register cannot drift from what CI checks. Remaining: wire it as a required
+   check, which is item 7.
 6. **Reconcile the white paper** if item 3 is not done — soften *"never student
-   records"* to match the schema.
+   records"* to match the schema. Cairn's `PRIVACY.md` already carries the
+   accurate phrasing (*"no student names, SIS IDs, or plaintext emails"*) and
+   flags the gap, so the two documents currently disagree in the white paper's
+   favour. Fix one or the other.
 7. **Fold into CC-P2 when it runs.** This document is CC-P2 Step 5's
    deliverable, arriving early. CC-P2 should adopt it rather than re-author it,
-   and add the CI wiring in its Step 2 workflow.
+   and add the CI wiring in its Step 2 workflow — the Axis B check is written
+   and passing, it just isn't yet a gate.
