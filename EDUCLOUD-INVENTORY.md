@@ -141,8 +141,8 @@ Dates are last-modified (YYYY-MM-DD). "Match" = which §4 target-checklist item 
 | `educloud/project-docs/README.md` | 2026-06-11 | 6 KB | Repo README titled "Quad" (umbrella snapshot). | — |
 | `educloud/project-docs/GOVERNANCE.md` | 2026-06-11 | 6 KB | "Quad Governance" — founding stewards. | Governance |
 | `educloud/project-docs/CONTRIBUTING.md` | 2026-06-11 | 4 KB | "Contributing to Quad" — DCO, license split. | Governance |
-| `educloud/project-docs/diagrams/quad-roadmap.svg` | 2026-06-11 | 10 KB | Funding/launch roadmap diagram (SVG). | (diagram, not HTML) |
-| `educloud/project-docs/diagrams/quad-mesa-integration.svg` | 2026-06-11 | 12 KB | EduCloud × MESA architecture diagram (SVG). | (diagram, not HTML) |
+| `educloud/project-docs/diagrams/cairn-roadmap.svg` | 2026-06-11 | 10 KB | Funding/launch roadmap diagram (SVG). | (diagram, not HTML) |
+| `educloud/project-docs/diagrams/cairn-mesa-integration.svg` | 2026-06-11 | 12 KB | EduCloud × MESA architecture diagram (SVG). | (diagram, not HTML) |
 
 ### The Ben Markwart brief (four files, two versions)
 
@@ -266,7 +266,7 @@ technically stale against the new scheme. The concrete, checkable instances:
 - **`InfoSciCourses/compute-cost-simulator/`** (April 2026, Python, has a `dashboard/`, `curriculum/`, `teaching/`) is the closest thing to Outfitter's "cost reporting" — a possible precursor/asset to fold in.
 - **Two GitHub orgs in play:** `github.com/Gchism94/` (quad, peer-tutor-framework — personal) vs `github.com/EduCloud-Ecosystem/` (HOST — org). Portage isn't on GitHub at all. Naming/ownership of the module repos is not yet consolidated under one org.
 - **The umbrella `educloud/` is a plain folder, not a repo** — none of the strategy/grant/architecture planning corpus is under version control.
-- **`educloud/strategy/EduCloud-financial-model.xlsx` and `quad/docs/quad-contributor-tracker.xlsx`** are live spreadsheets (outside the md/docx/html/txt inventory scope) that carry real planning data.
+- **`educloud/strategy/EduCloud-financial-model.xlsx` and `cairn/docs/cairn-contributor-tracker.xlsx`** are live spreadsheets (outside the md/docx/html/txt inventory scope) that carry real planning data.
 
 ---
 

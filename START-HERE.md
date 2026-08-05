@@ -64,8 +64,8 @@ educloud/
     ├── GOVERNANCE.md                          governance (current — incl. founding stewards)
     ├── CONTRIBUTING.md                        contribution guide (current — DCO, license split, Registry)
     └── diagrams/
-        ├── quad-roadmap.svg                   funding/launch roadmap (dates corrected)
-        └── quad-mesa-integration.svg          EduCloud × MESA architecture (+ Registry note)
+        ├── cairn-roadmap.svg                   funding/launch roadmap (dates corrected)
+        └── cairn-mesa-integration.svg          EduCloud × MESA architecture (+ Registry note)
 ```
 
 Everything in this folder is current as of this revision.
