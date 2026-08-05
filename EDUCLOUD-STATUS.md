@@ -271,3 +271,12 @@ parallel tracks that never block the classroom.
   `LICENSING.md`. Whether it should also carve one out is a design question,
   not a transcription, and CC-C3 v2 explicitly scoped it out of the licensing
   pass. Recorded here so it stays visible.
+
+- **Known gap: GitHub does not show a licence for `belay`.** Its `LICENSE`
+  (AGPL-3.0) and `backend/app/core/domain/LICENSE` (Apache-2.0) are both
+  committed and pushed, but on `slice-o-knowledge-corpus`. GitHub's licence
+  detection reads only the default branch, and `belay/main` is still the bare
+  extraction commit `7cd6b11`, 77 commits behind. The licence is granted — the
+  badge is not shown. This closes when the slice-o→main merge happens, which
+  CC-C1 flagged as its own decision; a licensing pass is the wrong place to
+  make it.
