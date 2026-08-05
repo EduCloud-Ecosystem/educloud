@@ -262,6 +262,31 @@ parallel tracks that never block the classroom.
 ## 5. Licence-gated items
 
 - `EduCloud-Ecosystem/verifier-contract` (CC-P1 v2, 2026-08-05): created
-  private, `LICENSING.md` states the intended Apache-2.0 grant. Goes public
-  and Apache-2.0 when the University of Arizona IP release clears — same
-  condition as `portage/LICENSING.md` and `belay/LICENSING.md`.
+  private, `LICENSING.md` states the intended Apache-2.0 grant, conditioned on
+  the University of Arizona IP release clearing. **That condition is now
+  resolved (CC-C3, 2026-08-06)**: the personal-time-work IP release is not the
+  path forward, the University of Arizona will administer grants for this work
+  instead, and `portage`/`belay`/`outfitter`/`waypoint` have all been moved to
+  in-force licensing on that basis. `verifier-contract` itself was outside
+  CC-C3's scope (it postdates the audit that authored the prompt) and is still
+  private with a not-yet-updated `LICENSING.md`. Flipping it public and
+  updating its status line is a small, ready follow-up — not done here because
+  going from private to public is a one-way, visible action CC-C3 didn't ask
+  for.
+
+- **`EduCloud-Ecosystem/cairn` has an Apache-2.0 contract surface with no
+  `LICENSING.md` documenting it (CC-C3 A6, 2026-08-06).** `pkg/adapter/` (the
+  host-adapter interface) and `pkg/gradingspec/` (the portable grading-spec
+  schema) already carry `SPDX-License-Identifier: Apache-2.0` headers on every
+  file (8 files, confirmed by grep), consistent with what `DESIGN.md` §11 and
+  `README.md`'s Licensing section already say in prose: "Interoperability
+  primitives (`pkg/adapter`, `pkg/gradingspec`) — Apache-2.0." Unlike `portage`
+  (`config/LICENSE`) and `belay` (`backend/app/core/domain/LICENSE`), `cairn`
+  has no `LICENSING.md` and no second `LICENSE` file for this surface — the
+  root `LICENSE` is AGPL-3.0-or-later only, so the SPDX headers are currently
+  declarations with no accompanying grant text. The evidence points at the
+  same split `portage` and `belay` use, and CC-C3's read is that this is
+  close to a file-copy at this point (add `pkg/LICENSE` with the verbatim
+  Apache-2.0 text, add a `LICENSING.md` matching the sibling pattern) rather
+  than an open design question — but CC-C3 was explicitly told not to decide
+  this inline, so it's handed back rather than done.
