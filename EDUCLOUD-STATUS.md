@@ -258,3 +258,10 @@ parallel tracks that never block the classroom.
   Registry is the only externally-owned workstream and it hasn't started.
 - **Integration debt:** the holistic layer (§2) is all convention, no
   enforcement, until SYSTEM.md + org consolidation land.
+
+## 5. Licence-gated items
+
+- `EduCloud-Ecosystem/verifier-contract` (CC-P1 v2, 2026-08-05): created
+  private, `LICENSING.md` states the intended Apache-2.0 grant. Goes public
+  and Apache-2.0 when the University of Arizona IP release clears — same
+  condition as `portage/LICENSING.md` and `belay/LICENSING.md`.
