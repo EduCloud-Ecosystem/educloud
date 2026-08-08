@@ -1,7 +1,7 @@
 # EduCloud — Documentation Index
 
 *Annotated map of the documentation that matters, by purpose. Paths are
-relative to `~/dev/`. Updated 2026-07-21. Names: Cairn (was Quad), Belay (was
+relative to `~/dev/`. Updated 2026-08-08. Names: Cairn (was Quad), Belay (was
 Sol), Waypoint (was "HOST"/Registry), Portage (was Commons/claude-lanes),
 Outfitter (new).*
 
@@ -18,41 +18,60 @@ Outfitter (new).*
 
 ## Module documentation
 
-**Cairn** (`quad/`): `KICKOFF-PROMPT.md` (the pilot-sprint session brief),
+**Cairn** (`cairn/`): `KICKOFF-PROMPT.md` (the pilot-sprint session brief),
 `README.md` (what/why, status), `DESIGN.md` (the architecture spec),
 `ROADMAP.md` (phases, refreshed July 21 with the pilot-sprint block),
 `docs/github-setup.md` / `forgejo-setup.md` / `gitlab-setup.md` /
 `migrating-github-to-forgejo.md` (per-host operator guides).
 
-**Belay** (`peer-tutor-framework/`): `INSTRUCTOR_MODE.md` (instructor-mode
+**Belay** (`belay/`): `INSTRUCTOR_MODE.md` (instructor-mode
 design spec, July 2026 — session-ready), `README.md`, `ARCHITECTURE.md`,
 `VALIDATION.md` (the 79 KB build/verification record — the ground truth),
 `GROUND_TRUTH.md` (read-only audit), `ROADMAP.md` (every item cited to
 in-tree sources), `PRIVACY.md` (distress safety + grades firewall),
 `process_measures.md`, `STATE_AUDIT_DOMAIN.md`.
 
-**Waypoint** (`HOST/`): `PLAN.1.md` (the phased build plan on Coolify),
+**Waypoint** (`waypoint/`): `PLAN.1.md` (the phased build plan on Coolify),
 `INTEGRATION.md` (how hosting relates to EduCloud/Cairn and MESA),
 `CHANGELOG.md` (document history), `HOST_SESSION_BUILD.md` +
 `CLAUDE_CODE_INSTRUCTIONS.md` (build-session operating instructions),
 `docs/ONBOARDING.md` (tenant contract), `docs/REQUIREMENTS.md`,
 `docs/TENANTS.md`, `docs/STATUS_DECK.html` (visual status).
 
-**Portage** (`claude-lanes/`): `LINE-P-ROADMAP.md` (personal-stack staging
+**Portage** (`portage/`): `LINE-P-ROADMAP.md` (personal-stack staging
 S0–S5 — the plan of record), `PLATFORM.md` (capstone architecture),
 `REVISION-PLAN.md` (the Scale-1 transition work order), `HANDOFF.md` (build
 phases + buy-over-build), `PROJECT.md` (novelty claim), `KICKOFF-PROMPT.md`
 (next session = Phase 6a), `EDUCLOUD-BRIEF.md` (decentralized-AI positioning),
 `specs/00–09` (reasoning record), `specs/10`–`11` (normative Scale-1
-architectures: open-weight-only end state; hybrid PAYG transition),
+architectures: open-weight-only end state; hybrid PAYG transition), `specs/12`
+(model-market surveillance), `specs/13` (routing paradigm — why
+verify-then-escalate rather than classification-first, and the three
+corrections the 2026-08-08 landscape scan produced),
+`config/profiles/scale2.educloud.*` + `scale2.educloud.md` (**the Scale-2
+EduCloud profile, built and tested** — LINE-E-ROADMAP E0's config diff),
 `docs/phase-1-findings.md` (verified: Claude Code → LiteLLM direct),
-`KNOWN_GOOD_VERSIONS.md`.
+`docs/prompts/CC-P7`–`CC-P14`, `KNOWN_GOOD_VERSIONS.md`.
 
 **Outfitter** (`outfitter/`): `README.md`, `DESIGN.md` (broker/adapter model,
-Go stack rationale, allocation intelligence in §9), `ROADMAP.md` (M0–M5),
+Go stack rationale, allocation intelligence in §9), `ROADMAP.md` (M0–M5, plus
+M1.5 and the 2026-08-08 build-vs-integrate triage and ACCESS path),
 `specs/00–06` (adapter interface, cost model, budget guards, Cairn
-integration, MVP scope, and the allocation planner), `KICKOFF-PROMPT.md`
-+ `HANDOFF.md` (build-session brief).
+integration, MVP scope, and the allocation planner), `specs/08` (isolation
+tiers for untrusted student code — **platform-level, consumed by Cairn and
+Belay**), `docs/prompts/CC-O1`, `KICKOFF-PROMPT.md` + `HANDOFF.md`
+(build-session brief).
+
+> `specs/07` is **reserved** for the endpoint manifest (SYSTEM.md contract 9),
+> to be authored when sovereign wiring approaches post-Aug-28. Isolation tiers
+> took `08` for that reason.
+
+**Prompt-number namespace (recorded 2026-08-08 after a collision).** Claude Code
+prompts are named `CC-<series><n>` and the series is shared across repos, so a
+number means one thing platform-wide: `CC-P*` Portage engine + personal pilot
+(P0–P14 used), `CC-C*` the completed cross-cutting cleanup series (C1–C5),
+`CC-HB*` Herdr build, `CC-CA*` Cairn, `CC-B*` Belay, `CC-O*` Outfitter, `CC-W*`
+Waypoint. Prompts live in each repo's `docs/prompts/`.
 
 ## Strategy & funding (`educloud/`)
 
@@ -74,6 +93,27 @@ integration, MVP scope, and the allocation planner), `KICKOFF-PROMPT.md`
 layer — Ben Markwart's workstream) · `EduCloud-hosting-reconciliation.md`
 (the decision that made Coolify the hosting engine).
 
+## Cross-module decisions and research (`educloud/docs/`)
+
+The umbrella is where a decision spanning more than one module lives, so no
+single module's repo becomes the de-facto owner of a platform-wide rule.
+
+`docs/policy/data-destinations.md` (+ `check_destinations.py`, which enforces
+it against the document's own register) — SYSTEM.md contract 11 ·
+`docs/decisions/` (CW02, 2026-07-28, and the 2026-08-08 landscape-scan record) ·
+`docs/strategy/` (two-solution-lines, portage-scale-mapping,
+verifier-first-recommendation) · `docs/research/` (edge inference, routing-stack
+reference, self-hosted search, XDA change assessment) · `docs/specs/`
+(portage-scale-2-3, 05-federated-sovereign).
+
+Module-scoped decisions stay in the module: Waypoint's
+`docs/decisions/2026-08-08-analogue-scan.md` (hosting/identity/LTI) and
+Portage's `docs/specs/13-routing-paradigm.md` are correctly placed there
+because each governs one module's design. Outfitter's `specs/08` is the
+exception that proves the rule — it lives in Outfitter because Outfitter
+provisions the compute, but it is normative for Cairn and Belay too, and is
+flagged as platform-level here so it is not mistaken for a broker-only concern.
+
 ## Governance
 
 `educloud/project-docs/GOVERNANCE.md` + `CONTRIBUTING.md` (umbrella, old
@@ -92,6 +132,30 @@ naming) · Belay's full set (`DCO`, `LICENSING.md`, `CODE_OF_CONDUCT.md`,
 
 ## Known gaps (tracked in EDUCLOUD-STATUS.md)
 
-Brand doc (`educloud-brand.md`) · full prose name propagation (July banners
-cover the stale docs; rewrites deferred) · umbrella not under git · Portage
-and Outfitter unpushed; Belay on the personal account; HOST rename pending.
+*Refreshed 2026-08-08. The July list is retained below it, struck through where
+verified closed, because a gap list nobody re-checks becomes misinformation —
+several items below had been done for weeks while still reading as open.*
+
+**Open:**
+
+- Brand doc (`educloud-brand.md`) — still absent.
+- Full prose name propagation. July banners cover the stale docs; rewrites
+  deferred. `START-HERE.md` is the main offender and is self-flagged.
+- `START-HERE.md`'s gate list is June-vintage and needs a pass: it still frames
+  the ACCESS ask as **Discover**, where the 2026-08-08 scan found **Explore**
+  is the right *first* step (400,000 credits, ~2-week turnaround, and
+  instructors running classroom activities are explicitly named as eligible).
+  These are not exclusive — Explore now to get a real Jetstream2 adapter to
+  build against, Discover as the grant-budget ask. Recorded here so the two
+  documents stop disagreeing; `outfitter/ROADMAP.md` carries the same note.
+- SYSTEM.md contract 6's governance-gap list is stale: Waypoint now has
+  `LICENSE`, `LICENSING.md`, `DCO`, and `README.md`.
+- The open platform question from `portage/docs/specs/13-routing-paradigm.md`
+  §3: **does "no proprietary models" extend to proprietary routing
+  infrastructure?** Never stated explicitly, and it is a SYSTEM.md contract-2
+  question rather than a Portage-local one. Still owed an answer.
+
+**Closed since July** (was: "umbrella not under git · Portage and Outfitter
+unpushed; Belay on the personal account; HOST rename pending"): the umbrella is
+under git; Belay is org-consolidated; the HOST → waypoint rename is done. Verify
+Portage/Outfitter push state before citing it either way.
