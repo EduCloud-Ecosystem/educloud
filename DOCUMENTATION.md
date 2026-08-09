@@ -69,9 +69,10 @@ Belay**), `docs/prompts/CC-O1`, `KICKOFF-PROMPT.md` + `HANDOFF.md`
 **Prompt-number namespace (recorded 2026-08-08 after a collision).** Claude Code
 prompts are named `CC-<series><n>` and the series is shared across repos, so a
 number means one thing platform-wide: `CC-P*` Portage engine + personal pilot
-(P0–P14 used), `CC-C*` the completed cross-cutting cleanup series (C1–C5),
-`CC-HB*` Herdr build, `CC-CA*` Cairn, `CC-B*` Belay, `CC-O*` Outfitter, `CC-W*`
-Waypoint. Prompts live in each repo's `docs/prompts/`.
+(P0–P15 used), `CC-C*` the completed cross-cutting cleanup series (C1–C5),
+`CC-HB*` Herdr build, `CC-CA*` Cairn (CA1–CA4 used), `CC-B*` Belay (B1–B4
+used), `CC-O*` Outfitter (O1 used), `CC-W*` Waypoint (W1 used). Prompts live
+in each repo's `docs/prompts/`.
 
 ## Strategy & funding (`educloud/`)
 
