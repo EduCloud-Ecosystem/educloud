@@ -289,28 +289,33 @@ is the home.
 
 Ordered by what blocks the pilot.
 
-1. **Decide Cairn's pilot destination: D1 or D2.** D1 (a UA-provided host) has
-   the strongest posture and no procurement question. D2 (a machine the steward
-   owns) is fully within the steward's control and is the option Cairn's own
-   §10 calls *"the strongest FERPA story"* — and it doubles as the
-   FERPA-safe local inference tier that `portage-hardware-options.md` already
-   names as a hardware-purchase trigger. **Blocks the pilot; decide by
-   mid-August.**
-2. **Determine whether UA's third-party review is triggered** by the chosen
-   destination, and start it if so. Lead time unknown; a D1 host likely avoids
-   it entirely.
-3. **Implement grade purge-after-export in Cairn.** Small, and it makes the
-   white paper's claim exact.
-4. **Implement roster-entry deletion** with dependent rows.
+1. **Cairn's pilot destination: D2 for now** (Greg, 2026-08-10) —
+   self-provisioned infrastructure, not a UA-provided host. D1 remains
+   possible later; not blocking the pilot.
+2. **UA's third-party review** — Greg intends to raise this with UITS, but it
+   isn't imminent. Still open; not currently blocking the pilot given item 1's
+   working decision, but revisit if D1 becomes live.
+3. ~~Implement grade purge-after-export in Cairn.~~ **Done (CC-CA15,
+   2026-08-10).** `cairn` commit `9073742`. Explicit confirm action, separate
+   from the CSV download; a configurable daily purge job; `cairn doctor`
+   warns when `CAIRN_GRADE_RETENTION_DAYS` is unset. See `cairn/PRIVACY.md`
+   §Open items for the caveat: the code exists, but an unconfigured
+   deployment still accumulates grades indefinitely in practice.
+4. ~~Implement roster-entry deletion~~ **Done (CC-CA15).** `DELETE
+   /classrooms/{id}/roster/{entry_id}`, cascades to dependent
+   submissions/grades/grading-runs, verified across all three store backends
+   (memory/SQLite/Postgres).
 5. ~~Add a deployment manifest and a test.~~ **Done** — `check_destinations.py`,
    §7. It parses §6 directly rather than introducing a second manifest, so the
    register cannot drift from what CI checks. Remaining: wire it as a required
    check, which is item 7.
-6. **Reconcile the white paper** if item 3 is not done — soften *"never student
-   records"* to match the schema. Cairn's `PRIVACY.md` already carries the
-   accurate phrasing (*"no student names, SIS IDs, or plaintext emails"*) and
-   flags the gap, so the two documents currently disagree in the white paper's
-   favour. Fix one or the other.
+6. **Reconcile the white paper.** Item 3 is done, but not unconditionally:
+   "never student records" is only exact for a deployment that has actually
+   set `CAIRN_GRADE_RETENTION_DAYS` and uses the confirm-export action — an
+   unconfigured one still accumulates grades indefinitely. Cairn's
+   `PRIVACY.md` now says this precisely. Keep the white paper's phrasing soft
+   ("no student names, SIS IDs, or plaintext emails") until the pilot
+   deployment itself has retention turned on, then tighten it.
 7. **Fold into CC-P2 when it runs.** This document is CC-P2 Step 5's
    deliverable, arriving early. CC-P2 should adopt it rather than re-author it,
    and add the CI wiring in its Step 2 workflow — the Axis B check is written
