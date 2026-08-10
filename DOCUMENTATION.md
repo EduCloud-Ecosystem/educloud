@@ -70,7 +70,7 @@ Belay**), `docs/prompts/CC-O1`, `KICKOFF-PROMPT.md` + `HANDOFF.md`
 prompts are named `CC-<series><n>` and the series is shared across repos, so a
 number means one thing platform-wide: `CC-P*` Portage engine + personal pilot
 (P0–P15 used), `CC-C*` the completed cross-cutting cleanup series (C1–C5),
-`CC-HB*` Herdr build, `CC-CA*` Cairn (CA1–CA15 used), `CC-B*` Belay (B1–B4
+`CC-HB*` Herdr build, `CC-CA*` Cairn (CA1–CA16 used), `CC-B*` Belay (B1–B4
 used), `CC-O*` Outfitter (O1 used), `CC-W*` Waypoint (W1 used). Prompts live
 in each repo's `docs/prompts/`.
 
