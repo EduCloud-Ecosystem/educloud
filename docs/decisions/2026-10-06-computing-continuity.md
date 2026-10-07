@@ -67,3 +67,13 @@ local synthetic rehearsal. Cairn adds API tests for class scoping and safe
 workspace destinations. Real learner deployment requires the independent live
 OIDC, wildcard TLS, roster revocation, capacity and recovery gates described in
 those repositories. A one-host pilot is not high availability or automatic failover.
+
+## October 7 implementation update
+
+The initial PRs are merged. Cairn's additional grading-policy change is merged
+and deployed on its existing pilot host; it addresses the specific learner-owned
+manifest and operator per-step ceiling findings referenced above. Waypoint's
+notebook/recovery recipe also passed a fresh Linux amd64 CI rehearsal after a
+Linux archive-permission fix. Deployment and remaining infrastructure facts are
+recorded in the current EDUCLOUD-STATUS.md. No dedicated notebook worker has
+yet been selected or provisioned.
