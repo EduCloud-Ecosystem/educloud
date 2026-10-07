@@ -1,7 +1,7 @@
 # EduCloud — Documentation Index
 
 *Annotated map of the documentation that matters, by purpose. Paths are
-relative to `~/dev/`. Updated 2026-10-06. Names: Cairn (was Quad), Belay (was
+relative to `~/dev/`. Updated 2026-10-07. Names: Cairn (was Quad), Belay (was
 Sol), Waypoint (was "HOST"/Registry), Portage (was Commons/claude-lanes),
 Outfitter (new).*
 
@@ -11,7 +11,7 @@ Outfitter (new).*
 |---|---|
 | `educloud/SYSTEM.md` | **The canonical internal definition**: names, module boundaries, the platform invariant, shared contracts (including contract 9, bounded AI management), the scale table, and the two-line resource allocation. Where an older document conflicts, SYSTEM.md wins. |
 | `educloud/EduCloud-White-Paper.docx` + `educloud/WHITEPAPER.md` (markdown master, v0.9.3, CC BY 4.0, destined for the EduCloud-Ecosystem org repo, Zenodo DOI at v1.0) | **The platform definition** — vision, five modules under current names, architecture principles, status, governance, funding, roadmap. First on-disk document carrying the full naming scheme. |
-| `educloud/EDUCLOUD-STATUS.md` | July 21 status snapshot. For sequencing, `LINE-E-ROADMAP.md` is now the plan of record. |
+| `educloud/EDUCLOUD-STATUS.md` | Current October 6–7 component assessment, merged releases, synthetic acceptance evidence and remaining production gates. Original July snapshot is retained under `docs/research/`. |
 | `educloud/LINE-E-ROADMAP.md` | EduCloud execution roadmap E0–E4 (MVP → pilot → institutional → federated), the dependency spine, and the expansion contract. |
 | `educloud/EDUCLOUD-INVENTORY.md` | The July 21 orientation pass: directory map, document inventory, duplicates, staleness flags. |
 | `educloud/START-HERE.md` | June umbrella index + next-step gates. **Stale** (old names, superseded PESOSE date) — retained until SYSTEM.md/name propagation lands. |
@@ -22,7 +22,10 @@ Outfitter (new).*
 `README.md` (what/why, status), `DESIGN.md` (the architecture spec),
 `ROADMAP.md` (phases, refreshed July 21 with the pilot-sprint block),
 `docs/github-setup.md` / `forgejo-setup.md` / `gitlab-setup.md` /
-`migrating-github-to-forgejo.md` (per-host operator guides).
+`migrating-github-to-forgejo.md` (per-host operator guides),
+`docs/grading-policy.md` (pinned deterministic grading and automatic pushes),
+`docs/llm-assessment.md` (planned flexible-format feedback plus proposed scores
+with instructor review; no provider/review UI implemented yet).
 
 **Belay** (`belay/`): `INSTRUCTOR_MODE.md` (instructor-mode
 design spec, July 2026 — session-ready), `README.md`, `ARCHITECTURE.md`,
@@ -141,7 +144,8 @@ classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
   restoration, hard XFS byte/inode quotas, health timers and nginx/Keycloak
   configuration. Synthetic quota exhaustion/recovery and nginx tests pass.
   The authenticated course rehearsal connects real synthetic Keycloak/Hub and
-  Forgejo/Cairn flows, with explicit file transfer and pinned pass/fail grading;
+  Forgejo/Cairn flows, with explicit file transfer, real Git-push webhooks,
+  pinned pass/fail grading and bounded notebook traffic;
   see Waypoint `course-workspace/rehearsal/README.md` and the status evidence.
   Live institutional OIDC/revocation, real DNS/certificates, selected-host capacity,
   the actual backup account and institution-wide recovery still need acceptance.
@@ -153,6 +157,10 @@ classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
   shared-kernel assessment review, HTTPS and retention remain separate gates.
   PR #3 also preserves valid student sessions after denied operator requests; it
   is merged and tested but was not deployed to the production pilot in this pass.
+  PR #4 pins automatic grades to each pushed submission commit and makes
+  configured webhook setup failures visible/retryable. LLM feedback plus proposed
+  rubric scores are the agreed next assessment feature; artifact extraction,
+  model evaluation and instructor review/publication remain unimplemented.
 - Belay PR #12's identity work is unmerged; Portage's existing PR stack still
   needs profile repair. Neither is a prerequisite for the computing pilot.
 - Outfitter remains specification-only; defer brokering until there is a real
