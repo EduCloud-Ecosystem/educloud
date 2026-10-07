@@ -144,7 +144,10 @@ classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
   Forgejo/Cairn flows, with explicit file transfer and pinned pass/fail grading;
   see Waypoint `course-workspace/rehearsal/README.md` and the status evidence.
   Live institutional OIDC/revocation, real DNS/certificates, selected-host capacity,
-  the actual backup account and institutional-mode recovery still need acceptance.
+  the actual backup account and institution-wide recovery still need acceptance.
+  Institutional workspace recovery is implemented with a current operator roster
+  and credential, retained homes and fresh Hub sessions; its external identity
+  service and proxy/TLS are separate recovery dependencies.
 - Cairn's instructor-owned grading manifest and per-step operator ceilings were
   fixed, merged and verified on the pilot host. Aggregate execution/output,
   shared-kernel assessment review, HTTPS and retention remain separate gates.
