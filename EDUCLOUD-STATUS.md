@@ -21,13 +21,13 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
-| Cairn | 260984572cd29 | PRs #1–#3 merged. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
-| Waypoint | 0be6bfb5973a | PRs #1–#7 merged. Python/R workspaces, encrypted trial and institutional recovery, dedicated-worker configuration, hard XFS quotas and nginx/Keycloak preparation are implemented. Synthetic identity/course/revocation, institutional restoration, independent-worker trial recovery and quota/HTTPS checks passed. Real institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
+| Cairn | 55940c218554 | PRs #1–#4 merged. Automatic push grades now use immutable submission commits, expose revision history, and fail/retry configured webhook setup. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
+| Waypoint | 2afd881e6c54 | PRs #1–#8 merged. Real Git-push grading and bounded notebook traffic passed, including overflow rejection and freed-slot reuse. Python/R workspaces, encrypted trial and institutional recovery, dedicated-worker configuration, hard XFS quotas and nginx/Keycloak preparation are implemented. Synthetic identity/course/revocation, institutional restoration, independent-worker trial recovery and quota/HTTPS checks passed. Real institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
 | verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
-| educloud | 74a1ea4f78da | Prior reassessment, recovery, quota/HTTPS and authenticated course records merged; this follow-up records institutional workspace recovery. Original local strategy edits and unpublished commits are preserved. |
+| educloud | aa63de52d50b | Prior computing and institutional recovery records merged; this follow-up records push grading, bounded traffic and the LLM assessment direction. Original local strategy edits and unpublished commits are preserved. |
 
 The October 6 baseline matched the September audit default heads. Cairn,
 Waypoint and this umbrella have since advanced through the authorized merges.
@@ -306,7 +306,66 @@ not establish institution-wide disaster recovery or acceptance of a real
 SFTP/S3 account. No funded worker, public endpoint or production Cairn service
 was changed.
 
-The next local build should cover automatic repository-push grading delivery
-and a bounded class-load rehearsal. Real-host acceptance still needs selected
+Automatic Forgejo push grading and bounded notebook traffic are now covered
+by the follow-up below. Real-host acceptance still needs selected
 worker/backup capacity, institutional identities, TLS, operational monitoring
 and recovery objectives before admitting learners.
+
+## Automatic push grading, bounded traffic and LLM assessment (October 7)
+
+[Cairn PR #4](https://github.com/EduCloud-Ecosystem/cairn/pull/4) merged as
+`55940c218554f97fe1349c22415061b54000ad5f`. Signed default-branch pushes now
+queue the exact submission commit; later repository changes cannot alter the
+job's input. Each result records the submission commit and pinned instructor
+policy, and student history shows the evaluated commit. Configured webhook
+setup errors retry visibly rather than silently activating an incomplete repo.
+Forgejo hook reconciliation restores active push events and the current secret.
+
+The full local Go race suite and [Cairn CI](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/37693621216)
+passed. Real local Forgejo acceptance produced six commit-specific grades from
+six rapid Git pushes, with correct/incorrect results despite a forged learner
+rubric. Thirteen replayed deliveries, including after restart, added no grades;
+bad signatures were denied and a draft-branch push was ignored. The inspected
+student screenshot shows all six evaluated commits.
+
+[Waypoint PR #8](https://github.com/EduCloud-Ecosystem/waypoint/pull/8) merged as
+`2afd881e6c54dfe1cb56ebe67e5a1e8089aef6ef`, after all required checks passed on
+head `11e95eb5078e9452abf6d2993b5b4cb361921a6b`. The
+[full Linux course rehearsal](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37693819845)
+used real notebook work, Keycloak/Hub, Forgejo and Cairn merge `55940c218554`.
+Its downloaded PASS report and notebook/student-grade screenshots were inspected.
+Six pushes produced the expected commit-specific grades in 21.872 seconds;
+13 replays produced no extra grades. The report records GitHub's synthetic PR
+merge checkout `7a55d86403b46704bb6007c3406edddf533ed304`, distinct from the
+reviewed head and final squash merge.
+
+With two active learner notebooks, 24 authenticated file requests at six-way
+concurrency and simultaneous Python/R execution passed. A third authorized
+learner received HTTP 429; after one learner stopped, the freed slot could be
+reused without changing another learner's saved file. Observed file-request
+p50/p95 were 0.0345/0.0494 seconds. These are synthetic observations, not
+production capacity estimates. The same run verified peer-file isolation,
+roster denial, active revocation, old-session denial and retained saved files.
+
+The [institutional recovery regression](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37693819583)
+and [policy/HTTPS checks](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37693819303)
+also passed, alongside 34 local unit tests. Acceptance used disposable synthetic
+identities, repositories, containers and fixture-only webhook forwarding.
+
+These tests do not establish production class-size capacity, an exactly-once
+guarantee across worker crashes, other Git hosts' live delivery, or real-host
+identity/TLS/backup acceptance. Cairn's production pilot remains on PR #2; no
+production service or paid infrastructure was changed.
+
+Greg's selected next assessment direction is **LLM-assisted feedback plus
+proposed scores**, with flexible deliverables. Cairn `docs/llm-assessment.md`
+records the pipeline: instructor-owned rubric, immutable submission and artifact
+provenance, bounded format extraction, evidence citations, approved model data
+destinations and budgets, deterministic schema/score/citation checks, then
+instructor review/edit/approval before publication. Structural checks do not
+prove that a model's judgment is correct. No LLM provider, extraction pipeline,
+proposal review UI or automatic model grading is implemented by this release.
+
+The next local build is the artifact/proposal/review workflow with synthetic
+examples, followed by a permissioned instructor-scored model evaluation before
+any real student content is sent to a provider.
