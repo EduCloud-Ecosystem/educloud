@@ -22,12 +22,12 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
 | Cairn | 260984572cd29 | PRs #1–#3 merged. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
-| Waypoint | 8b0de7210494 | PRs #1–#6 merged. Private Python/R trial, encrypted local-trial recovery, dedicated-worker configuration, hard XFS home quotas and nginx/Keycloak preparation are implemented. The complete synthetic identity/course/revocation rehearsal and quota/HTTPS checks passed. Institutional-mode encrypted recovery is the next build; live institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
+| Waypoint | 0be6bfb5973a | PRs #1–#7 merged. Python/R workspaces, encrypted trial and institutional recovery, dedicated-worker configuration, hard XFS quotas and nginx/Keycloak preparation are implemented. Synthetic identity/course/revocation, institutional restoration, independent-worker trial recovery and quota/HTTPS checks passed. Real institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
 | verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
-| educloud | 231084c1391f | Prior reassessment, recovery and quota/HTTPS records merged; this follow-up records authenticated course acceptance. Original local strategy edits and unpublished commits are preserved. |
+| educloud | 74a1ea4f78da | Prior reassessment, recovery, quota/HTTPS and authenticated course records merged; this follow-up records institutional workspace recovery. Original local strategy edits and unpublished commits are preserved. |
 
 The October 6 baseline matched the September audit default heads. Cairn,
 Waypoint and this umbrella have since advanced through the authorized merges.
@@ -212,13 +212,13 @@ checked before merge: [quota](https://github.com/EduCloud-Ecosystem/waypoint/act
 [policy/proxy](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677747049),
 [recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677747267).
 
-The synthetic identity/course rehearsal is implemented (evidence below). The
-next local build is encrypted recovery for institutional/OIDC mode, preserving
-the identity configuration and validating restored roster/revocation behavior.
-Hosted acceptance then needs the selected worker and backup account: real institution login/revocation,
+The synthetic identity/course rehearsal is implemented (evidence below).
+Institutional/OIDC encrypted recovery is now implemented with current-roster
+configuration and fresh Hub sessions (evidence below). Hosted acceptance needs
+the selected worker and backup account: real institution login/revocation,
 wildcard certificates, reboot/mount behavior, load, recovery objectives and the
 Cairn assignment/submission/grading path. Host disk/log monitoring, paging,
-retention/departure procedures and the institutional recovery path remain work.
+retention/departure procedures and institution-wide recovery acceptance remain work.
 No Outfitter broker is needed to finish this first course.
 
 ## Authenticated course rehearsal (October 7)
@@ -263,5 +263,50 @@ synthetic evidence and screenshots after success, not fixture keys/databases.
 
 This is not acceptance of an institutional realm, funded host, public DNS/TLS,
 real backup account or class-size capacity. It requests grading explicitly;
-automatic Forgejo push-webhook delivery, institutional recovery, roster
-synchronization and automatic notebook submission remain separate work.
+automatic Forgejo push-webhook delivery, institutional identity-service recovery,
+roster synchronization and automatic notebook submission remain separate work.
+
+## Institutional workspace recovery (October 7)
+
+[Waypoint PR #7](https://github.com/EduCloud-Ecosystem/waypoint/pull/7), merged as
+`0be6bfb5973aff5764ec82d7f15d91b58bdad1b3`, extends encrypted Restic packages to OIDC courses. Recovery
+requires a current operator-supplied roster and client credential while binding
+the original issuer, client ID, public origin and home limits. All archived
+homes survive, including retained work from removed learners. The replacement
+starts with a new Hub database/cookie secret, so obsolete Hub sessions/tokens
+are not recovered. No service starts automatically.
+
+Final head `003e673c82343598b9a87462c22faad9c4465905` passed all 34 local unit tests
+and these workflows:
+
+- [Institutional recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37691362234):
+  encrypted backup, destruction of source Hub/volumes/filesystem, current-roster
+  restore on a fresh XFS filesystem, wrong-key/missing-current-config refusal,
+  fresh Hub sessions, removed/unrostered and peer denial, saved files, Python/R,
+  hard quota verification and active revocation with retained work after recovery.
+  The successful report and browser screenshot of reopened coursework were inspected.
+- [Independent-worker trial recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37691362307):
+  source backup and restoration on a separate clean runner passed.
+- [Hard quotas](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37691362235),
+  [complete course rehearsal](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37691362251),
+  and [policy/HTTPS](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37691362248): passed.
+
+The institutional report records GitHub's tested PR merge checkout
+`1201fe3efbdeca4b5bd2cb3362461b83c20f3bd3`; its saved image IDs are Hub
+`sha256:e85c04026cfe2fe20ce09ddf5164ce646d4735a881fff64c30ac4259abae4df5`
+and course `sha256:0e6ea23721d343dbed266e99884baf2c99e9d2033996abae1bb640cd726c22dd`.
+See Waypoint `course-workspace/RECOVERY.md` for current-config requirements,
+cutover, quota timers and backup/health service path updates.
+
+The operator must supply genuinely current configuration; the tool cannot verify
+its freshness. The IdP database/realm, DNS/TLS, CA trust and custom proxy/Compose
+configuration remain separate dependencies. Institutional acceptance used an
+independent surviving synthetic Keycloak instance on the same runner; it does
+not establish institution-wide disaster recovery or acceptance of a real
+SFTP/S3 account. No funded worker, public endpoint or production Cairn service
+was changed.
+
+The next local build should cover automatic repository-push grading delivery
+and a bounded class-load rehearsal. Real-host acceptance still needs selected
+worker/backup capacity, institutional identities, TLS, operational monitoring
+and recovery objectives before admitting learners.
