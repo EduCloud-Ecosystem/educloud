@@ -1,282 +1,93 @@
-# EduCloud — Platform Status & Pilot Priorities
+# EduCloud status and computing-continuity priority
 
-*Assessed 2026-07-21 against git history, roadmaps, changelogs, and validation
-records in each module repo. Companion to `EDUCLOUD-INVENTORY.md` (the July 21
-orientation pass). Names used are the current scheme — Cairn, Belay, Waypoint,
-Portage, Outfitter — with prior on-disk names noted.*
+Reassessed October 6, 2026 against current GitHub default heads, open PR metadata,
+local working trees, and primary-source GitHub Education guidance. The original
+July snapshot is preserved in `docs/research/2026-07-21-platform-status.md`.
 
-> Note (July 22): this is the July 21 snapshot. For sequencing, the plan of
-> record is `LINE-E-ROADMAP.md` (E0–E4) with `claude-lanes/LINE-P-ROADMAP.md`
-> for the personal line; SYSTEM.md §7 carries the consolidation.
+## Decision
 
-## 0. Executive summary
+The first user-facing computing replacement is **browser Python/R coursework
+with saved files and recoverability across hosts**. Finish the usable classroom
+path around Cairn, the most complete EduCloud component, and adopt JupyterHub for
+interactive computing. Do not require Belay, Portage or a new Outfitter broker
+before learners can run notebooks.
 
-The platform's forcing function is external and immovable: **GitHub Classroom
-shuts down August 28, 2026, with final data deletion September 4** (Cairn
-ROADMAP). Fall courses start the same week. Everything else — both NSF
-proposals, adopter letters, the flagship story — feeds on a Fall 2026 pilot
-actually running.
+Reliability means an accountable operator, funded baseline capacity, a portable
+course image, durable homes, bounded resource use, and independently recoverable
+backups. A second temporary credit offer is useful overflow, not continuity.
 
-The uncomfortable finding: **the module with the hardest deadline is the one
-currently idle.** Cairn's last commit is June 14 (five weeks ago); the recent
-energy went to Portage (July 20–21). Cairn is also the *closest to done* — its
-Phase 1 MVP is complete and the host-agnostic adapters have landed — so the
-remaining pilot gap is small and concrete. The single most important resource
-decision right now is to point the build effort back at Cairn until a pilot
-deployment exists.
+## Current component assessment
 
-Second finding: the five modules are architecturally coherent but **the
-platform-level glue is entirely undocumented on disk**. No system-definition
-doc exists; the five-name scheme appears nowhere except this week's reports;
-the umbrella folder isn't under version control; Portage still has no pushed
-remote. The glue items are cheap (days) and high-leverage — they're what makes
-five repos read as one platform to a reviewer, a collaborator, or a Dean.
+| Component | Verified main | Assessment and next completion gate |
+|---|---|---|
+| Cairn | 641ea4318b70 | Most complete classroom product; existing host adapters, student views and operations paths. [Draft PR #1](https://github.com/EduCloud-Ecosystem/cairn/pull/1) adds per-class workspace navigation. Grading-manifest authority and resource-ceiling audit findings remain release gates for authoritative grades. |
+| Waypoint | e5baceb4ebe6 | Existing local hosting/identity proof; [draft PR #1](https://github.com/EduCloud-Ecosystem/waypoint/pull/1) adds JupyterHub Python/R workspace deployment and offline recovery. This is the supporting compute path, not a completed institutional hosting service. |
+| Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
+| Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
+| Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
+| verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
+| educloud | c1b1e9cea7f7 | Public status was stale; this reassessment and decision refresh it. Original local strategy edits and unpublished commits are preserved. |
 
-## 1. Module-by-module
+The six core module default heads have not changed since the September audit.
+This does not mean no work occurred: Belay has an additional open identity PR,
+and its UI PR was updated. Open proposals are not shipped behavior.
 
-### Cairn — classroom layer (`~/dev/quad`, remote: EduCloud-Ecosystem/cairn)
+## GitHub Education: what changed and what remains
 
-**Status: strongest module; MVP complete; idle since June 14.**
+- GitHub Classroom retired August 28, 2026. The classroom-level Codespaces
+  allowance for 50 students ended with it. Repositories and accounts remain.
+- GitHub staff explicitly retained verified students' and educators' individual
+  benefit: 180 core-hours and 20 GB of monthly storage allowance. Current student
+  documentation still lists the personal benefit. At two cores, 180 core-hours
+  is 90 running hours, not 180 hours on a two-core machine.
+- Current billing documentation lists personal Free at 120 core-hours/15 GB-month
+  and Pro at 180/20. Ordinary organization plans include no free Codespaces quota.
+  Storage consumes allowance while a codespace exists; exhausted allowances can
+  block use when no payment method is available.
+- Copilot moved verified students to the distinct Copilot Student plan in March
+  2026, with a changed model lineup. AI entitlements are separate from computing.
+- Some Classroom integration documentation still describes the retired allowance
+  beneath a retirement warning. That text does not supersede the explicit staff
+  retirement notice. No official reinstatement was found in this review.
 
-Evidence: ROADMAP Phase 1 fully checked — GitHub App auth, classrooms,
-assignments from templates, student self-claim join, idempotent provisioning
-queue, deadline auto-lock, **sandboxed container grading** (network/memory/
-cpu/pids limits, dropped caps, read-only rootfs), CSV score export, instructor
-dashboard (React/Vite), Postgres store behind a build tag, operator auth.
-Commits past the roadmap file: webhook receiver with secret threading, student
-sessions + scoped API + student page, **Forgejo adapter** (README: working
-end-to-end), **GitLab adapter + OAuth resolver**. 17 Go test files. Deploy is
-a single docker-compose.
+These are program-policy findings, not a check of Greg's or any student's actual
+account status, billing settings, verification expiry or remaining allowance.
 
-**Remaining for a Fall pilot (the 1.0-beta gap):**
-- **GHC import** — the migration path for instructors leaving Classroom. The
-  single highest-value missing feature; it's the difference between "an
-  alternative" and "the replacement." Not started (no commit evidence).
-- `doctor` self-diagnostics + one-command deploy hardening (compose exists;
-  needs the paved path an instructor can follow alone).
-- Student-facing views completion (instructor console done; student page
-  landed but marked follow-up).
-- Instructor onboarding docs (setup guides exist per host; no end-to-end
-  "migrate your course in an afternoon" doc).
-- A real deployment running a real course section — pilot infrastructure
-  (see Waypoint P1).
-- Doc drift: ROADMAP.md Phase 2 checkboxes are stale (Forgejo/GitLab shipped
-  per commits/README but unchecked) — update before anyone external reads it.
+Sources checked October 6:
+[Classroom retirement](https://github.blog/changelog/2026-08-27-github-classroom-deprecated/),
+[GitHub staff benefit clarification](https://github.com/orgs/community/discussions/196615),
+[individual student benefits](https://docs.github.com/en/education/about-github-education/github-education-for-students/about-github-education-for-students),
+[current Codespaces billing](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces),
+[Copilot Student change](https://github.blog/changelog/2026-03-13-updates-to-github-copilot-for-students/).
+The staff clarification is the May 28 comment in the linked discussion.
 
-**Explicitly deferrable past the pilot:** LMS roster agent (Phase 3 — CSV
-import suffices), LTI integration (Phase 4), multi-tenant hosted offering.
+## Build sequence
 
-**Modularity/holism:** the host-adapter seam is the platform's reference
-pattern (Outfitter's provider adapters copy it). Needs: adopt the shared
-attribution vocabulary ({course, assignment, student} opaque labels) in its
-data model exports; an OIDC seam so Waypoint/Keycloak can front identity later
-(own OAuth now is fine); DCO file missing (Belay has one; Cairn doesn't).
+1. Deliver the portable, one-course Python/R workspace and Cairn navigation.
+2. Rehearse both kernels, own-file access, restart persistence and offline
+   restore into a fresh namespace. Keep synthetic evidence separate from live
+   institutional OIDC/TLS and actual second-host recovery.
+3. Select the actual institution-controlled host, operator, capacity and backup
+   destination. Enforce filesystem quotas, institutional roster/revocation and
+   wildcard HTTPS before a real learner pilot. Separate this worker host from
+   identity databases and other sensitive services.
+4. Close Cairn's assessment-integrity findings before relying on its grades.
+5. Run one real class and record availability, support effort, recovery time,
+   concurrency and actual operating cost. Add Outfitter placement only when
+   multiple provisioned backends create a demonstrated need.
 
-### Belay — peer AI tutor (`~/dev/peer-tutor-framework`, remote: Gchism94)
+The deployment and recovery implementation is in Waypoint `course-workspace/`;
+Cairn's integration contract is `docs/course-workspaces.md`. Detailed rationale:
+`docs/decisions/2026-10-06-computing-continuity.md`.
 
-**Status: deepest engineering rigor of the five; feature-complete core; parked
-since June 18.**
+## Implementation and validation from this reassessment
 
-Evidence: evaluation-first loop with the deterministic leak/Governance gate;
-338-test baseline (Slice O floor per VALIDATION); license-gated, pack-scoped
-knowledge/corpus pipeline with BM25 indexing just landed (Slice O); DS pack as
-reference, `_skeleton` pack seam for new domains; full governance set (DCO,
-LICENSING, PRIVACY, CoC); 79 KB VALIDATION.md as the build record.
-
-**Remaining (from its own ROADMAP, all cited to in-tree sources):**
-- Reasoner-prompt de-quantum (eval-gated — still carries quantum-era worked-
-  example guidance from the extraction origin) + the DS claim-check it bundles.
-- Real corpus ingestion (operator step — pipeline built, only seed corpus
-  ships), live strong-judge benchmark (pending a local endpoint — **a Portage
-  integration point**), measure-key cleanup.
-- **Instructor mode is net-new** (no auth on the API today) — required before
-  any real course pilot with students; this is the biggest gap between "framework"
-  and "product."
-- Containerized runner (the recorded convergence point with Cairn's grading
-  containment), facilitator benchmark family, more DomainPacks, naming/publish
-  (repo name is a placeholder, final name pending an atomic commit — it's Belay).
-
-**Modularity/holism:** already the governance model for the others. Needs:
-move to EduCloud-Ecosystem org; the strong-judge endpoint and all student-lane
-inference should declare Portage policy modes (student lanes = `sovereign`);
-its `cohort` field aligns with the shared attribution vocabulary — codify it.
-
-### Waypoint — publishing/federation (`~/dev/HOST`, remote: EduCloud-Ecosystem/HOST)
-
-**Status: local pre-build proven; blocked on a server; the Registry proper not
-started.**
-
-Evidence: Phase 0 done (requirements, tenant intake, onboarding contract,
-templates); Phase 1.5 done (local Coolify stack, Keycloak realm export, full
-visitor-auth round trip proven locally, five demo apps with instantiated
-Dockerfiles); Phase 1 (provision) pending budget — provider decision moved
-Hetzner → DigitalOcean. Phases 2–9 (install/secure Coolify, Keycloak on
-server, tenant onboarding, auth matrix, backups, launch) await the server.
-CHANGELOG is a disciplined doc-history; STATUS_DECK.html exists.
-
-**Remaining:**
-- **Provision the server** (the only blocker for Phases 2–9; a budget
-  decision, not an engineering one).
-- Phases 2–9 per PLAN.1.md — largely configuration by design.
-- **The Registry itself** — catalog, search, register CLI, federation
-  metadata standard — exists only as the June proposal doc
-  (`educloud/architecture/EduCloud-registry-federation-proposal.md`). PLAN.1
-  deliberately only "prepares its seam" (a scoped Coolify API token). This is
-  Ben Markwart's funded workstream; it needs to exist in credible draft form
-  by grant-writing season (~Dec), not by pilot.
-- Repo hygiene: no top-level README, no LICENSE, no governance files — the
-  only module a stranger can't orient in. Rename HOST → waypoint when
-  convenient.
-
-**Modularity/holism:** Waypoint is the *deployment substrate* for everything —
-Coolify hosts Cairn, Belay, Portage's LiteLLM proxy, demo tenants; Keycloak is
-the ecosystem identity provider every module's OIDC seam eventually points at.
-The onboarding contract ("a Coolify application IS the contract") is the right
-shape; make each sibling module ship a conforming template.
-
-### Portage — model routing (`~/dev/claude-lanes`, remote: EduCloud-Ecosystem/portage — **unpushed**)
-
-**Status: most active; Phases 0–1 built and verified; Scale-1 transition fully
-specified this week; Phase 6a ready for its build session.**
-
-Evidence: LiteLLM spine smoke-tested; Claude Code → LiteLLM direct connection
-verified and documented (phase-1-findings); ruff/pytest green; versions
-pinned. This week: specs/10–11 (open-weight-only end state; hybrid PAYG
-transition), REVISION-PLAN.md, and the full doc pass (unified T0–T7 ladder,
-`proprietary_displacement` flip metric, escalation boundary, per-lane policy
-modes). KICKOFF-PROMPT now scopes the Phase 6a session.
-
-**Remaining:**
-- Phase 6a build (OpenRouter allowlist + Together + PAYG ceiling as LiteLLM
-  config; `unavailable`/`model_failed` split in failup.py; displacement +
-  rescue reports in measure.py; bench baseline before subscription
-  cancellation). Personal pilot = Greg's working version.
-- Phases 2–5 hardening items not yet done (stub-runner test suite for the
-  guard/decomposer, herdr plugin verification, maintenance rails).
-- Later: sovereign tier wiring (Jetstream2), Parity Bench, learning loop.
-- **Push the repo.** Still local-only. One `git push -u origin main` ends the
-  single-disk risk that has now persisted through two status reports.
-
-**Modularity/holism:** defines the policy-mode vocabulary (`sovereign` /
-`open_weight_only` / `hybrid`) the whole platform uses for data-sensitivity
-posture; its spend logs share the attribution vocabulary; Belay is its first
-in-platform consumer (strong-judge endpoint, student-lane inference).
-
-### Outfitter — compute brokering (`~/dev/outfitter`, remote: EduCloud-Ecosystem/outfitter — unpushed)
-
-**Status: M0 spec-first scaffold only (July 21); no code.**
-
-Evidence: DESIGN (broker/adapter control plane in Go, mirroring Cairn's
-pattern), specs 00–05 (adapter interface, cost model, budget guards, Cairn
-integration, MVP scope), governance, Claude Code kickoff — all committed
-(`d42bd0a`).
-
-**Remaining:** everything past specs — M1 skeleton (adapter interface +
-docker reference adapter + conformance harness), M2 codespaces + guards, M3
-Cairn integration, M4 research providers. Plus one **admin item that
-shouldn't wait for code: file the ACCESS Discover allocation** (~2-week
-turnaround; removes compute from both grant budgets per START-HERE; also
-unblocks future Jetstream2 work for Portage's sovereign tier).
-
-**Modularity/holism:** by design already — it copies Cairn's adapter seam,
-shares the attribution vocabulary with Portage's ledger, and its budget-safe
-invariant (no provisioning without ceiling + lifetime + teardown) is the
-platform's verifier philosophy applied to money.
-
-### The umbrella (`~/dev/educloud` + org level)
-
-**Status: rich June corpus, now visibly stale; not under version control.**
-
-Remaining: the system-definition document (the white paper now covers the
-outward-facing half; a short SYSTEM.md should cover the internal contracts);
-name propagation (Quad/Sol/Registry/Commons → current names across ~15 docs);
-the PESOSE date correction (Sept 1, 2026 → **NSF 26-506 Track 1, March 2,
-2027**) in seven documents; `git init` the umbrella (grants/strategy work has
-no history or backup); brand doc (`educloud-brand.md` — only a PNG exists);
-org consolidation (Belay still on the personal account; HOST rename); the two
-xlsx models kept current.
-
-## 2. The holistic layer — what makes five modules one platform
-
-These are the shared contracts. None is expensive; together they're the
-difference between a suite and a platform.
-
-1. **The verifier invariant (the signature).** No module trusts a model's — or
-   a provider's — self-report: Cairn's sandboxed autograder, Belay's leak gate,
-   Portage's fail-up guard, Outfitter's conformance tests and budget guards.
-   State it once in SYSTEM.md and in the white paper; it is the platform's
-   thesis and its differentiator in every grant narrative.
-2. **Attribution vocabulary.** Opaque `{course, assignment, student}` labels
-   flow through Cairn rosters, Outfitter's cost ledger, Portage's spend logs,
-   Belay's cohort measures. Already consistent by design — codify it so it
-   stays that way.
-3. **Policy modes.** `sovereign` / `open_weight_only` / `hybrid` (defined in
-   Portage) are the platform's data-sensitivity posture. Student-facing lanes
-   default `sovereign`; enforced by config absence, never runtime checks.
-4. **Identity.** Keycloak (Waypoint) is the ecosystem OIDC provider; every
-   module keeps a bring-your-own-OIDC seam now and points it at Waypoint when
-   the server exists.
-5. **Deployment contract.** Every module ships a Coolify-conforming container
-   ("the application is the contract"); Waypoint's templates directory is the
-   registry of record.
-6. **Governance floor.** Apache-2.0 + DCO + CoC + CONTRIBUTING in every repo
-   (Belay is the model; Cairn lacks DCO; Waypoint lacks everything), and one
-   ecosystem-level GOVERNANCE doc under the org.
-7. **One org.** EduCloud-Ecosystem for all five repos, pushed. Today: cairn ✓
-   (remote set), portage ✓ (remote set, **unpushed**), outfitter ✓ (unpushed),
-   HOST ✓ (pushed, needs rename), Belay ✗ (personal account).
-8. **One definition.** SYSTEM.md + the white paper carry the five-name scheme;
-   everything else links to them instead of restating.
-
-## 3. Priority stack for piloting
-
-| P | What | Why now | Effort shape |
-|---|---|---|---|
-| **P0** | **Cairn → pilot-ready**: GHC import, doctor + one-command deploy, student views, instructor migration doc, roadmap-file refresh | Aug 28 shutdown; ~5 weeks; it's closest to done and highest external stakes; every grant artifact downstream depends on a running pilot | The build focus until it ships |
-| **P1** | **Provision the Waypoint server** and run Phases 2–3 (Coolify + Keycloak), then deploy Cairn on it | The pilot needs a host; local pre-build already proved the stack; this is a budget decision blocking config work | Hours of work once the droplet exists |
-| **P2** | **Umbrella coherence**: SYSTEM.md, name propagation, PESOSE date fixes, `git init` educloud/, push Portage/Outfitter, move Belay to the org | Days of work; converts five repos into one reviewable platform; ends the unpushed-work risk | A focused day or two |
-| **P3** | **File the ACCESS Discover allocation** | 2-week turnaround, pure admin, unblocks grant budgets + the future sovereign tier | An afternoon |
-| **P4** | **Portage Phase 6a** (the scoped Claude Code session) | Personal pilot momentum + publication window; fully specified; runs in parallel without eating Cairn's clock | Parallel track, session-sized |
-| **P5** | **Belay: instructor mode design + prompt de-quantum**, aiming at a single-course pilot late fall | Not needed for the GHC replacement; is the grant differentiator; instructor mode is the product gap | After P0 ships, or as background design |
-| **P6** | **Outfitter M1** (docker adapter + conformance) | Cairn's container runner covers pilot grading; broker earns its build after the pilot | Post-pilot |
-| — | **Waypoint Registry draft (Ben)** | Grant-season deadline (~Dec), not pilot; needs a credible draft + the Coolify seam | Parallel, Ben's track |
-
-**The sequencing in one line:** Cairn until it runs a real course, Waypoint
-just enough to host it, glue-week for the umbrella, Portage and Belay on
-parallel tracks that never block the classroom.
-
-## 4. Risks
-
-- **Calendar risk (highest):** five weeks to shutdown; GHC import doesn't
-  exist yet; instructors migrate in August or not at all this year.
-- **Single-disk risk:** Portage and Outfitter are unpushed; the umbrella has
-  no VCS at all. One disk failure erases the most active work.
-- **Doc-drift risk:** roadmap checkboxes lag commits (Cairn), names lag the
-  scheme (everywhere), a stale deadline sits in seven grant docs. Reviewers
-  and collaborators read the docs, not the commits.
-- **Bus-factor:** every module is effectively one person right now; the
-  Registry is the only externally-owned workstream and it hasn't started.
-- **Integration debt:** the holistic layer (§2) is all convention, no
-  enforcement, until SYSTEM.md + org consolidation land.
-
-## 5. Licence-gated items
-
-- `EduCloud-Ecosystem/verifier-contract`: public and Apache-2.0 as of
-  2026-08-05 (CC-C3 v2). `portage`, `belay`, `outfitter` and `waypoint` are
-  licensed as of the same date (CC-C3 v2).
-
-- **Open: does `cairn` want an Apache contract surface?** `portage` and
-  `belay` each carve one out (`config/`, `backend/app/core/domain/`);
-  `cairn` has an inherited AGPL-3.0 `LICENSE` at the root and no
-  `LICENSING.md`. Whether it should also carve one out is a design question,
-  not a transcription, and CC-C3 v2 explicitly scoped it out of the licensing
-  pass. Recorded here so it stays visible.
-
-- **Known gap: GitHub does not show a licence for `belay`.** Its `LICENSE`
-  (AGPL-3.0) and `backend/app/core/domain/LICENSE` (Apache-2.0) are both
-  committed and pushed, but on `slice-o-knowledge-corpus`. GitHub's licence
-  detection reads only the default branch, and `belay/main` is still the bare
-  extraction commit `7cd6b11`, 77 commits behind. The licence is granted — the
-  badge is not shown. This closes when the slice-o→main merge happens, which
-  CC-C1 flagged as its own decision; a licensing pass is the wrong place to
-  make it.
+Both implementation PRs are drafts; nothing is merged or publicly deployed.
+Cairn's full Go race suite passed, followed by the API race suite with added
+removed-roster coverage. Waypoint's five policy tests and complete synthetic
+continuity verifier passed: Python/R kernel execution, learner separation,
+runtime/network checks, workspace recreation, live-backup refusal, new-namespace
+restore and overwrite refusal. Playwright confirmed the browser launcher and
+retained files. This was linux/arm64 on local Docker Desktop, with two synthetic
+learners. It is not second-physical-host recovery, class-scale acceptance, or
+live institutional authentication. See the Waypoint PR's VALIDATION.md.

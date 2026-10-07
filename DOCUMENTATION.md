@@ -1,7 +1,7 @@
 # EduCloud — Documentation Index
 
 *Annotated map of the documentation that matters, by purpose. Paths are
-relative to `~/dev/`. Updated 2026-08-08. Names: Cairn (was Quad), Belay (was
+relative to `~/dev/`. Updated 2026-10-06. Names: Cairn (was Quad), Belay (was
 Sol), Waypoint (was "HOST"/Registry), Portage (was Commons/claude-lanes),
 Outfitter (new).*
 
@@ -133,30 +133,22 @@ naming) · Belay's full set (`DCO`, `LICENSING.md`, `CODE_OF_CONDUCT.md`,
 
 ## Known gaps (tracked in EDUCLOUD-STATUS.md)
 
-*Refreshed 2026-08-08. The July list is retained below it, struck through where
-verified closed, because a gap list nobody re-checks becomes misinformation —
-several items below had been done for weeks while still reading as open.*
+Current assessment: `EDUCLOUD-STATUS.md` (October 6, 2026). The computing priority
+is browser Python/R coursework with durable files and tested recovery. The
+classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
 
-**Open:**
+- Institutional OIDC, wildcard TLS, disk quotas, target-host capacity and actual
+  off-host recovery still require pilot acceptance.
+- Cairn's instructor-owned grading manifest and operator resource ceilings are
+  unresolved. A workspace launcher does not make grading trustworthy.
+- Belay PR #12's identity work is unmerged; Portage's existing PR stack still
+  needs profile repair. Neither is a prerequisite for the computing pilot.
+- Outfitter remains specification-only; defer brokering until there is a real
+  second provider and a first consumer to validate its lifecycle against.
+- Preserve existing local strategy changes and unpublished module commits when
+  reconciling branches. Public documentation is not the whole local state.
 
-- Brand doc (`educloud-brand.md`) — still absent.
-- Full prose name propagation. July banners cover the stale docs; rewrites
-  deferred. `START-HERE.md` is the main offender and is self-flagged.
-- `START-HERE.md`'s gate list is June-vintage and needs a pass: it still frames
-  the ACCESS ask as **Discover**, where the 2026-08-08 scan found **Explore**
-  is the right *first* step (400,000 credits, ~2-week turnaround, and
-  instructors running classroom activities are explicitly named as eligible).
-  These are not exclusive — Explore now to get a real Jetstream2 adapter to
-  build against, Discover as the grant-budget ask. Recorded here so the two
-  documents stop disagreeing; `outfitter/ROADMAP.md` carries the same note.
-- SYSTEM.md contract 6's governance-gap list is stale: Waypoint now has
-  `LICENSE`, `LICENSING.md`, `DCO`, and `README.md`.
-- The open platform question from `portage/docs/specs/13-routing-paradigm.md`
-  §3: **does "no proprietary models" extend to proprietary routing
-  infrastructure?** Never stated explicitly, and it is a SYSTEM.md contract-2
-  question rather than a Portage-local one. Still owed an answer.
-
-**Closed since July** (was: "umbrella not under git · Portage and Outfitter
-unpushed; Belay on the personal account; HOST rename pending"): the umbrella is
-under git; Belay is org-consolidated; the HOST → waypoint rename is done. Verify
-Portage/Outfitter push state before citing it either way.
+New records: `docs/decisions/2026-10-06-computing-continuity.md`; archived July
+status at `docs/research/2026-07-21-platform-status.md`. Older branding, policy and
+naming cleanup remains secondary to this deliverable. No grant or allocation
+application is represented as submitted by this assessment.
