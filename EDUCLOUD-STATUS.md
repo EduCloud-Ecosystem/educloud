@@ -21,13 +21,13 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
-| Cairn | 55940c218554 | PRs #1–#4 merged. Automatic push grades now use immutable submission commits, expose revision history, and fail/retry configured webhook setup. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
+| Cairn | 8c12a681bbfd | PRs #1–#5 merged. Opt-in source capture and instructor-reviewed assessment proposals now pass local/browser/SQLite/PostgreSQL checks; no model provider is connected. Automatic push grades now use immutable submission commits, expose revision history, and fail/retry configured webhook setup. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
 | Waypoint | 2afd881e6c54 | PRs #1–#8 merged. Real Git-push grading and bounded notebook traffic passed, including overflow rejection and freed-slot reuse. Python/R workspaces, encrypted trial and institutional recovery, dedicated-worker configuration, hard XFS quotas and nginx/Keycloak preparation are implemented. Synthetic identity/course/revocation, institutional restoration, independent-worker trial recovery and quota/HTTPS checks passed. Real institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
 | verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
-| educloud | aa63de52d50b | Prior computing and institutional recovery records merged; this follow-up records push grading, bounded traffic and the LLM assessment direction. Original local strategy edits and unpublished commits are preserved. |
+| educloud | 1ba814e57b82 | Prior computing and institutional recovery records merged; this follow-up records the local assessment review foundation. Original local strategy edits and unpublished commits are preserved. |
 
 The October 6 baseline matched the September audit default heads. Cairn,
 Waypoint and this umbrella have since advanced through the authorized merges.
@@ -363,9 +363,52 @@ records the pipeline: instructor-owned rubric, immutable submission and artifact
 provenance, bounded format extraction, evidence citations, approved model data
 destinations and budgets, deterministic schema/score/citation checks, then
 instructor review/edit/approval before publication. Structural checks do not
-prove that a model's judgment is correct. No LLM provider, extraction pipeline,
-proposal review UI or automatic model grading is implemented by this release.
+prove that a model's judgment is correct. The earlier push-grading release did
+not implement this pipeline; the review foundation is now covered below.
 
-The next local build is the artifact/proposal/review workflow with synthetic
-examples, followed by a permissioned instructor-scored model evaluation before
-any real student content is sent to a provider.
+## Local assessment review foundation (October 7)
+
+[Cairn PR #5](https://github.com/EduCloud-Ecosystem/cairn/pull/5) implements the
+local artifact/proposal/review workflow, disabled by default and enabled with
+`CAIRN_ASSESSMENT_REVIEW=1`. Merged as
+`8c12a681bbfdb4baa201b77ccd48b33ac19b5535` after
+[CI](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/37701984975) passed on
+head `82b20fa4760b2204575fcda7af37971b5388e3bb`. The new PostgreSQL CI job also
+exposed an old nanosecond-precision test expectation, corrected to microseconds.
+
+Instructors save a hashed assessment rubric and capture exact repository paths
+at the recorded submission commit. Bounded extraction supports text, Markdown,
+Python, R and notebook source. Missing, unsupported, unsafe or oversized files
+block assessment. Source bytes, digests, locations and extraction version are
+preserved privately. Notebook outputs/attachments are excluded from extracted
+source; direct uploads, optional paths and PDF/Office/images remain future work.
+
+Fixture or instructor-imported proposals contain per-criterion feedback,
+uncertainty, scores and validated citations. The dashboard lets instructors
+inspect evidence, edit or reject proposals, and explicitly publish. Publication
+atomically checks rubric/commit/activity/roster freshness and writes the grade
+with the review. Original proposals remain distinct from edits; concurrent or
+replayed approvals cannot duplicate a grade. Students see only published
+feedback. Deterministic and reviewed grades are separate history entries, not
+an automatically combined course score.
+
+The full local Go race suite and vet, 25 dashboard tests/build, and disposable
+PostgreSQL conformance passed. PostgreSQL publication checks are now in CI.
+Browser acceptance on the final build imported a synthetic proposal, changed
+6/10 to 8/10, edited feedback, published, refreshed the instructor score and
+verified the student's approved feedback/citations; screenshots were inspected.
+This fixture uses synthetic checkout content, not a new real-Git or model test.
+Tests also cover forged scores/citations, private drafts, stale activity,
+unassessable criteria, rollback, concurrent approval, SQLite reopen, roster
+erasure and exported-grade retention. Approved evidence/review records are
+purged with their exported grade; other captures remain until roster erasure.
+
+No model provider is connected, no real student data was sent externally, and
+no production deployment occurred. Production gates include quota-enforced
+capture workers (Git download size is not bounded by extraction limits), durable
+admission, pagination, draft retention, webhook completeness/out-of-order
+acceptance and an explicit policy for combining reviewed/test results.
+
+The next build is a bounded provider adapter and instructor-scored evaluation
+corpus with synthetic/permissioned examples. Destination approval, budgets and
+measured feedback/score quality are prerequisites for real student content.

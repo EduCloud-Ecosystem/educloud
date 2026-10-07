@@ -24,8 +24,8 @@ Outfitter (new).*
 `docs/github-setup.md` / `forgejo-setup.md` / `gitlab-setup.md` /
 `migrating-github-to-forgejo.md` (per-host operator guides),
 `docs/grading-policy.md` (pinned deterministic grading and automatic pushes),
-`docs/llm-assessment.md` (planned flexible-format feedback plus proposed scores
-with instructor review; no provider/review UI implemented yet).
+`docs/llm-assessment.md` (opt-in source capture, imported feedback/proposed scores,
+instructor review/publication and remaining provider/evaluation gates).
 
 **Belay** (`belay/`): `INSTRUCTOR_MODE.md` (instructor-mode
 design spec, July 2026 — session-ready), `README.md`, `ARCHITECTURE.md`,
@@ -158,9 +158,12 @@ classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
   PR #3 also preserves valid student sessions after denied operator requests; it
   is merged and tested but was not deployed to the production pilot in this pass.
   PR #4 pins automatic grades to each pushed submission commit and makes
-  configured webhook setup failures visible/retryable. LLM feedback plus proposed
-  rubric scores are the agreed next assessment feature; artifact extraction,
-  model evaluation and instructor review/publication remain unimplemented.
+  configured webhook setup failures visible/retryable. PR #5 adds opt-in bounded
+  source capture, imported feedback/proposed rubric scores, instructor review and
+  atomic publication, verified locally in browser and across SQLite/PostgreSQL.
+  Model providers/evaluation, draft retention, quota-enforced capture workers,
+  pagination and an explicit reviewed/test-score combination policy remain
+  unimplemented. Existing production pilot stays on PR #2.
 - Belay PR #12's identity work is unmerged; Portage's existing PR stack still
   needs profile repair. Neither is a prerequisite for the computing pilot.
 - Outfitter remains specification-only; defer brokering until there is a real
