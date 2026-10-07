@@ -22,7 +22,7 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
 | Cairn | ceaee433f3a3 | PRs #1 and #2 merged; deployed on the existing pilot host. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
-| Waypoint | dd968f4392b5 | PRs #1 and #2 merged. Python/R computing and recovery passed on local arm64 and fresh Linux amd64 CI, including a Linux archive-permissions fix. A separate notebook worker is not yet provisioned/deployed. |
+| Waypoint | 1734b7a9c152 | PRs #1–#3 merged. A private one-learner Python/R trial is running locally, with persistent files and automated offline checkpoints. Local arm64 and fresh Linux amd64 recovery tests passed. A separate remote notebook worker is not yet provisioned. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
@@ -90,6 +90,7 @@ Cairn's integration contract is `docs/course-workspaces.md`. Detailed rationale:
 - [Cairn #2](https://github.com/EduCloud-Ecosystem/cairn/pull/2): instructor grading authority and ceilings.
 - [Waypoint #1](https://github.com/EduCloud-Ecosystem/waypoint/pull/1): notebook runtime/recovery.
 - [Waypoint #2](https://github.com/EduCloud-Ecosystem/waypoint/pull/2): Linux archive permissions.
+- [Waypoint #3](https://github.com/EduCloud-Ecosystem/waypoint/pull/3): minimal trial, bounded admission and resumable offline checkpoints.
 - [EduCloud #1](https://github.com/EduCloud-Ecosystem/educloud/pull/1): priority/reassessment.
 
 Cairn release `ceaee433f3a3ad12487824b132059fca10b7bc32` was built and
@@ -116,8 +117,9 @@ archive transfer or a live institution-authenticated notebook deployment.
 ## Deployment facts still requiring completion
 
 The existing Cairn machine has 4 GB RAM and also hosts its database. It is not the
-separate notebook worker. No notebook host/account/budget is recorded; that
-connection/selection is pending from the operator. No cloud purchase was made.
+separate notebook worker. No remote notebook host/account/budget is recorded;
+that connection/selection is pending from the operator. A local synthetic trial
+is now available without buying infrastructure. No cloud purchase was made.
 
 Cairn doctor reports no failures, with outstanding warnings for plain-HTTP
 webhook configuration and unset grade retention. Existing operator authentication
@@ -129,3 +131,42 @@ The notebook deployment still needs its dedicated worker, live Keycloak roster
 and revocation tests, wildcard HTTPS, per-home quotas, capacity testing, encrypted
 off-host backups and recovery on another host. Existing Belay/Portage findings
 remain outside this release.
+
+## Minimal testing version and next completed build step
+
+The operator trial is reduced to **one active synthetic learner**, one CPU and
+1 GiB learner RAM, plus the separately capped 1 GiB Hub. It runs locally at no
+additional hosting cost. The optional remote target is a separate 4 GiB / two
+shared-vCPU / 80 GiB Ubuntu worker, using an SSH tunnel to the loopback-only
+notebook port. DigitalOcean's Basic Regular bundled plan is $24/month before
+taxes/backups as checked October 7 against its
+[published pricing](https://www.digitalocean.com/pricing/droplets). The proposed
+Droplet sizing has not been accepted on an actual 4 GiB worker.
+
+Waypoint's `course-workspace/pilot.py` initializes private stable credentials,
+starts/stops the trial without deleting files, and reports its status. The
+[operator guide](https://github.com/EduCloud-Ecosystem/waypoint/blob/main/course-workspace/MINIMAL-PILOT.md)
+contains local and SSH-tunnel setup. Test users alice/bob share a generated
+password, with one active server at a time. This is not public student login.
+
+The next continuity build step, `pilot.py checkpoint`, is implemented too: stop
+the Hub and learner, archive the quiesced volumes with checksums and runtime image
+metadata, then resume the previously running Hub. Failed backup attempts also
+attempt to resume it. A previously stopped Hub remains stopped. Commands share
+an operation lock, and existing archive paths and unrelated Hub containers are
+refused. Direct Docker operations still require operator coordination.
+
+Local arm64 acceptance passed at runtime commit `0da7491`: Python/R over notebook
+WebSockets, inspected 1 GiB/one-CPU limits, blocked Internet access, a refused
+second learner, file persistence through restart/checkpoint, and restored files
+and kernels in fresh volumes. Thirteen unit tests passed, including failure
+recovery and operation locking. The [fresh Linux amd64 run](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37668279326)
+passed both the original two-user rehearsal and the new minimal-trial recovery
+at that exact runtime commit. A real browser opened the Python/R launcher,
+executed the Welcome notebook and saved its output; the CLI checkpoint then
+resumed that Hub successfully. Checkpoint archives are private but remain local and unencrypted;
+same-host restoration is not a second-host or off-host recovery claim.
+
+Next deployment work is a funded dedicated worker, preserved runtime images and
+encrypted off-host transfer/restore. Public multi-user use still requires the
+institutional identity, HTTPS, disk quotas and measured capacity gates above.
