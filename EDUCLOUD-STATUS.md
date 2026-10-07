@@ -22,12 +22,12 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
 | Cairn | ceaee433f3a3 | PRs #1 and #2 merged; deployed on the existing pilot host. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
-| Waypoint | 1734b7a9c152 | PRs #1–#3 merged. A private one-learner Python/R trial is running locally, with persistent files and automated offline checkpoints. Local arm64 and fresh Linux amd64 recovery tests passed. A separate remote notebook worker is not yet provisioned. |
+| Waypoint | 0e92189689d0 | PRs #1–#5 merged. Private Python/R trial, encrypted self-contained recovery, dedicated-worker configuration, hard XFS home quotas and nginx/Keycloak preparation are implemented. Synthetic independent-runner recovery and quota/HTTPS checks passed. Live institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
 | verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
-| educloud | db5593a11324 | Initial reassessment merged; this follow-up records actual deployment and outstanding compute infrastructure. Original local strategy edits and unpublished commits are preserved. |
+| educloud | c06ac8ba0c81 | Prior reassessment/deployment/minimal-trial records merged; this follow-up records encrypted recovery and hosted preparation. Original local strategy edits and unpublished commits are preserved. |
 
 The October 6 baseline matched the September audit default heads. Cairn,
 Waypoint and this umbrella have since advanced through the authorized merges.
@@ -91,6 +91,8 @@ Cairn's integration contract is `docs/course-workspaces.md`. Detailed rationale:
 - [Waypoint #1](https://github.com/EduCloud-Ecosystem/waypoint/pull/1): notebook runtime/recovery.
 - [Waypoint #2](https://github.com/EduCloud-Ecosystem/waypoint/pull/2): Linux archive permissions.
 - [Waypoint #3](https://github.com/EduCloud-Ecosystem/waypoint/pull/3): minimal trial, bounded admission and resumable offline checkpoints.
+- [Waypoint #4](https://github.com/EduCloud-Ecosystem/waypoint/pull/4): encrypted preserved-image recovery and dedicated-worker configuration.
+- [Waypoint #5](https://github.com/EduCloud-Ecosystem/waypoint/pull/5): hard home quotas, quota-backed recovery and HTTPS/identity configuration.
 - [EduCloud #1](https://github.com/EduCloud-Ecosystem/educloud/pull/1): priority/reassessment.
 
 Cairn release `ceaee433f3a3ad12487824b132059fca10b7bc32` was built and
@@ -128,8 +130,9 @@ read health/CI success as approval for real learner data without HTTPS, retentio
 institutional policy and the relevant isolation/assessment review.
 
 The notebook deployment still needs its dedicated worker, live Keycloak roster
-and revocation tests, wildcard HTTPS, per-home quotas, capacity testing, encrypted
-off-host backups and recovery on another host. Existing Belay/Portage findings
+and revocation tests, actual wildcard DNS/certificates, target-host quota/mount
+and capacity acceptance, and an approved SFTP/S3 backup account. Synthetic quota,
+HTTPS proxy and independent-runner recovery checks now pass, as recorded below. Existing Belay/Portage findings
 remain outside this release.
 
 ## Minimal testing version and next completed build step
@@ -167,6 +170,51 @@ executed the Welcome notebook and saved its output; the CLI checkpoint then
 resumed that Hub successfully. Checkpoint archives are private but remain local and unencrypted;
 same-host restoration is not a second-host or off-host recovery claim.
 
-Next deployment work is a funded dedicated worker, preserved runtime images and
-encrypted off-host transfer/restore. Public multi-user use still requires the
-institutional identity, HTTPS, disk quotas and measured capacity gates above.
+## Encrypted recovery and hosted preparation (October 7)
+
+The user selected **build and test locally first**. No Droplet, backup account,
+public endpoint or institutional client was provisioned by this release.
+
+Waypoint PR #4 packages quiesced files, private configuration, deployment scripts
+and immutable Docker images into an encrypted Restic repository. Wrong keys,
+ambiguous snapshot IDs, incompatible architectures and occupied restore targets
+are refused. Backup status records failures and stale success; scoped retention
+is previewed unless explicitly applied. Generated worker configuration and
+systemd timers remain disabled until operator setup. Recovery currently supports
+synthetic local-test deployments only; institutional migration is a further gate.
+
+The [independent-worker rehearsal](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37673554357)
+passed at head `65d6188c2448a10ad06cac24e1161c3c9d5dd11f`; PR #4 merged as
+`f99e7cebcb8d5e6db8083dfea92ba67be3ca343d`. Source and replacement jobs used
+separate fresh Linux runners, transferring only the encrypted synthetic package
+and metadata. The replacement rejected cached source images, restored saved files
+and ran Python/R. This proves portable packaged recovery on that architecture;
+it does not validate the future institution's backup account or service uptime.
+
+Waypoint PR #5 merged as `0e92189689d0ad4af40131140d49651437f9491d` and
+provisions hard byte/inode quotas on an administrator-prepared,
+dedicated XFS mount. It never formats a physical device. Missing or stale health
+status blocks new learner starts; actual limits remain enforced by the filesystem.
+The synthetic Linux test exhausts a home, checks another learner can still write,
+restores an encrypted quota-backed package and detects altered enforcement.
+Ordinary backups from PR #4 remain supported.
+
+The release also renders private nginx/Keycloak configuration. The client secret
+is deliberately empty until installed by the operator. Actual nginx tests check
+root/user TLS routes, redirect behavior, forwarded-header replacement, WebSocket
+upgrades and unknown-host rejection. These are proxy tests, not an institutional
+login or browser acceptance claim. Validation at runtime head `7649109` passed:
+[quota-backed recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677205120),
+[nginx and unit checks](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677205127),
+and [independent-worker recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677205180).
+The final documentation head `26128636b1151ed049c220cd1135c8504c391f37` was also
+checked before merge: [quota](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677747268),
+[policy/proxy](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677747049),
+[recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677747267).
+
+Next is a complete synthetic identity/course rehearsal, followed by acceptance on
+the selected worker and backup account: real institution login/revocation,
+wildcard certificates, reboot/mount behavior, load, recovery objectives and the
+Cairn assignment/submission/grading path. Host disk/log monitoring, paging,
+retention/departure procedures and the institutional recovery path remain work.
+No Outfitter broker is needed to finish this first course.

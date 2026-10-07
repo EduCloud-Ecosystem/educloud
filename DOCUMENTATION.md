@@ -133,14 +133,18 @@ naming) · Belay's full set (`DCO`, `LICENSING.md`, `CODE_OF_CONDUCT.md`,
 
 ## Known gaps (tracked in EDUCLOUD-STATUS.md)
 
-Current assessment: `EDUCLOUD-STATUS.md` (October 6, 2026). The computing priority
+Current assessment: `EDUCLOUD-STATUS.md` (updated October 7, 2026). The computing priority
 is browser Python/R coursework with durable files and tested recovery. The
 classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
 
-- Institutional OIDC, wildcard TLS, disk quotas, target-host capacity and actual
-  off-host recovery still require pilot acceptance.
-- Cairn's instructor-owned grading manifest and operator resource ceilings are
-  unresolved. A workspace launcher does not make grading trustworthy.
+- Waypoint now includes encrypted preserved-image recovery, separate-runner
+  restoration, hard XFS byte/inode quotas, health timers and nginx/Keycloak
+  configuration. Synthetic quota exhaustion/recovery and nginx tests pass.
+  Live institutional OIDC/revocation, real DNS/certificates, selected-host capacity,
+  the actual backup account and institutional-mode recovery still need acceptance.
+- Cairn's instructor-owned grading manifest and per-step operator ceilings were
+  fixed, merged and verified on the pilot host. Aggregate execution/output,
+  shared-kernel assessment review, HTTPS and retention remain separate gates.
 - Belay PR #12's identity work is unmerged; Portage's existing PR stack still
   needs profile repair. Neither is a prerequisite for the computing pilot.
 - Outfitter remains specification-only; defer brokering until there is a real
