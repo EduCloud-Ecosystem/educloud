@@ -140,11 +140,16 @@ classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
 - Waypoint now includes encrypted preserved-image recovery, separate-runner
   restoration, hard XFS byte/inode quotas, health timers and nginx/Keycloak
   configuration. Synthetic quota exhaustion/recovery and nginx tests pass.
+  The authenticated course rehearsal connects real synthetic Keycloak/Hub and
+  Forgejo/Cairn flows, with explicit file transfer and pinned pass/fail grading;
+  see Waypoint `course-workspace/rehearsal/README.md` and the status evidence.
   Live institutional OIDC/revocation, real DNS/certificates, selected-host capacity,
   the actual backup account and institutional-mode recovery still need acceptance.
 - Cairn's instructor-owned grading manifest and per-step operator ceilings were
   fixed, merged and verified on the pilot host. Aggregate execution/output,
   shared-kernel assessment review, HTTPS and retention remain separate gates.
+  PR #3 also preserves valid student sessions after denied operator requests; it
+  is merged and tested but was not deployed to the production pilot in this pass.
 - Belay PR #12's identity work is unmerged; Portage's existing PR stack still
   needs profile repair. Neither is a prerequisite for the computing pilot.
 - Outfitter remains specification-only; defer brokering until there is a real

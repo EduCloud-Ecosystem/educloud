@@ -21,13 +21,13 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
-| Cairn | ceaee433f3a3 | PRs #1 and #2 merged; deployed on the existing pilot host. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
-| Waypoint | 0e92189689d0 | PRs #1–#5 merged. Private Python/R trial, encrypted self-contained recovery, dedicated-worker configuration, hard XFS home quotas and nginx/Keycloak preparation are implemented. Synthetic independent-runner recovery and quota/HTTPS checks passed. Live institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
+| Cairn | 260984572cd29 | PRs #1–#3 merged. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
+| Waypoint | 8b0de7210494 | PRs #1–#6 merged. Private Python/R trial, encrypted local-trial recovery, dedicated-worker configuration, hard XFS home quotas and nginx/Keycloak preparation are implemented. The complete synthetic identity/course/revocation rehearsal and quota/HTTPS checks passed. Institutional-mode encrypted recovery is the next build; live institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
 | verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
-| educloud | c06ac8ba0c81 | Prior reassessment/deployment/minimal-trial records merged; this follow-up records encrypted recovery and hosted preparation. Original local strategy edits and unpublished commits are preserved. |
+| educloud | 231084c1391f | Prior reassessment, recovery and quota/HTTPS records merged; this follow-up records authenticated course acceptance. Original local strategy edits and unpublished commits are preserved. |
 
 The October 6 baseline matched the September audit default heads. Cairn,
 Waypoint and this umbrella have since advanced through the authorized merges.
@@ -212,9 +212,56 @@ checked before merge: [quota](https://github.com/EduCloud-Ecosystem/waypoint/act
 [policy/proxy](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677747049),
 [recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37677747267).
 
-Next is a complete synthetic identity/course rehearsal, followed by acceptance on
-the selected worker and backup account: real institution login/revocation,
+The synthetic identity/course rehearsal is implemented (evidence below). The
+next local build is encrypted recovery for institutional/OIDC mode, preserving
+the identity configuration and validating restored roster/revocation behavior.
+Hosted acceptance then needs the selected worker and backup account: real institution login/revocation,
 wildcard certificates, reboot/mount behavior, load, recovery objectives and the
 Cairn assignment/submission/grading path. Host disk/log monitoring, paging,
 retention/departure procedures and the institutional recovery path remain work.
 No Outfitter broker is needed to finish this first course.
+
+## Authenticated course rehearsal (October 7)
+
+The disposable harness uses real Keycloak, JupyterHub, Forgejo OAuth/repositories
+and a pinned Cairn build. Cairn's Git-host login and the Hub's Keycloak login stay
+separate. The browser follows Cairn's actual workspace link; notebook saving and
+repository submission remain explicit separate actions.
+
+The Forgejo/Cairn phase passed locally on macOS with a synthetic source-file
+fixture: operator login, roster-only assignment acceptance, private repository
+provisioning, student/operator and own-grade boundaries, and 10/10 versus 0/10
+against the instructor's pinned tests. A learner's forged 999-point rubric had
+no effect. The browser rehearsal exposed and verified the Cairn session fix in
+[PR #3](https://github.com/EduCloud-Ecosystem/cairn/pull/3), merged as
+`260984572cd2946ce8685c4d4b74d117c32fffea`. Its production pilot was not upgraded.
+
+[Waypoint PR #6](https://github.com/EduCloud-Ecosystem/waypoint/pull/6) merged as
+`8b0de72104940b8bdebac10010b00c1d085c4b91`. The final reviewed head
+`91c4804d81bc57046839b4a434b6a0316073c404` passed the
+[full Linux course rehearsal](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37688782788),
+[quota/recovery regression](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37688782945)
+and [policy/HTTPS checks](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37688782865).
+All 31 local unit tests passed. The accepted report records Cairn `260984572cd29`
+and the actual GitHub PR merge checkout `60420007732a0e175589a797ce7a1f6826585573`.
+
+Full acceptance verified Keycloak PKCE authentication, per-user HTTPS, real
+Python/R kernel execution over WSS, explicit saved-file transfer, and correct
+and incorrect pinned grading. Inspected screenshots show the saved `solution.py`
+open in JupyterLab and the learner-visible instructor test with both grading
+attempts. Authenticated peer file access, unrostered login, previous-session
+access and respawn after roster removal were denied; no learner server remained
+active, and the saved file survived revocation.
+The notebook roster guard now returns an explicit 403 with an instructor-contact
+message instead of converting an access denial into a generic server error.
+
+The full harness creates its own disposable XFS image with hard quotas and a
+short-lived fixture CA. Python/WSS clients and the Hub trust that CA explicitly;
+the browser uses a fixture certificate exception. No certificate or hosts entry
+is installed on the user's computer. The workflow publishes only bounded
+synthetic evidence and screenshots after success, not fixture keys/databases.
+
+This is not acceptance of an institutional realm, funded host, public DNS/TLS,
+real backup account or class-size capacity. It requests grading explicitly;
+automatic Forgejo push-webhook delivery, institutional recovery, roster
+synchronization and automatic notebook submission remain separate work.
