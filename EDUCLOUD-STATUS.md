@@ -1,6 +1,7 @@
 # EduCloud status and computing-continuity priority
 
-Reassessed October 6, 2026 against current GitHub default heads, open PR metadata,
+Reassessed October 6, with implementation/deployment status updated October 7,
+2026 against current GitHub default heads, open PR metadata,
 local working trees, and primary-source GitHub Education guidance. The original
 July snapshot is preserved in `docs/research/2026-07-21-platform-status.md`.
 
@@ -20,17 +21,17 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
-| Cairn | 641ea4318b70 | Most complete classroom product; existing host adapters, student views and operations paths. [Draft PR #1](https://github.com/EduCloud-Ecosystem/cairn/pull/1) adds per-class workspace navigation. Grading-manifest authority and resource-ceiling audit findings remain release gates for authoritative grades. |
-| Waypoint | e5baceb4ebe6 | Existing local hosting/identity proof; [draft PR #1](https://github.com/EduCloud-Ecosystem/waypoint/pull/1) adds JupyterHub Python/R workspace deployment and offline recovery. This is the supporting compute path, not a completed institutional hosting service. |
+| Cairn | ceaee433f3a3 | PRs #1 and #2 merged; deployed on the existing pilot host. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
+| Waypoint | dd968f4392b5 | PRs #1 and #2 merged. Python/R computing and recovery passed on local arm64 and fresh Linux amd64 CI, including a Linux archive-permissions fix. A separate notebook worker is not yet provisioned/deployed. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
 | verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
-| educloud | c1b1e9cea7f7 | Public status was stale; this reassessment and decision refresh it. Original local strategy edits and unpublished commits are preserved. |
+| educloud | db5593a11324 | Initial reassessment merged; this follow-up records actual deployment and outstanding compute infrastructure. Original local strategy edits and unpublished commits are preserved. |
 
-The six core module default heads have not changed since the September audit.
-This does not mean no work occurred: Belay has an additional open identity PR,
-and its UI PR was updated. Open proposals are not shipped behavior.
+The October 6 baseline matched the September audit default heads. Cairn,
+Waypoint and this umbrella have since advanced through the authorized merges.
+Belay/Portage proposals remain separate from this release.
 
 ## GitHub Education: what changed and what remains
 
@@ -71,7 +72,10 @@ The staff clarification is the May 28 comment in the linked discussion.
    destination. Enforce filesystem quotas, institutional roster/revocation and
    wildcard HTTPS before a real learner pilot. Separate this worker host from
    identity databases and other sensitive services.
-4. Close Cairn's assessment-integrity findings before relying on its grades.
+4. Adopt Cairn's pinned instructor policy for each course, review its test harness
+   and enforce aggregate execution, disk/output and isolation controls before
+   relying on assessment results. The specific learner-manifest and per-step
+   resource-ceiling findings are addressed by Cairn PR #2.
 5. Run one real class and record availability, support effort, recovery time,
    concurrency and actual operating cost. Add Outfitter placement only when
    multiple provisioned backends create a demonstrated need.
@@ -80,14 +84,48 @@ The deployment and recovery implementation is in Waypoint `course-workspace/`;
 Cairn's integration contract is `docs/course-workspaces.md`. Detailed rationale:
 `docs/decisions/2026-10-06-computing-continuity.md`.
 
-## Implementation and validation from this reassessment
+## Merged implementation and observed deployment
 
-Both implementation PRs are drafts; nothing is merged or publicly deployed.
-Cairn's full Go race suite passed, followed by the API race suite with added
-removed-roster coverage. Waypoint's five policy tests and complete synthetic
-continuity verifier passed: Python/R kernel execution, learner separation,
-runtime/network checks, workspace recreation, live-backup refusal, new-namespace
-restore and overwrite refusal. Playwright confirmed the browser launcher and
-retained files. This was linux/arm64 on local Docker Desktop, with two synthetic
-learners. It is not second-physical-host recovery, class-scale acceptance, or
-live institutional authentication. See the Waypoint PR's VALIDATION.md.
+- [Cairn #1](https://github.com/EduCloud-Ecosystem/cairn/pull/1): workspace navigation.
+- [Cairn #2](https://github.com/EduCloud-Ecosystem/cairn/pull/2): instructor grading authority and ceilings.
+- [Waypoint #1](https://github.com/EduCloud-Ecosystem/waypoint/pull/1): notebook runtime/recovery.
+- [Waypoint #2](https://github.com/EduCloud-Ecosystem/waypoint/pull/2): Linux archive permissions.
+- [EduCloud #1](https://github.com/EduCloud-Ecosystem/educloud/pull/1): priority/reassessment.
+
+Cairn release `ceaee433f3a3ad12487824b132059fca10b7bc32` was built and
+activated on the existing pilot host. The image's revision label and the running
+container matched. HTTP health returned 200; anonymous classroom and grading-policy
+requests returned 401. The served dashboard contains the new grading controls.
+Application/database configuration was preserved, with a rollback image and
+restricted on-host database/configuration snapshots retained before activation.
+These snapshots are rollback preparation, not an off-host continuity solution.
+
+The Go race suite, dashboard checks and real local browser policy-selection test
+passed. The forged-score/read-only-policy Docker regression also passed **inside
+the deployed Cairn container on the target Linux host**, using synthetic in-memory
+records, without adding classroom data. Target data counts were unchanged.
+
+Waypoint's [fresh linux/amd64 build/recovery run](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/37586482789)
+passed at PR #2's exact head. It executed both kernels, learner/network isolation,
+workspace recreation, private offline archives, restore into fresh volumes and
+overwrite refusal. The earlier run exposed Linux's chmod-after-chown restriction;
+the fix sets archive permissions before transferring ownership without adding
+capabilities. This complements the local arm64 rehearsal; it is not a cross-host
+archive transfer or a live institution-authenticated notebook deployment.
+
+## Deployment facts still requiring completion
+
+The existing Cairn machine has 4 GB RAM and also hosts its database. It is not the
+separate notebook worker. No notebook host/account/budget is recorded; that
+connection/selection is pending from the operator. No cloud purchase was made.
+
+Cairn doctor reports no failures, with outstanding warnings for plain-HTTP
+webhook configuration and unset grade retention. Existing operator authentication
+remains enabled. The service still uses shared-kernel grading containers. Do not
+read health/CI success as approval for real learner data without HTTPS, retention,
+institutional policy and the relevant isolation/assessment review.
+
+The notebook deployment still needs its dedicated worker, live Keycloak roster
+and revocation tests, wildcard HTTPS, per-home quotas, capacity testing, encrypted
+off-host backups and recovery on another host. Existing Belay/Portage findings
+remain outside this release.
