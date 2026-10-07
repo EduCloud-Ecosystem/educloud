@@ -1,6 +1,12 @@
 # Line E roadmap — EduCloud, MVP to full build
 
-*July 2026. Scales the platform from the pre-shutdown MVP to the federated
+> October 6, 2026 priority update: the current sequence is in
+> `EDUCLOUD-STATUS.md` and `docs/decisions/2026-10-06-computing-continuity.md`.
+> The stages below preserve the original plan; elapsed dates are not evidence
+> that their exit criteria were achieved. Python/R computing continuity comes
+> before requiring all five modules in a pilot.
+
+*Original plan: July 2026. Scales the platform from the pre-shutdown MVP to the federated
 full build. Timeline anchors are external and immovable: GitHub Classroom
 retires August 28, 2026, IUSE closes about January 20, 2027, PESOSE Track 1
 closes March 2, 2027, Track 2 and the MESA IDSS positioning sit in 2028.*
@@ -16,9 +22,9 @@ closes March 2, 2027, Track 2 and the MESA IDSS positioning sit in 2028.*
 | Institutional | Coolify multi-tenant | Keycloak | sovereign default, hybrid by instructor policy |
 | Federated | cross-institution | CILogon | per-site provider registries |
 
-The expansion contract holds at every step: each scale is a config diff
-against the previous one. A diff that contains code is a defect and gets fixed
-before the step ships.
+The expansion contract favors portable interfaces and configuration, with explicit
+code changes and data migrations where required. Each transition needs its own
+authentication, isolation, operations and recovery acceptance evidence.
 
 ---
 
