@@ -26,7 +26,9 @@ Outfitter (new).*
 `docs/grading-policy.md` (pinned deterministic grading and automatic pushes),
 `docs/llm-assessment.md` (opt-in source capture, bounded OpenAI/imported feedback
 and proposed scores, durable usage/pause controls, instructor review/publication
-and remaining course-evaluation/retention gates).
+and remaining course-evaluation/retention gates),
+`docs/assessment-evaluation.md` (offline/live synthetic evaluation CLI, frozen
+baseline, report-bound human ratings and resumable offline review packet).
 
 **Belay** (`belay/`): `INSTRUCTOR_MODE.md` (instructor-mode
 design spec, July 2026 — session-ready), `README.md`, `ARCHITECTURE.md`,
@@ -165,8 +167,11 @@ classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
   PR #6 adds a separately enabled OpenAI adapter, durable daily usage reservations,
   a pause control and private pending proposals; four live synthetic calls and
   the instructor-approval/student-feedback browser flow passed. Instructor-scored
-  evaluation, course destination approval, draft/ledger retention, quota-enforced
-  capture workers, production queuing, pagination and an explicit reviewed/test-score
+  evaluation is still pending: PR #7 adds a repeatable synthetic suite and
+  offline human-review packet, with 17/18 valid proposals and two unstable case
+  pairs in its first baseline. Course destination approval, draft/ledger
+  retention, quota-enforced capture workers, production queuing, pagination and
+  an explicit reviewed/test-score
   combination policy remain gates. Existing production pilot stays on PR #2.
 - Belay PR #12's identity work is unmerged; Portage's existing PR stack still
   needs profile repair. Neither is a prerequisite for the computing pilot.
