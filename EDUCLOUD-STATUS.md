@@ -21,13 +21,13 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
-| Cairn | 58b0264ed3bd | PRs #1–#6 merged. Opt-in source capture and instructor-reviewed assessment proposals pass local/browser/SQLite/PostgreSQL checks. The bounded OpenAI adapter passed four synthetic live calls, including browser approval and student feedback; course quality/destination/retention acceptance remains. Automatic push grades now use immutable submission commits, expose revision history, and fail/retry configured webhook setup. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
+| Cairn | 3275ce7d155e | PRs #1–#7 merged. Opt-in source capture and instructor-reviewed assessment proposals pass local/browser/SQLite/PostgreSQL checks. The bounded OpenAI adapter passed four synthetic live calls, including browser approval and student feedback; PR #7 adds repeatable evaluation and offline human review; its larger baseline found one rejected proposal and score/assessability instability. Course quality/destination/retention acceptance remains. Automatic push grades now use immutable submission commits, expose revision history, and fail/retry configured webhook setup. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
 | Waypoint | 2afd881e6c54 | PRs #1–#8 merged. Real Git-push grading and bounded notebook traffic passed, including overflow rejection and freed-slot reuse. Python/R workspaces, encrypted trial and institutional recovery, dedicated-worker configuration, hard XFS quotas and nginx/Keycloak preparation are implemented. Synthetic identity/course/revocation, institutional restoration, independent-worker trial recovery and quota/HTTPS checks passed. Real institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
 | verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
-| educloud | f4001cea6091 | Prior computing, recovery and assessment review records merged; this follow-up records the bounded OpenAI adapter and synthetic acceptance. Original local strategy edits and unpublished commits are preserved. |
+| educloud | 75a0bfc72304 | Prior computing, recovery and assessment review records merged; this follow-up records the repeatable assessment evaluation and its measured gaps. Original local strategy edits and unpublished commits are preserved. |
 
 The October 6 baseline matched the September audit default heads. Cairn,
 Waypoint and this umbrella have since advanced through the authorized merges.
@@ -464,3 +464,50 @@ format diversity, prompt injection, score agreement, evidence accuracy and usefu
 feedback. Retention, course destination approval, billing-aware controls and
 production capture/queue capacity remain course-readiness gates. The existing
 production pilot remains on Cairn PR #2 (`ceaee433f3a3`).
+
+
+## Repeatable assessment evaluation (October 7)
+
+[Cairn PR #7](https://github.com/EduCloud-Ecosystem/cairn/pull/7), merged as
+`3275ce7d155eb36f2438438b169e5e7c45fa38f5`, adds `assessment-eval run`,
+`packet` and `review`. [CI](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/37713835038)
+passed on head `d78dab3e9bd8c7b94a536b55df512fce188cc442`. The bundled 12-case corpus covers
+correct/incorrect/partial/terse text, Python, R, notebook source versus output,
+prompt injection, missing files, unsupported formats and malformed notebooks.
+References are agent-authored and provisional, not instructor-scored labels.
+Offline extraction is the default; an explicit live run is limited to 9 or 18
+sequential provider attempts in a dedicated private SQLite store. Every trial
+saves a report; failed writes stop further calls. No grades are created.
+
+The offline HTML packet lets an instructor read evidence before revealing model
+feedback, enter independent scores and evidence/feedback/uncertainty ratings,
+and export/import a partial worksheet. Review validation binds the worksheet to
+the exact report, rejects stale/duplicate/out-of-range judgments and keeps blank
+ratings incomplete. Reviewer identity is locally asserted, not authenticated.
+Completion does not enable a course or publish grades.
+
+The baseline made 18 live synthetic calls across two trials per case: **17 valid
+pending proposals**, one rejected `invalid_proposal` on Python source, and six
+expected extraction blocks. Accepted proposals matched **31/34 provisional
+criterion references**. Numeric mean absolute error was 0.067 points across 30
+numeric pairs; two additional criteria disagreed on zero versus unassessable.
+Only **6/8 completed case pairs** had stable scores/assessability. Reported usage
+was 8,224 input and 5,575 output tokens, including the rejected attempt. Database
+inspection confirmed 18 reservations and zero grades. The live command exited
+nonzero for the recorded failure; it was not retried or hidden.
+
+One mixed-injection trial withheld credit for a correctly stated mean because it
+wanted work the rubric did not require. Injection-only content alternated between
+zero and null, exposing both model variability and a missing-evidence policy
+ambiguity that needs instructor resolution. Some uncertainty wording was poorly
+calibrated. Valid citation locations are structural checks, not proof of semantic
+support. No actual human ratings have been supplied: the review packet has 34
+pending judgments. Browser QA ratings were explicitly synthetic and excluded.
+
+Go race/vet/build and CLI/packet tests passed; Playwright verified export/import,
+preservation of a negative quality rating, partial-review status and rendering.
+Cairn `docs/assessment-evaluation.md` and its frozen baseline JSON contain the
+reproduction procedure, digests, counters and limits. Next: instructor review of
+missing-evidence/partial-credit policy, then a held-out permissioned benchmark
+with agreed quality thresholds. Do not tune to this smoke corpus and claim
+independent validation. Production remains unchanged on Cairn PR #2.
