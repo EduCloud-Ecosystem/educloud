@@ -21,13 +21,13 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
-| Cairn | 3275ce7d155e | PRs #1–#7 merged. Opt-in source capture and instructor-reviewed assessment proposals pass local/browser/SQLite/PostgreSQL checks. The bounded OpenAI adapter passed four synthetic live calls, including browser approval and student feedback; PR #7 adds repeatable evaluation and offline human review; its larger baseline found one rejected proposal and score/assessability instability. Course quality/destination/retention acceptance remains. Automatic push grades now use immutable submission commits, expose revision history, and fail/retry configured webhook setup. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
+| Cairn | fddf61f60cc3 | PRs #1–#8 merged. Opt-in source capture and instructor-reviewed assessment proposals pass local/browser/SQLite/PostgreSQL checks. The bounded OpenAI adapter passed four synthetic live calls, including browser approval and student feedback; PR #7 adds repeatable evaluation and offline human review; its larger baseline found one rejected proposal and score/assessability instability. PR #8 adds precise failure categories and stronger calibration records/report integrity. Course quality/destination/retention acceptance remains. Automatic push grades now use immutable submission commits, expose revision history, and fail/retry configured webhook setup. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
 | Waypoint | 2afd881e6c54 | PRs #1–#8 merged. Real Git-push grading and bounded notebook traffic passed, including overflow rejection and freed-slot reuse. Python/R workspaces, encrypted trial and institutional recovery, dedicated-worker configuration, hard XFS quotas and nginx/Keycloak preparation are implemented. Synthetic identity/course/revocation, institutional restoration, independent-worker trial recovery and quota/HTTPS checks passed. Real institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
 | verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
-| educloud | 75a0bfc72304 | Prior computing, recovery and assessment review records merged; this follow-up records the repeatable assessment evaluation and its measured gaps. Original local strategy edits and unpublished commits are preserved. |
+| educloud | 373fadaf879e | Prior computing, recovery and assessment review records merged; this follow-up records the repeatable assessment evaluation and its measured gaps. Original local strategy edits and unpublished commits are preserved. |
 
 The October 6 baseline matched the September audit default heads. Cairn,
 Waypoint and this umbrella have since advanced through the authorized merges.
@@ -511,3 +511,38 @@ reproduction procedure, digests, counters and limits. Next: instructor review of
 missing-evidence/partial-credit policy, then a held-out permissioned benchmark
 with agreed quality thresholds. Do not tune to this smoke corpus and claim
 independent validation. Production remains unchanged on Cairn PR #2.
+
+
+## Calibration controls and failure diagnostics (October 7)
+
+[Cairn PR #8](https://github.com/EduCloud-Ecosystem/cairn/pull/8) merged as
+`fddf61f60cc3801f642f474a143cd7e1e4a96ab8` after
+[CI](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/37717638686) passed
+on head `0b5766246b8bb9542c2dd1461f8832c636b53323`. It records bounded
+validation categories for invalid points, missing/invalid/excessive citations,
+criterion coverage/identity, evidence integrity and feedback limits. Provider
+errors remain free of rejected response bodies, source, filenames and credentials.
+Usage reservations and no-auto-retry behavior are preserved. The existing
+baseline's generic `invalid_proposal` cannot be diagnosed retrospectively.
+
+The offline review packet now displays recorded failure codes and separately
+records a proposed missing-work policy (`zero` or `unassessable`) with reviewer,
+time and rationale. Policy review cannot complete human criterion scoring and
+does not rewrite the provider prompt, frozen baseline, course rubric or grades.
+Legacy worksheets remain readable with policy status pending. A real instructor
+policy decision and all 34 human judgments are still pending; browser QA uses
+explicitly synthetic entries and is excluded from calibration evidence.
+
+Saved reports are checked against re-extracted bundled source, original bytes,
+segments, revision, rubric and input/proposal digests. Substituted evidence,
+contradictory extraction states and missing outcomes in a completed live run are
+rejected. This establishes corpus consistency, not cryptographic attestation of
+provider execution or authenticated reviewer identity.
+
+The full Go race suite, vet/build, diagnostic/no-retry and report-substitution
+regressions passed locally. Browser QA verified policy export/import and showed
+policy completion with zero completed score judgments. The saved baseline was
+re-rendered without new provider requests; no additional API spend, real learner
+content, production deployment or published grades were involved. Next remains
+instructor calibration and deliberate policy implementation before a held-out
+permissioned benchmark and course acceptance.

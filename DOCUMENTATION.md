@@ -28,7 +28,8 @@ Outfitter (new).*
 and proposed scores, durable usage/pause controls, instructor review/publication
 and remaining course-evaluation/retention gates),
 `docs/assessment-evaluation.md` (offline/live synthetic evaluation CLI, frozen
-baseline, report-bound human ratings and resumable offline review packet).
+baseline, corpus-bound evidence validation, separate policy/score review and
+resumable offline review packet).
 
 **Belay** (`belay/`): `INSTRUCTOR_MODE.md` (instructor-mode
 design spec, July 2026 — session-ready), `README.md`, `ARCHITECTURE.md`,
@@ -169,7 +170,10 @@ classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
   the instructor-approval/student-feedback browser flow passed. Instructor-scored
   evaluation is still pending: PR #7 adds a repeatable synthetic suite and
   offline human-review packet, with 17/18 valid proposals and two unstable case
-  pairs in its first baseline. Course destination approval, draft/ledger
+  pairs in its first baseline. PR #8 adds safe validation failure categories,
+  corpus-bound report checks and a separate missing-work policy decision record.
+  Actual policy selection and instructor scores remain pending; no prompt or
+  course rubric is changed by the worksheet. Course destination approval, draft/ledger
   retention, quota-enforced capture workers, production queuing, pagination and
   an explicit reviewed/test-score
   combination policy remain gates. Existing production pilot stays on PR #2.
