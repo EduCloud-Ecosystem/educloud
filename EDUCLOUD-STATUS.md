@@ -21,13 +21,13 @@ backups. A second temporary credit offer is useful overflow, not continuity.
 
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|
-| Cairn | 8c12a681bbfd | PRs #1–#5 merged. Opt-in source capture and instructor-reviewed assessment proposals now pass local/browser/SQLite/PostgreSQL checks; no model provider is connected. Automatic push grades now use immutable submission commits, expose revision history, and fail/retry configured webhook setup. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
+| Cairn | 58b0264ed3bd | PRs #1–#6 merged. Opt-in source capture and instructor-reviewed assessment proposals pass local/browser/SQLite/PostgreSQL checks. The bounded OpenAI adapter passed four synthetic live calls, including browser approval and student feedback; course quality/destination/retention acceptance remains. Automatic push grades now use immutable submission commits, expose revision history, and fail/retry configured webhook setup. PR #3 preserves student login after denied operator requests; verified locally and in CI. The existing pilot still runs PR #2 (`ceaee433f3a3`); no production upgrade was made in this local-first pass. Workspace navigation, pinned instructor grading policy, read-only test files, provenance and operator per-step ceilings are implemented. Live host acceptance passed. HTTPS, retention and broader assessment/operational gates remain. |
 | Waypoint | 2afd881e6c54 | PRs #1–#8 merged. Real Git-push grading and bounded notebook traffic passed, including overflow rejection and freed-slot reuse. Python/R workspaces, encrypted trial and institutional recovery, dedicated-worker configuration, hard XFS quotas and nginx/Keycloak preparation are implemented. Synthetic identity/course/revocation, institutional restoration, independent-worker trial recovery and quota/HTTPS checks passed. Real institutional identity, selected-host capacity and the actual backup account remain acceptance gates. |
 | Outfitter | b2cbdcad5b05 | Specifications only. Defer generalized brokering; later adopt the running workspace lifecycle as the first consumer and add a second host only after recovery is proven. |
 | Belay | 89f25971749f | Working tutoring core. New PR #12 proposes authenticated institution/class isolation; it is unmerged and its current check rollup is empty. PR #11 has changed since September's audit. Neither was accepted by this pass. Not required for the computing MVP. |
 | Portage | 2ec86ad0447d | Working routing components, eight open PRs with unchanged heads. September's staff-profile renderer finding still applies to those exact heads. Not required for Python/R compute. |
 | verifier-contract | 9a0a84f76b08 | Existing contract/conformance foundation. Keep the required consumer-matrix work on the release backlog; not a dependency of notebook availability. |
-| educloud | 1ba814e57b82 | Prior computing and institutional recovery records merged; this follow-up records the local assessment review foundation. Original local strategy edits and unpublished commits are preserved. |
+| educloud | f4001cea6091 | Prior computing, recovery and assessment review records merged; this follow-up records the bounded OpenAI adapter and synthetic acceptance. Original local strategy edits and unpublished commits are preserved. |
 
 The October 6 baseline matched the September audit default heads. Cairn,
 Waypoint and this umbrella have since advanced through the authorized merges.
@@ -403,12 +403,64 @@ unassessable criteria, rollback, concurrent approval, SQLite reopen, roster
 erasure and exported-grade retention. Approved evidence/review records are
 purged with their exported grade; other captures remain until roster erasure.
 
-No model provider is connected, no real student data was sent externally, and
-no production deployment occurred. Production gates include quota-enforced
-capture workers (Git download size is not bounded by extraction limits), durable
-admission, pagination, draft retention, webhook completeness/out-of-order
+PR #5 did not connect a model provider; the following release adds the bounded
+OpenAI adapter. No real student data was sent externally and no production
+deployment occurred. Production gates include quota-enforced capture workers
+(Git download size is not bounded by extraction limits), pagination, draft
+retention, webhook completeness/out-of-order
 acceptance and an explicit policy for combining reviewed/test results.
 
-The next build is a bounded provider adapter and instructor-scored evaluation
-corpus with synthetic/permissioned examples. Destination approval, budgets and
-measured feedback/score quality are prerequisites for real student content.
+The next build after that foundation was the bounded provider adapter below.
+Instructor-scored evaluation, destination approval and measured feedback/score
+quality remain prerequisites for real student content.
+
+
+## Bounded OpenAI assessment pilot (October 7)
+
+[Cairn PR #6](https://github.com/EduCloud-Ecosystem/cairn/pull/6) adds the actual
+provider path, merged as `58b0264ed3bdf0d51a680d4000108fed836a072d` after
+[CI](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/37710801209) passed
+on head `b42ffa08fe4447c0c5737a8c8c8508b8a042dac7`. It is separately opt-in
+behind operator authentication, review mode and an explicit classroom allowlist. The configured private key was read from an
+owner-only file outside Git. No production secrets, deployment or real student
+content were changed or transmitted.
+
+The Responses API adapter uses pinned `gpt-5.4-mini-2026-03-17`, strict structured
+output, a fixed destination, `store:false`, no tools or automatic retry, and
+16,000-byte extracted input / 4,096-token output / 60-second request limits.
+It sends rubric criteria and aliased source segments; roster metadata, filenames,
+repository URLs and notebook outputs are omitted. Identifiers inside source or
+rubric text are **not automatically redacted**, and `store:false` is not a
+zero-provider-retention guarantee. See Cairn's `docs/llm-assessment.md` for the
+verified API contract, exact controls and provider data-policy references.
+
+A transactional ledger reserves usage before transmission: 20 requests per UTC
+day per shared store, 3 per learner enrollment and 200,000 reservation units.
+Units are request bytes plus the output allowance, not exact tokens or a dollar
+cap. Known provider-reported tokens are recorded separately. Failed/uncertain
+requests keep reservations, and deleting evidence cannot refund them. The ledger
+retains minimal pseudonymous attempt/usage metadata without prompts or grades;
+automatic ledger expiry remains unimplemented. One active request is allowed per
+process; the durable pause control stops new requests and survives restart.
+Generation checks freshness before and after the call, saves only a pending
+proposal and cannot publish a grade. Instructor import cannot spoof provider
+attestation.
+
+Local verification passed Go race/vet/build, 25 frontend tests/typecheck/build,
+and PostgreSQL 17 conformance. Tests cover preflight gates, errors, invalid model
+output, no retries, state changes during a call, concurrent admission, restart
+budgets/pause, and erasure without refunds. Four live calls used only hand-authored
+synthetic examples: correct 10/10, incorrect 0/10, injection-only with both
+criteria unassessable, plus browser generation followed by explicit approval and
+student feedback/citation display. The first three remained unpublished proposals.
+Reported input/output tokens were 431/259, 410/346, 414/335 and 380/140. Browser
+pause persisted after refresh. Screenshot inspection confirmed the approved
+student view.
+
+These results establish the connection and workflow, not broad grading quality.
+An incorrect-answer uncertainty statement was poorly calibrated. Next: a
+permissioned instructor-scored benchmark, including partial/ambiguous work,
+format diversity, prompt injection, score agreement, evidence accuracy and useful
+feedback. Retention, course destination approval, billing-aware controls and
+production capture/queue capacity remain course-readiness gates. The existing
+production pilot remains on Cairn PR #2 (`ceaee433f3a3`).
