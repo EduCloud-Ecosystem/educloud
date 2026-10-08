@@ -172,8 +172,11 @@ classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
   offline human-review packet, with 17/18 valid proposals and two unstable case
   pairs in its first baseline. PR #8 adds safe validation failure categories,
   corpus-bound report checks and a separate missing-work policy decision record.
-  Actual policy selection and instructor scores remain pending; no prompt or
-  course rubric is changed by the worksheet. Course destination approval, draft/ledger
+  The user selected unassessable-until-review for readable work with no relevant
+  answer. V2 calibration rubrics implement that choice; the 18-call development
+  recheck yielded 18 valid proposals and 36/36 provisional matches. Instructor
+  ratings and a held-out benchmark remain pending. No stored course rubric is
+  changed by the worksheet. Course destination approval, draft/ledger
   retention, quota-enforced capture workers, production queuing, pagination and
   an explicit reviewed/test-score
   combination policy remain gates. Existing production pilot stays on PR #2.
