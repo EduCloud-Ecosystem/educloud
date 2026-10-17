@@ -103,6 +103,11 @@ layer — Ben Markwart's workstream) · `EduCloud-hosting-reconciliation.md`
 
 ## Cross-module decisions and research (`educloud/docs/`)
 
+The [research workspace pilot](docs/specs/research-workspace-pilot.md) defines
+the October 17 implementation contract for Waypoint project/run/evidence
+workflows and Outfitter's bounded local execution. It preserves separate
+institutional, scientific and cloud-provider acceptance gates.
+
 The umbrella is where a decision spanning more than one module lives, so no
 single module's repo becomes the de-facto owner of a platform-wide rule.
 
