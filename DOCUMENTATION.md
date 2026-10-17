@@ -1,7 +1,8 @@
 # EduCloud — Documentation Index
 
 *Annotated map of the documentation that matters, by purpose. Paths are
-relative to `~/dev/`. Updated 2026-10-07. Names: Cairn (was Quad), Belay (was
+relative to `~/dev/`. Research-pilot entries updated 2026-10-17; other entries
+retain their earlier review dates. Names: Cairn (was Quad), Belay (was
 Sol), Waypoint (was "HOST"/Registry), Portage (was Commons/claude-lanes),
 Outfitter (new).*
 
@@ -11,7 +12,7 @@ Outfitter (new).*
 |---|---|
 | `educloud/SYSTEM.md` | **The canonical internal definition**: names, module boundaries, the platform invariant, shared contracts (including contract 9, bounded AI management), the scale table, and the two-line resource allocation. Where an older document conflicts, SYSTEM.md wins. |
 | `educloud/EduCloud-White-Paper.docx` + `educloud/WHITEPAPER.md` (markdown master, v0.9.3, CC BY 4.0, destined for the EduCloud-Ecosystem org repo, Zenodo DOI at v1.0) | **The platform definition** — vision, five modules under current names, architecture principles, status, governance, funding, roadmap. First on-disk document carrying the full naming scheme. |
-| `educloud/EDUCLOUD-STATUS.md` | Current October 6–7 component assessment, merged releases, synthetic acceptance evidence and remaining production gates. Original July snapshot is retained under `docs/research/`. |
+| `educloud/EDUCLOUD-STATUS.md` | October 17 accepted local research baseline and P1 implementation, followed by preserved October 6–7 classroom/AI assessment and evidence. Unrechecked component status remains historical. |
 | `educloud/LINE-E-ROADMAP.md` | EduCloud execution roadmap E0–E4 (MVP → pilot → institutional → federated), the dependency spine, and the expansion contract. |
 | `educloud/EDUCLOUD-INVENTORY.md` | The July 21 orientation pass: directory map, document inventory, duplicates, staleness flags. |
 | `educloud/START-HERE.md` | June umbrella index + next-step gates. **Stale** (old names, superseded PESOSE date) — retained until SYSTEM.md/name propagation lands. |
@@ -44,6 +45,10 @@ in-tree sources), `PRIVACY.md` (distress safety + grades firewall),
 `CLAUDE_CODE_INSTRUCTIONS.md` (build-session operating instructions),
 `docs/ONBOARDING.md` (tenant contract), `docs/REQUIREMENTS.md`,
 `docs/TENANTS.md`, `docs/STATUS_DECK.html` (visual status).
+The separate research service lives in `research-workspace/`: `CONTRACT.md`,
+`README.md`, `VERIFICATION.md`, immutable image references and selected public
+evidence. Portable environment/replay and coordinated recovery acceptance is
+tracked in the October 17 umbrella record below.
 
 **Portage** (`portage/`): `LINE-P-ROADMAP.md` (personal-stack staging
 S0–S5 — the plan of record), `PLATFORM.md` (capstone architecture),
@@ -68,6 +73,10 @@ integration, MVP scope, and the allocation planner), `specs/08` (isolation
 tiers for untrusted student code — **platform-level, consumed by Cairn and
 Belay**), `docs/prompts/CC-O1`, `KICKOFF-PROMPT.md` + `HANDOFF.md`
 (build-session brief).
+The executable local broker is specified in `specs/09`, the read-only Jetstream2
+preflight/gated API in `specs/10`, and local held recovery/fencing in `specs/11`.
+Operator guides: `docs/LOCAL-RESEARCH-BROKER.md`, `docs/JETSTREAM2-PREFLIGHT.md`,
+`docs/LOCAL-RECOVERY.md` (accepted local P1 release; remote/hosted gates remain).
 
 > `specs/07` is **reserved** for the endpoint manifest (SYSTEM.md contract 9),
 > to be authored when sovereign wiring approaches post-Aug-28. Isolation tiers
@@ -107,6 +116,14 @@ The [research workspace pilot](docs/specs/research-workspace-pilot.md) defines
 the October 17 implementation contract for Waypoint project/run/evidence
 workflows and Outfitter's bounded local execution. It preserves separate
 institutional, scientific and cloud-provider acceptance gates.
+The [October 17 acceptance record](docs/research/2026-10-17-research-pilot-acceptance.md)
+freezes the three merged P0 revisions and two merged P1 revisions, preserving each evidence boundary.
+The [build backlog](docs/strategy/research-pilot-build-backlog.md) sequences
+remaining portability/recovery, optional Kubernetes evaluation, bounded
+Jetstream2, direct Portage qualification and shared pilot controls. The
+[capacity decision record](docs/decisions/2026-10-17-research-pilot-capacity.md)
+requires a concrete reviewed cost packet before any new charge; no new service
+subscription is assumed necessary for the present local phase.
 
 The umbrella is where a decision spanning more than one module lives, so no
 single module's repo becomes the de-facto owner of a platform-wide rule.
@@ -145,9 +162,17 @@ naming) · Belay's full set (`DCO`, `LICENSING.md`, `CODE_OF_CONDUCT.md`,
 
 ## Known gaps (tracked in EDUCLOUD-STATUS.md)
 
-Current assessment: `EDUCLOUD-STATUS.md` (updated October 7, 2026). The computing priority
-is browser Python/R coursework with durable files and tested recovery. The
-classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
+Current research assessment: `EDUCLOUD-STATUS.md` and the October 17 acceptance
+record. The local Waypoint/Outfitter Python/R research baseline is merged; P1
+portability and coordinated recovery are merged with pinned local evidence and
+passing CI. Clean builds from source, independent second-machine/operator
+reproduction, hosted identity, retention/deletion and store-wide limits remain
+open in Waypoint issues #27–#29. Kubernetes is an optional post-P1 evaluation;
+Docker remains the default. No live cloud/provider acceptance is claimed.
+
+The following classroom/AI assessment retains its October 7 review boundary
+except for the explicit Outfitter update below. Cairn and the JupyterHub-based
+course workspace remain a separate path from the new research service.
 
 - Waypoint now includes encrypted preserved-image recovery, separate-runner
   restoration, hard XFS byte/inode quotas, health timers and nginx/Keycloak
@@ -187,8 +212,10 @@ classroom foundation is Cairn; Waypoint adopts JupyterHub for the workspace.
   combination policy remain gates. Existing production pilot stays on PR #2.
 - Belay PR #12's identity work is unmerged; Portage's existing PR stack still
   needs profile repair. Neither is a prerequisite for the computing pilot.
-- Outfitter remains specification-only; defer brokering until there is a real
-  second provider and a first consumer to validate its lifecycle against.
+- Outfitter now has the merged bounded Docker broker consumed by the research
+  workspace. Native-SU Jetstream2 accounting and independent cloud cleanup remain
+  open in Ben's unchanged issues #1–#5. Local recovery/fencing P1 is merged;
+  it does not establish remote source-loss recovery or provider settlement.
 - Preserve existing local strategy changes and unpublished module commits when
   reconciling branches. Public documentation is not the whole local state.
 
