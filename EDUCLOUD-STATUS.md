@@ -1,11 +1,60 @@
 # EduCloud status and computing-continuity priority
 
-Reassessed October 6, with implementation/deployment status updated October 7,
-2026 against current GitHub default heads, open PR metadata,
-local working trees, and primary-source GitHub Education guidance. The original
-July snapshot is preserved in `docs/research/2026-07-21-platform-status.md`.
+Research-pilot update: October 17, 2026. The classroom/AI assessment below retains
+its October 6–7 review boundary unless explicitly updated. Its historical vendor
+prices and component heads are not current quotes or new deployment decisions.
+The original July snapshot is preserved in `docs/research/2026-07-21-platform-status.md`.
 
-## Decision
+## October 17 research pilot
+
+The local public/synthetic Python/R workflow is accepted and merged: Waypoint
+[#26](https://github.com/EduCloud-Ecosystem/waypoint/pull/26), merge `8506baef`;
+Outfitter [#6](https://github.com/EduCloud-Ecosystem/outfitter/pull/6), merge
+`4275d1a`; and EduCloud [#13](https://github.com/EduCloud-Ecosystem/educloud/pull/13),
+merge `cd6d80c`. The [baseline acceptance record](docs/research/2026-10-17-research-pilot-acceptance.md)
+pins complete tested heads, images and evidence. Waypoint's final CI at `da4c655`
+passed; local evidence includes 57 unit controls, 41 HTTP/Docker checks and an
+earlier 23-check browser exercise. Outfitter records 27 real Docker checks.
+
+P1 environment/replay and coordinated recovery are also merged: Outfitter
+[#7](https://github.com/EduCloud-Ecosystem/outfitter/pull/7), merge `abfcfa28`,
+and Waypoint [#30](https://github.com/EduCloud-Ecosystem/waypoint/pull/30), merge
+`8a3e87c3`. Final tested heads are Outfitter `5827c84` and Waypoint `d09cb2f`
+(implementation `bf275dd`); both CI runs and scoped independent reviews passed.
+The acceptance packet records 119 unit controls, 41 final HTTP/Docker checks
+(all recorded runs cleaned up), 25 workspace recovery checks and 17 catalog
+browser checks (two simulated, no compute dispatched). Two automated historical
+Python/R reproductions passed while the original failed R attempt remained
+NOT RUN for replay. The broker's separate local recovery exercise passed 38 checks.
+
+The final workspace restore step took 0.773 seconds in a 14.193-second exercise,
+with no completed records or immutable artifacts lost at the frozen point;
+pending work was cancelled without replay. These measurements are not hosted
+recovery objectives or independent human reproduction. The special-file blocking
+finding in broker recovery was fixed at `5827c84` and independently verified as
+refused. Clean image builds, a second human/machine and hosted/source-loss
+recovery acceptance remain NOT RUN.
+
+Remaining work is sequenced in the [research build backlog](docs/strategy/research-pilot-build-backlog.md).
+Waypoint [#27](https://github.com/EduCloud-Ecosystem/waypoint/issues/27) covers clean
+source-image builds, [#28](https://github.com/EduCloud-Ecosystem/waypoint/issues/28)
+independent second-operator/machine acceptance, and
+[#29](https://github.com/EduCloud-Ecosystem/waypoint/issues/29) shared identity,
+retention/storage, capacity and accessible operations. The GitHub issues remain unassigned; a separate bounded source-build chat is now
+working on #27. Ben's existing Outfitter issues #1–#5 remain assigned and unchanged.
+Separate Jetstream2 implementation and direct local inference qualification chats
+have started; no live execution, capacity or qualification result is inferred.
+
+Docker stays the baseline. Optional Kubernetes evaluation follows P1 before
+custom multi-host expansion; existing institutional-capacity discovery may begin
+independently. Native-SU Jetstream2 accounting/cleanup and optional direct Portage
+qualification retain their own gates. No new subscription is assumed necessary
+locally; the [capacity decision](docs/decisions/2026-10-17-research-pilot-capacity.md)
+requires the exact dependency and finite exposure prepared before any cost.
+No cloud purchase, live allocation test, production deployment or private-data
+admission occurred in this update. Belay and `portage-local` remain unchanged.
+
+## October 6–7 classroom decision (preserved)
 
 The first user-facing computing replacement is **browser Python/R coursework
 with saved files and recoverability across hosts**. Finish the usable classroom
@@ -17,7 +66,7 @@ Reliability means an accountable operator, funded baseline capacity, a portable
 course image, durable homes, bounded resource use, and independently recoverable
 backups. A second temporary credit offer is useful overflow, not continuity.
 
-## Current component assessment
+## October 6–7 component assessment (historical)
 
 | Component | Verified main | Assessment and next completion gate |
 |---|---|---|

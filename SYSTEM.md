@@ -137,6 +137,13 @@ for an outcome is out of contract.
    `docs/policy/check_destinations.py` against that document's own register.
    Module pointers: `cairn/PRIVACY.md`, `belay/PRIVACY.md`.
 
+The [research workspace contract](docs/specs/research-workspace-pilot.md) applies
+these boundaries to reviewed Python/R evidence and coordinated local recovery:
+Waypoint owns access/artifacts, Outfitter owns finite admission and one-way
+authority cutover, and Portage retains inference policy. Its
+[acceptance record](docs/research/2026-10-17-research-pilot-acceptance.md) separates
+the merged local baseline and P1 from untested hosted/provider gates.
+
 ## 5. Dates that govern planning
 
 - **August 28, 2026** — GitHub Classroom shutdown (final data deletion

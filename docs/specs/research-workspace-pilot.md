@@ -6,6 +6,11 @@ conditions against public or synthetic data, compare descriptive results, and
 export an inspectable evidence package. It does not admit private participant
 records, promise scientific validity, or provision cloud resources.
 
+The [acceptance record](../research/2026-10-17-research-pilot-acceptance.md)
+pins the merged P0 baseline and P1 portability/recovery implementation.
+The following P1 interface requirements are design constraints, not a claim that
+every remaining acceptance gate has passed.
+
 ## Module responsibilities
 
 - Waypoint owns project membership, run requests, immutable input/recipe
@@ -75,6 +80,53 @@ whole-service destination/retention/approval contract. Exports exclude keys,
 sessions, membership lists, raw logs and absolute host paths; restricted source
 bytes must never be made public merely because a bundle can be generated.
 
+## Portable environment and replay boundary
+
+Waypoint owns a versioned reviewed-environment catalog: recipe identity/hash,
+runtime/dependencies (including an explicit no-extra-packages statement), platform,
+immutable image, resource limits, method/condition and declared result tolerances.
+Missing source/build provenance and untested clean builds stay explicit. Existing
+image execution does not prove image reconstruction.
+
+Study bundles retain input, recipe, parameter and environment lineage, result
+hashes, methods, status and missing/failed evidence. Inspection verifies bounded
+archive structure and payloads without executing bundled code. Execution is a
+separate explicit operation limited to trusted reviewed recipes and immutable
+images, with a fresh finite Outfitter project/reservation. A separately retained
+trusted digest detects whole-bundle replacement; embedded checksums alone do not
+establish authenticity. Historical failure and unselected runs remain visible,
+and historical recipe bytes are not silently replaced by a corrected version.
+
+## Coordinated local recovery boundary
+
+Waypoint takes its offline service locks and a consistent SQLite/artifact/config
+point. Outfitter takes a validated ledger/output checkpoint under its transaction
+lock and returns its checkpoint identity and exact authority fingerprint.
+The caller retains that digest in a private trusted recovery manifest. Existing
+destinations and partial checkpoints are not silently overwritten.
+
+Restore creates a held replacement. Broker allowances, settled charges and unknown
+reservations retain their identities and values; no replay, refund or new
+admission occurs. Waypoint invalidates restored sessions/credentials, retains
+membership/revocation state, and requires current source database, artifact and
+configuration agreement before reopening access. Unsupported deletion/retention
+controls remain gates rather than being inferred from project closure.
+
+Activation requires both current source authorities and matching recovery points.
+Outfitter refuses in-flight or unresolved provider work; reconcile the source and
+take a fresh checkpoint first. It durably fences source admission to the exact
+destination before activating that destination. Waypoint retires source service
+admission before enabling its replacement. A crash may leave both held/stopped,
+and the exact same-pair retry is permitted; it must never create two admitting
+authorities. Missing source or stale state remains held.
+
+This is same-host local cutover, not remote disaster recovery. Canonical-path
+binding cannot protect against privileged original-path rollback or a cloned
+machine. Status and owned cleanup remain available on a fenced broker. Provider
+settlement, stronger expiry and hosted recovery objectives require separate
+acceptance. The executable broker interface is maintained in Outfitter
+`specs/11-local-recovery.md`; Waypoint owns its service/artifact recovery interface.
+
 ## Acceptance and next expansion
 
 Release evidence must distinguish unit/adversarial tests, actual local Docker
@@ -83,9 +135,12 @@ Run two differently configured projects without core code changes, independently
 check expected results, verify cancellation/budget/authorization failures, and
 verify that exported bundles detect tampering and retain failed controls.
 
-After this local path is accepted: production identity and project membership;
-full metadata/ledger/data recovery; institution-approved storage/retention;
-arbitrary reviewed project packages behind a stronger execution contract;
-supported asynchronous hosting; and a second researcher completing the runbook.
-AI experiments and domain applications integrate through explicit adapters.
-Participant feedback/consent and scientific evaluation remain study-owned.
+Next: finish the remaining clean environment builds and independent reproduction gates;
+then evaluate the required P2 packages in the [sequenced backlog](../strategy/research-pilot-build-backlog.md).
+Docker remains the baseline. An optional disabled Kubernetes evaluation may follow
+P1 before custom multi-host orchestration; institutional capacity discovery can
+begin earlier without authorizing access or provisioning. New paid dependencies
+require a [prepared cost decision](../decisions/2026-10-17-research-pilot-capacity.md)
+before incurring cost. Shared identity, storage/retention, stronger execution and
+scientific/participant approvals remain separate gates. AI experiments and domain
+applications integrate through explicit adapters.
