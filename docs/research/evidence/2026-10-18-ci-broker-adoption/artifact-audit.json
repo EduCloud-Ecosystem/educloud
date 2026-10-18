@@ -1,0 +1,48 @@
+{
+  "accepted_base": "2317eac63a0bad0d691457b0cde2de14bf6bcc7f",
+  "artifact_files": 9,
+  "artifact_sha256": {
+    "operation-guard-acceptance/verification.json": "97f05543482e2a9f38d30abdd2655b89aee7b089eb69a1bd7f2be96b04dda089",
+    "recovery-acceptance/after.zip": "68ebfa1f6a9ab3d74487214739002fc1908e05cc8ef09d94f956c62f4975d95d",
+    "recovery-acceptance/before.zip": "3b2a6e7323490a44439477e5ff9242736a80c8837053a52a2b8ddd8ad9122f30",
+    "recovery-acceptance/verification.json": "0888f18652229612a13334ef28ec3a68563f502b7a245a976b375815985c12d8",
+    "reproduction-acceptance/evidence.zip": "65f161d360f0a06b733dd8608e3d43527885105190de79199f7b052504dc94c9",
+    "reproduction-acceptance/report.json": "29f59d430db7d435b02706e71ea133fcd37a7ab7c6ad32ac0a7b6737d7c17cfb",
+    "research-acceptance/first-project.zip": "676e1bb93445f02f125751f9d397ebf9967a6de544b87d6a2c61a5ba3956cc67",
+    "research-acceptance/second-project.zip": "6560435cbcb63d7b3303ef282db2ead35cd582659d2aae772c7de62eeaaffbca",
+    "research-acceptance/verification.json": "5a044d66cb204ca5343e0646e0c1a178bdd4673bb7714cabca454e55aea7b2ae"
+  },
+  "audit_source_sha256": "90edf5d8eee75d407c5bc9939a90c2228422de377bd94178198650edf5995634",
+  "broker_binary_sha256": "bf192806374b348673ef0de171f0866d8c6559c06e12a01d09d7bfa19843bc8f",
+  "broker_commit": "5446438985e31cb739f2048a2aa2176918831a7e",
+  "bundles_verified": 5,
+  "ci_log_sha256": "f5e275a6179e6832917bb20082d60bf938ae71c7e4013187ea97b1578f3aa908",
+  "ci_run": 39114639604,
+  "format": "waypoint-ci-broker-adoption-artifact-audit-v1",
+  "full_controls": 384,
+  "guard_checks": 12,
+  "head": "e16bcd3ad7d28cf6a56845621e65ca38ac526923",
+  "historical_failed_run": "NOT RUN",
+  "http_checks": 41,
+  "jobs": {
+    "actual-docker": "success",
+    "clean-source-builds": "skipped",
+    "controls": "success"
+  },
+  "limitations": [
+    "Only standard CI adoption; no accepted-state or production deployment change.",
+    "The optional frozen source-build qualification was skipped, not newly accepted.",
+    "CI checks overlap; no new browser or independent-human acceptance.",
+    "No physical storage/all-writer/native/cloud acceptance."
+  ],
+  "local_workload_runs": 0,
+  "recovery_checks": 25,
+  "replay_charged_cpu_seconds": 60,
+  "replay_passes": 2,
+  "source_hash_counts": {
+    "http": 48,
+    "recovery": 18
+  },
+  "source_hash_counts_overlap": true,
+  "status": "PASS"
+}
