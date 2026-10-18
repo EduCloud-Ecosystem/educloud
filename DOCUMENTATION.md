@@ -230,8 +230,9 @@ controls and exact-head CI passed. Retrospective receipt validation is separate
 from the original workload. Waypoint #45 adopts that broker in standard Docker
 CI after 41 HTTP, 25 recovery, 12 guard checks, two successful replays and five
 verified bundles; optional source-build qualification keeps its original broker.
-A fresh-profile SQLite reader-ownership design is next, without checkpoint,
-journal, quota or migration changes.
+A fresh-profile SQLite reader-ownership design has narrow implementation GO
+after independent review, with explicit shared process holds after uncertain
+cleanup. Runtime acceptance is pending; no checkpoint, journal, quota or migration changes.
 All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;

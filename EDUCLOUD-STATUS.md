@@ -234,8 +234,11 @@ remain. Standard Docker CI adoption merged separately in Waypoint
 reviewed head `e16bcd3a`. Its 384 controls and Docker CI passed; artifact review
 verified 41 HTTP, 25 recovery and 12 guard checks, two successful replays and five
 bundles. This changes only the CI checkout, not an operator's broker or state.
-Optional source builds and historical pins stay frozen. A fresh-profile SQLite reader-ownership
-design is also assigned, without checkpoint, journal or quota changes.
+Optional source builds and historical pins stay frozen. The fresh-profile SQLite
+reader-ownership design has narrow implementation GO after independent review.
+Uncertain ownership can hold all readers/writers, including safety operations,
+in that process; clean full-cap safety controls must remain available. Runtime
+acceptance is pending, without checkpoint, journal or quota changes.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`

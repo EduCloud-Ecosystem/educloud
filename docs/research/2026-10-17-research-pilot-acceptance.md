@@ -1375,6 +1375,23 @@ design review precedes implementation and checkpoint policy remains outside it.
 
 ## Remaining decisions
 
+The next SQLite ownership proposal received **narrow implementation GO**, not
+runtime acceptance, after root and independent review of design-only commit
+`8ed88799deba887f11c190381f3101bb8acb3e00`. Proposal SHA-256:
+`21f68b9c546136d0ccf2df96d6f69d84909dd2ebdacb32e5d9beba5e562c1012`;
+canonical fresh-v4 policy SHA-256:
+`ed235fd6d6bb3c10632c0c5dc2bb20c8d3cb9076ebb157c71c1cc9c8072a656e`.
+Independent review verified 42 connection/factory sites, two backup sites and
+all 402 preserved base files, including 343 evidence files. No runtime/provider
+tests ran in this design review. The original remains preserved. Pre-code commit
+`4606cc6076999c6bae507bdb6beab4bbd0b0819a` records the required resolved-root hold,
+one-note-per-token and keyed-uniqueness clarifications and accepted #45 base
+integration; its proposal SHA-256 is
+`5b03af41faa8b22830e9af792f185b0716867fd4918075389c2732dc1264ebb2`.
+The canonical policy hash is unchanged. The capacity decision records the explicit
+ownership-failure safety-denial tradeoff; it grants no checkpoint/drain gate,
+whole-store capacity, automatic restart or accepted-state migration.
+
 Follow the [sequenced build backlog](../strategy/research-pilot-build-backlog.md)
 and [capacity/spending decision record](../decisions/2026-10-17-research-pilot-capacity.md).
 No new service subscription is assumed necessary for the current local phase.
