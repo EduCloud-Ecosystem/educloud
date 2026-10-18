@@ -63,9 +63,17 @@ provider-logout checks. Final ordinary CI passed; source builds were skipped.
 Failed attempts remain retained. All four owned stacks were removed; conservative
 charges remain 210 CPU-seconds for the final pilot and 120 for earlier attempts.
 Hosted identity, manual accessibility and independent human acceptance remain
-open. Waypoint is building a read-only storage inventory/retention report before
-whole-store admission limits; the report alone will not enforce quotas or delete
-anything. Ben's existing Outfitter issues
+open. Waypoint's read-only storage inventory/retention report merged in
+[#34](https://github.com/EduCloud-Ecosystem/waypoint/pull/34), merge `a769dd86`,
+with 176 total workspace tests and final ordinary CI passing. A stopped synthetic
+store observation counted 163,779 logical bytes and 82 entries, all protected;
+captured content/identity metadata matched before and after reading.
+[#35](https://github.com/EduCloud-Ecosystem/waypoint/pull/35), merge `2a7d6cd0`,
+bounds broker stdout/stderr incrementally while retaining identity/cancellation
+checks and unknown liabilities. Its 184 total workspace tests and final ordinary CI
+passed. Both source-build jobs were skipped. Whole-store reservations/admission
+and recovery capacity remain in progress: neither PR enforces store-wide quotas
+or authorizes deletion. Ben's existing Outfitter issues
 #1–#5 remain assigned and unchanged.
 Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge
 `534dcf18`, adds durable native-SU accounting and independent cleanup. Two
@@ -80,8 +88,14 @@ fixtures and does not publish grades. Cairn's opt-in disposable adapter is now
 merged in [#32](https://github.com/EduCloud-Ecosystem/cairn/pull/32), merge
 `bb41bdaf`: independent review fixes, 19/19 local Docker controls and all eight
 final CI checks passed. Its separate command proposes results without storing
-grades; production configuration remains unchanged. A concrete bounded
-Jetstream2 operator/cleanup decision packet is now being prepared.
+grades; production configuration remains unchanged. The Jetstream2
+operator/cleanup decision packet merged in
+[#10](https://github.com/EduCloud-Ecosystem/outfitter/pull/10), merge `afc4fe82`,
+after independent design review and final CI. It remains explicitly blocked:
+its proposed 1 SU allowance is not a provider-enforced charge cap, operational
+fields are unselected and independent-host cleanup is unqualified. A separate
+offline rescue prototype is under review; simulated results cannot close the
+live gate.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`
@@ -103,8 +117,10 @@ the full suite passed 303 tests with six existing skips, and final CI passed
 (paid review skipped). Expiry after admission retains uncertain reservations.
 The original 95-control record and all 12 NOT RUN runtime gates are unchanged.
 No engine was started, model acquired or default route changed. Jetstream2 hosted
-inference is a recommendation being prepared as a separate optional design;
-Greg has not selected or authorized live use through that recommendation.
+inference remains an unselected recommendation. The separate offline contract
+has passed scoped design review and a fixture-only request/response adapter is
+being built; no network transport, credential lookup or live eligibility is
+included. Greg has not authorized live use through that recommendation.
 
 Docker stays the baseline. Optional Kubernetes evaluation follows P1 before
 custom multi-host expansion; existing institutional-capacity discovery may begin
