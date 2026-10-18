@@ -1,0 +1,108 @@
+{
+  "files": {
+    "admission-controls.json": {
+      "bytes": 4216,
+      "sha256": "84a8c41d38c61b441d6fb991b0db5c7ff27f1e1dd4e345683068782acb662f9d"
+    },
+    "command-0.json": {
+      "bytes": 1256,
+      "sha256": "3ed094a584f594882b9e628a4652386060f798b1cbd9431dd9c5005ae5c9f7e5"
+    },
+    "command-1.json": {
+      "bytes": 1324,
+      "sha256": "1981096040d3d1a762a9d03a500484ba77bf19821b981793095a162cfa368218"
+    },
+    "command-10-30s.json": {
+      "bytes": 4912,
+      "sha256": "67d2a5c642589d9606ae7a59464721b7c5719c69faef54403efd3c874a2ebfd7"
+    },
+    "command-11-30s.json": {
+      "bytes": 9124,
+      "sha256": "a26840d05f1ac4263072f0d1e5a3504ad31648c75a6f73308537f270a06e97db"
+    },
+    "command-12-30s.json": {
+      "bytes": 1588,
+      "sha256": "d5d8999f31138f2b253f341201735bbd18532da996ff605b8bdaab0f3aa5bcf1"
+    },
+    "command-13-30s.json": {
+      "bytes": 3333,
+      "sha256": "582e7320402a0ade029ce1d8ce827ee9cfe665c7b27026bea4688666bb4bb403"
+    },
+    "command-2-30s.json": {
+      "bytes": 4745,
+      "sha256": "3ed10a70b34b124650637edf740c95dbcaf74553b6f8aa82ca1682a4e25262c6"
+    },
+    "command-2-retry.json": {
+      "bytes": 361,
+      "sha256": "768ade40cacd7ff99c85358b06aaa32d87789943433291381f0bbc3c70d6c3d6"
+    },
+    "command-2.json": {
+      "bytes": 362,
+      "sha256": "11f69f37fb450b7633f83179c0cd65b2cb18fa7697f60b00680cfec735c478eb"
+    },
+    "command-3-30s.json": {
+      "bytes": 4912,
+      "sha256": "0cbe2f2362295c69ee3bef70cf1cdd816505ae1d1a54de69df26251b94dd6ae9"
+    },
+    "command-4-30s.json": {
+      "bytes": 9124,
+      "sha256": "390cea82d4d3622c99a032cc6a5c87df9df11d9336d774e06a2baad1765b1e31"
+    },
+    "command-5-30s.json": {
+      "bytes": 1588,
+      "sha256": "57933d62f64b95f86ef2f7ad57630551d1c50285e3463e5ff5e0b54dff3627dd"
+    },
+    "command-6-30s.json": {
+      "bytes": 3333,
+      "sha256": "28233d2e560714291e42b55eccd8c663fda0e6906af6212447e2cdeef27652e8"
+    },
+    "command-7.json": {
+      "bytes": 1256,
+      "sha256": "b237a9c3c7df633080d7e1830b19e1f420e76b0757c089f24d84fe32ed1f4713"
+    },
+    "command-8.json": {
+      "bytes": 1324,
+      "sha256": "3088a4a790b7b0079201eba172512dcf5d73d475a4a2f1906bcae1c24c552b48"
+    },
+    "command-9-30s.json": {
+      "bytes": 4745,
+      "sha256": "26621772e3f64672c0c20b30948ae5d45fc5c280226d850c4919799a711e0cda"
+    },
+    "pod-security-controls-corrected.json": {
+      "bytes": 734,
+      "sha256": "dc413b33d6baf85223db4bb9ae6daad5ebdc8d810c00d296618cd1576827b70b"
+    }
+  },
+  "frozen_bundle_files": {
+    "manifest.json": {
+      "bytes": 2241,
+      "sha256": "74d0a56b1835389b88deaa78884003738eaa807956da2ab21685107bf8a244b2"
+    },
+    "namespace-a.json": {
+      "bytes": 668,
+      "sha256": "e65746533703dea32cc708ac74cb4ea048dc75d4a26ae2e5006dd09fb2a4fa04"
+    },
+    "namespace-b.json": {
+      "bytes": 668,
+      "sha256": "86be25c203fdf42461afbf4ae4d7e50e11500967a1c14d699da24a0096328cf6"
+    },
+    "operator-plan.json": {
+      "bytes": 7437,
+      "sha256": "b54bb8d607cd18a94a04bd33bf317d020a02b63289d37670940a95620e75784d"
+    },
+    "policy-a.json": {
+      "bytes": 3440,
+      "sha256": "a2ea381c8e6807e91680dc1dc67d0912f0427b2ed77e0e86b5613668f206d595"
+    },
+    "policy-b.json": {
+      "bytes": 3440,
+      "sha256": "4a81e0fd89cb01fe01d175bab7eb056ee20ad3746e277894cf7812748b117a3f"
+    },
+    "restricted-pod.review.json": {
+      "bytes": 5527,
+      "sha256": "d5c917eb39231617f197066fc02e5868841076a5b0bc5c88bc528074daad0194"
+    }
+  },
+  "publication": "Raw operator records stay in the private operator evidence directory; no credentials or kubeconfig copied.",
+  "source_directory_basename": "orbstack-kubernetes-verification"
+}

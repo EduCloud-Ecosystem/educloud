@@ -1,0 +1,29 @@
+{
+  "base_commit": "537d558e87adbe207042a10269f6b720cabfa970",
+  "cluster_deployment": "NOT RUN",
+  "counts_overlap": true,
+  "decision": "DEFER workload adoption; foundation only",
+  "format": "educloud-local-kubernetes-offline-evidence-v1",
+  "host_cluster_calls": 0,
+  "network_policy_enforcement": "UNKNOWN",
+  "python_version": "3.14.5",
+  "runtime_acceptance": "NOT RUN",
+  "scope": "offline renderer and exact-contract validation only",
+  "status": "PASS",
+  "tests": [
+    {
+      "log": "normal.log",
+      "optimized": false,
+      "returncode": 0,
+      "tests": 15
+    },
+    {
+      "log": "optimized.log",
+      "optimized": true,
+      "returncode": 0,
+      "tests": 15
+    }
+  ],
+  "v4_allowance_reused": false,
+  "workload_attempts": 0
+}

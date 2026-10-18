@@ -1,0 +1,94 @@
+{
+  "evidence": {
+    "README.md": {
+      "bytes": 3748,
+      "sha256": "33aa25d9e8946b56c1e9b743999facf6dfe367431724603fce588b3e71430baa"
+    },
+    "normal.log": {
+      "bytes": 2220,
+      "sha256": "c50dcaf1bd96d9cc8e6420cf9911593b0f678b95cfc57c7e68e28c7dfdd5296b"
+    },
+    "operator-observation.json": {
+      "bytes": 12692,
+      "sha256": "97e7b84dffbcebf170254051c97ce92f4f24bce6af8f25f331d3ac66529d42fb"
+    },
+    "operator-source-hashes.json": {
+      "bytes": 3713,
+      "sha256": "d0851032bd8e96785ba2840b16f336199bae72835d7b5acf03fc27e4a7394754"
+    },
+    "optimized.log": {
+      "bytes": 2220,
+      "sha256": "a0ae390daf16c80ce208b3a90300340f865af6f338b7be8a2775b5c1b346a0b8"
+    }
+  },
+  "format": "educloud-local-kubernetes-infrastructure-manifest-v1",
+  "network_policy_enforcement": "UNKNOWN",
+  "original_evidence_preserved": {
+    "README.md": {
+      "bytes": 2045,
+      "sha256": "d5c31ba7874129a08b86f31c8b31a9de55f4578fdea620fb9aa0bcd3c3c3b336"
+    },
+    "initial-test-failure.json": {
+      "bytes": 459,
+      "sha256": "0ecbfbf813ffc728efc00cdd8a01b81cc2eff4063caacf2515dfd1094da3aec5"
+    },
+    "manifest.json": {
+      "bytes": 2094,
+      "sha256": "94e1724dea416c9d4df8fcbe35f39a3412ed56615adcadc924b1accccc8a0507"
+    },
+    "normal.log": {
+      "bytes": 2220,
+      "sha256": "7185e3e02eca7c065ea7020e09be6aadb23dc6376c6065a50bd001176e6360e6"
+    },
+    "optimized.log": {
+      "bytes": 2220,
+      "sha256": "ca9837fa4cf87b984f09c24544cb78028b1ead7b58b642f63d43ba46cbc26e00"
+    },
+    "verification.json": {
+      "bytes": 756,
+      "sha256": "688fd98fa722f27e55a8c3a1829873d3447ee5b21ca4b9fd462b5bb58b3bfe2c"
+    }
+  },
+  "outfitter_kubernetes_adapter": "NOT IMPLEMENTED",
+  "prior_offline_manifest": {
+    "bytes": 2094,
+    "sha256": "94e1724dea416c9d4df8fcbe35f39a3412ed56615adcadc924b1accccc8a0507"
+  },
+  "prior_source_commit": "5686eb317df3bcd5bdbd08834518ad1186ece5a2",
+  "source_change": "Only generated API request timeout changes from5s to30s; no engine call or runtime enablement added.",
+  "sources": {
+    "DOCUMENTATION.md": {
+      "bytes": 25242,
+      "sha256": "f7b8bf067ce0385eeb3eb914e352496c4daae93ecd2f8ad13f7d224a55caf256"
+    },
+    "EDUCLOUD-STATUS.md": {
+      "bytes": 64449,
+      "sha256": "db00c602988815303e9eeaae5e447c917f067803bfda53bcc545e8e23f5d3225"
+    },
+    "docs/specs/local-kubernetes-evaluation.md": {
+      "bytes": 8750,
+      "sha256": "03795b3035b95cfee675d10fba4d4df409a0845f6d8d9e2379a30a5f35d4c30a"
+    },
+    "docs/strategy/research-pilot-build-backlog.md": {
+      "bytes": 31608,
+      "sha256": "ae37055d17e4834dea718dcf6e6df94d19dfed4559d31dea743ee421cc635967"
+    },
+    "tools/local-kubernetes/.gitignore": {
+      "bytes": 13,
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    "tools/local-kubernetes/README.md": {
+      "bytes": 5310,
+      "sha256": "b2637db44662eabb41d85f1407dabf65f76df54dce8bfa6dd1ca0bae5d9fda82"
+    },
+    "tools/local-kubernetes/evaluate.py": {
+      "bytes": 15294,
+      "sha256": "1deec9f18d7aa4106e3b470ce032a851723eefc2d2eb4aff79d004d335347b8e"
+    },
+    "tools/local-kubernetes/test_evaluate.py": {
+      "bytes": 16003,
+      "sha256": "509f647da23724f1ddcd9649f89384cf118c67e4deae1df294dc8cda57b24a26"
+    }
+  },
+  "workload_execution": "NOT RUN"
+}

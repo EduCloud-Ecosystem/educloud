@@ -1,0 +1,10 @@
+{
+  "correction": "Only IPv4 literal loopback or exact IPv6 ::1 is accepted. No endpoint was contacted.",
+  "failing_test": "test_remote_ambiguous_or_credential_endpoints_refuse",
+  "input": "https://[::ffff:127.0.0.1]:26443",
+  "kind": "ordinary implementation test observation, not a research control",
+  "normal_and_optimized_exit_code": 1,
+  "observed": "Refusal not raised for mapped IPv6 loopback alias",
+  "runtime": "NOT RUN",
+  "tests_per_run": 15
+}

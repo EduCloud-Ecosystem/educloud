@@ -129,6 +129,15 @@ Jetstream2, direct Portage qualification and shared pilot controls. The
 requires a concrete reviewed cost packet before any new charge; no new service
 subscription is assumed necessary for the present local phase.
 
+The [local Kubernetes foundation](docs/specs/local-kubernetes-evaluation.md) and
+[offline tool](tools/local-kubernetes/README.md) prepare two zero-workload
+namespaces for the host owner's OrbStack evaluation. They preserve Outfitter
+admission/accounting, add no shared database or workload launcher, and leave
+network enforcement and workload acceptance unqualified. A separate
+[operator observation](docs/research/evidence/2026-10-18-local-kubernetes/infrastructure/README.md)
+records two namespaces/eight policy objects and targeted admission/RBAC checks,
+retaining the original timeouts and invalid negative probes.
+
 The umbrella is where a decision spanning more than one module lives, so no
 single module's repo becomes the de-facto owner of a platform-wide rule.
 

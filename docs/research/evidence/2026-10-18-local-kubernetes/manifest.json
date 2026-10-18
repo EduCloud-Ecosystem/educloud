@@ -1,0 +1,61 @@
+{
+  "base_commit": "537d558e87adbe207042a10269f6b720cabfa970",
+  "evidence": {
+    "README.md": {
+      "bytes": 2045,
+      "sha256": "d5c31ba7874129a08b86f31c8b31a9de55f4578fdea620fb9aa0bcd3c3c3b336"
+    },
+    "initial-test-failure.json": {
+      "bytes": 459,
+      "sha256": "0ecbfbf813ffc728efc00cdd8a01b81cc2eff4063caacf2515dfd1094da3aec5"
+    },
+    "normal.log": {
+      "bytes": 2220,
+      "sha256": "7185e3e02eca7c065ea7020e09be6aadb23dc6376c6065a50bd001176e6360e6"
+    },
+    "optimized.log": {
+      "bytes": 2220,
+      "sha256": "ca9837fa4cf87b984f09c24544cb78028b1ead7b58b642f63d43ba46cbc26e00"
+    },
+    "verification.json": {
+      "bytes": 756,
+      "sha256": "688fd98fa722f27e55a8c3a1829873d3447ee5b21ca4b9fd462b5bb58b3bfe2c"
+    }
+  },
+  "format": "educloud-local-kubernetes-offline-manifest-v1",
+  "runtime": "NOT RUN",
+  "sources": {
+    "DOCUMENTATION.md": {
+      "bytes": 24993,
+      "sha256": "05f33d8f3684354a463199229d75623700ca84e01f2a0550e413df64f9945f71"
+    },
+    "EDUCLOUD-STATUS.md": {
+      "bytes": 63979,
+      "sha256": "e48e4772b03f6c1a10daaad552db0c09d5354e3ffa516eb8e87ce14e1539ff5e"
+    },
+    "docs/specs/local-kubernetes-evaluation.md": {
+      "bytes": 8365,
+      "sha256": "f268d13ee6da76f5e031303e06644b1120e4354203f4009516bd0b0166962e34"
+    },
+    "docs/strategy/research-pilot-build-backlog.md": {
+      "bytes": 31204,
+      "sha256": "63984d3e6d1379f210ee753d769b6417ee4f6be7fda1f98131fa1829348dbef8"
+    },
+    "tools/local-kubernetes/.gitignore": {
+      "bytes": 13,
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    "tools/local-kubernetes/README.md": {
+      "bytes": 4749,
+      "sha256": "1c762c74259dd04bd02119b8f1d734fd319b2c9f95bd185a9dd010cb647513e9"
+    },
+    "tools/local-kubernetes/evaluate.py": {
+      "bytes": 15293,
+      "sha256": "3de74cf8488c1221c8bf9e619704743ef97a89300497896f1a033dd011b95182"
+    },
+    "tools/local-kubernetes/test_evaluate.py": {
+      "bytes": 15887,
+      "sha256": "68a7a51ee8f462b02883b6fd17c4394688840a54c6a29b238e472b2f2812d6fa"
+    }
+  }
+}

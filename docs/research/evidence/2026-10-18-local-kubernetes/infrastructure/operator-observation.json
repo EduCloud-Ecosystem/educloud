@@ -1,0 +1,311 @@
+{
+  "actual_workload_creates": 0,
+  "command_observations": [
+    {
+      "exit": 0,
+      "file": "command-0.json",
+      "phase": "dry-run namespace-a.json"
+    },
+    {
+      "exit": 0,
+      "file": "command-1.json",
+      "phase": "create namespace-a.json only after reviewed dry-run"
+    },
+    {
+      "exit": 0,
+      "file": "command-10-30s.json",
+      "phase": "create policy-b.json only after reviewed dry-run"
+    },
+    {
+      "exit": 0,
+      "file": "command-11-30s.json",
+      "phase": "read exact foundation objects and UIDs"
+    },
+    {
+      "exit": 0,
+      "file": "command-12-30s.json",
+      "phase": "read namespace UID and Pod Security labels"
+    },
+    {
+      "exit": 0,
+      "file": "command-13-30s.json",
+      "phase": "inspect effective worker permissions; forbidden impersonation is NOT RUN"
+    },
+    {
+      "exit": 0,
+      "file": "command-2-30s.json",
+      "phase": "dry-run policy-a.json"
+    },
+    {
+      "exit": 1,
+      "file": "command-2-retry.json",
+      "phase": "dry-run policy-a.json"
+    },
+    {
+      "exit": 1,
+      "file": "command-2.json",
+      "phase": "dry-run policy-a.json"
+    },
+    {
+      "exit": 0,
+      "file": "command-3-30s.json",
+      "phase": "create policy-a.json only after reviewed dry-run"
+    },
+    {
+      "exit": 0,
+      "file": "command-4-30s.json",
+      "phase": "read exact foundation objects and UIDs"
+    },
+    {
+      "exit": 0,
+      "file": "command-5-30s.json",
+      "phase": "read namespace UID and Pod Security labels"
+    },
+    {
+      "exit": 0,
+      "file": "command-6-30s.json",
+      "phase": "inspect effective worker permissions; forbidden impersonation is NOT RUN"
+    },
+    {
+      "exit": 0,
+      "file": "command-7.json",
+      "phase": "dry-run namespace-b.json"
+    },
+    {
+      "exit": 0,
+      "file": "command-8.json",
+      "phase": "create namespace-b.json only after reviewed dry-run"
+    },
+    {
+      "exit": 0,
+      "file": "command-9-30s.json",
+      "phase": "dry-run policy-b.json"
+    }
+  ],
+  "context": "orbstack",
+  "controls": [
+    {
+      "control": "quota",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "Error from server (Forbidden): error when creating \"STDIN\": pods \"unreserved-review-only\" is forbidden: exceeded quota: disabled-workloads, requested: count/pods=1,limits.cpu=1,limits.ephemeral-storage=64Mi,limits.memory=256Mi,pods=1,requests.cpu=1,requests.ephemeral-storage=64Mi,requests.memory=256Mi, used: count/pods=0,limits.cpu=0,limits.ephemeral-storage=0,limits.memory=0,pods=0,requests.cpu=0,requests.ephemeral-storage=0,requests.memory=0, limited: count/pods=0,limits.cpu=0,limits.ephemeral-storage=0,limits.memory=0,pods=0,requests.cpu=0,requests.ephemeral-storage=0,requests.memory=0\n"
+    },
+    {
+      "control": "pod-security",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "returncode": 1,
+      "status": "FAIL",
+      "stderr": "The Pod \"unreserved-review-only\" is invalid: spec.containers[0].securityContext: Invalid value: {\"Capabilities\":{\"Add\":null,\"Drop\":[\"ALL\"]},\"Privileged\":true,\"SELinuxOptions\":null,\"WindowsOptions\":null,\"RunAsUser\":null,\"RunAsGroup\":null,\"RunAsNonRoot\":null,\"ReadOnlyRootFilesystem\":true,\"AllowPrivilegeEscalation\":false,\"ProcMount\":null,\"SeccompProfile\":null,\"AppArmorProfile\":null}: cannot set `allowPrivilegeEscalation` to false and `privileged` to true\n"
+    },
+    {
+      "control": "rbac-create-pods",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "no\n"
+    },
+    {
+      "control": "rbac-get-secrets",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "no\n"
+    },
+    {
+      "control": "rbac-create-jobs.batch",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "no\n"
+    },
+    {
+      "control": "zero-workloads",
+      "items": [],
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "status": "PASS"
+    },
+    {
+      "control": "quota",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "Error from server (Forbidden): error when creating \"STDIN\": pods \"unreserved-review-only\" is forbidden: exceeded quota: disabled-workloads, requested: count/pods=1,limits.cpu=1,limits.ephemeral-storage=64Mi,limits.memory=256Mi,pods=1,requests.cpu=1,requests.ephemeral-storage=64Mi,requests.memory=256Mi, used: count/pods=0,limits.cpu=0,limits.ephemeral-storage=0,limits.memory=0,pods=0,requests.cpu=0,requests.ephemeral-storage=0,requests.memory=0, limited: count/pods=0,limits.cpu=0,limits.ephemeral-storage=0,limits.memory=0,pods=0,requests.cpu=0,requests.ephemeral-storage=0,requests.memory=0\n"
+    },
+    {
+      "control": "pod-security",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "returncode": 1,
+      "status": "FAIL",
+      "stderr": "The Pod \"unreserved-review-only\" is invalid: spec.containers[0].securityContext: Invalid value: {\"Capabilities\":{\"Add\":null,\"Drop\":[\"ALL\"]},\"Privileged\":true,\"SELinuxOptions\":null,\"WindowsOptions\":null,\"RunAsUser\":null,\"RunAsGroup\":null,\"RunAsNonRoot\":null,\"ReadOnlyRootFilesystem\":true,\"AllowPrivilegeEscalation\":false,\"ProcMount\":null,\"SeccompProfile\":null,\"AppArmorProfile\":null}: cannot set `allowPrivilegeEscalation` to false and `privileged` to true\n"
+    },
+    {
+      "control": "rbac-create-pods",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "no\n"
+    },
+    {
+      "control": "rbac-get-secrets",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "no\n"
+    },
+    {
+      "control": "rbac-create-jobs.batch",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "no\n"
+    },
+    {
+      "control": "zero-workloads",
+      "items": [],
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "status": "PASS"
+    },
+    {
+      "control": "pod-security-valid-hostPID-negative",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "Error from server (Forbidden): error when creating \"STDIN\": pods \"unreserved-review-only\" is forbidden: violates PodSecurity \"restricted:v1.36\": host namespaces (hostPID=true)\n"
+    },
+    {
+      "control": "pod-security-valid-hostPID-negative",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "Error from server (Forbidden): error when creating \"STDIN\": pods \"unreserved-review-only\" is forbidden: violates PodSecurity \"restricted:v1.36\": host namespaces (hostPID=true)\n"
+    }
+  ],
+  "count_boundary": "Command, observation and control counts overlap; they are not independent runtime workload checks. Namespace default service accounts and root-CA ConfigMaps are not counted as objects created by the plan.",
+  "counts": {
+    "created_namespaces": 2,
+    "created_policy_objects": 8,
+    "final_successful_command_records": 14,
+    "passing_control_rows": 12,
+    "retained_failed_command_records": 2,
+    "retained_failed_control_rows": 2
+  },
+  "created_objects": [
+    {
+      "kind": "Namespace",
+      "name": "educloud-eval-orb-foundation-20261018-a",
+      "namespace": null,
+      "source_record": "command-1.json",
+      "uid": "00efc97c-48c3-40c8-9dd0-142eeed34fa5"
+    },
+    {
+      "kind": "Namespace",
+      "name": "educloud-eval-orb-foundation-20261018-b",
+      "namespace": null,
+      "source_record": "command-8.json",
+      "uid": "679a4e6d-c093-473c-95c9-020b14120705"
+    },
+    {
+      "kind": "ResourceQuota",
+      "name": "disabled-workloads",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "source_record": "command-3-30s.json",
+      "uid": "a06feac8-9884-42fc-83b0-d41ec662f85f"
+    },
+    {
+      "kind": "LimitRange",
+      "name": "reviewed-container-limits",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "source_record": "command-3-30s.json",
+      "uid": "4ac78ebc-1f68-46b9-98df-29e786d5e1e0"
+    },
+    {
+      "kind": "ServiceAccount",
+      "name": "synthetic-worker",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "source_record": "command-3-30s.json",
+      "uid": "74a8d041-fa01-4ff0-996a-49e9dc227f02"
+    },
+    {
+      "kind": "NetworkPolicy",
+      "name": "deny-all-intent",
+      "namespace": "educloud-eval-orb-foundation-20261018-a",
+      "source_record": "command-3-30s.json",
+      "uid": "af9920e5-2c14-45fb-a7d4-9624af7645a1"
+    },
+    {
+      "kind": "ResourceQuota",
+      "name": "disabled-workloads",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "source_record": "command-10-30s.json",
+      "uid": "31ab4548-48fe-4eaa-9294-1138574857c4"
+    },
+    {
+      "kind": "LimitRange",
+      "name": "reviewed-container-limits",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "source_record": "command-10-30s.json",
+      "uid": "9bd55327-9fbe-4312-a348-2e7dec102f01"
+    },
+    {
+      "kind": "ServiceAccount",
+      "name": "synthetic-worker",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "source_record": "command-10-30s.json",
+      "uid": "6bd8904c-f382-4e5c-af86-4f0c436fbebb"
+    },
+    {
+      "kind": "NetworkPolicy",
+      "name": "deny-all-intent",
+      "namespace": "educloud-eval-orb-foundation-20261018-b",
+      "source_record": "command-10-30s.json",
+      "uid": "635f22db-2396-4528-8f3e-2229e88a1615"
+    }
+  ],
+  "decision": "Foundation admission checks observed; DEFER workload adoption",
+  "format": "educloud-local-kubernetes-infrastructure-observation-v1",
+  "network_policy_enforcement": "UNKNOWN",
+  "operator": "coordinating host owner",
+  "operator_source_commit": "5686eb317df3bcd5bdbd08834518ad1186ece5a2",
+  "original_bundle_manifest_sha256": "74d0a56b1835389b88deaa78884003738eaa807956da2ab21685107bf8a244b2",
+  "outfitter_kubernetes_adapter": "NOT IMPLEMENTED",
+  "parser_observation": {
+    "detail": "Initial single-JSON parsing of concatenated policy JSON stdout failed; inspection here decodes the preserved stdout as a stream. No separate parser-error log supplied in the initial18-file packet.",
+    "status": "operator-reported ordinary recording failure"
+  },
+  "remaining_gates": [
+    "image availability and architecture on migrated host",
+    "effective network isolation",
+    "per-attempt Outfitter reservation and accounting",
+    "PID/output/lifetime enforcement",
+    "late effects and owned cleanup",
+    "storage/restore/retained costs",
+    "Python/R equivalent workload comparison"
+  ],
+  "retained_timeout_failures": [
+    {
+      "exit": 1,
+      "file": "command-2.json",
+      "stderr": "error: error validating \"policy-a.json\": error validating data: Get \"https://127.0.0.1:26443/openapi/v2?timeout=5s\": net/http: request canceled (Client.Timeout exceeded while awaiting headers); if you choose to ignore these errors, turn validation off with --validate=false\n"
+    },
+    {
+      "exit": 1,
+      "file": "command-2-retry.json",
+      "stderr": "error: error validating \"policy-a.json\": error validating data: Get \"https://127.0.0.1:26443/openapi/v2?timeout=5s\": context deadline exceeded (Client.Timeout exceeded while awaiting headers); if you choose to ignore these errors, turn validation off with --validate=false\n"
+    }
+  ],
+  "schema_and_rbac_boundary": "API responses and targeted service-account permission denials observed; no exhaustive RBAC or isolation claim. Namespace-b quota used counters lagged object inventory for LimitRange and service-account counts; not a settled whole-store capacity measure.",
+  "server": "https://127.0.0.1:26443",
+  "status": "PASS within infrastructure-only scope; failures retained",
+  "timeout_override_seconds": 30,
+  "v4_allowance_reused": false,
+  "whole_store_capacity": "UNKNOWN",
+  "workload_create_boundary": "Host owner reports Pod negative probes were server dry-runs only; controls retain server responses, not full submitted request bodies. No execution was performed by this reporting agent.",
+  "workload_execution": "NOT RUN"
+}
