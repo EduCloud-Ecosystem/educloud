@@ -97,9 +97,18 @@ offline controls, including sixty dispatch tests, and final ordinary CI passed;
 source builds were skipped. A separate independent recheck passed 26 targeted
 tests and prevented all six original witness launches against corrected source.
 The original failure remains reproducible against its frozen source. All 137
-prior evidence files and the rejected draft remain unchanged. Next is a
-source-pinned capacity contract and writer qualification before admission wiring;
-quota enforcement and accepted-store migration remain open.
+prior evidence files and the rejected draft remain unchanged. The capacity
+contract merged in [#39](https://github.com/EduCloud-Ecosystem/waypoint/pull/39),
+merge `599ee0ce`, reviewed head `e543ca4e`. Seventeen writer categories,
+eight production-connected Python controls and seven pinned simulated broker
+controls preserve UNKNOWN bounds; final ordinary CI passed, source builds skipped.
+Review replaced a self-comparing append fixture with pre-submit expectations and
+negative controls, retaining the earlier evidence. All 168 prior evidence files
+are unchanged. The next authorized slice is finite logical row/session/encoded
+limits on a fresh opt-in profile, bound to existing authority with safety actions
+preserved at limits. This is not storage-quota or accepted-store migration
+acceptance; recurring WAL/replacement, background writer and restore peaks remain
+unproved.
 Ben's existing Outfitter issues
 #1–#5 remain assigned and unchanged.
 Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge

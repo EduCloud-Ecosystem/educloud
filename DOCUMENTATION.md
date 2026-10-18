@@ -193,8 +193,14 @@ user revocation or project closure committed before launch still reached the
 intercepted broker spawn. PR #38 corrects the final fence and superseding-settlement
 and post-launch observer failures: 295 offline controls, including sixty dispatch
 tests, and final CI passed; a separate 26-control independent recheck passed.
-Original failures remain unchanged. The next storage increment qualifies writer
-growth bounds before further admission implementation; it does not enable quotas.
+Original failures remain unchanged. PR #39 qualifies seventeen source-pinned writer
+categories with eight production-connected Python controls, seven simulated
+broker controls and final ordinary CI. Review corrected a self-comparing append
+fixture; its earlier evidence is retained. All 168 prior evidence files match.
+Whole-store capacity remains UNKNOWN and quota_enforced:false. The next reviewed
+slice adds finite row/session/encoded-field limits on a fresh opt-in profile,
+with existing authority binding and safety actions preserved at limits; it does
+not enable storage quotas or migrate accepted stores.
 All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;

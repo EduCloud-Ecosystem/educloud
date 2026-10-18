@@ -19,6 +19,7 @@ multi-host expansion; it is not an adoption, managed-cluster or migration decisi
 | Dependency | Current disposition | What must be prepared before spending or live use |
 | --- | --- | --- |
 | Local Python/R and recovery work | Continue within existing approved capacity and finite test budgets. | Exact image/platform, bounded workload, disk/output needs and cleanup; record actual capacity limits rather than infer them from green unit tests. |
+| Research-store logical growth | Waypoint #39 accepts an offline writer contract and conditional next implementation, not whole-store capacity. | Fresh opt-in profile only: bounded rows, live sessions and encoded fields, one existing authority binding, safety actions at caps, preserved history and restore bindings. Recurring SQLite/WAL, guard scratch, broker writers and destination peaks remain UNKNOWN; no quota wiring or accepted-store migration. |
 | Source-image builds and independent reproduction | Use existing approved local/CI capacity first. | Source/base/package inputs, build resource envelope and second operator/machine. If unavailable, mark NOT RUN and prepare alternatives; do not buy hardware automatically. |
 | Institutional worker/backup destination | No new host, storage plan or backup account selected here. | Named owner, data classes, cohort/concurrency, retention, measured recovery target, full resource bill and bounded pilot term. |
 | Jetstream2 | Native-SU journal and simulated independent cleanup accepted in Outfitter #8; the local consumer bridge is accepted in #9. The blocked operator/rescue packet merged in #10, simulated two-process rescue in #11, metadata compatibility in #12 and one-attempt offline enforcement in #13. The reviewed supplemental operational packet in #14 recommends restricted private SSH and independent cleanup without selecting allocation/hosts/access. No live worker authorized here. | Verified allocation permissions, current rate/terms, maximum one CPU worker, explicit native-unit reservation, expiry and independent teardown. The proposed 1 SU allowance is not a provider-enforced charge ceiling. Quota/access is not capacity or permission to consume an allocation. Independent-host cleanup, terminal late effects, authenticated guest bootstrap, private execution/result transfer and live transport remain engineering/operational gates; approval alone cannot close them. |
@@ -57,6 +58,32 @@ not a resource reservation, benchmark, dollar price or approved purchase.
 The existing M1/16 GB iMac is a candidate for small local Ollama tests; hardware
 presence does not establish available capacity or measured model fit. Hosted
 API evidence cannot replace the separate local engine qualification gates.
+
+## Finite-authority engineering decision
+
+After independent review of Waypoint #39, proceed with a separate fresh opt-in
+profile for logical row/session and serialized-field ceilings. Initial engineering
+limits are 128 total users, 20 total projects, 1024 membership rows, 1000 recorded
+runs and 256 live sessions with eight per subject, retaining tighter existing
+per-project/queue limits and eight-hour expiry. Revoked users, closed projects
+and failed/interrupted runs still count toward history limits. These values are
+test-profile policy, not measured disk fit, workload throughput, approved host
+capacity or permission to execute 1000 broker runs.
+
+Bind the versioned profile to the existing configuration/database/guard authority;
+missing or unsupported bindings refuse. All entry points must enforce the same
+limits, and restore must preserve them or explicitly refuse. New rows and
+sessions are admissions. Existing-session access, logout, demotion/removal,
+revoke/rotate, cancellation and conservative settlement retain their safety
+behavior at the caps. Oversized terminal data must not refund unknown work or
+fabricate success. No alternate capacity ledger, deletion, journal/default change
+or accepted-store migration belongs in this increment.
+
+Whole-store quota admission remains **NO-GO**. SQLite/WAL/reader peaks, recurring
+replacement/failure scratch, broker/watchdog ownership and restore destination
+peaks need separate proof. The fifth failed headroom witness is retained. This
+offline implementation needs no purchase or new user architecture decision; live
+provider, selected host/model and operational decisions remain separate.
 
 ## Reviewable cost packet
 
