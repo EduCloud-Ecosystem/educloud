@@ -408,9 +408,120 @@ The packet retains unselected allocation, resource pins, operator and cleanup
 host. Its proposed one-worker 1 SU allowance is a local reservation, **not** a
 provider-enforced maximum charge. Independent-host cleanup, terminal late-effect
 evidence and settlement remain unresolved engineering/operational gates.
-The separate offline rescue implementation is under review; no live provider
+The subsequent offline rescue implementation is accepted below; no live provider
 effects or independent-host acceptance are implied. Ben's assignments stay
 unchanged and Docker remains the baseline.
+
+## Simulated independent cleanup handoff
+
+Outfitter [#11](https://github.com/EduCloud-Ecosystem/outfitter/pull/11) merged as
+`e34604ce2e4ab25c23366a8bea49683899425553` from reviewed final head
+`73ae1ab4aae941cf87de03f745820166e44e7784`.
+[Final CI 39098498344](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39098498344)
+passed **376 tests/subtests, 26 Docker checks, 38 recovery checks and 19 consumer
+checks**. The final local race-suite record belongs to implementation
+`2658042f51d9148bd1c89ca59d8f1340c2347d80`; it includes 220 offline rescue
+tests/subtests within the 376 total. The final head adds evidence/documentation.
+
+The [implementation record](https://github.com/EduCloud-Ecosystem/outfitter/blob/73ae1ab4aae941cf87de03f745820166e44e7784/docs/JETSTREAM2-OFFLINE-RESCUE.md)
+and [structured evidence](https://github.com/EduCloud-Ecosystem/outfitter/blob/73ae1ab4aae941cf87de03f745820166e44e7784/docs/evidence/2026-10-17-offline-rescue.json)
+preserve the review and test stages. Forty SIGKILL boundaries exercise separate
+source and cleanup processes with private directories on one machine. The
+harness makes source state unavailable to fresh cleanup processes. This is
+**same-machine process evidence**, not independent-host or physical power-loss
+qualification.
+
+Port and server creation each require a signed, durable cleanup acknowledgement
+inside the creator. The server phase additionally binds the known port and
+parent scope. Immutable executor selection stops the original host from
+competing with its designated cleanup observer. Fresh ownership/configuration,
+explicit attachment and empty-volume checks precede deletion. The observer has
+no budget/admission/settlement authority and no receipt-ingestion path.
+
+Independent review fixed three durability/clock findings: returning a receipt
+despite persistence failure, clock rollback during acknowledgement persistence,
+and missing parent-directory synchronization. Secondary review found substring
+matching accepted signed concatenated outcomes; exact enum matching and signed
+invalid-status regressions correct it. Original failing witnesses, harness
+mistakes and the intermediate unused-import build failure remain recorded;
+earlier passing CI at `6a984fe` is not relabelled as final-head evidence.
+
+Only explicitly injected loopback HTTPS fixture transport is supported. No CLI,
+credential discovery, live transport, production wiring or deployment is added.
+Observed absence never proves a terminal provider outcome; late effects and
+unknown charges remain unresolved. At most 64 retained sweeps are supported;
+exhaustion refuses further cleanup while preserving scope. Actual independent
+hosts, provider IAM, copied-host takeover, physical power-loss durability, clock
+assumptions, live resource access and terminal late-effect handling remain
+**NOT RUN or unqualified**. There is no provider-enforced spending cap.
+
+## Hosted inference fixture contract
+
+Portage [#14](https://github.com/EduCloud-Ecosystem/portage/pull/14) merged as
+`b2ba332ff5f81ff15c7ada67d5fc2a79b65cde94` from reviewed final head
+`2499c9d26f42f322bbfb73a5d49396e607915477`.
+[Qualification CI 39098952693](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39098952693)
+and [full-suite CI 39098952289](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39098952289)
+passed; paid automated review was **SKIPPED**. Local evidence at implementation
+`9cf520d4d5383857b4f2214b8a9a2f6ff068289b` under Python 3.12.13 records
+**147 new fixture controls and 450 total passing tests**, with six existing
+missing-sibling integration skips.
+
+The [pure contract](https://github.com/EduCloud-Ecosystem/portage/blob/2499c9d26f42f322bbfb73a5d49396e607915477/docs/specs/jetstream2-hosted-contract.md)
+validates fictional profiles, plans fixed requests, classifies fabricated
+responses and emits sanitized evidence. It has no network client, credential
+reader, ledger mutation, clock enforcement or live entry point. Even complete
+fictional approval fields cannot enable execution. Unsupported response shapes,
+duplicate keys, inconsistent/nonfinite usage, model drift, errors and incomplete
+responses are refused. Supported above-reservation usage is retained in full
+with a stop/bound-failure recommendation; unsupported/uncertain outcomes stay
+unknown. Provider-reported usage is not an independent consumption measurement,
+and a response hash cannot establish termination or reconciliation.
+
+The [separate evidence](https://github.com/EduCloud-Ecosystem/portage/blob/2499c9d26f42f322bbfb73a5d49396e607915477/docs/qualifications/2026-10-17-hosted-contract-controls.json)
+distinguishes pure classification from explicit temporary-ledger regression
+harnesses. Gateway, qualifier, ledger, entry points, registry/default routes and
+the original 95-control/17-expiry records remain unchanged. All 12 actual local
+runtime gates remain **NOT RUN**. Real TLS/DNS, persistent attempt/catalog
+ceilings, provider termination, entitlement, model compatibility and resource
+bounds remain **NOT RUN or UNVERIFIED**. No hosted selection, credentials,
+provider calls, spending or route promotion is authorized.
+
+## Rejected whole-store admission draft
+
+Waypoint [#36](https://github.com/EduCloud-Ecosystem/waypoint/pull/36) merged as
+`640fa2d89d9e98be0d0ff8f0fbaae32e83fa74ec` from reviewed head
+`9b06e9125dfe59d4c13f9f10191374c2d57ee26a`.
+[Final CI 39098780066](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39098780066)
+passed accepted controls and actual Docker/replay/recovery checks;
+source reconstruction was **SKIPPED**. This accepts documentation and inert
+failure evidence only. Application source remains identical to PR #35;
+**whole-store quota enforcement is blocked and not implemented**.
+
+The [blocked design and correction sequence](https://github.com/EduCloud-Ecosystem/waypoint/blob/9b06e9125dfe59d4c13f9f10191374c2d57ee26a/research-workspace/STORAGE-ADMISSION-BLOCKED.md)
+and [five reproducible witnesses](https://github.com/EduCloud-Ecosystem/waypoint/blob/9b06e9125dfe59d4c13f9f10191374c2d57ee26a/research-workspace/evidence/2026-10-17/storage-admission-blocked/README.md)
+retain the rejected three-file draft as a hash-bound inert patch. The draft can
+launch after a hold, lose rollback uncertainty, clear an intent after a result
+file effect, misclassify active project initialization as stale, and refuse
+essential writes after reserved growth becomes observed storage.
+
+Each defect has a comparison control. Exit zero from the offline reproducer
+means **the defects reproduced**, not product acceptance. Rollback persistence
+uses an in-memory model; the result case injects an oversized internal record;
+headroom uses inventory arithmetic with mocked physical free space. Other cases
+use disposable SQLite/files with intercepted provider launches. These do not
+claim real disk-full/power-loss tests, ordinary-recipe reachability of the
+oversized record, or that the quota contract is impossible.
+
+The three dirty implementation files and recovery snapshot remain preserved.
+All 121 prior evidence files are unchanged, source candidates remain disabled,
+and liabilities/failed controls remain visible. Scoped design review cleared a
+narrower durable operation/failure-state implementation in a fresh isolated
+worktree while preserving the rejected draft. This is implementation scope,
+not acceptance of new code; total writer bounds,
+settlement headroom, recovery capacity, migration and quota enforcement are not
+accepted by this checkpoint. No user capacity purchase can substitute for those
+engineering corrections.
 
 ## Remaining decisions
 

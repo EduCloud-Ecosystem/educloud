@@ -178,9 +178,12 @@ builds were skipped. Failed attempts and conservative charges remain retained.
 Read-only storage inventory/retention reporting merged in #34 (176 total
 workspace tests), and incremental broker output limits merged in #35 (184 total
 workspace tests). Final ordinary CI passed for both; source builds were skipped.
-Whole-store reservations/admission and recovery capacity remain unfinished;
-neither reporting nor per-process output bounds enforce a total storage quota
-or authorize deletion. All four source candidates remain
+Whole-store reservations/admission remain blocked by five reproduced draft
+failure-boundary defects. PR #36 preserves an inert rejected patch and offline
+witnesses, not quota implementation; accepted application files are unchanged.
+Neither reporting nor per-process output bounds enforce a total storage quota
+or authorize deletion. Scoped design review cleared durable operation/failure
+transitions for the next implementation. All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;
 Docker remains the default. No live cloud/provider acceptance is claimed.
@@ -234,9 +237,11 @@ course workspace remain a separate path from the new research service.
   expiry races after metadata checks and before admission/dispatch: 17 separate
   synthetic controls and final CI pass; admitted unknown reservations stay held.
   All 12 actual-engine gates remain NOT RUN. A separate Jetstream2 hosted-API
-  contract passed scoped design review; a fixture-only adapter is in progress,
-  without transport, credentials or live eligibility. A host recommendation is
-  not live-use approval.
+  fixture contract merged in #14 with 147 new controls, 450 total passing tests
+  and six existing skips; final CI passed. It has no transport, credentials,
+  ledger mutation or live eligibility. Provider usage is not independently
+  measured consumption. Persistent approval/attempt bounds are under separate
+  investigation; a host recommendation is not live-use approval.
   No default route changed.
   Neither component is a prerequisite for the Python/R computing pilot.
 - Outfitter now has the merged bounded Docker broker consumed by the research
@@ -245,7 +250,10 @@ course workspace remain a separate path from the new research service.
   Jetstream2, independent-host supervision and provider settlement remain open
   in Ben's unchanged issues #1–#5. PR #10 records the reviewed blocked operator
   packet and rescue design; its 1 SU proposal is not a guaranteed charge cap.
-  The separate simulated rescue implementation remains under review.
+  The separate simulated rescue implementation merged in #11 after four review
+  corrections and final CI (376 tests/subtests plus Docker/recovery/consumer
+  checks). Its 40 process-crash cases do not qualify independent hosts; unknown
+  late effects, 64-sweep storage limit and unsettled charges remain visible.
   Local recovery/fencing P1 is merged;
   it does not establish remote source-loss recovery or provider settlement.
   The local synthetic consumer bridge merged in #9 with 19 consumer checks;
