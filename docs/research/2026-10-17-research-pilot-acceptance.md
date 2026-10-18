@@ -882,6 +882,54 @@ collection, independent-host recovery and terminal cleanup remain engineering
 and operational gates before live approval can be executable. Ordinary scoped
 design work continues under the existing build authorization.
 
+## Storage writer contract qualification
+
+Waypoint [#39](https://github.com/EduCloud-Ecosystem/waypoint/pull/39) merged as
+`599ee0ce23942bbfc578124af12285484c357157` from reviewed head
+`e543ca4e8a388bb71fe96e11e12b6765829e4a29`.
+[Final CI 39105674607](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39105674607)
+passed controls and actual-Docker/recovery checks; clean source builds were
+SKIPPED. Production application source is unchanged. This accepts the
+[contract and disposable qualification](https://github.com/EduCloud-Ecosystem/waypoint/blob/e543ca4e8a388bb71fe96e11e12b6765829e4a29/research-workspace/STORAGE-CAPACITY-CONTRACT.md),
+not quota enforcement or a finite whole-store capacity claim.
+
+The contract identifies seventeen writer categories against Waypoint
+`7d5cf925ffacd16129c6851f1b3d4f8bc4c1a8a0` and Outfitter
+`5827c84e9952cc67b85e91ceff4282e0ead6923b`. Local evidence records 296 suite
+passes, including an entry point for eight new Python controls; seven selected
+Go controls use a disposable export and simulated provider. The corrected eight
+controls and three additional fault injections passed independent review. These
+counts overlap and are not additive; no new browser/human acceptance is claimed.
+Root independently verified eighteen manifest hashes, 23 Waypoint and eleven
+Outfitter source hashes, all 168 historical evidence files and five byte-identical
+pre-review artifacts, without repeating workloads.
+
+| Control or gap | Recorded result and boundary |
+| --- | --- |
+| Append consumption and exact fit | **PASS, offline model** connected to actual submit writers. Expected paths, lengths and hashes derive before submission from trusted fixture inputs. One byte/entry short, wrong incarnation, missing proof, same-length corruption and unexpected files receive no credit. No admission hook uses this arithmetic. |
+| Initial append ownership fixture | **FAIL in review methodology**, preserved: initial head `5168434554d0aa1c8276acc63adaefeffd1aa95f` compared an observed map with itself. Its passing test result and initial overly broad review remain historical, not independent ownership proof. The corrected witness and negative controls supersede that claim. |
+| Guard replacement and partial writes | **PASS for bounded observation**, with retained failure paths: old/new generations coexist; file-sync and post-rename directory-sync failures retain temporary files or uncertainty. Completed replacement does not pay for the next scratch file. |
+| Sign-in and held reader | **FAIL for a finite storage bound**: 24 sign-ins add session rows and grow WAL while reusing one essential slot. Existing ordinary-intent limits do not bound that growth. |
+| Final metadata slot | **PASS**: two actual Store transitions compete and exactly one commits under a narrowed fixture limit. This is metadata-slot enforcement, not byte/entry quota enforcement. |
+| Restore destination | **NOT RUN for enforced capacity refusal**: intercepted production restore creates a destination and held config before its copy call. The harness stops before copy, leaves the source unsealed and refuses UNKNOWN only in its offline model. |
+| Whole-store quotas and fifth headroom witness | **NOT RUN / NO-GO** for quota enforcement; the fifth historical consumed-headroom failure remains **FAIL** and byte-identical. Physical disk exhaustion, power loss, portable SQLite/VFS peaks and real detached-watchdog storage peaks remain NOT RUN. |
+
+The broker audit identifies recurring writes behind legacy opens and duplicate
+commands, pre-watchdog snapshot copies without a copy deadline, background
+cleanup writes outside the execution lease, protected temporary/orphan files and
+unbounded repeated external checkpoint destinations. A stopped parent, settled
+compute receipt or matching inventory scans do not prove all writers finished
+or that bytes are reclaimable. All writer rows keep whole-root bounds UNKNOWN;
+`quota_enforced:false` and available-capacity UNKNOWN remain explicit.
+
+Root's final decision is **GO for a separate fresh opt-in finite logical-authority
+slice**, with the [reviewed limits and safety matrix](../decisions/2026-10-17-research-pilot-capacity.md#finite-authority-engineering-decision).
+It must preserve total history, existing authority/profile bindings, safe
+refusals and restore preservation. **NO-GO for quota wiring** remains in force.
+No accepted-store migration, deletion, journal/default change, source promotion,
+live provider/model work or purchase occurred. Ben's assignments and the Docker
+baseline are unchanged.
+
 ## Remaining decisions
 
 Follow the [sequenced build backlog](../strategy/research-pilot-build-backlog.md)
