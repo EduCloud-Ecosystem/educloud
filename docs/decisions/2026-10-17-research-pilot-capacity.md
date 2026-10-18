@@ -19,7 +19,7 @@ multi-host expansion; it is not an adoption, managed-cluster or migration decisi
 | Dependency | Current disposition | What must be prepared before spending or live use |
 | --- | --- | --- |
 | Local Python/R and recovery work | Continue within existing approved capacity and finite test budgets. | Exact image/platform, bounded workload, disk/output needs and cleanup; record actual capacity limits rather than infer them from green unit tests. |
-| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 implements fresh local-key finite logical authority; #41 qualifies unchanged SQLite/guard write paths. This is not whole-store capacity. | Row/session/encoded-field limits and safety actions are qualified offline; finite OIDC and restore explicitly refuse. Next design bounded export-reader lifetime; Outfitter Docker writer qualification remains in review. Recurring WAL, replacement scratch, broker writers and destination peaks remain UNKNOWN; no quota wiring or accepted-store migration. |
+| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 implements finite logical authority; #41 qualifies SQLite/guard write paths; #42 implements a fresh opt-in bounded export path. Outfitter #15 qualifies pinned broker writer counterexamples after model-review corrections. This is not whole-store capacity. | Next: Waypoint guard scratch design only and Outfitter ledger/output pre-serialization implementation. Finite OIDC/restore refuse. WAL, replacement scratch, broker writers and destination peaks remain UNKNOWN; no quota wiring or accepted-store migration. |
 | Source-image builds and independent reproduction | Use existing approved local/CI capacity first. | Source/base/package inputs, build resource envelope and second operator/machine. If unavailable, mark NOT RUN and prepare alternatives; do not buy hardware automatically. |
 | Institutional worker/backup destination | No new host, storage plan or backup account selected here. | Named owner, data classes, cohort/concurrency, retention, measured recovery target, full resource bill and bounded pilot term. |
 | Jetstream2 | Native-SU journal and simulated independent cleanup accepted in Outfitter #8; the local consumer bridge is accepted in #9. The blocked operator/rescue packet merged in #10, simulated two-process rescue in #11, metadata compatibility in #12 and one-attempt offline enforcement in #13. The reviewed supplemental operational packet in #14 recommends restricted private SSH and independent cleanup without selecting allocation/hosts/access. No live worker authorized here. | Verified allocation permissions, current rate/terms, maximum one CPU worker, explicit native-unit reservation, expiry and independent teardown. The proposed 1 SU allowance is not a provider-enforced charge ceiling. Quota/access is not capacity or permission to consume an allocation. Independent-host cleanup, terminal late effects, authenticated guest bootstrap, private execution/result transfer and live transport remain engineering/operational gates; approval alone cannot close them. |
@@ -85,7 +85,8 @@ Docker CI covers compatibility, not new finite-profile provider qualification.
 
 Waypoint's source-pinned SQLite/guard bounded-write qualification is accepted in
 [#41](https://github.com/EduCloud-Ecosystem/waypoint/pull/41); Outfitter's Docker
-broker storage-writer protocol remains in review. The disposable witnesses
+broker storage-writer qualification is accepted in [#15](https://github.com/EduCloud-Ecosystem/outfitter/pull/15).
+The disposable witnesses
 distinguish implemented per-save limits from proposed bounds and
 UNKNOWN peaks, account for current plus temporary generations and retry residue,
 and avoid inferring all writers have stopped from parent exit or settled compute.
@@ -94,16 +95,63 @@ Broader enforcement requires a reviewed concrete protocol before wiring; this
 assignment does not enable quotas, recovery, migration, deletion or default
 journal changes.
 
-The next Waypoint design isolates export read lifetime: capture a bounded
+Waypoint [#42](https://github.com/EduCloud-Ecosystem/waypoint/pull/42) implements
+the reviewed export read-lifetime design: capture a bounded
 manifest, close the SQLite reader before artifact I/O, verify captured content,
 build the bundle, then recheck exact metadata and current local authority before
 returning bytes. The final check is the authorization point; locks/readers must
 not span HTTP streaming. Changes or read failures refuse without automatic retry,
-partial publication or accounting mutation. Prepare an explicit fresh opt-in
-version/binding contract for independent review before implementing; preserve
-existing profiles and identity/recovery refusals. This is a narrow reader fix,
+partial publication or accounting mutation. Independent code review and
+exact-head/post-merge CI passed, with existing profiles and identity/recovery
+refusals preserved. This is a narrow reader fix,
 not an all-reader census, checkpoint policy or WAL/capacity guarantee. Guard
 scratch slots and engine ceilings remain separate later decisions.
+
+The reviewed `init --bounded-export` contract uses mode
+`local-finite-public-data-v2`, policy `educloud-finite-authority-v2` with
+`export_protocol: educloud-bounded-export-v1`, guard v3 and database marker
+`0x45464132`. Existing v1/default behavior remains separate; mixed, missing or
+downgraded binding tuples refuse, including direct restore entry points. Offline
+runtime acceptance is recorded in the research acceptance record. Original proposal SHA-256
+`eabfa3fd139c98785d168415ba3aaf7ba6be0beb35c7fde815806ad0de4f23d9` received two
+clarifications before coding; corrected proposal SHA-256
+`8fa312c32da9e96a8067b0e8ddb964d4eb81d5ac94efda72caff681141a4d6c2`.
+Final equality proves current exact state, not detection of a transient change
+later reverted. Files copied and verified earlier are the artifact snapshot;
+subsequent file changes cannot alter those bytes. The final private comparison
+includes cancellation and session/user/membership fields without publishing them.
+No database reader or guard lock spans artifact reads, ZIP construction or HTTP
+streaming; the new helper requires a session token and rejects subject-only
+publication. The implemented contract SHA-256 is
+`e3023285a5424d0e289a6cb847b0fb96842f03252bf396cf256467841d3154c0`.
+
+The next Waypoint assignment is **design only** for a fresh opt-in guard
+publication profile: fixed ordinary and safety scratch roles under the existing
+guard lock, exclusive no-follow creation and no adoption, overwrite or deletion
+of residue. Ordinary failure notes must not consume the safety slot. Define
+exact-incarnation binding, restart/post-rename uncertainty and explicit safety
+slot exhaustion that fails while retaining debt rather than bypassing intent.
+Current plus two 4 MiB candidates could bound this logical guard family to
+12 MiB only for fresh controlled state; it is neither an accepted runtime bound
+nor a SQL/WAL/other-writer bound. Independent review of concrete exhaustion and
+compatibility behavior is required before implementation. Preserve existing
+profiles/defaults, OIDC/restore refusals and historical evidence. No quota
+admission, cleanup or new capacity ledger belongs in this design.
+
+After Outfitter #15 qualification acceptance, independent design review clears
+a separate narrow ledger/output serialization fix. Inside the existing ledger
+transaction, compute output digests and encoded lengths before sidecar effects;
+validate each diagnostic-success and diagnostic-failure record form, then the
+largest mixed-outcome ledger using all native/consumer fields and existing limits.
+Retain only one encoded output buffer at a time. Persist outputs sequentially and
+publish the validated forms matching those outcomes. Diagnostic failure retains
+conservative accounting. Tests must prove mixed failures and invalid/oversized
+plan refusal before output-file effects. Later I/O failure can still leave
+orphans or uncertain publication; no repeated-scratch or all-writer bound follows.
+Keep the active Waypoint broker pin unchanged pending separate integration
+qualification. No new capacity ledger, quota, snapshot/watchdog/cutover redesign,
+provider default or live allocation work belongs in this fix. Runtime acceptance
+requires a separate reviewed/tested PR.
 
 Whole-store quota admission remains **NO-GO**. SQLite/WAL/reader peaks, recurring
 replacement/failure scratch, broker/watchdog ownership and restore destination
