@@ -1373,9 +1373,9 @@ new browser/human acceptance or complete storage capacity. Waypoint's next
 scoped task remains the fresh-profile SQLite reader-ownership design; root
 design review precedes implementation and checkpoint policy remains outside it.
 
-## Remaining decisions
+## SQLite ownership design review
 
-The next SQLite ownership proposal received **narrow implementation GO**, not
+The SQLite ownership proposal received **narrow implementation GO**, not
 runtime acceptance, after root and independent review of design-only commit
 `8ed88799deba887f11c190381f3101bb8acb3e00`. Proposal SHA-256:
 `21f68b9c546136d0ccf2df96d6f69d84909dd2ebdacb32e5d9beba5e562c1012`;
@@ -1391,6 +1391,73 @@ integration; its proposal SHA-256 is
 The canonical policy hash is unchanged. The capacity decision records the explicit
 ownership-failure safety-denial tradeoff; it grants no checkpoint/drain gate,
 whole-store capacity, automatic restart or accepted-state migration.
+
+## Scoped SQLite ownership implementation
+
+Waypoint [#46](https://github.com/EduCloud-Ecosystem/waypoint/pull/46) merged as
+`0efc6fd734e7f812cabc3822d2ea93b8c1063752` from reviewed head
+`40fe12e62b98f1109cffbe76485d31abf218171b`; both share tree
+`de40bb415e570b4ef2136263fad9ba5e6ea50773`. Runtime and tests remain identical
+to `43890cbf10a02cd522da627f6ea5a841820a4762`. The later `b2972b2` commit adds
+evidence only; the final four-file correction changes current documentation and
+provenance without rewriting the frozen qualification or earlier reviews.
+
+The fresh `--scoped-sqlite` profile uses mode `local-finite-public-data-v4`,
+authority v4, guard v5 and SQLite user version `0x45464134`. It retains the
+reviewed policy hash above. Scoped owners acquire the guard before SQLite,
+validate authority and bounded results in one snapshot, and close online
+readers before artifact/ZIP/HTTP or provider waits. Separate backup owners keep
+their validated immediate source reservation; failed cleanup prevents final
+manifest publication. Single-use owners, exact deterministic query contracts,
+primitive bindings and detached results constrain the application capability.
+
+| Control or gap | Result and evidence boundary |
+| --- | --- |
+| Local suite | **PASS**: 433 tests with ResourceWarning treated as an error; JavaScript syntax passed. Includes 49 v4 ownership controls. |
+| Frozen qualification | **PASS**: 49 controls and all 29 deliberately broken variants detected, including real two-process contention, same-snapshot bounds, first-error/cleanup handling, full logical-cap safety and both #43 regressions. Deliberate mutation failures are detection evidence, not accepted runtime failures. |
+| Independent review | **CLEAR**: fifteen reproduced findings resolved, with original sources, HOLD reviews and witnesses retained. Root independently re-ran the 49 ownership controls at `b2972b2` in 39.422 seconds; runtime/test identity carries to the final documentation-only head. A second source review found no new substantive defect. Counts overlap and must not be added. |
+| Final CI | **PASS**: [39120244631](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39120244631) at `40fe12e6`, controls and actual Docker. Optional clean source builds **SKIPPED**. Existing Docker CI exercises older profiles; it is compatibility evidence, not v4 provider qualification. |
+| Preservation | **PASS**: 375 current artifact bindings match. All 343 historical evidence files and 395 preserved pre-code files remain byte-identical; the eight other pre-code files are the reviewed runtime changes. Qualification captures 91 source files; independent review captures 517 matching archive members. |
+| Failures retained | **FAIL originally, corrected**: cleanup-before-manifest, primary-error loss, caught cursor/native-effect failures, owner reuse/thread misuse, role/script/root/validation bypass, ended snapshots, diagnostic retry, duplicate projections, lost backup reservations, nondeterministic query bounds and disguised SQL strings. Earlier qualification fixture failures and reviewer-check errors remain separately labeled. |
+| Holds and liability | **PASS** within the application contract: uncertainty holds every Store/thread at the same resolved root, including safety actions; no constructor/status reset. One diagnostic allowance per existing token cannot create an intent or business writer. Failed revocation cannot certify access removal; failed settlement cannot discharge debt. This is not global quiescence. |
+| Unqualified boundaries | **NOT RUN**: v4 actual Docker/provider/browser, human/second-operator acceptance, power-loss/VFS and selected-host capacity. Finite OIDC/restore still refuse. Whole-store capacity stays **UNKNOWN**, quota enforcement **NO-GO/false**, and the frozen fifth-headroom witness **FAIL**. No checkpoint/drain, journal/page, migration, deletion or default change. |
+
+Qualification archive SHA-256:
+`cbb0b9242cd45d5aec1d0c356b6f39f90f7efc2ac533d068999dd90c12e75d75`.
+Independent runtime review SHA-256:
+`baea5b37f265c97480efc0e2e70ee249e28f9b6ac72312ec6e5f788db72369c7`.
+Final provenance SHA-256:
+`75b24e5cf6f27a0cfd16066e859a351ff2da9c337040faafe2504c1e8a71d37a`.
+Documentation-correction SHA-256:
+`934d7937377dea05d109a3e09a7b96a14797eba9cd0832e561dc712e7f19fc49`.
+[Post-merge CI 39120446555](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39120446555)
+also passed controls and actual Docker on the identical merged tree; optional
+source builds were skipped. The [coordinating review record](evidence/2026-10-18-scoped-sqlite-coordination/review.json)
+retains the separate 49-control log and exact-head CI result.
+
+The coordinating audit corrected a stale current claim that the original replay
+cleanup gate remained unresolved. PR32's accepted later observation verifies
+the exact container absent, cleanup complete, liability resolved and 30
+CPU-seconds conservatively charged. The original failed workload and saved
+unknown-cleanup receipt remain unchanged; no refund or candidate promotion
+follows. Historical proposal/review wording stays frozen with its source.
+
+## Remaining decisions and next qualification
+
+Next is one bounded qualification-only v4 exercise through production init,
+loopback HTTP, Worker, independent Python/R validation and export, owned by
+Waypoint with independent Outfitter accounting review. Use two fresh synthetic
+projects and already available reviewed images, at most four sequential
+30-second attempts and 120 conservative CPU-seconds total. Require prelaunch
+identity binding, exact final accounting/cleanup and zero dispatch for queued
+cancellation/current-access refusal. Preserve every failure without automatic
+retry, refund or a fifth attempt. The four-attempt allowance spans the whole
+exercise, including interruption/restart; a new output directory cannot renew it.
+The 120 CPU-seconds describe conservative reservations/charges, not total host
+overhead or proof that unknown work has terminated. Missing approved existing images/capacity means
+NOT RUN. No runtime/profile/default change or purchase is part of this slice.
+Independent human reproduction, host/cohort/operator selection and storage,
+retention/recovery acceptance remain separate gates after it.
 
 Follow the [sequenced build backlog](../strategy/research-pilot-build-backlog.md)
 and [capacity/spending decision record](../decisions/2026-10-17-research-pilot-capacity.md).

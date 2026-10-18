@@ -234,11 +234,20 @@ remain. Standard Docker CI adoption merged separately in Waypoint
 reviewed head `e16bcd3a`. Its 384 controls and Docker CI passed; artifact review
 verified 41 HTTP, 25 recovery and 12 guard checks, two successful replays and five
 bundles. This changes only the CI checkout, not an operator's broker or state.
-Optional source builds and historical pins stay frozen. The fresh-profile SQLite
-reader-ownership design has narrow implementation GO after independent review.
-Uncertain ownership can hold all readers/writers, including safety operations,
-in that process; clean full-cap safety controls must remain available. Runtime
-acceptance is pending, without checkpoint, journal or quota changes.
+Optional source builds and historical pins stay frozen. Scoped SQLite ownership
+merged in Waypoint [#46](https://github.com/EduCloud-Ecosystem/waypoint/pull/46),
+merge `0efc6fd734e7f812cabc3822d2ea93b8c1063752`, reviewed head `40fe12e6`, runtime `43890cbf`.
+Its fresh opt-in v4 profile passes 433 local tests, including 49 ownership
+controls, and detects 29 deliberately broken variants. Fifteen reproduced review
+findings are corrected and preserved. Independent source/evidence reviews, a
+separate root 49-control recheck and final-head CI pass; counts overlap.
+Uncertain ownership holds readers/writers and safety operations for the same root
+in that process; clean full-cap safety paths pass. No checkpoint, journal, quota
+or migration changes. The next bounded qualification uses existing local Docker,
+two synthetic projects and at most four sequential attempts; v4 provider/browser
+acceptance remains NOT RUN until that evidence is reviewed. All 343 historical
+evidence files remain exact. Current cleanup wording now distinguishes the
+original failed receipt from PR32's later verified cleanup and retained charge.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`

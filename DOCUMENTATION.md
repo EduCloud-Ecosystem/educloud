@@ -230,9 +230,14 @@ controls and exact-head CI passed. Retrospective receipt validation is separate
 from the original workload. Waypoint #45 adopts that broker in standard Docker
 CI after 41 HTTP, 25 recovery, 12 guard checks, two successful replays and five
 verified bundles; optional source-build qualification keeps its original broker.
-A fresh-profile SQLite reader-ownership design has narrow implementation GO
-after independent review, with explicit shared process holds after uncertain
-cleanup. Runtime acceptance is pending; no checkpoint, journal, quota or migration changes.
+Waypoint #46 implements scoped SQLite ownership for a fresh opt-in v4 profile:
+433 local tests, 49 included ownership controls and 29 detected deliberate
+regressions pass after fifteen review findings were corrected. Independent
+source/evidence review and final-head CI passed. Uncertain ownership holds
+readers and writers, including safety actions, for the same root in that process.
+The next slice qualifies v4 through existing local Docker and HTTP with at most
+four sequential attempts; current CI Docker checks still exercise older profiles.
+No checkpoint, journal, quota or migration changes are accepted.
 All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;

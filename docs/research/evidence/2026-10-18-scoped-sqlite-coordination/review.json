@@ -1,0 +1,53 @@
+{
+  "format": "educloud-scoped-sqlite-coordinating-review-v1",
+  "reviewed_head": "40fe12e62b98f1109cffbe76485d31abf218171b",
+  "reviewed_tree": "de40bb415e570b4ef2136263fad9ba5e6ea50773",
+  "runtime_commit": "43890cbf10a02cd522da627f6ea5a841820a4762",
+  "disposition": "CLEAR",
+  "source_review": "Root integration review and independent complete ownership-module review found no new substantive runtime blocker. Original R1-R15 findings have retained witnesses and corrections.",
+  "evidence_review": {
+    "current_artifact_hashes": 375,
+    "preserved_historical_evidence_files": 343,
+    "preserved_precode_files": 395,
+    "qualification_source_files": 91,
+    "independent_archive_members": 517,
+    "mutant_hashes_reconstructed": 29,
+    "result": "PASS"
+  },
+  "independent_recheck": {
+    "tested_head": "b2972b2dd9690a90fc9dcae3e8cc481fcca33d74",
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -W error::ResourceWarning -m unittest discover -s tests -p test_sqlite_ownership.py -v",
+    "controls": 49,
+    "seconds": 39.422,
+    "exit_code": 0,
+    "result": "PASS",
+    "log": "root-49-controls.log",
+    "sha256": "9479c275547bd4dbc980957bee3c93b6dc96a931a3e8d72f12a185be43246b5d",
+    "continuity": "Runtime and tests are identical to final reviewed head; final four-file correction changes current documentation and provenance only. Counts overlap the 433-test suite and 49-control qualification."
+  },
+  "documentation_correction": {
+    "original_head": "b2972b2dd9690a90fc9dcae3e8cc481fcca33d74",
+    "correction_sha256": "934d7937377dea05d109a3e09a7b96a14797eba9cd0832e561dc712e7f19fc49",
+    "provenance_sha256": "75b24e5cf6f27a0cfd16066e859a351ff2da9c337040faafe2504c1e8a71d37a",
+    "result": "PASS",
+    "meaning": "Original failed workload/unknown cleanup receipt preserved; PR32 later verifies exact container absence, cleanup complete, liability resolved and 30 CPU-seconds conservatively charged. No refund or promotion."
+  },
+  "ci": "exact-head-ci.json",
+  "not_run": [
+    "v4 actual Docker/provider/browser qualification",
+    "human or second-operator qualification",
+    "power-loss/VFS qualification",
+    "selected-host physical-capacity acceptance"
+  ],
+  "retained_limits": [
+    "whole-store capacity UNKNOWN",
+    "quota_enforced false",
+    "fifth-headroom FAIL",
+    "finite OIDC/restore refusal",
+    "four source candidates disabled",
+    "no deployment/default routing/accepted-state change"
+  ],
+  "merge_commit": "0efc6fd734e7f812cabc3822d2ea93b8c1063752",
+  "merged_at": "2026-10-18T10:44:30Z",
+  "post_merge_ci": "post-merge-ci.json"
+}
