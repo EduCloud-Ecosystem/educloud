@@ -1,11 +1,11 @@
 # EduCloud status and computing-continuity priority
 
-Research-pilot update: October 17, 2026. The classroom/AI assessment below retains
+Research-pilot update: October 18, 2026. The classroom/AI assessment below retains
 its October 6–7 review boundary unless explicitly updated. Its historical vendor
 prices and component heads are not current quotes or new deployment decisions.
 The original July snapshot is preserved in `docs/research/2026-07-21-platform-status.md`.
 
-## October 17 research pilot
+## October 17–18 research pilot
 
 The local public/synthetic Python/R workflow is accepted and merged: Waypoint
 [#26](https://github.com/EduCloud-Ecosystem/waypoint/pull/26), merge `8506baef`;
@@ -243,11 +243,26 @@ findings are corrected and preserved. Independent source/evidence reviews, a
 separate root 49-control recheck and final-head CI pass; counts overlap.
 Uncertain ownership holds readers/writers and safety operations for the same root
 in that process; clean full-cap safety paths pass. No checkpoint, journal, quota
-or migration changes. The next bounded qualification uses existing local Docker,
-two synthetic projects and at most four sequential attempts; v4 provider/browser
-acceptance remains NOT RUN until that evidence is reviewed. All 343 historical
-evidence files remain exact. Current cleanup wording now distinguishes the
-original failed receipt from PR32's later verified cleanup and retained charge.
+or migration changes. All 343 historical evidence files remain exact. Current
+cleanup wording distinguishes the original failed receipt from PR32's later
+verified cleanup and retained charge.
+
+The follow-up v4 qualification merged in Waypoint [#47](https://github.com/EduCloud-Ecosystem/waypoint/pull/47),
+merge `d738e7da881fff95427e98292ae202f05d9a9f28`, reviewed head `5053358121f8a3d6a971c64cd70db7ddc32efea8`.
+Its one fixed local exercise completed four
+Python/R attempts, two synthetic projects, 18 controls and two bounded exports.
+All four results match independent fixture answers; each run records verified
+cleanup and a full 30-CPU-second charge, 120 total. Queued cancellation and
+current-access removal dispatched no compute. Candidate03 source is `fe4788c4`,
+using accepted Outfitter `54464389`; five checker findings plus the initial
+boolean-control failure were fixed before execution, with original evidence
+retained. Final independent reviews and exact-head CI passed; the merged tree
+matches the reviewed head. The linked research record retains the evidence. Browser and late-revocation-race qualification remain NOT RUN/NOT
+QUALIFIED; finite OIDC/restore refuse, source candidates stay disabled, whole-store
+capacity remains UNKNOWN, quota NO-GO and fifth headroom FAIL. The local exercise
+creates no new allowance. Next inputs are an independent operator/machine and a
+selected shared-pilot host, cohort, storage, retention/recovery expectations and
+support owner; no further generic profile or quota machinery is scheduled.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`

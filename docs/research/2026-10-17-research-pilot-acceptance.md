@@ -1442,9 +1442,9 @@ CPU-seconds conservatively charged. The original failed workload and saved
 unknown-cleanup receipt remain unchanged; no refund or candidate promotion
 follows. Historical proposal/review wording stays frozen with its source.
 
-## Remaining decisions and next qualification
+## Bounded v4 qualification scope
 
-Next is one bounded qualification-only v4 exercise through production init,
+The authorized scope was one bounded qualification-only v4 exercise through production init,
 loopback HTTP, Worker, independent Python/R validation and export, owned by
 Waypoint with independent Outfitter accounting review. Use two fresh synthetic
 projects and already available reviewed images, at most four sequential
@@ -1467,3 +1467,36 @@ Kubernetes is an optional post-P1 evaluation before custom multi-host expansion,
 not a replacement for Docker or permission to purchase a cluster. Ben's existing
 Outfitter issues and assignments remain unchanged. Belay and `portage-local`
 remain outside this work.
+
+
+## Fresh v4 local Docker qualification — October 18
+
+Waypoint [#47](https://github.com/EduCloud-Ecosystem/waypoint/pull/47) merged at `d738e7da881fff95427e98292ae202f05d9a9f28`
+on 2026-10-18T11:54:30Z, reviewed head `5053358121f8a3d6a971c64cd70db7ddc32efea8`.
+Both trees are `6af2d301a3ede8c6e2ff57c37f84139792e92bdc`. The executed harness is `fe4788c47a378e6234648dc4131ec4b870a8e713`,
+manifest `ad701c8d5b164666133a1d06f241a80ab052ccbeb02a48c499a663589e537295`,
+source archive `6fcfce9bf3db5b57b4f503574f379123a43739c44fc69f9af9b40a8cc17055b5`.
+All 34 captured files match the frozen source. Broker source is accepted
+Outfitter `5446438985e31cb739f2048a2aa2176918831a7e`, binary SHA-256
+`1bf1ce898d6d10e574ab7b2f79a830fa94fa740867e208470bfc15790dc41bb1`;
+its retained build metadata, attestation and 22 source hashes agree.
+
+| Evidence | Result and boundary |
+| --- | --- |
+| Pre-execution review | **CLEAR** from coordinating source/export and independent Outfitter accounting reviews before the one fixed exercise. [Retained review index](evidence/2026-10-18-v4-docker-coordination/pre-execution-review-index.json) preserves the original review files and their then-pending combined-clearance wording. |
+| Synthetic tests | Owner records **457 PASS**, including 24 focused controls. Root separately reran those 24 in normal and optimized Python with ResourceWarning-as-error; Outfitter ran 12 pure tests and three scratch probes in both modes. Counts overlap and are not additional actual attempts. |
+| Failed controls retained | Initial boolean/int false pass and five checker findings: diagnostic correlation, exact ledger projects/budgets, export congruence, known charges after failed absence observation, and final/prelaunch input/recipe lineage. Original candidate01/02 archives and failure witnesses remain unchanged. The revised original export and lineage counterexamples reject; removing only the lineage check reopens its two witnesses. These are checker defects, not demonstrated production export defects. |
+| Actual local exercise | Report records **18 PASS controls**, four sequential actual attempts across two synthetic projects through production v4 init, local-key HTTP, Worker and exports. Independent numeric results: Python baseline 10/18; R alternative 6/8.5; R baseline 10/9; Python alternative 6/7.5 (count/mean). |
+| Accounting and cleanup | Each attempt retains 30 reserved/30 charged CPU-seconds, provenance `estimated_upper_bound`, verified cleanup and no unresolved liability: **120 total**. The fixed no-resume marker remains; no fifth attempt, refund, retry, pull or build. Charges are conservative accounting, not measured host overhead or proof about unrelated workloads. |
+| Public exports | **PASS** from independent retained-evidence review: first bundle retains two successes plus two zero-dispatch cancellation/access-refusal records; second retains two successes. All 40 artifacts match their recorded hashes/lengths, and exact Fraction arithmetic agrees with all four results. [Public verification](evidence/2026-10-18-v4-docker-coordination/public-verification.json) and [safe independent review summary](evidence/2026-10-18-v4-docker-coordination/actual-independent-review-summary.json) preserve exact identities and scopes. Raw actual state, credentials, receipts and review reports stay private. |
+| Final component CI | **PASS**: [39124817031](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39124817031) at `50533581`: controls and actual-Docker pass; optional source builds **SKIPPED**. [Retained job evidence](evidence/2026-10-18-v4-docker-coordination/exact-head-ci.json). CI exercises older profiles and does not rerun or renew the four-attempt v4 exercise. |
+| Remaining gates | **NOT RUN/NOT QUALIFIED** for new browser/manual accessibility, late-revocation race, independent human/second machine, hosted/live allocation/model, real data, power-loss and selected-host capacity. Finite OIDC/restore refuse; source candidates disabled; whole-store capacity **UNKNOWN**, quota **NO-GO/false**, original fifth headroom **FAIL**. |
+| Whitespace | Current source/docs **PASS**. Raw diff check reports whitespace in preserved historical failed-test logs and review `narrow.diff`; original evidence bytes are intentionally retained. This is not reported as a full raw-diff PASS. |
+
+The next useful acceptance gate needs a named independent person and existing
+second machine. The shared pilot also needs an explicit host/cohort/storage,
+retention/recovery and support/retirement selection. Whole-store bounds, deletion
+and off-host recovery still require engineering against those selections. No
+mandatory new coding task remains for this bounded local workflow, and no new
+purchase is demonstrated necessary. Stop recurring build follow-ups after final
+qualification acceptance; resume for a selected gate or a concrete defect.

@@ -247,7 +247,7 @@ Independent runtime review and exact-head CI passed within the scope above.
 This local slice needs no host selection or purchase and does not close the fifth
 headroom failure or physical-capacity gate.
 
-The next qualification-only increment uses fresh v4 state, production HTTP/Worker
+The cleared qualification-only increment uses fresh v4 state, production HTTP/Worker
 paths, two synthetic projects and already available reviewed Python/R images.
 Allow at most four sequential broker attempts, each at the existing 1 CPU,
 256 MiB, 64 PID, 30-second and 65,536-output-byte limits: at most 120 conservative
@@ -267,6 +267,27 @@ replacement/failure scratch, broker/watchdog ownership and restore destination
 peaks need separate proof. The fifth failed headroom witness is retained. This
 offline implementation needs no purchase or new user architecture decision; live
 provider, selected host/model and operational decisions remain separate.
+
+## Inputs needed after the bounded local qualification
+
+Candidate03 completed exactly four actual local Python/R attempts and 18 controls,
+with 120 conservative CPU-seconds charged and verified cleanup for every attempt.
+The allowance is consumed and cannot be reused. Waypoint [#47](https://github.com/EduCloud-Ecosystem/waypoint/pull/47)
+merged after final independent reviews and passing exact-head CI, with identical
+reviewed/merged trees. The acceptance record retains that evidence; this is not
+hosted admission.
+
+| Next decision | Concrete input needed | What it permits preparing |
+| --- | --- | --- |
+| Independent reproduction, Waypoint #28 | Named second person and an already available second machine | A machine-specific bounded handoff using trusted bundle/image identities, elapsed time/help and usability/accessibility observations. Recovery only through a supported profile; v4 restore remains refused. |
+| Shared synthetic pilot, Waypoint #29 | Intended cohort and concurrency, existing host and storage destination, service/support/retirement owner, retention period and recovery expectations | A concrete storage/retention/recovery and selected-capacity contract, followed by scoped implementation and qualification. Operational choices alone do not close these engineering gaps. |
+| Optional inference or Jetstream2 worker | Explicitly defer, or name account/allocation/access owner, permitted installed model or endpoint, operators, available hosts and finite window/exposure | Complete the already prepared component-specific manifest and unfinished transport/bootstrap/independent-cleanup contract before any separate live approval. |
+
+No new subscription or hardware purchase is demonstrated necessary. Existing
+cost and operational packets are sufficient for these selections; do not build
+another generic helper or profile to substitute for the missing inputs. Pause
+recurring build follow-ups after final qualification acceptance and resume for
+a selected gate or a concrete defect. Belay and Ben's assignments stay unchanged.
 
 ## Reviewable cost packet
 
