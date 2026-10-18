@@ -208,6 +208,41 @@ are still required. No engine was started, model acquired, live inference run,
 production deployment performed or default route changed. An offline review
 packet is the next increment; it cannot itself authorize execution or spending.
 
+## Synthetic consumer bridge and offline decision packet
+
+Two further implementation increments merged after independent review and final
+CI. They close local engineering gaps, not live-provider or real-course gates.
+
+| Component | Final reviewed head | Merge revision | Final-head evidence |
+| --- | --- | --- | --- |
+| Outfitter [#9](https://github.com/EduCloud-Ecosystem/outfitter/pull/9) | `2438cd1e93c06d4f09e549f2e750769c51df2373` | `273bb0148fead33c91fcb92e0cc9e0bacdb929c2` | [CI 39092556586](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39092556586): 156 tests/subtests, 26 Docker, 38 recovery and 19 consumer checks passed. |
+| Portage [#12](https://github.com/EduCloud-Ecosystem/portage/pull/12) | `d3d117930285d8f7cd002d16e9b9f12e6067e90a` | `577fdb9a40239b98ba63dcd4676cb8e5213b23f4` | [Full-suite CI 39092275619](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39092275619) and [qualification CI 39092275617](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39092275617) passed. Local validation: 61 focused packet tests and 286 total tests passed, with six existing integration skips. Paid review skipped. |
+
+Outfitter's [consumer contract](https://github.com/EduCloud-Ecosystem/outfitter/blob/2438cd1e93c06d4f09e549f2e750769c51df2373/specs/13-synthetic-consumer-handoff.md)
+binds one synthetic consumer/project/job to immutable submission, policy, content,
+image and limit identities in the existing ledger. Duplicate delivery returns
+the same receipt; changed bindings conflict; unknown work cannot redispatch.
+Read-only status remains available after client loss and in held/fenced states.
+The actual Docker fixture checks deterministic correct/incorrect outcomes but
+does not publish grades or integrate the production Cairn Runner. Independent
+review found a bare parent-path validation gap that consumed an attempt before
+refusal; [the fix and regressions](https://github.com/EduCloud-Ecosystem/outfitter/blob/2438cd1e93c06d4f09e549f2e750769c51df2373/docs/evidence/2026-10-17-consumer-review.json)
+now refuse it before reservation. The original failed control is retained.
+
+Portage's [offline packet](https://github.com/EduCloud-Ecosystem/portage/blob/d3d117930285d8f7cd002d16e9b9f12e6067e90a/docs/specs/direct-inference-qualification.md#offline-capacity-review-packet)
+verifies one externally hash-pinned public record and explicit bounded artifact
+references. It preserves the original 95 synthetic controls, all 12 runtime gates
+NOT RUN, tested source/model identities, failures/skips and unknown liabilities.
+The example exposes 32 missing capacity/cost fields. Field completeness never
+grants execution, promotion, spending or hosted readiness. No engine, qualifier,
+gateway or ledger is opened by packet generation; no network or subprocess runs.
+Actual host/model/operator evidence is still required for a live decision.
+
+The next work is an opt-in disposable Cairn adapter/harness assessment, completion
+of Waypoint's local synthetic identity slice, and a concrete inference operator
+decision packet. Production Cairn wiring, live Jetstream2/inference, source-image
+promotion, private-data admission and purchases remain outside this acceptance.
+
 ## Remaining decisions
 
 Follow the [sequenced build backlog](../strategy/research-pilot-build-backlog.md)

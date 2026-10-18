@@ -63,8 +63,12 @@ Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge
 independent-review findings were fixed; final CI passed 115 tests/subtests,
 26 Docker checks and 38 recovery checks. Provider failure controls use a local
 simulator. Live Jetstream2, independent-host supervisor operation and provider
-settlement remain NOT RUN. Its next increment is a durable synthetic consumer-job
-bridge, with actual local Docker evidence and no production Cairn integration.
+settlement remain NOT RUN. The durable synthetic consumer-job bridge is now
+merged in [#9](https://github.com/EduCloud-Ecosystem/outfitter/pull/9), merge
+`273bb014`, after one independent-review fix. Final CI passed 156 tests/subtests,
+26 Docker, 38 recovery and 19 consumer checks. It uses actual local Docker
+fixtures and does not publish grades. The next increment assesses an opt-in
+disposable Cairn adapter/harness, with production configuration unchanged.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`
@@ -72,8 +76,12 @@ and `a3a4a6e`. Review fixed false-positive readiness, skipped-control and memory
 evidence paths, and made paid CI review explicitly opt-in. Final checks passed;
 the local suite recorded 225 passing tests with six existing integration skips.
 The qualification record has 95 synthetic passing controls and all 12 actual
-engine gates NOT RUN. Its next increment is an offline qualification/capacity
-review packet. No engine was started, model acquired or default route changed.
+engine gates NOT RUN. The offline qualification/capacity review packet is now
+merged in [#12](https://github.com/EduCloud-Ecosystem/portage/pull/12), merge
+`577fdb9a`: 61 focused tests and 286 total tests passed, with six existing skips;
+independent review and final CI passed. The example identifies 32 missing
+capacity/cost fields and grants no authorization. A concrete operator packet is
+being prepared. No engine was started, model acquired or default route changed.
 
 Docker stays the baseline. Optional Kubernetes evaluation follows P1 before
 custom multi-host expansion; existing institutional-capacity discovery may begin

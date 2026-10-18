@@ -219,7 +219,9 @@ course workspace remain a separate path from the new research service.
 - Belay's historical PR #12 assessment and Portage's older PR stack remain
   outside this update. The new finite Portage gateway/qualification path merged
   through #10/#11 after review fixes and passing final CI; 95 synthetic controls
-  pass, while all 12 actual-engine gates remain NOT RUN. No default route changed.
+  pass, while all 12 actual-engine gates remain NOT RUN. The offline review packet
+  merged in #12 with 61 focused controls; it exposes missing capacity evidence
+  without authorizing execution or spending. No default route changed.
   Neither component is a prerequisite for the Python/R computing pilot.
 - Outfitter now has the merged bounded Docker broker consumed by the research
   workspace. Native-SU journal and simulated independent cleanup implementation
@@ -227,6 +229,8 @@ course workspace remain a separate path from the new research service.
   Jetstream2, independent-host supervision and provider settlement remain open
   in Ben's unchanged issues #1–#5. Local recovery/fencing P1 is merged;
   it does not establish remote source-loss recovery or provider settlement.
+  The local synthetic consumer bridge merged in #9 with 19 consumer checks;
+  actual Cairn adapter rehearsal and the broader live handoff remain separate.
 - Preserve existing local strategy changes and unpublished module commits when
   reconciling branches. Public documentation is not the whole local state.
 
