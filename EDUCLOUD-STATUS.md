@@ -55,8 +55,17 @@ for source-image builds; [#28](https://github.com/EduCloud-Ecosystem/waypoint/is
 independent second-operator/machine acceptance, and
 [#29](https://github.com/EduCloud-Ecosystem/waypoint/issues/29) shared identity,
 retention/storage, capacity and accessible operations. Open issues #28/#29 remain
-unassigned. The Waypoint chat continues with a
-bounded synthetic identity/access slice of #29. Ben's existing Outfitter issues
+unassigned. The local synthetic identity/access slice merged in
+[#33](https://github.com/EduCloud-Ecosystem/waypoint/pull/33), merge `8bb8e415`,
+reviewed head `264f8591`. Its evidence separates 158 offline controls, 74 real
+local browser/service checks at application revision `b818d02`, and seven later
+provider-logout checks. Final ordinary CI passed; source builds were skipped.
+Failed attempts remain retained. All four owned stacks were removed; conservative
+charges remain 210 CPU-seconds for the final pilot and 120 for earlier attempts.
+Hosted identity, manual accessibility and independent human acceptance remain
+open. Waypoint is building a read-only storage inventory/retention report before
+whole-store admission limits; the report alone will not enforce quotas or delete
+anything. Ben's existing Outfitter issues
 #1–#5 remain assigned and unchanged.
 Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge
 `534dcf18`, adds durable native-SU accounting and independent cleanup. Two
@@ -87,8 +96,15 @@ independent review and final CI passed. The example identifies 32 missing
 capacity/cost fields and grants no authorization. The concrete operator packet
 is prepared; no approved installed model was identified in the inspected local
 inventory. Live use stays deferred while host/model/operator/window choices are
-pending. A suspected expiry gap after metadata pinning is undergoing targeted
-synthetic validation. No engine was started, model acquired or default route changed.
+pending. The confirmed metadata/dispatch expiry gap was fixed in
+[#13](https://github.com/EduCloud-Ecosystem/portage/pull/13), merge `11438ede`,
+reviewed head `bf4c51c1`. Seventeen separate synthetic expiry controls pass;
+the full suite passed 303 tests with six existing skips, and final CI passed
+(paid review skipped). Expiry after admission retains uncertain reservations.
+The original 95-control record and all 12 NOT RUN runtime gates are unchanged.
+No engine was started, model acquired or default route changed. Jetstream2 hosted
+inference is a recommendation being prepared as a separate optional design;
+Greg has not selected or authorized live use through that recommendation.
 
 Docker stays the baseline. Optional Kubernetes evaluation follows P1 before
 custom multi-host expansion; existing institutional-capacity discovery may begin

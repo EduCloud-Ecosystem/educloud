@@ -171,7 +171,12 @@ record. The local Waypoint/Outfitter Python/R research baseline is merged; P1
 portability and coordinated recovery are merged with pinned local evidence and
 passing CI. Source construction/qualification on ARM64 and AMD64 is accepted
 through Waypoint #31; #32 records later cleanup and a conservative charge while
-preserving the original failed replay. All four source candidates remain
+preserving the original failed replay. Local synthetic identity/access merged
+in #33: 158 offline controls, 74 local browser/service checks and a separate
+seven-check provider-logout supplement; final ordinary CI passed and source
+builds were skipped. Failed attempts and conservative charges remain retained.
+Read-only storage inventory/retention reporting is in progress and will not
+enforce quotas or authorize deletion. All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;
 Docker remains the default. No live cloud/provider acceptance is claimed.
@@ -221,7 +226,12 @@ course workspace remain a separate path from the new research service.
   through #10/#11 after review fixes and passing final CI; 95 synthetic controls
   pass, while all 12 actual-engine gates remain NOT RUN. The offline review packet
   merged in #12 with 61 focused controls; it exposes missing capacity evidence
-  without authorizing execution or spending. No default route changed.
+  without authorizing execution or spending. PR #13 fixes confirmed approval
+  expiry races after metadata checks and before admission/dispatch: 17 separate
+  synthetic controls and final CI pass; admitted unknown reservations stay held.
+  All 12 actual-engine gates remain NOT RUN. A separate Jetstream2 hosted-API
+  design is being prepared; a host recommendation is not live-use approval.
+  No default route changed.
   Neither component is a prerequisite for the Python/R computing pilot.
 - Outfitter now has the merged bounded Docker broker consumed by the research
   workspace. Native-SU journal and simulated independent cleanup implementation
