@@ -104,11 +104,19 @@ eight production-connected Python controls and seven pinned simulated broker
 controls preserve UNKNOWN bounds; final ordinary CI passed, source builds skipped.
 Review replaced a self-comparing append fixture with pre-submit expectations and
 negative controls, retaining the earlier evidence. All 168 prior evidence files
-are unchanged. The next authorized slice is finite logical row/session/encoded
-limits on a fresh opt-in profile, bound to existing authority with safety actions
-preserved at limits. This is not storage-quota or accepted-store migration
-acceptance; recurring WAL/replacement, background writer and restore peaks remain
-unproved.
+are unchanged. Finite logical row/session/encoded limits merged in
+[#40](https://github.com/EduCloud-Ecosystem/waypoint/pull/40), merge `e79a50c6`,
+reviewed head `f7d0cd44`. The fresh local-key profile binds existing authority and
+preserves safety actions at limits. All 317 local tests passed, including 21
+finite controls; independent review and exact-head/post-merge CI passed, with
+source builds skipped. Two reproduced binding/recovery-entry defects were fixed;
+their original red source/log and all 182 prior evidence files remain unchanged.
+Finite OIDC and restore explicitly refuse. Existing Docker CI is compatibility
+coverage, not finite-profile provider acceptance; its provider/browser/human
+gates remain NOT RUN. Whole-store quotas remain NO-GO, capacity UNKNOWN and the
+fifth headroom failure FAIL. Next, Waypoint qualifies SQLite/guard write peaks
+while Outfitter qualifies Docker broker writer ownership with disposable
+witnesses. No quota admission, accepted-store migration or default change.
 Ben's existing Outfitter issues
 #1–#5 remain assigned and unchanged.
 Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge

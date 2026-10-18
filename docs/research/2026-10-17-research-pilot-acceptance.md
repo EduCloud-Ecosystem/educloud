@@ -930,6 +930,77 @@ No accepted-store migration, deletion, journal/default change, source promotion,
 live provider/model work or purchase occurred. Ben's assignments and the Docker
 baseline are unchanged.
 
+## Finite logical authority
+
+Waypoint [#40](https://github.com/EduCloud-Ecosystem/waypoint/pull/40) merged as
+`e79a50c6074e3ecf579a5bc5b0732c473d62502d` from reviewed head
+`f7d0cd44fac9e594775302b512c04c75c252798e`. Its merge tree
+`012a93d8ff3098c6c4393d0f78d3749430023fd0` matches the reviewed head.
+[Exact-head CI 39107672215](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39107672215)
+and [post-merge CI 39107809444](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39107809444)
+passed controls and existing actual-Docker/replay/recovery checks; clean source
+builds were SKIPPED. Docker results are compatibility evidence for existing
+profiles, not finite-profile provider qualification.
+
+The [profile contract](https://github.com/EduCloud-Ecosystem/waypoint/blob/f7d0cd44fac9e594775302b512c04c75c252798e/research-workspace/FINITE-AUTHORITY.md)
+implements the reviewed engineering limits on fresh local-key stores: 128 total
+users, 20 total projects, 1024 memberships, 1000 historical runs and 256 live
+sessions/eight per subject. Revoked/closed/failed history still counts. Existing
+tighter per-project, queue, expiry and compute limits remain. Versioned
+config/database/guard binding, bounded canonical JSON and signed-counter overflow
+checks fail closed. New rows/sign-ins use ordinary admission; existing sessions,
+logout, revoke/rotate, membership demotion/removal, cancellation and conservative
+accounting retain their safety behavior. Project initialization reserves its
+owner membership against competing admissions.
+
+Checkpoints preserve the finite profile and database marker. Finite-profile OIDC
+and all four common/direct restore/cutover entry points explicitly refuse before
+provider, destination or source-lock/sealing effects. These are safe refusals,
+not accepted finite-profile identity-provider or recovery implementations.
+
+| Control or gap | Recorded result and boundary |
+| --- | --- |
+| Local suite and finite controls | **PASS**: 317 tests include 21 finite controls and one bridge running eight frozen v1 controls. Counts overlap. Boundary history is seeded synthetic data, not 1000 provider runs. Final transitions exercise production methods; provider behavior is simulated. |
+| Independent review | **PASS**: owner review reran the 21 controls and v1 bridge; supplemental disposable checks covered nine safety actions each starting independently at all five row caps, cross-process final-user-slot contention and OIDC refusal. The committed combined safety test is sequential and frees some capacity before later actions; it alone is not the independent full-cap matrix. |
+| Database authority corruption | **FAIL originally, corrected**: deleting, retargeting or duplicating authority rows while retaining other markers allowed reopening and some safety writes. Exactly one matching identity and bounded sequence are now required before access or safety bypass. Fresh regression fixtures check unchanged database/config/guard after refusal. |
+| Direct recovery entry points | **FAIL originally, corrected**: an internally consistent trusted fixture with a finite SQLite marker and stripped config markers reached direct destination creation or source locking. All four entry points now perform config/database preflight before these effects. |
+| Encoded receipt overflow | **PASS, fault injection**: the mock injects roughly 720 KiB past the real collector's 262144-byte cap. Production would reject it earlier. This qualifies serializer refusal/retained uncertainty, not a reachable accepted receipt overflow. |
+| New finite-profile browser, real provider and human acceptance | **NOT RUN**. Ordinary Docker CI does not close these gates. |
+| Whole-store quotas and physical capacity | **NO-GO / UNKNOWN**: logical ceilings do not bound SQLite pages/WAL, repeated scratch, detached broker writers or restore destinations. `quota_enforced:false`; fifth consumed-headroom failure remains **FAIL**. No physical disk-full/power-loss or selected-host fit acceptance. |
+
+The [acceptance record](https://github.com/EduCloud-Ecosystem/waypoint/blob/f7d0cd44fac9e594775302b512c04c75c252798e/research-workspace/evidence/2026-10-18/finite-authority/README.md)
+preserves original red source/log: two tests, fifteen failed subtests and three
+AccessError sequencing errors after shared-fixture revocation. Those three errors
+are not independently demonstrated cancellation bypasses. Exploratory failures
+and the first incomplete frozen archive remain recorded; intermediate source
+trees were not frozen, so those logs make no exact-replay claim.
+
+Root independently rechecked both fixes and verified all 25 source and 16
+evidence hashes without rerunning workloads. Acceptance JSON SHA-256 is
+`d78864f12b557e8ad96a5164911fcbe8ed1cdc8a5fc813f5f10d41aa07690015`;
+manifest SHA-256 is
+`b8897e209874aa6c760afcaf8ddd7faaecc32dd29914fb1571bbb0c6739a01fe`.
+Owner's final independent review report SHA-256 is
+`6a1ade34af7cf90619cf3b09f4fd4ac96ad4acd71e03b4669d7a3f0b944aec55`;
+its exact-head targeted log SHA-256 is
+`68fc942be4a01cd711ab2325080d3318c44afb8f25990f21281ea58922d29885`.
+
+Root's immutable-blob audit confirmed all 182 prior October 17 evidence files
+remain byte-identical. The existing v1 capacity contract/harness retain their
+source meaning; the current test bridge verifies and runs a 43-file frozen
+export of base `599ee0ce23942bbfc578124af12285484c357157`, archive SHA-256
+`4da52b3c1889968d15ac12670a9bc9fe89379f15c9188ee7ef6d43ceed6f6333`.
+Each archived file matches its original Git blob. These eight historical
+controls are not relabeled as modified-runtime coverage. No accepted-store
+migration, alternate ledger, history deletion, journal/default change, source
+promotion or liability release is accepted. All four source candidates remain
+disabled and earlier failed replay/cleanup evidence remains.
+
+The next scoped offline work is Waypoint SQLite/guard write-peak qualification
+and Outfitter Docker broker writer ownership qualification, with separate owners,
+source pins, disposable witnesses and independent review. A reviewed concrete
+protocol precedes broader implementation; quota admission remains NO-GO.
+
 ## Remaining decisions
 
 Follow the [sequenced build backlog](../strategy/research-pilot-build-backlog.md)
