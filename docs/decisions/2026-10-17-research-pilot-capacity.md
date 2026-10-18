@@ -23,12 +23,40 @@ multi-host expansion; it is not an adoption, managed-cluster or migration decisi
 | Institutional worker/backup destination | No new host, storage plan or backup account selected here. | Named owner, data classes, cohort/concurrency, retention, measured recovery target, full resource bill and bounded pilot term. |
 | Jetstream2 | Native-SU journal and simulated independent cleanup accepted in Outfitter #8. Continue the local synthetic consumer bridge; no live worker authorized here. | Verified allocation permissions, current rate/terms, maximum one CPU worker, explicit SU ceiling, expiry and independent teardown. Quota/access is not capacity or permission to consume an allocation. |
 | Kubernetes | Optional disabled evaluation; supported institutional-capacity discovery may begin. | Approved cluster/local environment and operator, finite attempt/accounting manifest, storage/restore/isolation plan, overhead/maintenance comparison. No cluster purchase or production change. |
-| Inference | Portage #10/#11 accepted the finite gateway and synthetic qualification controls; #12 supplies the offline review packet. The concrete operator packet is prepared, but the inspected inventory identified no approved installed model; live qualification remains NOT RUN. | Assign an approved existing host, permitted installed model/template, operator and finite limits/window. Resolve the metadata/dispatch expiry candidate before execution. If unavailable, defer. Any paid API, model acquisition or expanded plan requires its own explicit decision; the software path requires no new subscription. |
+| Direct local inference | Portage #10/#11 accepted the finite gateway and synthetic qualification controls; #12 supplies the offline review packet; #13 fixes confirmed approval-expiry races. The concrete operator packet is prepared, but the inspected inventory identified no approved installed model; live qualification remains NOT RUN. | Assign an approved existing host, permitted installed model/template, operator and finite limits/window. If unavailable, defer. Model acquisition or expanded capacity requires its own explicit decision; the software path requires no new subscription. |
+| Hosted inference candidate | Jetstream2's existing hosted API is recommended for a first synthetic/public shared pilot; this is not Greg's selection or authorization. A separate offline design/decision packet is being prepared. | Verify account access and permitted application/credential use, endpoint behavior, data destination, supported model identity, request/usage bounds and operational owner. Preserve unknown remote work and distinguish unavailable engine internals from direct local qualification. No live API calls or default-route change. |
 | PAIR / multi-node hardware | Separate experiment; deferred without two approved available machines. | Separate finite protocol and adoption evidence. No hardware purchase or default-route change. |
 
-No current vendor prices, discounts, availability guarantees or entitlement
-amounts are asserted in this record. An older status document's historical price
-is not an approved quote for a new deployment.
+Except for the dated published inference terms below, no current prices,
+discounts, availability guarantees or entitlement amounts are asserted here.
+An older status document's historical price is not an approved quote for a new
+deployment.
+
+## Inference host recommendation, not authorization
+
+The [Jetstream2 hosted service](https://docs.jetstream-cloud.org/inference-service/overview/)
+documentation, checked October 17, states that its inference API has no usage
+charge or Jetstream2 SU consumption for ACCESS users. Its models can change and
+the service can have maintenance interruptions. It processes data at IU and
+administrators may inspect interactions. These are published service terms,
+not measured performance, private/student-data approval, an uptime guarantee or
+verified access for this pilot.
+
+The [API access guide](https://docs.jetstream-cloud.org/inference-service/api/)
+distinguishes an authenticated Open WebUI proxy from direct inference backends
+restricted to Jetstream2/IU networks. Their API capabilities differ. An account
+key is private and must not be shared; suitable application identity and
+multi-user use remain to be confirmed. No key was obtained or endpoint tested.
+
+For experiments needing controlled model versions, a dedicated GPU host remains
+an alternative subject to allocation and independent-cleanup gates. Current
+[instance specifications](https://docs.jetstream-cloud.org/general/vmsizes/)
+list `g3.large` with 20 GB A100 GPU memory, 60 GB system RAM and 32 SUs/hour;
+GPU entitlement is separate from CPU allocation. This is a sizing candidate,
+not a resource reservation, benchmark, dollar price or approved purchase.
+The existing M1/16 GB iMac is a candidate for small local Ollama tests; hardware
+presence does not establish available capacity or measured model fit. Hosted
+API evidence cannot replace the separate local engine qualification gates.
 
 ## Reviewable cost packet
 

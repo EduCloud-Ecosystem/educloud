@@ -239,7 +239,7 @@ gateway or ledger is opened by packet generation; no network or subprocess runs.
 Actual host/model/operator evidence is still required for a live decision.
 
 The subsequent Cairn adapter and inference operator packet are recorded below.
-Completion of Waypoint's local synthetic identity slice remains in progress.
+Waypoint's subsequent local synthetic identity acceptance is recorded below.
 Production Cairn wiring, live Jetstream2/inference, source-image promotion,
 private-data admission and purchases remain outside this acceptance.
 
@@ -287,9 +287,9 @@ The brief retains 95 synthetic passes, all 12 runtime gates NOT RUN and 32 missi
 capacity/cost fields. The proposed workload remains at most 16 attempts within a
 separately chosen window of at most 30 minutes. The needed choices are an existing
 approved host and permitted installed model, its accountable operator and limits,
-and a later bounded execution window. Deferral is the no-spend option. A possible
-expiry gap after metadata pinning is undergoing targeted synthetic validation;
-it must be resolved before live qualification. No engine start, acquisition,
+and a later bounded execution window. Deferral is the no-spend option. The
+subsequently confirmed metadata/dispatch expiry gap is fixed in PR #13, recorded
+below; the existing packet remains a historical snapshot. No engine start, acquisition,
 model request or spending occurred in preparing the brief.
 
 The local operator packet is retained separately from this public repository.
@@ -298,6 +298,57 @@ The reviewed brief SHA-256 is
 the machine packet containing all eight input hashes has SHA-256
 `3637cf01a9b08ac64cb0112e0eb31cbc7e3b692373d8d7337c84d6a1cb6fec9a`.
 These identify the bounded inventory snapshot, not current capacity or approval.
+
+## Local synthetic identity acceptance
+
+Waypoint [#33](https://github.com/EduCloud-Ecosystem/waypoint/pull/33) merged as
+`8bb8e41575aee399a62989be561e4252482a2435` from final reviewed head
+`264f8591baef6c71bf4f3a76d8a4e9b748448834`.
+[Ordinary CI 39095546967](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39095546967)
+passed controls and actual Docker checks; the clean-source-build job was
+**SKIPPED**, not rerun or promoted by this change.
+
+The separate synthetic OIDC mode uses current issuer/subject membership checks
+at request, dispatch, execution and publication. Key-mode fallback and forged
+identity headers are refused. Revocation, provider outage, logout and local
+replacement preserve denial, actual receipts and conservative charges.
+The [retained evidence](https://github.com/EduCloud-Ecosystem/waypoint/blob/264f8591baef6c71bf4f3a76d8a4e9b748448834/research-workspace/evidence/2026-10-17/oidc-pilot/README.md)
+distinguishes these observations:
+
+| Evidence | Result and boundary |
+| --- | --- |
+| Full local browser/service run | **PASS**, 74 checks at `b818d02`; all 18 application/static/recipe files match the final candidate. Four identities, two projects, actual Python/R, active revocation, outage, replacement and bounded keyboard journeys. |
+| Later observer-cleanup correction | **PASS**, two regression tests within 158 offline controls. The harness now prevents late pause and attempts exact-owned unpause even when teardown raises. This patch was not part of the earlier full browser run. |
+| Provider logout supplement | **PASS**, seven separate checks after the exact confirmation route was added. The original 403 failure remains visible; it is not counted in the earlier 74-check run. |
+| Visual/export review | Desktop/mobile screenshots inspected, no mobile horizontal overflow, and downloaded synthetic export validates with cancelled/missing-result gaps. Automated keyboard activation is not full manual accessibility acceptance. |
+| Owned cleanup/accounting | Four exact stacks/networks/volumes and owned workloads absent. Final pilot retains 210 CPU-seconds, earlier attempts 120; copied replacement rows are not double-counted. Private state/images remain retained. |
+| Failed attempts and prior evidence | Initial realm/harness, token-lifetime, provider-readiness and logout-route failures remain retained. All 79 frozen source-build evidence files and the original failed replay record remain unchanged. |
+| Broader acceptance | Hosted identity, real/private data, manual screen-reader/focus-order acceptance, independent human reproduction, whole-store limits, retention/deletion and off-host recovery remain **NOT RUN**. Source candidates remain disabled; issue #29 stays open. |
+
+## Approval expiry correction
+
+Portage [#13](https://github.com/EduCloud-Ecosystem/portage/pull/13) merged as
+`11438edec07ee7699a0c96e88a8fb5af60ec7348` from reviewed final head
+`bf4c51c112de5f45600ad76d4796016b0abeea88`.
+[Qualification CI 39095235012](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39095235012)
+and [full-suite CI 39095235011](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39095235011)
+passed; paid automated review was **SKIPPED**.
+
+Deterministic delayed-metadata controls first reproduced dispatch after expiry
+and insufficient remaining request headroom. The correction rechecks after
+metadata, inside the reservation transaction after lock waits, and after connect
+immediately before engine dispatch. A monotonic deadline prevents wall-clock
+rollback from extending approval; transport timeouts respect remaining time.
+Expiry after admission preserves the full unknown reservation and concurrency
+slot. Interrupting a socket does not prove remote work stopped.
+
+The [separate expiry evidence](https://github.com/EduCloud-Ecosystem/portage/blob/bf4c51c112de5f45600ad76d4796016b0abeea88/docs/qualifications/2026-10-17-expiry-controls.json)
+records **17 passing synthetic controls** and the two original reproduced
+failures at implementation `2343c654` under Python 3.12.13; all five recorded
+source hashes match the final head. The full suite passed **303 tests**, with
+six existing sibling-contract integration skips. The original **95 synthetic
+controls and all 12 actual-engine gates NOT RUN** are unchanged. No real model
+request, engine start, download, spending or default routing change occurred.
 
 ## Remaining decisions
 
