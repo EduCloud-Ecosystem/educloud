@@ -315,6 +315,14 @@ requires the exact dependency and finite exposure prepared before any cost.
 No cloud purchase, live allocation test, production deployment or private-data
 admission occurred in this update. Belay and `portage-local` remain unchanged.
 
+The separately authorized local OrbStack migration remains host-owner work. The
+[Kubernetes foundation package](tools/local-kubernetes/README.md) prepares and
+checks namespace/quota/service-account/restricted-pod designs offline, with zero
+workload allowance and no cluster calls. It neither performs the migration nor
+enables a Kubernetes execution backend. Network enforcement, actual deployment
+and all runtime controls remain NOT RUN in this package; the prior four-attempt
+Waypoint qualification allowance remains exhausted.
+
 ## October 6–7 classroom decision (preserved)
 
 The first user-facing computing replacement is **browser Python/R coursework

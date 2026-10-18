@@ -1,0 +1,20 @@
+test_cli_offline_round_trip_and_no_execution_subcommand (test_evaluate.FoundationTests.test_cli_offline_round_trip_and_no_execution_subcommand) ... ok
+test_command_plan_is_local_explicit_and_never_launches (test_evaluate.FoundationTests.test_command_plan_is_local_explicit_and_never_launches) ... ok
+test_configuration_types_unknown_fields_and_pins_refuse (test_evaluate.FoundationTests.test_configuration_types_unknown_fields_and_pins_refuse) ... ok
+test_deterministic_round_trip_no_provider_access (test_evaluate.FoundationTests.test_deterministic_round_trip_no_provider_access) ... ok
+test_duplicate_nonfinite_and_oversized_json_refuse (test_evaluate.FoundationTests.test_duplicate_nonfinite_and_oversized_json_refuse) ... ok
+test_existing_destination_and_symlink_refuse (test_evaluate.FoundationTests.test_existing_destination_and_symlink_refuse) ... ok
+test_missing_extra_changed_and_untrusted_bundle_refuse (test_evaluate.FoundationTests.test_missing_extra_changed_and_untrusted_bundle_refuse) ... ok
+test_nonlaunchable_restricted_pod_review (test_evaluate.FoundationTests.test_nonlaunchable_restricted_pod_review) ... ok
+test_partial_write_cannot_publish_complete_manifest (test_evaluate.FoundationTests.test_partial_write_cannot_publish_complete_manifest) ... ok
+test_rehashed_artifact_metadata_does_not_relax_contract (test_evaluate.FoundationTests.test_rehashed_artifact_metadata_does_not_relax_contract) ... ok
+test_rehashed_manifest_cannot_enable_or_fabricate_acceptance (test_evaluate.FoundationTests.test_rehashed_manifest_cannot_enable_or_fabricate_acceptance) ... ok
+test_remote_ambiguous_or_credential_endpoints_refuse (test_evaluate.FoundationTests.test_remote_ambiguous_or_credential_endpoints_refuse) ... ok
+test_special_files_refuse_without_waiting (test_evaluate.FoundationTests.test_special_files_refuse_without_waiting) ... ok
+test_two_namespaces_separate_exact_projects_and_pss (test_evaluate.FoundationTests.test_two_namespaces_separate_exact_projects_and_pss) ... ok
+test_zero_workloads_controllers_and_storage (test_evaluate.FoundationTests.test_zero_workloads_controllers_and_storage) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.478s
+
+OK
