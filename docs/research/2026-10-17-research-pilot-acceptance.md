@@ -635,12 +635,59 @@ Exit zero means the known failures were reproduced, not product acceptance.
 The private audit bundle retains 22 immutable source files and their hash index;
 these local hashes identify retained evidence, not a published correction.
 
-The owner is correcting the final serialized local-authority check and adding
+The owner was tasked with correcting the final serialized local-authority check and adding
 boundary controls for cancellation, membership/revocation, closure and expiry.
 Pre-dispatch refusal must not be confused with a possibly launched outcome, and
 no provider wait or remote identity request may move under database/guard locks.
-This correction has not yet been accepted; the three new failing witnesses and
-all previous passing/failed records remain separate evidence.
+That task did not establish acceptance; the subsequently reviewed #38 correction
+is recorded below. The three failing witnesses and all previous passing/failed
+records remain separate evidence.
+
+## Final dispatch and settlement correction
+
+Waypoint [#38](https://github.com/EduCloud-Ecosystem/waypoint/pull/38) merged as
+`7d5cf925ffacd16129c6851f1b3d4f8bc4c1a8a0` from reviewed head
+`ae00a41a2343858f74de9df9878923cdb197eb3b`.
+[Final-head CI 39104328055](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39104328055)
+passed controls and actual-Docker/recovery checks; source builds were SKIPPED.
+The [local record](https://github.com/EduCloud-Ecosystem/waypoint/blob/ae00a41a2343858f74de9df9878923cdb197eb3b/research-workspace/evidence/2026-10-17/final-dispatch/local-verification.json)
+records **295 offline controls**, including **sixty final-dispatch tests**.
+The separate root recheck passed **26 targeted tests**, with zero real provider
+processes; these are not extra full-suite counts or new browser acceptance.
+
+The final spawn boundary now rechecks current local cancellation, user and
+membership state, project closure/expiry and session authority in both guarded
+and legacy modes, under the same writer ordering as those controls. Denial before
+launch refuses; denial after possible launch retains conservative accounting and
+suppresses publication. Review also reproduced and corrected two related defects:
+worker refusal settlement could overwrite a superseding recovery/unknown record
+with zero accounting, and a fence error after process creation could lose the
+owned broker handle. Conditional worker settlement now preserves newer records,
+and a launched handle remains available for bounded observer cleanup. Observer
+termination still does not prove remote workload termination or settle liability.
+
+The original [red witness](https://github.com/EduCloud-Ecosystem/waypoint/blob/ae00a41a2343858f74de9df9878923cdb197eb3b/research-workspace/evidence/2026-10-17/final-dispatch/pr37-red/observation.json)
+and its 22 immutable source files are preserved byte for byte. It still reproduces
+three late-denial failures and three early-denial passes on its original source.
+Running its unchanged observation logic against an immutable corrected snapshot
+prevents all six launches. The independent corrected-observation SHA-256 is
+`b27fc831cc0a4b61df190ff8b75bfd2e0041b4b1accd0cca6957d236dea2f7f6`;
+the review record SHA-256 is
+`a06c8bb942a920ab9b3a1fc26a3bcf53393fda736d5e3531312fa2b98b164f9c`.
+All four declared correction-source hashes, 28 frozen witness payload hashes
+and 137 prior evidence files matched. The catalog and rejected dirty draft remain
+unchanged. The frozen source's original end-of-file whitespace is retained with
+its original hash rather than normalized.
+
+The next authorized slice is a source-pinned writer/capacity contract with
+disposable production-connected fixtures and a finite-authority growth proposal.
+New sessions through an essential slot, SQLite journals/readers, recurring guard
+replacement scratch, broker/watchdog writers and restore destination peaks do
+not yet have a complete coordinated bound. Unknown files discharge no other
+writer's allowance; observed consumption must not be subtracted indiscriminately.
+The fifth consumed-headroom witness remains BLOCKED. Quotas, accepted-store
+migration, retention deletion and hosted readiness remain unqualified; this
+correction does not promote source images or authorize new capacity.
 
 ## One finite offline experiment
 
@@ -742,12 +789,98 @@ scope for corrective implementation:
 This is a local operator trust model. It cannot guarantee detection of privileged
 in-place rollback or a registry/database copied together onto another host.
 Replacement-grant lineage, cross-host authority, automated restore activation and
-hosted transport are deferred. All corrective acceptance results remain NOT RUN
-until the component revision and its evidence receive separate review.
+hosted transport are deferred. This proposal did not establish corrective
+acceptance; the separately reviewed #15 result is recorded below.
 
 The original 95/17/147 evidence records and all 12 runtime NOT RUN fields are
 unchanged. Correcting this engineering gap precedes any live qualification;
 it does not authorize a host/model, provider access, new allowance or deployment.
+
+## Durable qualification approval correction
+
+Portage [#15](https://github.com/EduCloud-Ecosystem/portage/pull/15) merged as
+`79742746b10ace18e498111dd5a8f3227edd995c` from reviewed head
+`f22ff34cf232490426149fb3bcc452de9652fe92`. Final-head
+[qualification CI 39104327567](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39104327567)
+and [full CI 39104327559](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39104327559)
+passed; paid review was SKIPPED. The
+[evidence](https://github.com/EduCloud-Ecosystem/portage/blob/f22ff34cf232490426149fb3bcc452de9652fe92/docs/qualifications/2026-10-17-durable-approval-controls.json)
+pins corrected source `7a2167ce4f4e75835898b1be1de6f02749da380d` and records
+**63 guard controls**, **175 runner-preflight controls** and **513 full-suite
+passes with six existing skips**. These overlapping suites are not additive.
+Independent review verified all ten source/test hashes, the three frozen
+95/17/147 records and historical design-packet/bundle hashes without broad reruns.
+
+Qualification now resolves a protected operator registry before opening an
+existing authoritative store. It cannot provision a store/grant, reactivate
+membership or issue a credential at startup. One canonical approval per budget
+owns permanent named inference, metadata and authority slots; attempt/reservation
+admission is atomic. A cross-process runner lease permits the protocol's two
+within-run calls while a competing runner refuses. Final dispatch claims fence
+local authority and deadlines; claim commitment is the local revocation cutoff,
+not a claim of remote cancellation.
+
+| Corrected fixture | Observed bounded outcome |
+| --- | --- |
+| Complete first invocation | 16 inference, 51 metadata and 83 authority contacts; 192 provider-reported tokens. The final residency sample remains permitted after inference 16. |
+| Completed fresh-process repeat | Zero inference, metadata or authority contacts. |
+| Unknown-usage first invocation | One inference, six metadata and eight authority contacts; 176-unit reservation and one concurrency slot retained. |
+| Unknown-work fresh-process repeat | Zero contacts; the original reservation remains held. |
+| Abandoned attempt or dispatch claim | Fresh process refuses without replay; uncertainty remains held. |
+| Competing process at the final slots | Competing runner refuses busy without contact; the owner completes the predefined plan. |
+
+Review fixed a clock-watermark defect: a second unchecked clock read could
+overwrite the already validated value. The failing regression is retained;
+the correction persists the validated pair in its transaction. CI also retained
+two distinct failures: run `39103722745` had two passes and sixty setup errors
+because a test-output parent was missing; run `39103902273` had 61 passes and one
+assertion failure because a contact-count trigger could miss both concurrent
+final calls. The fixture now synchronizes the persisted final-slot identities;
+it no longer relies on that timing. Runtime, fixture and final-evidence revisions
+are separately pinned, and the failures were not removed by rerunning to green.
+
+Settlement and reconciliation never refund attempt slots or revive a held
+approval. Explicit offline migration preserves historical rows and liabilities;
+unbound old work does not receive inferred ownership or fresh allowance. Reboot,
+missing clock continuity and authority mismatch refuse; automatic restore
+activation is not added. The local trust model cannot guarantee detection of
+privileged in-place rollback or a copied registry/database on another host.
+Generic gateway defaults and hosted runtime are unchanged. **All twelve actual
+engine gates remain NOT RUN**; no model, provider, live inference, spending or
+default-route change is authorized by this fixture acceptance.
+
+## Supplemental worker operational packet
+
+Outfitter [#14](https://github.com/EduCloud-Ecosystem/outfitter/pull/14) merged as
+`e9c18f970bae38aef7254b90f1465dadd64673d5` from reviewed head
+`2f5f4c63efc229d1c6fe9370e0ec40277cef9b3b`.
+[Final CI 39104169911](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39104169911)
+passed. This is documentation-only acceptance; no runtime or guest feature was
+added. The [packet](https://github.com/EduCloud-Ecosystem/outfitter/blob/2f5f4c63efc229d1c6fe9370e0ec40277cef9b3b/docs/JETSTREAM2-OPERATIONAL-DECISIONS.md)
+recommends restricted private SSH from existing approved capacity, an independent
+cleanup host and one finite synthetic CPU-worker attempt. Allocation, host,
+operator, private access and credential custody remain unselected; no live action
+or resource authorization follows from the recommendation.
+
+Independent review corrected guest-key/provider-credential wording, removed an
+unnecessary architecture re-approval gate and clarified that the **64 total
+persisted sweeps per reservation/observer store are shared across both resource
+phases and restarts**. All fourteen protected historical files, including the
+original proposed manifest, match the accepted base. Public primary sources
+support the dated candidate facts; selected-provider behavior remains unknown.
+The reviewed document SHA-256 is
+`af5e6006a6eb462b877be1d2721dbb97b4fedd7cd11123c9418424d16fe3f034`;
+the structured supplement SHA-256 is
+`5f618ec1013677898b15baf92e2344ba468000d21737b96a6a695664f2b13507`.
+
+No additional subscription is demonstrated necessary. Existing host/network
+capacity and operating costs are unverified; any new infrastructure needs a
+priced decision. The proposed 1 SU reservation remains a local accounting bound,
+not a provider-enforced cap or verified maximum exposure. Late effects and
+uncertain liabilities persist. Guest bootstrap/transport, production evidence
+collection, independent-host recovery and terminal cleanup remain engineering
+and operational gates before live approval can be executable. Ordinary scoped
+design work continues under the existing build authorization.
 
 ## Remaining decisions
 
