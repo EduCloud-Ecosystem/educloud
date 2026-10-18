@@ -1110,7 +1110,8 @@ and UNKNOWN liabilities remain. This does not establish WAL, memory or time
 maxima, engine ceilings, checkpoints, scratch reuse, migration or storage quotas.
 The subsequent guard publication design received narrow implementation GO after
 independent exhaustion/takeover/compatibility review and the required cache
-clarification in the capacity decision. Runtime acceptance remains pending.
+clarification in the capacity decision. Its corrected implementation is accepted
+in #43 below; this earlier design record alone did not establish runtime acceptance.
 
 Manifest SHA-256:
 `a7fce6b1312594855dca20af7dadc9f9ba829c6a3f456f76a28465836eea0db9`.
@@ -1223,13 +1224,154 @@ Focused passing log SHA-256:
 Original failing log SHA-256:
 `3464820c95330aab2024ddd9befa95245dc6f3cc13a249a49ae350a7c2914264`.
 
-Waypoint's active broker remains `5827c84e9952cc67b85e91ceff4282e0ead6923b`.
-The next adoption qualification must compare old/new executable behavior and old
+At #16 acceptance, Waypoint's active CI broker remained
+`5827c84e9952cc67b85e91ceff4282e0ead6923b`.
+The subsequent adoption qualification compares old/new executable behavior and old
 authority/checkpoint formats in disposable state before changing that pin.
 Do not infer upgrade compatibility from tests that use one binary throughout;
 native-v3/consumer-v4 state is outside the local-v2 consumer adoption contract.
 Belay, accepted stores, dirty worktrees, Ben's assignments and live choices remain
 outside this change.
+
+## Fixed guard publication slots
+
+Waypoint [#43](https://github.com/EduCloud-Ecosystem/waypoint/pull/43) merged as
+`5f2b21f1535702f9c18592b15e61c4c347d93558` from independently reviewed head
+`b063dc99ffdde60e75af7a1862538ab51eb4ebb3`. Both share tree
+`20350883ac03dd0ea6609163fb8713d0cb1a0d28`.
+[Exact-head CI 39113340974](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39113340974)
+passed controls and actual Docker; optional clean source builds were skipped.
+[Post-merge CI 39113820730](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39113820730)
+passed the same two jobs at the merge revision; clean source builds were skipped.
+The [profile contract](https://github.com/EduCloud-Ecosystem/waypoint/blob/b063dc99ffdde60e75af7a1862538ab51eb4ebb3/research-workspace/BOUNDED-GUARD-PUBLICATION.md)
+and [candidate packet](https://github.com/EduCloud-Ecosystem/waypoint/blob/b063dc99ffdde60e75af7a1862538ab51eb4ebb3/research-workspace/evidence/2026-10-18/guard-publication/acceptance.json)
+retain the original failures and source bindings. The packet's review-pending
+fields describe its pre-review capture; the subsequent review/merge results here
+do not rewrite that artifact.
+
+Fresh `--bounded-guard-publication` state uses distinct v3 profile/authority and
+v4 guard bindings. Current publication plus fixed ordinary and safety scratch
+slots replace recurring randomly named guard candidates only in this profile.
+Exclusive no-follow creation, exact file/incarnation verification and ordered
+file/directory durability barriers preserve residue rather than adopting or
+deleting it. Each safety action requires fresh intent. Cached durability applies
+only to the exact current incarnation; every mutation still rereads residue,
+receipts and holds, including scratch left by another process without a new
+current publication. Takeover qualification occurs before business transactions.
+
+| Control or gap | Result and limit |
+| --- | --- |
+| Original reviewed candidate | **FAIL preserved** at `cf8befca`: cancellation, revocation, closure or expiry released the claim token before final publication checking; an unrelated cross-process safety publication also blocked request preparation. Initial passing CI did not establish acceptance. Exact original source/witnesses and four candidate artifacts remain. |
+| Corrected candidate | **PASS**: 368 local automated controls include 34 guard-publication tests and 14 nested bounded-export controls. Owner independent re-review passed 34 publication tests and 14 adversarial controls; deliberately reverting either correction reproduces failure. Counts overlap and are not additive. |
+| Root independent review | **PASS/CLEAR** at the exact head: five focused regressions plus the original cross-process replay. Takeover succeeds before the request effect; inside business SQL it still refuses with zero barrier calls. Late cancellation prevents dispatch; commit/close and takeover failures retain uncertainty. No provider or Docker calls in these probes. |
+| Provenance | **PASS**: 45 source and 55 evidence hashes, all 248 earlier evidence files and the unchanged root failure witness verified. Head and merge trees match. |
+| Logical bound | Conditional sum of at most three 4 MiB named guard payloads, **12 MiB**, for fresh controlled state. Excludes SQLite/WAL/SHM, metadata, unlinked open files, physical allocation, memory/time, other writers and available capacity. |
+| Remaining acceptance | New-profile actual provider, manual/operator, physical exhaustion and power-loss controls **NOT RUN**. Existing Docker CI covers compatibility. Whole-store capacity remains **UNKNOWN**, quota admission **NO-GO**, and the fifth headroom witness **FAIL**. |
+
+Accepted packet SHA-256:
+`68c44555521f543edabe6c0fe84fe736d2d702e5dd6dbfdde5b28e2b052358db`.
+Candidate source manifest SHA-256:
+`228f26e33d1f38e4585e20c3945cdea456c9b888a8739b101d3cd5c2bbde6383`.
+Root independent corrected-head review record SHA-256:
+`bc9f72f5a7a2a2a7011786fb3043fb8713a71388d3555b4405d2838e3e232d63`.
+Original cross-process failure witness SHA-256:
+`edcd054d10d888db829975d672347613edccabc1259d12fef742e36a291cbbbc`.
+
+Exhaustion intentionally sacrifices availability: failed revocation can leave
+access active, and failed settlement retains debt. Existing profiles/defaults,
+finite OIDC/restore refusals, disabled source candidates and the active broker
+pin remain unchanged. This is neither accepted-store migration nor whole-store
+quota implementation.
+
+## Two-version broker qualification
+
+Waypoint [#44](https://github.com/EduCloud-Ecosystem/waypoint/pull/44) merged as
+`2317eac63a0bad0d691457b0cde2de14bf6bcc7f` from final reviewed head
+`968d0f1c6be4abf1c5b6e3334922ef4c457189b5`. Both share tree
+`303a241ebbf153b1acff249823d77ba728e128aa`.
+[Final-head CI 39114361047](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39114361047)
+passed controls and actual Docker; clean source builds were skipped. CI uses the
+unchanged baseline broker and is not a new candidate upgrade workload.
+[Post-merge CI 39114499924](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39114499924)
+passed those same two jobs at the merge revision; clean source builds were skipped.
+The [protocol](https://github.com/EduCloud-Ecosystem/waypoint/blob/968d0f1c6be4abf1c5b6e3334922ef4c457189b5/research-workspace/BROKER-UPGRADE-QUALIFICATION.md)
+and [final integration record](https://github.com/EduCloud-Ecosystem/waypoint/blob/968d0f1c6be4abf1c5b6e3334922ef4c457189b5/research-workspace/evidence/2026-10-18/broker-upgrade/integration-after-pr43/README.md)
+separate the actual original workload, later corrections and retrospective checks.
+
+The immutable baseline is `5827c84e9952cc67b85e91ceff4282e0ead6923b`; the
+candidate is accepted Outfitter #16 merge
+`5446438985e31cb739f2048a2aa2176918831a7e`. The builder exports all pinned
+production Git sources, disables dependency downloads and records source/build/
+binary manifests. Local Go build metadata did not provide a VCS stamp; adjacent
+manifests provide integrity evidence, not independent executable authenticity or
+a claim of bit-identical builds across directories.
+
+| Control or gap | Result and limit |
+| --- | --- |
+| Original local workload | **PASS** for 45 unique controls at `89084a70f7341fc11054b9d620d858c214787ced`. Seven sequential Docker attempts: two baseline, five candidate; each 1 CPU, 256 MiB, 64 PIDs, 30 seconds and 65,536 output bytes. Each final receipt records verified cleanup, no unresolved liability and 30 CPU-seconds reserved/charged as an estimated upper bound: **210 total**. No image pull or automatic retry. |
+| Consumer/recovery behavior | **PASS** for ordinary and guarded authority/history reads, exact idempotent initialization, old checkpoints to held replacements, stale activation refusal before seal, source-fenced cutover, current revocation, no replay and cumulative charges. Fresh bounded-export Python/R and finite-restore refusal also checked. Four public synthetic bundles verify. |
+| Failed workload distinction | **FAIL preserved** at Waypoint independent validation for deliberately obstructed diagnostic output; the broker workload succeeded and retained its 30 CPU-second charge. No result metrics were published. This is one of the seven attempts, not an eighth. Two queued cancellations add no execution charge. |
+| Harness defects | **FAIL preserved**: dangling output symlink handling, interrupted final reporting and the final-accounting false pass. Independent fake-caller probes converted 210 charges to zero while the original checker accepted the report, normally and under optimized Python. Exact old source, red probes/logs and original report remain unchanged. One trailing space in a raw failed-test log is intentionally preserved; source/document whitespace checks pass. |
+| Corrected oracle | **PASS**: 16 focused controls normally and under optimized Python, included in 384 combined controls. Seven fixed prelaunch bindings identify request/project/image, state role/path hash and broker/request hashes. Final admission/execution/cleanup flags, strict integer 30/30 charges, provenance and 210 total must agree; failure markers and rejected later receipts cannot erase or replace prior valid observations. |
+| Retrospective validation | **PASS**: seven retained actual final-status receipts match original private request/config/ledger/binary identities and the corrected accounting checks. These bindings are retrospective: the original run did not record the new prelaunch fields. Zero additional local broker/Docker operations; no final-source candidate workload claim. |
+| Independent review/provenance | **CLEAR**: independent broker review ran 16 controls in both modes and 77 accounting mutations; separate root source/provenance review verified final changes. Final manifest binds 25 scoped source, 21 test and seven evidence files; all 304 accepted #43 evidence files and 31 prior qualification packet files remain exact. Both earlier integration documents are archived unchanged. Production modules match accepted #43. |
+| Outside the execution claim | Native-v3/consumer-v4 and unresolved ledgers are explicit synthetic read/refusal fixtures, not executed or settled provider workloads. Their uncertainty remains separate from seven actual attempts' cleanup. Hosted identity, live allocation, native execution, physical capacity and whole-writer bounds are **NOT RUN/UNKNOWN** as applicable. |
+
+Original workload report SHA-256:
+`b59a8c9c16c5ff89d1b47a3cdc27d6b2766c7eeda40169094967fcbfc833143f`.
+Original qualification manifest SHA-256:
+`ef0758689dd1d1c9ffb711cba7f352f71649f329bc27005578ed1bc56088d149`.
+Accounting-correction manifest SHA-256:
+`88cabd278b3b6ba24e3d6c64d26b12d18f91eb4fa0ddddc866de8cf20a60fae9`.
+Final integration manifest SHA-256:
+`abf4cb8fad61302b0026e9541cdf13ca7bdd41f71ed028119b1374a77b64d494`.
+The integration merge carries a DCO `Signed-off-by` trailer, not a cryptographic
+signature; the original imprecise wording is preserved with its correction.
+
+No active pin, workflow, runtime/profile/default, accepted store or historical
+qualification changed in #44. Separate #45 below adopts the candidate only in
+standard Docker CI; optional clean source builds retain the
+baseline. Waypoint separately prepares a fresh-profile SQLite reader-ownership
+design for root review. Neither work authorizes a checkpoint policy, quota,
+accepted-state migration, new service charge or real-data pilot admission.
+
+## Standard Docker CI broker adoption
+
+Waypoint [#45](https://github.com/EduCloud-Ecosystem/waypoint/pull/45) merged as
+`d84311621653e2d8e853092cae7c90d0eea02098` from reviewed head
+`e16bcd3ad7d28cf6a56845621e65ca38ac526923`. Both share tree
+`708be7b0bc3263c2c783a1a1ce0d3be2ac6fda7f`. Exactly one standard `actual-docker`
+checkout pin changes to Outfitter `5446438985e31cb739f2048a2aa2176918831a7e`,
+with a short provenance/operator note. Optional clean source builds retain
+`5827c84e9952cc67b85e91ceff4282e0ead6923b` and all historical evidence stays exact.
+
+[Exact-head CI 39114639604](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39114639604)
+and [post-merge CI 39114941093](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39114941093)
+passed controls and actual Docker; optional source builds were skipped.
+Independent broker review and root scope review are **CLEAR**. The head-CI
+artifact audit verifies all nine public files, 41 HTTP checks with recorded
+cleanup, 25 recovery checks, 12 guard checks, two successful replays with 60
+conservative charged CPU-seconds and five valid bundles. The original failed
+historical run remains **NOT RUN** for replay. The suite has 384 controls; these
+counts overlap. Forty-eight HTTP and eighteen recovery source hashes match
+the exact checkout, also overlapping.
+
+The CI log confirms the selected Outfitter commit, and HTTP/recovery reports
+agree on broker binary SHA-256
+`bf192806374b348673ef0de171f0866d8c6559c06e12a01d09d7bfa19843bc8f`.
+The [preserved public packet](evidence/2026-10-18-ci-broker-adoption/README.md)
+retains the reports, bundles, original audit source, metadata and CI log beyond
+GitHub's configured fourteen-day artifact retention. Artifact audit SHA-256:
+`7a609daf40a8f536f2fcf81efe0838c07a4d50d9dab1f4e494512d5d01b7a35a`.
+The frozen audit script records its original path and is not a new portable
+operator command. No local broker/Docker workload was repeated for this PR.
+
+This accepts standard CI integration only. No operator's local broker, accepted
+state, production/profile/default route, image promotion or cloud/native
+execution changes. Existing CI does not establish finite-v3 provider acceptance,
+new browser/human acceptance or complete storage capacity. Waypoint's next
+scoped task remains the fresh-profile SQLite reader-ownership design; root
+design review precedes implementation and checkpoint policy remains outside it.
 
 ## Remaining decisions
 

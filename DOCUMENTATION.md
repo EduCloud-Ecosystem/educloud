@@ -213,17 +213,25 @@ a fresh opt-in export path that releases its reader before artifact I/O and
 rechecks current authority plus exact captured metadata before returning bytes.
 Its 334 local tests, independent review and exact-head/post-merge CI passed;
 source builds skipped and all 209 prior evidence files remain unchanged.
-The fresh-profile guard temporary-file design has narrow implementation GO after
-review clarified that cached durability never skips residue/hold checks.
-Runtime acceptance remains pending. Outfitter #15 qualifies
+Waypoint #43 implements the fresh opt-in guard publication profile after two
+independent-review corrections: 368 local controls and exact-head CI passed.
+Fixed ordinary/safety scratch slots retain failed publications and uncertainty;
+the conditional 12 MiB named-payload bound is not whole-store capacity.
+Cached durability never skips fresh residue/hold checks. Outfitter #15 qualifies
 twenty connected broker writer observations, 32 model cases and two optimized
 oracle probes after review corrections and passing exact-head/post-merge CI. Earlier false
 acceptances remain preserved; runtime source and the active broker pin are
 unchanged by that qualification. Outfitter #16 implements serialization before
 spill: 18 focused and 754 full race test/subtest passes, independent review and
-exact-head/post-merge CI passed. The active Waypoint broker pin is
-still unchanged. A separate old/new-binary integration and recovery qualification
-is assigned, without quota admission or migration.
+exact-head/post-merge CI passed. Waypoint #44 accepts the separate old/new-binary qualification:
+45 controls and seven original local Docker attempts with 210 CPU-seconds charged.
+Review corrected an accounting false pass; 384 combined tests, 16 optimized
+controls and exact-head CI passed. Retrospective receipt validation is separate
+from the original workload. Waypoint #45 adopts that broker in standard Docker
+CI after 41 HTTP, 25 recovery, 12 guard checks, two successful replays and five
+verified bundles; optional source-build qualification keeps its original broker.
+A fresh-profile SQLite reader-ownership design is next, without checkpoint,
+journal, quota or migration changes.
 All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;

@@ -129,10 +129,10 @@ include 16 new export tests; independent review and exact-head/post-merge CI
 passed, source builds skipped. All 209 prior evidence files remain unchanged;
 the initial descriptor-cleanup defect and fixture failures are preserved.
 The fixed ordinary/safety guard-scratch contract received implementation GO
-after exhaustion, takeover and compatibility review. The required clarification
-rechecks residue/holds before each mutation even with cached durability proof;
-runtime acceptance remains pending. Failed safety publication must report failure
-and retain debt, which can leave revocation unapplied in the new opt-in profile.
+after exhaustion, takeover and compatibility review; corrected implementation
+is accepted in #43 below. Every mutation rechecks residue/holds even with cached
+durability proof. Failed safety publication reports failure and retains debt,
+which can leave revocation unapplied in the new opt-in profile.
 Outfitter's Docker writer qualification is accepted below. No quota admission,
 accepted-store migration or default change.
 Ben's existing Outfitter issues
@@ -202,6 +202,17 @@ also shows that a post-publication error can leave the destination active.
 All ten existing evidence files and runtime source remain unchanged. Whole-root
 capacity is UNKNOWN and the model remains unenforced.
 
+Waypoint [#43](https://github.com/EduCloud-Ecosystem/waypoint/pull/43), merge
+`5f2b21f1`, reviewed head `b063dc99`, adds fresh opt-in fixed ordinary/safety
+guard publication slots. It qualifies takeover before business effects and
+rechecks holds even when current bytes are unchanged. Independent review fixed
+premature token release during cancellation and refused request preparation
+after another process published. All 368 local controls and exact-head CI passed;
+all 248 earlier evidence files and both original failures are retained.
+The conditional 12 MiB sum covers only the three named guard payloads. Exhaustion
+can block revocation or settlement, retaining active access or debt respectively.
+No whole-store quota, accepted-store migration, OIDC/restore or default change.
+
 The separate serialization-before-spill implementation merged in
 [#16](https://github.com/EduCloud-Ecosystem/outfitter/pull/16), merge `54464389`,
 reviewed head `28d34437`. It validates diagnostic success/failure variants and
@@ -209,9 +220,22 @@ the maximum mixed ledger before sidecar effects while preserving conservative
 accounting. Eighteen focused and 754 full race test/subtest passes, independent
 review and exact-head/post-merge CI passed. Two original orphan
 failures and all 28 prior evidence files remain intact. Later I/O orphans and
-background writers remain open. Waypoint still uses its accepted `5827c84`
-broker; separate two-binary authority/checkpoint, unknown-liability and receipt
-compatibility qualification is assigned before any reviewed pin update.
+background writers remain open. Separate two-binary qualification merged in Waypoint
+[#44](https://github.com/EduCloud-Ecosystem/waypoint/pull/44), merge `2317eac6`,
+reviewed head `968d0f1c`: the original synthetic run recorded 45 controls and
+seven cleaned-up Docker attempts, each conservatively charged 30 CPU-seconds.
+Review reproduced a false PASS that could erase those charges in the checker;
+the corrected checker passes 16 focused controls normally and under optimized
+Python, 384 combined tests and exact-head CI. Retrospective verification of the
+seven original receipts retains all 210 charged CPU-seconds; it is not another
+candidate workload. Original failures, source attribution and uncertain fixtures
+remain. Standard Docker CI adoption merged separately in Waypoint
+[#45](https://github.com/EduCloud-Ecosystem/waypoint/pull/45), merge `d8431162`,
+reviewed head `e16bcd3a`. Its 384 controls and Docker CI passed; artifact review
+verified 41 HTTP, 25 recovery and 12 guard checks, two successful replays and five
+bundles. This changes only the CI checkout, not an operator's broker or state.
+Optional source builds and historical pins stay frozen. A fresh-profile SQLite reader-ownership
+design is also assigned, without checkpoint, journal or quota changes.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`
