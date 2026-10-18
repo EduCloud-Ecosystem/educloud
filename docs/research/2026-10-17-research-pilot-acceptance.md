@@ -1,8 +1,8 @@
 # Research pilot acceptance — 17 October 2026
 
-**P0 local baseline and P1 portability/recovery implementation: accepted and
-merged.** Clean image builds and independent second-machine acceptance remain
-**NOT RUN**. This record freezes the research-workspace release separately
+**P0 local baseline, P1 portability/recovery, and source-runtime builds: accepted
+and merged within their recorded scopes.** Independent human reproduction and
+source-environment promotion remain **NOT RUN**. This record freezes the research-workspace release separately
 from earlier course-workspace and AI pilot evidence. Public/synthetic data only;
 no cloud provisioning, new subscription, production deployment or private-data
 approval is established by these results.
@@ -88,7 +88,7 @@ that every service acceptance criterion has passed.
 | Selected historical bundle replay | **PASS**: [two real local Docker reproductions](https://github.com/EduCloud-Ecosystem/waypoint/blob/d09cb2fa6824a1baeb4ed9104dd055d6b1d0480e/research-workspace/evidence/2026-10-17/reproduction/report.json); original failed R run was not selected and remains **NOT RUN** for replay. The two new runs cleaned up and charged their combined 60 CPU-second allowance. | Automated repeatability in the same operator environment. Historical recipe bytes retained; no independent human or source-image rebuild claim. Adjacent verification records binary/source/catalog hashes. |
 | Coordinated workspace recovery | **PASS**: [25 final local checks](https://github.com/EduCloud-Ecosystem/waypoint/blob/d09cb2fa6824a1baeb4ed9104dd055d6b1d0480e/research-workspace/evidence/2026-10-17/p1/recovery-verification.json), restore step **0.773 seconds**, total exercise **14.193 seconds**. Zero completed records or immutable artifacts lost at the frozen point; pending work cancelled without replay. | Includes an explicitly injected interruption after source access was sealed. Both applications refused service until same-pair retry. No approved hosted recovery target or source-loss/remote recovery claim. |
 | Catalog browser flow | **PASS** within observed scope: 17 checks, including two explicitly simulated cases; no compute was dispatched during that browser pass. | Distinct from the actual HTTP/Docker execution and earlier 23-check browser baseline. Manual screen-reader and second-user acceptance remain open. |
-| Clean Python/R builds from pinned source | **NOT RUN** | [Waypoint #27](https://github.com/EduCloud-Ecosystem/waypoint/issues/27). A separate bounded implementation chat has started; no successful build is inferred from dispatch. |
+| Clean Python/R builds from pinned source | **PASS**, subsequently accepted in #31 | See the source-build addendum below. Four candidates remain disabled; this does not change the historical P1 evidence above. |
 | Independent second operator/machine | **NOT RUN** | [Waypoint #28](https://github.com/EduCloud-Ecosystem/waypoint/issues/28). CI and same-operator replay do not replace this exercise. |
 | Hosted identity, retention/deletion, total storage limits and capacity | **NOT RUN** for the research workspace | [Waypoint #29](https://github.com/EduCloud-Ecosystem/waypoint/issues/29). Course-workspace controls do not automatically qualify this separate service. |
 
@@ -102,6 +102,111 @@ before broker activation. The source becomes permanently non-admitting before
 the replacement admits jobs. Without the current source, recovery stays held.
 Waypoint additionally owns current membership/configuration/artifact checks,
 source service retirement, invalidating restored sessions and fresh credentials.
+
+## Source-build acceptance addendum
+
+Waypoint [#31](https://github.com/EduCloud-Ecosystem/waypoint/pull/31) merged as
+`adc44643c4e055046beb6db73d5a95ee07956f55`, from reviewed head
+`5f98c068c2ec0b372fc098c8cc15063d75e1b38f`. The merged tree matches that reviewed
+head. All 136 controls passed in the review; the final-head
+[CI run 39077046829](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39077046829)
+and [post-merge CI 39090945694](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39090945694)
+passed the ordinary controls and actual Docker workflow. Source construction
+was not rerun by those ordinary CI jobs; its separate evidence is below.
+
+| Criterion | Result and bounded evidence |
+| --- | --- |
+| Pinned runtime source construction | **PASS**: Python 3.12.15 and R 4.6.1 built from captured source on native ARM64 and AMD64. Debian/compiler binaries were inherited, not rebuilt. [Source-build acceptance packet](https://github.com/EduCloud-Ecosystem/waypoint/blob/5f98c068c2ec0b372fc098c8cc15063d75e1b38f/research-workspace/evidence/2026-10-17/source-builds/acceptance.json) pins source/base/package/platform identities and artifact hashes. |
+| ARM64 construction and probes | **PASS with retained failed controls**: one construction of each runtime; the original R probe failed, and a separate probe recheck verified those same images. The recheck is not a second build. A later builder-start deadline failure remains recorded. |
+| AMD64 construction | **PASS**: a fresh build/qualification after the initial R probe failure, at `7a84e1a0cb22f5074618e267c023f5cd7562b032` in [CI 39075522315](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39075522315). The earlier failed attempt remains recorded. |
+| Two projects, runtimes and conditions | **PASS**: 49 qualification checks per platform; eight successful matrix runs per platform. Three supplemental successful runs and one expected refusal remain separately identifiable. Counts/groups/conditions match exactly; mean tolerance remains relative `1e-12`, absolute `1e-9`. |
+| Lineage and historical evidence | **PASS**: input, recipe, parameter and environment changes are separately traceable; two selected historical rows replayed successfully. Original failed runs and the rejected initial lineage comparison remain inspectable. |
+| Distribution and exact future replay | **NOT RUN** as a durable distribution service: CI images are ephemeral; manifests/logs/digests are retained. Exact replay requires retaining/importing the exact image or a separately reviewed distribution path. Rebuilds may produce new identities. |
+| Human reproduction and promotion | **NOT RUN**: automated second-machine evidence does not replace an independent human. All four source environments remain disabled for normal admission, dispatch and replay. |
+| Documents-directory replay | **FAIL**, preserved: the original run stalled and its saved receipt reported unknown cleanup. The supplemental observation in merged [#32](https://github.com/EduCloud-Ecosystem/waypoint/pull/32) finds the exact container ID/name absent and the matching ledger cancelled, cleanup verified, unresolved liability false, and 30 CPU-seconds conservatively charged. The original failed execution and saved receipt are unchanged. No refund or shared Docker restart occurred. |
+
+The [retained evidence guide](https://github.com/EduCloud-Ecosystem/waypoint/blob/5f98c068c2ec0b372fc098c8cc15063d75e1b38f/research-workspace/evidence/2026-10-17/source-builds/README.md)
+explains each failure and image-identity limitation. Issue #27 is closed for its
+source-build scope; #28 and #29 remain separate human/operations gates. Native
+architecture timings come from different hosts and are not a performance comparison.
+
+The [supplemental reconciliation](https://github.com/EduCloud-Ecosystem/waypoint/blob/2d7ee8529668e523fb12d1f6c1e8a739e36455a2/research-workspace/evidence/2026-10-17/replay-cleanup-reconciliation/README.md)
+was reviewed at `2d7ee8529668e523fb12d1f6c1e8a739e36455a2` and merged as
+`bc5d2fa147dd0ce2dd43a3a10d691aa028e8a5dd`; its
+[CI 39091299294](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39091299294)
+passed. It binds the later observation to the original request/run/image and
+artifact hashes. The ledger timestamp is not an independently observed cleanup
+time, and the inspecting process does not claim to have performed the cleanup.
+
+## Native accounting and cleanup implementation acceptance
+
+Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8) merged as
+`534dcf187158a28008fa07d3bb05c00f27b88165` from final reviewed head
+`07e8e5001b3db5569678b3c552d624d7348ff3d6`. Its
+[final CI 39091365693](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39091365693)
+passed 115 tests/subtests, 26 Docker checks and 38 recovery checks. These are
+final CI results; the earlier retained local report remains tied to its own
+implementation revision and records 27 Docker checks, not a new final-head run.
+
+The [independent-review record](https://github.com/EduCloud-Ecosystem/outfitter/blob/07e8e5001b3db5569678b3c552d624d7348ff3d6/docs/evidence/2026-10-17-pr8-independent-review.json)
+retains both original findings and their regression controls. A deadline after
+recording a known port no longer permanently misclassifies that known effect as
+an unknown creation. Cleanup now requires explicit non-null empty attachment
+inventory during discovery and the fresh check before deletion. Missing storage
+evidence refuses deletion and retains liability. Independent re-review passed.
+
+The native journal and supervisor use the existing durable authority/ledger,
+preserve request/attempt ownership, and keep native SUs separate from local
+CPU-seconds. [Fault-injection evidence](https://github.com/EduCloud-Ecosystem/outfitter/blob/07e8e5001b3db5569678b3c552d624d7348ff3d6/docs/evidence/2026-10-17-native-su-cleanup.json)
+covers lost creation responses, separate-process cleanup after creator loss,
+late effects, API loss, foreign resources, incomplete inventory and held recovery.
+These provider controls use a local HTTPS OpenStack simulator. Real Docker and
+local recovery evidence are separate. Deletion, cancellation and observations
+do not by themselves settle or refund native reservations.
+
+Live allocation/capacity/image/network preflight, independent-host supervisor
+acceptance, provider creation/workload/teardown and provider settlement all remain
+**NOT RUN**. The [proposed live manifest](https://github.com/EduCloud-Ecosystem/outfitter/blob/07e8e5001b3db5569678b3c552d624d7348ff3d6/docs/manifests/jetstream2-live-test.proposed.json)
+is an incomplete decision input, not permission to provision. No hard provider SU
+cap or guaranteed expiry during API/host/supervisor outage is established. Ben's
+existing assignments and broader live acceptance criteria remain unchanged.
+
+## Optional inference implementation acceptance
+
+Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
+[#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) were reviewed, corrected
+and merged in dependency order. The foundation brings the existing finite pilot
+gateway into main; the qualification increment preserves the public API and
+requires explicit selection of one local path. No default route changed.
+
+| PR | Final tested head | Merge revision | Final-head checks |
+| --- | --- | --- | --- |
+| #10 | `c080530ce507611ea7d0cee1ed88143a798410ce` | `cf41ddedc7b9c5710a707365ccf7c5a8a9b5b7ad` | [CI 39091086027](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39091086027), gate passed; paid review skipped. |
+| #11, retargeted to accepted main | `5aa8cf5d80b9b037f57768cdbd27aeb958299017` | `a3a4a6e5801a74fed45ae1bfab341c5db4ab45e2` | [Full-suite CI 39091314955](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39091314955) and [qualification CI 39091314970](https://github.com/EduCloud-Ecosystem/portage/actions/runs/39091314970) passed; paid review skipped. |
+
+Review corrected three false-positive evidence paths: incomplete readiness text
+such as `NOT RUN`, skipped selected controls, and missing/invalid resident-memory
+measurements cannot satisfy their corresponding gates. Paid model-based CI
+review now requires an explicit opt-in. The final local suite passed 225 tests
+with six existing integration skips. Those skips do not establish runtime or
+integration acceptance.
+
+The [retained qualification record](https://github.com/EduCloud-Ecosystem/portage/blob/5aa8cf5d80b9b037f57768cdbd27aeb958299017/docs/qualifications/2026-10-17-direct-local-review-controls.json)
+contains **95 passing synthetic controls** and **12 runtime gates NOT RUN**.
+It retains the source revision/hashes at collection; it is not rewritten to claim
+collection at the later merge. All six retained source-file hashes were checked
+against the final head and match. These controls use deterministic loopback servers,
+not an actual model. They cover current attribution/membership, destination/model
+refusal, finite allowances and concurrency, streaming/non-streaming failure,
+cancellation and retained liabilities. Unknown work retains both its reserved
+tokens and concurrency slot until evidence-backed reconciliation.
+
+The [capacity protocol](https://github.com/EduCloud-Ecosystem/portage/blob/5aa8cf5d80b9b037f57768cdbd27aeb958299017/docs/specs/direct-inference-qualification.md)
+prepares a maximum 16-attempt synthetic workload. An approved existing host,
+permitted installed model/template, operator, resource limits and finite window
+are still required. No engine was started, model acquired, live inference run,
+production deployment performed or default route changed. An offline review
+packet is the next increment; it cannot itself authorize execution or spending.
 
 ## Remaining decisions
 

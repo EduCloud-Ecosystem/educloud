@@ -46,8 +46,11 @@ in-tree sources), `PRIVACY.md` (distress safety + grades firewall),
 `docs/ONBOARDING.md` (tenant contract), `docs/REQUIREMENTS.md`,
 `docs/TENANTS.md`, `docs/STATUS_DECK.html` (visual status).
 The separate research service lives in `research-workspace/`: `CONTRACT.md`,
-`README.md`, `VERIFICATION.md`, immutable image references and selected public
-evidence. Portable environment/replay and coordinated recovery acceptance is
+`README.md`, `VERIFICATION.md`, `SOURCE-BUILDS.md`, immutable image references
+and selected public evidence. Source-build evidence and its later cleanup
+observation live in `evidence/2026-10-17/source-builds/` and
+`evidence/2026-10-17/replay-cleanup-reconciliation/`. Portable environment/replay
+and coordinated recovery acceptance is
 tracked in the October 17 umbrella record below.
 
 **Portage** (`portage/`): `LINE-P-ROADMAP.md` (personal-stack staging
@@ -117,7 +120,8 @@ the October 17 implementation contract for Waypoint project/run/evidence
 workflows and Outfitter's bounded local execution. It preserves separate
 institutional, scientific and cloud-provider acceptance gates.
 The [October 17 acceptance record](docs/research/2026-10-17-research-pilot-acceptance.md)
-freezes the three merged P0 revisions and two merged P1 revisions, preserving each evidence boundary.
+freezes the merged P0/P1 revisions and subsequent source-build, native-accounting
+and optional inference increments, preserving each evidence boundary.
 The [build backlog](docs/strategy/research-pilot-build-backlog.md) sequences
 remaining portability/recovery, optional Kubernetes evaluation, bounded
 Jetstream2, direct Portage qualification and shared pilot controls. The
@@ -165,9 +169,11 @@ naming) · Belay's full set (`DCO`, `LICENSING.md`, `CODE_OF_CONDUCT.md`,
 Current research assessment: `EDUCLOUD-STATUS.md` and the October 17 acceptance
 record. The local Waypoint/Outfitter Python/R research baseline is merged; P1
 portability and coordinated recovery are merged with pinned local evidence and
-passing CI. Clean builds from source, independent second-machine/operator
-reproduction, hosted identity, retention/deletion and store-wide limits remain
-open in Waypoint issues #27–#29. Kubernetes is an optional post-P1 evaluation;
+passing CI. Source construction/qualification on ARM64 and AMD64 is accepted
+through Waypoint #31; #32 records later cleanup and a conservative charge while
+preserving the original failed replay. All four source candidates remain
+disabled. Independent human reproduction (#28), promotion/distribution, hosted
+identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;
 Docker remains the default. No live cloud/provider acceptance is claimed.
 
 The following classroom/AI assessment retains its October 7 review boundary
@@ -210,11 +216,16 @@ course workspace remain a separate path from the new research service.
   retention, quota-enforced capture workers, production queuing, pagination and
   an explicit reviewed/test-score
   combination policy remain gates. Existing production pilot stays on PR #2.
-- Belay PR #12's identity work is unmerged; Portage's existing PR stack still
-  needs profile repair. Neither is a prerequisite for the computing pilot.
+- Belay's historical PR #12 assessment and Portage's older PR stack remain
+  outside this update. The new finite Portage gateway/qualification path merged
+  through #10/#11 after review fixes and passing final CI; 95 synthetic controls
+  pass, while all 12 actual-engine gates remain NOT RUN. No default route changed.
+  Neither component is a prerequisite for the Python/R computing pilot.
 - Outfitter now has the merged bounded Docker broker consumed by the research
-  workspace. Native-SU Jetstream2 accounting and independent cloud cleanup remain
-  open in Ben's unchanged issues #1–#5. Local recovery/fencing P1 is merged;
+  workspace. Native-SU journal and simulated independent cleanup implementation
+  merged in #8 after two independent-review fixes and passing final CI. Live
+  Jetstream2, independent-host supervision and provider settlement remain open
+  in Ben's unchanged issues #1–#5. Local recovery/fencing P1 is merged;
   it does not establish remote source-loss recovery or provider settlement.
 - Preserve existing local strategy changes and unpublished module commits when
   reconciling branches. Public documentation is not the whole local state.

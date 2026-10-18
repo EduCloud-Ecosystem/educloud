@@ -11,19 +11,39 @@ planning labels, not additions to the shared CC-* prompt namespace.
 | --- | --- | --- | --- |
 | P0 | Freeze the accepted local workflow | EduCloud; merged Waypoint #26, Outfitter #6, EduCloud #13 | Exact heads/images; two projects; retained failures; CI distinct from local/browser evidence. **PASS** for the bounded local baseline. |
 | P1-A | Finish portable environments, trusted replay and coordinated recovery | Waypoint and Outfitter; merged Waypoint #30 and Outfitter #7 | Final heads/reports, scoped independent review and CI; held restore/no allowance revival; no duplicate effects. **PASS** within the local contract; broader gates remain below. |
-| P1-B | Capture and rebuild the reviewed images from source | [Waypoint #27](https://github.com/EduCloud-Ecosystem/waypoint/issues/27), unassigned | Clean Python/R builds, package/base/platform provenance, both conditions/two projects, declared tolerances and lineage. **NOT RUN**; bounded source-build implementation is now in progress in a separate chat. |
+| P1-B | Capture and rebuild the reviewed images from source | [Waypoint #27](https://github.com/EduCloud-Ecosystem/waypoint/issues/27), closed by merged [#31](https://github.com/EduCloud-Ecosystem/waypoint/pull/31) | **PASS** for native ARM64/AMD64 source construction and automated qualification: 49 checks per platform, two projects/both conditions and lineage. Four source candidates remain disabled. Human reproduction, promotion and durable image distribution remain separate gates. Original failures are retained. |
 | P1-C | Independent second-operator exercise | [Waypoint #28](https://github.com/EduCloud-Ecosystem/waypoint/issues/28), unassigned | Second machine, no core edits, trusted bundle digest, exact results, supported restore, elapsed time/help and missing controls. **NOT RUN**. |
 | P2-A | Evaluate optional Kubernetes backend | Outfitter execution/accounting; Waypoint artifacts/storage; EduCloud decision | Bounded isolated disabled prototype or blocked protocol; comparison, failures and adopt/defer/reject record. Starts after P1; existing institutional capacity discovery may proceed earlier. |
-| P2-B | Durable Jetstream2 native-unit journal and independent cleanup | Existing [Outfitter #1–#4](https://github.com/EduCloud-Ecosystem/outfitter/issues/1), assigned to Ben | Durable request/attempt/native-SU reservations, fault-injected independent cleanup and prepared live-test manifest; live test remains separately gated. A separate implementation chat is now active; no provider acceptance is inferred. |
-| P2-C | One direct local inference qualification | Portage | Authenticated attribution, bounded allowance/concurrency, streaming/non-streaming failure/cancel accounting, pinned model/engine qualification. Optional for Python/R. A separate qualification chat is active; results remain pending. |
+| P2-B | Durable Jetstream2 native-unit journal and independent cleanup | Existing [Outfitter #1–#4](https://github.com/EduCloud-Ecosystem/outfitter/issues/1), assigned to Ben; merged [PR #8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8) | **PASS** for the local/simulated journal and cleanup implementation after two independent-review fixes. Final CI: 115 tests/subtests, 26 Docker checks, 38 recovery checks. Live provider, independent-host supervisor and settlement remain **NOT RUN**. |
+| P2-C | One direct local inference qualification | Portage [#9](https://github.com/EduCloud-Ecosystem/portage/issues/9); merged PRs [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10)/[#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) | **PASS** for 95 synthetic qualification controls and final CI after readiness/reporting corrections. All 12 actual-engine gates remain **NOT RUN**. Await approved existing host/model/operator manifest; optional for Python/R. |
 | P2-D | Shared institutional pilot | [Waypoint #29](https://github.com/EduCloud-Ecosystem/waypoint/issues/29), unassigned | Hosted synthetic identity/revocation, tested storage/retention/restore/capacity, accessible journeys and named service owners. |
 | After execution contract | Synthetic coursework handoff | Existing [Outfitter #5](https://github.com/EduCloud-Ecosystem/outfitter/issues/5), Ben; Cairn and Waypoint consumers | Verified course authority, bounded owned worker, independent result and cleanup evidence; no live-course data implied. |
 
 The three new Waypoint issues were created unassigned after checking for existing
-issues. Outfitter #1–#5 were rechecked as open and assigned to `bmarkwart`; no
+issues; #27 is now closed by its source-build PR. Outfitter #1–#5 remain assigned to `bmarkwart`; no
 assignment, issue state or contributor message was changed. Module-scoped changes
 stay in focused component PRs. Parallel implementation must preserve component
 ownership and exact integration pins.
+
+## Next implementation slices
+
+The continuing component chats own these focused increments after their current
+PR reviews. An assignment below is not evidence that implementation or acceptance
+has completed. Each increment receives independent review and final-revision
+checks before merge. Existing issues stay open for their broader acceptance gates.
+
+| Sequence | Component and tracking | Concrete next result | Remaining boundary |
+| --- | --- | --- | --- |
+| 1, complete | Waypoint, merged [#32](https://github.com/EduCloud-Ecosystem/waypoint/pull/32) | Hash-linked supplemental observation: exact container ID/name absent, matching ledger cleanup verified with no unresolved liability, 30 CPU-seconds conservatively charged. Original failed report/receipt unchanged. | No refund, replay, shared Docker restart or relabelling of the failed workload. |
+| 2 | Waypoint [#29](https://github.com/EduCloud-Ecosystem/waypoint/issues/29) | Disposable local synthetic Keycloak/proxy sign-in; stable issuer/subject mapping; current identity and project membership checked at request, dispatch and publication; visible service loss, truthful logout and restore invalidation. Four identities/two projects, browser/API failure controls and credential-leak checks. | Loopback-only rehearsal, no hosted/private-data admission. Existing key mode stays separate. Manual accessibility, capacity, storage and institutional operational approval remain open. |
+| 2 | Outfitter, partial local contract supporting existing [#5](https://github.com/EduCloud-Ecosystem/outfitter/issues/5) | Executable synthetic consumer preflight/run/status with one durable job/request binding in the existing ledger. Same binding returns the receipt; changed input/policy conflicts; active or unknown work cannot redispatch. Exercise bounded Docker results, loss, duplicates and exhausted allowance. | No production Cairn Runner, automatic retry, new ledger or live Jetstream2 handoff. Local contract evidence cannot close the live-provider acceptance sequence or change Ben's assignment. |
+| 2 | Portage [#9](https://github.com/EduCloud-Ecosystem/portage/issues/9) | Offline, hash-bound qualification/capacity review packet from retained evidence and an incomplete resource draft. Preserve evidence classes, tested identities, failures/skips, unknown liabilities and missing decision fields. | No engine/network/subprocess execution, model download or ledger mutation. Review output cannot grant execution, spending, promotion or hosted readiness. |
+| 3 | Waypoint [#29](https://github.com/EduCloud-Ecosystem/waypoint/issues/29), after identity | Whole-store inventory and admission limits, then a read-only retention plan. Test byte/file/output limits and protect authority, unresolved jobs, failed controls and recovery dependencies. | Archive bounds alone are not store quotas. Deletion requires tested tombstone/restore reconciliation and an explicit retained-evidence policy. |
+
+The source-image candidates remain disabled through these increments. Independent
+human reproduction (#28), image retention/distribution, selected host/cohort,
+support ownership and live provider/model qualification remain visible decisions.
+Continue the local work without buying capacity to make those gates appear green.
 
 ## P2-A: optional Kubernetes evaluation protocol
 
