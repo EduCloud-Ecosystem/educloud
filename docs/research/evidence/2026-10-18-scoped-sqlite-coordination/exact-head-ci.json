@@ -1,0 +1,35 @@
+{
+  "headRefOid": "40fe12e62b98f1109cffbe76485d31abf218171b",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-18T10:43:37Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39120244631/job/117654209216",
+      "name": "controls",
+      "startedAt": "2026-10-18T10:41:29Z",
+      "status": "COMPLETED",
+      "workflowName": "Research workspace"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-18T10:42:35Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39120244631/job/117654209342",
+      "name": "actual-docker",
+      "startedAt": "2026-10-18T10:41:30Z",
+      "status": "COMPLETED",
+      "workflowName": "Research workspace"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-18T10:41:27Z",
+      "conclusion": "SKIPPED",
+      "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39120244631/job/117654209963",
+      "name": "clean-source-builds",
+      "startedAt": "2026-10-18T10:41:27Z",
+      "status": "COMPLETED",
+      "workflowName": "Research workspace"
+    }
+  ]
+}

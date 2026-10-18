@@ -1,0 +1,27 @@
+{
+  "conclusion": "success",
+  "databaseId": 39120446555,
+  "headSha": "0efc6fd734e7f812cabc3822d2ea93b8c1063752",
+  "jobs": [
+    {
+      "name": "actual-docker",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39120446555/job/117654801508"
+    },
+    {
+      "name": "controls",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39120446555/job/117654801704"
+    },
+    {
+      "name": "clean-source-builds",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39120446555/job/117654802418"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39120446555"
+}

@@ -19,7 +19,7 @@ multi-host expansion; it is not an adoption, managed-cluster or migration decisi
 | Dependency | Current disposition | What must be prepared before spending or live use |
 | --- | --- | --- |
 | Local Python/R and recovery work | Continue within existing approved capacity and finite test budgets. | Exact image/platform, bounded workload, disk/output needs and cleanup; record actual capacity limits rather than infer them from green unit tests. |
-| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 finite authority; #41 SQLite/guard qualification; #42 bounded export; #43 fixed guard publication slots. Outfitter #15 qualifies writer counterexamples and #16 prevalidates serialization. Waypoint #44 qualifies two broker versions; #45 adopts the candidate in standard Docker CI only. This is not whole-store capacity. | Next: fresh-profile SQLite reader ownership under the reviewed design. Finite OIDC/restore refuse. WAL, other scratch, broker writers and destination peaks remain UNKNOWN; no checkpoint/journal policy, quota wiring or accepted-store migration. |
+| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 finite authority; #41 SQLite/guard qualification; #42 bounded export; #43 fixed guard publication slots; #46 scoped SQLite ownership in fresh v4. Outfitter #15 qualifies writer counterexamples and #16 prevalidates serialization. Waypoint #44 qualifies two broker versions; #45 adopts the candidate in standard Docker CI only. This is not whole-store capacity. | Next: bounded v4 qualification through existing local Docker/HTTP, with at most four sequential attempts. Finite OIDC/restore refuse. WAL, other scratch, broker writers and destination peaks remain UNKNOWN; no checkpoint/journal policy, quota wiring or accepted-store migration. |
 | Source-image builds and independent reproduction | Use existing approved local/CI capacity first. | Source/base/package inputs, build resource envelope and second operator/machine. If unavailable, mark NOT RUN and prepare alternatives; do not buy hardware automatically. |
 | Institutional worker/backup destination | No new host, storage plan or backup account selected here. | Named owner, data classes, cohort/concurrency, retention, measured recovery target, full resource bill and bounded pilot term. |
 | Jetstream2 | Native-SU journal and simulated independent cleanup accepted in Outfitter #8; the local consumer bridge is accepted in #9. The blocked operator/rescue packet merged in #10, simulated two-process rescue in #11, metadata compatibility in #12 and one-attempt offline enforcement in #13. The reviewed supplemental operational packet in #14 recommends restricted private SSH and independent cleanup without selecting allocation/hosts/access. No live worker authorized here. | Verified allocation permissions, current rate/terms, maximum one CPU worker, explicit native-unit reservation, expiry and independent teardown. The proposed 1 SU allowance is not a provider-enforced charge ceiling. Quota/access is not capacity or permission to consume an allocation. Independent-host cleanup, terminal late effects, authenticated guest bootstrap, private execution/result transfer and live transport remain engineering/operational gates; approval alone cannot close them. |
@@ -227,15 +227,40 @@ clarifications and refresh provenance on accepted #45 before runtime changes.
 The clarified pre-code contract is recorded at
 `4606cc6076999c6bae507bdb6beab4bbd0b0819a`, proposal SHA-256
 `5b03af41faa8b22830e9af792f185b0716867fd4918075389c2732dc1264ebb2`;
-the canonical policy hash is unchanged. Runtime acceptance remains pending.
+the canonical policy hash is unchanged. The implementation is accepted locally
+in Waypoint [#46](https://github.com/EduCloud-Ecosystem/waypoint/pull/46), reviewed
+head `40fe12e62b98f1109cffbe76485d31abf218171b`, runtime
+`43890cbf10a02cd522da627f6ea5a841820a4762`. The 433-test suite includes 49 ownership
+controls; frozen qualification detects all 29 deliberate regressions.
+Independent source/evidence reviews, a separate 49-control recheck and final-head
+CI pass after fifteen retained review findings were corrected. These overlapping
+counts establish the local application contract, not physical capacity or v4
+Docker/provider acceptance. Current documentation also corrects a stale cleanup
+claim: PR32's later observation resolved that resource/accounting state with
+30 CPU-seconds conservatively charged; the original failed receipt stays exact.
 
 The ownership-failure hold is not a reader-drain/checkpoint admission policy or
 cross-process quiescence proof. No automatic checkpoints, page caps, journal
 changes, retry, deletion, quota arithmetic or checkpoint/drain safety-write
 denial policy is authorized here. Those require separate concrete design review.
-Independent runtime review and exact-head CI are still required. This offline
-slice needs no host selection or purchase and does not close the fifth headroom
-failure or physical-capacity gate.
+Independent runtime review and exact-head CI passed within the scope above.
+This local slice needs no host selection or purchase and does not close the fifth
+headroom failure or physical-capacity gate.
+
+The next qualification-only increment uses fresh v4 state, production HTTP/Worker
+paths, two synthetic projects and already available reviewed Python/R images.
+Allow at most four sequential broker attempts, each at the existing 1 CPU,
+256 MiB, 64 PID, 30-second and 65,536-output-byte limits: at most 120 conservative
+CPU-seconds. Bind identities before launch; require exact final receipts, full
+charges and verified cleanup. Preserve failed attempts without retry, refund or
+a fifth attempt. The allowance spans interruptions/restarts and cannot be renewed
+by choosing a new output directory. Its 120 CPU-seconds describe conservative
+reservations/charges, not host overhead or termination proof after unknown cleanup.
+Queued cancellation and current-access refusal must produce no
+dispatch. No image pull, runtime redesign, new profile, source promotion or
+accepted-state change belongs in this slice. Unavailable approved images or
+capacity means NOT RUN. This is an existing local execution budget, not new
+spending approval, provider pricing or selected-host capacity acceptance.
 
 Whole-store quota admission remains **NO-GO**. SQLite/WAL/reader peaks, recurring
 replacement/failure scratch, broker/watchdog ownership and restore destination
