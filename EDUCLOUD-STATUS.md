@@ -71,9 +71,14 @@ captured content/identity metadata matched before and after reading.
 [#35](https://github.com/EduCloud-Ecosystem/waypoint/pull/35), merge `2a7d6cd0`,
 bounds broker stdout/stderr incrementally while retaining identity/cancellation
 checks and unknown liabilities. Its 184 total workspace tests and final ordinary CI
-passed. Both source-build jobs were skipped. Whole-store reservations/admission
-and recovery capacity remain in progress: neither PR enforces store-wide quotas
-or authorizes deletion. Ben's existing Outfitter issues
+passed. Both source-build jobs were skipped. Whole-store admission is blocked:
+the next draft reproduced five failures in dispatch holds, rollback uncertainty,
+result publication, overlapping project initialization and consumed headroom.
+[#36](https://github.com/EduCloud-Ecosystem/waypoint/pull/36), merge `640fa2d8`,
+retains the rejected draft and reproducible witnesses as documentation/evidence
+only; its accepted application source is unchanged. Scoped design review cleared
+durable operation/failure transitions as the next implementation. No quota
+or deletion is enabled. Ben's existing Outfitter issues
 #1–#5 remain assigned and unchanged.
 Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge
 `534dcf18`, adds durable native-SU accounting and independent cleanup. Two
@@ -93,9 +98,17 @@ operator/cleanup decision packet merged in
 [#10](https://github.com/EduCloud-Ecosystem/outfitter/pull/10), merge `afc4fe82`,
 after independent design review and final CI. It remains explicitly blocked:
 its proposed 1 SU allowance is not a provider-enforced charge cap, operational
-fields are unselected and independent-host cleanup is unqualified. A separate
-offline rescue prototype is under review; simulated results cannot close the
-live gate.
+fields are unselected and independent-host cleanup is unqualified. The separate
+offline rescue prototype merged in
+[#11](https://github.com/EduCloud-Ecosystem/outfitter/pull/11), merge `e34604ce`,
+reviewed head `73ae1ab4`, after three durability/clock fixes and an exact-status
+parser correction. Final CI passed 376 tests/subtests, 26 Docker checks, 38
+recovery checks and 19 consumer checks. Forty simulated crash boundaries use
+separate processes on one machine, not actual independent hosts. Unknown late
+effects and charges remain held; the 64-sweep observation limit and live gates
+remain explicit. Scoped design review cleared a pure metadata-compatibility
+evaluator as the next offline increment; it cannot establish boot or network
+acceptance and will not change creation enforcement.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`
@@ -117,10 +130,15 @@ the full suite passed 303 tests with six existing skips, and final CI passed
 (paid review skipped). Expiry after admission retains uncertain reservations.
 The original 95-control record and all 12 NOT RUN runtime gates are unchanged.
 No engine was started, model acquired or default route changed. Jetstream2 hosted
-inference remains an unselected recommendation. The separate offline contract
-has passed scoped design review and a fixture-only request/response adapter is
-being built; no network transport, credential lookup or live eligibility is
-included. Greg has not authorized live use through that recommendation.
+inference remains an unselected recommendation. The pure fixture contract merged
+in [#14](https://github.com/EduCloud-Ecosystem/portage/pull/14), merge `b2ba332f`,
+reviewed head `2499c9d2`: 147 new controls and 450 total tests passed with six
+existing skips; final CI passed and paid review was skipped. The classifier has
+no transport, credential lookup, ledger mutation or live eligibility. Reported
+usage stays provider-reported; uncertain outcomes retain unknown liability.
+The original 95/17 evidence records and 12 runtime NOT RUN gates are unchanged.
+Persistent approval/attempt limits are being investigated separately; no hosted
+lane, model or execution window is approved.
 
 Docker stays the baseline. Optional Kubernetes evaluation follows P1 before
 custom multi-host expansion; existing institutional-capacity discovery may begin
