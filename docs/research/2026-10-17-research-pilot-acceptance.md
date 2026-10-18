@@ -523,6 +523,115 @@ settlement headroom, recovery capacity, migration and quota enforcement are not
 accepted by this checkpoint. No user capacity purchase can substitute for those
 engineering corrections.
 
+## Offline metadata compatibility
+
+Outfitter [#12](https://github.com/EduCloud-Ecosystem/outfitter/pull/12) merged as
+`5700ff52b1182d63f51723dbadb700c488cfc6ac` from reviewed final head
+`eec00a969deafe7690c99506871bc6fb42b43974`.
+[Final CI 39101128804](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39101128804)
+passed **607 tests/subtests**, including 231 compatibility and 220 rescue
+controls, plus 26 Docker, 38 recovery and 19 consumer checks. The local uncached
+race-suite result belongs to implementation
+`eea4fa3302b6d09f5022f32db8ff5d43098d06fc`; later commits clarify documentation
+and record evidence. Final-head CI is separate from that local result.
+
+The [contract](https://github.com/EduCloud-Ecosystem/outfitter/blob/eec00a969deafe7690c99506871bc6fb42b43974/specs/15-offline-metadata-compatibility.md)
+and [evidence](https://github.com/EduCloud-Ecosystem/outfitter/blob/eec00a969deafe7690c99506871bc6fb42b43974/docs/evidence/2026-10-17-offline-compatibility.json)
+bind configuration, native policy, profile and bounded synthetic snapshot with
+versioned digests. The evaluator compares exact flavor dimensions, declared
+image metadata/minimum resources, and complete normalized security-rule sets.
+Missing observations stay distinct from explicit null/zero/empty evidence;
+malformed input is rejected. Reports always retain `synthetic_offline`,
+`provisioning_enabled: false`, `live_readiness: BLOCKED` and unverified boot.
+
+Five independently reproduced findings were corrected: protocol zero falsely
+matching unrestricted traffic, null rule objects becoming empty objects, UTC
+year bounds checked before normalization, incomplete-rule alias normalization,
+and invalid-text canonicalization. The record retains all five failing review
+controls plus the intermediate unused-import build failure. Earlier passing
+results are not final acceptance. The documented upstream API prose/source
+disagreement does not establish Jetstream2's deployed behavior.
+
+There is no client, environment/filesystem access, clock read, CLI, creator or
+ledger integration. Supplied timestamps/completeness are fixture assertions;
+metadata matching proves neither boot/host suitability nor effective filtering,
+private reachability, capacity or entitlement. Native/rescue behavior, its
+64-sweep limit, unknown liabilities and the proposed live manifest are unchanged.
+Live engineering, operational and approval gates remain open.
+
+The next scoped implementation will bind a separate immutable experiment envelope
+to authority/account, configuration, native policy and compatibility digests,
+request identity, start/expiry, lifetime and native reservation. One total attempt
+must be consumed atomically with reservation; settlement, restart and changed
+request IDs must not replenish it. Repeated requests remain status-only. Bound
+compatibility and expiry must be rechecked before each simulated port/server
+create, including after delayed rescue acknowledgement. This is authorized work,
+not accepted enforcement. Native record bounds and both rescue acknowledgements
+remain required. No live entry point, credential lookup or guest execution is
+included; private guest bootstrap, access and result transfer remain open.
+
+## Confirmed approval-lifetime attempt gap
+
+A separate offline investigation at Portage
+`b2ba332ff5f81ff15c7ada67d5fc2a79b65cde94` found that the advertised 16 inference
+attempts are enforced per runner invocation, not across an approval's lifetime.
+The source-pinned fixture uses the actual qualifier loop, metadata validation,
+gateway handler and temporary SQLite admission/settlement, substituting clocks,
+server lifecycle, engine replies and transport. The parent deliberately starts
+fresh Python workers; real sockets/DNS/HTTP and nested worker process launches
+are blocked. No model, provider or real credential is used.
+
+| Invariant | Offline observation |
+| --- | --- |
+| At most 16 inference attempts under one approval | **FAIL**: identical manifest/reference and temporary ledger in two fresh processes dispatch 16 + 16 simulated requests. Both invocation reports say attempt accounting PASS; those synthetic values do not qualify a runtime gate. |
+| Lifetime metadata accounting | **FAIL against proposed new invariant**: 51 + 51 metadata operations, without a durable counter. The proposed 51-call ceiling is derived from the current protocol, not a previously implemented global guarantee. |
+| No metadata after prior unknown work | **FAIL**: three metadata calls precede the repeat invocation's unknown-work refusal. |
+| Unknown reservation/concurrency survives restart | **PASS**: one unknown request retains its 176-unit reservation and active slot; the repeat dispatches no inference. |
+
+The complete scenario settles 384 synthetic provider-reported tokens across
+32 calls within its 32,768-token allowance. Low usage therefore does not enforce
+the separate attempt promise. Each successful invocation makes 13 calls each to
+version/tags/show and 12 residency reads. The fixture fixes a fictional clock;
+it does not test elapsed-time correctness, real cancellation, concurrent runners,
+copied databases or alternate ledger paths. Those last risks remain source-backed
+design concerns, not reproduced outcomes.
+
+The private local failure record SHA-256 is
+`0b8eef8c471dbfa0ccd5ec397d219b981c72d8184d4e5ac011a6e64b8a5c482e`;
+the reproducer SHA-256 is
+`d4f6d7072487db6467f12c7f91fa35df4b33ef18490ab5694e6a49cc0e360b41`.
+These identify the retained local witness; no implementation fix is accepted
+here. Independent review verified the packet/source/frozen-evidence hashes and
+source consistency without rerunning the reproduction. It cleared the following
+scope for corrective implementation:
+
+- One protected operator registry and existing authoritative ledger on one host.
+  Resolve and validate authority before opening the store; startup may not create
+  a database, register a grant, reactivate membership or issue credentials.
+- One canonical approval per capacity-budget identity, with permanent fixed
+  inference/metadata slots and separately bounded authority checks. Admission
+  inserts the attempt and reservation atomically. A runner lease permits the
+  existing within-run concurrency while a second runner refuses. Unknown work
+  blocks even the first metadata call; lost dispatch acknowledgement stays held.
+- Limits apply per operation kind: inference 16 must still permit its last
+  predefined residency sample, while inference 17 and metadata 52 refuse.
+  Settlement, reconciliation and changed labels/credentials never renew slots.
+- Explicit offline migration preserves historical rows, usage and unknown
+  holds. Legacy or unbound work does not receive guessed ownership or fresh
+  allowance. Reboot, missing clock continuity, restore and authority mismatch
+  remain held; no automatic renewal or restore activation. General gateway
+  defaults stay unchanged, and qualification mode must require its guard.
+
+This is a local operator trust model. It cannot guarantee detection of privileged
+in-place rollback or a registry/database copied together onto another host.
+Replacement-grant lineage, cross-host authority, automated restore activation and
+hosted transport are deferred. All corrective acceptance results remain NOT RUN
+until the component revision and its evidence receive separate review.
+
+The original 95/17/147 evidence records and all 12 runtime NOT RUN fields are
+unchanged. Correcting this engineering gap precedes any live qualification;
+it does not authorize a host/model, provider access, new allowance or deployment.
+
 ## Remaining decisions
 
 Follow the [sequenced build backlog](../strategy/research-pilot-build-backlog.md)
