@@ -67,8 +67,12 @@ settlement remain NOT RUN. The durable synthetic consumer-job bridge is now
 merged in [#9](https://github.com/EduCloud-Ecosystem/outfitter/pull/9), merge
 `273bb014`, after one independent-review fix. Final CI passed 156 tests/subtests,
 26 Docker, 38 recovery and 19 consumer checks. It uses actual local Docker
-fixtures and does not publish grades. The next increment assesses an opt-in
-disposable Cairn adapter/harness, with production configuration unchanged.
+fixtures and does not publish grades. Cairn's opt-in disposable adapter is now
+merged in [#32](https://github.com/EduCloud-Ecosystem/cairn/pull/32), merge
+`bb41bdaf`: independent review fixes, 19/19 local Docker controls and all eight
+final CI checks passed. Its separate command proposes results without storing
+grades; production configuration remains unchanged. A concrete bounded
+Jetstream2 operator/cleanup decision packet is now being prepared.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`
@@ -80,8 +84,11 @@ engine gates NOT RUN. The offline qualification/capacity review packet is now
 merged in [#12](https://github.com/EduCloud-Ecosystem/portage/pull/12), merge
 `577fdb9a`: 61 focused tests and 286 total tests passed, with six existing skips;
 independent review and final CI passed. The example identifies 32 missing
-capacity/cost fields and grants no authorization. A concrete operator packet is
-being prepared. No engine was started, model acquired or default route changed.
+capacity/cost fields and grants no authorization. The concrete operator packet
+is prepared; no approved installed model was identified in the inspected local
+inventory. Live use stays deferred while host/model/operator/window choices are
+pending. A suspected expiry gap after metadata pinning is undergoing targeted
+synthetic validation. No engine was started, model acquired or default route changed.
 
 Docker stays the baseline. Optional Kubernetes evaluation follows P1 before
 custom multi-host expansion; existing institutional-capacity discovery may begin

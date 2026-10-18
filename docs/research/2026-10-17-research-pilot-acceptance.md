@@ -238,10 +238,66 @@ grants execution, promotion, spending or hosted readiness. No engine, qualifier,
 gateway or ledger is opened by packet generation; no network or subprocess runs.
 Actual host/model/operator evidence is still required for a live decision.
 
-The next work is an opt-in disposable Cairn adapter/harness assessment, completion
-of Waypoint's local synthetic identity slice, and a concrete inference operator
-decision packet. Production Cairn wiring, live Jetstream2/inference, source-image
-promotion, private-data admission and purchases remain outside this acceptance.
+The subsequent Cairn adapter and inference operator packet are recorded below.
+Completion of Waypoint's local synthetic identity slice remains in progress.
+Production Cairn wiring, live Jetstream2/inference, source-image promotion,
+private-data admission and purchases remain outside this acceptance.
+
+## Disposable Cairn consumer acceptance
+
+Cairn [#32](https://github.com/EduCloud-Ecosystem/cairn/pull/32) merged as
+`bb41bdaffe7a9ec9feb1b8fdcdcbbdda527b20f8` from reviewed final head
+`2aa674ec42478ce6f0ca622e3267c65475d96784`; the merge tree matches that head.
+All eight final checks passed across [main CI 39094293017](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39094293017),
+[recovery CI 39094293038](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39094293038)
+and [synthetic consumer CI 39094293023](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39094293023).
+
+The separate opt-in command implements Cairn's Runner/PolicyRunner interfaces
+against pinned Outfitter `273bb0148fead33c91fcb92e0cc9e0bacdb929c2`. Durable intent
+precedes the single dispatch; repeated calls use status only. Cairn proposes a
+result only from a complete matching receipt with verified cleanup/accounting.
+Unknown execution or missing diagnostics return no result, not a zero grade.
+It never stores a Grade or changes the running service, retry defaults, schema
+or production configuration. The [integration contract](https://github.com/EduCloud-Ecosystem/cairn/blob/2aa674ec42478ce6f0ca622e3267c65475d96784/docs/synthetic-outfitter.md)
+explicitly prohibits installing this adapter into the current production retry
+path, which lacks the required stable job context.
+
+The [local evidence](https://github.com/EduCloud-Ecosystem/cairn/blob/2aa674ec42478ce6f0ca622e3267c65475d96784/docs/evidence/2026-10-17-synthetic-outfitter.json)
+retains 19/19 passing Docker controls at implementation `48476e6`, five sequential
+workloads under a 150 CPU-second ceiling and a separate budget refusal. The
+wrong-answer control remains wrong despite successful execution. The
+[independent review](https://github.com/EduCloud-Ecosystem/cairn/blob/2aa674ec42478ce6f0ca622e3267c65475d96784/docs/evidence/2026-10-17-synthetic-outfitter-review.json)
+retains three reproduced and fixed findings: blocking special-file reads in the
+runner and CLI, and cancellation discarding an unresolved cleanup receipt.
+Rechecks passed; per-job cleanup failures and liabilities remain visible.
+Final-head CI is separate from the earlier pinned local report. Production
+service wiring is not implemented. Live provider, real course data and a second
+human operator remain NOT RUN.
+
+## Inference operator decision prepared
+
+The accepted offline packet was used to prepare a concrete operator brief from
+eight pinned local input files. The read-only inventory at 20:18 Pacific on
+October 17 found an Ollama executable, no default-port listener and no models in
+the default or explicitly configured inventory inspected. It did not survey
+other hosts, unrelated engines or unconfigured locations. Hardware inventory is
+not evidence of approved available capacity or model fit.
+
+The brief retains 95 synthetic passes, all 12 runtime gates NOT RUN and 32 missing
+capacity/cost fields. The proposed workload remains at most 16 attempts within a
+separately chosen window of at most 30 minutes. The needed choices are an existing
+approved host and permitted installed model, its accountable operator and limits,
+and a later bounded execution window. Deferral is the no-spend option. A possible
+expiry gap after metadata pinning is undergoing targeted synthetic validation;
+it must be resolved before live qualification. No engine start, acquisition,
+model request or spending occurred in preparing the brief.
+
+The local operator packet is retained separately from this public repository.
+The reviewed brief SHA-256 is
+`fed24abae27d2536231e0c8dc4300fcad4ce08c994126842052d8636204ec90d`;
+the machine packet containing all eight input hashes has SHA-256
+`3637cf01a9b08ac64cb0112e0eb31cbc7e3b692373d8d7337c84d6a1cb6fec9a`.
+These identify the bounded inventory snapshot, not current capacity or approval.
 
 ## Remaining decisions
 
