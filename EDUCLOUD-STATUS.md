@@ -89,8 +89,17 @@ rejected draft remain intact. No accepted store is migrated and no quota or
 deletion is enabled. A subsequent independent audit reproduced three failed
 controls: cancellation, local user revocation and project closure committed after
 the early check but before launch still reached intercepted broker spawn. No
-actual process was launched. A final serialized local-authority recheck is being
-corrected before dispatch acceptance; the earlier passing evidence is retained.
+actual process was launched. The correction merged in
+[#38](https://github.com/EduCloud-Ecosystem/waypoint/pull/38), merge `7d5cf925`,
+reviewed head `ae00a41a`: final authority recheck, preservation of superseding
+accounting and owned observer cleanup after a post-launch fence error. All 295
+offline controls, including sixty dispatch tests, and final ordinary CI passed;
+source builds were skipped. A separate independent recheck passed 26 targeted
+tests and prevented all six original witness launches against corrected source.
+The original failure remains reproducible against its frozen source. All 137
+prior evidence files and the rejected draft remain unchanged. Next is a
+source-pinned capacity contract and writer qualification before admission wiring;
+quota enforcement and accepted-store migration remain open.
 Ben's existing Outfitter issues
 #1–#5 remain assigned and unchanged.
 Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge
@@ -136,6 +145,15 @@ envelope-serialization defect; final CI passed 736 tests/subtests, plus 26 Docke
 local simulation. Restart, changed requests and settlement do not replenish the
 attempt. Guest execution and live access remain NOT RUN; unknown late effects,
 independent-host operation and terminal settlement remain unresolved.
+The supplemental operational packet merged in
+[#14](https://github.com/EduCloud-Ecosystem/outfitter/pull/14), merge `e9c18f97`,
+reviewed head `2f5f4c63`, after review corrections and passing final CI. It recommends
+restricted private SSH from existing approved capacity and an independent cleanup
+host, without selecting resources or granting access. Its 64 total observer sweeps
+are shared across both phases and restarts for one reservation. Fourteen historical
+files are unchanged. No new subscription is demonstrated necessary; incremental
+host/network/operator costs and residual exposure remain unknown. Live execution
+still requires engineering, operational and approval gates, not approval alone.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`
@@ -168,11 +186,16 @@ The separate restart investigation confirmed an approval-lifetime limit gap:
 two fresh processes under one fictional approval dispatched 32 simulated
 inference calls and 102 metadata calls. Unknown reservations survived restart,
 but three metadata calls preceded the repeat's unknown-work refusal. These are
-offline failure witnesses, not engine qualification. Scoped review cleared a
-single-host operator registry, existing authoritative ledger, permanent named
-attempts and explicit offline migration as the corrective implementation. Repeated
-or rejected invocations must not issue new metadata or authority traffic. No fix
-is accepted yet; no hosted lane, model or execution window is approved.
+offline failure witnesses, not engine qualification. The correction merged in
+[#15](https://github.com/EduCloud-Ecosystem/portage/pull/15), merge `79742746`,
+reviewed head `f22ff34c`: one protected local authority, existing-only startup,
+permanent budget-bound slots, a runner lease and explicit offline migration.
+It passed 63 guard controls, 175 runner controls, 513 full-suite tests/six skips
+and both final CI gates; paid review was skipped. Completed and unknown-work
+repeats make zero further fixture inference, metadata or authority contacts.
+A clock-watermark defect and two CI failures remain recorded alongside their
+corrections. All twelve runtime gates remain NOT RUN; no hosted lane, model or
+execution window is approved.
 
 Docker stays the baseline. Optional Kubernetes evaluation follows P1 before
 custom multi-host expansion; existing institutional-capacity discovery may begin

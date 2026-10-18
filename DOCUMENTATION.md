@@ -190,8 +190,11 @@ witness, whole-store quotas and accepted-store migration remain open. The two
 incomplete browser attempts and 127 prior evidence files are retained.
 An independent post-merge audit then reproduced a final-launch race: cancellation,
 user revocation or project closure committed before launch still reached the
-intercepted broker spawn. Correction is underway; final local authority fencing
-is not accepted by those earlier passing checks.
+intercepted broker spawn. PR #38 corrects the final fence and superseding-settlement
+and post-launch observer failures: 295 offline controls, including sixty dispatch
+tests, and final CI passed; a separate 26-control independent recheck passed.
+Original failures remain unchanged. The next storage increment qualifies writer
+growth bounds before further admission implementation; it does not enable quotas.
 All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;
@@ -252,9 +255,12 @@ course workspace remain a separate path from the new research service.
   measured consumption. A separate offline restart witness reproduced 32
   inference/102 metadata calls under one 16-inference-call approval, plus three
   metadata calls before repeat unknown-work refusal. Durable approval/attempt
-  authority is now in a scoped implementation using an existing operator-owned
-  store, fixed lifetime slots and explicit offline migration. No correction is
-  accepted yet; a host recommendation is not live-use approval.
+  authority merged in #15 using an existing operator-owned store, permanent
+  lifetime slots and explicit offline migration. After a clock correction and
+  deterministic concurrency-test repair, 63 guard controls, 175 runner controls,
+  513 full-suite tests/six skips and final CI passed. Completed/unknown repeats
+  make zero further fixture contacts. Original failures and all twelve runtime
+  NOT RUN gates remain; a host recommendation is not live-use approval.
   No default route changed.
   Neither component is a prerequisite for the Python/R computing pilot.
 - Outfitter now has the merged bounded Docker broker consumed by the research
@@ -276,6 +282,12 @@ course workspace remain a separate path from the new research service.
   final CI passed 736 tests/subtests plus Docker/recovery/consumer checks. Restart
   and settlement do not renew the attempt; guest execution and live access remain
   unqualified, and unknown liabilities stay held.
+  PR #14 records a reviewed supplemental operational packet. Restricted private
+  SSH is the engineering recommendation; allocation/hosts/access remain
+  unselected, and the 64 total sweeps are shared across phases for one reservation.
+  No additional subscription is demonstrated necessary. Engineering, operational
+  and live-approval gates remain; architecture re-approval is not required for
+  ordinary authorized design work.
   Local recovery/fencing P1 is merged;
   it does not establish remote source-loss recovery or provider settlement.
   The local synthetic consumer bridge merged in #9 with 19 consumer checks;
