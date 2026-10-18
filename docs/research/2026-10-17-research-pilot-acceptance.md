@@ -1049,8 +1049,139 @@ metadata, release the SQLite read transaction before artifact I/O, verify exact
 evidence, construct the bundle, and recheck current authority and unchanged
 metadata before returning bytes. A concurrent revocation or metadata change
 refuses export without retry or accounting mutation. The explicit opt-in
-version/binding contract requires independent review before implementation;
-whole-store admission and guard scratch policies remain separate.
+version/binding contract subsequently received independent design review and
+narrow implementation GO under the [capacity decision](../decisions/2026-10-17-research-pilot-capacity.md#finite-authority-engineering-decision).
+The reviewed original proposal SHA-256 is
+`eabfa3fd139c98785d168415ba3aaf7ba6be0beb35c7fde815806ad0de4f23d9`;
+the corrected pre-implementation contract SHA-256 is
+`8fa312c32da9e96a8067b0e8ddb964d4eb81d5ac94efda72caff681141a4d6c2`.
+The corrections distinguish current-state equality from transient change-and-
+revert, and pre/during-read file mutation from later changes to already copied
+bytes. The subsequent implementation is accepted below; whole-store admission
+and guard scratch policies remain separate.
+
+## Fresh opt-in bounded export
+
+Waypoint [#42](https://github.com/EduCloud-Ecosystem/waypoint/pull/42) merged as
+`66a48dfe29d61d3f6f48f016f2c474e1ac6af4f6` from reviewed head
+`b4ccf05ecf9e7d796ba2b35a9a05d803fd973819`.
+[Exact-head CI 39110032142](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39110032142)
+and [post-merge CI 39110144665](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39110144665)
+passed controls and existing actual-Docker compatibility checks; clean source
+builds were **SKIPPED**. Head and merge share tree
+`15cef753c0e3999245c72c008899309470ad769f`.
+The [implemented contract](https://github.com/EduCloud-Ecosystem/waypoint/blob/b4ccf05ecf9e7d796ba2b35a9a05d803fd973819/research-workspace/BOUNDED-EXPORT.md)
+and [evidence chronology](https://github.com/EduCloud-Ecosystem/waypoint/blob/b4ccf05ecf9e7d796ba2b35a9a05d803fd973819/research-workspace/evidence/2026-10-18/bounded-export/README.md)
+bind the fresh `init --bounded-export` profile and preserve its failed controls.
+
+The exact v2 mode/policy/export-protocol, guard v3 and database marker tuple is
+required throughout; mixed/stripped bindings refuse. Existing v1/default paths
+remain separate; finite OIDC, restore and cutover still refuse. The new helper
+requires a local session token. It captures bounded project/run/private authority
+metadata under the guard and a query-only SQLite transaction, then closes both
+before descriptor-based bounded artifact reads and ZIP construction. Captured
+hashes/results and public bundle structure are verified. Final authorization
+reacquires the guard through a fresh exact capture/comparison and expiry check,
+including private cancellation, session, membership and active-user state.
+No export reader or guard lock spans HTTP streaming. Changes refuse without
+automatic retry, output files, intents or accounting mutation.
+
+| Control or boundary | Recorded result |
+| --- | --- |
+| Local suite and independent review | **PASS**: 334 full-suite tests include 16 export tests and both frozen bridges. Independent review reran the 16 export tests, 21 finite-v1 tests and both bridges, plus 13 supplementary controls. These counts overlap and are not additive. |
+| Concurrent authority changes | **PASS** disposable production Store/HTTP controls: revoke/rotate/cancel/settle complete while artifact/ZIP work is blocked, and changed final authority/private metadata refuses publication. Revocation after final authorization permits already-authorized bytes to finish streaming. |
+| Negative and supplemental controls | **PASS** control sensitivity: injected reader leak, missing final authorization and missing private cancellation comparison are detected. Fresh CLI/reopen/sign-in, required-runtime refusal and mutation during descriptor reading pass. Supplemental commands were inline; no standalone exact-harness replay claim. |
+| Historical preservation | **PASS** root audit: all 209 prior evidence files, catalogs and image pins unchanged; 39 frozen #41 files equal base Git bytes. Current manifest binds 22 source and 38 evidence hashes; independent review binds 21 sources. Root independently audited code and bindings but did not rerun runtime/provider workloads. |
+| Remaining acceptance | **NOT RUN** for new-profile live-provider, real/private-data, accepted-store and physical-capacity acceptance. New controls use simulated project allocation, no broker or Docker; existing Docker CI is a separate compatibility gate. Whole-store capacity **UNKNOWN**, quota admission **NO-GO**, `quota_enforced:false`, fifth headroom failure **FAIL**. |
+
+The initial descriptor-close acknowledgement failure left four other descriptors
+open; the correction attempts every close once, retains the first error and
+refuses publication without retrying an ambiguously closed descriptor. Original
+source, hashes and witness remain preserved. Incorrect verifier-field assertions,
+duplicated finite-test discovery, a misplaced revocation assertion and a wrong-
+directory import failure remain labeled fixture/invocation failures. The first
+frozen archive omitted a transitive `test_recovery.py` fixture; its incomplete
+archive/bridge/failure remain, and the accepted archive adds only that unchanged
+base file. Expected injected negative failures are not candidate failures.
+
+Current equality cannot detect transient change-and-revert. Later artifact
+changes cannot modify previously verified copied bytes. Conservative charges
+and UNKNOWN liabilities remain. This does not establish WAL, memory or time
+maxima, engine ceilings, checkpoints, scratch reuse, migration or storage quotas.
+The next guard publication contract is **design only**, subject to independent
+exhaustion/compatibility review before code.
+
+Manifest SHA-256:
+`a7fce6b1312594855dca20af7dadc9f9ba829c6a3f456f76a28465836eea0db9`.
+Frozen #41 archive SHA-256:
+`6bf625ca8c826e85d2cb80893e1e61fd673e52fff6b33a9bf1439c8e7977efdf`.
+Independent review SHA-256:
+`49ab8c7fbce96357ccfdc2dd82fde7b02c754cc2e35855ea249118bfee3a44ac`.
+
+## Docker broker storage-writer qualification
+
+Outfitter [#15](https://github.com/EduCloud-Ecosystem/outfitter/pull/15) merged as
+`e5599066970750ff3aa8f539bf0391f9c7e32346` from reviewed head
+`0d94e3c830e97f236bd745d27942e06d24a03ba4`.
+[Corrected-head CI 39109599802](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39109599802)
+and [post-merge CI 39109844174](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39109844174)
+passed the new offline qualification and existing broker/Docker checks. The
+reviewed head and merge share tree `0e88fc7b17a90e75ac275a9a3652d88d8d3a32d0`.
+The [protocol](https://github.com/EduCloud-Ecosystem/outfitter/blob/0d94e3c830e97f236bd745d27942e06d24a03ba4/specs/17-storage-writer-qualification.md)
+and [witness interpretation](https://github.com/EduCloud-Ecosystem/outfitter/blob/0d94e3c830e97f236bd745d27942e06d24a03ba4/qualification/storage_writers/README.md)
+extend the five broker rows of Waypoint #39. Runtime source and Waypoint's active
+broker pin `5827c84e9952cc67b85e91ceff4282e0ead6923b` remain unchanged.
+
+The runner verifies eleven source hashes, exports that exact pinned revision and
+records declared test instrumentation before exercising production functions.
+The corrected local record has **22 Go test/subtest passes**, **20 connected
+observations**, **32 separate model cases** and **two optimized-process oracle
+fault probes**. These are different evidence units, not an additive test count.
+The connected tests use disposable files/processes and fake provider operations.
+Main baseline `e9c18f970bae38aef7254b90f1465dadd64673d5` is compared separately;
+this neither qualifies its runtime nor promotes it to the active consumer pin.
+
+| Control or gap | Recorded result and boundary |
+| --- | --- |
+| Spill and publication ordering | **PASS counterexample witnesses**: three distinct output sidecars survive injected ledger-sync failures while prior authority and 30 unknown CPU-seconds remain. Output encoding/replacement and six publication fault points distinguish old authority from visible but unproved new generations. Later I/O orphans remain possible. |
+| Lowered compact-record limit | **PASS ordering witness only**: injected limit is one byte; production limit is 98304 bytes. A normal CLI request reaching that production cap is **NOT DEMONSTRATED**. |
+| Snapshot growth and cancellation | **PASS counterexample witnesses**: the walk/refusal leaves 1026 entries including two parents; growth after stat retains 16 MiB plus one byte. Copy may continue after cancellation while checkpoint completes with unknown work. Exact expected bytes/hashes are derived before copying. |
+| Background Watch ownership | **PASS instrumented process witnesses**: stale/shared readiness, blocked ledger update, requester exit, continued generations and post-cutover readiness writes do not establish all writers stopped. Helpers are independently supervised real processes using actual Watch code, not the CLI launcher's parent/child handoff. That launcher remains **NOT RUN**. |
+| Checkpoint/cutover | **PASS counterexample witnesses**: only referenced diagnostics are copied; unknown source files remain protected. An injected post-rename directory-sync failure returns activation error while source is fenced and destination visibly active. Before-publication failure is a distinct case. An error alone cannot certify both non-admitting or release either root. |
+| Finite ownership model | **PASS corrected model controls; NOT ENFORCED**. Exact Boolean proofs, integer/nonnegative terms and explicit oracle failures reject reviewed invalid inputs. The model consumes declared fixture inputs, not a production ownership census or quota admission path. |
+| Physical/provider/whole-store acceptance | **NOT RUN** for physical exhaustion, failed temporary removal, host/power loss, actual CLI watchdog handoff, complete writer discovery, enforced destination refusal and production quotas. Qualification invokes no Docker/cloud provider. Existing Docker CI is a separate compatibility gate. Whole-root capacity remains **UNKNOWN**, `quota_enforced:false`, fifth headroom failure **FAIL**. |
+
+The [evidence chronology](https://github.com/EduCloud-Ecosystem/outfitter/blob/0d94e3c830e97f236bd745d27942e06d24a03ba4/docs/evidence/2026-10-18-storage-writers/README.md)
+retains the initial missed snapshot hook: **19 passes/one failure**, with one fake
+provider create because the intended refusal boundary was not reached. Canonical
+path matching and explicit hook/content assertions correct that fixture. No real
+provider was called. The later `qualified-v1` passing report and initial root
+clearance at `e0eff0bc74b2ed35420a98d43cab7edb13258e56` are **superseded for model
+validation**: second independent review reproduced eight false acceptances of
+UNKNOWN/non-Boolean flags and thirteen incorrectly accepted negative controls
+under Python optimization with a deliberately always-accepting model. The exact
+old model, red records, old passing report and successful old-head CI remain
+preserved. The correction requires literal Boolean proofs and explicit failures;
+both always-accept and always-reject oracle faults must fail with assertions off.
+
+Root's corrected-head audit verified the source, instrumentation and artifact
+hashes, all ten prior evidence files and unchanged upstream contract/fifth-failure
+copies. Focused model probes and both optimized oracle probes passed; root did
+not rerun the connected Go workload or any provider. Corrected report SHA-256:
+`fb960be0672f99cec5e14185191a6ce99eb20d1f5a56107ce7e171e014d2bf92`.
+Model SHA-256:
+`13bf957f19dd33c996a90a82bbb34fbaee575557f7974f20ce791bf9202a4dda`.
+Runner SHA-256:
+`123f52d7317f9269ef6ef8d74e19a87821957b62b9aeeab31dabc78324ff35b2`.
+
+Independent design review gives narrow implementation GO for pre-serializing
+ledger/output plans inside the existing transaction, validating both diagnostic
+outcomes and the maximum mixed ledger before file effects while preserving
+native/consumer fields and conservative accounting. Keep one encoded output
+buffer at a time. A separate reviewed/tested PR must qualify the implementation.
+It does not repair later I/O orphans, repeated scratch, background ownership,
+snapshot/cutover gaps or whole-store quotas, and does not change the active pin.
+Ben's assignments, live operational choices and all unresolved liabilities remain.
 
 ## Remaining decisions
 

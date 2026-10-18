@@ -120,11 +120,18 @@ reviewed head `b8845f57`: nine disposable controls, 318 local suite tests and
 exact-head/post-merge CI passed; source builds skipped. Production source and all
 199 prior evidence files remain unchanged. The witnesses expose recurring WAL
 and failed temporary-file growth; their passing results are not storage bounds.
-The earlier failed restart assumption remains a fixture failure. Next is a
-concrete export-reader lifetime design that closes its SQLite transaction before
-artifact I/O and verifies evidence/authority before publication. Outfitter's
-Docker writer qualification remains in review. No quota admission, accepted-store
-migration or default change.
+The earlier failed restart assumption remains a fixture failure. Waypoint
+[#42](https://github.com/EduCloud-Ecosystem/waypoint/pull/42) merged as `66a48dfe`
+from reviewed head `b4ccf05e`: a fresh opt-in export profile closes its SQLite
+transaction before artifact I/O, verifies copied evidence and rechecks current
+authority plus exact private metadata before publication. The 334 local tests
+include 16 new export tests; independent review and exact-head/post-merge CI
+passed, source builds skipped. All 209 prior evidence files remain unchanged;
+the initial descriptor-cleanup defect and fixture failures are preserved.
+Next is a design-only contract for fixed ordinary/safety guard scratch slots;
+implementation requires separate review of exhaustion and compatibility.
+Outfitter's Docker writer qualification is accepted below. No quota admission,
+accepted-store migration or default change.
 Ben's existing Outfitter issues
 #1–#5 remain assigned and unchanged.
 Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge
@@ -179,6 +186,20 @@ are shared across both phases and restarts for one reservation. Fourteen histori
 files are unchanged. No new subscription is demonstrated necessary; incremental
 host/network/operator costs and residual exposure remain unknown. Live execution
 still requires engineering, operational and approval gates, not approval alone.
+
+Docker storage-writer qualification merged in
+[#15](https://github.com/EduCloud-Ecosystem/outfitter/pull/15), merge `e5599066`,
+reviewed head `0d94e3c8`. Exact-head/post-merge CI passed the new offline qualification and
+existing broker/Docker checks. Twenty instrumented observations run against the
+unchanged active broker pin, with 22 Go test/subtest passes, 32 separate model
+cases and two optimized-process oracle probes. Review corrected false Boolean
+proof flags and assertion-disabled oracle gates; the prior passing report,
+initial root clearance and failed controls remain preserved. A cutover witness
+also shows that a post-publication error can leave the destination active.
+All ten existing evidence files and runtime source remain unchanged. Whole-root
+capacity is UNKNOWN and the model remains unenforced. Next is a separate reviewed
+serialization-before-spill implementation, preserving conservative accounting
+and the active consumer pin; later I/O orphans and background writers remain open.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`

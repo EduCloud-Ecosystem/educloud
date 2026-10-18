@@ -208,9 +208,17 @@ PR #41 qualifies SQLite/guard write paths with nine disposable controls and 318
 local tests, plus passing exact-head/post-merge CI; source builds skipped.
 Its retained failed restart assumption is a fixture failure, not a production
 defect. All 199 prior evidence files and production source remain unchanged.
-Whole-store capacity remains UNKNOWN and quota_enforced:false. Next is a scoped
-export-reader lifetime design; Docker broker writer qualification remains in
-Outfitter review. No quota admission or accepted-store migration.
+Whole-store capacity remains UNKNOWN and quota_enforced:false. Waypoint #42 adds
+a fresh opt-in export path that releases its reader before artifact I/O and
+rechecks current authority plus exact captured metadata before returning bytes.
+Its 334 local tests, independent review and exact-head/post-merge CI passed;
+source builds skipped and all 209 prior evidence files remain unchanged.
+Guard temporary-file limits are the next design-only scope. Outfitter #15 qualifies
+twenty connected broker writer observations, 32 model cases and two optimized
+oracle probes after review corrections and passing exact-head/post-merge CI. Earlier false
+acceptances remain preserved; runtime source and the active broker pin are
+unchanged. A narrow serialization-before-spill fix is authorized next, without
+quota admission or migration.
 All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;
