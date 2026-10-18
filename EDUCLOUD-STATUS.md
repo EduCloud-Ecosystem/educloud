@@ -128,8 +128,11 @@ authority plus exact private metadata before publication. The 334 local tests
 include 16 new export tests; independent review and exact-head/post-merge CI
 passed, source builds skipped. All 209 prior evidence files remain unchanged;
 the initial descriptor-cleanup defect and fixture failures are preserved.
-Next is a design-only contract for fixed ordinary/safety guard scratch slots;
-implementation requires separate review of exhaustion and compatibility.
+The fixed ordinary/safety guard-scratch contract received implementation GO
+after exhaustion, takeover and compatibility review. The required clarification
+rechecks residue/holds before each mutation even with cached durability proof;
+runtime acceptance remains pending. Failed safety publication must report failure
+and retain debt, which can leave revocation unapplied in the new opt-in profile.
 Outfitter's Docker writer qualification is accepted below. No quota admission,
 accepted-store migration or default change.
 Ben's existing Outfitter issues
@@ -197,9 +200,18 @@ proof flags and assertion-disabled oracle gates; the prior passing report,
 initial root clearance and failed controls remain preserved. A cutover witness
 also shows that a post-publication error can leave the destination active.
 All ten existing evidence files and runtime source remain unchanged. Whole-root
-capacity is UNKNOWN and the model remains unenforced. Next is a separate reviewed
-serialization-before-spill implementation, preserving conservative accounting
-and the active consumer pin; later I/O orphans and background writers remain open.
+capacity is UNKNOWN and the model remains unenforced.
+
+The separate serialization-before-spill implementation merged in
+[#16](https://github.com/EduCloud-Ecosystem/outfitter/pull/16), merge `54464389`,
+reviewed head `28d34437`. It validates diagnostic success/failure variants and
+the maximum mixed ledger before sidecar effects while preserving conservative
+accounting. Eighteen focused and 754 full race test/subtest passes, independent
+review and exact-head/post-merge CI passed. Two original orphan
+failures and all 28 prior evidence files remain intact. Later I/O orphans and
+background writers remain open. Waypoint still uses its accepted `5827c84`
+broker; separate two-binary authority/checkpoint, unknown-liability and receipt
+compatibility qualification is assigned before any reviewed pin update.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`

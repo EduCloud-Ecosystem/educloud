@@ -19,7 +19,7 @@ multi-host expansion; it is not an adoption, managed-cluster or migration decisi
 | Dependency | Current disposition | What must be prepared before spending or live use |
 | --- | --- | --- |
 | Local Python/R and recovery work | Continue within existing approved capacity and finite test budgets. | Exact image/platform, bounded workload, disk/output needs and cleanup; record actual capacity limits rather than infer them from green unit tests. |
-| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 implements finite logical authority; #41 qualifies SQLite/guard write paths; #42 implements a fresh opt-in bounded export path. Outfitter #15 qualifies pinned broker writer counterexamples after model-review corrections. This is not whole-store capacity. | Next: Waypoint guard scratch design only and Outfitter ledger/output pre-serialization implementation. Finite OIDC/restore refuse. WAL, replacement scratch, broker writers and destination peaks remain UNKNOWN; no quota wiring or accepted-store migration. |
+| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 implements finite logical authority; #41 qualifies SQLite/guard write paths; #42 implements a fresh opt-in bounded export path. Outfitter #15 qualifies pinned broker writer counterexamples; #16 implements serialization before spill. This is not whole-store capacity. | Next: reviewed fresh-profile guard scratch implementation and separate two-binary integration qualification before broker adoption. Finite OIDC/restore refuse. WAL, replacement scratch, broker writers and destination peaks remain UNKNOWN; no quota wiring or accepted-store migration. |
 | Source-image builds and independent reproduction | Use existing approved local/CI capacity first. | Source/base/package inputs, build resource envelope and second operator/machine. If unavailable, mark NOT RUN and prepare alternatives; do not buy hardware automatically. |
 | Institutional worker/backup destination | No new host, storage plan or backup account selected here. | Named owner, data classes, cohort/concurrency, retention, measured recovery target, full resource bill and bounded pilot term. |
 | Jetstream2 | Native-SU journal and simulated independent cleanup accepted in Outfitter #8; the local consumer bridge is accepted in #9. The blocked operator/rescue packet merged in #10, simulated two-process rescue in #11, metadata compatibility in #12 and one-attempt offline enforcement in #13. The reviewed supplemental operational packet in #14 recommends restricted private SSH and independent cleanup without selecting allocation/hosts/access. No live worker authorized here. | Verified allocation permissions, current rate/terms, maximum one CPU worker, explicit native-unit reservation, expiry and independent teardown. The proposed 1 SU allowance is not a provider-enforced charge ceiling. Quota/access is not capacity or permission to consume an allocation. Independent-host cleanup, terminal late effects, authenticated guest bootstrap, private execution/result transfer and live transport remain engineering/operational gates; approval alone cannot close them. |
@@ -125,21 +125,37 @@ streaming; the new helper requires a session token and rejects subject-only
 publication. The implemented contract SHA-256 is
 `e3023285a5424d0e289a6cb847b0fb96842f03252bf396cf256467841d3154c0`.
 
-The next Waypoint assignment is **design only** for a fresh opt-in guard
-publication profile: fixed ordinary and safety scratch roles under the existing
+The next Waypoint assignment has **narrow implementation GO** after independent
+design review of a fresh opt-in guard publication profile: fixed ordinary and
+safety scratch roles under the existing
 guard lock, exclusive no-follow creation and no adoption, overwrite or deletion
 of residue. Ordinary failure notes must not consume the safety slot. Define
 exact-incarnation binding, restart/post-rename uncertainty and explicit safety
 slot exhaustion that fails while retaining debt rather than bypassing intent.
 Current plus two 4 MiB candidates could bound this logical guard family to
 12 MiB only for fresh controlled state; it is neither an accepted runtime bound
-nor a SQL/WAL/other-writer bound. Independent review of concrete exhaustion and
-compatibility behavior is required before implementation. Preserve existing
-profiles/defaults, OIDC/restore refusals and historical evidence. No quota
-admission, cleanup or new capacity ledger belongs in this design.
+nor a SQL/WAL/other-writer bound. Preserve existing profiles/defaults,
+OIDC/restore refusals and historical evidence. No quota admission, cleanup or
+new capacity ledger belongs in this design.
 
-After Outfitter #15 qualification acceptance, independent design review clears
-a separate narrow ledger/output serialization fix. Inside the existing ledger
+Reviewed proposal SHA-256:
+`d6024965ee196cde9a0ad8773600e3ae54338c71e5aedf8c0784741d792969a3`.
+Corrected pre-code contract SHA-256:
+`d9fa59065b8f8a831c58b4af58f7ab02e96b085d85453bdf963e98ac7bf8a78a`.
+The required correction caches only durability qualification of the exact
+current incarnation, never permission, receipt outcomes or namespace cleanliness.
+Every mutation/publication must recheck relevant residue and holds under the lock
+even when current bytes are unchanged. Qualification must include process B
+observing new failed scratch left by A without replacing current. Takeover
+barriers precede business transactions. Unresolved essential intent cannot be
+borrowed; ordinary failure notes cannot consume the safety slot. Exhaustion
+explicitly sacrifices availability: failed revocation may leave access active,
+and failed settlement retains debt. This tradeoff is accepted only for the fresh
+opt-in profile; runtime review and qualification remain required before merge.
+
+After Outfitter #15 qualification acceptance, independent design review cleared
+the separate narrow ledger/output serialization fix implemented in
+[#16](https://github.com/EduCloud-Ecosystem/outfitter/pull/16). Inside the existing ledger
 transaction, compute output digests and encoded lengths before sidecar effects;
 validate each diagnostic-success and diagnostic-failure record form, then the
 largest mixed-outcome ledger using all native/consumer fields and existing limits.
@@ -150,8 +166,20 @@ plan refusal before output-file effects. Later I/O failure can still leave
 orphans or uncertain publication; no repeated-scratch or all-writer bound follows.
 Keep the active Waypoint broker pin unchanged pending separate integration
 qualification. No new capacity ledger, quota, snapshot/watchdog/cutover redesign,
-provider default or live allocation work belongs in this fix. Runtime acceptance
-requires a separate reviewed/tested PR.
+provider default or live allocation work belongs in this fix. Exact-head runtime
+review and exact-head/post-merge CI passed. Existing per-record and
+whole-ledger limits are unchanged, and the two original failures remain retained.
+
+Before adopting the candidate broker, qualify the actual Waypoint consumer with
+two immutable binaries: existing `5827c84e9952cc67b85e91ceff4282e0ead6923b` and
+Outfitter #16. Existing one-binary recovery tests do not prove old-authority or
+old-checkpoint compatibility. Use disposable synthetic state to prove unchanged
+local-v2 identity/accounting/diagnostics, old checkpoint to held replacement,
+source fencing, stale/unknown refusal and exact receipt validation. Native-v3 and
+consumer-v4 states are outside this Waypoint adoption contract; do not strip or
+downgrade them. Preserve historical broker pins and failed controls. This is
+preparation for a separate reviewed integration/pin PR, not an active pin change,
+accepted-store migration, live provider permission or broader storage guarantee.
 
 Whole-store quota admission remains **NO-GO**. SQLite/WAL/reader peaks, recurring
 replacement/failure scratch, broker/watchdog ownership and restore destination
