@@ -559,16 +559,133 @@ private reachability, capacity or entitlement. Native/rescue behavior, its
 64-sweep limit, unknown liabilities and the proposed live manifest are unchanged.
 Live engineering, operational and approval gates remain open.
 
-The next scoped implementation will bind a separate immutable experiment envelope
+The subsequent scoped implementation was authorized to bind a separate immutable experiment envelope
 to authority/account, configuration, native policy and compatibility digests,
 request identity, start/expiry, lifetime and native reservation. One total attempt
 must be consumed atomically with reservation; settlement, restart and changed
 request IDs must not replenish it. Repeated requests remain status-only. Bound
 compatibility and expiry must be rechecked before each simulated port/server
-create, including after delayed rescue acknowledgement. This is authorized work,
-not accepted enforcement. Native record bounds and both rescue acknowledgements
+create, including after delayed rescue acknowledgement. That authorization did
+not establish accepted enforcement; the later #13 acceptance is recorded below.
+Native record bounds and both rescue acknowledgements
 remain required. No live entry point, credential lookup or guest execution is
 included; private guest bootstrap, access and result transfer remain open.
+
+## Fresh operation guard, held recovery and a remaining dispatch failure
+
+Waypoint [#37](https://github.com/EduCloud-Ecosystem/waypoint/pull/37) merged as
+`a58001b2731fa0dc9a1150b65c8940bf656625ec` from reviewed head
+`68fe54960d9d3e56b39bd6aa51f21728f532b4c9`.
+[Final-head CI 39102679294](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39102679294)
+passed 235 offline controls, 41 existing HTTP/Docker checks, historical
+replay/recovery and twelve new guard-provider checks; source builds were SKIPPED.
+The [local evidence](https://github.com/EduCloud-Ecosystem/waypoint/blob/68fe54960d9d3e56b39bd6aa51f21728f532b4c9/research-workspace/evidence/2026-10-17/operation-guard/README.md)
+records **235 offline controls**, **nine real local browser/HTTP checks with a
+simulated provider**, and **twelve actual local Docker/provider checks**. The
+latter use reviewed legacy Python/R runtimes and Outfitter
+`5827c84e9952cc67b85e91ceff4282e0ead6923b`; newer Jetstream2 code is not implied.
+Source hashes bind the application and harnesses to the local observations.
+
+These passing records are bounded evidence; the subsequent final-authority
+failure below prevents a complete dispatch-fencing acceptance claim.
+
+This explicitly enabled fresh-store profile writes durable operation intents
+before business effects and requires exact database completion receipts. Claims
+and broker launch share a hold fence; provider waits release database/guard
+locks. Uncertain outcomes preserve drafts, requests, files and liabilities,
+including when rollback, close or failure-note writes fail. Normal concurrent
+initialization defers without being treated as abandoned. Cancellation, logout,
+revocation and settlement remain callable; failed writes cannot report success.
+
+Guard-aware v2 checkpoint, held restore and cutover preserve authority,
+revocations, charges and unfinished work without automatic replay. Missing or
+mismatched bindings cannot fall back to legacy operation. Rolling the database
+and sidecar back together is outside the local detection guarantee. The 4,096
+ordinary-intent limit and one essential slot bound metadata counts; they are not
+a storage quota or a physical-capacity guarantee.
+
+New regression controls address the first four frozen draft witnesses. The fifth
+consumed-headroom witness remains **BLOCKED**. The original dirty three-file draft,
+its frozen patch and all **127** evidence files present at the accepted base are
+unchanged. Two incomplete browser attempts remain visible: a collapsed panel
+prevented the first harness action; UI polling raced another injected hold. They
+are not counted as passing product checks. The final browser attempt passed all
+nine controls, and the separate provider attempt passed all twelve.
+
+Accepted stores were not migrated. Whole-store writer bounds, essential growth,
+recovery capacity, retention/deletion and quotas remain unfinished. All four
+source candidates stay disabled. Manual accessibility, independent human,
+hosted and real-data acceptance remain **NOT RUN**; the earlier failed replay
+and cleanup gate are preserved alongside the separate later observation.
+
+The independent post-merge audit reproduced an additional **FAIL** at the final
+spawn boundary. On the exact reviewed source, each of cancellation, local user
+revocation and project closure committed after the early `should_cancel` check
+but before `token.launch`. Each case still reached one intercepted broker spawn;
+no real process was started. The final guard fence checked guard state and OIDC
+publication without re-reading these local controls. Earlier pre-launch tests
+cancelled before execution began and did not cover this boundary.
+
+The source-pinned witness retains three earlier-denial **PASS** controls and
+three late-denial **FAIL** controls. Its sanitized observation SHA-256 is
+`880dc49971e429d320c3c52292c725a85d8f9d2491617ed65cfd35a1fa374b8d`;
+the harness SHA-256 is
+`41190959adc368c9dfc154833303df75dc51d559bfde537f3e54b622e8646040`.
+Exit zero means the known failures were reproduced, not product acceptance.
+The private audit bundle retains 22 immutable source files and their hash index;
+these local hashes identify retained evidence, not a published correction.
+
+The owner is correcting the final serialized local-authority check and adding
+boundary controls for cancellation, membership/revocation, closure and expiry.
+Pre-dispatch refusal must not be confused with a possibly launched outcome, and
+no provider wait or remote identity request may move under database/guard locks.
+This correction has not yet been accepted; the three new failing witnesses and
+all previous passing/failed records remain separate evidence.
+
+## One finite offline experiment
+
+Outfitter [#13](https://github.com/EduCloud-Ecosystem/outfitter/pull/13) merged as
+`2ce00f4950122890a6bcb792ee29e51127ad76c2` from reviewed head
+`e10972e7650ff88b0fdfdb86833e592f66aa400b`.
+[Final-head CI 39102893358](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39102893358)
+passed **736 tests/subtests** across seven packages, including 129 experiment,
+231 compatibility and 220 rescue controls, plus 26 Docker, 38 recovery and 19
+consumer checks. The corrected local uncached race suite belongs to source
+`0172b14ef213ba98f0f39be328c93dd57784bcfb`; final-head CI is separate evidence.
+
+The [contract](https://github.com/EduCloud-Ecosystem/outfitter/blob/e10972e7650ff88b0fdfdb86833e592f66aa400b/specs/16-offline-experiment-enforcement.md)
+binds one immutable experiment to source authority/account, configuration/native
+policy, compatibility evidence, request/reservation, start/expiry, lifetime and
+native amount. Consumption and reservation occur in one serialized ledger
+update. Restart, changed requests and settlement do not grant a second attempt;
+duplicates retrieve stored status without resuming creation. Matching bound
+compatibility and expiry are rechecked before both simulated resource POSTs,
+after the phase's durable rescue acknowledgement and final pre-POST boundary.
+
+The separate envelope avoids circular policy/profile hashes. It permits 8 KiB
+total, a 2 KiB profile and 4 KiB snapshot, at most eight rules each; existing
+16 KiB native-policy/state limits remain. Independent review reproduced a defect
+where outer JSON serialization changed opaque envelope bytes after hashing.
+The correction rejects unstable bytes before persistence. The
+[evidence record](https://github.com/EduCloud-Ecosystem/outfitter/blob/e10972e7650ff88b0fdfdb86833e592f66aa400b/docs/evidence/2026-10-17-offline-experiment.json)
+preserves four failing negative cases, two positive controls, the earlier
+723-test result and a separate test-fixture initialization failure. Passing later
+results do not rewrite these failures.
+
+Fifteen creator-process SIGKILL boundaries and competing creators exercise local
+reservation, intent, acknowledgement, POST and saved-response transitions.
+These are same-host simulations using injected loopback HTTPS endpoints. Both
+rescue acknowledgements and the sole cleanup executor remain required. Lost/late
+effects, the 64-sweep limit and unresolved native liabilities remain visible;
+observational absence does not settle or refund them. Prior rescue/compatibility
+evidence and the original proposed live manifest are unchanged.
+
+**Guest execution remains NOT RUN and live readiness BLOCKED.** There is no live
+constructor, creation CLI, credential discovery, deployment switch, SSH/cloud-init
+or guest transport. Supplied metadata remains synthetic; boot, private access,
+effective network isolation, independent-host cleanup and terminal settlement
+are not established. Approval alone cannot close these engineering and
+operational gates, and no provider call, allocation use or spending occurred.
 
 ## Confirmed approval-lifetime attempt gap
 

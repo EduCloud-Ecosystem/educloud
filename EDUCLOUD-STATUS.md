@@ -76,9 +76,22 @@ the next draft reproduced five failures in dispatch holds, rollback uncertainty,
 result publication, overlapping project initialization and consumed headroom.
 [#36](https://github.com/EduCloud-Ecosystem/waypoint/pull/36), merge `640fa2d8`,
 retains the rejected draft and reproducible witnesses as documentation/evidence
-only; its accepted application source is unchanged. Scoped design review cleared
-durable operation/failure transitions as the next implementation. No quota
-or deletion is enabled. Ben's existing Outfitter issues
+only; its accepted application source is unchanged. The narrower operation guard
+merged in [#37](https://github.com/EduCloud-Ecosystem/waypoint/pull/37), merge
+`a58001b2`, reviewed head `68fe5496`. Its opt-in fresh-store profile records durable
+intents, pauses uncertain work and preserves guard state through held recovery.
+The local record passed 235 offline controls, nine browser/HTTP checks with a
+simulated provider and twelve actual local Docker/provider checks. Final ordinary
+CI passed; source builds were skipped. New regressions cover the first four
+witnesses; the fifth consumed-headroom case and whole-store admission remain
+blocked. Two incomplete browser attempts, 127 prior evidence files and the dirty
+rejected draft remain intact. No accepted store is migrated and no quota or
+deletion is enabled. A subsequent independent audit reproduced three failed
+controls: cancellation, local user revocation and project closure committed after
+the early check but before launch still reached intercepted broker spawn. No
+actual process was launched. A final serialized local-authority recheck is being
+corrected before dispatch acceptance; the earlier passing evidence is retained.
+Ben's existing Outfitter issues
 #1–#5 remain assigned and unchanged.
 Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge
 `534dcf18`, adds durable native-SU accounting and independent cleanup. Two
@@ -113,10 +126,16 @@ final CI passed 607 tests/subtests (including 231 compatibility and 220 rescue
 controls), plus 26 Docker, 38 recovery and 19 consumer checks. Matching supplied
 metadata does not prove boot, host suitability or effective network isolation;
 the evaluator has no collection transport or creation/ledger integration.
-The next authorized offline increment binds one experiment to native admission,
-consumes its sole attempt with the reservation, and rechecks compatibility and
-expiry before each simulated create. It adds no guest execution or live entry
-point, and has not yet passed acceptance.
+The enforcement increment merged in
+[#13](https://github.com/EduCloud-Ecosystem/outfitter/pull/13), merge `2ce00f49`,
+reviewed head `e10972e7`. It binds one experiment to native admission, consumes its
+sole attempt with the reservation and rechecks compatibility/expiry before both
+simulated creates after rescue acknowledgement. Independent review fixed an
+envelope-serialization defect; final CI passed 736 tests/subtests, plus 26 Docker,
+38 recovery and 19 consumer checks. Fifteen creator-process crash boundaries are
+local simulation. Restart, changed requests and settlement do not replenish the
+attempt. Guest execution and live access remain NOT RUN; unknown late effects,
+independent-host operation and terminal settlement remain unresolved.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`
