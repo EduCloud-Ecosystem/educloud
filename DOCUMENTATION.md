@@ -240,8 +240,12 @@ course workspace remain a separate path from the new research service.
   fixture contract merged in #14 with 147 new controls, 450 total passing tests
   and six existing skips; final CI passed. It has no transport, credentials,
   ledger mutation or live eligibility. Provider usage is not independently
-  measured consumption. Persistent approval/attempt bounds are under separate
-  investigation; a host recommendation is not live-use approval.
+  measured consumption. A separate offline restart witness reproduced 32
+  inference/102 metadata calls under one 16-inference-call approval, plus three
+  metadata calls before repeat unknown-work refusal. Durable approval/attempt
+  authority is now in a scoped implementation using an existing operator-owned
+  store, fixed lifetime slots and explicit offline migration. No correction is
+  accepted yet; a host recommendation is not live-use approval.
   No default route changed.
   Neither component is a prerequisite for the Python/R computing pilot.
 - Outfitter now has the merged bounded Docker broker consumed by the research
@@ -254,6 +258,13 @@ course workspace remain a separate path from the new research service.
   corrections and final CI (376 tests/subtests plus Docker/recovery/consumer
   checks). Its 40 process-crash cases do not qualify independent hosts; unknown
   late effects, 64-sweep storage limit and unsettled charges remain visible.
+  PR #12 adds pure metadata compatibility after five review fixes: final CI
+  passed 607 tests/subtests and the existing Docker/recovery/consumer checks.
+  It has no live transport or creator/ledger integration, and matching supplied
+  metadata does not qualify boot, host suitability or effective network policy.
+  The next offline slice binds one experiment attempt and its compatibility
+  evidence to native admission and both simulated create effects. Guest execution
+  and live access remain outside that increment.
   Local recovery/fencing P1 is merged;
   it does not establish remote source-loss recovery or provider settlement.
   The local synthetic consumer bridge merged in #9 with 19 consumer checks;

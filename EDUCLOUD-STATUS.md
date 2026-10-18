@@ -106,9 +106,17 @@ parser correction. Final CI passed 376 tests/subtests, 26 Docker checks, 38
 recovery checks and 19 consumer checks. Forty simulated crash boundaries use
 separate processes on one machine, not actual independent hosts. Unknown late
 effects and charges remain held; the 64-sweep observation limit and live gates
-remain explicit. Scoped design review cleared a pure metadata-compatibility
-evaluator as the next offline increment; it cannot establish boot or network
-acceptance and will not change creation enforcement.
+remain explicit. The pure metadata-compatibility evaluator merged in
+[#12](https://github.com/EduCloud-Ecosystem/outfitter/pull/12), merge `5700ff52`,
+reviewed head `eec00a96`. Five independently reproduced findings were corrected;
+final CI passed 607 tests/subtests (including 231 compatibility and 220 rescue
+controls), plus 26 Docker, 38 recovery and 19 consumer checks. Matching supplied
+metadata does not prove boot, host suitability or effective network isolation;
+the evaluator has no collection transport or creation/ledger integration.
+The next authorized offline increment binds one experiment to native admission,
+consumes its sole attempt with the reservation, and rechecks compatibility and
+expiry before each simulated create. It adds no guest execution or live entry
+point, and has not yet passed acceptance.
 
 Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
 [#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`
@@ -137,8 +145,15 @@ existing skips; final CI passed and paid review was skipped. The classifier has
 no transport, credential lookup, ledger mutation or live eligibility. Reported
 usage stays provider-reported; uncertain outcomes retain unknown liability.
 The original 95/17 evidence records and 12 runtime NOT RUN gates are unchanged.
-Persistent approval/attempt limits are being investigated separately; no hosted
-lane, model or execution window is approved.
+The separate restart investigation confirmed an approval-lifetime limit gap:
+two fresh processes under one fictional approval dispatched 32 simulated
+inference calls and 102 metadata calls. Unknown reservations survived restart,
+but three metadata calls preceded the repeat's unknown-work refusal. These are
+offline failure witnesses, not engine qualification. Scoped review cleared a
+single-host operator registry, existing authoritative ledger, permanent named
+attempts and explicit offline migration as the corrective implementation. Repeated
+or rejected invocations must not issue new metadata or authority traffic. No fix
+is accepted yet; no hosted lane, model or execution window is approved.
 
 Docker stays the baseline. Optional Kubernetes evaluation follows P1 before
 custom multi-host expansion; existing institutional-capacity discovery may begin
