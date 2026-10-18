@@ -178,12 +178,21 @@ builds were skipped. Failed attempts and conservative charges remain retained.
 Read-only storage inventory/retention reporting merged in #34 (176 total
 workspace tests), and incremental broker output limits merged in #35 (184 total
 workspace tests). Final ordinary CI passed for both; source builds were skipped.
-Whole-store reservations/admission remain blocked by five reproduced draft
-failure-boundary defects. PR #36 preserves an inert rejected patch and offline
+The first storage-admission draft reproduced five failure-boundary defects.
+PR #36 preserves an inert rejected patch and offline
 witnesses, not quota implementation; accepted application files are unchanged.
 Neither reporting nor per-process output bounds enforce a total storage quota
-or authorize deletion. Scoped design review cleared durable operation/failure
-transitions for the next implementation. All four source candidates remain
+or authorize deletion. PR #37 adds an opt-in fresh-store operation guard and
+guard-aware recovery: 235 offline controls, nine local browser checks with a
+simulated provider, twelve actual local Docker/provider checks and final ordinary
+CI passed. New regressions address the first four witnesses; the consumed-headroom
+witness, whole-store quotas and accepted-store migration remain open. The two
+incomplete browser attempts and 127 prior evidence files are retained.
+An independent post-merge audit then reproduced a final-launch race: cancellation,
+user revocation or project closure committed before launch still reached the
+intercepted broker spawn. Correction is underway; final local authority fencing
+is not accepted by those earlier passing checks.
+All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;
 Docker remains the default. No live cloud/provider acceptance is claimed.
@@ -262,9 +271,11 @@ course workspace remain a separate path from the new research service.
   passed 607 tests/subtests and the existing Docker/recovery/consumer checks.
   It has no live transport or creator/ledger integration, and matching supplied
   metadata does not qualify boot, host suitability or effective network policy.
-  The next offline slice binds one experiment attempt and its compatibility
-  evidence to native admission and both simulated create effects. Guest execution
-  and live access remain outside that increment.
+  PR #13 binds one experiment attempt and its compatibility evidence to native
+  admission and both simulated create effects. A serialization defect was fixed;
+  final CI passed 736 tests/subtests plus Docker/recovery/consumer checks. Restart
+  and settlement do not renew the attempt; guest execution and live access remain
+  unqualified, and unknown liabilities stay held.
   Local recovery/fencing P1 is merged;
   it does not establish remote source-loss recovery or provider settlement.
   The local synthetic consumer bridge merged in #9 with 19 consumer checks;
