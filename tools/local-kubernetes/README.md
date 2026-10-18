@@ -44,6 +44,8 @@ python3 -O -m unittest discover -s tools/local-kubernetes -p 'test_*.py' -v
    to the intended existing local cluster. The tool never switches context.
    Kubeconfig authentication plugins/proxies remain the operator's trust boundary;
    a loopback proxy could point elsewhere. Do not disable TLS validation.
+   Every proposed API request has a finite 30-second timeout. This accommodates
+   local OpenAPI discovery under load; it is not a workload lifetime or retry.
 2. Validate the bundle against the digest retained at render. Read the JSON and
    `operator-plan.json`; execute only its individual argv arrays from the bundle
    directory. Never apply the entire directory or extract/submit the pod review.
@@ -76,9 +78,14 @@ remain unqualified. Neither a suspended/gated pod nor a namespace quota replaces
 Outfitter accounting. No application database, shared SQLite, PVC or application
 replica is proposed. The previous four-attempt v4 allowance remains exhausted.
 
-Current disposition: **foundation preparation only; defer workload adoption**.
+Current disposition: **local infrastructure observed; defer workload adoption**.
 No purchase or subscription is needed to render/check this package. Host overhead,
 available capacity, isolation and operational maintenance have not been measured.
 
 The [offline evidence](../../docs/research/evidence/2026-10-18-local-kubernetes/README.md)
 retains the initial alias-policy test failure and corrected checks.
+The separate [infrastructure observation](../../docs/research/evidence/2026-10-18-local-kubernetes/infrastructure/README.md)
+records host-owner creation and admission checks using the original `5686eb3`
+bundle with an explicit 30-second timeout override. That frozen bundle still
+requires its original generator for exact validation. It is not relabeled as a
+bundle produced by the corrected source.

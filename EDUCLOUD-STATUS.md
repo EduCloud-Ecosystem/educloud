@@ -319,9 +319,15 @@ The separately authorized local OrbStack migration remains host-owner work. The
 [Kubernetes foundation package](tools/local-kubernetes/README.md) prepares and
 checks namespace/quota/service-account/restricted-pod designs offline, with zero
 workload allowance and no cluster calls. It neither performs the migration nor
-enables a Kubernetes execution backend. Network enforcement, actual deployment
-and all runtime controls remain NOT RUN in this package; the prior four-attempt
-Waypoint qualification allowance remains exhausted.
+enables a Kubernetes execution backend. The separate
+[host-owner observation](docs/research/evidence/2026-10-18-local-kubernetes/infrastructure/README.md)
+records two namespaces/eight policy objects, quota/Pod Security server dry-run
+refusals, targeted worker RBAC denials and zero observed workloads. Two initial
+discovery timeouts and two schema-invalid negative probes remain visible. The
+request timeout is now 30 seconds, preserving endpoint/context pins and validation.
+Workload execution is NOT RUN, NetworkPolicy enforcement is UNKNOWN and the full
+Outfitter Kubernetes adapter is not implemented. The prior four-attempt Waypoint
+qualification allowance remains exhausted.
 
 ## October 6–7 classroom decision (preserved)
 

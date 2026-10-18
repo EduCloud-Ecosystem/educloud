@@ -84,7 +84,12 @@ renderer prepares two zero-workload namespaces and operator-owned local command
 plans; all cluster mutation stays with the host owner. It does not launch a
 workload, replace Outfitter admission, reuse the exhausted v4 allowance, migrate
 databases or qualify Flannel network denial. Runtime evaluation/adoption remains
-separate from this foundation preparation.
+separate from this foundation preparation. The
+[host-owner evidence](../research/evidence/2026-10-18-local-kubernetes/infrastructure/README.md)
+now records two namespaces/eight policy objects and targeted admission/RBAC
+refusals, with zero workload execution. Original timeouts and invalid probes are
+retained; successful infrastructure checks do not qualify network enforcement,
+Outfitter Kubernetes execution/accounting or whole-store capacity.
 
 Docker remains the default development and acceptance backend. Before building
 custom multi-host orchestration, determine whether a supported institutional

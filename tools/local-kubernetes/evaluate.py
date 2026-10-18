@@ -170,7 +170,7 @@ def build(config):
     commands = []
     reviews = []
     prefix = ["kubectl", f"--kubeconfig={config['kubeconfig']}", "--context=orbstack",
-              f"--server={config['server']}", "--request-timeout=5s"]
+              f"--server={config['server']}", "--request-timeout=30s"]
     for project in ("a", "b"):
         ns, policies, pod = objects(config, project)
         namespace = ns["metadata"]["name"]

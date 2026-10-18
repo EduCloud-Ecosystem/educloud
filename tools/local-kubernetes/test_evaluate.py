@@ -116,7 +116,7 @@ class FoundationTests(unittest.TestCase):
         self.assertEqual(len(plan["commands"]), 14)
         for command in plan["commands"]:
             argv = command["argv"]
-            self.assertEqual(argv[:5], ["kubectl", "--kubeconfig=/operator/private/orbstack-kubeconfig", "--context=orbstack", "--server=https://127.0.0.1:26443", "--request-timeout=5s"])
+            self.assertEqual(argv[:5], ["kubectl", "--kubeconfig=/operator/private/orbstack-kubeconfig", "--context=orbstack", "--server=https://127.0.0.1:26443", "--request-timeout=30s"])
             self.assertFalse(any(token in argv for token in ("apply", "delete", "run", "exec", "patch", "replace")))
             self.assertNotIn("restricted-pod.review.json", argv)
             if "-f" in argv:
@@ -222,6 +222,7 @@ class FoundationTests(unittest.TestCase):
         for artifact_name, mutate in (
             ("policy-a.json", lambda obj: obj["items"][0]["spec"]["hard"].update(pods="1")),
             ("operator-plan.json", lambda obj: obj["commands"][0]["argv"].__setitem__(2, "--context=remote")),
+            ("operator-plan.json", lambda obj: obj["commands"][0]["argv"].__setitem__(4, "--request-timeout=5s")),
             ("restricted-pod.review.json", lambda obj: obj.update(launch_enabled=True)),
         ):
             with self.subTest(artifact=artifact_name):

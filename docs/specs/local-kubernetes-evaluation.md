@@ -39,7 +39,7 @@ The new private output directory contains deterministic JSON:
   claim: deadline/grace is not independent expiry, ephemeral limits are not a
   storage guarantee, and no per-pod PID or output bound is implemented.
 - An operator plan of argv arrays, never shell text: explicit kubeconfig,
-  context, server and five-second request deadline on every kubectl command.
+  context, server and 30-second request deadline on every kubectl command.
   Namespaces and policy Lists have separate server-dry-run and create-only
   phases. Existing namespace refusal stops the procedure; no apply, adoption,
   cluster role, cluster setting, delete or broad cleanup command is generated.
@@ -58,6 +58,12 @@ reviewed render, not be calculated from an unfamiliar replacement bundle.
 All file creation is exclusive; no existing destination is overwritten. A write
 failure retains a partial directory and cannot publish a complete manifest.
 This is not an adversarial multi-user filesystem or power-loss recovery scheme.
+
+The initial five-second API request timeout proved too short for local OpenAPI
+discovery during host migration. The corrected default is 30 seconds; Pod grace
+remains five seconds. The original bundle/source and failed observations stay
+frozen. Validate historical bundles with their matching generator revision, not
+by rewriting their hashes or silently upgrading their command plans.
 
 ## Operator boundary
 
