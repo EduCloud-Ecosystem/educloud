@@ -19,7 +19,7 @@ multi-host expansion; it is not an adoption, managed-cluster or migration decisi
 | Dependency | Current disposition | What must be prepared before spending or live use |
 | --- | --- | --- |
 | Local Python/R and recovery work | Continue within existing approved capacity and finite test budgets. | Exact image/platform, bounded workload, disk/output needs and cleanup; record actual capacity limits rather than infer them from green unit tests. |
-| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 implements fresh local-key finite logical authority after review and checks. This is not whole-store capacity. | Row/session/encoded-field limits and safety actions are qualified offline; finite OIDC and restore explicitly refuse. Next qualify SQLite/guard peaks and Docker broker writer ownership with disposable witnesses. Recurring WAL, replacement scratch, broker writers and destination peaks remain UNKNOWN; no quota wiring or accepted-store migration. |
+| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 implements fresh local-key finite logical authority; #41 qualifies unchanged SQLite/guard write paths. This is not whole-store capacity. | Row/session/encoded-field limits and safety actions are qualified offline; finite OIDC and restore explicitly refuse. Next design bounded export-reader lifetime; Outfitter Docker writer qualification remains in review. Recurring WAL, replacement scratch, broker writers and destination peaks remain UNKNOWN; no quota wiring or accepted-store migration. |
 | Source-image builds and independent reproduction | Use existing approved local/CI capacity first. | Source/base/package inputs, build resource envelope and second operator/machine. If unavailable, mark NOT RUN and prepare alternatives; do not buy hardware automatically. |
 | Institutional worker/backup destination | No new host, storage plan or backup account selected here. | Named owner, data classes, cohort/concurrency, retention, measured recovery target, full resource bill and bounded pilot term. |
 | Jetstream2 | Native-SU journal and simulated independent cleanup accepted in Outfitter #8; the local consumer bridge is accepted in #9. The blocked operator/rescue packet merged in #10, simulated two-process rescue in #11, metadata compatibility in #12 and one-attempt offline enforcement in #13. The reviewed supplemental operational packet in #14 recommends restricted private SSH and independent cleanup without selecting allocation/hosts/access. No live worker authorized here. | Verified allocation permissions, current rate/terms, maximum one CPU worker, explicit native-unit reservation, expiry and independent teardown. The proposed 1 SU allowance is not a provider-enforced charge ceiling. Quota/access is not capacity or permission to consume an allocation. Independent-host cleanup, terminal late effects, authenticated guest bootstrap, private execution/result transfer and live transport remain engineering/operational gates; approval alone cannot close them. |
@@ -83,16 +83,27 @@ or accepted-store migration belongs in this increment. Checkpoints preserve the
 finite binding; finite restore/cutover and OIDC explicitly refuse. Existing
 Docker CI covers compatibility, not new finite-profile provider qualification.
 
-The next authorized offline slices are Waypoint's source-pinned SQLite/guard
-bounded-write protocol and Outfitter's Docker broker storage-writer ownership
-protocol, each with disposable production-connected witnesses and independent
-review. They must distinguish implemented limits from proposed bounds and
+Waypoint's source-pinned SQLite/guard bounded-write qualification is accepted in
+[#41](https://github.com/EduCloud-Ecosystem/waypoint/pull/41); Outfitter's Docker
+broker storage-writer protocol remains in review. The disposable witnesses
+distinguish implemented per-save limits from proposed bounds and
 UNKNOWN peaks, account for current plus temporary generations and retry residue,
 and avoid inferring all writers have stopped from parent exit or settled compute.
 The active broker pin remains unchanged pending separate integration acceptance.
 Broader enforcement requires a reviewed concrete protocol before wiring; this
 assignment does not enable quotas, recovery, migration, deletion or default
 journal changes.
+
+The next Waypoint design isolates export read lifetime: capture a bounded
+manifest, close the SQLite reader before artifact I/O, verify captured content,
+build the bundle, then recheck exact metadata and current local authority before
+returning bytes. The final check is the authorization point; locks/readers must
+not span HTTP streaming. Changes or read failures refuse without automatic retry,
+partial publication or accounting mutation. Prepare an explicit fresh opt-in
+version/binding contract for independent review before implementing; preserve
+existing profiles and identity/recovery refusals. This is a narrow reader fix,
+not an all-reader census, checkpoint policy or WAL/capacity guarantee. Guard
+scratch slots and engine ceilings remain separate later decisions.
 
 Whole-store quota admission remains **NO-GO**. SQLite/WAL/reader peaks, recurring
 replacement/failure scratch, broker/watchdog ownership and restore destination

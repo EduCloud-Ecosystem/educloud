@@ -114,9 +114,17 @@ their original red source/log and all 182 prior evidence files remain unchanged.
 Finite OIDC and restore explicitly refuse. Existing Docker CI is compatibility
 coverage, not finite-profile provider acceptance; its provider/browser/human
 gates remain NOT RUN. Whole-store quotas remain NO-GO, capacity UNKNOWN and the
-fifth headroom failure FAIL. Next, Waypoint qualifies SQLite/guard write peaks
-while Outfitter qualifies Docker broker writer ownership with disposable
-witnesses. No quota admission, accepted-store migration or default change.
+fifth headroom failure FAIL. SQLite/guard qualification merged in
+[#41](https://github.com/EduCloud-Ecosystem/waypoint/pull/41), merge `1e4b04c2`,
+reviewed head `b8845f57`: nine disposable controls, 318 local suite tests and
+exact-head/post-merge CI passed; source builds skipped. Production source and all
+199 prior evidence files remain unchanged. The witnesses expose recurring WAL
+and failed temporary-file growth; their passing results are not storage bounds.
+The earlier failed restart assumption remains a fixture failure. Next is a
+concrete export-reader lifetime design that closes its SQLite transaction before
+artifact I/O and verifies evidence/authority before publication. Outfitter's
+Docker writer qualification remains in review. No quota admission, accepted-store
+migration or default change.
 Ben's existing Outfitter issues
 #1–#5 remain assigned and unchanged.
 Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge
