@@ -1001,6 +1001,57 @@ and Outfitter Docker broker writer ownership qualification, with separate owners
 source pins, disposable witnesses and independent review. A reviewed concrete
 protocol precedes broader implementation; quota admission remains NO-GO.
 
+## SQLite and guard write qualification
+
+Waypoint [#41](https://github.com/EduCloud-Ecosystem/waypoint/pull/41) merged as
+`1e4b04c2d07dd4730d904fe93acb1795ad1a4d1c` from reviewed head
+`b8845f571cf0c5c7907033054dd70f6fa083c975`.
+[Exact-head CI 39108789105](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39108789105)
+and [post-merge CI 39108929454](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39108929454)
+passed existing controls/Docker compatibility; clean source builds were SKIPPED.
+Application source, active broker pin and SQLite settings remain unchanged.
+
+The [source-pinned protocol](https://github.com/EduCloud-Ecosystem/waypoint/blob/b8845f571cf0c5c7907033054dd70f6fa083c975/research-workspace/SQLITE-GUARD-PROTOCOL.md)
+and [evidence record](https://github.com/EduCloud-Ecosystem/waypoint/blob/b8845f571cf0c5c7907033054dd70f6fa083c975/research-workspace/evidence/2026-10-18/sqlite-guard/README.md)
+qualify nine disposable witnesses. The 318-test suite includes their bridge and
+the existing bridge to eight frozen capacity controls; counts overlap. Owner
+independent review reran the nine controls and bridge, added four effect-negative
+controls and independently derived the maximum canonical guard-map size. Root
+review did not repeat workloads; it verified 22 source pins, nine manifest hashes,
+exact harness/contract/report bindings and all 199 prior evidence files against
+base `e79a50c6074e3ecf579a5bc5b0732c473d62502d`.
+
+| Control or gap | Recorded result and boundary |
+| --- | --- |
+| Held reader with 160 key rotations | **PASS witness; finite WAL bound unproved**. WAL reached 4614432 bytes; PASSIVE observed 1120 frames, zero checkpointed. Explicit TRUNCATE completed only after releasing the disposable reader. No production checkpoint setting changed. |
+| Startup and borrowed safety writes | **PASS witnesses**: six opens grew WAL; eight borrowed essential rotations changed WAL without changing guard bytes. Intent/counter counts do not bound this history. |
+| Full guard map | **PASS per-save logical bound**: seeded 4096 ordinary plus one essential item produced 2327358-byte current and candidate files. Enforced candidate ceiling is 4 MiB; current plus one candidate at most 8 MiB excludes prior scratch, other saves in the action and SQL/engine writers. |
+| Failed temporary writes and commit acknowledgment | **PASS fault witnesses**: three file-sync failures retained three distinct temps; pre-commit revoke rolled back, post-commit revoke persisted, and both retained uncertainty. A post-rename sync error left a visible uncertain generation. These are injected application acknowledgment faults, not physical disk/VFS/power-loss qualification. |
+| Safety actions under a reader | **PASS**: nine independent fixtures verify authentication, logout, membership demotion/removal, revoke/rotate, cancel, settlement and project close. Row caps were not filled; #40's full-cap checks remain separate evidence. No physical write-availability guarantee. |
+| Restart recovery | **PASS corrected fixture**: a fresh process recovered 20 near-ceiling synthetic records as 19 cancelled and one interrupted/unknown, retaining a paused state. The 5228312-byte WAL observation is not a transient engine maximum. No provider ran. |
+| Original restart assumption | **FAIL, retained fixture assumption**: the earlier same-process recovery expected a paused restart despite its live run lease. Original nine-control harness/report/log remain unchanged; this does not establish a production defect. The first seven-control exploratory log lacks a frozen exact harness and makes no replay claim. |
+| Whole-store finite protocol | **NOT IMPLEMENTED / NO-GO**: reader coordination, retry-slot preservation/exhaustion and qualified engine ceilings remain proposals. Capacity UNKNOWN, `quota_enforced:false`, fifth consumed-headroom failure **FAIL**. Physical exhaustion, power loss, concurrent engine checkpoint races and complete writer ownership remain unqualified. |
+
+The accepted qualification report SHA-256 is
+`17527bfb90d7ffb955bbd5b4434486f363dd0715d53b7805c458181a6d624026`;
+evidence manifest SHA-256 is
+`ebb52fd3091f90933a8a3e23c1c42436d14838e1798c4bdca6c0b91b7f205d6b`.
+The machine contract SHA-256 is
+`6b0d81d3d75f4997d35fd605571d0ad35ac662afe145f4845fa018a51975bab5`;
+qualification harness SHA-256 is
+`e987ea7c68e3e6761c73af864cd3f623793d595ffd41d49010264a18303db332`.
+These hashes identify evidence integrity, not independent authenticity or runtime
+capacity. No accepted-store migration, restore enablement, deletion, source
+promotion or liability release occurred.
+
+Next is a narrowly scoped export-reader lifetime design: materialize bounded
+metadata, release the SQLite read transaction before artifact I/O, verify exact
+evidence, construct the bundle, and recheck current authority and unchanged
+metadata before returning bytes. A concurrent revocation or metadata change
+refuses export without retry or accounting mutation. The explicit opt-in
+version/binding contract requires independent review before implementation;
+whole-store admission and guard scratch policies remain separate.
+
 ## Remaining decisions
 
 Follow the [sequenced build backlog](../strategy/research-pilot-build-backlog.md)

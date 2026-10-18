@@ -204,9 +204,13 @@ CI passed existing controls/Docker checks, with source builds skipped. Two revie
 defects were reproduced and corrected; original failed evidence and all 182 prior
 evidence files remain unchanged. Finite-profile OIDC and restore explicitly
 refuse; new finite-profile provider/browser/human acceptance remains NOT RUN.
-Whole-store capacity remains UNKNOWN and quota_enforced:false. The next scoped
-qualification covers SQLite/guard write peaks in Waypoint and Docker broker
-writer ownership in Outfitter; no quota admission or accepted-store migration.
+PR #41 qualifies SQLite/guard write paths with nine disposable controls and 318
+local tests, plus passing exact-head/post-merge CI; source builds skipped.
+Its retained failed restart assumption is a fixture failure, not a production
+defect. All 199 prior evidence files and production source remain unchanged.
+Whole-store capacity remains UNKNOWN and quota_enforced:false. Next is a scoped
+export-reader lifetime design; Docker broker writer qualification remains in
+Outfitter review. No quota admission or accepted-store migration.
 All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;
