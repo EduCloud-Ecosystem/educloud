@@ -32,18 +32,48 @@ with no completed records or immutable artifacts lost at the frozen point;
 pending work was cancelled without replay. These measurements are not hosted
 recovery objectives or independent human reproduction. The special-file blocking
 finding in broker recovery was fixed at `5827c84` and independently verified as
-refused. Clean image builds, a second human/machine and hosted/source-loss
-recovery acceptance remain NOT RUN.
+refused. Independent human reproduction and hosted/source-loss recovery
+acceptance remain NOT RUN.
+
+Source-runtime builds are now accepted through Waypoint
+[#31](https://github.com/EduCloud-Ecosystem/waypoint/pull/31), merge `adc44643`,
+reviewed head `5f98c068`. Native ARM64 and AMD64 construction/qualification
+records are retained, with 49 checks per platform; 136 controls and ordinary
+post-merge CI passed. The original probe and builder failures remain visible.
+All four new source environments stay disabled, and durable image distribution,
+promotion and independent human reproduction remain separate gates. The original
+Documents-directory replay remains failed; a later read-only observation found
+its container absent and its ledger conservatively charged 30 CPU-seconds.
+Merged [#32](https://github.com/EduCloud-Ecosystem/waypoint/pull/32), merge
+`bc5d2fa1`, records that supplemental reconciliation without rewriting the failed
+receipt/report or refunding the charge. The matching ledger now records verified
+cleanup with no unresolved liability; the workload remains failed.
 
 Remaining work is sequenced in the [research build backlog](docs/strategy/research-pilot-build-backlog.md).
-Waypoint [#27](https://github.com/EduCloud-Ecosystem/waypoint/issues/27) covers clean
-source-image builds, [#28](https://github.com/EduCloud-Ecosystem/waypoint/issues/28)
+Waypoint [#27](https://github.com/EduCloud-Ecosystem/waypoint/issues/27) is closed
+for source-image builds; [#28](https://github.com/EduCloud-Ecosystem/waypoint/issues/28) covers
 independent second-operator/machine acceptance, and
 [#29](https://github.com/EduCloud-Ecosystem/waypoint/issues/29) shared identity,
-retention/storage, capacity and accessible operations. The GitHub issues remain unassigned; a separate bounded source-build chat is now
-working on #27. Ben's existing Outfitter issues #1–#5 remain assigned and unchanged.
-Separate Jetstream2 implementation and direct local inference qualification chats
-have started; no live execution, capacity or qualification result is inferred.
+retention/storage, capacity and accessible operations. Open issues #28/#29 remain
+unassigned. The Waypoint chat continues with a
+bounded synthetic identity/access slice of #29. Ben's existing Outfitter issues
+#1–#5 remain assigned and unchanged.
+Outfitter [#8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8), merge
+`534dcf18`, adds durable native-SU accounting and independent cleanup. Two
+independent-review findings were fixed; final CI passed 115 tests/subtests,
+26 Docker checks and 38 recovery checks. Provider failure controls use a local
+simulator. Live Jetstream2, independent-host supervisor operation and provider
+settlement remain NOT RUN. Its next increment is a durable synthetic consumer-job
+bridge, with actual local Docker evidence and no production Cairn integration.
+
+Portage [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10) and
+[#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) merged as `cf41dde`
+and `a3a4a6e`. Review fixed false-positive readiness, skipped-control and memory
+evidence paths, and made paid CI review explicitly opt-in. Final checks passed;
+the local suite recorded 225 passing tests with six existing integration skips.
+The qualification record has 95 synthetic passing controls and all 12 actual
+engine gates NOT RUN. Its next increment is an offline qualification/capacity
+review packet. No engine was started, model acquired or default route changed.
 
 Docker stays the baseline. Optional Kubernetes evaluation follows P1 before
 custom multi-host expansion; existing institutional-capacity discovery may begin
