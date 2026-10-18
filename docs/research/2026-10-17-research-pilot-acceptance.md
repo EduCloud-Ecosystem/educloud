@@ -1108,8 +1108,9 @@ Current equality cannot detect transient change-and-revert. Later artifact
 changes cannot modify previously verified copied bytes. Conservative charges
 and UNKNOWN liabilities remain. This does not establish WAL, memory or time
 maxima, engine ceilings, checkpoints, scratch reuse, migration or storage quotas.
-The next guard publication contract is **design only**, subject to independent
-exhaustion/compatibility review before code.
+The subsequent guard publication design received narrow implementation GO after
+independent exhaustion/takeover/compatibility review and the required cache
+clarification in the capacity decision. Runtime acceptance remains pending.
 
 Manifest SHA-256:
 `a7fce6b1312594855dca20af7dadc9f9ba829c6a3f456f76a28465836eea0db9`.
@@ -1178,10 +1179,57 @@ Independent design review gives narrow implementation GO for pre-serializing
 ledger/output plans inside the existing transaction, validating both diagnostic
 outcomes and the maximum mixed ledger before file effects while preserving
 native/consumer fields and conservative accounting. Keep one encoded output
-buffer at a time. A separate reviewed/tested PR must qualify the implementation.
+buffer at a time. The separate implementation is accepted in #16 below.
 It does not repair later I/O orphans, repeated scratch, background ownership,
 snapshot/cutover gaps or whole-store quotas, and does not change the active pin.
 Ben's assignments, live operational choices and all unresolved liabilities remain.
+
+## Ledger serialization before diagnostic effects
+
+Outfitter [#16](https://github.com/EduCloud-Ecosystem/outfitter/pull/16) merged as
+`5446438985e31cb739f2048a2aa2176918831a7e` from independently reviewed head
+`28d34437e61a7bfe50fbfafcabc656a7f09fceec`. The head and merge share tree
+`b65c2c381a282f221e0cb8acfa2a47bf8b3fca4e`.
+[Exact-head CI 39110530266](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39110530266)
+passed both broker/Docker and pinned writer-qualification jobs.
+[Post-merge CI 39110992276](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39110992276)
+also passed both jobs at the merge revision.
+The [specification](https://github.com/EduCloud-Ecosystem/outfitter/blob/28d34437e61a7bfe50fbfafcabc656a7f09fceec/specs/18-ledger-serialization-preflight.md)
+precedes implementation, and the
+[implementation report](https://github.com/EduCloud-Ecosystem/outfitter/blob/28d34437e61a7bfe50fbfafcabc656a7f09fceec/docs/evidence/2026-10-18-ledger-preflight/implementation.json)
+binds the source and retained failures.
+
+Within the existing transaction, preparation computes actual encoded output
+digests/lengths, validates both diagnostic outcomes and each compact record, then
+serializes the largest mixed-outcome ledger with all native/consumer metadata.
+Sidecar persistence starts only after that succeeds. Publication reencodes one
+output at a time, verifies its plan and selects the validated outcome matching
+actual persistence. Diagnostic failure still permits conservative accounting.
+Plans retain source strings and small metadata, not an array of encoded outputs;
+the extra encoding work is not a physical-memory or elapsed-time bound.
+
+| Control or gap | Result and limit |
+| --- | --- |
+| Original serializer/capacity failures | **FAIL preserved** against the prior runtime: a logically valid but unencodable timestamp and a valid aggregate ledger exceeding 64 MiB each left an orphan diagnostic. Old ledger and unknown-file bytes remained. Runnable fixture source and raw failures are retained. These constructed `Store.Update` cases do not claim ordinary CLI reachability. |
+| Focused candidate controls | **PASS**: 18 race test/subtest events across five top-level tests. Includes refusal before filesystem effects, all eight outcomes for three diagnostics, largest mixed-form selection, private lowered boundaries, plan mismatch, native/consumer preservation and immutable experiment checks. Production limits are unchanged. |
+| Broader verification | **PASS**: 754 full uncached race tests/subtests across seven packages, vet and formatting; exact-head CI artifacts also report 754 Go events, 26 Docker, 38 recovery and 19 consumer checks. Pinned writer qualification remains 20 observations/32 model cases. These units overlap and are not additive. |
+| Independent review | **PASS** exact-head runtime review: owner reports 18 focused controls plus five independent probes, and base failures reproduce while candidate refusals prevent sidecars. Root's separate code/provenance audits are **CLEAR**, verify four source hashes and all 28 prior evidence files, and rerun no workloads. |
+| Remaining limits | **NOT RUN** for live allocation/provider acceptance, physical exhaustion, host/power loss and complete writer/heap bounds. Later output/ledger I/O can leave orphans or uncertain durability. Snapshot, watchdog and recovery behavior remain unchanged. Whole-root capacity **UNKNOWN**, `quota_enforced:false`; fifth headroom witness remains **FAIL**. |
+
+Implementation report SHA-256:
+`6bd2a2110c5111d71e8ae1118ff9463e11bed1e041ab8ad83061e72f490fd2c6`.
+Focused passing log SHA-256:
+`2c8297e92ba3194d976a8e7979d75fcf72b5328a1436ef308c928e62d58dccd8`.
+Original failing log SHA-256:
+`3464820c95330aab2024ddd9befa95245dc6f3cc13a249a49ae350a7c2914264`.
+
+Waypoint's active broker remains `5827c84e9952cc67b85e91ceff4282e0ead6923b`.
+The next adoption qualification must compare old/new executable behavior and old
+authority/checkpoint formats in disposable state before changing that pin.
+Do not infer upgrade compatibility from tests that use one binary throughout;
+native-v3/consumer-v4 state is outside the local-v2 consumer adoption contract.
+Belay, accepted stores, dirty worktrees, Ben's assignments and live choices remain
+outside this change.
 
 ## Remaining decisions
 

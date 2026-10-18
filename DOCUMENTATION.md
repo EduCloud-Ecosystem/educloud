@@ -213,12 +213,17 @@ a fresh opt-in export path that releases its reader before artifact I/O and
 rechecks current authority plus exact captured metadata before returning bytes.
 Its 334 local tests, independent review and exact-head/post-merge CI passed;
 source builds skipped and all 209 prior evidence files remain unchanged.
-Guard temporary-file limits are the next design-only scope. Outfitter #15 qualifies
+The fresh-profile guard temporary-file design has narrow implementation GO after
+review clarified that cached durability never skips residue/hold checks.
+Runtime acceptance remains pending. Outfitter #15 qualifies
 twenty connected broker writer observations, 32 model cases and two optimized
 oracle probes after review corrections and passing exact-head/post-merge CI. Earlier false
 acceptances remain preserved; runtime source and the active broker pin are
-unchanged. A narrow serialization-before-spill fix is authorized next, without
-quota admission or migration.
+unchanged by that qualification. Outfitter #16 implements serialization before
+spill: 18 focused and 754 full race test/subtest passes, independent review and
+exact-head/post-merge CI passed. The active Waypoint broker pin is
+still unchanged. A separate old/new-binary integration and recovery qualification
+is assigned, without quota admission or migration.
 All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted
 identity, retention/deletion and store-wide limits (#29) remain open. Kubernetes is an optional post-P1 evaluation;
