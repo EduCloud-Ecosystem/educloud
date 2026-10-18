@@ -230,7 +230,9 @@ course workspace remain a separate path from the new research service.
   in Ben's unchanged issues #1–#5. Local recovery/fencing P1 is merged;
   it does not establish remote source-loss recovery or provider settlement.
   The local synthetic consumer bridge merged in #9 with 19 consumer checks;
-  actual Cairn adapter rehearsal and the broader live handoff remain separate.
+  Cairn's disposable adapter merged in #32 with 19 local Docker controls and
+  passing final CI. It proposes results without grade publication or production
+  wiring; the broader live handoff and second-human gates remain separate.
 - Preserve existing local strategy changes and unpublished module commits when
   reconciling branches. Public documentation is not the whole local state.
 
