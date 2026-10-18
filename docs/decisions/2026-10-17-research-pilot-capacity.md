@@ -19,7 +19,7 @@ multi-host expansion; it is not an adoption, managed-cluster or migration decisi
 | Dependency | Current disposition | What must be prepared before spending or live use |
 | --- | --- | --- |
 | Local Python/R and recovery work | Continue within existing approved capacity and finite test budgets. | Exact image/platform, bounded workload, disk/output needs and cleanup; record actual capacity limits rather than infer them from green unit tests. |
-| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 finite authority; #41 SQLite/guard qualification; #42 bounded export; #43 fixed guard publication slots. Outfitter #15 qualifies writer counterexamples and #16 prevalidates serialization. Waypoint #44 qualifies two broker versions; #45 adopts the candidate in standard Docker CI only. This is not whole-store capacity. | Next: fresh-profile SQLite reader-ownership design. Finite OIDC/restore refuse. WAL, other scratch, broker writers and destination peaks remain UNKNOWN; no checkpoint/journal policy, quota wiring or accepted-store migration. |
+| Research-store logical growth | Waypoint #39 accepts the offline writer contract; #40 finite authority; #41 SQLite/guard qualification; #42 bounded export; #43 fixed guard publication slots. Outfitter #15 qualifies writer counterexamples and #16 prevalidates serialization. Waypoint #44 qualifies two broker versions; #45 adopts the candidate in standard Docker CI only. This is not whole-store capacity. | Next: fresh-profile SQLite reader ownership under the reviewed design. Finite OIDC/restore refuse. WAL, other scratch, broker writers and destination peaks remain UNKNOWN; no checkpoint/journal policy, quota wiring or accepted-store migration. |
 | Source-image builds and independent reproduction | Use existing approved local/CI capacity first. | Source/base/package inputs, build resource envelope and second operator/machine. If unavailable, mark NOT RUN and prepare alternatives; do not buy hardware automatically. |
 | Institutional worker/backup destination | No new host, storage plan or backup account selected here. | Named owner, data classes, cohort/concurrency, retention, measured recovery target, full resource bill and bounded pilot term. |
 | Jetstream2 | Native-SU journal and simulated independent cleanup accepted in Outfitter #8; the local consumer bridge is accepted in #9. The blocked operator/rescue packet merged in #10, simulated two-process rescue in #11, metadata compatibility in #12 and one-attempt offline enforcement in #13. The reviewed supplemental operational packet in #14 recommends restricted private SSH and independent cleanup without selecting allocation/hosts/access. No live worker authorized here. | Verified allocation permissions, current rate/terms, maximum one CPU worker, explicit native-unit reservation, expiry and independent teardown. The proposed 1 SU allowance is not a provider-enforced charge ceiling. Quota/access is not capacity or permission to consume an allocation. Independent-host cleanup, terminal late effects, authenticated guest bootstrap, private execution/result transfer and live transport remain engineering/operational gates; approval alone cannot close them. |
@@ -205,11 +205,37 @@ bounded materialized results and close before artifact, HTTP or provider waiting
 Preserve dispatch's final authorization fence and the offline checkpoint's
 distinct frozen-source consistency boundary. Open/read/close failures cannot
 certify quiescence or reclaimed capacity; external readers can still retain WAL.
-Root design review precedes implementation. No automatic checkpoints, page caps,
-journal changes, retry, deletion, quota arithmetic or safety-write denial policy
-is included. Those policies require separate concrete design review. This
-offline slice needs no host selection or purchase and does not close the fifth
-headroom failure or physical-capacity gate.
+Root and independent design review give **narrow implementation GO** for the
+fresh v4 profile at proposal SHA-256
+`21f68b9c546136d0ccf2df96d6f69d84909dd2ebdacb32e5d9beba5e562c1012`,
+canonical policy `ed235fd6d6bb3c10632c0c5dc2bb20c8d3cb9076ebb157c71c1cc9c8072a656e`.
+Accept the rejection-only bootstrap discriminator and an explicit new
+availability tradeoff: actual unconfirmed open/cleanup holds normal readers and
+writers, including safety calls, for the same resolved root within that process.
+Constructor/status calls cannot clear the hold; different roots stay independent.
+Clean full-cap safety operations must remain available. Failed revocation cannot
+claim access removal, and failed settlement cannot discharge debt.
+
+One original-role diagnostic exception is allowed per existing operation token,
+never per nested owner. It cannot create intent, open business SQL, run a barrier
+or recursively log its own failure. Untokened startup/barrier failures remain
+held without inventing an origin note. Keyed lookups enforce uniqueness; a
+bounded claim selection must still choose one of multiple queued runs. Preserve
+v0–v3 and shared-helper behavior, same-snapshot binding checks, dispatch/export
+fences and offline source consistency. Preserve the original proposal, add these
+clarifications and refresh provenance on accepted #45 before runtime changes.
+The clarified pre-code contract is recorded at
+`4606cc6076999c6bae507bdb6beab4bbd0b0819a`, proposal SHA-256
+`5b03af41faa8b22830e9af792f185b0716867fd4918075389c2732dc1264ebb2`;
+the canonical policy hash is unchanged. Runtime acceptance remains pending.
+
+The ownership-failure hold is not a reader-drain/checkpoint admission policy or
+cross-process quiescence proof. No automatic checkpoints, page caps, journal
+changes, retry, deletion, quota arithmetic or checkpoint/drain safety-write
+denial policy is authorized here. Those require separate concrete design review.
+Independent runtime review and exact-head CI are still required. This offline
+slice needs no host selection or purchase and does not close the fifth headroom
+failure or physical-capacity gate.
 
 Whole-store quota admission remains **NO-GO**. SQLite/WAL/reader peaks, recurring
 replacement/failure scratch, broker/watchdog ownership and restore destination
