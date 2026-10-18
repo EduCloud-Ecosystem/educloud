@@ -1,7 +1,7 @@
 # EduCloud — Documentation Index
 
 *Annotated map of the documentation that matters, by purpose. Paths are
-relative to `~/dev/`. Research-pilot entries updated 2026-10-17; other entries
+relative to `~/dev/`. Research-pilot entries updated 2026-10-18; other entries
 retain their earlier review dates. Names: Cairn (was Quad), Belay (was
 Sol), Waypoint (was "HOST"/Registry), Portage (was Commons/claude-lanes),
 Outfitter (new).*
@@ -235,8 +235,12 @@ Waypoint #46 implements scoped SQLite ownership for a fresh opt-in v4 profile:
 regressions pass after fifteen review findings were corrected. Independent
 source/evidence review and final-head CI passed. Uncertain ownership holds
 readers and writers, including safety actions, for the same root in that process.
-The next slice qualifies v4 through existing local Docker and HTTP with at most
-four sequential attempts; current CI Docker checks still exercise older profiles.
+Waypoint [#47](https://github.com/EduCloud-Ecosystem/waypoint/pull/47) merged the fixed v4 local Docker qualification: four Python/R
+attempts across two synthetic projects, 18 controls, correct independent results,
+verified cleanup and 120 conservative CPU-seconds charged. Final acceptance and
+merge evidence are recorded in the research acceptance record; current CI Docker
+checks still exercise older profiles. Independent person/machine and selected
+shared-pilot operations are the next gates.
 No checkpoint, journal, quota or migration changes are accepted.
 All four source candidates remain
 disabled. Independent human reproduction (#28), promotion/distribution, hosted

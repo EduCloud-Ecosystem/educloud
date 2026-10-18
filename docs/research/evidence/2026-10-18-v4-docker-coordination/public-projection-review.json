@@ -1,0 +1,23 @@
+{
+  "status": "CLEAR",
+  "public_evidence_commit": "8f5f5bb2cdde5d12e4eb16f9eead998752d86c1f",
+  "public_verification_sha256": "43387ada697cc6bd7a31f1b40bf93de2a551d730a783de6fe5a4907b8e67e324",
+  "report_sha256": "8234b728d1b94ae7046777c93185ca3868aa40310e4fbf5a4ca68f12d3d22c40",
+  "actual_attempts": 4,
+  "charged_cpu_seconds": 120,
+  "controls": 18,
+  "source_or_runtime_changed": false,
+  "actual_evidence_reviews": {
+    "private_export_lineage_review_sha256": "1fb3374368614947309c5bd39aea0ad6161184164e68bceca766d8bc11b7c6e5",
+    "private_broker_accounting_review_sha256": "c62ee9cf121b4e66cad174987c5f759f5bd018b51264a20c05f75c5d58f8623a"
+  },
+  "checks": [
+    "Public attempt/project/image/lineage/metrics/accounting projections equal private records",
+    "All public attempt evidence hashes equal retained private artifact bytes",
+    "Committed public ZIPs equal independently reviewed actual ZIPs",
+    "Public summary contains no local host paths or named credential fields"
+  ],
+  "review_boundary": "Read-only file/Git-object verification; no workloads, provider, Docker commands or exercise state mutation. Final PR and CI remain pending.",
+  "private_actual_review_reports_published": false,
+  "public_review_summary": "actual-independent-review-summary.json"
+}

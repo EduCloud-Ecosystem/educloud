@@ -1,0 +1,105 @@
+{
+  "format": "educloud-v4-docker-acceptance-review-v1",
+  "status": "ACCEPTED_LOCAL_SCOPE",
+  "waypoint_pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/47",
+  "reviewed_head": "5053358121f8a3d6a971c64cd70db7ddc32efea8",
+  "merge_commit": "d738e7da881fff95427e98292ae202f05d9a9f28",
+  "merged_at": "2026-10-18T11:54:30Z",
+  "reviewed_tree": "6af2d301a3ede8c6e2ff57c37f84139792e92bdc",
+  "merge_tree": "6af2d301a3ede8c6e2ff57c37f84139792e92bdc",
+  "tree_equality": true,
+  "harness_commit": "fe4788c47a378e6234648dc4131ec4b870a8e713",
+  "manifest_sha256": "ad701c8d5b164666133a1d06f241a80ab052ccbeb02a48c499a663589e537295",
+  "source_archive_sha256": "6fcfce9bf3db5b57b4f503574f379123a43739c44fc69f9af9b40a8cc17055b5",
+  "actual_run": {
+    "status": "PASS",
+    "required_controls": 18,
+    "attempts": 4,
+    "projects": 2,
+    "exports": 2,
+    "conservative_charged_cpu_seconds": 120,
+    "all_cleanup_verified": true,
+    "unresolved_liability": false,
+    "allowance_exhausted": true,
+    "report_sha256": "8234b728d1b94ae7046777c93185ca3868aa40310e4fbf5a4ca68f12d3d22c40"
+  },
+  "reviews": {
+    "pre_execution_source_export": "CLEAR",
+    "pre_execution_broker_accounting": "CLEAR",
+    "actual_export_provenance_statistics": "CLEAR",
+    "actual_broker_accounting": "CLEAR",
+    "public_projection_and_final_diff": "CLEAR",
+    "umbrella_draft": "CLEAR",
+    "umbrella_draft_diff_sha256": "b4f7493f8aa627fd936ad41ffd6f36d7b09b83dd4d568ad2033e4be882285c37",
+    "umbrella_draft_inventory_sha256": "81259734e5294af9d7d7452ab80cb8c0051f63c704c47b63135c4c371f0eaa69"
+  },
+  "validation": {
+    "owner_full_suite": 457,
+    "owner_focused": 24,
+    "root_focused_normal": 24,
+    "root_focused_optimized": 24,
+    "outfitter_pure_tests_each_mode": 12,
+    "outfitter_scratch_probes_each_mode": 3,
+    "counts_overlap": true,
+    "waypoint_exact_head_CI": "PASS:39124817031",
+    "optional_source_builds": "SKIPPED",
+    "umbrella_CI": "NOT RUN: no configured workflow",
+    "umbrella_whitespace": "PASS",
+    "waypoint_raw_whitespace": "FAIL only preserved historical failed-test logs and review narrow.diff; current source/docs PASS"
+  },
+  "remaining": {
+    "source_candidates": "DISABLED",
+    "finite_oidc_restore": "REFUSED",
+    "capacity": "UNKNOWN",
+    "quota": "NO-GO; false",
+    "fifth_headroom": "FAIL unchanged",
+    "browser": "NOT RUN for v4",
+    "late_revocation_race": "NOT QUALIFIED by this exercise",
+    "independent_person_and_second_machine": "NOT RUN; selection required",
+    "shared_pilot": "host/cohort/storage/retention/recovery/support selection plus engineering and qualification required",
+    "live_allocation_inference_private_data_production": "NOT RUN and not authorized"
+  },
+  "next_action": "Stop recurring implementation after accepted documentation delivery; resume for a selected operational gate or concrete defect. No mandatory new coding requirement for the bounded local Python/R workflow; no new purchase demonstrated necessary.",
+  "evidence": {
+    "actual-independent-review-summary.json": {
+      "sha256": "6ed2cc06af4d0e6d3262f0ae982b97dd867a52268fec8a49e2707db7a4d439b9",
+      "bytes": 2519
+    },
+    "exact-head-ci.json": {
+      "sha256": "39f60a6a5941353c40fcc6507bb31410e5700fe3d4c209c7533af6832eceff09",
+      "bytes": 8322
+    },
+    "pre-execution-broker-review.json": {
+      "sha256": "7f56bee20596e1c025ad70c1c0c4e85fe623270ea2e8603728d6b206c2af6854",
+      "bytes": 3744
+    },
+    "pre-execution-export-lineage-review.json": {
+      "sha256": "cb1104237f2f57910c4a995b15e7a2c169fbdd39b4890ae7e176df4fef0a0da8",
+      "bytes": 1816
+    },
+    "pre-execution-review-index.json": {
+      "sha256": "11a887c60f2eb5293a9b0d80bd504248a5efb3ccad328028948441f417c1333a",
+      "bytes": 1711
+    },
+    "pre-execution-root-review.json": {
+      "sha256": "eb63dcfc9f4710d09b99497bffe556b7f61663347768911993ec915a22882020",
+      "bytes": 2379
+    },
+    "public-projection-review.json": {
+      "sha256": "7d0b1ffe51290b1c42ed307a691180ac4812fdd111ba071a0d81a62ef3777ec3",
+      "bytes": 1283
+    },
+    "public-verification.json": {
+      "sha256": "43387ada697cc6bd7a31f1b40bf93de2a551d730a783de6fe5a4907b8e67e324",
+      "bytes": 14043
+    },
+    "root-focused-normal.log": {
+      "sha256": "4f456a80fd0add6b418a0b3dd6cc7fc5e8f589a51ce0c1ffc7de78eb74e36ea1",
+      "bytes": 4412
+    },
+    "root-focused-optimized.log": {
+      "sha256": "d84fc48e416e610013bfd149e9272ff41054f58380a5a380b506191900804425",
+      "bytes": 4412
+    }
+  }
+}
