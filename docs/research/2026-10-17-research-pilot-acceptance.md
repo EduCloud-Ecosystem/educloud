@@ -350,6 +350,68 @@ six existing sibling-contract integration skips. The original **95 synthetic
 controls and all 12 actual-engine gates NOT RUN** are unchanged. No real model
 request, engine start, download, spending or default routing change occurred.
 
+## Storage inventory and bounded broker output
+
+The two foundation PRs below are accepted separately from whole-store admission.
+Their merge trees match the reviewed heads. Neither installs a quota policy,
+migrates an accepted store or authorizes deletion; issue #29 remains open.
+
+| PR | Reviewed head | Merge revision | Final-head CI |
+| --- | --- | --- | --- |
+| Waypoint [#34](https://github.com/EduCloud-Ecosystem/waypoint/pull/34) | `efeb53ac5eb10c878c286d521ccd1498908d0950` | `a769dd86594a8791e4ec6777b38a92940a31fc18` | [39096829512](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39096829512): 176 total offline tests, 41 HTTP/Docker checks and historical replay/recovery passed. Source-build job **SKIPPED**. |
+| Waypoint [#35](https://github.com/EduCloud-Ecosystem/waypoint/pull/35) | `714178b050e4f3e684101953b0fb7e7c988f2283` | `2a7d6cd08ce7881a5ea36d761e53fc0c6f0e4b71` | [39097535850](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39097535850): 184 total offline tests, 41 HTTP/Docker checks and historical replay/recovery passed. Source-build job **SKIPPED**. |
+
+PR #34 adds 18 inventory tests within its full-suite total. The read-only
+`storage-status` and `retention-plan` commands inventory SQLite/WAL/SHM, broker
+authority/output, directories, temporary and unknown files without opening the
+original database. Ambiguous-schema and incomplete-receipt findings were fixed
+before acceptance. Successful settled artifacts from closed projects can only
+be human review candidates. Uncertain authority and failed/unresolved work stay
+protected; no deletion command or scheduler exists.
+
+The [stopped synthetic-store observation](https://github.com/EduCloud-Ecosystem/waypoint/blob/efeb53ac5eb10c878c286d521ccd1498908d0950/research-workspace/evidence/2026-10-17/storage-inventory/README.md)
+recorded **163,779 logical bytes and 82 filesystem entries**, all protected, with
+zero review candidates. Source hashes match the reviewed implementation; both
+reports agree on inventory hashes. Content and captured device/inode/mode/link
+count/size/mtime/ctime matched before and after. Reads may update access times.
+This is not a capacity measurement or a guarantee against subsequent changes;
+`quota_enforced` and `deletion_authorized` remain false.
+
+PR #35 adds eight real subprocess tests for exact output caps, endless
+stdout/stderr with bounded traced memory, quiet/closed-pipe processes, callback
+failure and deadline checks. An independent review found a late-callback
+acceptance gap; it was corrected before merge. The process helper drains both
+pipes incrementally and continues identity/cancellation checks. Deadline bounds
+acceptance; caller return can include the bounded callback plus up to five
+seconds of observer teardown. Stopping the observer does not prove provider
+cleanup and cannot refund unknown execution.
+
+These CI runs did not repeat the full OIDC browser exercise. Prior source-build,
+replay reconciliation and OIDC evidence plus the catalog are
+byte-unchanged. The four source candidates remain disabled. Whole-store durable
+reservations, authority/settlement headroom, all-writer admission and recovery
+destination capacity remain unfinished. Hosted/private-data, human accessibility,
+independent operator and institutional retention gates remain **NOT RUN**.
+
+## Blocked cloud operator packet
+
+Outfitter [#10](https://github.com/EduCloud-Ecosystem/outfitter/pull/10) merged as
+`afc4fe82ee368261d7662b380bf9f611b31aa182` from reviewed head
+`3085e8f33350b6ce558a254cfdb7bc3de7f4c1b6` after independent design review and
+passing [CI 39096489315](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39096489315).
+The [operator packet](https://github.com/EduCloud-Ecosystem/outfitter/blob/3085e8f33350b6ce558a254cfdb7bc3de7f4c1b6/docs/JETSTREAM2-OPERATOR-DECISION.md)
+and rescue candidate are accepted as documentation only. JSON invariants,
+28 local links and whitespace checks passed; the older proposed live manifest
+is unchanged. Live preflight was **NOT RUN**.
+
+The packet retains unselected allocation, resource pins, operator and cleanup
+host. Its proposed one-worker 1 SU allowance is a local reservation, **not** a
+provider-enforced maximum charge. Independent-host cleanup, terminal late-effect
+evidence and settlement remain unresolved engineering/operational gates.
+The separate offline rescue implementation is under review; no live provider
+effects or independent-host acceptance are implied. Ben's assignments stay
+unchanged and Docker remains the baseline.
+
 ## Remaining decisions
 
 Follow the [sequenced build backlog](../strategy/research-pilot-build-backlog.md)
