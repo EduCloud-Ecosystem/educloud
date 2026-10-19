@@ -1,0 +1,12 @@
+{
+  "actual_resource_accepted": false,
+  "head": "053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad",
+  "local_engine_or_workload_calls": 0,
+  "outfitter_sha256": "c5ce296ab14eaeae3bfd98584974047ebef589964f93adfbfba8c561ec42b860",
+  "outfitter_source_commit": "de65bdab9303395226ebfb35e0e0740ab19b4d8e",
+  "output_bytes": 52833,
+  "output_sha256": "bb477e9338767034d4bc2d736f39cf35d34127e5b36641edecc22b313c87fd9b",
+  "readiness_pass": false,
+  "result": "PASS",
+  "scope": "Actual Python estimate CLI with two synthetic series and24 calls to the real pure Go validator"
+}

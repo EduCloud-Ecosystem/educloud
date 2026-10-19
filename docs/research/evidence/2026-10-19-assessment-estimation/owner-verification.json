@@ -1,0 +1,35 @@
+{
+  "actual_resource_accepted": false,
+  "base": "d70aaccc454332cb5bacf31e93c99e2ce0b420cd",
+  "coordinator_integration": {
+    "checks": 31,
+    "real_cli_scenarios": 10,
+    "reported_by": "coordinator",
+    "result": "PASS"
+  },
+  "existing_assessment_subset": 32,
+  "focused_assessment_tests": 55,
+  "full_research_log_sha256": "ac8a98f41b6c6d9fe6ae62e5ab8d2802c3cda426b879994c0a1dcf7c70aea8da",
+  "full_research_result": "PASS",
+  "full_research_seconds": 106.014,
+  "full_research_tests": 512,
+  "further_local_full_runs": "HELD_FOR_SHARED_MACHINE_QUIET_WINDOW",
+  "github_regression": {
+    "actual_docker": "PASS",
+    "clean_source_builds": "SKIPPED_NOT_REQUESTED",
+    "controls": "PASS",
+    "head": "053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad",
+    "result": "SUCCESS",
+    "run": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39340371209"
+  },
+  "independent_final_review": "CLEAR_AT_053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad",
+  "local_engine_or_workload_calls": 0,
+  "new_estimator_tests": 23,
+  "next_scope": "A5_NOT_STARTED",
+  "pull_request": "https://github.com/EduCloud-Ecosystem/waypoint/pull/50",
+  "readiness_pass": false,
+  "real_two_series_cli": "PASS",
+  "real_validator": "de65bdab9303395226ebfb35e0e0740ab19b4d8e",
+  "source_promotion": "NOT_RUN",
+  "waypoint_head": "053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad"
+}

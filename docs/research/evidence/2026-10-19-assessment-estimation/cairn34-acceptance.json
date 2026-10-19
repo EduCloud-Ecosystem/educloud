@@ -1,0 +1,20 @@
+{
+  "status": "MERGED",
+  "pr": "https://github.com/EduCloud-Ecosystem/cairn/pull/34",
+  "reviewed_head": "2be331d245a989490ca815a3c71b12c0d2ff0ed0",
+  "merge": "536da6a58b8178c9da15157e385c5a67f5782ef1",
+  "tree": "b9a3ff2267a1ff3ebb1e7bc194a6b8cb9cf94722",
+  "diff_sha256": "aae0bbb2a6e4a26a8f2053fe113daf25f8477683f8269e288e214c84126df959",
+  "evidence_sha256": "9d90e725b8354939ba5f4c8cda6dd3479d8d63f4640a46b58dcfc720f7c2373e",
+  "review": "research_ui CLEARexacthead;rootindependentlyverifiedsource,all25bindings/5loghashes/counts,actualCI",
+  "local_tests": {
+    "pass_events": 1037,
+    "overlapping_top_level": 493,
+    "skips": 16,
+    "focused_subset_pass": 87
+  },
+  "ci": "all8SUCCESS; configuredPG-taggedpackagePASS3.191s, localPGruntimeNOTRUN",
+  "ci_go_log_sha256": "d69d4d8c519a215d19d2fb75342f8aa7dfdf409ba24ef5cebfba31a549fa9371",
+  "retained_failures": "mutex2subcases+parentactualFAIL, fixed; PGpriorriskSOURCE-INFERRED/no priorruntimeFAILclaim",
+  "time": "2026-10-19T23:28:32.591565+00:00"
+}

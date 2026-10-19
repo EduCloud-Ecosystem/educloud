@@ -1,0 +1,80 @@
+{
+  "schema": "educloud.a4-acceptance/v1",
+  "observed_at": "2026-10-19T23:21:08.426111+00:00",
+  "pr": {
+    "headRefOid": "053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad",
+    "mergeCommit": {
+      "oid": "db7ad40e05baadba7b5063ed5003c9cdffe1eda8"
+    },
+    "mergedAt": "2026-10-19T23:18:50Z",
+    "state": "MERGED",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-19T23:17:40Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39340371209/job/118360116327",
+        "name": "controls",
+        "startedAt": "2026-10-19T23:15:00Z",
+        "status": "COMPLETED",
+        "workflowName": "Research workspace"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-19T23:16:07Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39340371209/job/118360116653",
+        "name": "actual-docker",
+        "startedAt": "2026-10-19T23:15:00Z",
+        "status": "COMPLETED",
+        "workflowName": "Research workspace"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-19T23:14:57Z",
+        "conclusion": "SKIPPED",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39340371209/job/118360118181",
+        "name": "clean-source-builds",
+        "startedAt": "2026-10-19T23:14:58Z",
+        "status": "COMPLETED",
+        "workflowName": "Research workspace"
+      }
+    ],
+    "url": "https://github.com/EduCloud-Ecosystem/waypoint/pull/50"
+  },
+  "reviewed_and_merge_tree": "73efa2e735c24c9b22644f8164d05886d19f1f85",
+  "independent_review": "research_evidence CLEAR exact053bb1ef; source/log/fixtures and175archivedOutfittersources verified",
+  "owner_tests": {
+    "total": 512,
+    "focused_subset": 55,
+    "inherited_subset": 32,
+    "new_estimator_subset": 23,
+    "full_log_sha256": "ac8a98f41b6c6d9fe6ae62e5ab8d2802c3cda426b879994c0a1dcf7c70aea8da"
+  },
+  "coordinator_checks": {
+    "fail": 0,
+    "actual_cli_scenarios": 11,
+    "artifact": "a4-integration.json",
+    "standalone_binary": "Trusted operator input; originally built by root from final accepted Outfitter production, tree matches mergedde65bda; checker does not attest build",
+    "pass_events": 32,
+    "optimization_mode": "PYTHONOPTIMIZE=1; explicit operational guards, isolated negative failure-control red/fix retained"
+  },
+  "retained_limits": [
+    "Synthetic invented counters only",
+    "No measured resource capacity/performance/cleanup acceptance",
+    "No uploads, private/student data or program submission",
+    "No provider native-unit/credit/dollar conversions or statistical confidence",
+    "No new purchase or renewed allowance"
+  ],
+  "artifacts_sha256": {
+    "cairn34-acceptance.json": "fa2b820c3a7739a3fa524d3dd3240d723a1e6b51ca2af3d50b6e859b2a0f43e4",
+    "integration-summary.json": "e266db7db4385c06d50bde63fe1a98eb0d11c3ef34dc4ec7a2b613c412bef635",
+    "outfitter-build.json": "a2055b1ed84c446daf9ac32cae24cbc74acc0320d1e825a3ab60604cd035f722",
+    "checker-corrections.json": "9ee117faacfc69f729b89c012a3850cc60eacbddb53ddf0522eff3fedee43c02",
+    "owner-verification.json": "6204764a0e7e9d1ca424826cf503bdc07eae319ba8069a3fed1931ddcd0d838c",
+    "check_integration.py": "4bbc4386b64e7d63f2cf94880b22586273610ec690f6beb445cf8ac569abb9f7",
+    "README.md": "d03679bddb5e73b06cfa9bf8aba1181cc585dec6506d41527614f03e6eec772c",
+    "a4-integration.json": "f1076e98495f37cdaacc0970e54bfd214f6d8d6098ae4af9a6abcb84f7d72e55"
+  },
+  "source_owner_verification_sha256": "2c367aaa7f114288db16eaf2ac740e6e31b60c9a9c8ca4313abb92a17259df53"
+}
