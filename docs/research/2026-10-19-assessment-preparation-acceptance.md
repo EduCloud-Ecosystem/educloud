@@ -224,7 +224,10 @@ visitor-coordinate test also failed; final checks use direct anchors and
 independent pdfplumber character geometry. Two root harness assumptions failed:
 the owner's ACCESS observation was refreshed/unreviewed while root deliberately
 used an unrefreshed snapshot, and the narrative key is `title`, not
-`project_title`. Corrected isolated checks pass with no product change.
+`project_title`. The first comparison has a retained private JSON record; the
+fixture-key traceback is recorded in the coordinator tool transcript, without a
+separate bound local traceback file. Corrected isolated checks pass with no
+product change.
 
 The [exact-head hosted run](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39344177506)
 passes `controls` (including 536 standard-library and ten optional PDF tests)

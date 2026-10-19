@@ -26,7 +26,19 @@
       "Second harness assumed project_title field; actual closed schema uses title. KeyError preserved; no product change."
     ],
     "private_result_sha256": "6c354edbb5dc8c64a337cf34e01234862a1c61ad16ee71d18ae2da7fb7dfb34b",
-    "public_checks_sha256": "508aa206b6a4d9104108ce49c746f9b3998f46ffb2fc89d6e7be8b14a5ac50f4"
+    "public_checks_sha256": "681c17baa8f5272a3188b6620f75ac8b9a64a0ee92dca4b5ce7facae1ab69119",
+    "harness_correction_provenance": [
+      {
+        "failure": "Different ACCESS requirements observation assumed equal",
+        "retention": "Protected coordinator first-comparison-failure.json",
+        "sha256": "c27e2afe94a533bce56bfa4a16516baa44a69284829f0d35242cc539f349d8d8"
+      },
+      {
+        "failure": "Harness project_title lookup raises KeyError; schema field is title",
+        "retention": "Coordinator tool transcript only; no separate bound local traceback file",
+        "sha256": null
+      }
+    ]
   },
   "root_artifact_review": {
     "scope": "Independent root inspection of existing owner artifacts; no workloads/CLI rerun/source changes",

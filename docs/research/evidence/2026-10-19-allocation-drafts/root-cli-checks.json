@@ -98,5 +98,17 @@
     "First comparison incorrectly assumed identical ACCESS source observation: owner refreshed unreviewed, root deliberately snapshot-only. Differing paths preserved.",
     "Second harness assumed project_title field; actual closed schema uses title. KeyError preserved; no product change."
   ],
-  "raw_transport_retention": "Exact command arguments, exit codes and bounded outputs retained in protected coordinator archive; public record excludes host paths."
+  "raw_transport_retention": "Exact command arguments, exit codes and bounded outputs retained in protected coordinator archive; public record excludes host paths.",
+  "harness_correction_provenance": [
+    {
+      "failure": "Different ACCESS requirements observation assumed equal",
+      "retention": "Protected coordinator first-comparison-failure.json",
+      "sha256": "c27e2afe94a533bce56bfa4a16516baa44a69284829f0d35242cc539f349d8d8"
+    },
+    {
+      "failure": "Harness project_title lookup raises KeyError; schema field is title",
+      "retention": "Coordinator tool transcript only; no separate bound local traceback file",
+      "sha256": null
+    }
+  ]
 }
