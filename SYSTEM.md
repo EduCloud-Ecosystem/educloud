@@ -144,6 +144,14 @@ authority cutover, and Portage retains inference policy. Its
 [acceptance record](docs/research/2026-10-17-research-pilot-acceptance.md) separates
 the merged local baseline and P1 from untested hosted/provider gates.
 
+The [temporary research-assessment contract](docs/specs/research-assessment.md)
+extends these same authorities with upload expiry, allowlisted measurement and
+cleanup receipts, deterministic resource estimates and allocation-preparation
+exports. It does not reuse retained-source study bundles. Measured consumption,
+reservations and provider charges are distinct; missing measurements remain
+unknown. Tool adapters cannot bypass Outfitter admission or Portage policy.
+Whole-service data-destination and FERPA acceptance remain required.
+
 ## 5. Dates that govern planning
 
 - **August 28, 2026** — GitHub Classroom shutdown (final data deletion
