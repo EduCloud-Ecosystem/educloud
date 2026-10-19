@@ -132,7 +132,12 @@ actual measurements, live qualification and current-program review stay open.
 Cairn #34 adds optional queue-owned dispatch and atomic publication after
 independent review and all eight CI checks, including hosted PostgreSQL. It
 preserves unknown outcomes and retention barriers without installing an adapter
-or qualifying restored-store authority.
+or qualifying restored-store authority. Cairn #35 adds authenticated, bounded,
+read-only operator inspection of those queue/dispatch observations. Independent
+review, 1,084 local passing events (502 overlapping top-level tests, 16 skips)
+and all eight CI checks pass, including actual hosted PostgreSQL. The reproduced
+SQLite NUL-suffix reader failure remains recorded; observations grant no retry
+or recovery authority.
 
 The [research workspace pilot](docs/specs/research-workspace-pilot.md) defines
 the October 17 implementation contract for Waypoint project/run/evidence

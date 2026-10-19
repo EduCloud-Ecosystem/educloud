@@ -18,6 +18,7 @@ inputs. Neither increment accepts the complete upload-to-allocation workflow.
 | Waypoint initial synthetic estimates | [#50](https://github.com/EduCloud-Ecosystem/waypoint/pull/50) | `053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad` | `db7ad40e05baadba7b5063ed5003c9cdffe1eda8` |
 | Cairn pinned grading context | [#33](https://github.com/EduCloud-Ecosystem/cairn/pull/33) | `70b984083fa711b12ae30bc22732d831a0b1ba1e` | `ab339c44248eca2f6c03c22ef951215e8969472a` |
 | Cairn optional durable grading dispatch | [#34](https://github.com/EduCloud-Ecosystem/cairn/pull/34) | `2be331d245a989490ca815a3c71b12c0d2ff0ed0` | `536da6a58b8178c9da15157e385c5a67f5782ef1` |
+| Cairn authenticated grading inspection | [#35](https://github.com/EduCloud-Ecosystem/cairn/pull/35) | `3b0adc4a8faab0aa1aee491b2d0b60e984c64219` | `912b9e1d035a83fa801096748627ad006dbba1d4` |
 
 Each component has one authoring owner and a separate reviewer. The coordinator
 owns integration acceptance and merging. The canonical-document owner is
@@ -192,6 +193,52 @@ The [component evidence](https://github.com/EduCloud-Ecosystem/cairn/blob/2be331
 and [coordinator record](evidence/2026-10-19-assessment-estimation/cairn34-acceptance.json)
 preserve these boundaries. The adapter remains uninstalled; no production
 database, runner selection, deployment or private/student data changed.
+
+## Operator inspection of queued grading
+
+Merged Cairn #35 adds `GET /operator/grading-jobs` on the existing server/store.
+It requires enabled authentication and a current allowlisted operator session;
+anonymous, student, expired, revoked and synthetic development sessions are
+refused before inspection-store reads. Exact job lookup or bounded binary
+keyset pages expose closed IDs, enums, digests and independent run/grade presence
+observations. Each response is one metadata snapshot; pages are not a frozen
+whole-history inventory. SQL reads one joined statement; memory holds one read
+lock. No new database opener, migration, table or provider call is added.
+
+Target/source paths, runner free text, grade scores/bodies, run results, queue
+diagnostics and raw database errors are excluded. Malformed metadata stays
+invalid or unknown. Stored digests are observations, not fresh educational-body
+verification. Record absence does not prove a retention purge; claimed worker
+liveness and external effects remain unknown. An in-progress queue row without
+a dispatch cannot establish runner mode or safe retry. Every response denies
+replay authority. Default runner selection, deployment, external status recovery
+and restored-store authority remain unchanged and unqualified.
+
+Independent exact-head review is **CLEAR**. The full serial local race suite
+records **1,084 passing events / 502 overlapping top-level tests**, zero failures
+and **16 skips**. The corrected focused **51 events / 11 top-level tests** are a
+subset. Vet passed. The owner-recorded commands/exit codes and independent
+source/log hash/count checks are in the
+[coordinator record](evidence/2026-10-19-assessment-estimation/cairn35-acceptance.json)
+and the [component evidence](https://github.com/EduCloud-Ecosystem/cairn/blob/3b0adc4a8faab0aa1aee491b2d0b60e984c64219/docs/evidence/2026-10-19-grading-inspection/validation.json).
+All 15 source bindings and five logs match; the five earlier component evidence
+files remain byte-identical.
+
+The actual pre-fix SQLite reader control retains **two failing subcases plus
+their parent**: text substring selection hid embedded NUL suffixes in corrupt
+target/status metadata, falsely projecting consistent publication. The corrected
+SQLite reader slices bounded BLOB bytes before text conversion, preserving
+malformed suffixes for validation. Both controls pass in focused and full runs.
+This was a new inspection-reader defect, not an accepted dispatch-writer failure.
+
+All eight exact-head CI checks pass: [main CI](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39343643827),
+[recovery](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39343643837)
+and [synthetic consumer](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39343643737).
+The configured hosted PostgreSQL-tagged package passed in **2.880 seconds**,
+including shared inspection conformance and a server-enforced read-only
+connection control. Local PostgreSQL remains **NOT RUN**: its parent PASS with
+three database-dependent skips is compile/gating evidence only. Reviewed and
+merged trees match `a22af8e8cd8deb6583984b261a8b188f6238ebd3`.
 
 ## Next scope and open gates
 
