@@ -329,6 +329,20 @@ Workload execution is NOT RUN, NetworkPolicy enforcement is UNKNOWN and the full
 Outfitter Kubernetes adapter is not implemented. The prior four-attempt Waypoint
 qualification allowance remains exhausted.
 
+The [local macOS runtime decision](docs/decisions/2026-10-18-local-macos-runtime.md)
+selects OrbStack for this operator's Docker-compatible engine; Compose stays the
+baseline and Linux/cloud Docker portability is unchanged. Coordinating operator
+records show completed cutover: 51 containers recreated (17 running, 34 historical stopped),
+13 health checks PASS, and pre-start exact hashes for 57 volume trees (129,395
+files; 5,651,741,054 bytes) PASS. Eight original images lost to kubelet GC under
+disk pressure were recovered exactly; the retained GC FAIL is separate from the
+final 75-image-ID/147-reference recovery PASS. Source data remains for rollback;
+Desktop is off. Read-only SQL/HTTP smoke checks passed, but full authentication,
+logical restore and Kubernetes workloads are NOT RUN. Approximately 15 GiB free
+disk remains a capacity liability; cleanup requires explicit approval. Startup
+settings and tool-selection readback passed; reboot behavior is NOT RUN. A Pro
+trial was observed; no license purchase was made.
+
 ## October 6–7 classroom decision (preserved)
 
 The first user-facing computing replacement is **browser Python/R coursework
