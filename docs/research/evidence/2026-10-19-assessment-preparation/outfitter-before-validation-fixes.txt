@@ -1,0 +1,18 @@
+--- FAIL: TestUntrustedVerifiedCleanupRejected (0.01s)
+    --- FAIL: TestUntrustedVerifiedCleanupRejected/unverified_observation (0.00s)
+        assessment_test.go:126: untrusted verified-cleanup claim accepted
+    --- FAIL: TestUntrustedVerifiedCleanupRejected/synthetic_fixture (0.00s)
+        assessment_test.go:126: untrusted verified-cleanup claim accepted
+--- FAIL: TestActiveCompletedContradictionsRejected (0.90s)
+    --- FAIL: TestActiveCompletedContradictionsRejected/reserved (0.15s)
+        assessment_test.go:143: completed legacy receipt accepted as active
+        assessment_test.go:151: completed measurement accepted as active
+    --- FAIL: TestActiveCompletedContradictionsRejected/creating (0.61s)
+        assessment_test.go:143: completed legacy receipt accepted as active
+        assessment_test.go:151: completed measurement accepted as active
+    --- FAIL: TestActiveCompletedContradictionsRejected/running (0.13s)
+        assessment_test.go:143: completed legacy receipt accepted as active
+        assessment_test.go:151: completed measurement accepted as active
+FAIL
+FAIL	github.com/EduCloud-Ecosystem/outfitter/internal/assessment	1.225s
+FAIL

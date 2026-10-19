@@ -1,0 +1,168 @@
+{
+  "schema": "educloud.coordinator-assessment-integration/v1",
+  "scope": "public frozen fixture; actual pure Go CLI to actual Python operator preview",
+  "waypoint_head": "c47351f46186d7fa055a7f486516f4dac0aeb274",
+  "outfitter_head": "2369ffb223a8615321a819c08e87b6f19d650745",
+  "binary_sha256": "b1240d0b83d91414dc3460712d14f139d6c85b2e077a97c6991270b1dc41e999",
+  "binary_provenance": "Operator-supplied trusted executable; checker does not build or attest it",
+  "manifest_sha256": "506a3587d73e70c1d545631ea2dd455056db92570e394230d5f56d81a7738420",
+  "receipt_set_sha256": "27061101e45bcff439f0e3bfff871d4f3bfe82ec6e02afb7410492e1b318d809",
+  "checks": [
+    {
+      "name": "real_go_exact_frozen_result",
+      "status": "PASS"
+    },
+    {
+      "name": "go_false_authority_flags",
+      "status": "PASS"
+    },
+    {
+      "name": "frozen_digests",
+      "status": "PASS"
+    },
+    {
+      "name": "real_go_to_python_cli_preview",
+      "status": "PASS"
+    },
+    {
+      "name": "python_retained_unknowns_and_partial_coverage",
+      "status": "PASS"
+    },
+    {
+      "name": "python_false_authority_flags",
+      "status": "PASS"
+    },
+    {
+      "name": "partial_reservations_not_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "real_go_legacy_projection",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_source_content_excluded",
+      "status": "PASS"
+    },
+    {
+      "name": "real_legacy_go_to_python_projection",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_unknown_reuse_not_fresh",
+      "status": "PASS"
+    },
+    {
+      "name": "untrusted_nonlegacy_baseline_valid",
+      "status": "PASS"
+    },
+    {
+      "name": "false_verified_cleanup_go_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "false_verified_cleanup_waypoint_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "false_verified_cleanup_no_content_echo",
+      "status": "PASS"
+    },
+    {
+      "name": "all_resolved_untrusted_cleanup_go_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "all_resolved_untrusted_cleanup_waypoint_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "all_resolved_untrusted_cleanup_no_content_echo",
+      "status": "PASS"
+    },
+    {
+      "name": "reserved_terminal_contradiction_go_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "reserved_terminal_contradiction_waypoint_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "reserved_terminal_contradiction_no_content_echo",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong_attempt_binding_go_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong_attempt_binding_waypoint_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong_attempt_binding_no_content_echo",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown_metric_with_value_go_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown_metric_with_value_waypoint_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown_metric_with_value_no_content_echo",
+      "status": "PASS"
+    },
+    {
+      "name": "free_content_field_go_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "free_content_field_waypoint_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "free_content_field_no_content_echo",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_wall_charge_as_measurement_go_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_wall_charge_as_measurement_waypoint_refuses",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_wall_charge_as_measurement_no_content_echo",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown_terminal_cleanup_claim_preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown_reuse_stays_null",
+      "status": "PASS"
+    },
+    {
+      "name": "isolated_home_and_workdir_no_new_files",
+      "status": "PASS"
+    },
+    {
+      "name": "pinned_checkouts_and_binary_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "time": "2026-10-19T23:00:23.819615+00:00",
+  "not_run": [
+    "workload execution",
+    "local engine or provider calls",
+    "network capacity",
+    "authenticated collector or independent cleanup",
+    "temporary upload or hosted/private-data acceptance"
+  ]
+}

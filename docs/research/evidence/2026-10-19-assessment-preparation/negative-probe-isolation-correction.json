@@ -1,0 +1,9 @@
+{
+  "scope": "Coordinator checker independent review",
+  "status": "COVERAGE_GAP_CORRECTED",
+  "prior_result": "35 checks nominal PASS; two cleanup-negative probes could fail for legacy-specific reasons",
+  "correction": "Use synthetic observation on both measurement and cleanup and nonlegacy cleanup method, with positive baseline, to isolate general rejection rules",
+  "product_change": false,
+  "stale_result_correction": "Reject an existing result before checks, write final result exclusively, use a fresh evidence directory; failed reruns cannot overwrite or masquerade behind old PASS",
+  "source_binding_boundary": "Check clean pinned Git heads and executable hash before/after; supplied binary provenance remains operator responsibility"
+}

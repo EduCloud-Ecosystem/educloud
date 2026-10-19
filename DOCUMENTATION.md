@@ -121,6 +121,12 @@ workflow. Its [tool decisions](docs/decisions/2026-10-19-research-assessment-too
 and [A0–A6 implementation sequence](docs/strategy/research-pilot-build-backlog.md#october-19-assessment-implementation-sequence)
 keep component ownership and actual-resource acceptance explicit.
 
+The [October 19 preparation acceptance](docs/research/2026-10-19-assessment-preparation-acceptance.md)
+pins merged Waypoint #49 and Outfitter #18, 37 actual pure-CLI integration checks,
+independent reviews and CI, alongside Cairn #33's immutable queued grading
+context. This is partial A1/A2 preparation/preview, with no upload, dispatch or
+trusted cleanup. A4's deterministic synthetic estimation is the next component.
+
 The [research workspace pilot](docs/specs/research-workspace-pilot.md) defines
 the October 17 implementation contract for Waypoint project/run/evidence
 workflows and Outfitter's bounded local execution. It preserves separate
@@ -205,8 +211,9 @@ naming) · Belay's full set (`DCO`, `LICENSING.md`, `CODE_OF_CONDUCT.md`,
 ## Known gaps (tracked in EDUCLOUD-STATUS.md)
 
 October 19 assessment development is active; the new temporary mode is not yet
-accepted or deployed. The first slice prepares manifests, safe previews and
-receipt validation; upload/dispatch remain disabled. Encrypted scratch and cleanup
+accepted or deployed as a complete service. The first manifest/preview and pure
+receipt-validation slice is merged with [bounded acceptance](docs/research/2026-10-19-assessment-preparation-acceptance.md);
+upload/dispatch remain disabled. Encrypted scratch and cleanup
 under faults, allowlisted
 measurement receipts, held-out estimates, program exports, actual CPU/GPU
 accounting, second-operator reproduction and researcher/instructor exercises

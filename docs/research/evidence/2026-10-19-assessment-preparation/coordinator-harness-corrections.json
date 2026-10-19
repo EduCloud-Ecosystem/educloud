@@ -1,0 +1,14 @@
+{
+  "status": "FAIL",
+  "scope": "coordinator harness assumption; product preview succeeded",
+  "failed_assertion": "reused is None for frozen shared fixture",
+  "observed_frozen_fixture_reused": false,
+  "correction": "compare with exact frozen receipt and separately exercise missing-reuse null semantics",
+  "product_change": false,
+  "second_assertion_correction": {
+    "assumption": "All rejected executable requests have empty stdout",
+    "observed": "CLI main emits fixed closed JSON error on stdout with exit2; pure Serve itself emits no output",
+    "correction": "Require nonzero exit and closed allowlisted error object; Waypoint rejects without content echo",
+    "product_change": false
+  }
+}
