@@ -39,6 +39,13 @@ Every component PR records its exact head, independent review, meaningful tests,
 remaining gates and integration pins. Do not mark an entire package accepted
 because one contract or unit test passes.
 
+The separate coursework path now includes Cairn #35's authenticated, bounded
+read-only grading inspection, following #33's pinned context and #34's durable
+optional dispatch. The [acceptance record](../research/2026-10-19-assessment-preparation-acceptance.md#operator-inspection-of-queued-grading)
+pins the reviewed/merged revisions, original SQLite reader failure and local/CI
+results. Observations grant no replay or recovery authority and do not close any
+temporary-upload, actual-measurement or whole-service gate above.
+
 Before A6, record the selected allocation and entitlement, worker and independent
 cleanup hosts, hardware/model, named operator, time window, maximum attempts and
 finite native-unit allowance. Existing synthetic approvals do not supply these

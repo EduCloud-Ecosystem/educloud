@@ -1,0 +1,39 @@
+{
+  "updated_at": "2026-10-19T23:50:06.406564+00:00",
+  "pr": "https://github.com/EduCloud-Ecosystem/cairn/pull/35",
+  "status": "MERGED",
+  "reviewed_head": "3b0adc4a8faab0aa1aee491b2d0b60e984c64219",
+  "base": "536da6a58b8178c9da15157e385c5a67f5782ef1",
+  "diff_sha256": "9522ed1425ee7d949f8c3267a632623a3fe65533a4310e66b6f2a6ef8f6315ef",
+  "manifest_sha256": "c98bdd84ade056cafc2a1987076dd99455b69ddfbd95b4b20e578adc6d3ec383",
+  "independent_review": "research_ui CLEAR exact head; root independent source/15source+5log/count checks",
+  "local": {
+    "full_PASS": 1084,
+    "overlapping_top_level": 502,
+    "FAIL": 0,
+    "SKIPPED": 16,
+    "focused_subset_PASS": 51,
+    "focused_top_level": 11,
+    "vet": "PASS owner-recorded exit0, empty bound log",
+    "postgres": "NOT RUN runtime;1parentPASS3gatedSKIP"
+  },
+  "retained_failure": "New reader SQLite NUL normalization2leaves+parentFAIL preserved; bounded BLOB correction passes; accepted dispatch writer unaffected",
+  "ci_runs": [
+    39343643827,
+    39343643837,
+    39343643737
+  ],
+  "limits": [
+    "Metadata-only current real-auth operator route",
+    "No educational body integrity claim",
+    "Missing record removal cause unknown; liveness and external effects unknown",
+    "No replay/reset/allowance/default-runner/deployment authority"
+  ],
+  "merge": "912b9e1d035a83fa801096748627ad006dbba1d4",
+  "merged_at": "2026-10-19T23:49:46Z",
+  "reviewed_and_merge_tree": "a22af8e8cd8deb6583984b261a8b188f6238ebd3",
+  "hosted_CI": "PASS all8 at exact reviewed head",
+  "hosted_postgres": "PASS actual configured tagged package2.880s, includes shared inspection and server-enforced readonly tests",
+  "ci_go_log_sha256": "92a8e9563224784d40eca3d18f363010e3ae0d3c60ad499d1e66ff9f4d110feb",
+  "ci_go_log_location": "Protected coordinator archive; SHA-256 recorded below, raw CI output not copied into this report."
+}

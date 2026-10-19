@@ -200,7 +200,16 @@ overlapping top-level tests, 16 skips), vet and all eight CI checks pass,
 including hosted PostgreSQL. Mutex-cancellation failures are preserved; unknown
 or unrecorded claims remain held. Restored-store authority and external status
 recovery stay unqualified; this does not install the production Outfitter
-adapter. The Jetstream2
+adapter. Merged [#35](https://github.com/EduCloud-Ecosystem/cairn/pull/35),
+merge `912b9e1d`, adds real authenticated operator inspection of bounded queue and
+dispatch metadata on the already-open store. Independent review, 1,084 local
+passing events (502 overlapping top-level tests, 16 skips), vet and all eight CI
+checks pass. Hosted PostgreSQL runs the inspection and read-only-connection
+controls; local PostgreSQL remains NOT RUN. A reproduced SQLite NUL-suffix
+reader defect and its correction remain visible. Missing-record causes,
+worker liveness and external effects remain unknown; inspection cannot grant
+replay, reset, recovery or compute authority. No default runner or deployment
+changed. The Jetstream2
 operator/cleanup decision packet merged in
 [#10](https://github.com/EduCloud-Ecosystem/outfitter/pull/10), merge `afc4fe82`,
 after independent design review and final CI. It remains explicitly blocked:
