@@ -1,0 +1,102 @@
+{
+  "head": "a4bdc289c9fef7ddbdc03f1707db69e2e6fbf709",
+  "scope": "Actual CLI preview/refusal only; no PDF generation, refresh, workloads, engines or providers",
+  "actual_cli_scenarios": 11,
+  "passed": 22,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "access_discover actual preview succeeds",
+      "result": "PASS"
+    },
+    {
+      "name": "access_discover canonical approval digest",
+      "result": "PASS"
+    },
+    {
+      "name": "ACCESS explicitly unrefreshed",
+      "result": "PASS"
+    },
+    {
+      "name": "ACCESS matches except deliberate source observation",
+      "result": "PASS"
+    },
+    {
+      "name": "access_discover authority gates false",
+      "result": "PASS"
+    },
+    {
+      "name": "access_discover wrong approval refuses before output",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_research_draft actual preview succeeds",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_research_draft canonical approval digest",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_research_draft exactly matches owner preview",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_research_draft authority gates false",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_research_draft wrong approval refuses before output",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_classroom_draft actual preview succeeds",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_classroom_draft canonical approval digest",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_classroom_draft exactly matches owner preview",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_classroom_draft authority gates false",
+      "result": "PASS"
+    },
+    {
+      "name": "nairr_classroom_draft wrong approval refuses before output",
+      "result": "PASS"
+    },
+    {
+      "name": "Changed narrative remains valid",
+      "result": "PASS"
+    },
+    {
+      "name": "Changed narrative invalidates approval",
+      "result": "PASS"
+    },
+    {
+      "name": "Old approval cannot export changed narrative",
+      "result": "PASS"
+    },
+    {
+      "name": "Unsupported ACCESS tier refuses",
+      "result": "PASS"
+    },
+    {
+      "name": "Raw upload hash unknown field refuses",
+      "result": "PASS"
+    },
+    {
+      "name": "Research estimate cannot become Classroom packet",
+      "result": "PASS"
+    }
+  ],
+  "retained_harness_failures": [
+    "First comparison incorrectly assumed identical ACCESS source observation: owner refreshed unreviewed, root deliberately snapshot-only. Differing paths preserved.",
+    "Second harness assumed project_title field; actual closed schema uses title. KeyError preserved; no product change."
+  ],
+  "raw_transport_retention": "Exact command arguments, exit codes and bounded outputs retained in protected coordinator archive; public record excludes host paths."
+}

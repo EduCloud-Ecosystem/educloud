@@ -1,4 +1,4 @@
-# Assessment preparation, initial estimates and queued grading — October 19, 2026
+# Assessment preparation, estimates, allocation drafts and queued grading — October 19, 2026
 
 The component changes below are accepted and merged within their recorded
 source, regression and integration scopes. The implemented assessment slice prepares closed benchmark manifests and previews
@@ -7,6 +7,8 @@ executes no benchmark and creates no workspace or broker ledger. This is partial
 A1/A2 of the [assessment backlog](../strategy/research-pilot-build-backlog.md).
 The later A4 calculation slice below is also merged with explicitly synthetic
 inputs. Neither increment accepts the complete upload-to-allocation workflow.
+The later initial A5 export increment below adds usable local draft packages;
+it does not establish current application or resource readiness.
 
 ## Revisions and ownership
 
@@ -16,6 +18,7 @@ inputs. Neither increment accepts the complete upload-to-allocation workflow.
 | Outfitter pure receipt command | [#18](https://github.com/EduCloud-Ecosystem/outfitter/pull/18) | `2369ffb223a8615321a819c08e87b6f19d650745` | `de65bdab9303395226ebfb35e0e0740ab19b4d8e` |
 | Waypoint preparation and preview | [#49](https://github.com/EduCloud-Ecosystem/waypoint/pull/49) | `c47351f46186d7fa055a7f486516f4dac0aeb274` | `d70aaccc454332cb5bacf31e93c99e2ce0b420cd` |
 | Waypoint initial synthetic estimates | [#50](https://github.com/EduCloud-Ecosystem/waypoint/pull/50) | `053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad` | `db7ad40e05baadba7b5063ed5003c9cdffe1eda8` |
+| Waypoint initial allocation drafts | [#51](https://github.com/EduCloud-Ecosystem/waypoint/pull/51) | `a4bdc289c9fef7ddbdc03f1707db69e2e6fbf709` | `2d94f87a73fd3f606bf6a246aabb0a1ee2bb9465` |
 | Cairn pinned grading context | [#33](https://github.com/EduCloud-Ecosystem/cairn/pull/33) | `70b984083fa711b12ae30bc22732d831a0b1ba1e` | `ab339c44248eca2f6c03c22ef951215e8969472a` |
 | Cairn optional durable grading dispatch | [#34](https://github.com/EduCloud-Ecosystem/cairn/pull/34) | `2be331d245a989490ca815a3c71b12c0d2ff0ed0` | `536da6a58b8178c9da15157e385c5a67f5782ef1` |
 | Cairn authenticated grading inspection | [#35](https://github.com/EduCloud-Ecosystem/cairn/pull/35) | `3b0adc4a8faab0aa1aee491b2d0b60e984c64219` | `912b9e1d035a83fa801096748627ad006dbba1d4` |
@@ -152,6 +155,86 @@ attempt/cleanup identity probes; its final 32-check run passed under
 `PYTHONOPTIMIZE=1`. Earlier normal 31-check PASS records remain historical evidence
 with their coverage limits, not rewritten results.
 
+## Initial A5 draft allocation exports
+
+Merged Waypoint #51 adds actual `assessment-export-preview` and
+`assessment-export` commands before Store/Broker initialization. Closed retained
+estimates and bound manifests, explicit operator narrative, a selected profile
+and a digest-bound operator-supplied font produce a reconstructable preview.
+Export requires its exact approved digest; changed input or font invalidates
+approval. This is local export consent, not authenticated scientific,
+institutional or application approval.
+
+ACCESS Discover, NAIRR research draft and NAIRR Classroom draft have distinct
+layouts and fields. Other ACCESS tiers are explicitly refused at this revision.
+NAIRR sources remain blocked/unverified; no access restriction was bypassed.
+ACCESS's fixed public source can be explicitly fetched before preview, but a
+successful unreviewed fetch never promotes current requirements. Export performs
+no hidden refresh. Resource selection, external documents, scientific review,
+eligibility and form correspondence remain outstanding.
+
+Each fresh local package contains editable narrative/source, PDF, matching
+JSON/CSV worksheet, retained preview, requirements/missing-document record and a
+hash inventory. CSV cells are guarded as literal text. Narrative is explicit
+plain text; paths, upload hashes, raw logs and unknown metadata cannot enter
+through the closed estimate/manifest schemas. Unknown measurements, untrusted
+cleanup and liabilities survive. The old source-containing study exporter is
+not used. This does not authenticate manually supplied science or detect private
+information deliberately typed into an approved narrative.
+
+Publication uses a fresh descriptor-relative directory, restrictive permissions
+and exclusive file creation. `package.json` is a **PREPARED_DRAFT** inventory,
+never standalone proof of acknowledged completion. Success returns a separate
+**COMPLETE_DRAFT** CLI receipt binding that inventory and the approved digest.
+On failure there is no receipt; `INCOMPLETE` is preserved/recreated best-effort
+with explicit uncertainty if recreation fails. Marker absence alone proves
+nothing. Completed file/directory syncs are not crash-tested durability.
+
+Independent exact-head source and evidence reviews are **CLEAR**, including all
+18 final source bindings. The owner standard-library suite passes **536 tests**
+without skips on system Python 3.14.5 using the real pure Outfitter validator;
+the **24 export-boundary controls** overlap that suite. The optional bundled
+Python 3.12.14 PDF suite separately passes **10 tests** without skips. Final
+renderer anchor corrections occurred during the standard-library run: final
+renderer coverage is the later PDF suite and final CLI artifacts, not a claim
+that one immutable full suite tested the final renderer.
+
+The coordinator separately passes **22 checks across eleven actual CLI preview
+and refusal scenarios**: all three profiles, canonical approval digests, changed
+narrative/old approval, wrong digests, raw-upload metadata, unsupported tier and
+wrong-pathway refusals. It performed no PDF creation, refresh or workload.
+Independent inspection of the owner's three successful real-CLI exports checks
+24 payload hashes/sizes, receipt/package/canonical-preview binding, JSON/CSV and
+PDF visible-field parity. All three single-page PDFs were independently rendered
+and viewed. Every character is at least 11 points and lies within the one-inch
+boundary at the declared 0.001-point numeric tolerance; measured horizontal
+range is 72–540.0000443 points and vertical range 74.8847658–716.2666017 points.
+This is fixture layout evidence, not manual accessibility or arbitrary-narrative
+acceptance. The [coordinator evidence](evidence/2026-10-19-allocation-drafts/acceptance.json)
+records source, log, artifact and checker hashes without private host paths.
+
+Retained failures stay separate: the original final-fsync refusal left an
+apparently complete directory; the corrected inventory/receipt protocol and
+late-fsync/marker-recreation controls pass. The first three PDF glyph boxes
+exceeded the margins, then corrected anchors passed every-character checks. An
+initial bundled-Python full-suite run failed the unchanged SQLite extension
+provenance witness because built-in `_sqlite3` has no `__file__`; the baseline
+system-Python rerun passes without weakening or skipping it. A pypdf multiline
+visitor-coordinate test also failed; final checks use direct anchors and
+independent pdfplumber character geometry. Two root harness assumptions failed:
+the owner's ACCESS observation was refreshed/unreviewed while root deliberately
+used an unrefreshed snapshot, and the narrative key is `title`, not
+`project_title`. Corrected isolated checks pass with no product change.
+
+The [exact-head hosted run](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39344177506)
+passes `controls` (including 536 standard-library and ten optional PDF tests)
+and existing `actual-docker`; optional `clean-source-builds` is **SKIPPED**.
+Actual Docker remains legacy regression evidence, not temporary assessment
+execution or source-image promotion. Reviewed and merged trees match
+`f3ddf5c263569a7db5ea6546ab7ba023ad9a9fe3`. Every packet and all readiness,
+actual-resource, upload, execution, cleanup-trust and retention-finalization
+gates remain DRAFT/false. No application was submitted or resource deployed.
+
 ## Optional durable queued grading
 
 Merged Cairn #34 establishes a non-expiring queue-owned dispatch claim before
@@ -245,9 +328,12 @@ merged trees match `a22af8e8cd8deb6583984b261a8b188f6238ebd3`.
 The initial A4 calculation is accepted for synthetic metadata only. Actual
 target observations, additional stages/hardware, prediction uncertainty and
 verified resource-specific conversions remain open. Conservative allowance
-charges cannot supply fitting measurements. A5's usable program exports and
-refreshed requirements are the next scoped component; researchers still review
-science, resources and form correspondence and submit their own applications.
+charges cannot supply fitting measurements. Initial A5 draft exports are now
+accepted within the narrow scope above. Proper Explore and Accelerate draft
+profiles are the next bounded increment; Maximize remains refused until a
+separate multi-document profile exists. Refreshed/reviewed requirements and
+actual performance remain open. Researchers review science, resources and form
+correspondence and submit their own applications.
 
 Temporary uploads, encrypted scratch, independent expiry/termination/revocation/
 deletion under faults, actual CPU/GPU measurement and accounting, second operator

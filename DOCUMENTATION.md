@@ -127,8 +127,14 @@ independent reviews and CI, alongside Cairn #33's immutable queued grading
 context. This is partial A1/A2 preparation/preview, with no upload, dispatch or
 trusted cleanup. Merged Waypoint #50 adds the initial A4 synthetic estimator:
 512 owner tests, 32 separate real-CLI integration checks, independent review and
-required CI pass. A5's program-specific draft export is the next component;
-actual measurements, live qualification and current-program review stay open.
+required CI pass. Waypoint #51 adds initial A5 draft exports for ACCESS Discover
+and separate NAIRR research/Classroom profiles. Independent source/evidence
+review, 536 standard-library tests, 10 optional PDF tests, 22 separate actual-CLI
+preview/refusal checks and required CI pass. Root artifact review verifies all
+three rendered drafts, hash-bound receipts and worksheet parity. Final renderer
+coverage comes from the later PDF suite/artifacts. Other ACCESS profiles remain
+unsupported; actual measurements, live qualification and current-program review
+stay open.
 Cairn #34 adds optional queue-owned dispatch and atomic publication after
 independent review and all eight CI checks, including hosted PostgreSQL. It
 preserves unknown outcomes and retention barriers without installing an adapter
