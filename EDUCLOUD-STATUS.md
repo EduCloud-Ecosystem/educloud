@@ -326,8 +326,20 @@ refusals, targeted worker RBAC denials and zero observed workloads. Two initial
 discovery timeouts and two schema-invalid negative probes remain visible. The
 request timeout is now 30 seconds, preserving endpoint/context pins and validation.
 Workload execution is NOT RUN, NetworkPolicy enforcement is UNKNOWN and the full
-Outfitter Kubernetes adapter is not implemented. The prior four-attempt Waypoint
+live Outfitter Kubernetes adapter is not implemented. The prior four-attempt Waypoint
 qualification allowance remains exhausted.
+
+Outfitter [#17](https://github.com/EduCloud-Ecosystem/outfitter/pull/17) merged
+at `b7eb50c6321a1cb39ee0642564547a652c713a02`, reviewed head `91f261af`.
+Its disabled offline prototype binds one attempt to an exact cluster and namespace,
+reserves before dispatch, and retains ambiguous cleanup liability. Independent
+review found and verified the fix for mixed-ledger reaping that could skip owned
+Docker cleanup. The [acceptance record](docs/research/2026-10-17-research-pilot-acceptance.md)
+preserves that failed control. Exact-head CI passed 816 test/subtest events,
+including 62 Kubernetes events, plus 26 Docker, 38 recovery and 19 consumer checks.
+There is no live Kubernetes client, credential reader, CLI backend selector or
+new workload allowance. Live termination, isolation and resource-cap enforcement
+remain NOT RUN; historical storage-writer checks are not Kubernetes qualification.
 
 The [local macOS runtime decision](docs/decisions/2026-10-18-local-macos-runtime.md)
 selects OrbStack for this operator's Docker-compatible engine; Compose stays the

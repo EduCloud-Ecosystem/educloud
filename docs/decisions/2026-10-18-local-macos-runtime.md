@@ -43,8 +43,8 @@ documentation does not substitute for application-specific acceptance.
 local namespace/policy checks. The [operator evidence](../research/evidence/2026-10-18-local-kubernetes/infrastructure/README.md)
 preserves the original timeouts and invalid probes alongside corrected checks.
 Two namespaces/eight policy objects do not constitute an application deployment.
-Workload gates remain closed, NetworkPolicy enforcement is UNKNOWN, and an
-Outfitter Kubernetes execution adapter is NOT IMPLEMENTED. Keep databases and
+Workload gates remain closed, NetworkPolicy enforcement is UNKNOWN, and a
+live Outfitter Kubernetes execution adapter is NOT IMPLEMENTED. Keep databases and
 existing apps on their current Compose path; no shared SQLite, PVC migration,
 extra replicas or conversion of every app is implied.
 
@@ -108,7 +108,7 @@ engine or run workloads. Full authentication, logical restore and reboot tests
 remain NOT RUN. The cutover changes this host's engine only; it does not
 change production, live allocations, student-data acceptance, routing, component
 defaults or research promotion gates. NetworkPolicy enforcement remains UNKNOWN;
-the full Outfitter Kubernetes adapter remains NOT IMPLEMENTED.
+the live Outfitter Kubernetes adapter remains NOT IMPLEMENTED.
 
 ## Private evidence bindings
 
