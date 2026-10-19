@@ -14,7 +14,10 @@ estimation and ACCESS/NAIRR preparation. The [tool decision](docs/decisions/2026
 and [A0–A6 backlog](docs/strategy/research-pilot-build-backlog.md#october-19-assessment-implementation-sequence)
 record the implementation sequence. Development resumed in the existing
 implementation chat on October 19; this contract update is not a completed
-component deployment.
+component deployment. The first component slice covers strict manifests,
+content-free retention preview, an assessment export guard and validated
+measurement/cleanup receipts. Upload and dispatch remain disabled pending actual
+temporary-storage and independent-cleanup qualification.
 
 The accepted study-bundle exporter retains source bytes and cannot serve the
 new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted

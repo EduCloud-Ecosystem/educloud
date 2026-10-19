@@ -205,7 +205,9 @@ naming) · Belay's full set (`DCO`, `LICENSING.md`, `CODE_OF_CONDUCT.md`,
 ## Known gaps (tracked in EDUCLOUD-STATUS.md)
 
 October 19 assessment development is active; the new temporary mode is not yet
-accepted or deployed. Encrypted scratch and cleanup under faults, allowlisted
+accepted or deployed. The first slice prepares manifests, safe previews and
+receipt validation; upload/dispatch remain disabled. Encrypted scratch and cleanup
+under faults, allowlisted
 measurement receipts, held-out estimates, program exports, actual CPU/GPU
 accounting, second-operator reproduction and researcher/instructor exercises
 require new evidence. Selected allocation/hosts/model/operator, window and finite

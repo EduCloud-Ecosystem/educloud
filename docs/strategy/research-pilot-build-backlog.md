@@ -25,6 +25,14 @@ component delivery; no duplicate scheduler, ledger or portal is introduced.
 | A5 | Waypoint allocation packets; EduCloud requirements | Separate ACCESS tiers, NAIRR research and Classroom templates; editable narrative, PDF and matching worksheet; refreshed requirements before final export; retained-information preview and export leakage checks. | PLANNED; human reviews and submits. |
 | A6 | Operators and component owners | Selected actual CPU/GPU configurations, finite allowance, measured overhead and accounting tolerances; independent cleanup and second machine/operator; researcher and instructor exercises, manual accessibility and whole-service privacy acceptance. | NOT RUN; selections below unresolved. |
 
+The first A1/A2 slice is manifest preparation/validation and a content-free
+retention preview through Waypoint's operator CLI, an explicit assessment export
+guard, and Outfitter measurement/cleanup receipt validation against existing
+attempt semantics. Component owners align a minimal wire fixture and canonical
+digest before freezing interfaces. Upload and dispatch remain disabled until
+encrypted scratch and independent expiry/cleanup are implemented and qualified.
+This preparation slice is partial A1/A2, not the full upload-to-report journey.
+
 A1/A2 must land a usable vertical slice before expanding adapters. A4/A5 may use
 explicitly synthetic fixtures while actual-resource qualification remains open.
 Every component PR records its exact head, independent review, meaningful tests,
