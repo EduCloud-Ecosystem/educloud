@@ -75,6 +75,12 @@ real engineering gaps; they need the selected host, data lifecycle and recovery
 requirements before a concrete implementation contract. Naming an operator does
 not qualify these controls. No purchase is currently demonstrated necessary.
 
+The separately authorized [local backup verification and Desktop retirement](../decisions/2026-10-18-orbstack-retirement.md)
+adds bounded recovery evidence and removes the old user-owned engine data.
+Eight privileged remnants still need macOS authentication. This host maintenance
+does not close whole-store capacity, off-host recovery, independent-human
+reproduction or live provider/model gates, and does not renew any allowance.
+
 ## P2-A: optional Kubernetes evaluation protocol
 
 The subsequent explicit authorization to move local Docker use to OrbStack and

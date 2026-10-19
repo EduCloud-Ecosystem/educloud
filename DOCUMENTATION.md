@@ -149,11 +149,15 @@ failure and passing exact-head CI. Live transport and workload gates remain clos
 
 [Local macOS runtime guidance](docs/decisions/2026-10-18-local-macos-runtime.md)
 identifies OrbStack as this operator's selected Docker-compatible engine while
-keeping Docker Compose and Linux/cloud portability unchanged. Coordinating operator
-records show completed cutover with bounded preservation and service checks; the image
-GC failure and exact recovery stay visible. Low disk capacity, untested full
-workflows and closed Kubernetes workload gates remain explicit. The dated
-licensing note records trial/pricing facts without a purchase.
+keeping Docker Compose and Linux/cloud portability unchanged. The later
+[backup and Desktop retirement record](docs/decisions/2026-10-18-orbstack-retirement.md)
+records verified cold-volume/image recovery, seven physical and six logical database
+restores, and passing bounded post-removal app/runtime checks. Nine user-owned
+Desktop roots are removed; eight administrator-owned remnants await macOS
+authentication. Immediate free space rose about 0.99 GiB to 15.45 GiB, despite
+38.28 GiB of removed allocated storage; snapshot attribution is unproven. Original
+failures, local-only backup coverage, untested full workflows, low capacity and
+closed Kubernetes workload gates remain explicit. No license purchase occurred.
 
 The umbrella is where a decision spanning more than one module lives, so no
 single module's repo becomes the de-facto owner of a platform-wide rule.
