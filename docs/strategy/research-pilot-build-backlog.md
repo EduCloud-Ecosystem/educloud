@@ -13,7 +13,7 @@ planning labels, not additions to the shared CC-* prompt namespace.
 | P1-A | Finish portable environments, trusted replay and coordinated recovery | Waypoint and Outfitter; merged Waypoint #30 and Outfitter #7 | Final heads/reports, scoped independent review and CI; held restore/no allowance revival; no duplicate effects. **PASS** within the local contract; broader gates remain below. |
 | P1-B | Capture and rebuild the reviewed images from source | [Waypoint #27](https://github.com/EduCloud-Ecosystem/waypoint/issues/27), closed by merged [#31](https://github.com/EduCloud-Ecosystem/waypoint/pull/31) | **PASS** for native ARM64/AMD64 source construction and automated qualification: 49 checks per platform, two projects/both conditions and lineage. Four source candidates remain disabled. Human reproduction, promotion and durable image distribution remain separate gates. Original failures are retained. |
 | P1-C | Independent second-operator exercise | [Waypoint #28](https://github.com/EduCloud-Ecosystem/waypoint/issues/28), unassigned | Second machine, no core edits, trusted bundle digest, exact results, supported restore, elapsed time/help and missing controls. **NOT RUN**. |
-| P2-A | Evaluate optional Kubernetes backend | Outfitter execution/accounting; Waypoint artifacts/storage; EduCloud decision | Bounded isolated disabled prototype or blocked protocol; comparison, failures and adopt/defer/reject record. Starts after P1; existing institutional capacity discovery may proceed earlier. |
+| P2-A | Evaluate optional Kubernetes backend | Outfitter execution/accounting; Waypoint artifacts/storage; EduCloud decision; merged [Outfitter #17](https://github.com/EduCloud-Ecosystem/outfitter/pull/17) | **PASS** for the disabled offline one-attempt protocol after the mixed-ledger cleanup fix; exact-head CI passes. Live client, runtime comparison, resource/isolation limits, artifact transfer and independent termination remain **NOT RUN / DEFER**. No new allowance; existing institutional capacity discovery may proceed. |
 | P2-B | Durable Jetstream2 native-unit journal and independent cleanup | Existing [Outfitter #1–#4](https://github.com/EduCloud-Ecosystem/outfitter/issues/1), assigned to Ben; merged [PR #8](https://github.com/EduCloud-Ecosystem/outfitter/pull/8) | **PASS** for the local/simulated journal and cleanup implementation after two independent-review fixes. Final CI: 115 tests/subtests, 26 Docker checks, 38 recovery checks. Live provider, independent-host supervisor and settlement remain **NOT RUN**. |
 | P2-C | One direct local inference qualification | Portage [#9](https://github.com/EduCloud-Ecosystem/portage/issues/9); merged PRs [#10](https://github.com/EduCloud-Ecosystem/portage/pull/10)/[#11](https://github.com/EduCloud-Ecosystem/portage/pull/11) | **PASS** for 95 synthetic qualification controls and final CI after readiness/reporting corrections. All 12 actual-engine gates remain **NOT RUN**. Await approved existing host/model/operator manifest; optional for Python/R. |
 | P2-D | Shared institutional pilot | [Waypoint #29](https://github.com/EduCloud-Ecosystem/waypoint/issues/29), unassigned | Hosted synthetic identity/revocation, tested storage/retention/restore/capacity, accessible journeys and named service owners. |
@@ -75,6 +75,12 @@ real engineering gaps; they need the selected host, data lifecycle and recovery
 requirements before a concrete implementation contract. Naming an operator does
 not qualify these controls. No purchase is currently demonstrated necessary.
 
+The separately authorized [local backup verification and Desktop retirement](../decisions/2026-10-18-orbstack-retirement.md)
+adds bounded recovery evidence and removes the old user-owned engine data.
+Eight privileged remnants still need macOS authentication. This host maintenance
+does not close whole-store capacity, off-host recovery, independent-human
+reproduction or live provider/model gates, and does not renew any allowance.
+
 ## P2-A: optional Kubernetes evaluation protocol
 
 The subsequent explicit authorization to move local Docker use to OrbStack and
@@ -91,15 +97,23 @@ refusals, with zero workload execution. Original timeouts and invalid probes are
 retained; successful infrastructure checks do not qualify network enforcement,
 Outfitter Kubernetes execution/accounting or whole-store capacity.
 
+The separate [Outfitter #17](https://github.com/EduCloud-Ecosystem/outfitter/pull/17)
+prototype is now accepted at merge `b7eb50c6321a1cb39ee0642564547a652c713a02`.
+It exercises durable placement, one-shot dispatch and conservative accounting
+through an injected fake API. The [acceptance record](../research/2026-10-17-research-pilot-acceptance.md)
+retains failed controls and the independent mixed-ledger reaping correction.
+There is no live transport, credential reader or backend CLI selector. Its passing
+offline controls leave the runtime protocol below unqualified and grant no new
+workload allowance; the current live-adoption decision remains **DEFER**.
+
 Docker remains the default development and acceptance backend. Before building
 custom multi-host orchestration, determine whether a supported institutional
 cluster solves an actual pilot requirement. Record operator support, authorized
 capacity, storage/network constraints and maintenance responsibility. Discovery
 alone grants neither cluster access nor permission to create resources.
 
-After P1, prepare an isolated, disabled-by-default prototype against existing
-approved capacity or a disposable approved local environment. Its finite manifest
-must record cluster/runtime versions, operator, two synthetic projects, reviewed
+For runtime qualification after the offline prototype, use existing approved
+capacity or a disposable approved local environment. Its finite manifest must record cluster/runtime versions, operator, two synthetic projects, reviewed
 Python/R image and platform digests (registry-resolvable or verified import),
 per-attempt CPU/memory/PID/output/lifetime caps, concurrency, cumulative allowance,
 absolute test end time and owned teardown. No environment available means runtime

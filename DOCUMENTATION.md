@@ -138,13 +138,26 @@ network enforcement and workload acceptance unqualified. A separate
 records two namespaces/eight policy objects and targeted admission/RBAC checks,
 retaining the original timeouts and invalid negative probes.
 
+Outfitter [#17](https://github.com/EduCloud-Ecosystem/outfitter/pull/17) adds a
+merged, disabled offline Kubernetes attempt prototype. Its immutable
+[specification](https://github.com/EduCloud-Ecosystem/outfitter/blob/b7eb50c6321a1cb39ee0642564547a652c713a02/specs/19-offline-kubernetes-attempt.md)
+and [evidence index](https://github.com/EduCloud-Ecosystem/outfitter/blob/b7eb50c6321a1cb39ee0642564547a652c713a02/docs/evidence/2026-10-18-kubernetes-offline/verification.json)
+cover durable placement, accounting and conservative cleanup. The
+[acceptance record](docs/research/2026-10-17-research-pilot-acceptance.md) records
+reviewed head `91f261af`, merge `b7eb50c6`, the corrected mixed-ledger reaping
+failure and passing exact-head CI. Live transport and workload gates remain closed.
+
 [Local macOS runtime guidance](docs/decisions/2026-10-18-local-macos-runtime.md)
 identifies OrbStack as this operator's selected Docker-compatible engine while
-keeping Docker Compose and Linux/cloud portability unchanged. Coordinating operator
-records show completed cutover with bounded preservation and service checks; the image
-GC failure and exact recovery stay visible. Low disk capacity, untested full
-workflows and closed Kubernetes workload gates remain explicit. The dated
-licensing note records trial/pricing facts without a purchase.
+keeping Docker Compose and Linux/cloud portability unchanged. The later
+[backup and Desktop retirement record](docs/decisions/2026-10-18-orbstack-retirement.md)
+records verified cold-volume/image recovery, seven physical and six logical database
+restores, and passing bounded post-removal app/runtime checks. Nine user-owned
+Desktop roots are removed; eight administrator-owned remnants await macOS
+authentication. Immediate free space rose about 0.99 GiB to 15.45 GiB, despite
+38.28 GiB of removed allocated storage; snapshot attribution is unproven. Original
+failures, local-only backup coverage, untested full workflows, low capacity and
+closed Kubernetes workload gates remain explicit. No license purchase occurred.
 
 The umbrella is where a decision spanning more than one module lives, so no
 single module's repo becomes the de-facto owner of a platform-wide rule.

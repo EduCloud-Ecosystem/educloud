@@ -326,22 +326,42 @@ refusals, targeted worker RBAC denials and zero observed workloads. Two initial
 discovery timeouts and two schema-invalid negative probes remain visible. The
 request timeout is now 30 seconds, preserving endpoint/context pins and validation.
 Workload execution is NOT RUN, NetworkPolicy enforcement is UNKNOWN and the full
-Outfitter Kubernetes adapter is not implemented. The prior four-attempt Waypoint
+live Outfitter Kubernetes adapter is not implemented. The prior four-attempt Waypoint
 qualification allowance remains exhausted.
+
+Outfitter [#17](https://github.com/EduCloud-Ecosystem/outfitter/pull/17) merged
+at `b7eb50c6321a1cb39ee0642564547a652c713a02`, reviewed head `91f261af`.
+Its disabled offline prototype binds one attempt to an exact cluster and namespace,
+reserves before dispatch, and retains ambiguous cleanup liability. Independent
+review found and verified the fix for mixed-ledger reaping that could skip owned
+Docker cleanup. The [acceptance record](docs/research/2026-10-17-research-pilot-acceptance.md)
+preserves that failed control. Exact-head CI passed 816 test/subtest events,
+including 62 Kubernetes events, plus 26 Docker, 38 recovery and 19 consumer checks.
+There is no live Kubernetes client, credential reader, CLI backend selector or
+new workload allowance. Live termination, isolation and resource-cap enforcement
+remain NOT RUN; historical storage-writer checks are not Kubernetes qualification.
 
 The [local macOS runtime decision](docs/decisions/2026-10-18-local-macos-runtime.md)
 selects OrbStack for this operator's Docker-compatible engine; Compose stays the
-baseline and Linux/cloud Docker portability is unchanged. Coordinating operator
-records show completed cutover: 51 containers recreated (17 running, 34 historical stopped),
-13 health checks PASS, and pre-start exact hashes for 57 volume trees (129,395
-files; 5,651,741,054 bytes) PASS. Eight original images lost to kubelet GC under
-disk pressure were recovered exactly; the retained GC FAIL is separate from the
-final 75-image-ID/147-reference recovery PASS. Source data remains for rollback;
-Desktop is off. Read-only SQL/HTTP smoke checks passed, but full authentication,
-logical restore and Kubernetes workloads are NOT RUN. Approximately 15 GiB free
-disk remains a capacity liability; cleanup requires explicit approval. Startup
-settings and tool-selection readback passed; reboot behavior is NOT RUN. A Pro
-trial was observed; no license purchase was made.
+baseline and Linux/cloud Docker portability is unchanged. The subsequent
+[backup and Desktop retirement record](docs/decisions/2026-10-18-orbstack-retirement.md)
+records 45 cold volume restores, seven physical database clones, two current and
+four historical SQL restores, and a verified native image archive/import. These
+are bounded local recovery checks, not off-device or pristine-engine recovery.
+Nine user-owned Desktop app/data/settings roots are removed. Eight small
+administrator-owned helper/link remnants require macOS authentication; the
+official uninstall timeout and scoped permission failures remain recorded.
+Post-removal checks pass for 51 accepted container configurations (17 running,
+34 historical stopped), 13 healthy checks, 57 volumes, 75 original image IDs and
+147 references. Twenty-one app/service probes pass with six NOT RUN categories;
+the shared engine guard passes. The uninstaller's removed Compose/Buildx links
+were restored; the failed first probe and passing correction are both retained.
+Eight earlier GC-lost images remain exactly recovered, with the original GC FAIL
+preserved. Removed roots accounted for 38.28 GiB allocated, but immediate free
+space rose only 0.99 GiB to 15.45 GiB. Nine purgeable snapshots remain untouched;
+the difference is not fully attributed. Low capacity, full authentication,
+reboot/startup behavior and Kubernetes workload qualification remain unresolved.
+A Pro trial was observed; no license purchase was made.
 
 ## October 6–7 classroom decision (preserved)
 

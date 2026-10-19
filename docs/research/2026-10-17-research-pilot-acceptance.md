@@ -1500,3 +1500,33 @@ and off-host recovery still require engineering against those selections. No
 mandatory new coding task remains for this bounded local workflow, and no new
 purchase is demonstrated necessary. Stop recurring build follow-ups after final
 qualification acceptance; resume for a selected gate or a concrete defect.
+
+## P2-A disabled offline Kubernetes attempt — October 18
+
+Outfitter [#17](https://github.com/EduCloud-Ecosystem/outfitter/pull/17) merged as
+`b7eb50c6321a1cb39ee0642564547a652c713a02` at 2026-10-19T01:11:06Z from independently
+reviewed head `91f261af94ee4b240713e7e57f9257a3b48e5ffe`; both share tree
+`c47684c041d743eebb7f430641230bf8a322117a`. This accepts the
+[disabled protocol](https://github.com/EduCloud-Ecosystem/outfitter/blob/91f261af94ee4b240713e7e57f9257a3b48e5ffe/specs/19-offline-kubernetes-attempt.md)
+with an injected fake API. It adds no live transport, credential reader or CLI
+backend selection. The immutable
+[verification record](https://github.com/EduCloud-Ecosystem/outfitter/blob/91f261af94ee4b240713e7e57f9257a3b48e5ffe/docs/evidence/2026-10-18-kubernetes-offline/verification.json)
+has SHA-256 `f8e4afd66960274e9ed498373d4cd1f80f20499a5e273311264ddd30e33ba2b8`;
+independent review matched all ten source hashes and nineteen retained local
+evidence artifacts, including all eleven original artifacts unchanged.
+
+| Control or gap | Result and boundary |
+| --- | --- |
+| Offline protocol | **PASS**: durable target/request identity, reservation before a one-shot dispatch claim, status-only duplicates, bounded output, cancellation/expiry and owned cleanup. Ambiguous creation retains its full unresolved reservation even after late owned cleanup; known cleaned outcomes retain the full conservative charge. API-object absence alone cannot prove termination. |
+| Independent cleanup finding | **FAIL preserved, corrected**: at `5ed6a22f`, a foreign placement could abort mixed-ledger reaping before eligible legacy Docker cleanup. The fix selects only the configured backend and exact target; foreign records remain unchanged and explicit foreign Cancel/Reconcile still refuse. All four deterministic regression cases failed before and passed in five runs afterward (25 parent/subtest events). Independent fixed-head review separately passed the four cases (five events). These counts overlap. |
+| Earlier failed controls | **FAIL preserved**: concurrent direct claim incorrectly reporting no effect, competing equal-deadline timers, and the initial existing native tests' expired-window assertions. Original source/logs and the earlier passing report remain retained; the native timing failures were not independently reproduced against the base. |
+| Final exact-head CI | **PASS**: [39183908580](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39183908580) records 816 Go test/subtest pass events, including 62 Kubernetes events. The default suite explicitly skips two Docker tests; separate actual Docker lifecycle and 26 Docker, 38 recovery and 19 consumer checks pass. Docker results establish compatibility, not Kubernetes runtime acceptance. Post-merge CI is not claimed here. |
+| Historical storage qualification | **PASS** for 22 events reproducing counterexamples against the existing pinned historical source. This is not current-source Kubernetes capacity or quota qualification. |
+| Live adoption and recovery | **NOT RUN / DEFER**: live Kubernetes execution, effective resource/isolation/storage/network limits, artifact transfer, independently trusted termination, two-project Python/R equivalence and independent human acceptance. Version-5 checkpoint/restore remains refused. No cloud, inference or real-data acceptance follows. |
+
+The exhausted four-attempt/120 CPU-second v4 exercise and other existing
+allowances remain unchanged; these offline tests used fresh temporary synthetic
+authorities and grant no renewed workload allowance. Live Kubernetes gates stay
+closed, whole-store capacity remains **UNKNOWN** and quota enforcement **NO-GO**.
+No default routing, accepted-state migration, purchase or contributor assignment
+changes follow. Belay and `portage-local` remain outside this slice.

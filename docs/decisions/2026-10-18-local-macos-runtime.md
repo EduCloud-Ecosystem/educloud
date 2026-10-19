@@ -1,8 +1,12 @@
 # Local macOS runtime: OrbStack
 
 Date: 18 October 2026. Scope: this operator's macOS development host. **Recorded
-migration checks show completed engine cutover within the boundaries below.** Full
-authentication workflows, logical restore and Kubernetes workloads remain NOT RUN.
+migration checks show completed engine cutover within the historical boundaries
+below.** The later [backup and Desktop retirement record](2026-10-18-orbstack-retirement.md)
+supersedes the cutover-time logical-restore and source-retention status. It records
+verified local restores, removal of the Desktop app/data and eight remaining
+administrator-owned remnants. Full authentication and Kubernetes workloads
+remain NOT RUN by these host-maintenance tasks.
 
 OrbStack is the selected Docker-compatible engine for this host. Docker Compose
 remains the application/development baseline. This host choice does not require
@@ -20,9 +24,9 @@ documentation does not substitute for application-specific acceptance.
   contexts from a component test.
 - Keep each application's existing Compose configuration and persistence model.
   An imported image or container snapshot is not proof that volumes, network
-  bindings, secrets, health checks or application data are correct. Retain source
-  originals and recovery evidence; later retirement is a separate host-owner
-  decision.
+  bindings, secrets, health checks or application data are correct. Preserve
+  verified recovery material. Source retirement needs a separate host-owner
+  decision; the later linked record documents that authorization and its outcome.
 - Keep private inventories, personal application names, host paths and credentials
   outside the repository. Publish aggregate outcomes and evidence hashes only.
 - Treat unused development images as recoverable artifacts, not permanent local
@@ -43,14 +47,15 @@ documentation does not substitute for application-specific acceptance.
 local namespace/policy checks. The [operator evidence](../research/evidence/2026-10-18-local-kubernetes/infrastructure/README.md)
 preserves the original timeouts and invalid probes alongside corrected checks.
 Two namespaces/eight policy objects do not constitute an application deployment.
-Workload gates remain closed, NetworkPolicy enforcement is UNKNOWN, and an
-Outfitter Kubernetes execution adapter is NOT IMPLEMENTED. Keep databases and
+Workload gates remain closed, NetworkPolicy enforcement is UNKNOWN, and a
+live Outfitter Kubernetes execution adapter is NOT IMPLEMENTED. Keep databases and
 existing apps on their current Compose path; no shared SQLite, PVC migration,
 extra replicas or conversion of every app is implied.
 
-## Recorded cutover checks
+## Historical cutover checks
 
-These aggregate results come from coordinating operator records on 18 October.
+These aggregate results describe the initial cutover on 18 October, before the
+separately authorized backup verification and Desktop retirement.
 An independent evidence review cleared the final private records; the
 documentation author did not repeat the migration checks. Private inventories and
 operation identifiers are not published here. Counts describe this host at the
@@ -103,12 +108,13 @@ containers were retained. This is an operator mitigation and system-component
 observation, not Kubernetes workload qualification or evidence of sufficient
 capacity. No general recommendation to disable eviction follows.
 
-This documentation task has not inspected private inventories, contacted either
-engine or run workloads. Full authentication, logical restore and reboot tests
-remain NOT RUN. The cutover changes this host's engine only; it does not
+The original cutover documentation task did not inspect private inventories,
+contact either engine or run workloads. At that checkpoint, full authentication,
+logical restore and reboot tests were NOT RUN; the later linked record reports
+the new recovery evidence. The cutover changes this host's engine only; it does not
 change production, live allocations, student-data acceptance, routing, component
 defaults or research promotion gates. NetworkPolicy enforcement remains UNKNOWN;
-the full Outfitter Kubernetes adapter remains NOT IMPLEMENTED.
+the live Outfitter Kubernetes adapter remains NOT IMPLEMENTED.
 
 ## Private evidence bindings
 
