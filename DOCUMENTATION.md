@@ -140,8 +140,8 @@ retaining the original timeouts and invalid negative probes.
 
 [Local macOS runtime guidance](docs/decisions/2026-10-18-local-macos-runtime.md)
 identifies OrbStack as this operator's selected Docker-compatible engine while
-keeping Docker Compose and Linux/cloud portability unchanged. The host owner
-reports completed cutover with bounded preservation and service checks; the image
+keeping Docker Compose and Linux/cloud portability unchanged. Coordinating operator
+records show completed cutover with bounded preservation and service checks; the image
 GC failure and exact recovery stay visible. Low disk capacity, untested full
 workflows and closed Kubernetes workload gates remain explicit. The dated
 licensing note records trial/pricing facts without a purchase.

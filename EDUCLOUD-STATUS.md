@@ -331,8 +331,8 @@ qualification allowance remains exhausted.
 
 The [local macOS runtime decision](docs/decisions/2026-10-18-local-macos-runtime.md)
 selects OrbStack for this operator's Docker-compatible engine; Compose stays the
-baseline and Linux/cloud Docker portability is unchanged. The host owner reports
-completed cutover: 51 containers recreated (17 running, 34 historical stopped),
+baseline and Linux/cloud Docker portability is unchanged. Coordinating operator
+records show completed cutover: 51 containers recreated (17 running, 34 historical stopped),
 13 health checks PASS, and pre-start exact hashes for 57 volume trees (129,395
 files; 5,651,741,054 bytes) PASS. Eight original images lost to kubelet GC under
 disk pressure were recovered exactly; the retained GC FAIL is separate from the

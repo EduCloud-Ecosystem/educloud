@@ -1,7 +1,7 @@
 # Local macOS runtime: OrbStack
 
-Date: 18 October 2026. Scope: this operator's macOS development host. **The host
-owner reports completed engine cutover and the bounded checks below.** Full
+Date: 18 October 2026. Scope: this operator's macOS development host. **Recorded
+migration checks show completed engine cutover within the boundaries below.** Full
 authentication workflows, logical restore and Kubernetes workloads remain NOT RUN.
 
 OrbStack is the selected Docker-compatible engine for this host. Docker Compose
@@ -50,12 +50,13 @@ extra replicas or conversion of every app is implied.
 
 ## Recorded cutover checks
 
-These are aggregate results supplied by the coordinating host owner on 18 October,
-not an independent repeat by the documentation author. Private inventories and
+These aggregate results come from coordinating operator records on 18 October.
+An independent evidence review cleared the final private records; the
+documentation author did not repeat the migration checks. Private inventories and
 operation identifiers are not published here. Counts describe this host at the
 recorded checks; they are not new research workload attempts or a capacity grant.
 
-| Check | Operator-reported result | Boundary |
+| Check | Recorded result | Boundary |
 | --- | --- | --- |
 | Container preservation | All 51 source containers recreated; configuration comparisons PASS. | Explicit equivalence rules cover flags and Desktop display metadata. OrbStack log rotation uses `max-file=5`, `max-size=20m`. |
 | Container state and health | 17 previously active containers running; 13 health checks PASS; 34 historical containers remain stopped. | The 13 health checks are a subset, not 51 application tests. |
@@ -66,8 +67,8 @@ recorded checks; they are not new research workload attempts or a capacity grant
 | Service smoke checks | Read-only SQL checks for both databases and HTTP checks for studio, mail, hub and gateway interfaces PASS. | Full authentication workflows and logical restore NOT RUN. |
 | Existing Kubernetes foundation | Both restricted zero-pod namespaces retain their UIDs; two system Pods Ready, with four replacement system containers and four stopped predecessors retained. | No research/application Kubernetes workload was run. |
 
-The temporary Desktop restart rewrote the Compose/Buildx plugin links. The host
-owner reports restoring OrbStack's bundled tools and checking their selection:
+The temporary Desktop restart rewrote the Compose/Buildx plugin links. The coordinating
+operator records restoration of OrbStack's bundled tools and verification of their selection:
 Compose 5.5.0 and Buildx 0.37.2, with Docker CLI 29.5.3 and engine 29.8.2. These are
 observed versions, not minimum versions imposed on other hosts. The final shared
 stack health/port check passed while the operator held its maintenance lock;
@@ -84,7 +85,7 @@ The initial 45-image/51-snapshot mapping verification was followed by a concrete
 retention failure: Kubernetes kubelet logs identified removal of eight unused
 original images when disk usage reached 91%, above its 85% image-GC threshold.
 That **FAIL remains a failure of image retention**, even though later recovery
-passed. The host owner reports exact recovery of two images through source-engine
+passed. The coordinating operator records exact recovery of two images through source-engine
 save/load, five through original BuildKit OCI graphs and one through an immutable
 registry digest. All five complete OCI graphs and their original provenance
 attestation hashes were preserved, using retained original full predicates rather
@@ -94,7 +95,7 @@ confirmed the questioned image was present. The source engine was temporarily
 restarted for image recovery only, with all source containers stopped, and was
 turned off again after recovery.
 
-The operator reports changing the local image-GC high threshold to 100% and
+The operator records changing the local image-GC high threshold to 100% and
 maximum image age to zero while retaining the 5% critical-storage eviction
 safeguards. After the configuration restart, two system Pods were Ready under
 the same Pod UIDs with four replacement containers; the four stopped predecessor
@@ -109,9 +110,21 @@ change production, live allocations, student-data acceptance, routing, component
 defaults or research promotion gates. NetworkPolicy enforcement remains UNKNOWN;
 the full Outfitter Kubernetes adapter remains NOT IMPLEMENTED.
 
+## Private evidence bindings
+
+The private records remain outside the repository; these SHA-256 bindings
+identify the reviewed records without publishing inventories or personal paths.
+They do not make the private evidence publicly reproducible.
+
+| Private record | SHA-256 |
+| --- | --- |
+| `startup-verified.json` | `b535b483bea926f3cc77b306c82e8422aa8249d137e9fddf47efe4f40ed1b9c8` |
+| `post-start-smoke-verification.json` | `2ee8aa01fb9b78b31501c1fd154e7a4284e689926c31dab615c1ede2b0565d9b` |
+| `original-orbstack-assets-verification-v2.json` | `9e28d99556f29e99edbcea8bc052862ecec35fd203db1940279b944b887f2918` |
+
 ## Licensing and spending
 
-The host owner observed an OrbStack Pro trial with 29 days remaining on 18 October
+The coordinating operator recorded an OrbStack Pro trial with 29 days remaining on 18 October
 2026. That is a dated observation, not an ongoing entitlement or a purchase.
 [Official pricing](https://orbstack.dev/pricing), checked the same date, lists
 Pro at **US$96 per user billed annually** (US$8/month equivalent). This is a
