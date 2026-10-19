@@ -1,9 +1,31 @@
 # EduCloud status and computing-continuity priority
 
-Research-pilot update: October 18, 2026. The classroom/AI assessment below retains
+Research-pilot update: October 19, 2026. The classroom/AI assessment below retains
 its October 6–7 review boundary unless explicitly updated. Its historical vendor
 prices and component heads are not current quotes or new deployment decisions.
 The original July snapshot is preserved in `docs/research/2026-07-21-platform-status.md`.
+
+## October 19 research assessment implementation
+
+The [research sandbox and allocation-readiness contract](docs/specs/research-assessment.md)
+is approved for implementation. It adds a separate temporary-upload mode,
+versioned measurement/cleanup receipts, actual-resource benchmarks, deterministic
+estimation and ACCESS/NAIRR preparation. The [tool decision](docs/decisions/2026-10-19-research-assessment-tools.md)
+and [A0–A6 backlog](docs/strategy/research-pilot-build-backlog.md#october-19-assessment-implementation-sequence)
+record the implementation sequence. Development resumed in the existing
+implementation chat on October 19; this contract update is not a completed
+component deployment.
+
+The accepted study-bundle exporter retains source bytes and cannot serve the
+new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted
+retention and report preview need their own implementation and fault evidence.
+Existing conservative CPU allowance charges remain separate from measured usage
+and provider charges. Public/synthetic fixtures remain the admission boundary.
+Live CPU/GPU qualification still needs selected allocation/hosts/model/operator,
+window and finite allowance; second-operator reproduction, researcher/instructor
+exercises and whole-service FERPA acceptance remain open. Ben's Docker/Jetstream2
+assignment, the Zensical pilot and separate synthetic Modal comparison are
+preserved. Historical evidence below does not close these new gates.
 
 ## October 17–18 research pilot
 

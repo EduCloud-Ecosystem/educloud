@@ -13,6 +13,17 @@ closes March 2, 2027, Track 2 and the MESA IDSS positioning sit in 2028.*
 
 ---
 
+## October 19 research assessment delivery
+
+The [A0–A6 sequence](docs/strategy/research-pilot-build-backlog.md#october-19-assessment-implementation-sequence)
+now governs the authorized research-assessment extension: canonical contract,
+temporary data and receipts, controlled measurement/sandbox adapters,
+deterministic estimates and allocation packets, then actual-resource and
+independent-user qualification. Research and instructional packets are separate.
+The [assessment contract](docs/specs/research-assessment.md) preserves Ben's
+Docker/Jetstream2 scope and all existing private-data and live-provider gates.
+The original stages below remain historical planning context.
+
 ## What EduCloud is at each scale
 
 | Scale | Deployment | Identity | Inference posture |

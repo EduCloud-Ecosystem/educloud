@@ -5,6 +5,49 @@ Updated October 17, 2026 from the authorized implementation handoff. See the
 P0/P1 revisions and bounded local results. Package IDs below are local
 planning labels, not additions to the shared CC-* prompt namespace.
 
+## October 19 assessment implementation sequence
+
+The approved [assessment contract](../specs/research-assessment.md) adds temporary
+uploads and allocation preparation to the existing pilot. The
+[tool decisions](../decisions/2026-10-19-research-assessment-tools.md) supersede
+older blanket deferrals only for the bounded integrations listed here. Historical
+acceptance below remains unchanged. Package labels are local planning labels,
+not new CC-* identifiers. The existing implementation chat owns coordinated
+component delivery; no duplicate scheduler, ledger or portal is introduced.
+
+| Order | Package and owner | Deliverable and exit evidence | Initial state |
+| --- | --- | --- | --- |
+| A0 | EduCloud contract and integration coordination | Canonical lifecycle, tool decisions, ownership and sequenced acceptance; source-linked component handoff. | Contract prepared October 19; implementation resumed. |
+| A1 | Waypoint temporary assessment; Outfitter cleanup authority | Isolated upload/session API, reviewed workload intake and encryption/expiry preflight; allowlisted receipt and retention preview. Test two-project access, interrupted upload, cancellation, expiry, restart, cleanup failure and prohibited old bundle export. Never admit private data on a simulated storage claim. | IN DEVELOPMENT; no acceptance claimed. |
+| A2 | Outfitter measurement; Waypoint receipt validation | Existing execution path emits versioned manifests/measurement/cleanup receipts. Reservations, measured consumption and provider charges remain separate; failures/OOM/unknown counters survive without raw logs. Independently check metrics and receipt trust. | NEXT after A1 interface. |
+| A3 | Outfitter BenchExec/OpenSandbox; portable ReFrame definitions | Controlled Linux measurement with delegated cgroups; immutable workloads and independent sanity checks; optional OpenSandbox disabled until lifecycle/network/isolation qualification passes. No privileged nested execution on shared hosts. | PLANNED; live target required for qualification. |
+| A4 | Waypoint estimation and comparisons | Deterministic stage models, repeat variability, held-out prediction error, unit-preserving dated conversions, research/classroom assumptions and visible provisional results. Tests reject unsupported scaling and missing-data readiness. | PLANNED; can develop using labeled fixtures. |
+| A5 | Waypoint allocation packets; EduCloud requirements | Separate ACCESS tiers, NAIRR research and Classroom templates; editable narrative, PDF and matching worksheet; refreshed requirements before final export; retained-information preview and export leakage checks. | PLANNED; human reviews and submits. |
+| A6 | Operators and component owners | Selected actual CPU/GPU configurations, finite allowance, measured overhead and accounting tolerances; independent cleanup and second machine/operator; researcher and instructor exercises, manual accessibility and whole-service privacy acceptance. | NOT RUN; selections below unresolved. |
+
+A1/A2 must land a usable vertical slice before expanding adapters. A4/A5 may use
+explicitly synthetic fixtures while actual-resource qualification remains open.
+Every component PR records its exact head, independent review, meaningful tests,
+remaining gates and integration pins. Do not mark an entire package accepted
+because one contract or unit test passes.
+
+Before A6, record the selected allocation and entitlement, worker and independent
+cleanup hosts, hardware/model, named operator, time window, maximum attempts and
+finite native-unit allowance. Existing synthetic approvals do not supply these
+choices. Ben's Outfitter issues #1–#5 and assignment remain unchanged. Private
+uploads remain disabled until actual scratch, retention, access and operational
+controls pass the whole-service review.
+
+After the core assessment, add bounded Snakemake/Nextflow report import,
+Apptainer and institutional Galaxy/VICE/Open OnDemand adapters, optional
+JupyterHub preparation, and Portage-governed inference benchmarks. Incorporate
+ScrubData history patterns, Lite-Harness/AnyJev fixtures, identity-broker review,
+MESA metadata interoperability and later Paper2Agent/NNsight pilots as specified
+in the tool decision. Preserve the Zensical documentation pilot and separate
+synthetic Modal comparison. CARC/VERDE/Temporal require institutional ownership
+assessment; Kubernetes Agent Sandbox, OpenShell, Void and autonomous optimization
+remain deferred. These integrations do not change existing contributors' scopes.
+
 ## Sequence and ownership
 
 | Order | Package | Owner / tracking | Exit evidence |

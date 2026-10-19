@@ -12,7 +12,7 @@ Outfitter (new).*
 |---|---|
 | `educloud/SYSTEM.md` | **The canonical internal definition**: names, module boundaries, the platform invariant, shared contracts (including contract 9, bounded AI management), the scale table, and the two-line resource allocation. Where an older document conflicts, SYSTEM.md wins. |
 | `educloud/EduCloud-White-Paper.docx` + `educloud/WHITEPAPER.md` (markdown master, v0.9.3, CC BY 4.0, destined for the EduCloud-Ecosystem org repo, Zenodo DOI at v1.0) | **The platform definition** — vision, five modules under current names, architecture principles, status, governance, funding, roadmap. First on-disk document carrying the full naming scheme. |
-| `educloud/EDUCLOUD-STATUS.md` | October 17 accepted local research baseline and P1 implementation, followed by preserved October 6–7 classroom/AI assessment and evidence. Unrechecked component status remains historical. |
+| `educloud/EDUCLOUD-STATUS.md` | October 19 assessment implementation contract and open gates, October 17–18 accepted local research baseline, and preserved October 6–7 classroom/AI evidence. Unrechecked component status remains historical. |
 | `educloud/LINE-E-ROADMAP.md` | EduCloud execution roadmap E0–E4 (MVP → pilot → institutional → federated), the dependency spine, and the expansion contract. |
 | `educloud/EDUCLOUD-INVENTORY.md` | The July 21 orientation pass: directory map, document inventory, duplicates, staleness flags. |
 | `educloud/START-HERE.md` | June umbrella index + next-step gates. **Stale** (old names, superseded PESOSE date) — retained until SYSTEM.md/name propagation lands. |
@@ -115,6 +115,12 @@ layer — Ben Markwart's workstream) · `EduCloud-hosting-reconciliation.md`
 
 ## Cross-module decisions and research (`educloud/docs/`)
 
+The [research sandbox and allocation-readiness contract](docs/specs/research-assessment.md)
+defines the October 19 temporary-upload, measured-benchmark and ACCESS/NAIRR
+workflow. Its [tool decisions](docs/decisions/2026-10-19-research-assessment-tools.md)
+and [A0–A6 implementation sequence](docs/strategy/research-pilot-build-backlog.md#october-19-assessment-implementation-sequence)
+keep component ownership and actual-resource acceptance explicit.
+
 The [research workspace pilot](docs/specs/research-workspace-pilot.md) defines
 the October 17 implementation contract for Waypoint project/run/evidence
 workflows and Outfitter's bounded local execution. It preserves separate
@@ -197,6 +203,16 @@ naming) · Belay's full set (`DCO`, `LICENSING.md`, `CODE_OF_CONDUCT.md`,
 | `mesa/educloud-mesa-integration.html` + `educloud-mesa-pitch.pdf` | MESA/Tyson — interactive integration page + one-pager. |
 
 ## Known gaps (tracked in EDUCLOUD-STATUS.md)
+
+October 19 assessment development is active; the new temporary mode is not yet
+accepted or deployed. Encrypted scratch and cleanup under faults, allowlisted
+measurement receipts, held-out estimates, program exports, actual CPU/GPU
+accounting, second-operator reproduction and researcher/instructor exercises
+require new evidence. Selected allocation/hosts/model/operator, window and finite
+allowance remain unresolved. Existing study bundles retain source bytes and must
+not be reused for temporary assessment export. Whole-service FERPA readiness
+remains open; public/synthetic data only. See the
+[assessment contract](docs/specs/research-assessment.md) and current status above.
 
 Current research assessment: `EDUCLOUD-STATUS.md` and the October 17 acceptance
 record. The local Waypoint/Outfitter Python/R research baseline is merged; P1

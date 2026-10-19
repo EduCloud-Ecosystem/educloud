@@ -11,6 +11,17 @@ pins the merged P0 baseline and P1 portability/recovery implementation.
 The following P1 interface requirements are design constraints, not a claim that
 every remaining acceptance gate has passed.
 
+## Temporary assessment extension
+
+The October 19 [research assessment contract](research-assessment.md) adds a
+separate temporary-data mode using this execution foundation. Its exports retain
+approved measurements and methods, never uploaded source bytes or raw workload
+logs. The retained study-bundle behavior below remains the historical pilot
+contract and must not be reused for temporary assessments. Existing evidence is
+preserved; new cleanup, actual-resource and institutional acceptance gates remain
+open. Measured consumption will be recorded separately from the conservative
+allowance charging described below.
+
 ## Module responsibilities
 
 - Waypoint owns project membership, run requests, immutable input/recipe
