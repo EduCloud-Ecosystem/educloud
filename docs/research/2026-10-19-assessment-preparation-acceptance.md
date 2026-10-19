@@ -1,11 +1,12 @@
-# Assessment preparation and queued grading — October 19, 2026
+# Assessment preparation, initial estimates and queued grading — October 19, 2026
 
 The component changes below are accepted and merged within their recorded
 source, regression and integration scopes. The implemented assessment slice prepares closed benchmark manifests and previews
 unverified receipts through the operator CLI. It accepts no temporary upload,
 executes no benchmark and creates no workspace or broker ledger. This is partial
-A1/A2 of the [assessment backlog](../strategy/research-pilot-build-backlog.md),
-not acceptance of the complete upload-to-allocation workflow.
+A1/A2 of the [assessment backlog](../strategy/research-pilot-build-backlog.md).
+The later A4 calculation slice below is also merged with explicitly synthetic
+inputs. Neither increment accepts the complete upload-to-allocation workflow.
 
 ## Revisions and ownership
 
@@ -14,7 +15,9 @@ not acceptance of the complete upload-to-allocation workflow.
 | EduCloud canonical contract | [#37](https://github.com/EduCloud-Ecosystem/educloud/pull/37) | `1184ab2c2a0c82aa437b2d146f22dbae2b98efa7` | `bf9bc615fbfef5055f231f473e784b1183c73dad` |
 | Outfitter pure receipt command | [#18](https://github.com/EduCloud-Ecosystem/outfitter/pull/18) | `2369ffb223a8615321a819c08e87b6f19d650745` | `de65bdab9303395226ebfb35e0e0740ab19b4d8e` |
 | Waypoint preparation and preview | [#49](https://github.com/EduCloud-Ecosystem/waypoint/pull/49) | `c47351f46186d7fa055a7f486516f4dac0aeb274` | `d70aaccc454332cb5bacf31e93c99e2ce0b420cd` |
+| Waypoint initial synthetic estimates | [#50](https://github.com/EduCloud-Ecosystem/waypoint/pull/50) | `053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad` | `db7ad40e05baadba7b5063ed5003c9cdffe1eda8` |
 | Cairn pinned grading context | [#33](https://github.com/EduCloud-Ecosystem/cairn/pull/33) | `70b984083fa711b12ae30bc22732d831a0b1ba1e` | `ab339c44248eca2f6c03c22ef951215e8969472a` |
+| Cairn optional durable grading dispatch | [#34](https://github.com/EduCloud-Ecosystem/cairn/pull/34) | `2be331d245a989490ca815a3c71b12c0d2ff0ed0` | `536da6a58b8178c9da15157e385c5a67f5782ef1` |
 
 Each component has one authoring owner and a separate reviewer. The coordinator
 owns integration acceptance and merging. The canonical-document owner is
@@ -53,9 +56,9 @@ instructor policy before enqueue, then carries them through Worker and Service.
 Ambiguous or legacy targets are refused before checkout; operators review and
 manually re-enqueue old work. Deadline-locked submissions remain eligible for
 manual grading, while webhooks remain active-only. Ordinary runner configuration
-is unchanged. Durable dispatch/no-replay claims, crashed-job recovery and atomic
-grade/run publication are still separate gaps; the Outfitter adapter is not
-installed into production by this change.
+is unchanged. Those #33 results did not establish durable dispatch or atomic
+grade/run publication. The later #34 increment below adds a bounded optional
+protocol; neither change installs the Outfitter adapter into production.
 
 ## Evidence and retained failures
 
@@ -99,13 +102,105 @@ The [evidence index](evidence/2026-10-19-assessment-preparation/verification.jso
 records original hashes and final checks without rewriting those failures as
 passes. Full raw local logs remain in the operator's protected evidence archive.
 
+## Initial A4 synthetic estimation
+
+Merged Waypoint #50 adds the actual `assessment-estimate` operator command for
+one or two synthetic series. Each retained receipt is validated through the
+merged Outfitter pure command. Exact rational affine models fit per-size repeat
+means for process CPU and whole-attempt execution duration in the analysis
+stage. Held-out observations only evaluate the fixed model; they never change
+its coefficients. Units, rounding, receipt digests, repeat variability, held-out
+errors, exclusions, unknown dimensions, OOM and extrapolation limits remain
+visible. Additional overhead must be explicitly outside modeled execution and
+declared once or per attempt. Capacity and instructional concurrency/storage
+assumptions remain separate from total consumption.
+
+Every result is provisional, with readiness, execution, upload, actual-resource
+acceptance, cleanup trust and retention finalization false. The example's
+13,600 CPU nanoseconds are invented arithmetic inputs, not a Python/R performance
+or capacity observation. No confidence interval, provider-unit/credit/dollar
+conversion, resource recommendation or program submission is produced.
+
+Independent exact-head review is **CLEAR**. The owner suite has **512 passing
+tests**, including the **55 assessment tests** (32 inherited plus 23 new) as a
+subset. The reviewer matched the log and checked all 175 archived Outfitter
+source files against merge `de65bdab`. The
+[exact-head CI](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39340371209)
+passed `controls` and `actual-docker`; optional `clean-source-builds` was
+**SKIPPED**. The Docker check remains legacy regression evidence, not execution
+of an assessment workload. Reviewed and merged trees match
+`73efa2e735c24c9b22644f8164d05886d19f1f85`.
+
+The coordinator separately ran **32 passing checks across eleven actual CLI
+scenarios** using its reviewed pure validator binary: exact coefficients,
+dimensional totals/hours, two-series comparison, canonical ordering, held-out
+perturbation, missing CPU, unknown overhead, OOM, charge-only legacy data and
+duplicate/free-content refusal. Authority flags and remaining cleanup liabilities
+survive. This is additional integration evidence, not 32 additional workloads.
+The [integration record](evidence/2026-10-19-assessment-estimation/a4-integration.json),
+[portable checker](evidence/2026-10-19-assessment-estimation/check_integration.py)
+and [evidence index](evidence/2026-10-19-assessment-estimation/verification.json)
+retain the source pins and hashes. The checker requires a fresh result path and
+a trusted operator-selected binary; it does not attest the binary's build.
+
+Review of the reusable checker found optimized Python could remove assertions,
+and one duplicate-attempt probe also repeated its cleanup ID. An isolated
+pre-fix optimized failure-control witness is retained. The final checker uses
+explicit operational exceptions, derived outcome counts and separately isolated
+attempt/cleanup identity probes; its final 32-check run passed under
+`PYTHONOPTIMIZE=1`. Earlier normal 31-check PASS records remain historical evidence
+with their coverage limits, not rewritten results.
+
+## Optional durable queued grading
+
+Merged Cairn #34 establishes a non-expiring queue-owned dispatch claim before
+checkout for the optional `JobPolicyRunner` path. Only an acknowledged new claim
+may execute. Run, grade, terminal tombstone and queue success publish in one
+transaction; ambiguous responses are reread without redispatch. Minimal IDs,
+digests and state survive grade/run retention and roster deletion. Published
+duplicates cannot recreate purged result bodies. Ordinary runner behavior and
+defaults remain unchanged.
+
+The supported initiating caller is the real Worker. Direct `Service.GradeJob`
+with a job-aware runner is inspect-only. If a failed claim write left no record,
+the Worker holds its already-claimed queue row `in_progress`; an unsuccessful
+write does not invent a permanent tombstone. Persisted claims never expire or
+reopen automatically. Direct internal managed calls outside this protocol,
+manual queue resets, old binaries, out-of-band writes and backup rollback or a
+second restored admitting database are unsupported recovery/authority routes.
+There is no external status recovery, compute allowance or refund authority.
+
+Independent exact-head review is **CLEAR**, including all 25 source bindings
+and five local log hashes. The full local serial race suite records **1,037
+passing events / 493 overlapping top-level tests**, zero failures and **16
+skips**. The focused **87 events / 22 top-level tests** are a subset; its one
+skipped subprocess helper is exercised by three crash tests. Vet passed.
+The actual pre-fix mutex-cancellation witness retains two failing subcases plus
+their parent. The corrected post-lock checks pass. PostgreSQL's stale cross-row
+snapshot concern was source-inferred before correction, not a reproduced
+pre-fix runtime failure; queue updates now lock the job row then read the
+barrier in a fresh statement.
+
+All eight final CI checks pass: [main CI](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39341346384),
+[recovery](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39341346372)
+and [synthetic consumer](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39341346394).
+The main job's configured PostgreSQL-tagged package passed in 3.191 seconds,
+including the new real lock-wait control. This hosted runtime evidence is
+separate from local PostgreSQL **NOT RUN** (compile/gated skips only).
+Reviewed and merged trees match `b9a3ff2267a1ff3ebb1e7bc194a6b8cb9cf94722`.
+The [component evidence](https://github.com/EduCloud-Ecosystem/cairn/blob/2be331d245a989490ca815a3c71b12c0d2ff0ed0/docs/evidence/2026-10-19-durable-grading/validation.json)
+and [coordinator record](evidence/2026-10-19-assessment-estimation/cairn34-acceptance.json)
+preserve these boundaries. The adapter remains uninstalled; no production
+database, runner selection, deployment or private/student data changed.
+
 ## Next scope and open gates
 
-A4's deterministic stage estimates can proceed with clearly synthetic
-observations, repeat variability, held-out error, unit-preserving arithmetic and
-explicit provisional results. Conservative allowance charges cannot supply
-fitting measurements. Program exports and refreshed requirements follow that
-usable estimation slice.
+The initial A4 calculation is accepted for synthetic metadata only. Actual
+target observations, additional stages/hardware, prediction uncertainty and
+verified resource-specific conversions remain open. Conservative allowance
+charges cannot supply fitting measurements. A5's usable program exports and
+refreshed requirements are the next scoped component; researchers still review
+science, resources and form correspondence and submit their own applications.
 
 Temporary uploads, encrypted scratch, independent expiry/termination/revocation/
 deletion under faults, actual CPU/GPU measurement and accounting, second operator

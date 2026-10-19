@@ -1,0 +1,7 @@
+{
+  "executable_sha256": "c5ce296ab14eaeae3bfd98584974047ebef589964f93adfbfba8c561ec42b860",
+  "execution": "PURE_VALIDATOR_ONLY_NO_ENGINE_OR_WORKLOAD",
+  "go_version": "go version go1.26.4 darwin/arm64",
+  "source_archive_sha256": "010f567e824693170c238725a967984e94d914f2281bc3407b174365006d510d",
+  "source_commit": "de65bdab9303395226ebfb35e0e0740ab19b4d8e"
+}

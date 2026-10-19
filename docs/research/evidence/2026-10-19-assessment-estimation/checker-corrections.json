@@ -1,0 +1,20 @@
+{
+  "scope": "Reusable coordinator checker under optimized Python; no product or CLI workload run",
+  "status": "FAIL",
+  "source_sha256": "0415eab53a75d58ee2f72284ca1767cf879c73199cb5e2cd8ae41fe4043b4e97",
+  "probe": "Compile exact check() AST with optimize=2, call false condition",
+  "false_condition_raised": false,
+  "retained_check_events": [
+    {
+      "name": "must_refuse_false_condition",
+      "status": "FAIL"
+    }
+  ],
+  "prior_normal_31pass_result": "Retained and not disproven; failed-control handling is defective only when assertions optimized away",
+  "corrected_control": {
+    "status": "PASS",
+    "optimized_false_condition_raises": true,
+    "source_sha256": "4bbc4386b64e7d63f2cf94880b22586273610ec690f6beb445cf8ac569abb9f7"
+  },
+  "duplicate_probe_correction": "Separate duplicate-attempt and duplicate-cleanup probes each preserve other identity and update cleanup linkage/digest; each pair remains independently valid."
+}

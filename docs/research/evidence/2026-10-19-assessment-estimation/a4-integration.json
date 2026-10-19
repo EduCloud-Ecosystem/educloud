@@ -1,0 +1,202 @@
+{
+  "schema": "educloud.a4-independent-integration/v1",
+  "waypoint_head": "053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad",
+  "outfitter_production_source": "de65bdab9303395226ebfb35e0e0740ab19b4d8e",
+  "binary_sha256": "b1240d0b83d91414dc3460712d14f139d6c85b2e077a97c6991270b1dc41e999",
+  "binary_provenance": "Operator-supplied trusted executable; checker does not build or attest it",
+  "checks": [
+    {
+      "name": "two_series_success",
+      "status": "PASS"
+    },
+    {
+      "name": "two_series_false_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "known_exact_coefficients",
+      "status": "PASS"
+    },
+    {
+      "name": "demand_and_busy_time_separate",
+      "status": "PASS"
+    },
+    {
+      "name": "hours_dimensional_conversion",
+      "status": "PASS"
+    },
+    {
+      "name": "comparison_exact_without_winner",
+      "status": "PASS"
+    },
+    {
+      "name": "liabilities_and_uncertainty_preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "input_permutation_success",
+      "status": "PASS"
+    },
+    {
+      "name": "input_permutation_false_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "byte_stable_series_and_receipt_order",
+      "status": "PASS"
+    },
+    {
+      "name": "one_series_success",
+      "status": "PASS"
+    },
+    {
+      "name": "one_series_false_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "held_out_perturbed_success",
+      "status": "PASS"
+    },
+    {
+      "name": "held_out_perturbed_false_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "held_out_cannot_refit_coefficients",
+      "status": "PASS"
+    },
+    {
+      "name": "missing_cpu_success",
+      "status": "PASS"
+    },
+    {
+      "name": "missing_cpu_false_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "missing_dimension_not_zero_or_dropped",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown_overhead_success",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown_overhead_false_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown_overhead_not_assumed_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "oom_boundary_success",
+      "status": "PASS"
+    },
+    {
+      "name": "oom_boundary_false_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "oom_blocks_target_prediction",
+      "status": "PASS"
+    },
+    {
+      "name": "charge_only_legacy_success",
+      "status": "PASS"
+    },
+    {
+      "name": "charge_only_legacy_false_authority",
+      "status": "PASS"
+    },
+    {
+      "name": "conservative_charge_not_measurement",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate_attempt_refused_without_content",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate_cleanup_id_refused_without_content",
+      "status": "PASS"
+    },
+    {
+      "name": "free_content_refused_without_content",
+      "status": "PASS"
+    },
+    {
+      "name": "no_new_isolated_home_or_workdir_files",
+      "status": "PASS"
+    },
+    {
+      "name": "head_and_binary_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "cli_runs": {
+    "two_series": {
+      "returncode": 0,
+      "stdout_bytes": 52833,
+      "stdout_sha256": "bb477e9338767034d4bc2d736f39cf35d34127e5b36641edecc22b313c87fd9b"
+    },
+    "input_permutation": {
+      "returncode": 0,
+      "stdout_bytes": 52833,
+      "stdout_sha256": "bb477e9338767034d4bc2d736f39cf35d34127e5b36641edecc22b313c87fd9b"
+    },
+    "one_series": {
+      "returncode": 0,
+      "stdout_bytes": 26776,
+      "stdout_sha256": "e77ca3f2347021013a18dbccab5f57faa4ba685d755514d4ccfab21598a4296c"
+    },
+    "held_out_perturbed": {
+      "returncode": 0,
+      "stdout_bytes": 26852,
+      "stdout_sha256": "9746787c440ce0a50b5cc44352abd0c27d42eb8b4f88896352bf5d53f060e2e4"
+    },
+    "missing_cpu": {
+      "returncode": 0,
+      "stdout_bytes": 24060,
+      "stdout_sha256": "2ae7ba9eea3b52ca706949eb0275589ed8211917b858fc5746457dad637ba5d6"
+    },
+    "unknown_overhead": {
+      "returncode": 0,
+      "stdout_bytes": 26714,
+      "stdout_sha256": "e4c89cdee7f505f5209db5d82dcab253d8cf3452c9415ec8b4efb591c62f5ee9"
+    },
+    "oom_boundary": {
+      "returncode": 0,
+      "stdout_bytes": 26024,
+      "stdout_sha256": "6f7ef8663b4ee1f43b01728c7a19810b286ce6f6a68c60ab83454d197f22c08b"
+    },
+    "charge_only_legacy": {
+      "returncode": 0,
+      "stdout_bytes": 6405,
+      "stdout_sha256": "5240def64ec32ff1e183040eb1c872ef68462368288cb1c80188e1cc1682b7d2"
+    },
+    "duplicate_attempt": {
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "duplicate_cleanup_id": {
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "free_content": {
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "time": "2026-10-19T23:23:55.707067+00:00",
+  "scope": "Invented counters; real pure Go validator and Python operator CLI, no resource workloads",
+  "not_run": [
+    "Actual resource measurement",
+    "Authenticated provenance or cleanup",
+    "Uploads/private data",
+    "Provider conversion or submission"
+  ]
+}

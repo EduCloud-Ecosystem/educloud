@@ -24,8 +24,13 @@ at merged Waypoint #49 (`d70aaccc`) and Outfitter #18 (`de65bdab`): strict
 manifests, pure receipt conversion/validation and a closed retention preview.
 Independent reviews, 37 actual Go/Python integration checks and required hosted
 regressions pass; original failures and optional skips remain recorded. The
-broader A1/A2 packages remain incomplete. A4's deterministic estimates from
-explicitly synthetic observations are now the next implementation slice.
+broader A1/A2 packages remain incomplete. A4's first synthetic estimate command
+is now merged in Waypoint [#50](https://github.com/EduCloud-Ecosystem/waypoint/pull/50),
+merge `db7ad40e`: exact stage fitting, held-out errors, repeat variability and
+visible unknown/OOM/extrapolation limits. Independent review, 512 local tests,
+32 separate real-CLI checks and required CI pass. This accepts synthetic
+calculation behavior only. A5's program-specific draft exports are next; actual
+resource measurements and program/application readiness remain separate.
 
 The accepted study-bundle exporter retains source bytes and cannot serve the
 new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted
@@ -187,9 +192,15 @@ grades; production configuration remains unchanged. Cairn's subsequent
 [#33](https://github.com/EduCloud-Ecosystem/cairn/pull/33), merge `ab339c44`, pins
 job identity, immutable submission and instructor policy across queue retries.
 Independent review and all eight CI checks passed after the deadline-locked
-grading regression was reproduced and fixed. Durable dispatch/no-replay and
-atomic grade/run publication remain open; this does not install the production
-Outfitter adapter. The Jetstream2
+grading regression was reproduced and fixed. Subsequent
+[#34](https://github.com/EduCloud-Ecosystem/cairn/pull/34), merge `536da6a5`, adds a
+pre-checkout queue-owned claim and atomic run/grade/queue publication for the
+optional job-aware path. Independent review, 1,037 local passing events (493
+overlapping top-level tests, 16 skips), vet and all eight CI checks pass,
+including hosted PostgreSQL. Mutex-cancellation failures are preserved; unknown
+or unrecorded claims remain held. Restored-store authority and external status
+recovery stay unqualified; this does not install the production Outfitter
+adapter. The Jetstream2
 operator/cleanup decision packet merged in
 [#10](https://github.com/EduCloud-Ecosystem/outfitter/pull/10), merge `afc4fe82`,
 after independent design review and final CI. It remains explicitly blocked:
