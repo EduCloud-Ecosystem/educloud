@@ -348,9 +348,10 @@ baseline and Linux/cloud Docker portability is unchanged. The subsequent
 records 45 cold volume restores, seven physical database clones, two current and
 four historical SQL restores, and a verified native image archive/import. These
 are bounded local recovery checks, not off-device or pristine-engine recovery.
-Nine user-owned Desktop app/data/settings roots are removed. Eight small
-administrator-owned helper/link remnants require macOS authentication; the
-official uninstall timeout and scoped permission failures remain recorded.
+All nine user-owned Desktop app/data/settings roots and eight administrator-owned
+helper/link remnants are removed after a fresh authenticated cleanup. Both helper
+services are stopped. The earlier official uninstall timeout and scoped permission
+failures remain recorded alongside the independently reviewed completion.
 Post-removal checks pass for 51 accepted container configurations (17 running,
 34 historical stopped), 13 healthy checks, 57 volumes, 75 original image IDs and
 147 references. Twenty-one app/service probes pass with six NOT RUN categories;
@@ -358,8 +359,9 @@ the shared engine guard passes. The uninstaller's removed Compose/Buildx links
 were restored; the failed first probe and passing correction are both retained.
 Eight earlier GC-lost images remain exactly recovered, with the original GC FAIL
 preserved. Removed roots accounted for 38.28 GiB allocated, but immediate free
-space rose only 0.99 GiB to 15.45 GiB. Nine purgeable snapshots remain untouched;
-the difference is not fully attributed. Low capacity, full authentication,
+space rose only 0.99 GiB to 15.45 GiB; a later completion sample measured 13.07 GiB.
+Nine purgeable snapshots were observed and left untouched; neither the initial
+difference nor the intervening space change is fully attributed. Low capacity, full authentication,
 reboot/startup behavior and Kubernetes workload qualification remain unresolved.
 A Pro trial was observed; no license purchase was made.
 
