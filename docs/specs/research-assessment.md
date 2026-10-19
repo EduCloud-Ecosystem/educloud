@@ -53,14 +53,19 @@ methods and re-upload instructions.
 
 The lifecycle is `preparing → accepting → sealed → running → cleaning → closed`.
 Cancellation, expiry, failed upload and any execution failure converge on
-`cleaning`. Terminate work and revoke read/write credentials before removing
-scratch. A crash-safe independent expiry/reconciliation path must also run when
-the request server or worker is unavailable. A failed or uncertain cleanup yields
-`cleanup_unresolved`: access remains revoked, the worker/storage scope is
-quarantined, liabilities remain visible and reuse is denied. Only independently
-verified removal permits `closed`. A delete request or absent process alone is
-not removal evidence. Clock rollback, restart and duplicate callbacks cannot
-extend expiry or revive permissions.
+`cleaning`. Deny local admission and read/write access, initiate work termination
+and credential revocation, and reconcile these actions with scratch removal.
+A crash-safe independent expiry/reconciliation path must also run when the
+request server or worker is unavailable. A failed or uncertain cleanup yields
+`cleanup_unresolved`: local admission and read/write access remain denied, the
+worker/storage scope is quarantined and reuse is denied. Record termination and
+remote credential revocation separately as `verified`, `failed` or `unknown`.
+Local quarantine does not prove termination or remote revocation. If either is
+unverified, preserve possible continuing external access/work and its liabilities
+until independently reconciled. Only independently verified termination,
+revocation and removal across the owned scope permit `closed`. A delete request
+or absent process alone is not removal evidence. Clock rollback, restart and
+duplicate callbacks cannot extend expiry or revive local permissions.
 
 Deletion covers all replicas and temporary transfer destinations, including
 provider disks, attachments, object uploads, caches and snapshots. Receipts
@@ -140,9 +145,13 @@ hours. Preserve the measurement semantics of cgroups, scheduler and GPU tools.
 Unknown or unsupported measurements cannot become populated estimates.
 
 A versioned `educloud.cleanup-receipt/v1` records opaque owned scope identifiers,
-termination/access-revocation status, deletion checks, observation time/method,
-remaining liabilities, independent verifier identity and outcome
-`verified | unresolved`. Keep a failed receipt immutable; append reconciliation
+local admission/read-write denial, separate `verified | failed | unknown`
+termination and remote credential-revocation results, deletion checks,
+observation time/method, remaining liabilities, independent verifier identity and
+outcome `verified | unresolved`. Unverified revocation or termination preserves
+possible continuing external access/work and prevents a verified cleanup outcome;
+local quarantine cannot substitute for either observation. Keep a failed receipt
+immutable; append reconciliation
 evidence rather than rewriting failure into success. Authorization and
 cryptographic/trusted-source receipt validation are component responsibilities;
 a structurally valid JSON receipt is not proof of an actual run.
@@ -229,7 +238,7 @@ Neither an export nor the use of open tools establishes FERPA readiness.
 | Gate | Required evidence |
 | --- | --- |
 | Isolation | Two projects cannot access one another's uploads, execution, retained measurements, report previews or cleanup scopes. Test revoked and expired sessions. |
-| Lifecycle | Completion, cancellation, expiry, worker/server crashes and interrupted uploads leave no accessible source residue. Exercise independent reaping, restart and unresolved cleanup quarantine. |
+| Lifecycle | Completion, cancellation, expiry, worker/server crashes and interrupted uploads leave no accessible source residue. Exercise independent reaping, restart and unresolved cleanup quarantine, including failed/ambiguous termination and remote revocation; local denial must not produce a false verified-cleanup receipt. |
 | Content exclusion | Seed identifiable synthetic markers; inspect logs, exports, caches, image layers, browser state, backup inventories and model traces for leakage. Verify encrypted scratch configuration on the actual host. |
 | Accounting | Compare worker measurements with independent cgroup/scheduler/provider evidence. Declare metric-specific tolerances before qualification; discrepancies fail reconciliation and remain visible. |
 | Estimation | Independent calculations and held-out sizes test predictions; missing metrics, failed/OOM attempts and extrapolation cannot produce an unsupported readiness pass. |
