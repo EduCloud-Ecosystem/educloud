@@ -1,6 +1,6 @@
 {
   "schema": "educloud.assessment-preparation-acceptance/v1",
-  "observed_at": "2026-10-19T23:02:34.804835+00:00",
+  "observed_at": "2026-10-19T23:04:44.829163+00:00",
   "scope": "Partial A1/A2 pure preparation and metadata preview; separate Cairn queue provenance correction",
   "components": [
     {
@@ -182,7 +182,7 @@
     "cairn33": "CLEAR exact70b984 after reproduced locked-state fix",
     "outfitter18": "CLEAR exact2369ffb; initial609a35b production identical;39-line tests-only final delta",
     "waypoint49": "CLEAR exactc47351f including489-result log and source bindings",
-    "coordinator_checker": "Two masked negative probes and stale-result concern corrected; final re-review pending"
+    "coordinator_checker": "CLEAR immutable4f4494e after two masked-negative-probe corrections and stale-result guard; final update only records completed serial test evidence and this review annotation"
   },
   "coordinator_integration": {
     "pass": 37,
@@ -238,7 +238,24 @@
     }
   },
   "outfitter_serial_final": {
-    "status": "RUNNING; no final PASS claimed"
+    "status": "PASS",
+    "name": "offline-go-tests-constrained.jsonl",
+    "sha256": "c38927bfc3e0164ff18099ebb793abd9adf9319726355606cc9d16534a91ea16",
+    "pass_events": 897,
+    "skip_events": 2,
+    "failed_test_events": [],
+    "package_results": {
+      "github.com/EduCloud-Ecosystem/outfitter/cmd/outfitter": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/assessment": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/broker": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/consumer": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/ledger": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/docker": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/jetstream2": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/kubernetes": "pass"
+    },
+    "owner_reported_command": "env -u OUTFITTER_DOCKER_IMAGE GOMAXPROCS=2 go test -race -count=1 -p=1 -parallel=1 -json ./..."
   },
   "waypoint_local": {
     "tests_pass": 489,
@@ -291,5 +308,6 @@
     "README.md": "f3f4639323b6faf0f1b6ff6e856e3484e352408a1d96c57567e2a78d9541efe6",
     "assessment-integration.json": "3f1248b548fb029ecc3179c2b65f4d61b330c3415bd2cff7d83e6034814366c7",
     "negative-probe-isolation-correction.json": "bab19a77fe8da585b49fbbb6850f1f6fce7b876d964153ce102196f843bf0ad9"
-  }
+  },
+  "outfitter_delivery_manifest_sha256": "1ec6031da31a8972cb7b3bd42bf488a11fa81029162456403960dcc50e4e2695"
 }
