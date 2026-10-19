@@ -4,8 +4,8 @@ Date: 18 October 2026. Scope: this operator's macOS development host. **Recorded
 migration checks show completed engine cutover within the historical boundaries
 below.** The later [backup and Desktop retirement record](2026-10-18-orbstack-retirement.md)
 supersedes the cutover-time logical-restore and source-retention status. It records
-verified local restores, removal of the Desktop app/data and eight remaining
-administrator-owned remnants. Full authentication and Kubernetes workloads
+verified local restores and completed removal of the Desktop app/data and all
+eight administrator-owned remnants. Full authentication and Kubernetes workloads
 remain NOT RUN by these host-maintenance tasks.
 
 OrbStack is the selected Docker-compatible engine for this host. Docker Compose

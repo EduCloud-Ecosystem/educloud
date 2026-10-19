@@ -153,9 +153,11 @@ keeping Docker Compose and Linux/cloud portability unchanged. The later
 [backup and Desktop retirement record](docs/decisions/2026-10-18-orbstack-retirement.md)
 records verified cold-volume/image recovery, seven physical and six logical database
 restores, and passing bounded post-removal app/runtime checks. Nine user-owned
-Desktop roots are removed; eight administrator-owned remnants await macOS
-authentication. Immediate free space rose about 0.99 GiB to 15.45 GiB, despite
-38.28 GiB of removed allocated storage; snapshot attribution is unproven. Original
+Desktop roots and all eight administrator-owned remnants are removed after
+authenticated cleanup; both helper services are stopped. Final runtime/app checks
+pass again. Immediate free space rose about 0.99 GiB to 15.45 GiB, despite
+38.28 GiB of removed allocated storage; a later sample measured 13.07 GiB.
+The intervening change and snapshot attribution are unproven. Original
 failures, local-only backup coverage, untested full workflows, low capacity and
 closed Kubernetes workload gates remain explicit. No license purchase occurred.
 

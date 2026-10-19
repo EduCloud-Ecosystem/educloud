@@ -77,7 +77,8 @@ not qualify these controls. No purchase is currently demonstrated necessary.
 
 The separately authorized [local backup verification and Desktop retirement](../decisions/2026-10-18-orbstack-retirement.md)
 adds bounded recovery evidence and removes the old user-owned engine data.
-Eight privileged remnants still need macOS authentication. This host maintenance
+The eight privileged remnants are also removed after authenticated cleanup.
+This host maintenance
 does not close whole-store capacity, off-host recovery, independent-human
 reproduction or live provider/model gates, and does not renew any allowance.
 

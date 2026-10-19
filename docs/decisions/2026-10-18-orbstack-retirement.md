@@ -4,9 +4,10 @@ Date: 18 October 2026 local time; private execution records use 19 October UTC.
 Scope: the operator's existing macOS development host, under explicit authority
 to verify migrated apps/backups and remove Docker Desktop and its old data.
 
-Status: PARTIAL. Backup and post-removal runtime checks pass. All nine user-owned
-Desktop app/data/settings roots are removed; eight administrator-owned
-helper files and links remain pending macOS authentication.
+Status: COMPLETE for the authorized Desktop retirement. All nine user-owned
+Desktop app/data/settings roots and eight administrator-owned helper files/links
+are absent. Both system helper services are stopped. Backup and post-removal
+runtime checks pass within the limits below.
 
 This supplements the [initial cutover record](2026-10-18-local-macos-runtime.md).
 Docker-compatible containers and Compose remain the baseline. No production
@@ -45,9 +46,19 @@ authentication. Its FAIL and the termination of its identified orphaned prompt
 are retained. Under the owner's existing removal authority, scoped cleanup then
 removed all nine user-owned app/data/settings roots, including the Desktop app
 and old disk storage. Four attempted system-link deletions failed with permission
-errors; four system helper/plist files also remain. These eight exact remnants
-total 15,428,622 bytes (about 14.7 MiB). A narrowly scoped cleanup script has been
-prepared but not executed; administrator authentication is still required.
+errors; four system helper/plist files also remained. These eight exact remnants
+totaled 15,428,622 bytes (about 14.7 MiB). That independently reviewed partial
+acceptance remains preserved.
+
+At 19:36 PDT on 18 October, the owner completed a fresh native macOS
+administrator prompt. The previously reviewed, hash-pinned cleanup script
+removed the exact eight remaining paths and stopped both system helper services.
+Independent observation confirms all 17 authorized app/data/helper/link targets
+are absent. OrbStack's socket and the shared configuration directory retain
+their identities; the 13 configuration files retain the comparisons below.
+The subsequent runtime, app probes and shared engine guard all passed again.
+The maintenance lock was then released. Earlier timeout/permission failures
+remain historical failures, not the current retirement outcome.
 
 The uninstaller removed the shared Compose/Buildx plugin links before its
 authentication timeout. The first post-removal runtime check therefore remains
@@ -68,6 +79,11 @@ exact attribution was not measured. [Apple's local-snapshot guidance](https://su
 checked 18 October, says macOS counts snapshot space as available storage and
 removes snapshots as they age or space is needed. No forced snapshot deletion or
 additional capacity allowance follows from this maintenance.
+
+A later sample after privileged cleanup, at 19:38 PDT, measured **13.07 GiB**
+free. It does not change the earlier immediate before/after measurement. The
+intervening change is not attributed; no additional reclaimed-space claim or
+capacity qualification follows from either sample.
 
 A redundant task-created initial image export was removed after the final export
 passed independent native verification and actual loading, deleting an archive
@@ -115,3 +131,6 @@ reproducibility claims.
 | Final observation with retained byte-comparison FAIL | `c1f76847da095b4048fc626a5d0161b3b78b156b7966d42217bb0cc396d225ad` |
 | Shared configuration semantic comparison, PASS | `7e3d46fe06698a3dc4cca5f57851b50f3d25b406d15ee03af52b6e45499ef573` |
 | Independently reviewed partial retirement acceptance | `8500aae08fcbdedfe08e7d9fb35c67302fc5e08f55b2fbc728c3787923c54e4e` |
+| Authenticated exact-target cleanup result, PASS | `d546e7fb8ca0b61792b56e99679bd7b0756791ee592f867c0eae42c446074cef` |
+| Runtime after privileged cleanup, PASS | `04f1ac221c7b7d061ae27485cb60ef3c1b88f8f35d0d569e84568065a27eea75` |
+| Completed retirement observation, PASS | `fac42565461e38466d841ec7d268a9e6618aa577aa1fef879bc62c26fb6fd3fe` |
