@@ -19,6 +19,14 @@ content-free retention preview, an assessment export guard and validated
 measurement/cleanup receipts. Upload and dispatch remain disabled pending actual
 temporary-storage and independent-cleanup qualification.
 
+The [first preparation slice is now accepted](docs/research/2026-10-19-assessment-preparation-acceptance.md)
+at merged Waypoint #49 (`d70aaccc`) and Outfitter #18 (`de65bdab`): strict
+manifests, pure receipt conversion/validation and a closed retention preview.
+Independent reviews, 37 actual Go/Python integration checks and required hosted
+regressions pass; original failures and optional skips remain recorded. The
+broader A1/A2 packages remain incomplete. A4's deterministic estimates from
+explicitly synthetic observations are now the next implementation slice.
+
 The accepted study-bundle exporter retains source bytes and cannot serve the
 new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted
 retention and report preview need their own implementation and fault evidence.
@@ -175,7 +183,13 @@ fixtures and does not publish grades. Cairn's opt-in disposable adapter is now
 merged in [#32](https://github.com/EduCloud-Ecosystem/cairn/pull/32), merge
 `bb41bdaf`: independent review fixes, 19/19 local Docker controls and all eight
 final CI checks passed. Its separate command proposes results without storing
-grades; production configuration remains unchanged. The Jetstream2
+grades; production configuration remains unchanged. Cairn's subsequent
+[#33](https://github.com/EduCloud-Ecosystem/cairn/pull/33), merge `ab339c44`, pins
+job identity, immutable submission and instructor policy across queue retries.
+Independent review and all eight CI checks passed after the deadline-locked
+grading regression was reproduced and fixed. Durable dispatch/no-replay and
+atomic grade/run publication remain open; this does not install the production
+Outfitter adapter. The Jetstream2
 operator/cleanup decision packet merged in
 [#10](https://github.com/EduCloud-Ecosystem/outfitter/pull/10), merge `afc4fe82`,
 after independent design review and final CI. It remains explicitly blocked:

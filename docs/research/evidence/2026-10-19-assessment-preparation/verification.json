@@ -1,0 +1,313 @@
+{
+  "schema": "educloud.assessment-preparation-acceptance/v1",
+  "observed_at": "2026-10-19T23:04:44.829163+00:00",
+  "scope": "Partial A1/A2 pure preparation and metadata preview; separate Cairn queue provenance correction",
+  "components": [
+    {
+      "headRefOid": "1184ab2c2a0c82aa437b2d146f22dbae2b98efa7",
+      "mergeCommit": {
+        "oid": "bf9bc615fbfef5055f231f473e784b1183c73dad"
+      },
+      "mergedAt": "2026-10-19T22:37:04Z",
+      "state": "MERGED",
+      "statusCheckRollup": [],
+      "url": "https://github.com/EduCloud-Ecosystem/educloud/pull/37"
+    },
+    {
+      "headRefOid": "2369ffb223a8615321a819c08e87b6f19d650745",
+      "mergeCommit": {
+        "oid": "de65bdab9303395226ebfb35e0e0740ab19b4d8e"
+      },
+      "mergedAt": "2026-10-19T22:59:05Z",
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:58:27Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39338282015/job/118353164174",
+          "name": "go-and-docker",
+          "startedAt": "2026-10-19T22:55:44Z",
+          "status": "COMPLETED",
+          "workflowName": "Broker verification"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:56:18Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39338282015/job/118353163881",
+          "name": "storage-writer-qualification",
+          "startedAt": "2026-10-19T22:55:44Z",
+          "status": "COMPLETED",
+          "workflowName": "Broker verification"
+        }
+      ],
+      "url": "https://github.com/EduCloud-Ecosystem/outfitter/pull/18"
+    },
+    {
+      "headRefOid": "c47351f46186d7fa055a7f486516f4dac0aeb274",
+      "mergeCommit": {
+        "oid": "d70aaccc454332cb5bacf31e93c99e2ce0b420cd"
+      },
+      "mergedAt": "2026-10-19T22:59:14Z",
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:53:06Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39337782583/job/118351498540",
+          "name": "controls",
+          "startedAt": "2026-10-19T22:51:10Z",
+          "status": "COMPLETED",
+          "workflowName": "Research workspace"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:52:13Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39337782583/job/118351498447",
+          "name": "actual-docker",
+          "startedAt": "2026-10-19T22:51:10Z",
+          "status": "COMPLETED",
+          "workflowName": "Research workspace"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:51:08Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39337782583/job/118351499986",
+          "name": "clean-source-builds",
+          "startedAt": "2026-10-19T22:51:09Z",
+          "status": "COMPLETED",
+          "workflowName": "Research workspace"
+        }
+      ],
+      "url": "https://github.com/EduCloud-Ecosystem/waypoint/pull/49"
+    },
+    {
+      "headRefOid": "70b984083fa711b12ae30bc22732d831a0b1ba1e",
+      "mergeCommit": {
+        "oid": "ab339c44248eca2f6c03c22ef951215e8969472a"
+      },
+      "mergedAt": "2026-10-19T22:52:34Z",
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:50:02Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39337372434/job/118350115245",
+          "name": "Go \u2014 build, vet, test",
+          "startedAt": "2026-10-19T22:47:27Z",
+          "status": "COMPLETED",
+          "workflowName": "CI"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:48:10Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39337372456/job/118350115102",
+          "name": "Populated upgrade and fresh restore",
+          "startedAt": "2026-10-19T22:47:27Z",
+          "status": "COMPLETED",
+          "workflowName": "Recovery rehearsal"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:48:31Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39337372428/job/118350114678",
+          "name": "local-synthetic-consumer",
+          "startedAt": "2026-10-19T22:47:27Z",
+          "status": "COMPLETED",
+          "workflowName": "Synthetic Outfitter consumer"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:47:40Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39337372434/job/118350114955",
+          "name": "Dashboard \u2014 typecheck, test, build",
+          "startedAt": "2026-10-19T22:47:27Z",
+          "status": "COMPLETED",
+          "workflowName": "CI"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:47:31Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39337372434/job/118350115492",
+          "name": "Curriculum \u2014 versioned contract checks",
+          "startedAt": "2026-10-19T22:47:27Z",
+          "status": "COMPLETED",
+          "workflowName": "CI"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:49:41Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39337372434/job/118350115254",
+          "name": "Security \u2014 vulnerabilities, workflow policy, property checks",
+          "startedAt": "2026-10-19T22:47:27Z",
+          "status": "COMPLETED",
+          "workflowName": "CI"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:48:19Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39337372434/job/118350115281",
+          "name": "Performance \u2014 matched baseline and profiling",
+          "startedAt": "2026-10-19T22:47:27Z",
+          "status": "COMPLETED",
+          "workflowName": "CI"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-19T22:48:39Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/EduCloud-Ecosystem/cairn/actions/runs/39337372434/job/118350115221",
+          "name": "Container \u2014 image vulnerabilities",
+          "startedAt": "2026-10-19T22:47:27Z",
+          "status": "COMPLETED",
+          "workflowName": "CI"
+        }
+      ],
+      "url": "https://github.com/EduCloud-Ecosystem/cairn/pull/33"
+    }
+  ],
+  "independent_reviews": {
+    "educloud37": "CLEAR after external termination/revocation distinction",
+    "cairn33": "CLEAR exact70b984 after reproduced locked-state fix",
+    "outfitter18": "CLEAR exact2369ffb; initial609a35b production identical;39-line tests-only final delta",
+    "waypoint49": "CLEAR exactc47351f including489-result log and source bindings",
+    "coordinator_checker": "CLEAR immutable4f4494e after two masked-negative-probe corrections and stale-result guard; final update only records completed serial test evidence and this review annotation"
+  },
+  "coordinator_integration": {
+    "pass": 37,
+    "fail": 0,
+    "existing_result_refusal": "PASS: nonzero exit before execution and previous result unchanged",
+    "binary_build_command": "GOMAXPROCS=2 go build -p 1 -o <coordinator-private-binary> ./cmd/outfitter",
+    "binary_binding": "Built by coordinator from owning source; production files independently match final reviewed commit. Standalone binary is trusted operator input, not attested by checker.",
+    "production_source_sha256": {
+      "cmd/outfitter/main.go": "ecdd02d32e050fea0cb6d82023cc0802214e6557624de1a59a23cdefbb0d383b",
+      "internal/assessment/cli.go": "6dc3f73941889658d65678563d5139de363c996c8cd2843153bc8f4b4b06df7a",
+      "internal/assessment/json.go": "9d616b09f023b93ef553e2ca9742056cd6e7e328a55791c45fd737508868a713",
+      "internal/assessment/legacy.go": "2a05dc99fac93c64e228142fc005c45f385c74605430d254cebd8344c6fc136b",
+      "internal/assessment/manifest.go": "714b6e328d0003f45dd7db4fda8aed2101e87185527d7ccef7e50296eae2a938",
+      "internal/assessment/project.go": "4821571d598cd1c2bea2fa8ef9109a6dfe9c371a2646d4fe71f9bad12ab8c193",
+      "internal/assessment/types.go": "3869ee501823849842c04b30803ca13a18d1453adca17e63bd9be6a7c9adfc61",
+      "internal/assessment/validate.go": "4b66966348c0ce83482dcb57cad473568e0054426e72afa1d4a9b973ea80e2d4",
+      "go.mod": "bcf81d648b7f769adf99a0864b64701f350d46d3784c8b1c24fc55fbeccb341f"
+    }
+  },
+  "outfitter_local_original": {
+    "name": "offline-go-tests.jsonl",
+    "sha256": "8845936bda2d2bbfd05483ab103d2f2f5a893ac3e5ef4f03f0d6078b3f29cef7",
+    "pass_events": 890,
+    "skip_events": 2,
+    "failed_test_events": [
+      "TestOfflineRescueBoundsClocksAndTransport/bounded-retention",
+      "TestOfflineRescueBoundsClocksAndTransport",
+      "TestCleanupRefusesMissingOrNullAttachmentInventory/fresh/null",
+      "TestCleanupRefusesMissingOrNullAttachmentInventory/discovery/null",
+      "TestCleanupRefusesMissingOrNullAttachmentInventory/discovery/omitted",
+      "TestCleanupRefusesMissingOrNullAttachmentInventory"
+    ],
+    "package_results": {
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/docker": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/cmd/outfitter": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/consumer": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/assessment": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/ledger": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/kubernetes": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/broker": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/jetstream2": "fail"
+    }
+  },
+  "outfitter_targeted_recheck": {
+    "name": "offline-timing-controls-recheck.jsonl",
+    "sha256": "ada33253706d92ad1151d017a48075c05014cb30983bcdced39bee625196c4da",
+    "pass_events": 9,
+    "skip_events": 0,
+    "failed_test_events": [],
+    "package_results": {
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/jetstream2": "pass"
+    }
+  },
+  "outfitter_serial_final": {
+    "status": "PASS",
+    "name": "offline-go-tests-constrained.jsonl",
+    "sha256": "c38927bfc3e0164ff18099ebb793abd9adf9319726355606cc9d16534a91ea16",
+    "pass_events": 897,
+    "skip_events": 2,
+    "failed_test_events": [],
+    "package_results": {
+      "github.com/EduCloud-Ecosystem/outfitter/cmd/outfitter": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/assessment": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/broker": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/consumer": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/ledger": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/docker": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/jetstream2": "pass",
+      "github.com/EduCloud-Ecosystem/outfitter/internal/provider/kubernetes": "pass"
+    },
+    "owner_reported_command": "env -u OUTFITTER_DOCKER_IMAGE GOMAXPROCS=2 go test -race -count=1 -p=1 -parallel=1 -json ./..."
+  },
+  "waypoint_local": {
+    "tests_pass": 489,
+    "focused_subset": 32,
+    "log_sha256": "dd0d1da06f97687354b0d9f503231a07876d5e375d5c7376f61269322af096e0",
+    "verification_sha256": "035e81b8d9568a2355eff94c79e8af949e734c1b78d92cc39c4523a70d353b83",
+    "command_line_warning_mode": "owner-reported; command not included in log"
+  },
+  "cairn_local": {
+    "status": "MERGED",
+    "reviewed_head": "70b984083fa711b12ae30bc22732d831a0b1ba1e",
+    "base": "bb41bdaffe7a9ec9feb1b8fdcdcbbdda527b20f8",
+    "pr": "https://github.com/EduCloud-Ecosystem/cairn/pull/33",
+    "diff_sha256": "ae2d4bcea13735972e64f463c079e6bb161568e6524beaf675c4f188d5aeebdc",
+    "evidence_sha256": "528c8495b36bbd8ff6414190fc7429770ddb49b2094305fe92be317625893abc",
+    "root_review": "Source/13bindings/full and focused logs/failed locked witness independently verified; root-discovered active-only regression corrected before merge",
+    "independent_final_review": "research_ui CLEAR exact final head after locked-state fix; verified actual API/SQLite queue/Worker/Service, duplicate/legacy refusal, ordinary runner unchanged and all evidence counts",
+    "local_test_counts": {
+      "full_pass_events": 1004,
+      "full_top_level_tests": 482,
+      "explicit_skips": 15,
+      "focused_pass_events_subset": 51,
+      "focused_top_level_subset": 8,
+      "original_locked_failure_events": 3
+    },
+    "not_run": [
+      "Local live/engine/private-data checks",
+      "Production Outfitter adapter installation",
+      "Durable compute no-replay/atomic publication qualification"
+    ],
+    "time": "2026-10-19T22:53:54.359705+00:00",
+    "merge_commit": "ab339c44248eca2f6c03c22ef951215e8969472a",
+    "reviewed_and_merge_tree": "1b52c28bbffe2c6d33dfdda8fba71430d9d4b908",
+    "remote_ci": "PASS: all eight exact-head checks SUCCESS",
+    "merged_at": "2026-10-19T22:52:34Z"
+  },
+  "not_run_or_open": [
+    "Temporary uploads/encrypted scratch/expiry lifecycle",
+    "Independent actual termination, credential revocation and all-copy deletion",
+    "Actual assessment CPU/GPU workloads and measurement qualification",
+    "Hosted/private/student-data admission",
+    "Independent second operator and second machine",
+    "Capacity, off-host recovery, production adapter dispatch/no-replay/atomic publication",
+    "Kubernetes workload, PAIR, live inference or renewed v4 allowance"
+  ],
+  "artifact_sha256": {
+    "coordinator-harness-corrections.json": "d1673ca2c8fb9de26b432baba15163291a74cc2af9d8336926105f5ce6734200",
+    "check_integration.py": "a0c1e705f5b901d40d728f2ddea0915fb12301bf22a228635c7d1dbb0e0f54a0",
+    "outfitter-before-validation-fixes.txt": "b3e27a7b0ad3e5cd37febbc6639af6b4c09ee49adc24e19ddf7c28b89c684ef9",
+    "README.md": "f3f4639323b6faf0f1b6ff6e856e3484e352408a1d96c57567e2a78d9541efe6",
+    "assessment-integration.json": "3f1248b548fb029ecc3179c2b65f4d61b330c3415bd2cff7d83e6034814366c7",
+    "negative-probe-isolation-correction.json": "bab19a77fe8da585b49fbbb6850f1f6fce7b876d964153ce102196f843bf0ad9"
+  },
+  "outfitter_delivery_manifest_sha256": "1ec6031da31a8972cb7b3bd42bf488a11fa81029162456403960dcc50e4e2695"
+}
