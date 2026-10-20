@@ -60,10 +60,12 @@ owners. Outfitter's [disabled owned-data source is accepted](../research/2026-10
 The [connected Waypoint AS1 source is accepted](../research/2026-10-19-as1-source-acceptance.md)
 with production content disabled. The [streaming scientific source](../research/2026-10-19-streaming-summary-source-acceptance.md)
 now adds separate Python/R candidates and an independent checker, with no
-execution or actual-resource qualification. Next connect larger-profile execution
-and actual measurement through
-the existing execution authority as resources become qualified, reuse A4/A5 for
-validated estimates and exports, and complete the participant/operator exercises.
+execution or actual-resource qualification. The later [cleanup controls source
+acceptance](../research/2026-10-19-cleanup-controls-source-acceptance.md) records
+Outfitter #22 tested and merged. Full-journey integration is now held for Greg's
+next direction. After that direction and the required qualified-resource gates,
+connect larger-profile execution and actual measurement through the existing
+authority, reuse A4/A5 for estimates/exports and complete participant exercises.
 Do not rebuild the estimator, export pipeline, portal, scheduler or ledger.
 
 Waypoint owns intake, current authorization, session metadata and user-facing

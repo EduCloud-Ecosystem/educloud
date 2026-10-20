@@ -176,3 +176,16 @@ No purchase or resource request is established as necessary. These choices and
 qualified implementation/evidence are required before operational enablement;
 this source slice grants none of them. Actual A2 measurements, A6 reproduction,
 accessibility and whole-service privacy gates remain open.
+
+## October 20 cleanup source checkpoint
+
+The [cleanup controls source acceptance](../research/2026-10-19-cleanup-controls-source-acceptance.md) records merged Outfitter #22
+at `8afcb56b`, independently reviewed and qualified by complete exact-head Linux
+CI: 1,610 overlapping PASS / zero FAIL / two SKIP. Original cleanup returns met
+the three-second engineering target with unchanged four-second assertions.
+The whole CI job had only nominal 21-second headroom; robust capacity is unproven.
+Earlier failures and historical storage counterexamples remain retained. This
+closes the scoped cleanup source-control milestone, not actual-host privacy or
+independent deletion qualification. Production uploads/execution stay disabled;
+A1/A2 and operational gates remain partial. Full-journey/seed/typed execution
+integration is held for Greg's next direction. No planning allowance is released.

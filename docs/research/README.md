@@ -14,3 +14,10 @@ with the MANIFEST's canonical filenames:
 The first is the evidence base for `herdr-build-plan.md`; its pitfall register
 is unreadable without it. The second is the source of the Gemma 4 E4B roster
 decision, the two-retry cap, and the Ollama runtime policy in Line P rev 2.
+
+## Current assessment source acceptances
+
+The [October 19 campaign cleanup controls record](2026-10-19-cleanup-controls-source-acceptance.md)
+records the October 20 Outfitter #22 delivery, complete CI, retained failures and
+open operational gates. It supplements the [execution source record](2026-10-19-execution-source-acceptance.md);
+full-journey integration is held for Greg's next direction.

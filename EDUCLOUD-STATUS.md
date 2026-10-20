@@ -81,6 +81,16 @@ code identities and an independent checker support an explicitly narrower
 measurement, aggregate storage and trusted cleanup remain open; no production
 path or ordinary recipe changes.
 
+The [cleanup controls source acceptance](docs/research/2026-10-19-cleanup-controls-source-acceptance.md)
+records Outfitter #22 merged `8afcb56b`, reviewed `629085a8`: complete exact-head
+Linux CI passed 1,610 overlapping test events, zero failures and two skips.
+Original cleanup returns were 1.8–2.0 seconds against unchanged four-second
+assertions. The whole job had nominal 21-second headroom only; robust capacity
+is unproven. All seven prior failed CI runs remain retained. This accepts scoped
+source controls; actual-host privacy and independent deletion remain open.
+Production content/execution remain disabled. Full-journey integration is held
+for Greg's next direction; no resource or spending approval is added.
+
 The [execution and checked-cleanup source acceptance](docs/research/2026-10-19-execution-source-acceptance.md)
 is accepted through Outfitter #21, merge `7381afe4`. It adds permanent complete-plan
 and slot claims, one-budget sequential workload/checker control, checked original
