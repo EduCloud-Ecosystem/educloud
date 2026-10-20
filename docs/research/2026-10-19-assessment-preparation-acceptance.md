@@ -394,10 +394,12 @@ cleanup. Current source and synthetic evidence do not complete that milestone.
 Optional tools must show a workflow, capability gap, measured benefit and
 maintenance owner; resource and privacy decisions remain explicit.
 
-The [disabled owned-data review checkpoint](2026-10-19-owned-data-review.md)
-records the next A1 candidate's real synthetic subprocess checks and failed
-hosted Linux run. That candidate is held for correction and final review;
-it is not a merged or operationally accepted lifecycle.
+The [disabled broker source acceptance](2026-10-19-owned-data-source-acceptance.md)
+records merged Outfitter #19, final review/CI and its bounded source-only scope.
+The [earlier checkpoint](2026-10-19-owned-data-review.md) remains historical failed
+evidence; no operational upload or cleanup gate is closed. The
+[provisional budget](../strategy/researcher-instructor-pilot-budget.md) approves
+staged planning ceilings only, with exact live choices and approvals still open.
 
 The initial A4 calculation is accepted for synthetic metadata only. Actual
 target observations, additional stages/hardware, prediction uncertainty and

@@ -71,6 +71,10 @@ prerequisites for completing this Python/R pilot.
 
 ## Optional tools and operational decisions
 
+The [approved provisional budget](researcher-instructor-pilot-budget.md) records
+the staged planning ceilings and exact allocation/host/operator decisions still
+required. It adds no live-test, resource-selection or spending approval.
+
 Adopt an optional tool only with all four items recorded: a named participant or
 operator workflow, an unmet capability in the current platform, a measurable
 acceptance benefit and an identified maintenance owner. Otherwise defer it as a
