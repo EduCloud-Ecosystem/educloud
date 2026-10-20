@@ -387,6 +387,13 @@ merged trees match `a22af8e8cd8deb6583984b261a8b188f6238ebd3`.
 
 ## Next scope and open gates
 
+The approved [product milestone](../strategy/researcher-instructor-pilot.md)
+requires independent researcher and instructor completion of the actual-resource
+Python/R journey through validated estimates, editable packets and verified
+cleanup. Current source and synthetic evidence do not complete that milestone.
+Optional tools must show a workflow, capability gap, measured benefit and
+maintenance owner; resource and privacy decisions remain explicit.
+
 The [disabled owned-data review checkpoint](2026-10-19-owned-data-review.md)
 records the next A1 candidate's real synthetic subprocess checks and failed
 hosted Linux run. That candidate is held for correction and final review;

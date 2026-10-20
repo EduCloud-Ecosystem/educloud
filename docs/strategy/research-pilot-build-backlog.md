@@ -1,5 +1,12 @@
 # Research pilot build sequence
 
+The approved [researcher and instructor milestone](researcher-instructor-pilot.md)
+is the product priority: one independent full Python/R journey for each
+participant on qualified resources, with actual measurements, understandable
+estimates/packets and verified cleanup. Reuse accepted A4/A5 work. Optional tools
+need a named workflow, unmet capability, measurable benefit and maintenance owner;
+otherwise defer them. This direction adds no operational or spending approval.
+
 Updated October 17, 2026 from the authorized implementation handoff. See the
 [acceptance record](../research/2026-10-17-research-pilot-acceptance.md) for frozen
 P0/P1 revisions and bounded local results. Package IDs below are local
@@ -53,15 +60,15 @@ choices. Ben's Outfitter issues #1–#5 and assignment remain unchanged. Private
 uploads remain disabled until actual scratch, retention, access and operational
 controls pass the whole-service review.
 
-After the core assessment, add bounded Snakemake/Nextflow report import,
-Apptainer and institutional Galaxy/VICE/Open OnDemand adapters, optional
-JupyterHub preparation, and Portage-governed inference benchmarks. Incorporate
-ScrubData history patterns, Lite-Harness/AnyJev fixtures, identity-broker review,
-MESA metadata interoperability and later Paper2Agent/NNsight pilots as specified
-in the tool decision. Preserve the Zensical documentation pilot and separate
-synthetic Modal comparison. CARC/VERDE/Temporal require institutional ownership
-assessment; Kubernetes Agent Sandbox, OpenShell, Void and autonomous optimization
-remain deferred. These integrations do not change existing contributors' scopes.
+After the core assessment, reconsider the tool-decision candidates only against
+the product-purpose filter above. Snakemake/Nextflow import, Apptainer,
+Galaxy/VICE/Open OnDemand, JupyterHub, inference benchmarks, metadata/history
+patterns and agent experiments are not automatic follow-on commitments. Each
+needs its own workflow, gap, measurable acceptance benefit and maintenance owner.
+Preserve Zensical and the synthetic Modal comparison as separate bounded pilots.
+Institutional ownership, privacy, resource and optional Kubernetes/PAIR gates
+remain. These candidates do not change existing contributors' scopes or become
+prerequisites for the researcher/instructor Python/R milestone.
 
 ## Sequence and ownership
 
