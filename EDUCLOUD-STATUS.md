@@ -81,6 +81,14 @@ code identities and an independent checker support an explicitly narrower
 measurement, aggregate storage and trusted cleanup remain open; no production
 path or ordinary recipe changes.
 
+The [full-journey integration plan](docs/strategy/research-assessment-integration-plan.md)
+records Greg's subsequent October 20 authorization to connect the journey after
+cleanup. Plan first, then secure shared setup, typed current-auth execution,
+reviewed scientific capability/counters, separately validated actual-provenance
+estimates/exports and connected researcher/instructor acceptance. Prior cleanup
+source acceptance is unchanged. This supersedes the temporary integration hold
+recorded below; host, spend, production and private-data gates remain open.
+
 The [cleanup controls source acceptance](docs/research/2026-10-19-cleanup-controls-source-acceptance.md)
 records Outfitter #22 merged `8afcb56b`, reviewed `629085a8`: complete exact-head
 Linux CI passed 1,610 overlapping test events, zero failures and two skips.
