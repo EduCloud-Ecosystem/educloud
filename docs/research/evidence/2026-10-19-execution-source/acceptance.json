@@ -104,7 +104,7 @@
       "checkpoint": "04314ba7",
       "passed_events": 11,
       "top_level_methods": 6,
-      "scope": "retirement/final wipe affected methods, source matches final commit"
+      "scope": "retirement/final wipe affected methods; production/non-test fix matches final commit, later process-test changes separately reviewed"
     }
   ],
   "actual_cli": {
