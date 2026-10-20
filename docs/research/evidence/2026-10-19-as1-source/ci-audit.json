@@ -1,0 +1,153 @@
+{
+  "artifact_archive_digests_match_github": true,
+  "artifacts": [
+    {
+      "digest": "sha256:e4ccb4965d517be094d314a8769912952441c63260ad9c79dbcea3aa2318eb2b",
+      "expires_at": "2026-11-03T03:54:12Z",
+      "id": 12240150824,
+      "name": "research-synthetic-peer-controls",
+      "size_in_bytes": 19940
+    },
+    {
+      "digest": "sha256:5c209b1ca5243728fe33739f6643455285aefaa00e4b8e00c2267871e27fbbb4",
+      "expires_at": "2026-11-03T03:52:47Z",
+      "id": 12238759326,
+      "name": "research-public-evidence",
+      "size_in_bytes": 40745
+    }
+  ],
+  "controls": {
+    "actual_artifact_output_equals_job_log_after_timestamp_removal": true,
+    "as1_methods_passed": 59,
+    "controls_log_sha256": "ec8ae2467fae9505eacfa30f12b584e758de3a3c8b4d24e81c5be675cc17a126",
+    "errors": 0,
+    "failed": 0,
+    "methods": 605,
+    "passed": 603,
+    "seconds": 121.599,
+    "skipped": 2,
+    "skips": "Two pure-validator cross-component methods; separately passed locally at a5dd runtime using retained9cf binary. This does not rewrite hosted skips."
+  },
+  "file_sha256": {
+    "artifact-12238759326.zip": "5c209b1ca5243728fe33739f6643455285aefaa00e4b8e00c2267871e27fbbb4",
+    "artifact-12240150824.zip": "e4ccb4965d517be094d314a8769912952441c63260ad9c79dbcea3aa2318eb2b",
+    "artifacts.json": "345ea389d89c397c16beec97e42da5fbb28026b3264a0c8dec1c4390c938c0d2",
+    "job-118444457063.log": "f13bb913911492b28cbd2d2594e08c09cc885607cd06d59e179c199721202e3f",
+    "job-118444457188.log": "0d711c083544b1852bfe59e031f41d7999d63720a1a4e10a0e2eb9aa388822e0",
+    "jobs.json": "491a783b3b2d82064efbda205afc9d6a7bb4d73c51666459f4e0f549c8b5fe96",
+    "research-public-evidence/operation-guard-acceptance/verification.json": "97f05543482e2a9f38d30abdd2655b89aee7b089eb69a1bd7f2be96b04dda089",
+    "research-public-evidence/recovery-acceptance/after.zip": "c11f96056ea399f695a8226387412b31203dfb3094db0d95b3af66d068d32cf6",
+    "research-public-evidence/recovery-acceptance/before.zip": "34b42677fea4688ef31fe5d0bf22c15c33c08df7ce514cf2b276cad5ef5c8f8f",
+    "research-public-evidence/recovery-acceptance/verification.json": "1483b3eb1c989329d7524b37c62689359b7cddd14b7472d77ec5b4ca37ffe0c6",
+    "research-public-evidence/reproduction-acceptance/evidence.zip": "b621701b3c91774a3da91a2f613bbf9186bab9243c71a078208d8abdbe815197",
+    "research-public-evidence/reproduction-acceptance/report.json": "0273472d6dda345a73b83d6df250d90d662eef539f1049fd77f230902f46c000",
+    "research-public-evidence/research-acceptance/first-project.zip": "e9d9e7ad450b9f4fd1613c12434efbcf38f7d67c2e6eaf6e30435927a144300c",
+    "research-public-evidence/research-acceptance/second-project.zip": "ba3f515e4301947a2fad9aff03989b7b0132df0f1ea09ef8022d04d208df7bcc",
+    "research-public-evidence/research-acceptance/verification.json": "4395519fb226880074242db9587823ed92321faea120e8d14411e763c511df70",
+    "research-synthetic-peer-controls/build-broker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research-synthetic-peer-controls/build-ledger.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research-synthetic-peer-controls/controls.log": "ec8ae2467fae9505eacfa30f12b584e758de3a3c8b4d24e81c5be675cc17a126",
+    "research-synthetic-peer-controls/helper-build.json": "9d8fb6122711ccc31ec1945f6141f9c7e06b74effc524511969512ab8ce69073",
+    "retrieval-note.json": "fb699c0ba7b0198bdb6db2ed38b16a80cd9851691aabbdac57d70a34fdfd68b9",
+    "run.json": "453c847f353fb6f3c7b78e571bceb5da824640fb6ea9541597eead5e9e0765a1"
+  },
+  "hosted_helpers": {
+    "all_source_hashes_match_immutable_git": true,
+    "commands": [
+      "go test -c -o broker.test ./internal/broker",
+      "go test -c -o ledger.test ./internal/ledger"
+    ],
+    "environment": {
+      "GOFLAGS": "-p=1",
+      "GOMAXPROCS": "2"
+    },
+    "go_version": "go version go1.24.13 linux/amd64",
+    "helper_manifest_sha256": "9d8fb6122711ccc31ec1945f6141f9c7e06b74effc524511969512ab8ce69073",
+    "limit": "Fresh non-race Linux test-helper builds; recorded binary hashes, binary bytes not present in uploaded artifact; no compiler attestation. Local archived Darwin4de helper identities remain separate.",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "recorded_binary_sha256": {
+      "broker.test": "01cb7d4865cf2f0c2ca215bc439383e72a525f4db9ec2f9a9d35c8d985a76c50",
+      "ledger.test": "3ce130739c1b98a8309bfab2e2bafa37bbd17608fa772e92f39f8d7175f7e3d9"
+    },
+    "source_files": 84,
+    "source_head": "8584ca8db9a7e5eaf8d29d9670349b57f3939ab6",
+    "source_tree": "5c8a7b3dde8b95a947f9d3fc80a9f02ee34abd29"
+  },
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 118444457063,
+      "name": "actual-docker",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "id": 118444457188,
+      "name": "controls",
+      "status": "completed"
+    },
+    {
+      "conclusion": "skipped",
+      "id": 118444457896,
+      "name": "clean-source-builds",
+      "status": "completed"
+    }
+  ],
+  "limits": [
+    "File-only review: no reviewer tests/builds/engine/provider/workload execution.",
+    "Original local FAIL and two-skip full reports remain unchanged.",
+    "Whole patch whitespace has exactly five original partial unittest lines in three retained failure logs; excludes them explicitly.",
+    "Production uploads disabled; cleanup trusted false; actual assessment execution, real/private data and whole-store capacity unqualified.",
+    "Optional clean source-build job skipped.",
+    "Downloaded raw logs contain terminal escape bytes; preserved as data only; initial gh refusal recorded separately."
+  ],
+  "ordinary_docker": {
+    "all_reported_pass": true,
+    "broker_binary_sha256": "bf192806374b348673ef0de171f0866d8c6559c06e12a01d09d7bfa19843bc8f",
+    "broker_source": "5446438985e31cb739f2048a2aa2176918831a7e",
+    "five_evidence_archives_exact_member_sets_hashes_sizes_verified": true,
+    "http_check_rows": 41,
+    "http_source_hashes_verified": 69,
+    "operation_guard_check_rows": 12,
+    "recovery_and_replay_archive_report_hashes_match": true,
+    "recovery_check_rows": 25,
+    "recovery_source_hashes_verified": 28,
+    "replay_cleanup_reported_verified": true,
+    "replay_cpu_seconds_charged": 60,
+    "replay_not_selected_original_failed": 1,
+    "replay_selected": 2,
+    "scope": "Ordinary legacy synthetic study execution/recovery/replay checks, not AS1 assessment workload qualification."
+  },
+  "pdf": {
+    "errors": 0,
+    "evidence": "Hosted controls job log only; PDFs not uploaded, not independently rendered or viewed in this audit.",
+    "failed": 0,
+    "font_check_in_job_log": "PASS",
+    "font_sha256": "4dd9761b058c009db9b2145f55ee6617d093c273dd3d6c5b3e43ff6110fa9bf6",
+    "passed_methods": 11,
+    "seconds": 2.503,
+    "skipped": 0
+  },
+  "reviewed_at": "2026-10-20T03:57:53.521041+00:00",
+  "run": {
+    "conclusion": "success",
+    "head_sha": "1386bcd3779715e467c19c0ab6c4e3eaf44f38ca",
+    "id": 39366502109,
+    "updated_at": "2026-10-20T03:54:23Z"
+  },
+  "schema": "educloud.as1-ci-file-audit/v1",
+  "source_final_delta": {
+    "changed_files": 8,
+    "final_equivalence_sha256": "f399b155b05e02e798f53fa587646e56eb62bbfa9ac4cf53a335dbc1eed597c5",
+    "final_head": "1386bcd3779715e467c19c0ab6c4e3eaf44f38ca",
+    "final_inventory_files_verified": 1053,
+    "final_tree": "4e816aaeddade88955c317f0310eb8692bed90ff",
+    "full_patch_binary_diff_sha256": "3878e9189bdb4352c56c65ebf89780f92912deef74ca8ce32efc93d6e7053e92",
+    "prior_evidence_files_unchanged": 880,
+    "public_final_verification_sha256": "fcfb3b6460a4e532fea3dcfe4e8fc03aad89aca193ab95f00f1b842437038164",
+    "runtime_head": "a5dd74b4a5a68d2aabbecf5ee32e8e1d3892e591",
+    "runtime_to_final_binary_diff_sha256": "c4fd195c556072f433521c2341c347a33fa53263742479b2050fa98f5eb13c77",
+    "source_tests_recipes_fixtures_workflow_unchanged": true
+  },
+  "status": "CLEAR_WITH_BOUNDED_EVIDENCE"
+}

@@ -55,8 +55,11 @@ The first A1 broker source increment is accepted under the
 [owned-data implementation contract](docs/specs/assessment-owned-data.md).
 Merged [Outfitter #19 source acceptance](docs/research/2026-10-19-owned-data-source-acceptance.md)
 records data-only scope ownership, writer/watch lifetime and cleanup-or-quarantine
-in the existing journal, with final review and bounded CI evidence. Waypoint's
-existing owner continues the connected HTTP/current-auth/Store journey.
+in the existing journal, with final review and bounded CI evidence. Merged
+[Waypoint #53 AS1 source acceptance](docs/research/2026-10-19-as1-source-acceptance.md)
+connects real HTTP/current-auth/Store fences to the synthetic peer: 603 local
+passes/two skips, two separate validator passes and required hosted checks.
+Earlier failed controls and exact helper/source origins remain recorded.
 Production upload/ingest/seal remain unconditionally
 disabled, and no synthetic cleanup observation can establish trusted closure.
 The declared upload cap is separate from unchanged manifest v1; selected expiry

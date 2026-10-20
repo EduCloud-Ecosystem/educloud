@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-20T03:59:01.078055+00:00",
+  "pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/53",
+  "reviewed_head": "1386bcd3779715e467c19c0ab6c4e3eaf44f38ca",
+  "runtime_head": "a5dd74b4a5a68d2aabbecf5ee32e8e1d3892e591",
+  "merge": "8e6f5bf6dc7a024ebee32a9261280a59c262c910",
+  "candidate_and_merge_tree": "4e816aaeddade88955c317f0310eb8692bed90ff",
+  "diff_sha256": "3878e9189bdb4352c56c65ebf89780f92912deef74ca8ce32efc93d6e7053e92",
+  "root_review": "as1-root-final-delta-review.json",
+  "root_review_sha256": "9d0a3914d37e666799ba0cfa0ddeb4047a6c291c96623154ab45f724e7aa39a5",
+  "independent_review": "CLEAR finalsource/evidence/runtimebinding/hostedartifacts, research_evidence; prior Store/Owner/Guard + peer/HTTP source reviews retained",
+  "local": {
+    "full": "605methods603PASS2SKIP; all59AS1PASS",
+    "separate": "2purevalidatorPASS preservingfullSKIP",
+    "runtime_to_final": "8docs/evidence only; runtime/test/workflow unchanged",
+    "inventory_files": 1046,
+    "final_files": 1053,
+    "prior_evidence_unchanged": 880
+  },
+  "ci": {
+    "run": 39366502109,
+    "head": "1386bcd3779715e467c19c0ab6c4e3eaf44f38ca",
+    "controls": "SUCCESS605methods603PASS2SKIP,all59AS1PASS121.599s",
+    "pdf": "11PASS0SKIP2.503s; logonly/no new visual artifactreview",
+    "actual_docker": "SUCCESS ordinarybaseline54464389;41HTTP25recovery12guard,2legacyreplay60conservativeCPU",
+    "clean_source_builds": "SKIPPED unchanged gate",
+    "audit_sha256": "eefface35f7fb86aeebbdb3007e7d7a36f86e211d16a73af5ca6f7c69a6aba4a",
+    "helper_origins": "newLinux8584ca8 distinct fromlocalDarwin4de andpurevalidator9cf"
+  },
+  "whitespace": "Source/docsPASS excludingexact3preservedrawfailurelogs/5trailing-space lines; notwholepatchPASS",
+  "historical_failures": "Retained4682full599PASS2affectedmethods3ERROR2SKIP;e8full600PASS3affectedmethods5ERROR2SKIP;earlierdirtytargeted/checker failures unchanged",
+  "production_uploads": "DISABLED",
+  "operational_qualification": "NOTRUN/OPEN; no host/encryption/independentcleanup/actualmeasurements/participantacceptance",
+  "schema": "educloud.as1-source-acceptance/v1",
+  "canonical_base": "03ce4c893696d74568ac639fd6f1e5741d3f5a81",
+  "evidence_files": {
+    "ci-audit.json": "eefface35f7fb86aeebbdb3007e7d7a36f86e211d16a73af5ca6f7c69a6aba4a",
+    "root-final-review.json": "9d0a3914d37e666799ba0cfa0ddeb4047a6c291c96623154ab45f724e7aa39a5"
+  },
+  "component_verification": {
+    "url": "https://github.com/EduCloud-Ecosystem/waypoint/blob/1386bcd3779715e467c19c0ab6c4e3eaf44f38ca/research-workspace/evidence/2026-10-19/as1-completion/final-verification.json",
+    "sha256": "fcfb3b6460a4e532fea3dcfe4e8fc03aad89aca193ab95f00f1b842437038164"
+  },
+  "runtime_provenance": {
+    "inventory_sha256": "50806e65d407ef67665265fae90bffba437584e6089db176a99c3c694ad35a9d",
+    "full_log_sha256": "521d2353b6200cdf075cde73fc609d18da3a1383b17b0e29149fadc53a7eba7c",
+    "full_result_sha256": "57d286792e930792fbfd43b4f1ded1fcdf6f2245b8e20a6f1a8ec0f4b3aa2114",
+    "separate_validator_log_sha256": "05393bb08f63941d1fb20e3a4a0d4c54b5ca6e55c36b4f31e1e5a525a3ef0c6f",
+    "separate_validator_result_sha256": "26c2f70f9cab427a37649535dffbf4e8c46ce0c64cb5f551c8fbed514d4efba0",
+    "final_equivalence_sha256": "f399b155b05e02e798f53fa587646e56eb62bbfa9ac4cf53a335dbc1eed597c5",
+    "local_helper_binding_sha256": "521503e883656646a106b080e1bc509ba8defad50a4130de753029e2ed67ca50",
+    "environment": "Explicit overrides, argv/exits/timings, interpreter binary/platform and complete scoped before/after source inventories retained; inherited environment not fully inventoried. No compiler attestation.",
+    "drain": "Owner recorded processes waited/drained03:49:57Z; file audit verifies retained report, not an independent live process observation."
+  },
+  "canonical_runtime": "NOT RUN: docs-only acceptance; no configured umbrella CI",
+  "readiness": {
+    "production_uploads_authorized": false,
+    "execution_authorized": false,
+    "cleanup_trusted": false,
+    "actual_resource_accepted": false,
+    "whole_service_accepted": false
+  }
+}
