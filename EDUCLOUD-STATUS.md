@@ -29,8 +29,19 @@ is now merged in Waypoint [#50](https://github.com/EduCloud-Ecosystem/waypoint/p
 merge `db7ad40e`: exact stage fitting, held-out errors, repeat variability and
 visible unknown/OOM/extrapolation limits. Independent review, 512 local tests,
 32 separate real-CLI checks and required CI pass. This accepts synthetic
-calculation behavior only. A5's program-specific draft exports are next; actual
-resource measurements and program/application readiness remain separate.
+calculation behavior only. Waypoint [#51](https://github.com/EduCloud-Ecosystem/waypoint/pull/51),
+merge `2d94f87a`, adds initial A5 exports: ACCESS Discover and distinct NAIRR
+research/Classroom drafts, editable source, PDF and matching JSON/CSV worksheet.
+Independent source/evidence reviews, 536 standard-library tests, 10 optional PDF
+tests, 22 separate real-CLI checks and required hosted CI pass. Final renderer
+coverage is the later PDF suite and artifact inspection, rather than one
+immutable full-suite renderer run. Root checked all three rendered pages,
+24 package payloads, exact digest/receipt binding and visible-field parity.
+Original publication, geometry, environment and checker failures remain visible.
+All packets stay DRAFT; actual measurements, other ACCESS profiles and
+program/application readiness remain separate. The next bounded A5 increment
+prepares proper Explore and Accelerate drafts; Maximize remains refused pending
+its own multi-document profile.
 
 The accepted study-bundle exporter retains source bytes and cannot serve the
 new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted

@@ -1,0 +1,142 @@
+{
+  "updated_at": "2026-10-19T23:56:11.048408+00:00",
+  "status": "MERGED",
+  "pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/51",
+  "reviewed_head": "a4bdc289c9fef7ddbdc03f1707db69e2e6fbf709",
+  "base": "db7ad40e05baadba7b5063ed5003c9cdffe1eda8",
+  "merge": "2d94f87a73fd3f606bf6a246aabb0a1ee2bb9465",
+  "merged_at": "2026-10-19T23:55:33Z",
+  "reviewed_and_merge_tree": "f3ddf5c263569a7db5ea6546ab7ba023ad9a9fe3",
+  "diff_sha256": "073d30431f9766da8e324057e703fee8c5d22da8d06e2428b2bdbd76d61da8e0",
+  "independent_review": "research_ui source CLEAR; research_evidence evidence CLEAR exact head",
+  "local_evidence": {
+    "full_stdlib": "PASS536/no skips systemPython3.14.5",
+    "focused": "PASS24 overlapping subset",
+    "pdf": "PASS10/no skips bundledPython3.12.14",
+    "coverage_limit": "Final optional renderer anchors changed during stdlib suite; final renderer covered by later PDF suite and final-v2 CLI artifacts, not one immutable full-renderer run."
+  },
+  "root_cli": {
+    "PASS": 22,
+    "FAIL": 0,
+    "actual_CLI_scenarios": 11,
+    "scope": "Actual CLI preview/refusal only; no PDF generation, refresh, workloads, engines or providers",
+    "checker_sha256": "608ec94f7b68101c9a7cf8649b0aacfd6ab7e6f834eba38054b83a6ebc53dd99",
+    "retained_harness_failures": [
+      "First comparison incorrectly assumed identical ACCESS source observation: owner refreshed unreviewed, root deliberately snapshot-only. Differing paths preserved.",
+      "Second harness assumed project_title field; actual closed schema uses title. KeyError preserved; no product change."
+    ],
+    "private_result_sha256": "6c354edbb5dc8c64a337cf34e01234862a1c61ad16ee71d18ae2da7fb7dfb34b",
+    "public_checks_sha256": "681c17baa8f5272a3188b6620f75ac8b9a64a0ee92dca4b5ce7facae1ab69119",
+    "harness_correction_provenance": [
+      {
+        "failure": "Different ACCESS requirements observation assumed equal",
+        "retention": "Protected coordinator first-comparison-failure.json",
+        "sha256": "c27e2afe94a533bce56bfa4a16516baa44a69284829f0d35242cc539f349d8d8"
+      },
+      {
+        "failure": "Harness project_title lookup raises KeyError; schema field is title",
+        "retention": "Coordinator tool transcript only; no separate bound local traceback file",
+        "sha256": null
+      }
+    ]
+  },
+  "root_artifact_review": {
+    "scope": "Independent root inspection of existing owner artifacts; no workloads/CLI rerun/source changes",
+    "results": [
+      {
+        "profile": "access_discover",
+        "members_verified": 8,
+        "pdf_pages": 1,
+        "character_count": 1453,
+        "all_character_boxes_within_one_inch": true,
+        "min_font_size": 11.0,
+        "geometry": {
+          "left": 72.0,
+          "right": 540.0000443,
+          "top": 74.88476579999997,
+          "bottom": 716.2666017
+        },
+        "visible_field_parity": "PASS",
+        "package_receipt_and_preview_binding": "PASS",
+        "worksheet_parity_and_csv_text_guard": "PASS"
+      },
+      {
+        "profile": "nairr_research_draft",
+        "members_verified": 8,
+        "pdf_pages": 1,
+        "character_count": 1564,
+        "all_character_boxes_within_one_inch": true,
+        "min_font_size": 11.0,
+        "geometry": {
+          "left": 72.0,
+          "right": 540.0000443,
+          "top": 74.88476579999997,
+          "bottom": 716.2666017
+        },
+        "visible_field_parity": "PASS",
+        "package_receipt_and_preview_binding": "PASS",
+        "worksheet_parity_and_csv_text_guard": "PASS"
+      },
+      {
+        "profile": "nairr_classroom_draft",
+        "members_verified": 8,
+        "pdf_pages": 1,
+        "character_count": 1818,
+        "all_character_boxes_within_one_inch": true,
+        "min_font_size": 11.0,
+        "geometry": {
+          "left": 72.0,
+          "right": 540.0000443,
+          "top": 74.88476579999997,
+          "bottom": 716.2666017
+        },
+        "visible_field_parity": "PASS",
+        "package_receipt_and_preview_binding": "PASS",
+        "worksheet_parity_and_csv_text_guard": "PASS"
+      }
+    ],
+    "canonical_record_digest_checks": [
+      {
+        "profile": "access_discover",
+        "canonical_record_sha256": "8bf56ce31b8416c09ddc9517b763f5363bcd68fc020bbbca4ff4d3e5ed644d02",
+        "result": "PASS"
+      },
+      {
+        "profile": "nairr_research_draft",
+        "canonical_record_sha256": "d0e159606d12d1b019233ede0a5697e24773409d221c259b3e7dc18ca9793b47",
+        "result": "PASS"
+      },
+      {
+        "profile": "nairr_classroom_draft",
+        "canonical_record_sha256": "cf9c92f4beb8e7fbb3f57bf8dd354a5f59dc85fc099b2132a10d55483983940c",
+        "result": "PASS"
+      }
+    ],
+    "visual_review": "All three rendered single pages independently viewed: clean layout, readable prose liability labels, no clipping, explicit synthetic/draft/unknown/no-authority/requirements boundaries."
+  },
+  "hosted_CI": {
+    "run": 39344177506,
+    "controls": "SUCCESS includes536stdlib+10PDF",
+    "actual_docker": "SUCCESS existing legacy regression, not temporary assessment workload",
+    "clean_source_builds": "SKIPPED optional not requested",
+    "controls_log_sha256": "dc9e754e4c8aede35754580b30b401b2d935ff3308373a74b80b0525402f4239"
+  },
+  "retained_owner_failures": [
+    "Actual final-fsync publication uncertainty red witness, corrected protocol",
+    "Original three PDF margin violations measured; anchors corrected",
+    "Bundled Python built-in SQLite extension provenance failure; baseline system rerun unchanged witness PASS",
+    "pypdf multiline visitor-coordinate control failure; direct anchors and independent pdfplumber every-character geometry retain real margin check"
+  ],
+  "all_authority_and_readiness_gates": false,
+  "boundaries": [
+    "ACCESS Discover and separate NAIRR research/Classroom DRAFT only; other ACCESS tiers unsupported",
+    "Requirements fetch alone unreviewed, no current requirements readiness; NAIRR sources blocked and not bypassed",
+    "No upload/raw input hash/log retention, benchmarks, provider conversion or submit authority",
+    "PREPARED_DRAFT inventory; completion requires matching CLI receipt, missing marker alone insufficient; crash durability not qualified"
+  ],
+  "source_inventory_sha256": "e1dfd361ef75209f12c791705130ab6257af996f649b1f0eebeaca07ead43681",
+  "full_stdlib_log_sha256": "b0bdd9ca1b8a718883095a048987b64e48820332d11ba948f44031a9c6015e2e",
+  "pdf_log_sha256": "2d0151429c27a8fd2e72b1066d864ed8ebc040b3001122b672935c0cd2244d60",
+  "owner_final_integration_sha256": "3ff0b6f699de919487a60b85980304e69a5e79c6df2562b3a0ec34c54f74f676",
+  "raw_evidence_location": "Protected owner/coordinator archives; public fixture source and tests are pinned by reviewed head. No private host paths or raw logs copied here."
+}
