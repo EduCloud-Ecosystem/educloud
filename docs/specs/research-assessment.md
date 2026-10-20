@@ -179,6 +179,14 @@ metadata ceiling: at most 88,000,013 bytes by source bounds. Later execution mus
 refuse incompatible declared bounds and bind an actual sample; no silent clamp,
 ignored tail, fabricated seed or runtime enablement follows from the catalog.
 
+The [execution/checked-cleanup source acceptance](../research/2026-10-19-execution-source-acceptance.md)
+records the disabled test-only v7 Broker/Store authority and synthetic phase
+process controls, including permanent complete-plan/slot claims, definitive claim
+acknowledgement before effects and opaque original-owner closure. It supplies no
+production activation, installed scientific adapter, actual counters, aggregate
+storage or trusted cleanup. A separately typed Waypoint profile/handoff still
+needs its own finite Store envelope and current-auth publication controls.
+
 ## Execution and measurement adapters
 
 Start with the accepted reviewed Python/R path. BenchExec runs only on a

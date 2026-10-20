@@ -72,6 +72,12 @@ owned-scope/authority bindings, counters and operational qualification remain
 required. GPU is unsupported/null. The ordinary runtime
 and v1 limits above are unchanged.
 
+The [execution/checked-cleanup source increment](../research/2026-10-19-execution-source-acceptance.md)
+adds disabled test-only v7 authority and synthetic sequential-process controls.
+It does not select resources, activate production, install the scientific adapter
+or qualify aggregate storage, measured counters or independent cleanup. Source
+acceptance does not release any of the planning allowances above.
+
 The planning packet's longer tasks, larger inputs and optional GPU workload are
 not executable through the current accepted assessment path. An aggregate
 multi-session attempt budget is not one manifest's allowance. Choose an appropriate bounded current workload or

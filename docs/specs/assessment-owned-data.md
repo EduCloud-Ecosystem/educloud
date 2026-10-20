@@ -146,6 +146,13 @@ The [connected AS1 source acceptance](../research/2026-10-19-as1-source-acceptan
 records merged Waypoint #53 after Outfitter #19. It accepts disabled source and
 synthetic real-process/HTTP/Store checks only; operational gates below remain open.
 
+The later [execution/checked-cleanup source acceptance](../research/2026-10-19-execution-source-acceptance.md)
+records Outfitter #21's separate fresh test-only v7 execution authority. It keeps
+permanent assessment/slot bindings, one-budget sequential phases and original
+ownership closure. This does not migrate or activate v6/AS1, qualify independent
+cleanup or grant production upload/execute authority. Its typed Waypoint
+integration remains a separate implementation slice.
+
 First deliver Outfitter's closed journal/lifecycle/codec, test-only project seed,
 real process helpers and existing Watch/Reap branch. Then integrate Waypoint's
 fresh session rows, current auth/guard hooks, disabled production routes and
