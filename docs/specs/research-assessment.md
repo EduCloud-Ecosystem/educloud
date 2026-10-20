@@ -31,6 +31,11 @@ implementation. Existing study bundles and AI conversation-retention policies
 remain separate; assessment deletion must not erase historical pilot evidence.
 The old bundle exporter, which includes source bytes, is forbidden in this mode.
 
+The first connected pre-execution implementation follows the
+[owned-data contract](assessment-owned-data.md). It reuses existing authorities
+and leaves production content admission disabled; test-only positive evidence
+does not waive the temporary-data requirements below.
+
 ## Temporary-data contract
 
 Before accepting bytes, show the destination, maximum upload/scratch size,
