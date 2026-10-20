@@ -172,6 +172,13 @@ contract binding the real owned upload scope, authorities, irreversible attempt,
 reservation, streaming recipe/checker, enforcing storage and measurement source.
 Metadata validation cannot grant execution, trust or actual-target readiness.
 
+The [streaming scientific source acceptance](../research/2026-10-19-streaming-summary-source-acceptance.md)
+adds separate candidate code/environment identities and an independent checker.
+The exact fixed-six-decimal CSV grammar is narrower than v2's general 5 GB
+metadata ceiling: at most 88,000,013 bytes by source bounds. Later execution must
+refuse incompatible declared bounds and bind an actual sample; no silent clamp,
+ignored tail, fabricated seed or runtime enablement follows from the catalog.
+
 ## Execution and measurement adapters
 
 Start with the accepted reviewed Python/R path. BenchExec runs only on a

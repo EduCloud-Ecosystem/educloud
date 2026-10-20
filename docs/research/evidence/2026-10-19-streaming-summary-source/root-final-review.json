@@ -1,0 +1,12 @@
+{
+  "status": "CLEAR",
+  "head": "5aede6e464f0079fd6e9ffd6e40207d0bbd4a9f3",
+  "tree": "5c5ffbcb0bacae751280baedbc873e656955b3e1",
+  "diff_sha256": "fed3cbe58402333a695e107bc7ff4212e0a3e386c8c85bfe8e75becd5453f1b3",
+  "root_source_review": "Complete Python/R/checker/catalog/tests and exact workflow dependency delta read; isolated55rawlog1320Gitblobbindings independentlyverified. All existing source exceptCIworkflow unchanged; no enabled runtime path.",
+  "independent_evidence_review_sha256": "de2c2f76150022919987f87f4a81e6d30dcd976f555892a28c025189d04c76b4",
+  "ci": 39370474356,
+  "ci_result": "658PASS/2inheritedSKIP,all55streamingPASS;11PDFPASSlogonly;ordinaryDockerPASS;optionalsourceSKIP",
+  "preservation": "901priorcomponent evidence unchanged; initialfixtureFAIL/missingRCIFAIL/checkercorrections preserved.",
+  "limits": "No capacity, runtime image, adapter, actual resource counters, storage, cleanup or participant qualification."
+}

@@ -1,0 +1,431 @@
+{
+  "schema": "educloud.streaming-summary-final-hosted-file-audit/v1",
+  "at": "2026-10-20T04:42:11.878962+00:00",
+  "head": "5aede6e464f0079fd6e9ffd6e40207d0bbd4a9f3",
+  "tree": "5c5ffbcb0bacae751280baedbc873e656955b3e1",
+  "run_id": 39370474356,
+  "verdict": "CLEAR",
+  "checks": [
+    {
+      "check": "exactCI",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "jobs",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "archive research-synthetic-peer-controls",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "extracted research-synthetic-peer-controls",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "archive research-public-evidence",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "extracted research-public-evidence",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "84helperbindings",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "660=658PASS2SKIP",
+      "status": "PASS",
+      "detail": [
+        "test_actual_cli_with_real_pinned_pure_outfitter_validator (test_assessment_estimation.EstimationCLITests.test_actual_cli_with_real_pinned_pure_outfitter_validator) ... skipped 'Pure Go validator path is supplied for cross-component acceptance'",
+        "test_real_validator_matrix_preserves_unknowns_and_refuses_binding_attacks (test_assessment_estimation.EstimationCLITests.test_real_validator_matrix_preserves_unknowns_and_refuses_binding_attacks) ... skipped 'Pure Go validator path is supplied for cross-component acceptance'"
+      ]
+    },
+    {
+      "check": "55streamingPASS",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "11PDFPASS",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Rprovenance",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "bundle public/recovery-acceptance/after.zip",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "bundle public/recovery-acceptance/before.zip",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "bundle public/reproduction-acceptance/evidence.zip",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "bundle public/research-acceptance/first-project.zip",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "bundle public/research-acceptance/second-project.zip",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "report research-acceptance/verification.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "report recovery-acceptance/verification.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "recovery before.zip",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "recovery after.zip",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "report operation-guard-acceptance/verification.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "72ordinarysourcebindings",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "2replayPASS60CPU1historicalNOTRUN",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "replayZIPbinding",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "issues": [],
+  "jobs": [
+    {
+      "name": "controls",
+      "job_id": 118456978317,
+      "conclusion": "success"
+    },
+    {
+      "name": "actual-docker",
+      "job_id": 118456978541,
+      "conclusion": "success"
+    },
+    {
+      "name": "clean-source-builds",
+      "job_id": 118456979684,
+      "conclusion": "skipped"
+    }
+  ],
+  "controls": {
+    "methods": 660,
+    "passed": 658,
+    "skipped": 2,
+    "seconds": 132.038,
+    "skip_lines": [
+      "test_actual_cli_with_real_pinned_pure_outfitter_validator (test_assessment_estimation.EstimationCLITests.test_actual_cli_with_real_pinned_pure_outfitter_validator) ... skipped 'Pure Go validator path is supplied for cross-component acceptance'",
+      "test_real_validator_matrix_preserves_unknowns_and_refuses_binding_attacks (test_assessment_estimation.EstimationCLITests.test_real_validator_matrix_preserves_unknowns_and_refuses_binding_attacks) ... skipped 'Pure Go validator path is supplied for cross-component acceptance'"
+    ],
+    "streaming_passed_subset": 55,
+    "log_sha256": "6bd07c02ab7849e9844d4252813f16cf2b241b8738d29706b9dc0394eb1a73b0"
+  },
+  "pdf": {
+    "passed": 11,
+    "skipped": 0,
+    "seconds": 2.772,
+    "boundary": "Actual hosted job log only; PDF outputs not retained in configured artifact.",
+    "job_log_sha256": "26de53845a1acdae8dea39473d6c41451ca3356acbe91d81267f72654d7f87a8"
+  },
+  "R": {
+    "installed_package": "r-base-core\t4.3.3-2build2\tamd64",
+    "version": "Rscript (R) version 4.3.3 (2024-02-29)",
+    "frontend_sha256": "62cee2a9080acf9a05ecbe78d4fde7460cbc94967f3bbcb636e113dfb6a9e461",
+    "runtime_attestation": false,
+    "note": "Preflight R_candidate_runtime NOT RUN precedes later actual streaming tests."
+  },
+  "helper": {
+    "boundary": "New hosted Linux synthetic helper builds; not the archived Darwin 4de6a090 binaries. No engine, provider, compute grant or trusted cleanup.",
+    "commands": [
+      "go test -c -o broker.test ./internal/broker",
+      "go test -c -o ledger.test ./internal/ledger"
+    ],
+    "environment": {
+      "GOFLAGS": "-p=1",
+      "GOMAXPROCS": "2"
+    },
+    "go_version": "go version go1.24.13 linux/amd64",
+    "helper_sha256": {
+      "broker.test": "01cb7d4865cf2f0c2ca215bc439383e72a525f4db9ec2f9a9d35c8d985a76c50",
+      "ledger.test": "3ce130739c1b98a8309bfab2e2bafa37bbd17608fa772e92f39f8d7175f7e3d9"
+    },
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "source_head": "8584ca8db9a7e5eaf8d29d9670349b57f3939ab6",
+    "source_tree": "5c8a7b3dde8b95a947f9d3fc80a9f02ee34abd29"
+  },
+  "ordinary_reports": [
+    {
+      "path": "research-acceptance/verification.json",
+      "sha256": "ddfad78f0a7ed5b87f1186f2631d325dfb7f03e74146408f58c4dd94c01de2e9",
+      "checks": 41
+    },
+    {
+      "path": "recovery-acceptance/verification.json",
+      "sha256": "78ab98abe472034892f37f6483cd85c0a672c1803d294401e989475c00b7583c",
+      "checks": 25
+    },
+    {
+      "path": "operation-guard-acceptance/verification.json",
+      "sha256": "97f05543482e2a9f38d30abdd2655b89aee7b089eb69a1bd7f2be96b04dda089",
+      "checks": 12
+    }
+  ],
+  "bundles": [
+    {
+      "path": "public/recovery-acceptance/after.zip",
+      "sha256": "ebc6dfcbf4f9c3a2cd65687bf8b108bdeaa5d677ae5c07e398337b7ccc3c18cc",
+      "members": 15
+    },
+    {
+      "path": "public/recovery-acceptance/before.zip",
+      "sha256": "f5bb04d8a2e86c794cf58d7917fda1cd9b565c950cf6415060f1fc1e33dab124",
+      "members": 15
+    },
+    {
+      "path": "public/reproduction-acceptance/evidence.zip",
+      "sha256": "c5626e780e6ac75b96535725d464a105fd5ac3bb6d36e92d7f37fc57f5df134e",
+      "members": 13
+    },
+    {
+      "path": "public/research-acceptance/first-project.zip",
+      "sha256": "d3e7d6009c868d2ed7db70a74470733e1bc05a196f4dcf21d2e9b89319b12eec",
+      "members": 13
+    },
+    {
+      "path": "public/research-acceptance/second-project.zip",
+      "sha256": "ab205ff8a112f1fdaf0ede101734f32bdde475d54f188edc7d73521fd31824cb",
+      "members": 13
+    }
+  ],
+  "reproduction": {
+    "passed": 2,
+    "charged_cpu_seconds": 60,
+    "historic_failed_run_not_replayed": 1,
+    "report_sha256": "f2be96a763381d0f43f83c5fa70fd8442d7af70012fb1c8e1decb6a9c56d8f2d"
+  },
+  "local_delta_audit_sha256": "a1e20cfcde0d50846a32dbbdfb7391536fd2e261dc2f73ce8e2b68d27fd81211",
+  "previous_failure_audit_sha256": "b7004349f77fa8a0c6ebe5930876b663faaecd89ea11e9000378ee81591f62a3",
+  "artifacts": [
+    {
+      "id": 12241252636,
+      "node_id": "MDg6QXJ0aWZhY3QxMjI0MTI1MjYzNg==",
+      "name": "research-synthetic-peer-controls",
+      "size_in_bytes": 24677,
+      "url": "https://api.github.com/repos/EduCloud-Ecosystem/waypoint/actions/artifacts/12241252636",
+      "archive_download_url": "https://api.github.com/repos/EduCloud-Ecosystem/waypoint/actions/artifacts/12241252636/zip",
+      "expired": false,
+      "digest": "sha256:c85f7df9f8774e6c5b00ef806d87ad7aee93a0548b7687fbb03133fbcecd378c",
+      "created_at": "2026-10-20T04:39:26Z",
+      "updated_at": "2026-10-20T04:39:26Z",
+      "expires_at": "2026-11-03T04:39:25Z",
+      "workflow_run": {
+        "id": 39370474356,
+        "repository_id": 1315188630,
+        "head_repository_id": 1315188630,
+        "head_branch": "codex/assessment-streaming-summary",
+        "head_sha": "5aede6e464f0079fd6e9ffd6e40207d0bbd4a9f3"
+      }
+    },
+    {
+      "id": 12240754023,
+      "node_id": "MDg6QXJ0aWZhY3QxMjI0MDc1NDAyMw==",
+      "name": "research-public-evidence",
+      "size_in_bytes": 40915,
+      "url": "https://api.github.com/repos/EduCloud-Ecosystem/waypoint/actions/artifacts/12240754023",
+      "archive_download_url": "https://api.github.com/repos/EduCloud-Ecosystem/waypoint/actions/artifacts/12240754023/zip",
+      "expired": false,
+      "digest": "sha256:5538b3f8afc42d8421fe903ac5355c8d745c6518acd7ac476cb47c7905c799f7",
+      "created_at": "2026-10-20T04:37:29Z",
+      "updated_at": "2026-10-20T04:37:29Z",
+      "expires_at": "2026-11-03T04:37:28Z",
+      "workflow_run": {
+        "id": 39370474356,
+        "repository_id": 1315188630,
+        "head_repository_id": 1315188630,
+        "head_branch": "codex/assessment-streaming-summary",
+        "head_sha": "5aede6e464f0079fd6e9ffd6e40207d0bbd4a9f3"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "artifacts-final.json",
+      "bytes": 1511,
+      "sha256": "6c9c27793aa0b7d3600ee2a0c9218b782a2b53f79983a3f0034b908e8bf608cc"
+    },
+    {
+      "path": "controls/build-broker.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "controls/build-ledger.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "controls/controls.log",
+      "bytes": 103676,
+      "sha256": "6bd07c02ab7849e9844d4252813f16cf2b241b8738d29706b9dc0394eb1a73b0"
+    },
+    {
+      "path": "controls/helper-build.json",
+      "bytes": 10317,
+      "sha256": "9d8fb6122711ccc31ec1945f6141f9c7e06b74effc524511969512ab8ce69073"
+    },
+    {
+      "path": "controls/streaming-r-apt-install.log",
+      "bytes": 3965,
+      "sha256": "f057a19e52ca83f70f61d189f24958611fd0f54894969dbd5c8e52d6c5beab67"
+    },
+    {
+      "path": "controls/streaming-r-apt-update.log",
+      "bytes": 1883,
+      "sha256": "aadc5a9bfdb60cd31cfe31bfdefdb1cbc613220e3238221fc93ce6468e1a9b58"
+    },
+    {
+      "path": "controls/streaming-r-distro.txt",
+      "bytes": 400,
+      "sha256": "87458b3b1f1ca0e5c693ade771de7007c3783bdc692fa6b39eb6414bf2af2763"
+    },
+    {
+      "path": "controls/streaming-r-installed-package.txt",
+      "bytes": 32,
+      "sha256": "4000e79e7231ec5375d0ad1a96ed86df7420c8cdf9b25c7eaa453d891b2ceb58"
+    },
+    {
+      "path": "controls/streaming-r-package-candidate.txt",
+      "bytes": 179,
+      "sha256": "6454602b4e28fd20ef022d0d89acecd5559621c6a226b5ce40064985ac9a5328"
+    },
+    {
+      "path": "controls/streaming-r-package-install.json",
+      "bytes": 108,
+      "sha256": "afd2bb10e764ddd7b2beee24d6c9b27694e00d038500ed9ce0b692437d563dde"
+    },
+    {
+      "path": "controls/streaming-r-preflight.json",
+      "bytes": 546,
+      "sha256": "9abb53c56b97d567d9606a6950ec167e0af5061915054a6248546df24ee4a9e6"
+    },
+    {
+      "path": "jobs-final.json",
+      "bytes": 9623,
+      "sha256": "386a377d4071e8822d55b2873ec2e0514c8d37d0091fe7d67dace73b8f46d215"
+    },
+    {
+      "path": "public/operation-guard-acceptance/verification.json",
+      "bytes": 1013,
+      "sha256": "97f05543482e2a9f38d30abdd2655b89aee7b089eb69a1bd7f2be96b04dda089"
+    },
+    {
+      "path": "public/recovery-acceptance/after.zip",
+      "bytes": 28272,
+      "sha256": "ebc6dfcbf4f9c3a2cd65687bf8b108bdeaa5d677ae5c07e398337b7ccc3c18cc"
+    },
+    {
+      "path": "public/recovery-acceptance/before.zip",
+      "bytes": 28259,
+      "sha256": "f5bb04d8a2e86c794cf58d7917fda1cd9b565c950cf6415060f1fc1e33dab124"
+    },
+    {
+      "path": "public/recovery-acceptance/verification.json",
+      "bytes": 5571,
+      "sha256": "78ab98abe472034892f37f6483cd85c0a672c1803d294401e989475c00b7583c"
+    },
+    {
+      "path": "public/reproduction-acceptance/evidence.zip",
+      "bytes": 15472,
+      "sha256": "c5626e780e6ac75b96535725d464a105fd5ac3bb6d36e92d7f37fc57f5df134e"
+    },
+    {
+      "path": "public/reproduction-acceptance/report.json",
+      "bytes": 5489,
+      "sha256": "f2be96a763381d0f43f83c5fa70fd8442d7af70012fb1c8e1decb6a9c56d8f2d"
+    },
+    {
+      "path": "public/research-acceptance/first-project.zip",
+      "bytes": 21534,
+      "sha256": "d3e7d6009c868d2ed7db70a74470733e1bc05a196f4dcf21d2e9b89319b12eec"
+    },
+    {
+      "path": "public/research-acceptance/second-project.zip",
+      "bytes": 21645,
+      "sha256": "ab205ff8a112f1fdaf0ede101734f32bdde475d54f188edc7d73521fd31824cb"
+    },
+    {
+      "path": "public/research-acceptance/verification.json",
+      "bytes": 9613,
+      "sha256": "ddfad78f0a7ed5b87f1186f2631d325dfb7f03e74146408f58c4dd94c01de2e9"
+    },
+    {
+      "path": "research-public-evidence.zip",
+      "bytes": 40915,
+      "sha256": "5538b3f8afc42d8421fe903ac5355c8d745c6518acd7ac476cb47c7905c799f7"
+    },
+    {
+      "path": "research-synthetic-peer-controls.zip",
+      "bytes": 24677,
+      "sha256": "c85f7df9f8774e6c5b00ef806d87ad7aee93a0548b7687fbb03133fbcecd378c"
+    },
+    {
+      "path": "run-final.json",
+      "bytes": 13565,
+      "sha256": "577a0688a755de784bc5fc9a365425dc92561c8861325170472ea123bf646134"
+    },
+    {
+      "path": "run-final.log",
+      "bytes": 374792,
+      "sha256": "26de53845a1acdae8dea39473d6c41451ca3356acbe91d81267f72654d7f87a8"
+    }
+  ],
+  "limits": [
+    "File-only audit; no tests/builds/product runtime/engine/workload source inspection or copying. Own checker scientific review remains coordinator-owned.",
+    "55 streaming tests overlap full660 and local55; do not add counts. Two inherited pure-validator skips remain SKIP.",
+    "Hosted helper binaries not retained by artifact; source84 hashes verified, executable hashes retained as build-report claims rather than rehashed binaries.",
+    "Ordinary Docker uses existing reviewed recipes and broker5446438985e31cb739f2048a2aa2176918831a7e, not new streaming execution adapter.",
+    "Optional clean source-builds SKIPPED. No fullsize/capacity/realdata/trusted cleanup qualification.",
+    "Original local fixture FAIL and first hosted missing-R FAIL retained."
+  ],
+  "audit_writer_correction": "Initial file-audit script completed reads but raised FileNotFoundError looking for local-delta-audit.json under a relative-dot parent before writing its report. Resolved audit directory fixed in this file-only rerun; not a product/control failure. Original traceback is coordinator tool transcript only."
+}

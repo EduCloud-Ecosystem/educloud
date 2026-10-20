@@ -58,8 +58,10 @@ target is implied by the current source implementation.
 The coordinator reviews, integrates and merges through existing sole component
 owners. Outfitter's [disabled owned-data source is accepted](../research/2026-10-19-owned-data-source-acceptance.md).
 The [connected Waypoint AS1 source is accepted](../research/2026-10-19-as1-source-acceptance.md)
-with production content disabled. Next connect larger-profile execution and
-actual measurement through
+with production content disabled. The [streaming scientific source](../research/2026-10-19-streaming-summary-source-acceptance.md)
+now adds separate Python/R candidates and an independent checker, with no
+execution or actual-resource qualification. Next connect larger-profile execution
+and actual measurement through
 the existing execution authority as resources become qualified, reuse A4/A5 for
 validated estimates and exports, and complete the participant/operator exercises.
 Do not rebuild the estimator, export pipeline, portal, scheduler or ledger.

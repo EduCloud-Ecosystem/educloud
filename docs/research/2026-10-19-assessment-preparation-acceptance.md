@@ -408,6 +408,11 @@ evidence; no operational upload or cleanup gate is closed. The
 [provisional budget](../strategy/researcher-instructor-pilot-budget.md) approves
 staged planning ceilings only, with exact live choices and approvals still open.
 
+The [streaming scientific acceptance](2026-10-19-streaming-summary-source-acceptance.md) records Waypoint #54,
+independent Python/R/checker source and exact local/hosted evidence with original
+failures. It accepts a narrower scientific candidate only. Actual execution,
+resource counters, aggregate storage and cleanup remain separately unqualified.
+
 The initial A4 calculation is accepted for synthetic metadata only. Actual
 target observations, additional stages/hardware, prediction uncertainty and
 verified resource-specific conversions remain open. Conservative allowance

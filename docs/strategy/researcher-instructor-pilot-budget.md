@@ -65,9 +65,11 @@ is accepted as pure source preparation: one CPU, up to 1800 seconds per attempt,
 32 MiB–1 GiB task memory, 5,000,000,000 input bytes, 1,000,000 rows,
 65,536 output bytes and 10,000,000,000 aggregate scratch bytes. At most twelve
 slots imply at most 21,600 conservative CPU-seconds. These ceilings grant no
-execution or capacity. Streaming code, independent quality checks, real aggregate
-storage enforcement, owned-scope/authority bindings, counters and operational
-qualification remain required. GPU is unsupported/null. The ordinary runtime
+execution or capacity. The [streaming code and independent checker source](../research/2026-10-19-streaming-summary-source-acceptance.md)
+are accepted for a narrower 88,000,013-byte scientific grammar, with all runtime
+readiness flags false. Real aggregate storage enforcement, actual-code execution,
+owned-scope/authority bindings, counters and operational qualification remain
+required. GPU is unsupported/null. The ordinary runtime
 and v1 limits above are unchanged.
 
 The planning packet's longer tasks, larger inputs and optional GPU workload are
