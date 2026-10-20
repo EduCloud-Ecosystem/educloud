@@ -275,3 +275,13 @@ closes the scoped cleanup source-control milestone, not actual-host privacy or
 independent deletion qualification. Production uploads/execution stay disabled;
 A1/A2 and operational gates remain partial. Full-journey/seed/typed execution
 integration is held for Greg's next direction. No planning allowance is released.
+
+## Subsequent October 20 integration direction
+
+After cleanup was tested and merged, Greg authorized the
+[full-journey integration plan](research-assessment-integration-plan.md), followed
+by implementation, testing, independent review and merging. This supersedes the
+temporary full-journey source hold above. Use the plan's ordered J1–J6 gates;
+synthetic/source completion cannot stand in for scientific or actual-resource
+qualification. No live resource, credentials, spending or data admission is
+approved by the implementation direction.

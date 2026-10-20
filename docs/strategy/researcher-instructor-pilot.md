@@ -97,3 +97,13 @@ production deployment or private-data/FERPA approval is inferred from this
 direction. Live Jetstream2 requires Greg's separate approval. Preserve the
 existing upload, host, encryption, independent cleanup, recovery and allowance
 gates; Docker/Compose on OrbStack remains the baseline.
+
+## Subsequent October 20 integration direction
+
+After cleanup was tested and merged, Greg authorized the
+[full-journey integration plan](research-assessment-integration-plan.md), followed
+by implementation, testing, independent review and merging. This supersedes the
+temporary full-journey source hold above. Use the plan's ordered J1–J6 gates;
+synthetic/source completion cannot stand in for scientific or actual-resource
+qualification. No live resource, credentials, spending or data admission is
+approved by the implementation direction.
