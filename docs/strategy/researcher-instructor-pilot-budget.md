@@ -60,9 +60,19 @@ from these task limits. A smaller fitting/repetition design needs its explicit
 reviewed approval. See the
 [accepted validator](https://github.com/EduCloud-Ecosystem/outfitter/blob/de65bdab9303395226ebfb35e0e0740ab19b4d8e/internal/assessment/manifest.go).
 
+The separately versioned [v2 CPU metadata codec](../research/2026-10-19-large-cpu-source-acceptance.md)
+is accepted as pure source preparation: one CPU, up to 1800 seconds per attempt,
+32 MiB–1 GiB task memory, 5,000,000,000 input bytes, 1,000,000 rows,
+65,536 output bytes and 10,000,000,000 aggregate scratch bytes. At most twelve
+slots imply at most 21,600 conservative CPU-seconds. These ceilings grant no
+execution or capacity. Streaming code, independent quality checks, real aggregate
+storage enforcement, owned-scope/authority bindings, counters and operational
+qualification remain required. GPU is unsupported/null. The ordinary runtime
+and v1 limits above are unchanged.
+
 The planning packet's longer tasks, larger inputs and optional GPU workload are
-not supported by that profile. An aggregate multi-session attempt budget is not
-one manifest's allowance. Choose an appropriate bounded current workload or
+not executable through the current accepted assessment path. An aggregate
+multi-session attempt budget is not one manifest's allowance. Choose an appropriate bounded current workload or
 implement and review a separately versioned/profiled extension before relying
 on those capabilities. Preserve imported v1 identities and exact digests; no
 configuration toggle silently broadens them.

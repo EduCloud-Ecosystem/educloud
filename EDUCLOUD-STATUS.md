@@ -63,6 +63,13 @@ The declared upload cap is separate from unchanged manifest v1; selected expiry
 is immutable and cannot exceed manifest/project/authorization/policy limits.
 No new purchase, operational resource or qualification allowance is selected.
 
+The separately versioned [larger CPU metadata source is accepted](docs/research/2026-10-19-large-cpu-source-acceptance.md)
+through Outfitter #20. Exact-head CI passed 1,335 test events with two explicit
+skips, and 47 independent actual-CLI checks passed. The codec describes bounded
+CPU workloads while preserving v1, runtime limits and false trust/authority flags.
+Connected execution, independent quality, actual counters and aggregate storage
+enforcement remain required; it does not qualify larger inputs.
+
 The accepted study-bundle exporter retains source bytes and cannot serve the
 new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted
 retention and report preview need their own implementation and fault evidence.
