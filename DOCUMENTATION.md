@@ -131,6 +131,12 @@ refuse unsupported recovery/export. The disabled
 connected Waypoint integration and operational acceptance remain pending. Actual
 hosts, encryption, independent cleanup and operational allowance remain unselected.
 
+The [larger CPU metadata source acceptance](docs/research/2026-10-19-large-cpu-source-acceptance.md)
+records Outfitter #20, separately versioned schemas, exact final CI and 47
+independent CLI checks. Metadata ceilings do not change ordinary defaults,
+activate dispatch or qualify storage, measurement or cleanup. Its pinned
+specification and machine-readable evidence preserve v1 and earlier failures.
+
 The [October 19 preparation acceptance](docs/research/2026-10-19-assessment-preparation-acceptance.md)
 pins merged Waypoint #49 and Outfitter #18, 37 actual pure-CLI integration checks,
 independent reviews and CI, alongside Cairn #33's immutable queued grading

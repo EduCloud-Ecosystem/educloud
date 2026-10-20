@@ -161,6 +161,17 @@ evidence rather than rewriting failure into success. Authorization and
 cryptographic/trusted-source receipt validation are component responsibilities;
 a structurally valid JSON receipt is not proof of an actual run.
 
+## Larger CPU metadata version 2
+
+The separately reviewed [v2 source acceptance](../research/2026-10-19-large-cpu-source-acceptance.md)
+adds explicit pure validation for a larger CPU profile. Its pinned component
+specification defines independent v2 schemas and immutable ceilings; imported v1
+identities, digests and runtime behavior are unchanged. Imported observations
+and cleanup claims remain unverified. Actual dispatch needs a further reviewed
+contract binding the real owned upload scope, authorities, irreversible attempt,
+reservation, streaming recipe/checker, enforcing storage and measurement source.
+Metadata validation cannot grant execution, trust or actual-target readiness.
+
 ## Execution and measurement adapters
 
 Start with the accepted reviewed Python/R path. BenchExec runs only on a

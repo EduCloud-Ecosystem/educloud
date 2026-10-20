@@ -1,0 +1,191 @@
+{
+  "schema": "educloud.large-cpu-metadata-source-acceptance/v1",
+  "status": "ACCEPTED_PURE_METADATA_SOURCE_ONLY",
+  "pr": "https://github.com/EduCloud-Ecosystem/outfitter/pull/20",
+  "reviewed_head": "9cf556b024960422b960281f4afacc923afcc12f",
+  "base": "8584ca8db9a7e5eaf8d29d9670349b57f3939ab6",
+  "merge": "e0dc0249c818ab1d8b6c74a5555d9e1ec89c1900",
+  "matching_tree": "ae4e3ec58783bde674d584adc73b37268267a18e",
+  "full_diff_sha256": "ca060a17bc4f96df86167ff44e90cd98bb3f698212caaff1a7f5e03e7aebbe8f",
+  "source_review": "Root and independent research_ui CLEAR immutable final delta and complete patch",
+  "evidence_review": "research_evidence CLEAR final local/hosted/root47 source and archive bindings",
+  "exact_hosted_CI": "39362390204 both SUCCESS;1335PASS/0FAIL/2SKIP/10packages;6130events match joblog",
+  "root_cli": "47PASS8positive39negative; source262unchanged; retained identical binary/no embedded VCS stamp/manual binding, no compiler attestation",
+  "scope": "Pure source-only v2 metadata codec; no operational or measurement qualification",
+  "specification": "https://github.com/EduCloud-Ecosystem/outfitter/blob/9cf556b024960422b960281f4afacc923afcc12f/specs/22-assessment-large-cpu-codec.md",
+  "source_inventory": {
+    "files": 262,
+    "sha256": "bc0376947a68081ac141bf4e4f4b89f29de753688a7d7c58a3570d14f590d684",
+    "old_fixtures_unchanged": 53,
+    "old_fixture_origins": "34Outfitter and19Waypoint at45ecd81cb5970d86a30a1f70e61e8e101fc7972a"
+  },
+  "local": {
+    "assessment": {
+      "revision": "8f1c56edfcfedd044b88ebf0bf4212308aa76841",
+      "pass_test_events": 381,
+      "fail": 0,
+      "skip": 0,
+      "log_sha256": "756c82b141e20ff3efdec131ba0020c02d34ba8f5372ccd69f33889d29aaebcc",
+      "qualifier": "Assessment source/fixtures unchanged at final9cf. Focused non-race; not final full local suite."
+    },
+    "final_cli": {
+      "revision": "9cf556b024960422b960281f4afacc923afcc12f",
+      "pass_test_events": 1,
+      "child_calls": 36,
+      "log_sha256": "9d4d488fe9668f3c5260912845e29c087bb2a196d083ee1a07dbcab563339877",
+      "qualifier": "Three final held-open-stdin variants include two poison ledgers plus malformed marker-only v6 shape; not valid v6 authority qualification."
+    },
+    "static": "PASS recorded vet/format/whitespace",
+    "handoff_sha256": "3ecaaff6c4068fcf77085710e2dc419d500022b18cabee0664bbdefa47af0dd4"
+  },
+  "hosted": {
+    "run": 39362390204,
+    "url": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39362390204",
+    "head": "9cf556b024960422b960281f4afacc923afcc12f",
+    "tree": "ae4e3ec58783bde674d584adc73b37268267a18e",
+    "jobs": {
+      "go-and-docker": "success",
+      "storage-writer-qualification": "success"
+    },
+    "test_events": {
+      "fail": 0,
+      "pass": 1335,
+      "skip": 2
+    },
+    "package_events": {
+      "fail": 0,
+      "pass": 10,
+      "skip": 0
+    },
+    "full_suite_skips": [
+      "TestDockerLifecycleConformance",
+      "TestProviderSelfExpiryNotClaimed"
+    ],
+    "assessment_package_test_events": {
+      "fail": 0,
+      "pass": 381,
+      "skip": 0
+    },
+    "overlapping_subsets": {
+      "TestOwned": {
+        "fail": 0,
+        "pass": 150,
+        "skip": 0
+      },
+      "TestOwnedPipe": {
+        "fail": 0,
+        "pass": 13,
+        "skip": 0
+      },
+      "TestOwnedSeparateProcesses": {
+        "fail": 0,
+        "pass": 85,
+        "skip": 0
+      },
+      "TestV2": {
+        "fail": 0,
+        "pass": 288,
+        "skip": 0
+      }
+    },
+    "matched_job_log_events": 6130,
+    "actual_docker_lifecycle": "PASS later invocation; provider self-expiry remains explicitly SKIP/unsupported.",
+    "acceptance_reports": {
+      "consumer-ci.json": {
+        "limitations": [
+          "No production Cairn wiring, real student data, course admission or grade publication",
+          "No native/provider qualification or host/watchdog/daemon-loss self-expiry",
+          "Conservative CPU-second reservations, not measured CPU or provider SUs",
+          "Mock ambiguity controls are in the Go test suite, not live provider evidence"
+        ],
+        "passed": 19,
+        "sha256": "b39bb2dc7ab69e130091ceb4fe546f212de993672159508e762a863f196ff16f"
+      },
+      "docker-ci.json": {
+        "limitations": [
+          "No Jetstream2 or other live provider acceptance",
+          "No host/watchdog/Docker-daemon loss self-expiry",
+          "CPU allowance conservatively charged; actual CPU not measured"
+        ],
+        "passed": 26,
+        "sha256": "8c3356c837d04338216305c23da68ff52d9c4a1c451dafe6c2f20f4f41d14812"
+      },
+      "recovery-ci.json": {
+        "limitations": [
+          "Same local host and filesystem only; no remote disaster recovery or live cloud acceptance",
+          "Synthetic operator-driven exercise; no independent second operator or hosted recovery target",
+          "Unknown jobs remain held until source reconciliation and fresh checkpoint",
+          "Checksums require a separately retained trusted digest; not protection from a privileged rollback"
+        ],
+        "passed": 38,
+        "sha256": "2a1d08991a73f5b3adef1b313a1df76d746925f01477f5e1e9a28eedc179e29b"
+      }
+    },
+    "storage": {
+      "available_capacity": "UNKNOWN",
+      "model_cases": 32,
+      "optimized_probes": 2,
+      "quota_enforced": false,
+      "scope": "Historical counterexamples, not current lifecycle or codec capacity acceptance.",
+      "source_pin": "5827c84e9952cc67b85e91ceff4282e0ead6923b",
+      "status": "PASS_COUNTEREXAMPLES_REPRODUCED",
+      "test_events": 22
+    }
+  },
+  "independent_root_cli": {
+    "audit_sha256": "595160212868dc5bb770e38171d29d6cad7d8bf8ec2cc65cf915cdb58c229c3a",
+    "binary_sha256": "c1746f67cafb8db4bcc2dcb4e7b3851ce193c206e48c4ca244703e143ded5b3d",
+    "calls": 47,
+    "checks": "Every request/stdout/stderr hash matches; positive canonical output, false flags and unchanged receipts checked; smaller positive profiles and semantic negative digest rebinding checked. All three262-file before/after source snapshots match finalGit; retained binary bytes equal acrossv1/v2/v3.",
+    "checks_sha256": "35adb314d17c43a37488bf4326dc71c55414d6b2d82832929b1c82ec43fa9cfc",
+    "harness_sha256": "93f53b1d6ebf7078a1fc6dc028a62a00fe4c6c7632ac632ce9eef45d904a95ff",
+    "limitations": "Rootv1/v2 builds succeeded but pre-CLI embedded-VCS assertions failed; no CLI checks ran there. Missing embedded VCS stamp is explicitly recorded. v3 manual source/build/binary binding is not compiler attestation. This file-only audit does not rerun the root harness.",
+    "negative": 39,
+    "outcome": "CLEAR",
+    "positive": 8,
+    "retained_payload_files": 141,
+    "source_head": "9cf556b024960422b960281f4afacc923afcc12f"
+  },
+  "retained_failures": {
+    "initial_maximum_forms": {
+      "revision": null,
+      "pass": 367,
+      "fail": 3,
+      "qualifier": "Two leaves plus parent; package failure overlap separate. Revised371PASS remainsac3-bound.",
+      "log_sha256": "e07c038c84c9622e4d0f8eeb181a9c08eac701c8d04700f1dbacf014235f4211",
+      "source_snapshot": "pre-commit failed-run244-file source inventory",
+      "source_inventory_sha256": "fbdee6c1c93353c8b2cafcb2b99175ef95a1e282782eb230f61053f3125c9cef",
+      "later_corrected_lineage": "ac3ff8e097ae781061c54155773f020f9edd95e9 has250source entries and revised371PASS; production validator unchanged, full failed snapshot not ac3"
+    },
+    "pre_fix_cli": "Actual two invalid-ledger argument-refusal mismatches retained. No prior valid-v6 mutation witness inferred.",
+    "root_build_checks": "Two successful builds produced identical binary bytes but embedded-VCS assertions failed before CLI invocation. Original FAIL audits/drivers retained. Corrected driver reuses exact binary with honest manual source/build binding.",
+    "earlier": "All Outfitter19 and older accepted failed controls remain unchanged; no lifecycle/storage qualification promoted."
+  },
+  "provenance_limits": [
+    "Raw payload/build/log archives retained privately, not published by these hashes.",
+    "Local explicit overrides/exits/times recorded; other environment inherited.",
+    "Author temporary test binary/compiler identity not retained.",
+    "DCO sign-off trailers are not cryptographic commit signatures.",
+    "Root binary lacks embedded VCS revision; no full compiler attestation."
+  ],
+  "flags": {
+    "production_uploads": false,
+    "execution_authorized": false,
+    "actual_measurements_qualified": false,
+    "cleanup_trusted": false,
+    "actual_resource_accepted": false,
+    "capacity_qualified": false,
+    "whole_service_accepted": false
+  },
+  "not_run": [
+    "Large-input streaming recipe and independent checker qualification",
+    "Real aggregate storage/writer enforcement",
+    "Actual assessment execution and counters",
+    "Target host/encryption/spool/swap/crash/backup exclusions",
+    "Independent cleanup and second operator/machine",
+    "Researcher/instructor participant and whole-service acceptance"
+  ],
+  "audit_sha256": "03fc2bc45e3792578ab93a9b321846c2ef85cff8902484ffff57f571090f86c1",
+  "audit_archives_match_github_digests": true,
+  "all_6130_events_match_job_log": true
+}
