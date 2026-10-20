@@ -126,9 +126,10 @@ scopes the first connected A1 slice: existing Outfitter journal/Watch/Reap
 ownership, Waypoint's current auth/Store fences, one writer, cancellation/expiry
 and cleanup-or-quarantine. Production content operations remain hard-disabled;
 positive tests use disposable synthetic boundaries. Fresh test-only schemas
-refuse unsupported recovery/export. Implementation is assigned, not accepted;
-actual hosts, encryption, independent cleanup and operational allowance remain
-unselected.
+refuse unsupported recovery/export. The disabled
+[Outfitter #19 source increment is accepted](docs/research/2026-10-19-owned-data-source-acceptance.md);
+connected Waypoint integration and operational acceptance remain pending. Actual
+hosts, encryption, independent cleanup and operational allowance remain unselected.
 
 The [October 19 preparation acceptance](docs/research/2026-10-19-assessment-preparation-acceptance.md)
 pins merged Waypoint #49 and Outfitter #18, 37 actual pure-CLI integration checks,

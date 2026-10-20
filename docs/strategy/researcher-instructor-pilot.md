@@ -56,8 +56,9 @@ target is implied by the current source implementation.
 ## Delivery and ownership
 
 The coordinator reviews, integrates and merges through existing sole component
-owners. Finish Outfitter's disabled owned-data source and connected Waypoint
-session/authorization/HTTP journey first. Then connect actual measurement through
+owners. Outfitter's [disabled owned-data source is accepted](../research/2026-10-19-owned-data-source-acceptance.md).
+Finish the connected Waypoint session/authorization/HTTP journey next. Then
+connect actual measurement through
 the existing execution authority as resources become qualified, reuse A4/A5 for
 validated estimates and exports, and complete the participant/operator exercises.
 Do not rebuild the estimator, export pipeline, portal, scheduler or ledger.
@@ -70,6 +71,10 @@ path. AI, agent infrastructure, Kubernetes and PAIR are optional and are not
 prerequisites for completing this Python/R pilot.
 
 ## Optional tools and operational decisions
+
+The [approved provisional budget](researcher-instructor-pilot-budget.md) records
+the staged planning ceilings and exact allocation/host/operator decisions still
+required. It adds no live-test, resource-selection or spending approval.
 
 Adopt an optional tool only with all four items recorded: a named participant or
 operator workflow, an unmet capability in the current platform, a measurable

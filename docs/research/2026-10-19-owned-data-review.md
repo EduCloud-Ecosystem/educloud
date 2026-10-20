@@ -1,5 +1,9 @@
 # Disabled owned-data review checkpoint
 
+Historical candidate checkpoint. Subsequent
+[source acceptance](2026-10-19-owned-data-source-acceptance.md) records the final
+reviewed merge separately; the failed candidate evidence below remains unchanged.
+
 October 19, 2026. **HOLD for a hosted portability correction and final review.**
 [Outfitter #19](https://github.com/EduCloud-Ecosystem/outfitter/pull/19) is a draft,
 not a merged or operationally accepted lifecycle. This records immutable

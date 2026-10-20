@@ -1,0 +1,208 @@
+{
+  "schema": "educloud.disabled-owned-data-source-acceptance/v1",
+  "status": "ACCEPTED_DISABLED_OUTFITTER_SOURCE_ONLY",
+  "pr": "https://github.com/EduCloud-Ecosystem/outfitter/pull/19",
+  "reviewed_head": "4ca7e74e5c8a8541d08e409ed6c46a53414fbea2",
+  "base": "de65bdab9303395226ebfb35e0e0740ab19b4d8e",
+  "merge": "8584ca8db9a7e5eaf8d29d9670349b57f3939ab6",
+  "matching_tree": "5c8a7b3dde8b95a947f9d3fc80a9f02ee34abd29",
+  "full_diff_sha256": "78b250b2a4945b3a716ab6d03c1e42b17c51ff9c0e4584be167999627bc4f8b1",
+  "source_reviews": {
+    "root": "CLEAR platform/stream/journal/CLI plus final test-only delta",
+    "research_ui": "CLEAR immutable4de platform ABI and boundaries; production unchanged at4ca",
+    "research_broker": "CLEAR final4ca bounded acknowledged reconciliation, preserved safety/observation/tombstone/accounting checks",
+    "final_test_delta_sha256": "db42da7e8a3f154ab7dbf8017a1abb1a86e8c58cba3b838f4809e8a6e3d279b6",
+    "source_files": 221,
+    "final_inventory_sha256": "82c06271ab900dd2d8a39e7462af0c8f169cfb319a14d9b77a368c90a32ed1f4"
+  },
+  "local_final": {
+    "revision": "4ca7e74e5c8a8541d08e409ed6c46a53414fbea2",
+    "default_race": {
+      "pass": 4,
+      "fail": 0,
+      "skip": 0
+    },
+    "atexit_sleep_zero_race": {
+      "pass": 4,
+      "fail": 0,
+      "skip": 0
+    },
+    "overlap": "Same four controls in two executions, not eight distinct scenarios. No final full local suite claimed.",
+    "static": "PASS recorded vet/format/whitespace",
+    "command_records": 5,
+    "handoff_sha256": "f8e286a5d93d8c7de5d4486cf580a1bd121923aa2776d18cd168691101a749df",
+    "commands_sha256": "cfebd240734f7286c80657ffcda0ec4c63e2da9bab1ab256cd21172dc657490f"
+  },
+  "prior_production_equivalent_local": {
+    "revision": "4de6a090664a9a3ccd8ba0417b00af3ff5290a58",
+    "affected_race_pass": 144,
+    "focused_default_pass": 28,
+    "root_process_cli_checks": 97,
+    "root_result_sha256": "911d3ba9d995db5b872f42b5ecb8d9dacb810d0f1ca68bee90f6c301c449ea2e",
+    "root_harness_sha256": "5ded7b6fdf76de85f40336860bff43584e9d9e5ccbb2f9b0e280809a330ca02a",
+    "helper_binary_sha256": {
+      "broker.test": "847f80bf28b35fb7064bd8cab3b30b2b01e8d8422f2d48b7b8afec218a5039f2",
+      "ledger.test": "2eed6851b88fcb2bb28fb897a2c19c664d23e859f5e9e4df3f450a3fb041ece8",
+      "outfitter": "ce960bc24e47916ec33eda10ebe9826ea9f982fa45dcdbdb19f54feb5341b0a6"
+    },
+    "qualification": "Binaries/results remain4de-bound. Only the test file changed at final4ca; production, helper entrypoint and fixture bytes unchanged. Root finite-body fresh-generation retry does not itself prove pre-body refusal; the separate author open-stdin control does."
+  },
+  "hosted": {
+    "run": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39357243561",
+    "head": "4ca7e74e5c8a8541d08e409ed6c46a53414fbea2",
+    "jobs": {
+      "go-and-docker": "PASS",
+      "storage-writer-qualification": "PASS"
+    },
+    "full_test_events": {
+      "fail": 0,
+      "pass": 1047,
+      "skip": 2
+    },
+    "package_events": {
+      "fail": 0,
+      "pass": 10,
+      "skip": 0
+    },
+    "explicit_skips": [
+      "TestDockerLifecycleConformance",
+      "TestProviderSelfExpiryNotClaimed"
+    ],
+    "overlapping_subsets": {
+      "TestOwned": {
+        "fail": 0,
+        "pass": 150,
+        "skip": 0
+      },
+      "TestOwnedPipe": {
+        "fail": 0,
+        "pass": 13,
+        "skip": 0
+      },
+      "TestOwnedSeparateProcesses": {
+        "fail": 0,
+        "pass": 85,
+        "skip": 0
+      }
+    },
+    "linux_syscall_observations": 8,
+    "linux_runtime_scope": "Anonymous pipefs/Nlink1 versus named/renamed/unlinked filesystemFIFO, positive lifecycle/current-generation retry/saturated blocked-writer controls; not selected-host qualification.",
+    "actual_docker_lifecycle": "PASS; separate later invocation. Provider self-expiry control remains SKIP/unsupported.",
+    "acceptance_reports": {
+      "consumer-ci.json": {
+        "limitations": [
+          "No production Cairn wiring, real student data, course admission or grade publication",
+          "No native/provider qualification or host/watchdog/daemon-loss self-expiry",
+          "Conservative CPU-second reservations, not measured CPU or provider SUs",
+          "Mock ambiguity controls are in the Go test suite, not live provider evidence"
+        ],
+        "passed": 19,
+        "sha256": "c4bdbd94e992e8422b15c93f54fcd1ac0b4afd7ec8c2906df91acd7c3e027311"
+      },
+      "docker-ci.json": {
+        "limitations": [
+          "No Jetstream2 or other live provider acceptance",
+          "No host/watchdog/Docker-daemon loss self-expiry",
+          "CPU allowance conservatively charged; actual CPU not measured"
+        ],
+        "passed": 26,
+        "sha256": "70e089e7d1b853287555a96aca9855f80a2e1527fda5d5fdf3fbbe6ec4f91598"
+      },
+      "recovery-ci.json": {
+        "limitations": [
+          "Same local host and filesystem only; no remote disaster recovery or live cloud acceptance",
+          "Synthetic operator-driven exercise; no independent second operator or hosted recovery target",
+          "Unknown jobs remain held until source reconciliation and fresh checkpoint",
+          "Checksums require a separately retained trusted digest; not protection from a privileged rollback"
+        ],
+        "passed": 38,
+        "sha256": "d5d389dcc32f8f165baf9f87f00f08463ddb075a7a2402d534af435960842c3b"
+      }
+    },
+    "storage_qualification": {
+      "available_capacity": "UNKNOWN",
+      "model_cases": 32,
+      "optimized_oracle_probes": 2,
+      "pass_test_events": 22,
+      "quota_enforced": false,
+      "scope": "Historical pinned writer counterexamples; no current owned-data capacity or lifecycle promotion.",
+      "source_pin": "5827c84e9952cc67b85e91ceff4282e0ead6923b",
+      "status": "PASS_COUNTEREXAMPLES_REPRODUCED"
+    },
+    "audit_sha256": "a91a0181dd37836a008cfa96db6e3c2bc15300c0819758cf55e20afba686ad03",
+    "full_suite_log_sha256": "cc888e3f23cd04884aa379f06c2e2290b7c0fa7b194f5d0bee72906f94c8a700",
+    "all_4970_events_match_job_log": true,
+    "archives_match_github_artifact_digests": true
+  },
+  "preserved_failures": [
+    {
+      "revision": "79cf73f455019533731d349abe4de57acbb26873",
+      "kind": "Full local FAIL",
+      "pass": 1020,
+      "fail": 2,
+      "skip": 2,
+      "sha256": "fb3ff13ef96b3a88570d11b14c7803d0efa3b6df5b080fcce84645b7b4cc81f7"
+    },
+    {
+      "revision": "7972ce8ea0d6e369ccb41a81ce11096ad0ce0dd6",
+      "run": "39354445924",
+      "kind": "Hosted FAIL",
+      "pass": 952,
+      "fail": 74,
+      "skip": 2,
+      "joblog_sha256": "17302cc3d3b2f4a385ee675f6ccc8c8f858996e8a4fcf7e9d7a7a5ea126ba63f"
+    },
+    {
+      "revision": "7972ce8ea0d6e369ccb41a81ce11096ad0ce0dd6",
+      "kind": "Darwin unlinkedFIFO pre-fix actual negative",
+      "pass": 3,
+      "fail": 4,
+      "qualification": "Two leaves and two parents; package failure overlap separate.",
+      "sha256": "afa05a8664783e0550d93edc4378cce5418a7408ba833c7a0bdbff9fc5f72ba5"
+    },
+    {
+      "revision": "4de6a090664a9a3ccd8ba0417b00af3ff5290a58",
+      "run": "39355854332",
+      "kind": "Hosted FAIL",
+      "pass": 1046,
+      "fail": 1,
+      "skip": 2,
+      "audit_sha256": "339cc905333b2236213a31adec68b4b0fa1faf459c17178eac20443a3e7b04ee"
+    },
+    {
+      "kind": "Actual default-race instrumented failed expectation",
+      "test_fail": 1,
+      "package_fail_overlap": 1,
+      "sha256": "a8b53a124cc9c74d1632b67ded8323efae769147992d86cebf6a9c097c32f8c1",
+      "observed": "Payload present/close unconfirmed while blocked; physically absent/close confirmed after drain with same eight unknown observations. No product hold in this witness."
+    },
+    {
+      "revision": "a39cf04e1d227d1249b08b986ee3fe4be7925b65",
+      "kind": "Intermediate optimized failure",
+      "pass": 3,
+      "fail": 1,
+      "qualification": "Default fourPASS and separate diagnostic rerunPASS retained. No stable kernel/filesystem cause claimed; final control establishes saturation via bounded real acknowledgements rather than watcher timing."
+    }
+  ],
+  "earlier_failures": "Original header/max-form/sentinel/commit-time/close-uncertainty/nil-content/direct-provider/lease/legacy-migration controls retained in prior archives and checkpoint. Old root82 stale-generation limitation unchanged. Root Go-Output chunk-parser error remains transcript-only; corrected file-only review, no product mutation.",
+  "provenance_limits": "Full original environment/raw per-call outputs and compiler attestation absent for older inline12-control witness; later transcript supplement4bc1980b and text archive9095beec disclose retrospective provenance, no rerun. New4de/4ca command records explicitly retain overrides/exits/times, other environment inherited.",
+  "operational_flags": {
+    "production_uploads": false,
+    "execution_authorized": false,
+    "cleanup_trusted": false,
+    "actual_resource_accepted": false,
+    "selected_host_qualified": false,
+    "independent_cleanup_qualified": false,
+    "whole_service_accepted": false
+  },
+  "not_claimed": [
+    "full-platform kernel coverage beyond retained Darwin and Linux observations",
+    "provider self-expiry after host/watchdog/daemon loss",
+    "live cloud or Kubernetes workload qualification",
+    "production consumer integration",
+    "independent human reproduction",
+    "quota/capacity credit",
+    "assessment or external publication readiness"
+  ],
+  "next": "Connected Waypoint AS1 and separately reviewed larger-workload profile/source integration; importedv1 preserved. Qualified host/allocation/operator/allowance and live approval still required."
+}
