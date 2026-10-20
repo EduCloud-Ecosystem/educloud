@@ -80,9 +80,13 @@ full compiler attestation or a product failure rewritten into success.
 ## Retained failures and follow-through
 
 The initial maximum-form run remains **FAIL: 367 PASS / 3 FAIL**, comprising two
-failed leaves and their parent, with package failure overlapping. Longest
-lifecycle forms and category spellings required corrected independent vectors;
-the revised 371-event pass stays bound to earlier `ac3ff8e`. A later 381-event
+failed leaves and their parent, with package failure overlapping. That run used
+a retained 244-file pre-commit snapshot, not the later 250-file `ac3ff8e` tree.
+Two standalone measurement neighbors were 4,980/4,991 bytes, exceeding the
+4,976-byte witness; a separate 4,993-byte settled-form witness corrects those
+checks. The longer failure-category spelling was corrected before vector
+generation and was not an observed runtime failure. The revised 371-event pass
+stays bound to `ac3ff8e`. A later 381-event
 pass belongs to `8f1c56ed`, not a relabeled rerun at final head. Original vector
 indices and old fixture bytes remain preserved. The CLI ordering defect was
 actually reproduced on two invalid/poison ledgers before the fix. A third final

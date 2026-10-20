@@ -148,11 +148,14 @@
   },
   "retained_failures": {
     "initial_maximum_forms": {
-      "revision": "ac3ff8e097ae781061c54155773f020f9edd95e9",
+      "revision": null,
       "pass": 367,
       "fail": 3,
       "qualifier": "Two leaves plus parent; package failure overlap separate. Revised371PASS remainsac3-bound.",
-      "log_sha256": "e07c038c84c9622e4d0f8eeb181a9c08eac701c8d04700f1dbacf014235f4211"
+      "log_sha256": "e07c038c84c9622e4d0f8eeb181a9c08eac701c8d04700f1dbacf014235f4211",
+      "source_snapshot": "pre-commit failed-run244-file source inventory",
+      "source_inventory_sha256": "fbdee6c1c93353c8b2cafcb2b99175ef95a1e282782eb230f61053f3125c9cef",
+      "later_corrected_lineage": "ac3ff8e097ae781061c54155773f020f9edd95e9 has250source entries and revised371PASS; production validator unchanged, full failed snapshot not ac3"
     },
     "pre_fix_cli": "Actual two invalid-ledger argument-refusal mismatches retained. No prior valid-v6 mutation witness inferred.",
     "root_build_checks": "Two successful builds produced identical binary bytes but embedded-VCS assertions failed before CLI invocation. Original FAIL audits/drivers retained. Corrected driver reuses exact binary with honest manual source/build binding.",
