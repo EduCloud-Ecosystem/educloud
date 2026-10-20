@@ -146,6 +146,16 @@ CI with original failures retained. Its narrower input supports up to 88,000,013
 bytes by source bounds; it does not qualify 5 GB inputs, dispatch, actual counters,
 storage, sampling or cleanup. All candidate readiness flags remain false.
 
+The [cleanup controls source acceptance](docs/research/2026-10-19-cleanup-controls-source-acceptance.md)
+records Outfitter #22 merged `8afcb56b`, reviewed `629085a8`: complete exact-head
+Linux CI passed 1,610 overlapping test events, zero failures and two skips.
+Original cleanup returns were 1.8–2.0 seconds against unchanged four-second
+assertions. The whole job had nominal 21-second headroom only; robust capacity
+is unproven. All seven prior failed CI runs remain retained. This accepts scoped
+source controls; actual-host privacy and independent deletion remain open.
+Production content/execution remain disabled. Full-journey integration is held
+for Greg's next direction; no resource or spending approval is added.
+
 The [execution and checked-cleanup source acceptance](docs/research/2026-10-19-execution-source-acceptance.md)
 records Outfitter #21: permanent scope/slot claims, sequential workload/checker
 controls and original-owner cleanup holds in the existing authority. Independent

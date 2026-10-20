@@ -1,0 +1,151 @@
+{
+  "schema": "educloud.cleanup-controls-source-acceptance/v1",
+  "campaign_date": "2026-10-19",
+  "delivery_date": "2026-10-20",
+  "status": "MERGED_SOURCE_CONTROLS_ACCEPTED",
+  "component": {
+    "repository": "https://github.com/EduCloud-Ecosystem/outfitter",
+    "pull_request": "https://github.com/EduCloud-Ecosystem/outfitter/pull/22",
+    "reviewed_head": "629085a80585c442309541b6130e792e3bd4a209",
+    "merge": "8afcb56b11bf9342449330177a1ceaa20499f9ba",
+    "merged_at": "2026-10-20T20:20:21Z",
+    "tree": "9da07f295726feada59d9bc7ecd5f414ed34c187",
+    "equal_reviewed_testmerge_merged_tree": true,
+    "parents": [
+      "7381afe4585c4440164b53ba7733d6759b3ac5f1",
+      "629085a80585c442309541b6130e792e3bd4a209"
+    ]
+  },
+  "ci": {
+    "run": 39488053199,
+    "url": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39488053199",
+    "actual_checkout": "f0a2a36f08be9688e37e3618627b8935f9c1d03e",
+    "both_jobs": "SUCCESS",
+    "environment": {
+      "CGO_ENABLED": "1",
+      "GOARCH": "amd64",
+      "GOFLAGS": "",
+      "GOMAXPROCS": null,
+      "GOOS": "linux",
+      "GORACE": null,
+      "GOVERSION": "go1.26.9",
+      "GOWORK": ""
+    },
+    "metadata_events": 108,
+    "runtime_events": 7303,
+    "all_go_json_exact_joblog": 7411,
+    "test_pass_including_overlapping_parents_and_leaves": 1610,
+    "test_fail": 0,
+    "test_skip": 2,
+    "top_level_pass": 297,
+    "top_level_skip": 2,
+    "package_terminals": 12,
+    "unique_packages": 11,
+    "broker_partition": [
+      56,
+      49
+    ],
+    "all_six_groups_complete": true,
+    "new_nonbroker_oracle_methods_exactly_once": [
+      "TestMetadataComparisonMatchesIndependentLegacy",
+      "TestMetadataTransitionsAndAdvanceMatchIndependentLegacy",
+      "TestMetadataIntegerDepthLexerMatchesIndependentLegacy",
+      "TestMetadataLiteralPublicDecodersMatchIndependentLegacy",
+      "TestMetadataStoreReadMatchesIndependentTwoPass"
+    ],
+    "downstream_report_checks": {
+      "docker-ci.json": {
+        "checks": 26,
+        "sha256": "ee57fb5f67350b6c25cbcc94dbf3be43c073ce95b3b4947693590b7d8b0efbf5"
+      },
+      "recovery-ci.json": {
+        "checks": 38,
+        "sha256": "d8c1c7e4cc173a5622c77d122010ec4dd04ae44afb923bf46c2249354bd1e7c0"
+      },
+      "consumer-ci.json": {
+        "checks": 19,
+        "sha256": "25bfdcf855174511aa09a636b5d2ee4bb667af0be1fbf18fd1f1087799f8a188"
+      }
+    },
+    "partition_pure_unit_methods_pass": 27,
+    "ordinary_job_seconds": 879,
+    "nominal_headroom_seconds": 21,
+    "timing_limit": "API whole-second precision approximately +/-1 second; one observed fit, not robust capacity or guaranteed latency.",
+    "archives": [
+      {
+        "id": 12295685405,
+        "name": "docker-acceptance",
+        "zip_sha256": "dc66584aa33b8e308a7ca73ec663042bc16f5fcef1c82808f6123e2d163dee5c",
+        "members": 22
+      },
+      {
+        "id": 12294332267,
+        "name": "storage-writer-qualification",
+        "zip_sha256": "c5e5684a418fcaf0c35d5852af6922768871c08d59aa379771257fe76844c9c9",
+        "members": 4
+      }
+    ],
+    "joblog_sha256": {
+      "ordinary": "e7e86c9f6b205158f86a8a31fd7232c18628f26d7af7ea0b34788bd734f9a859",
+      "storage": "5207872840b66bdd775b5222eb7680f1124c7841efdd9e121e09902303dbdc18"
+    }
+  },
+  "original_cleanup_return_ms": {
+    "caller": 1773,
+    "slot_cancel": 1993,
+    "attempt_expiry": 2002
+  },
+  "original_assertion_ms": 4000,
+  "engineering_target_ms": 3000,
+  "reviews_sha256": {
+    "root_complete_CI": "ffe7c7592dbf15d1d9c883aae6306afe36ef8f415ce9895a451786480f3f3ef8",
+    "independent_complete_CI": "271833e0a9bba7f7aacbc2fee5234bbd0b89833a3f1951926b51a14a368be5e8",
+    "independent_immutable_source": "4043c2436c0378ee69b75f2772e06f21a63865b1ae19b9466fe6c87d0230e526",
+    "root_source_acceptance_decision": "38fe470505f8ec3880c14b63dec6c1eda65ae801aac2f6ab88c88f89e69661c6"
+  },
+  "local_provenance": {
+    "tested_checkpoint_sha256": "9499ef10657ce7957f1897303a11b5d7db68db4ea5a0111703d7f874342d21f3",
+    "platform": "Darwin, Go 1.26.4",
+    "equivalence_methods_pass": 5,
+    "original_drain_leaves_pass": 3,
+    "safety_controls_pass": 24,
+    "source_files": 319,
+    "final_official_formatting_changed_files": 5,
+    "final_formatted_head_qualified_by": "exact final Linux CI above",
+    "compiler_attestation": false,
+    "new_standalone_helper_binary": false
+  },
+  "retained_failed_ci_runs": [
+    39398538634,
+    39408950606,
+    39418937852,
+    39424874525,
+    39431655495,
+    39434493214,
+    39464863179
+  ],
+  "historical_storage": {
+    "head": "5827c84e9952cc67b85e91ceff4282e0ead6923b",
+    "quota_enforced": false,
+    "runtime_enforced": false,
+    "all_writers_enforced": false,
+    "whole_root_capacity": "UNKNOWN",
+    "fifth_headroom_control": "FAIL",
+    "v7_storage_qualification": false
+  },
+  "readiness": {
+    "production_upload_enabled": false,
+    "production_execution_enabled": false,
+    "trusted_cleanup": false,
+    "operational_cleanup_contract_closed": false,
+    "actual_host_qualified": false,
+    "full_journey": "HELD pending Greg next direction"
+  },
+  "limits": [
+    "Source and synthetic/process controls are accepted; actual-host privacy, encryption/key custody, spool/swap/crash/backup exclusions and independent expiry/termination/revocation/deletion remain open.",
+    "Actual counters, aggregate writer/storage enforcement, independent operator/machine, accessibility and whole-service acceptance remain open.",
+    "Later passing controls do not establish causes of historical failures or isolated fsync/latency effects.",
+    "Default race-suite Docker lifecycle skip remains a skip; later dedicated actual Docker lifecycle passed separately. Provider self-expiry remains unsupported.",
+    "Protected raw archives/logs are retained by digest; this public record does not publish their contents or assert permanent artifact availability."
+  ]
+}

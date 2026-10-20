@@ -92,3 +92,16 @@ validation, second-operator exercises and whole-service privacy acceptance remai
 open. Use synthetic or approved public inputs first; no private/student-data or
 FERPA acceptance follows from this budget. Independent implementation continues
 while allocation, host, operator and exact live-window decisions are prepared.
+
+## October 20 cleanup source checkpoint
+
+The [cleanup controls source acceptance](../research/2026-10-19-cleanup-controls-source-acceptance.md) records merged Outfitter #22
+at `8afcb56b`, independently reviewed and qualified by complete exact-head Linux
+CI: 1,610 overlapping PASS / zero FAIL / two SKIP. Original cleanup returns met
+the three-second engineering target with unchanged four-second assertions.
+The whole CI job had only nominal 21-second headroom; robust capacity is unproven.
+Earlier failures and historical storage counterexamples remain retained. This
+closes the scoped cleanup source-control milestone, not actual-host privacy or
+independent deletion qualification. Production uploads/execution stay disabled;
+A1/A2 and operational gates remain partial. Full-journey/seed/typed execution
+integration is held for Greg's next direction. No planning allowance is released.
