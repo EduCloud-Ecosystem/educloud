@@ -1,0 +1,18 @@
+{
+  "status": "PASS_WITH_BOUNDARIES",
+  "immutable_source": "bd4848453e60ee01e6b894d34e907bb5df5149c5",
+  "tree": "6c71d3a96645b3706a38e5b6b676b31acf61cc8c",
+  "bindings": 1320,
+  "root_git_blob_comparison": "1320/1320 PASS independently",
+  "before_after_identical": true,
+  "actual_isolated_methods_pass": 55,
+  "log_sha256": "8f45d8346940bcb5d59d3923ccfdac3b0b2cbb954062aaa1703de47c26587537",
+  "source_and_scientific_review": "Root read complete new Python/R/checker/catalog and tests, scoped CLEAR.",
+  "limits": [
+    "Tiny synthetic native CLI controls, not5GB/fullmillionrow/RSS/hostcapacity/actualallocation/cleanupqualification.",
+    "No immutable frontend transitive runtime attestation.",
+    "First hosted controls FAIL RSCRIPT_UNAVAILABLE; merge HOLD pending dependency repair exact CI.",
+    "Original25-method fixtureFAIL and28PASS remain distinct; overlap not additive."
+  ],
+  "retained_root_checker_correction": "Initial file-only audit asserted a double terminal newline after unittest OK; actual raw log ends OK plus one LF. Assertion failed after all1320 Git blobs matched. Corrected final check verifies exact recorded hash/55 ok lines/summary. No runtime rerun or product FAIL."
+}

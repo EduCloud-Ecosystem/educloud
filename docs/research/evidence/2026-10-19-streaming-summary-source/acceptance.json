@@ -1,0 +1,53 @@
+{
+  "schema": "educloud.streaming-summary-source-acceptance/v1",
+  "pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/54",
+  "reviewed_head": "5aede6e464f0079fd6e9ffd6e40207d0bbd4a9f3",
+  "merge": "a3c2104e4f01af1a59e9b244452d6109086f1a00",
+  "tree": "5c5ffbcb0bacae751280baedbc873e656955b3e1",
+  "merged_at": "2026-10-20T04:42:50Z",
+  "root_review_sha256": "42294f373a3214abd6483535338b0a277249b31fd5382173d0e6b2ddb5f816fd",
+  "independent_ci_audit_sha256": "de2c2f76150022919987f87f4a81e6d30dcd976f555892a28c025189d04c76b4",
+  "diff_sha256": "fed3cbe58402333a695e107bc7ff4212e0a3e386c8c85bfe8e75becd5453f1b3",
+  "ci": 39370474356,
+  "ci_status": "BothrequiredSUCCESS;658PASS/2inheritedSKIP;55streamingPASSsubset;11PDFPASSlogonly;ordinaryDockerPASS;optionalclean-sourceSKIP",
+  "gate": "Disabledsourceonly; noactualadapter/counters/storage/cleanup/participantqualification",
+  "canonical_base": "4c61428740e42b2a2e0a2e3fd62c337e971f6aaf",
+  "tested_head": "bd4848453e60ee01e6b894d34e907bb5df5149c5",
+  "local": "55PASS0FAIL0ERROR0SKIP;1320 complete bindings, actualPython3.14.5/R4.6.0 nativeCLI; independent27 checker methods overlap",
+  "ci_detail": {
+    "methods": 660,
+    "passed": 658,
+    "skipped": 2,
+    "seconds": 132.038,
+    "skip_lines": [
+      "test_actual_cli_with_real_pinned_pure_outfitter_validator (test_assessment_estimation.EstimationCLITests.test_actual_cli_with_real_pinned_pure_outfitter_validator) ... skipped 'Pure Go validator path is supplied for cross-component acceptance'",
+      "test_real_validator_matrix_preserves_unknowns_and_refuses_binding_attacks (test_assessment_estimation.EstimationCLITests.test_real_validator_matrix_preserves_unknowns_and_refuses_binding_attacks) ... skipped 'Pure Go validator path is supplied for cross-component acceptance'"
+    ],
+    "streaming_passed_subset": 55,
+    "log_sha256": "6bd07c02ab7849e9844d4252813f16cf2b241b8738d29706b9dc0394eb1a73b0"
+  },
+  "prior_evidence_unchanged": 901,
+  "evidence_files": {
+    "ci-audit.json": "de2c2f76150022919987f87f4a81e6d30dcd976f555892a28c025189d04c76b4",
+    "root-final-review.json": "42294f373a3214abd6483535338b0a277249b31fd5382173d0e6b2ddb5f816fd",
+    "root-runtime-audit.json": "684117e524d419df58b97b0ccf55ccbf49fa3f5a010dd6bb2faaa91ae48059c7",
+    "local-delta-audit.json": "a1e20cfcde0d50846a32dbbdfb7391536fd2e261dc2f73ce8e2b68d27fd81211"
+  },
+  "component_verification": {
+    "url": "https://github.com/EduCloud-Ecosystem/waypoint/blob/5aede6e464f0079fd6e9ffd6e40207d0bbd4a9f3/research-workspace/evidence/2026-10-19/streaming-summary/verification.json",
+    "sha256": "595b690826d3d0caf2a03f5d85bf7b2e62bbb076447084b18c2b67188ea915f4"
+  },
+  "historical_failures": [
+    "Initial25-method24PASS/1fixtureFAIL retained, corrected28PASS, no algorithmchange.",
+    "CI39370145454 controlsFAILRSCRIPT_UNAVAILABLE; helpers/controls/PDFNOTRUN; separateordinaryDockerPASS.",
+    "Rootfile-audit terminalnewline expectation corrected, no productruntimeFAIL."
+  ],
+  "canonical_runtime": "NOT RUN: docs only, no configured umbrella CI",
+  "readiness": {
+    "production_enabled": false,
+    "runtime_qualified": false,
+    "cleanup_trusted": false,
+    "actual_resource_accepted": false,
+    "whole_service_accepted": false
+  }
+}

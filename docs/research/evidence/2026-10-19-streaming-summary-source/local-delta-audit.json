@@ -1,0 +1,184 @@
+{
+  "schema": "educloud.streaming-summary-ci-repair-file-audit/v1",
+  "at": "2026-10-20T04:39:18.600397+00:00",
+  "head": "5aede6e464f0079fd6e9ffd6e40207d0bbd4a9f3",
+  "tree": "5c5ffbcb0bacae751280baedbc873e656955b3e1",
+  "status": "CLEAR",
+  "checks": [
+    {
+      "check": "1338fullimmutablebindings",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "inventoryhash",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "headtree",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "onlyworkflowandnarrativechangedamong1320",
+      "status": "PASS",
+      "detail": [
+        ".github/workflows/research-workspace.yml",
+        "research-workspace/STREAMING-SUMMARY.md"
+      ]
+    },
+    {
+      "check": "prior evidence preserved",
+      "status": "PASS",
+      "detail": {
+        "files": 901
+      }
+    },
+    {
+      "check": "originalverification",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "repairrecordhash",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source .github/workflows/research-workspace.yml",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/STREAMING-SUMMARY.md",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/assessment-environments.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/recipes/assessment/check_summary_fixed6.py",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/recipes/assessment/summary_fixed6.R",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/recipes/assessment/summary_fixed6.py",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/research_workspace/assessment_catalog.py",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/streaming_checker_fixtures/ORACLES.md",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/streaming_checker_fixtures/alternative.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/streaming_checker_fixtures/baseline.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/streaming_checker_fixtures/literal.csv",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/streaming_summary_fixtures/README.md",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/streaming_summary_fixtures/basic-alternative.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/streaming_summary_fixtures/basic-baseline.json",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/streaming_summary_fixtures/basic.csv",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/test_streaming_checker.py",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "source research-workspace/tests/test_streaming_summary.py",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "preserved CI job",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "preserved CI raw_log",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "preserved CI separate_job_snapshot",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "prior runbinding",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "independently downloaded rawlog equals public",
+      "status": "PASS",
+      "detail": "bd15ca17b61ded138f18367b2485eb9a4fe9ecfd6fc681b78dcb87a78e65dc5c"
+    },
+    {
+      "check": "base runtime preserved",
+      "status": "PASS",
+      "detail": [
+        ".github/workflows/research-workspace.yml"
+      ]
+    },
+    {
+      "check": "whitespace excluding2exactlogs",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "issues": [],
+  "source_inventory_sha256": "31c27abcc3a85cf7d232cbd427093ba6e5d796078255cf117751e85a98a09592",
+  "source_equivalence_sha256": "5a5ae0d1c453d8480c1ae55ec174bcd0e1f4773e5800e31c4b7c71db12e75946",
+  "repair_record_sha256": "d0337b57f0433f57d8ea9ade20b51b10a17c89a968bf5d98fbc6efb774315e4a",
+  "prior_local_audit_sha256": "659457ed950829098967a2bdc2e9a14c2995fc3ffcd5b621434ed5c779bf3cac",
+  "limits": [
+    "File-only. No tests/builds/engines/installs/workload implementation reading or copying.",
+    "Checker source unchanged; scientific review belongs to coordinator.",
+    "Prior local25/28/55 retain actual run origins; no local workflow rerun.",
+    "Whole-diff whitespace has original raw-log exceptions; only exact two exclusions pass.",
+    "Exact39370474356 hosted verdict pending in separate audit."
+  ],
+  "retrieval_note": "GitHub CLI first refused ANSI-bearing rawlog output; subsequent explicit allow-escape-sequences downloaded exact original bytes. No product test occurred."
+}

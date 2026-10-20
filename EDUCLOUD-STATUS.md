@@ -73,6 +73,14 @@ CPU workloads while preserving v1, runtime limits and false trust/authority flag
 Connected execution, independent quality, actual counters and aggregate storage
 enforcement remain required; it does not qualify larger inputs.
 
+The [streaming scientific source is accepted](docs/research/2026-10-19-streaming-summary-source-acceptance.md)
+through Waypoint #54. All 55 new methods passed locally and in hosted CI; full
+hosted regression passed 658 methods with two inherited skips. Separate Python/R
+code identities and an independent checker support an explicitly narrower
+88,000,013-byte scientific grammar by source bounds. Actual execution adapters,
+measurement, aggregate storage and trusted cleanup remain open; no production
+path or ordinary recipe changes.
+
 The accepted study-bundle exporter retains source bytes and cannot serve the
 new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted
 retention and report preview need their own implementation and fault evidence.
