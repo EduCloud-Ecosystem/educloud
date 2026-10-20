@@ -53,8 +53,8 @@ Live Jetstream2 still requires Greg's separate approval.
 The accepted benchmark-manifest/v1 profile supports summary Python/R, one
 analysis stage, no additional dependencies, CPU-only `local_docker` hardware,
 at most three fitting sizes plus one held out, up to three repetitions and sizes no
-greater than 1,000 rows. Each manifest has at most twelve attempts, exactly
-30 seconds per attempt, total CPU ceiling of attempts × 30 seconds, 256 MiB task
+greater than 1,000 rows. Each manifest has at most twelve attempts, a fixed
+30-second timeout per attempt, total CPU ceiling of attempts × 30 seconds, 256 MiB task
 memory, at most 128 MiB scratch and 64 KiB output. Host RAM/CPU sizing is separate
 from these task limits. A smaller fitting/repetition design needs its explicit
 reviewed approval. See the
