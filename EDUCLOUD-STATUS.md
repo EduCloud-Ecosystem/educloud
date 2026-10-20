@@ -38,10 +38,18 @@ coverage is the later PDF suite and artifact inspection, rather than one
 immutable full-suite renderer run. Root checked all three rendered pages,
 24 package payloads, exact digest/receipt binding and visible-field parity.
 Original publication, geometry, environment and checker failures remain visible.
-All packets stay DRAFT; actual measurements, other ACCESS profiles and
-program/application readiness remain separate. The next bounded A5 increment
-prepares proper Explore and Accelerate drafts; Maximize remains refused pending
-its own multi-document profile.
+All packets stay DRAFT. Subsequent Waypoint
+[#52](https://github.com/EduCloud-Ecosystem/waypoint/pull/52), merge `45ecd81c`,
+adds Explore worksheets without font/PDF dependencies, optional digest-bound
+internal planning PDFs and a distinct Accelerate description draft. Independent
+reviews, 546 standard-library/11 PDF tests, 20 separate isolated CLI checks and
+required CI pass. The three exact earlier previews and their digests remain
+unchanged. Root verified 23 payloads and both rendered pages; the initial
+floating-point geometry observation remains recorded with explicit tolerances.
+Maximize remains refused pending its own multi-document profile. Actual
+measurements and program/application readiness stay open. The next core
+dependency is A1's dedicated temporary session/data lifecycle, separate from the
+retained study workflow.
 
 The accepted study-bundle exporter retains source bytes and cannot serve the
 new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted
