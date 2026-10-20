@@ -39,7 +39,8 @@
     "scenarios": 7,
     "scope": "Actual isolated -I -S CLI; default Explore creates JSON/CSV/Markdown only, no PDF/refresh/engine/provider/workload",
     "private_result_sha256": "69662632ec129ce54a01dbb34bcafcaa9651d9da185b59c633f876154a6793bd",
-    "public_checks_sha256": "ec3a83e178d935026ee26a4b3224bdc54809b6efb6937345af0912f331130398"
+    "public_checks_sha256": "b82443324592f239ef26c81ba6da41c62605c218a4fae1553ccef0f09dd8d284",
+    "harness_source_retention": "Coordinator tool transcript only; no separate bound portable checker. Private result retains application arguments, exit codes and stdout/stderr hashes; exact output files retained."
   },
   "root_artifact_review": {
     "scope": "Root independently read/hashed existing owner artifacts and rendered existing PDFs; no export creation or workloads",

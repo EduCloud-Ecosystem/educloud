@@ -87,5 +87,5 @@
       "result": "PASS"
     }
   ],
-  "raw_transport": "Exact command arguments, exit codes and bounded stdout/stderr retained in protected coordinator archive; public record excludes host paths."
+  "raw_transport": "Application argument arrays, exit codes and bounded stdout/stderr retained in protected coordinator archive. Isolated interpreter/bootstrap and scenario harness source are in coordinator tool transcript only; no separately bound portable checker file. Public record excludes host paths."
 }

@@ -270,7 +270,10 @@ The coordinator separately passes **20 checks across seven actual isolated CLI
 scenarios**, including successful font-free worksheet preview/export, canonical
 binding, existing-directory refusal without changes, wrong approval, attempted
 font/mode switching and unsupported Maximize refusal. No PDF, refresh, engine or
-workload was created by those scenarios. Independent owner-artifact review
+workload was created by those scenarios. Application arguments, exit codes and
+outputs remain in the private archive; the isolated interpreter/bootstrap and
+scenario harness source are recorded in the coordinator tool transcript, not a
+separate bound portable checker file. Independent owner-artifact review
 checks three modes, 23 payload hashes/sizes, three receipt/record/inventory
 bindings, worksheet/CSV and visible PDF parity. Both existing one-page PDFs were
 independently rendered and viewed. That report remains a pre-freeze record;
