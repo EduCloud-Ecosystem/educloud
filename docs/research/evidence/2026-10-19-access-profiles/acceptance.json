@@ -1,0 +1,125 @@
+{
+  "updated_at": "2026-10-20T00:15:23.715828+00:00",
+  "status": "MERGED",
+  "pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/52",
+  "base": "2d94f87a73fd3f606bf6a246aabb0a1ee2bb9465",
+  "reviewed_head": "9b782a17cc797d46d664b27e967b90611f6faf60",
+  "merge": "45ecd81cb5970d86a30a1f70e61e8e101fc7972a",
+  "merged_at": "2026-10-20T00:14:44Z",
+  "reviewed_and_merge_tree": "db075b04a62966183b544b28c571c61ca06634b7",
+  "diff_sha256": "06d07fc9e48483e9dd60e440bbe62583f3213d3b0baad531ba8f9f967f8b2f28",
+  "independent_review": "research_ui exact source CLEAR; research_evidence exact evidence CLEAR",
+  "source_inventory": {
+    "files": 11,
+    "sha256": "d656a050941b75444cc8c0dd78dfd6f98810bf97c5386ca63fc858ac3205413b"
+  },
+  "full_stdlib": {
+    "PASS": 546,
+    "skips": 0,
+    "runtime": "systemPython3.14.5",
+    "seconds": 105.595,
+    "real_pure_outfitter": true,
+    "log_sha256": "01da570872516a9d7537eebdb3bcd0c13c9f83e9d44af5e8facd286dbfdfc361"
+  },
+  "pdf_suite": {
+    "PASS": 11,
+    "skips": 0,
+    "runtime": "bundledPython3.12.14",
+    "seconds": 2.675,
+    "log_sha256": "0c86511d1e251ce575702c81fa59debe6bcfef723d7c213d87ad9aa36441a6a3"
+  },
+  "overlapping_subsets": {
+    "new_profiles": 10,
+    "inherited_boundaries": 24
+  },
+  "legacy_preview_compatibility": "PASS three exact PR51 accepted preview/source/font/record digests unchanged",
+  "root_cli": {
+    "PASS": 20,
+    "FAIL": 0,
+    "scenarios": 7,
+    "scope": "Actual isolated -I -S CLI; default Explore creates JSON/CSV/Markdown only, no PDF/refresh/engine/provider/workload",
+    "private_result_sha256": "69662632ec129ce54a01dbb34bcafcaa9651d9da185b59c633f876154a6793bd",
+    "public_checks_sha256": "b82443324592f239ef26c81ba6da41c62605c218a4fae1553ccef0f09dd8d284",
+    "harness_source_retention": "Coordinator tool transcript only; no separate bound portable checker. Private result retains application arguments, exit codes and stdout/stderr hashes; exact output files retained."
+  },
+  "root_artifact_review": {
+    "scope": "Root independently read/hashed existing owner artifacts and rendered existing PDFs; no export creation or workloads",
+    "source_pin": "PENDING owner freeze",
+    "results": [
+      {
+        "name": "explore_worksheet",
+        "payloads": 7,
+        "receipt_package_preview_and_worksheet": "PASS",
+        "csv_text_guard": "PASS",
+        "PDF_present": false
+      },
+      {
+        "name": "explore_planning_pdf",
+        "payloads": 8,
+        "receipt_package_preview_and_worksheet": "PASS",
+        "csv_text_guard": "PASS",
+        "PDF_present": true,
+        "pdf_sha256": "b80599155f363b68e25d995d7ba0e9bdbaee1503178ad8485c69bf79e32ac291",
+        "pages": 1,
+        "character_boxes": {
+          "left": 72.0,
+          "right": 540.0000443,
+          "top": 74.88476579999997,
+          "bottom": 716.2666017
+        },
+        "min_font_height": 11.0,
+        "visible_field_parity": "PASS"
+      },
+      {
+        "name": "accelerate_description",
+        "payloads": 8,
+        "receipt_package_preview_and_worksheet": "PASS",
+        "csv_text_guard": "PASS",
+        "PDF_present": true,
+        "pdf_sha256": "210deb5811b68f5f51cc04ebc6795924861d1c6e531eb8d1654a9b2704b5756e",
+        "pages": 1,
+        "character_boxes": {
+          "left": 72.0,
+          "right": 540.0000443,
+          "top": 74.88476579999997,
+          "bottom": 716.2666017
+        },
+        "min_font_height": 10.999999999999972,
+        "visible_field_parity": "PASS"
+      }
+    ],
+    "visual_review": "Both existing one-page PDF artifacts independently rendered and viewed: readable, no clipping or overlap, proper optional internal-copy Explore label and Accelerate description, explicit DRAFT/synthetic/requirements/authority boundaries.",
+    "tolerances": {
+      "geometry_points": 0.001,
+      "derived_font_height_points": 1e-06
+    }
+  },
+  "root_artifact_later_pin_binding": {
+    "verified_at": "2026-10-20T00:13:35.542152+00:00",
+    "reviewed_head": "9b782a17cc797d46d664b27e967b90611f6faf60",
+    "historical_report_sha256": "535fc0b36af938e60f051c983a19ada3d30c8691430ee1fb02f5378b311b5aa1",
+    "historical_report_state": "Pre-freeze source_pin PENDING owner freeze retained unchanged. Existing PDF hashes now matched to frozen-head owner evidence; no old timestamp/pin rewritten.",
+    "frozen_owner_integration_sha256": "e8bf66c1ea316c50c395fce8ebc2268a081f9156d6c22aff8ef066547669e7b4",
+    "root_actual_cli_result_sha256": "69662632ec129ce54a01dbb34bcafcaa9651d9da185b59c633f876154a6793bd",
+    "root_actual_cli": "PASS20 checks across7 actual isolated CLI scenarios, no optionaldeps/PDFmodule/font/defaultPDF/nooverwrite/modeswitch/wrongapproval/Maximize refusal; no PDF generation or network requests",
+    "PDF_hashes_match": true
+  },
+  "hosted_CI": {
+    "run": 39346092790,
+    "controls": "SUCCESS includes546stdlib+11PDF",
+    "actual_docker": "SUCCESS legacyregression only",
+    "clean_source_builds": "SKIPPED optional notrequested",
+    "controls_log_sha256": "8461c34030421adc318dffb4b6f722d23e1a0b56bb3c7ca8c4e3caa09f317362"
+  },
+  "retained_failure_observation": "Literal derivedfontheight10.999999999999972 firstobservation retained; rawPDFoperators11, derivedheight tolerance1e-6pt/geometry0.001pt, no productchange",
+  "prior_failures": "Four PR51 failure files unchanged; all historical controls/unknowns retained",
+  "all_authority_and_readiness_gates": false,
+  "limits": [
+    "Explore worksheet-only default; optional2pagePDF cap internal, never official requirement",
+    "Accelerate distinct3pageDRAFT; Maximize unsupported",
+    "No fonts or optional PDF modules loaded in isolated default Explore CLI",
+    "No upload/actualmeasurements/providerconversions/application/deployment/defaultchange authority"
+  ],
+  "owner_integration_sha256": "e8bf66c1ea316c50c395fce8ebc2268a081f9156d6c22aff8ef066547669e7b4",
+  "raw_evidence": "Protected owner/coordinator archives; no raw logs or private host paths copied here."
+}

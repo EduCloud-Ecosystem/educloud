@@ -19,6 +19,7 @@ it does not establish current application or resource readiness.
 | Waypoint preparation and preview | [#49](https://github.com/EduCloud-Ecosystem/waypoint/pull/49) | `c47351f46186d7fa055a7f486516f4dac0aeb274` | `d70aaccc454332cb5bacf31e93c99e2ce0b420cd` |
 | Waypoint initial synthetic estimates | [#50](https://github.com/EduCloud-Ecosystem/waypoint/pull/50) | `053bb1ef5ff5e7a359e9f1e2a0cfbdd8d2a4f6ad` | `db7ad40e05baadba7b5063ed5003c9cdffe1eda8` |
 | Waypoint initial allocation drafts | [#51](https://github.com/EduCloud-Ecosystem/waypoint/pull/51) | `a4bdc289c9fef7ddbdc03f1707db69e2e6fbf709` | `2d94f87a73fd3f606bf6a246aabb0a1ee2bb9465` |
+| Waypoint Explore/Accelerate drafts | [#52](https://github.com/EduCloud-Ecosystem/waypoint/pull/52) | `9b782a17cc797d46d664b27e967b90611f6faf60` | `45ecd81cb5970d86a30a1f70e61e8e101fc7972a` |
 | Cairn pinned grading context | [#33](https://github.com/EduCloud-Ecosystem/cairn/pull/33) | `70b984083fa711b12ae30bc22732d831a0b1ba1e` | `ab339c44248eca2f6c03c22ef951215e8969472a` |
 | Cairn optional durable grading dispatch | [#34](https://github.com/EduCloud-Ecosystem/cairn/pull/34) | `2be331d245a989490ca815a3c71b12c0d2ff0ed0` | `536da6a58b8178c9da15157e385c5a67f5782ef1` |
 | Cairn authenticated grading inspection | [#35](https://github.com/EduCloud-Ecosystem/cairn/pull/35) | `3b0adc4a8faab0aa1aee491b2d0b60e984c64219` | `912b9e1d035a83fa801096748627ad006dbba1d4` |
@@ -238,6 +239,64 @@ execution or source-image promotion. Reviewed and merged trees match
 actual-resource, upload, execution, cleanup-trust and retention-finalization
 gates remain DRAFT/false. No application was submitted or resource deployed.
 
+## Explore and Accelerate draft profiles
+
+Merged Waypoint #52 extends the same approved-preview/export path with distinct
+Explore and Accelerate profiles. Explore defaults to worksheet/Markdown/JSON
+without a font, optional dependencies or PDF module import. The preview can
+explicitly include an internal planning PDF with an internal two-page cap;
+neither that PDF nor its cap is presented as a program requirement. Accelerate
+has its own closed fields, checklist and three-page description cap. Maximize
+remains explicitly unsupported. There is no generic tier fallback.
+
+Explore's mode and null-or-digest-bound font are part of the approved record;
+export cannot add a font or change mode. The three exact accepted #51 preview
+records, source/font bindings and canonical digests remain valid and unchanged.
+The existing publication protocol, literal narrative, CSV guards, PDF renderer,
+manifest/receipt interfaces and runtime defaults remain unchanged. Requirements
+fetch stays explicit and content-free before preview; export never refreshes.
+All packets remain DRAFT and all authority/readiness gates stay false.
+
+Independent exact-head source and evidence reviews are **CLEAR**, including all
+11 source inventory bindings. The full system-Python 3.14.5 suite passes
+**546 tests** without skips using the real pure Outfitter validator. The **ten
+new profile controls** and **24 inherited boundary controls** are overlapping
+subsets. The sequential optional bundled-Python 3.12.14 PDF suite passes
+**11 tests** without skips, including all five supported PDF profiles and
+overflow refusals. Actual isolated `-I -S` Explore testing proves optional
+dependencies unavailable, no font access and no PDF module loading.
+
+The coordinator separately passes **20 checks across seven actual isolated CLI
+scenarios**, including successful font-free worksheet preview/export, canonical
+binding, existing-directory refusal without changes, wrong approval, attempted
+font/mode switching and unsupported Maximize refusal. No PDF, refresh, engine or
+workload was created by those scenarios. Application arguments, exit codes and
+outputs remain in the private archive; the isolated interpreter/bootstrap and
+scenario harness source are recorded in the coordinator tool transcript, not a
+separate bound portable checker file. Independent owner-artifact review
+checks three modes, 23 payload hashes/sizes, three receipt/record/inventory
+bindings, worksheet/CSV and visible PDF parity. Both existing one-page PDFs were
+independently rendered and viewed. That report remains a pre-freeze record;
+later evidence matches its exact PDF hashes to the frozen head rather than
+rewriting its original pending source pin.
+
+The first literal glyph-height check observed `10.999999999999972`; it remains
+recorded. Raw PDF font operators are at least 11 points. Final checks declare
+1e-6-point derived-height and 0.001-point coordinate tolerances, with no product
+or layout change for this numerical observation. Both pages are readable and
+within the declared margins. Four earlier #51 failure files remain byte-identical.
+The [coordinator record](evidence/2026-10-19-access-profiles/acceptance.json)
+and [isolated CLI checks](evidence/2026-10-19-access-profiles/root-cli-checks.json)
+preserve exact pins, hashes, counts and these evidence boundaries.
+
+The [exact-head CI](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/39346092790)
+passes `controls` (546 standard-library and 11 PDF tests) and existing
+`actual-docker`; optional `clean-source-builds` is **SKIPPED**. Docker regression
+does not execute a temporary assessment or promote source candidates. Reviewed
+and merged trees match `db075b04a62966183b544b28c571c61ca06634b7`.
+No application, host allocation, temporary upload, benchmark or deployment was
+authorized by this increment.
+
 ## Optional durable queued grading
 
 Merged Cairn #34 establishes a non-expiring queue-owned dispatch claim before
@@ -332,11 +391,17 @@ The initial A4 calculation is accepted for synthetic metadata only. Actual
 target observations, additional stages/hardware, prediction uncertainty and
 verified resource-specific conversions remain open. Conservative allowance
 charges cannot supply fitting measurements. Initial A5 draft exports are now
-accepted within the narrow scope above. Proper Explore and Accelerate draft
-profiles are the next bounded increment; Maximize remains refused until a
-separate multi-document profile exists. Refreshed/reviewed requirements and
-actual performance remain open. Researchers review science, resources and form
-correspondence and submit their own applications.
+accepted within the narrow scope above, with Explore and Accelerate added by
+the subsequent increment. Maximize remains refused until a separate
+multi-document profile exists. The next core dependency is A1's connected
+temporary session, bounded intake, cancellation/expiry and cleanup-or-quarantine
+lifecycle through existing authorities. Existing retained study data paths must
+not receive assessment input. A concrete ownership/schema/recovery contract
+precedes this implementation; selected hosts, encryption, independent cleanup,
+operators and fresh native-unit allowances remain unresolved before operational
+qualification. Refreshed/reviewed requirements and actual performance remain
+open. Researchers review science, resources and form correspondence and submit
+their own applications.
 
 Temporary uploads, encrypted scratch, independent expiry/termination/revocation/
 deletion under faults, actual CPU/GPU measurement and accounting, second operator

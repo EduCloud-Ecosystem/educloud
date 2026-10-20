@@ -132,9 +132,12 @@ and separate NAIRR research/Classroom profiles. Independent source/evidence
 review, 536 standard-library tests, 10 optional PDF tests, 22 separate actual-CLI
 preview/refusal checks and required CI pass. Root artifact review verifies all
 three rendered drafts, hash-bound receipts and worksheet parity. Final renderer
-coverage comes from the later PDF suite/artifacts. Other ACCESS profiles remain
-unsupported; actual measurements, live qualification and current-program review
-stay open.
+coverage comes from the later PDF suite/artifacts. Subsequent Waypoint #52 adds
+distinct Explore and Accelerate drafts: 546 standard-library and 11 PDF tests,
+20 separate isolated CLI checks and required CI pass. Explore's default needs
+no font/PDF dependency; its optional planning PDF is digest-bound. Three earlier
+preview records/digests remain unchanged. Maximize stays unsupported; actual
+measurements, live qualification and current-program review remain open.
 Cairn #34 adds optional queue-owned dispatch and atomic publication after
 independent review and all eight CI checks, including hosted PostgreSQL. It
 preserves unknown outcomes and retention barriers without installing an adapter

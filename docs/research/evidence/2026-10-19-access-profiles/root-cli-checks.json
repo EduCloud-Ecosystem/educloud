@@ -1,0 +1,91 @@
+{
+  "head": "9b782a17cc797d46d664b27e967b90611f6faf60",
+  "scope": "Actual isolated -I -S CLI; default Explore creates JSON/CSV/Markdown only, no PDF/refresh/engine/provider/workload",
+  "runtime": "bundled Python3.12 isolated standard library",
+  "actual_cli_scenarios": 7,
+  "PASS": 20,
+  "FAIL": 0,
+  "checks": [
+    {
+      "name": "scenario 1 isolated dependency boundary",
+      "result": "PASS"
+    },
+    {
+      "name": "Explore default actual isolated preview succeeds",
+      "result": "PASS"
+    },
+    {
+      "name": "No PDF mode or font in approved record",
+      "result": "PASS"
+    },
+    {
+      "name": "Canonical preview digest",
+      "result": "PASS"
+    },
+    {
+      "name": "All gates false",
+      "result": "PASS"
+    },
+    {
+      "name": "scenario 2 isolated dependency boundary",
+      "result": "PASS"
+    },
+    {
+      "name": "Explore default actual isolated export succeeds",
+      "result": "PASS"
+    },
+    {
+      "name": "Worksheet package excludes PDF and font",
+      "result": "PASS"
+    },
+    {
+      "name": "Inventory and receipt binding",
+      "result": "PASS"
+    },
+    {
+      "name": "Every payload bound",
+      "result": "PASS"
+    },
+    {
+      "name": "scenario 3 isolated dependency boundary",
+      "result": "PASS"
+    },
+    {
+      "name": "Existing package refuses unchanged",
+      "result": "PASS"
+    },
+    {
+      "name": "scenario 4 isolated dependency boundary",
+      "result": "PASS"
+    },
+    {
+      "name": "Wrong digest refuses before output",
+      "result": "PASS"
+    },
+    {
+      "name": "scenario 5 isolated dependency boundary",
+      "result": "PASS"
+    },
+    {
+      "name": "Font mode cannot be added at export",
+      "result": "PASS"
+    },
+    {
+      "name": "scenario 6 isolated dependency boundary",
+      "result": "PASS"
+    },
+    {
+      "name": "PDF mode cannot be switched at export",
+      "result": "PASS"
+    },
+    {
+      "name": "scenario 7 isolated dependency boundary",
+      "result": "PASS"
+    },
+    {
+      "name": "Maximize remains refused without PDF dependencies",
+      "result": "PASS"
+    }
+  ],
+  "raw_transport": "Application argument arrays, exit codes and bounded stdout/stderr retained in protected coordinator archive. Isolated interpreter/bootstrap and scenario harness source are in coordinator tool transcript only; no separately bound portable checker file. Public record excludes host paths."
+}
