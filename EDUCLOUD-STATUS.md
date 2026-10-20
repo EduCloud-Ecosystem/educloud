@@ -51,6 +51,17 @@ measurements and program/application readiness stay open. The next core
 dependency is A1's dedicated temporary session/data lifecycle, separate from the
 retained study workflow.
 
+The first connected A1 slice is now assigned under the
+[owned-data implementation contract](docs/specs/assessment-owned-data.md).
+Outfitter's existing owner implements data-only scope ownership, writer/watch
+lifetime and cleanup-or-quarantine in the existing journal; Waypoint's existing
+owner prepares its auth/Store/schema handoff before integration. No component
+increment is accepted yet. Production upload/ingest/seal remain unconditionally
+disabled, and no synthetic cleanup observation can establish trusted closure.
+The declared upload cap is separate from unchanged manifest v1; selected expiry
+is immutable and cannot exceed manifest/project/authorization/policy limits.
+No new purchase, operational resource or qualification allowance is selected.
+
 The accepted study-bundle exporter retains source bytes and cannot serve the
 new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted
 retention and report preview need their own implementation and fault evidence.

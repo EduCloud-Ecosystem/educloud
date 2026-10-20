@@ -121,6 +121,15 @@ workflow. Its [tool decisions](docs/decisions/2026-10-19-research-assessment-too
 and [A0–A6 implementation sequence](docs/strategy/research-pilot-build-backlog.md#october-19-assessment-implementation-sequence)
 keep component ownership and actual-resource acceptance explicit.
 
+The [owned-data implementation contract](docs/specs/assessment-owned-data.md)
+scopes the first connected A1 slice: existing Outfitter journal/Watch/Reap
+ownership, Waypoint's current auth/Store fences, one writer, cancellation/expiry
+and cleanup-or-quarantine. Production content operations remain hard-disabled;
+positive tests use disposable synthetic boundaries. Fresh test-only schemas
+refuse unsupported recovery/export. Implementation is assigned, not accepted;
+actual hosts, encryption, independent cleanup and operational allowance remain
+unselected.
+
 The [October 19 preparation acceptance](docs/research/2026-10-19-assessment-preparation-acceptance.md)
 pins merged Waypoint #49 and Outfitter #18, 37 actual pure-CLI integration checks,
 independent reviews and CI, alongside Cairn #33's immutable queued grading
