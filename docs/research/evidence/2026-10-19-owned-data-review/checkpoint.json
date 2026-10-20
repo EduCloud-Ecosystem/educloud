@@ -1,0 +1,443 @@
+{
+  "schema": "educloud.owned-data-review-checkpoint/v1",
+  "status": "HOLD_FOR_HOSTED_PORTABILITY_FIX_AND_FINAL_REVIEW",
+  "reviewed_candidate": "7972ce8ea0d6e369ccb41a81ce11096ad0ce0dd6",
+  "candidate_tree": "c8631401da2d322ad614251be61c2d5fa6c564cd",
+  "base": "de65bdab9303395226ebfb35e0e0740ab19b4d8e",
+  "pull_request": "https://github.com/EduCloud-Ecosystem/outfitter/pull/19",
+  "merged_revision": null,
+  "source_inventory": {
+    "files": 215,
+    "sha256": "88b9e054c0e6ba236b0b15d1c283e9c5e2331a0258ae5c66f5ef2c0990ce5b4f"
+  },
+  "interface_sha256": "6387113f57caf612a6c54a49bff628be1102d807b72e68e0a4e172a05ec88598",
+  "root_helper_integration": {
+    "result": "PASS",
+    "checks": 82,
+    "isolated_scenarios": 7,
+    "harness_sha256": "e0e9989f5017ced8b19ab8ba568c20446565ad1ed9cc0a8ec1c34ad864fd861f",
+    "result_sha256": "bbd445214b60bbb3725f5262f52cf4463a75edab78199eb116ba0a8383c3ecb7",
+    "check_results": [
+      {
+        "check": "immutable source",
+        "result": "PASS"
+      },
+      {
+        "check": "asset hash:broker.test",
+        "result": "PASS"
+      },
+      {
+        "check": "asset hash:interface.json",
+        "result": "PASS"
+      },
+      {
+        "check": "asset hash:ledger.test",
+        "result": "PASS"
+      },
+      {
+        "check": "asset hash:outfitter",
+        "result": "PASS"
+      },
+      {
+        "check": "asset hash:source-corrected-inventory.json",
+        "result": "PASS"
+      },
+      {
+        "check": "asset hash:version-refusal-controls.json",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:fresh test fixture",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:prepare:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:prepare:cleanup_trusted",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:prepare:upload_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:prepare:execution_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:prepare:actual_resource_accepted",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:actual readiness and immutable bindings",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:status:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:status:cleanup_trusted",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:status:upload_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:status:execution_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:status:actual_resource_accepted",
+        "result": "PASS"
+      },
+      {
+        "check": "one-shot prepare exit preserves scope; status grants no permission",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:ingest:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:ingest:cleanup_trusted",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:ingest:upload_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:ingest:execution_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:ingest:actual_resource_accepted",
+        "result": "PASS"
+      },
+      {
+        "check": "real ingest complete",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:seal:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:seal:cleanup_trusted",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:seal:upload_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:seal:execution_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:seal:actual_resource_accepted",
+        "result": "PASS"
+      },
+      {
+        "check": "real seal preserves exact synthetic bytes",
+        "result": "PASS"
+      },
+      {
+        "check": "payload excluded from metadata journal",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:cancel:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:cancel:cleanup_trusted",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:cancel:upload_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:cancel:execution_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:cancel:actual_resource_accepted",
+        "result": "PASS"
+      },
+      {
+        "check": "observed removal remains unresolved and untrusted",
+        "result": "PASS"
+      },
+      {
+        "check": "writer lease tombstone survives removal",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:watch child exited after owner loss",
+        "result": "PASS"
+      },
+      {
+        "check": "complete:preexisting accounting unchanged",
+        "result": "PASS"
+      },
+      {
+        "check": "short:fresh test fixture",
+        "result": "PASS"
+      },
+      {
+        "check": "short:prepare:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "short:prepare:cleanup_trusted",
+        "result": "PASS"
+      },
+      {
+        "check": "short:prepare:upload_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "short:prepare:execution_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "short:prepare:actual_resource_accepted",
+        "result": "PASS"
+      },
+      {
+        "check": "short:actual readiness and immutable bindings",
+        "result": "PASS"
+      },
+      {
+        "check": "short:ingest:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "short:framed body refused",
+        "result": "PASS"
+      },
+      {
+        "check": "short:ingest:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "short:irreversible writer cannot replay",
+        "result": "PASS"
+      },
+      {
+        "check": "short:watch child exited after owner loss",
+        "result": "PASS"
+      },
+      {
+        "check": "short:preexisting accounting unchanged",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:fresh test fixture",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:prepare:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:prepare:cleanup_trusted",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:prepare:upload_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:prepare:execution_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:prepare:actual_resource_accepted",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:actual readiness and immutable bindings",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:ingest:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:framed body refused",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:ingest:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:irreversible writer cannot replay",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:watch child exited after owner loss",
+        "result": "PASS"
+      },
+      {
+        "check": "overlong:preexisting accounting unchanged",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:fresh test fixture",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:prepare:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:prepare:cleanup_trusted",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:prepare:upload_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:prepare:execution_authorized",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:prepare:actual_resource_accepted",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:actual readiness and immutable bindings",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:ingest:closed reply framing",
+        "result": "PASS"
+      },
+      {
+        "check": "unrelated live watcher pipe refused",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:watch child exited after owner loss",
+        "result": "PASS"
+      },
+      {
+        "check": "foreign-live-pipe:preexisting accounting unchanged",
+        "result": "PASS"
+      },
+      {
+        "check": "production:prepare:refused before open stdin/state",
+        "result": "PASS"
+      },
+      {
+        "check": "production:ingest:refused before open stdin/state",
+        "result": "PASS"
+      },
+      {
+        "check": "production:seal:refused before open stdin/state",
+        "result": "PASS"
+      }
+    ],
+    "provenance": "Actual author-built test-helper/production binaries with verified hashes; saved Python source and requests/replies saved in private operator archive. Fixed synthetic clock, macOS only; compiler environment not independently attested. No hosted or whole-service qualification.",
+    "retry_coverage_limit": "Historical short/overlong retry checks reuse the prior expected_generation; saved replies are ASSESSMENT_STALE. They prove stale-generation refusal, not independently the irreversible writer latch with refreshed generation. Historical labels and82results retained unchanged; source/author latch evidence separate."
+  },
+  "author_local": {
+    "corrected_affected_packages": {
+      "sha256": "d6c7c3a3bbeaa086ee39b31d46b40b6374851af7274f845a31597061e6685ced",
+      "test_events": {
+        "pass": 123
+      },
+      "packages": [
+        {
+          "package": "github.com/EduCloud-Ecosystem/outfitter/cmd/outfitter",
+          "result": "pass"
+        },
+        {
+          "package": "github.com/EduCloud-Ecosystem/outfitter/internal/broker",
+          "result": "pass"
+        }
+      ]
+    },
+    "default_race_timing": {
+      "sha256": "8c03e1e6c263740b1503fdccc4ee8a5ef800a19ba11382ba650100a1fc3aaa06",
+      "test_events": {
+        "pass": 10
+      },
+      "packages": [
+        {
+          "package": "github.com/EduCloud-Ecosystem/outfitter/internal/broker",
+          "result": "pass"
+        }
+      ]
+    },
+    "version_refusal": {
+      "predicate_controls": 12,
+      "result": "PASS_OWNER_RECORDED",
+      "summary_sha256": "7f57a34ffeb780890ae9ca0abb7d31fe7dde480b3fea702eaeef8474a4d07621",
+      "provenance": "Original inline transcript checker, captured predicate/fingerprint summary; raw per-call outputs/full environment absent. Later verbatim text archive is retrospective and was not rerun."
+    },
+    "provenance_supplement": {
+      "sha256": "4bc1980bc5b3d3184c860e4a9386c5e8cb0d90d50e11b06a97a546e2ab975a6e",
+      "kind": "RETROSPECTIVE_TRANSCRIPT_SUPPLEMENT_NOT_NEW_EXECUTION"
+    },
+    "static_and_builds": "PASS_OWNER_RECORDED; exact commands and completion IDs later transcribed; full original compiler/environment snapshot absent"
+  },
+  "retained_full_local_run": {
+    "revision": "79cf73f455019533731d349abe4de57acbb26873",
+    "result": "FAIL",
+    "pass": 1020,
+    "fail": 2,
+    "skip": 2,
+    "passed_packages": 9,
+    "failed_packages": 1,
+    "sha256": "fb3ff13ef96b3a88570d11b14c7803d0efa3b6df5b080fcce84645b7b4cc81f7",
+    "failure": "Replaced watcher lease leaf and parent; corrected affected packages are separate evidence, not a final full-suite pass.",
+    "skips": [
+      "Docker lifecycle opt-in unset",
+      "Provider self-expiry unsupported"
+    ]
+  },
+  "hosted_run": {
+    "url": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39354445924",
+    "revision": "7972ce8ea0d6e369ccb41a81ce11096ad0ce0dd6",
+    "result": "FAIL",
+    "test_events": {
+      "pass": 952,
+      "skip": 2,
+      "fail": 74
+    },
+    "log_sha256": "17302cc3d3b2f4a385ee675f6ccc8c8f858996e8a4fcf7e9d7a7a5ea126ba63f",
+    "jobs": {
+      "storage-writer-qualification": "PASS",
+      "go-and-docker": "FAIL_RACE_STAGE"
+    },
+    "subsequent_build_docker_recovery_consumer": "SKIPPED",
+    "cause_status": "SOURCE_INFERRED_UNTIL_NARROW_FIX_AND_RUNTIME_CONTROL; pipe link-count zero assumption rejects Linux anonymous pipe. No Linux reproduction by coordinator."
+  },
+  "remaining_authority": {
+    "production_uploads": false,
+    "execution": false,
+    "trusted_cleanup": false,
+    "actual_resource_acceptance": false,
+    "real_host_qualified": false,
+    "independent_cleanup_qualified": false,
+    "whole_service_accepted": false
+  },
+  "next": "Existing Waypoint owner implements approved AS1 isolated Store/Owner/Guard/current-auth and disabled routes. Final peer binding and connected acceptance await reviewed portability fix/CI. Actual encryption, host, independent cleanup, measurements and second operator remain OPEN.",
+  "postcheckpoint_owner_report": {
+    "finding": "Darwin unlinked named FIFO with Nlink0 admitted by old pipe check",
+    "attribution": "Outfitter owner reported an actual local pre-edit syscall probe after checkpoint; coordinator has not independently rerun or bound this new probe log",
+    "coordinator_runtime": "NOT RUN",
+    "additional_coordinator_failures_counted": 0,
+    "required_fix": "Positive opened-descriptor kernel pipe type on each platform, named/unlinkedFIFO negative controls, unchanged access/identity/pairing checks."
+  }
+}
