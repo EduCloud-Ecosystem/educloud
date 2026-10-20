@@ -128,8 +128,10 @@ and cleanup-or-quarantine. Production content operations remain hard-disabled;
 positive tests use disposable synthetic boundaries. Fresh test-only schemas
 refuse unsupported recovery/export. The disabled
 [Outfitter #19 source increment is accepted](docs/research/2026-10-19-owned-data-source-acceptance.md);
-connected Waypoint integration and operational acceptance remain pending. Actual
-hosts, encryption, independent cleanup and operational allowance remain unselected.
+the [connected AS1 source increment is accepted](docs/research/2026-10-19-as1-source-acceptance.md)
+in Waypoint #53, with real HTTP/Store/current-auth/test-peer checks. Production
+content stays disabled. Actual hosts, encryption, independent cleanup and
+operational allowance remain unselected.
 
 The [larger CPU metadata source acceptance](docs/research/2026-10-19-large-cpu-source-acceptance.md)
 records Outfitter #20, separately versioned schemas, exact final CI and 47

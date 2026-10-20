@@ -396,6 +396,9 @@ maintenance owner; resource and privacy decisions remain explicit.
 
 The [disabled broker source acceptance](2026-10-19-owned-data-source-acceptance.md)
 records merged Outfitter #19, final review/CI and its bounded source-only scope.
+The [connected AS1 acceptance](2026-10-19-as1-source-acceptance.md) records merged
+Waypoint #53, real HTTP/Store/current-auth/test-peer checks and preserved failures.
+Production content remains disabled; this does not qualify operational uploads.
 The separately versioned [larger CPU metadata acceptance](2026-10-19-large-cpu-source-acceptance.md)
 records merged Outfitter #20, final CI and 47 independent pure-CLI checks. It
 does not enable larger-input execution, measurements or cleanup trust; v1 and
@@ -411,13 +414,13 @@ verified resource-specific conversions remain open. Conservative allowance
 charges cannot supply fitting measurements. Initial A5 draft exports are now
 accepted within the narrow scope above, with Explore and Accelerate added by
 the subsequent increment. Maximize remains refused until a separate
-multi-document profile exists. The next core dependency is A1's connected
-temporary session, bounded intake, cancellation/expiry and cleanup-or-quarantine
-lifecycle through existing authorities. Existing retained study data paths must
-not receive assessment input. A concrete ownership/schema/recovery contract
-precedes this implementation; selected hosts, encryption, independent cleanup,
-operators and fresh native-unit allowances remain unresolved before operational
-qualification. Refreshed/reviewed requirements and actual performance remain
+multi-document profile exists. A1's connected temporary session, bounded intake,
+current authorization and cleanup-or-quarantine source are now accepted within
+the disabled test-only scope above. Next connect larger-profile execution,
+measurement and independent scientific checks through existing authorities.
+Retained study data paths must not receive assessment input. Selected hosts,
+encryption, independent cleanup, operators and fresh native-unit allowances
+remain unresolved before operational qualification. Refreshed/reviewed requirements and actual performance remain
 open. Researchers review science, resources and form correspondence and submit
 their own applications.
 

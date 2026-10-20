@@ -142,6 +142,10 @@ rollback and another restored admitting store remain unqualified risks.
 
 ## Delivery and evidence
 
+The [connected AS1 source acceptance](../research/2026-10-19-as1-source-acceptance.md)
+records merged Waypoint #53 after Outfitter #19. It accepts disabled source and
+synthetic real-process/HTTP/Store checks only; operational gates below remain open.
+
 First deliver Outfitter's closed journal/lifecycle/codec, test-only project seed,
 real process helpers and existing Watch/Reap branch. Then integrate Waypoint's
 fresh session rows, current auth/guard hooks, disabled production routes and
