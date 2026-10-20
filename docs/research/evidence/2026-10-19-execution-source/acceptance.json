@@ -1,0 +1,162 @@
+{
+  "schema": "educloud.assessment-execution-source-acceptance/v1",
+  "state": "ACCEPTED_DISABLED_SOURCE_TEST_CONTROLS_ONLY",
+  "pr": "https://github.com/EduCloud-Ecosystem/outfitter/pull/21",
+  "reviewed_head": "05c22142980f3e089414cdf920e7ac1dfee481c8",
+  "component_base": "e0dc0249c818ab1d8b6c74a5555d9e1ec89c1900",
+  "merge": "7381afe4585c4440164b53ba7733d6759b3ac5f1",
+  "tree": "4f65949b957bcb711d4b625325762c4796879dc1",
+  "full_binary_full_index_diff_sha256": "df939acc11b9021843eead989ea43ca4c9bc1879363d686263fb25fcba7dc70e",
+  "source_files": 297,
+  "changed_new_files": 42,
+  "full_inventory_sha256": "34f0a427adeb52034a4c86d24fb88847a6c95df41b4f4d9c2d8887f9a8714134",
+  "canonical_base": "6a2d6f1792a65c348adb56339844ed6006072e6e",
+  "ci": {
+    "run": 39382077350,
+    "status": "SUCCESS_ROOT_AND_INDEPENDENT_ARCHIVE_CLEAR",
+    "url": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39382077350",
+    "actual_checkout": "d6ff83b7c40935bcccd4a7129887e0be3508c990",
+    "checkout_tree": "4f65949b957bcb711d4b625325762c4796879dc1",
+    "passed_events": 1533,
+    "failed_events": 0,
+    "skipped_events": 2,
+    "package_passes": 11,
+    "go_events": 6937,
+    "artifact_joblog_sequence_equal": true,
+    "both_jobs": "SUCCESS",
+    "static_checks_build": "PASS",
+    "baseline_docker_lifecycle": "PASS; self-expiry intentionally unsupported/SKIP",
+    "baseline_reports": {
+      "docker_checks": 26,
+      "recovery_checks": 38,
+      "consumer_checks": 19
+    },
+    "historical_storage": "Pinned5827c84 only:22events/32models/2optimized; quota false/capacityUNKNOWN; not v7 enforcement qualification",
+    "top_level_passed_methods": 264,
+    "top_level_skipped_methods": 2
+  },
+  "private_evidence_archive_sha256": {
+    "ownership-first-compile-root-audit.json": "639819473efd692b83ce95d0285aa396c27d4eea7b9cc466e11d7cfc92e5a007",
+    "ownership-second-compile-root-audit.json": "22fbaa8833f9c93aad9c41f9abaafcacad8936301cdbf474a74c5410f7c01423",
+    "ownership-third-window-root-audit.json": "eed020bfe8b8dfbf6c005af1ded87513c2aced1dcf29321802692955fc8018c5",
+    "ownership-fault-window-root-audit.json": "45bfde2045dbce011982b93f570e7b6147d0f3aa57582ebb5bf9e4b2fcbccae1",
+    "ownership-fixture-corrected-root-audit.json": "6b9b88d9d8622e51ddb6223174f80fc4fed97a2a59c53b0ce267ecf3afd077aa",
+    "ownership-forward-fence-root-audit.json": "dea6be0415f3fc0dec941296ad50b7f6dc91c01db5743cd6c6bbe8b8cf7f07a9",
+    "ownership-checker-correction-root-audit.json": "10bc23127b4f939cc9e6829139ba85c403790016c6de60a42a151ce65a02ecdb",
+    "ownership-late-capture-red-root-audit.json": "cd0c82e27d2dd821184514ecdd57498087159ccdd478ec63c00f4eaeedccf56e",
+    "ownership-late-capture-green-root-audit.json": "440c71a13d050397ae6b8a803ae797aeb02c52a1f5a50453dbc7012cb27347f6",
+    "execution-final-cli-stamp-root-audit.json": "d1d13244a98ba121cf398e3416b82d955a3896452f937405bd667a07643bfca0",
+    "execution-final-cli-root-acceptance.json": "d6c3bcd84cc6fb44404a8698710903d3579817f4b521fc0493a8d60b7667752f",
+    "ownership-immutable-public-wire-spec-evidence-review-21a21bb.json": "d55f38edff994438c7970b55b1bc88e944d66fbdf354bb4ac7a301ee2be7808f",
+    "v7-leaseclose-supplement-20261020-astra/immutable-final-source-acceptance.json": "c83207cf5c6401cd36e9c5e58d8d7906cb8c12c47ea682374baa59011c3d19cb",
+    "v7-leaseclose-supplement-20261020-astra/capture-retirement-fix-review.json": "ee0988020071eec70cf069fa0f41d8869d1a70d915e8bdae15ca4f37b8d85773",
+    "v7-leaseclose-supplement-20261020-astra/final-event-bound-delta.json": "81a7e9f10b76d86bebd56a398f82d188f88898938f89990a9d7f90d5f0ce99be",
+    "assessment-execution-first-root-log-audit.json": "a97f0f742ba4e141540977e7ebe6d93b105af620c3ab85cb87cdf876fd46a263",
+    "assessment-execution-second-root-log-audit.json": "9e268933ec0a4b26a128a76492dcfef357107f29d42ecb68d2803e6e6f10058f",
+    "assessment-execution-output-close-root-log-audit.json": "e647b71285b14b1a66ae75926241a51da7b182940e5b5890dbd0bf1af9932130",
+    "execution-global-close-root-control-audit.json": "1f098b1b4c70276a939901a21958c51b09a56a0ba66486182a0489d7c8e6e947",
+    "outfitter21-ci-39378684768/root-failed-ci-audit.json": "67b94fd9475609bfe51c57ab0dcda1fabbb7e39714b29a25e942c0b2220139e8",
+    "execution-next-scope-source-audit-sol/original-failure-index.json": "4cb7c2eaaab0c5d945d4dcf3323d88f13555d71c2c3ca2c7b3bc33fd60b25ddc",
+    "execution-ci-first-correction-root-audit.json": "227d5e8fc2f5856a8e1cc841c03b8a23c730a728dd93601877180a6405cddc17",
+    "execution-ci-first-correction-static-review.json": "c21b3917247086121f663d53388a28490ecbb9f4d3847c43705bc04ad3f8f78b",
+    "outfitter21-ci-39378684768/root-checkout-tree-binding.json": "fe49ba97ba1e89eac24c281a29a8238679f8dea564691d25d3a6c6e83414103e",
+    "execution-ci-process-correction-root-audit.json": "24b1bfdac356615312ba242c0efea521036add9dd6792a11f1c104f968d5b1d8",
+    "outfitter21-final-head-root-review.json": "5d2747381a9646cdbe69f6833b112bfa8d6b4aef74d1a3493f904505cca57d9e",
+    "execution-ci-correction-immutable-binding-05c2214.json": "bd2b1708abadcf8ad71bee8e255bbddc4107679e839caf55c171ad8eea0109d9",
+    "execution-ci-process-current-guard-static-review.json": "1089b9fe45893f1dc77faeda8b23c267a32bc38f3c982be002b44c25fa43efcd",
+    "outfitter21-ci-39382077350/root-final-ci-audit.json": "e5e361190f83a78b04b446bf136426b93052bee73d5a2ea74cf66263309b6100",
+    "outfitter21-ci-39382077350/archive-index.json": "5b92514b47bca4ec31921d84c26ed3b8dfa62bdfc0d98ceb15c29e1354d51325",
+    "outfitter21-ci-39382077350/archive-checker-correction.json": "6e9a1710c6cd7d266866a369b578c6fca0f71854135e8b53791b59a13c0fe4fe",
+    "outfitter21-merge.json": "45efc475b1925d2f5dd59e5fc8a0ef16113ec897b539bcac84a32aaa4c430391",
+    "outfitter21-ci-39382077350-independent-review.json": "e4fc6fbb890aa7b5802c41be8772d106fecce97ddaca43d6b27442e57a55edfb",
+    "outfitter21-ci-39382077350/archive-checker-classification-amendment.json": "f5b14ffa6012cc2c83ecf97870c6fb19e2ce1b1b04780bd14db949f86d5a9e64"
+  },
+  "independent_review": "Critical production-source review at21a carried through243 byte-identical non-test paths; final3testpath immutable review and exactCI/archive review CLEAR WITH LIMITS",
+  "local": [
+    {
+      "checkpoint": "cb766866",
+      "passed_events": 90,
+      "top_level_methods": 19,
+      "scope": "codec+ledger; not full suite, max forms not full reachable max trace"
+    },
+    {
+      "checkpoint": "ebfa87f9",
+      "passed_events": 97,
+      "failed_events": 4,
+      "top_level_pass": 32,
+      "top_level_fail": 2,
+      "scope": "affected Broker/CLI function selection; retained old counter/owner witness assumptions"
+    },
+    {
+      "checkpoint": "18326aa4",
+      "passed_events": 13,
+      "top_level_methods": 4,
+      "scope": "test-only exact denial delta and original-owner/orphan cancellation correction"
+    },
+    {
+      "checkpoint": "837dee4c",
+      "passed_events": 0,
+      "failed_events": 3,
+      "top_level_fail": 1,
+      "scope": "actual retained capture synchronous Close and saved callback failure, original source"
+    },
+    {
+      "checkpoint": "04314ba7",
+      "passed_events": 11,
+      "top_level_methods": 6,
+      "scope": "retirement/final wipe affected methods; production/non-test fix matches final commit, later process-test changes separately reviewed"
+    }
+  ],
+  "actual_cli": {
+    "status": "PASS12_REFUSAL_ONLY",
+    "source_head": "21a21bbfa0e1fa235529e5c5b7056c7ccea27162",
+    "binary_sha256": "5fdceb81d24297a2b53704e9f2d6643d9484e6be201f26ad5aa445f489aca5ff",
+    "source_binding": "manual exact clean source before/after successful build; no embedded VCS revision/compiler attestation",
+    "original_stamp_checker": "FAIL retained; build PASS, all12CLI then NOT RUN; separately reserved continuation reused same binary without rebuild",
+    "evidence": "12 exact disabled replies/exit2 before stdin EOF, empty stderr;8 absent-state fixed/enabling-looking arguments+4 unchanged poison states",
+    "final_head_equivalence": "Built and tested at21a, not rebuilt05c; all243 non-Go-test paths byte-identical. No compiler attestation."
+  },
+  "provenance_limits": [
+    "Selected method/subtest counts overlap and are not summed",
+    "Private watcher is in-process, phase subprocesses synthetic; no actual scientific execution/OS watcher/host qualification",
+    "Injected syscall failures do not qualify actual host OS failure",
+    "Full reachable maximum event trace NOT RUN; source-derived bound and valid maximum JSON controls separate",
+    "Private protected hashes do not imply public download access",
+    "Archive checker first failed on common go-tests.jsonl basename across two ZIPs; corrected (archive,member) selection without runtime rerun. Misnamed saved file actually contains current Docker stream; original note plus classification amendment retained."
+  ],
+  "historical_failures": "All original compile, identity, connected fixture/seal, global-close, late barrier timeout, counter/orphan checker and capture failures remain retained; timing-only green does not prove original seal cause Original seal intermittency cause remains UNKNOWN; the later stale-snapshot regression control does not prove that historical cause.",
+  "canonical_runtime": "NOT RUN: docs only, no configured umbrella CI",
+  "readiness": {
+    "production_enabled": false,
+    "runtime_qualified": false,
+    "cleanup_trusted": false,
+    "actual_resource_accepted": false,
+    "whole_service_accepted": false
+  },
+  "historical_ci": [
+    {
+      "run": 39378684768,
+      "status": "FAIL_FIRST_RUN_RETAINED_NO_MERGE",
+      "url": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39378684768",
+      "passed_events": 1150,
+      "failed_events": 1,
+      "skipped_events": 2,
+      "additional_package_setup_failure": "assessment import cycle; zero test events",
+      "later_vet_format_build_docker_recovery_consumer": "NOT RUN"
+    }
+  ],
+  "review_binding": {
+    "critical_source": "21a21bbf immutable critical review carried through exact 243 non-Go-test path equivalence",
+    "final_test_delta": "05c2214 independent immutable review: exactly three test paths; 62 of prior 63 assessment files unchanged, legacy_test changed plus new fixture shim; all11productionGo/47fixtures/33prior docs/evidence unchanged",
+    "parent": "21a21bbfa0e1fa235529e5c5b7056c7ccea27162"
+  },
+  "test_correction": {
+    "checkpoint": "d81bbe5f",
+    "full_module_zero_method_compile": "PASS11packages",
+    "selected_race": "70PASS1FAIL;6topPASS1topFAIL;all6assessmentmethodsPASS",
+    "original5s_test_diagnostic": "Caller deadline observed before checkerStart, workloadWait1023ms; newterminalfailedcharge30 differs originalCIHELD so originalcauseUNKNOWN",
+    "next_proposal": "COMPLETE: additive DCO05c independently reviewed; final configured CI passed and component merged with equal tree",
+    "positive_and_actual_child_cancel": "PASS2methods under race at e4210183, rawcfde1b4b; defaultchildenv,20stestcontext<unchanged30sreservation, actualcancelWait/reap and fresh-generation/sufficient-budget nextslotrefusal",
+    "first_window": "NOT RUN zero Go/compiler/testevents because prelaunch remaining90soutertime insufficient; fresh explicit window used, no timeout change"
+  }
+}

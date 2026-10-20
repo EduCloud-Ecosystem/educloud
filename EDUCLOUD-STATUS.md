@@ -81,6 +81,16 @@ code identities and an independent checker support an explicitly narrower
 measurement, aggregate storage and trusted cleanup remain open; no production
 path or ordinary recipe changes.
 
+The [execution and checked-cleanup source acceptance](docs/research/2026-10-19-execution-source-acceptance.md)
+is accepted through Outfitter #21, merge `7381afe4`. It adds permanent complete-plan
+and slot claims, one-budget sequential workload/checker control, checked original
+ownership and conservative cleanup holds. Root and independent reviews, final
+1,533 PASS / zero FAIL / two SKIP events across eleven packages, and existing
+Docker/recovery/consumer regression checks passed. Earlier failures remain
+retained. Production stays disabled; the new typed Waypoint consumer, installed
+scientific adapter, aggregate enforcement, actual counters and operational
+qualification remain open.
+
 The accepted study-bundle exporter retains source bytes and cannot serve the
 new temporary mode. Isolated encrypted scratch, exhaustive cleanup, allowlisted
 retention and report preview need their own implementation and fault evidence.

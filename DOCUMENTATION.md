@@ -146,6 +146,15 @@ CI with original failures retained. Its narrower input supports up to 88,000,013
 bytes by source bounds; it does not qualify 5 GB inputs, dispatch, actual counters,
 storage, sampling or cleanup. All candidate readiness flags remain false.
 
+The [execution and checked-cleanup source acceptance](docs/research/2026-10-19-execution-source-acceptance.md)
+records Outfitter #21: permanent scope/slot claims, sequential workload/checker
+controls and original-owner cleanup holds in the existing authority. Independent
+reviews and exact hosted CI passed 1,533 test/subtest events with two explicit
+skips; all earlier failures remain visible. This disabled test-only v7 slice does
+not activate production, install a scientific adapter or qualify counters,
+aggregate storage or independent cleanup. A separate typed Waypoint handoff
+remains to implement and review.
+
 The [October 19 preparation acceptance](docs/research/2026-10-19-assessment-preparation-acceptance.md)
 pins merged Waypoint #49 and Outfitter #18, 37 actual pure-CLI integration checks,
 independent reviews and CI, alongside Cairn #33's immutable queued grading
