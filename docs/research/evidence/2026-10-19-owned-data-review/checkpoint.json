@@ -347,7 +347,8 @@
         "result": "PASS"
       }
     ],
-    "provenance": "Actual author-built test-helper/production binaries with verified hashes; saved Python source and requests/replies saved in private operator archive. Fixed synthetic clock, macOS only; compiler environment not independently attested. No hosted or whole-service qualification."
+    "provenance": "Actual author-built test-helper/production binaries with verified hashes; saved Python source and requests/replies saved in private operator archive. Fixed synthetic clock, macOS only; compiler environment not independently attested. No hosted or whole-service qualification.",
+    "retry_coverage_limit": "Historical short/overlong retry checks reuse the prior expected_generation; saved replies are ASSESSMENT_STALE. They prove stale-generation refusal, not independently the irreversible writer latch with refreshed generation. Historical labels and82results retained unchanged; source/author latch evidence separate."
   },
   "author_local": {
     "corrected_affected_packages": {
@@ -431,5 +432,12 @@
     "independent_cleanup_qualified": false,
     "whole_service_accepted": false
   },
-  "next": "Existing Waypoint owner implements approved AS1 isolated Store/Owner/Guard/current-auth and disabled routes. Final peer binding and connected acceptance await reviewed portability fix/CI. Actual encryption, host, independent cleanup, measurements and second operator remain OPEN."
+  "next": "Existing Waypoint owner implements approved AS1 isolated Store/Owner/Guard/current-auth and disabled routes. Final peer binding and connected acceptance await reviewed portability fix/CI. Actual encryption, host, independent cleanup, measurements and second operator remain OPEN.",
+  "postcheckpoint_owner_report": {
+    "finding": "Darwin unlinked named FIFO with Nlink0 admitted by old pipe check",
+    "attribution": "Outfitter owner reported an actual local pre-edit syscall probe after checkpoint; coordinator has not independently rerun or bound this new probe log",
+    "coordinator_runtime": "NOT RUN",
+    "additional_coordinator_failures_counted": 0,
+    "required_fix": "Positive opened-descriptor kernel pipe type on each platform, named/unlinkedFIFO negative controls, unchanged access/identity/pairing checks."
+  }
 }

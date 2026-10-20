@@ -24,7 +24,7 @@ retains exact pins, hashes, result counts and evidence limits.
 
 | Evidence | Observed result and limit |
 | --- | --- |
-| Coordinator real subprocess/CLI integration | **PASS: 82 checks in seven isolated scenarios.** Actual test-built Broker/Store/Watch helpers complete prepare, status, ingest, seal and cancel. Short/overlong bodies cannot replay a writer; an unrelated live watcher pipe is refused; all three production content operations refuse with stdin still open and unread. Exact synthetic bytes, journal exclusion, surviving writer tombstone and unchanged accounting are checked. This is macOS synthetic evidence. |
+| Coordinator real subprocess/CLI integration | **PASS: 82 checks in seven isolated scenarios.** Actual test-built Broker/Store/Watch helpers complete prepare, status, ingest, seal and cancel. Short/overlong bodies fail; their unchanged-generation retries receive `ASSESSMENT_STALE`, so these root probes establish stale-generation refusal rather than independently isolating the writer latch. An unrelated live watcher pipe is refused; all three production content operations refuse with stdin still open and unread. Exact synthetic bytes, journal exclusion, surviving writer tombstone and unchanged accounting are checked. This is macOS synthetic evidence. |
 | Corrected local affected packages | **PASS: 123 race-test/subtest events**, command-line and complete broker packages. Their log/source hashes are verified. Other packages' prior-head results are separate. |
 | Default race-runtime refusal subset | **PASS: ten test/subtest events**, overlapping the affected suite. The later transcript supplement records `GORACE` unset and the exact original invocation; the log itself does not capture the command/environment. |
 | Static checks and builds | **PASS, owner-recorded** vet, formatting, whitespace and production/test-helper builds. The retrospective transcript supplement preserves original command/completion references; it does not create a contemporaneous compiler/environment attestation. |
@@ -43,6 +43,16 @@ actual Linux lifecycle success while still rejecting named/unlinked FIFOs,
 wrong-direction endpoints and unrelated live pipes. Broadening the check to
 accept arbitrary FIFOs or skipping the positive Linux journey is insufficient.
 Merge remains held pending that correction, immutable review and configured CI.
+
+After this checkpoint, the Outfitter owner reported a separate actual local
+probe admitting an unlinked named FIFO under the same zero-link rule on Darwin.
+The coordinator has not independently rerun or bound that new probe log here;
+it is an attributed finding, not an additional counted coordinator failure.
+The correction must positively identify the kernel pipe object on both
+platforms and reject named and unlinked FIFOs, retaining all direction, identity
+and pairing checks. The original 82 check labels remain unchanged; their
+stale-generation retry coverage limit above is an evidence correction, not a
+new product failure.
 
 Earlier actual failures remain retained: header body read-ahead; a three-byte
 maximum-encoding undercount; a missing initialized sentinel after journal loss;
