@@ -248,7 +248,8 @@
     "actual_host_qualified": false,
     "trusted_deletion": false,
     "storage_enforcement": false,
-    "real_data_admission": false
+    "real_data_admission": false,
+    "J2a": "FIRST_DRAFT_REJECTED_INDEPENDENT_REVIEW_CORRECTION_UNDERWAY_NOT_TESTED_NOT_ACCEPTED"
   },
   "limits": [
     "Actual configured Linux race test-only fixture/helper evidence for this exact source, binary and assets; no compiler attestation.",
@@ -256,5 +257,75 @@
     "Raw archives/logs are retained separately by digest; hosted artifact availability is not guaranteed indefinitely.",
     "Earlier failures and precise unknown historical branches remain retained. No timing-only retry or timeout inflation.",
     "Separate post-merge workflow observations do not replace this exact reviewed PR-run acceptance."
-  ]
+  ],
+  "postmerge_observation": {
+    "run": 39526113045,
+    "url": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39526113045",
+    "status": "CANCELLED_INCOMPLETE_DOWNSTREAM",
+    "actual_checkout": "6a974671f008640ddccd32547131ca6e696fefa4",
+    "tree": "8c3ea960c2aac6545aa0fffa2f71bb5c13be5287",
+    "main_job": {
+      "conclusion": "CANCELLED",
+      "cause": "GitHub annotation explicitly reports maximum execution time of 15m0s exceeded",
+      "configured_seconds": 900,
+      "limit_unchanged": true
+    },
+    "six_groups": "PASS_EXIT0_ORIGINAL_WAIT_BOTH_EOF_GROUP_ABSENT",
+    "vet_format_build": "PASS",
+    "GoJSON": {
+      "raw_joblog_equals_archived_captures": true,
+      "events": 7462,
+      "listing_events": 110,
+      "runtime_events": 7352,
+      "overlapping_PASS": 1622,
+      "FAIL": 0,
+      "SKIP": 2
+    },
+    "retained_exercised_helper": {
+      "sha256": "e9c1a4923c2d855da64b5173d799a838b9b391fdc2ca0ec65adfbd161013f9ca",
+      "bytes": 11662125,
+      "same_as_accepted_PR_helper": true,
+      "executed_locally": false,
+      "compiler_attestation": false
+    },
+    "image_preparation": {
+      "API_conclusion": "CANCELLED",
+      "log_reports_download_completed": true,
+      "completed_step_established": false
+    },
+    "downstream": {
+      "actual_Docker_lifecycle": "SKIPPED",
+      "bounded_execution_and_broker_loss": "SKIPPED",
+      "local_recovery": "SKIPPED",
+      "synthetic_consumer": "SKIPPED"
+    },
+    "archives": [
+      {
+        "id": 12313991495,
+        "sha256": "b9fb440fe2a2429e998d1fcfc4fbdc578c1025b016f5616c72299ae9f755a411",
+        "members": 4,
+        "digest_matches_API": true,
+        "all_member_CRC_checked": true
+      },
+      {
+        "id": 12312848775,
+        "sha256": "8444aeef9f71bb2327449e2daa3187459e1f6b42466e9bc3c4e6fb761f871e91",
+        "members": 38,
+        "digest_matches_API": true,
+        "all_member_CRC_checked": true
+      }
+    ],
+    "audits_sha256": {
+      "root-postmerge-cancellation-audit.json": "e6a7ba6543b56d4b50a3798552803334564f889b782a29c3e02042c43dce62f9",
+      "root-main-evidence-audit.json": "4468192e39c858c22263dbcce7791dd0c755db6f64ac81b58c998b43f2f37acc",
+      "independent-postmerge-cancellation-audit.json": "13a54bc657733e59c9b3868aeb9cd86b793f71c8db515086b38935b6ca8ef517"
+    },
+    "accepted_historical_PR_run": 39523851991,
+    "accepted_J1_gate_unchanged": true,
+    "run_coverage_combined": false,
+    "rerun_performed": false,
+    "timeout_changed": false,
+    "robust_timing_fit": "NOT_ESTABLISHED",
+    "scope": "Separate incomplete postmerge observation; does not replace or extend exact reviewed PR-run source/helper acceptance."
+  }
 }
