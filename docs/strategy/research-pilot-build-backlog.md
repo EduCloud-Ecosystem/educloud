@@ -294,6 +294,18 @@ review and passing exact-head Linux CI. The artifact now retains the actual
 exercised race helper; ten seed boundary leaves and its external two-slot
 synthetic lifecycle passed. All 83 downstream checks passed, with earlier
 failures retained. The 895-second job leaves only five seconds nominal headroom;
-reliable timing capacity remains unknown. A1/A2 stay partial while J2 connects
-Waypoint's separately typed state, native peer and service. Scientific execution,
-actual measurement/storage enforcement and J6 operational gates remain open.
+reliable timing capacity remains unknown.
+
+Separate automatic [main CI 39526113045](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39526113045)
+was CANCELLED by the unchanged 15-minute main-job limit. Six groups, static
+checks and build passed, but image preparation was CANCELLED and downstream
+Docker lifecycle/execution/recovery/consumer acceptance was SKIPPED. The complete
+independently verified PR run remains the historical J1 source/helper acceptance;
+the two runs do not form a combined full pass. No rerun or timeout change was
+performed, and robust timing fit remains unestablished.
+
+A1/A2 stay partial while J2 connects Waypoint's separately typed state, native
+peer and service. J2a's first source draft was rejected by independent review;
+correction is underway separately, with testing and acceptance still unperformed.
+Scientific execution, actual measurement/storage enforcement and J6 operational
+gates remain open.

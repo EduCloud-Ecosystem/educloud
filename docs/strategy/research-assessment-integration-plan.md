@@ -43,9 +43,16 @@ full-journey implementation hold; operational gates remain open.
 J1 is complete: [session seed source acceptance](../research/2026-10-20-session-seed-source-acceptance.md)
 records merged Outfitter #23 at `6a974671f008640ddccd32547131ca6e696fefa4`,
 independent review and the actual exercised helper retained by passing PR CI.
-The job had only five seconds nominal headroom; robust timing fit remains unknown.
-J2 begins with the separately typed private state layer. Its peer/native and
-connected-service gates remain unperformed; J3–J6 are not accepted by J1.
+The accepted PR job had only five seconds nominal headroom. Separate automatic
+[main run 39526113045](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39526113045)
+was CANCELLED at the unchanged 15-minute job limit after six groups, static checks
+and build passed; image preparation was CANCELLED and downstream acceptance was
+SKIPPED. It does not replace or extend the complete PR-run acceptance. No rerun
+or timeout change was performed; robust timing fit remains unestablished.
+J2a's separately typed private state source is underway; its first draft was
+rejected by independent review and is being corrected separately, not tested or
+accepted. Peer/native and connected-service gates remain unperformed; J3–J6 are
+not accepted by J1.
 
 | Stage | Reuse and concrete delivery | Tests and release gate |
 | --- | --- | --- |

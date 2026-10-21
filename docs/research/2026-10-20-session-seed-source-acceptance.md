@@ -59,6 +59,26 @@ retry produced this acceptance. Earlier Linux cross-compilation, Darwin refusal
 and Go/Python literal checks remain separate evidence; native Python/helper
 interoperability is a J2 gate.
 
+## Separate postmerge CI observation
+
+Automatic [main run 39526113045](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39526113045)
+checked merge `6a974671f008640ddccd32547131ca6e696fefa4`, tree
+`8c3ea960c2aac6545aa0fffa2f71bb5c13be5287`. Its main job was **CANCELLED**;
+the GitHub annotation explicitly identifies the unchanged 15-minute job limit.
+All six groups, vet, formatting and build passed. All 7,462 Go JSON events match
+the raw joblog and archived captures: 110 listing and 7,352 runtime events,
+with 1,622 overlapping PASS, zero FAIL and two SKIP. The retained exercised ELF
+has the same SHA256 and 11,662,125-byte size recorded above. Both ZIP digests and
+all 42 archive members were checked.
+
+The API marks the image preparation step CANCELLED even though its log reports
+the image download completed. Actual Docker lifecycle, bounded execution,
+recovery and synthetic consumer acceptance were SKIPPED in this run. This is an
+incomplete postmerge observation; its results are not combined with another
+run into a full pass. Complete independently verified PR run 39523851991 remains
+the accepted historical J1 source/helper gate for the exact reviewed tree.
+No rerun or timeout change was performed; robust timing fit remains unestablished.
+
 ## Retained failures and limits
 
 [Run 39517478678](https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39517478678)
@@ -91,8 +111,10 @@ J2 may now implement the separately typed private Waypoint EX2 state, then its
 native peer and connected service with current authorization and irreversible
 dispatch. Its 96 ordinary operations are metadata transaction capacity, not 96
 execution attempts; the positive helper capability remains two synthetic slots.
-Existing AS1, v1/v2 and default meanings remain unchanged. J2 has not passed its
-source or runtime acceptance merely because J1 is complete.
+Existing AS1, v1/v2 and default meanings remain unchanged. J2a source work remains
+underway: its first draft was rejected by independent review and is being
+corrected separately. It has not been tested or accepted.
+J2 has not passed source or runtime acceptance merely because J1 is complete.
 
 Installed scientific execution, faithful actual counters, aggregate storage
 enforcement, versioned actual estimates/exports and complete researcher/instructor
