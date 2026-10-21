@@ -285,3 +285,15 @@ temporary full-journey source hold above. Use the plan's ordered J1–J6 gates;
 synthetic/source completion cannot stand in for scientific or actual-resource
 qualification. No live resource, credentials, spending or data admission is
 approved by the implementation direction.
+
+## October 20 session seed source checkpoint
+
+The [J1 session seed acceptance](../research/2026-10-20-session-seed-source-acceptance.md)
+records merged Outfitter #23 at `6a974671`, complete independent source/evidence
+review and passing exact-head Linux CI. The artifact now retains the actual
+exercised race helper; ten seed boundary leaves and its external two-slot
+synthetic lifecycle passed. All 83 downstream checks passed, with earlier
+failures retained. The 895-second job leaves only five seconds nominal headroom;
+reliable timing capacity remains unknown. A1/A2 stay partial while J2 connects
+Waypoint's separately typed state, native peer and service. Scientific execution,
+actual measurement/storage enforcement and J6 operational gates remain open.
