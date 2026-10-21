@@ -1,0 +1,260 @@
+{
+  "schema": "educloud.session-seed-source-acceptance/v1",
+  "delivery_date": "2026-10-20",
+  "status": "MERGED_J1_SOURCE_HELPER_GATE_ACCEPTED",
+  "component": {
+    "repository": "https://github.com/EduCloud-Ecosystem/outfitter",
+    "pull_request": "https://github.com/EduCloud-Ecosystem/outfitter/pull/23",
+    "reviewed_head": "3f81553774b7237fc8acbffd7db12fe92936628e",
+    "merge": "6a974671f008640ddccd32547131ca6e696fefa4",
+    "merged_at": "2026-10-21T01:14:04Z",
+    "tree": "8c3ea960c2aac6545aa0fffa2f71bb5c13be5287",
+    "equal_reviewed_testmerge_merged_tree": true,
+    "parents": [
+      "8afcb56b11bf9342449330177a1ceaa20499f9ba",
+      "3f81553774b7237fc8acbffd7db12fe92936628e"
+    ]
+  },
+  "ci": {
+    "run": 39523851991,
+    "url": "https://github.com/EduCloud-Ecosystem/outfitter/actions/runs/39523851991",
+    "actual_checkout": "164511c5b23ccce6279aa2e224d0eff62ac31ad2",
+    "both_jobs_all_steps": "SUCCESS",
+    "source": {
+      "all323_archived_inventory_commit_live_frozen_equal": true,
+      "inventory_sha256": "26b828d94902640f6b6276a552900cfa50d521a5a247f397f8f2fba8ea37c4e0",
+      "before_after_ids_match_actual_testmerge": true,
+      "tracked_names_exact323": true,
+      "status_before_after_empty": true,
+      "worktree_clean": true,
+      "all10_asset_bytes_match_source_pins": true
+    },
+    "raw_evidence": {
+      "ordinary_log_sha256": "70840d2b811f26e5eadb3b32a76e76b853a39da860906aee94a59684ef4498a0",
+      "storage_log_sha256": "26986fd64a7bfcf1b7879b00325081e0b5777cd314fc068532ed765d25f87946",
+      "BOM_prefixes_removed_only_for_timestamp_parse": 2,
+      "7461_GoJSON_joblog_equals_all_archive_group_events": true,
+      "listing_events": 110,
+      "runtime_events": 7351,
+      "aggregate_exact_R1_R2_R3": true,
+      "overlapping_parent_child_terminals": {
+        "pass": 1622,
+        "skip": 2
+      },
+      "top_level_terminals": {
+        "pass": 299,
+        "skip": 2
+      },
+      "runtime_FAIL": 0,
+      "no_alarm_or_race_warning": true,
+      "broker_parents": 107,
+      "partition": [
+        58,
+        49
+      ],
+      "coverage_reconstructed_equals_recorded": true,
+      "six_exact_argv_and_serial_order_verified": true,
+      "commands": {
+        "M0": {
+          "exit": 0,
+          "PASS": true,
+          "Wait": true,
+          "both_EOF": true,
+          "group": "ABSENT",
+          "seconds": 0.003374,
+          "events": 0
+        },
+        "M1": {
+          "exit": 0,
+          "PASS": true,
+          "Wait": true,
+          "both_EOF": true,
+          "group": "ABSENT",
+          "seconds": 4.331733,
+          "events": 0
+        },
+        "M2": {
+          "exit": 0,
+          "PASS": true,
+          "Wait": true,
+          "both_EOF": true,
+          "group": "ABSENT",
+          "seconds": 15.479058,
+          "events": 110
+        },
+        "R1": {
+          "exit": 0,
+          "PASS": true,
+          "Wait": true,
+          "both_EOF": true,
+          "group": "ABSENT",
+          "seconds": 362.085225,
+          "events": 680
+        },
+        "R2": {
+          "exit": 0,
+          "PASS": true,
+          "Wait": true,
+          "both_EOF": true,
+          "group": "ABSENT",
+          "seconds": 353.182041,
+          "events": 592
+        },
+        "R3": {
+          "exit": 0,
+          "PASS": true,
+          "Wait": true,
+          "both_EOF": true,
+          "group": "ABSENT",
+          "seconds": 134.143929,
+          "events": 6079
+        }
+      }
+    },
+    "archives": [
+      {
+        "id": 12313430433,
+        "members": 41,
+        "sha256": "03aeddaea1dd234db02c0609f0fe6e302161af29b7c699ef8d904719bb66a398",
+        "all_member_CRC_and_extracted_bytes_match": true
+      },
+      {
+        "id": 12311803505,
+        "members": 4,
+        "sha256": "ec51f4887135d7cff39dc1f8f591c5227b8b927a7242ed1589bb8d9785d35450",
+        "all_member_CRC_and_extracted_bytes_match": true
+      }
+    ],
+    "downstream": {
+      "all_checks_passed": 83,
+      "reports": {
+        "docker-ci.json": {
+          "passed": 26,
+          "sha256": "5d556dc8529930b1103ca8d0a52c74e9e36b2fd0cefc099f247ce6e60d3d20f7",
+          "all_checks_true": true,
+          "log_summary_matches": true,
+          "limitations": [
+            "No Jetstream2 or other live provider acceptance",
+            "No host/watchdog/Docker-daemon loss self-expiry",
+            "CPU allowance conservatively charged; actual CPU not measured"
+          ]
+        },
+        "recovery-ci.json": {
+          "passed": 38,
+          "sha256": "0fee0982e216eb63235f113aac81fe0251d1213368a64f7279483223adce6726",
+          "all_checks_true": true,
+          "log_summary_matches": true,
+          "limitations": [
+            "Same local host and filesystem only; no remote disaster recovery or live cloud acceptance",
+            "Synthetic operator-driven exercise; no independent second operator or hosted recovery target",
+            "Unknown jobs remain held until source reconciliation and fresh checkpoint",
+            "Checksums require a separately retained trusted digest; not protection from a privileged rollback"
+          ]
+        },
+        "consumer-ci.json": {
+          "passed": 19,
+          "sha256": "fd3e5fce6f793007ef592c44e30085d6519942e72fbed5222d7190ea2ce069f4",
+          "all_checks_true": true,
+          "log_summary_matches": true,
+          "limitations": [
+            "No production Cairn wiring, real student data, course admission or grade publication",
+            "No native/provider qualification or host/watchdog/daemon-loss self-expiry",
+            "Conservative CPU-second reservations, not measured CPU or provider SUs",
+            "Mock ambiguity controls are in the Go test suite, not live provider evidence"
+          ]
+        }
+      },
+      "actual_Docker_lifecycle": "PASS0.41s",
+      "provider_self_expiry": "SKIP/UNSUPPORTED",
+      "CI_pure_units": "44PASS summary",
+      "vet_and_gofmt": "Configured step PASS",
+      "wrong_answer_control_preserved": true,
+      "grade_published": false
+    },
+    "timing": {
+      "main_job_API_elapsed_seconds": 895,
+      "configured_seconds": 900,
+      "nominal_margin_seconds": 5,
+      "robust_fit": "NOT_ESTABLISHED",
+      "capacity": "NOT_QUALIFIED",
+      "no_timeout_increase_or_retry_authorized": true
+    }
+  },
+  "helper": {
+    "association_sha256": "182e241d09e41e28206de9f6beff45d50513b7a7d3d46c60ead4b6527b825f21",
+    "schema": "outfitter.j1-linux-helper-association/v2",
+    "ELF": "ELF64 little-endian amd64",
+    "binary": {
+      "bytes": 11662125,
+      "sha256": "e9c1a4923c2d855da64b5173d799a838b9b391fdc2ca0ec65adfbd161013f9ca"
+    },
+    "sole_positive_producer_equals_retained_binary": true,
+    "positive_lifecycle_seconds": 25.93,
+    "ten_boundary_leaves": "PASS",
+    "helper_parent": "PASS",
+    "r1_original_exit": 0,
+    "r1_meaning": "COMPILE_AND_TEST",
+    "compiler_attestation": false,
+    "executed_locally": false,
+    "scope": "Actual configured Linux race test-only fixture/helper proof for this exact source/binary/assets."
+  },
+  "historical_storage": {
+    "active_broker_pin": "5827c84e9952cc67b85e91ceff4282e0ead6923b",
+    "status": "PASS_COUNTEREXAMPLES_REPRODUCED",
+    "events": 116,
+    "tests_PASS": 22,
+    "artifact_qualification_historical_active_source_hashes_verified": true,
+    "quota_enforced": false,
+    "runtime_changed": false,
+    "all_writers_complete": false,
+    "capacity": "UNKNOWN",
+    "whole_root": "UNKNOWN",
+    "fifth_failure": "FAIL/BLOCKER_REPRODUCED in upstream evidence; not repaired here",
+    "not_run": [
+      "physical ENOSPC/inode exhaustion",
+      "host crash or power loss",
+      "failed temp removal and retained scratch accumulation",
+      "actual CLI watchdog launcher",
+      "Docker daemon/provider",
+      "live Jetstream2",
+      "complete independent writer discovery",
+      "enforced destination peak refusal",
+      "production quota enforcement"
+    ],
+    "scope": "Historical counterexamples, not current v7 storage enforcement."
+  },
+  "retained_failures": {
+    "CI39517478678_failure_sha256": "412b316977f88bc2561c9882a0c77f70cf9b6f96958577c1d68354707ed32e1e",
+    "CI39520327366_failure_sha256": "7a9312cec43c76c32c4fca517b84615053dc4bbff81271681534d473a53b3d44",
+    "historical_failed_disjunct_or_predicate": "UNKNOWN",
+    "first_retention43PASS1FAIL_audit_sha256": "a4ec7100ee16244988559d4842d4772ffb9b37e0ebcae29c2e75882688f8208f",
+    "nonblocking_limits": "After-snapshot prelaunch rejection not separately tested; closed v2 failure records do not imply all inherited stderr is sanitized."
+  },
+  "reviews_sha256": {
+    "independent_complete_CI": "2d4dfa36398614c03535ab0eae367cff9d2da5c67ddcbd6aba05d915a39cccad",
+    "independent_immutable_source": "450f803ed453a500d1c6200f701be939dbdee58308fcf90acb852d5625d73f41",
+    "root_complete_CI": "86a3b2df2421688152e7c57ee456b3139644c6a54c63e82ba95651357952e6a0",
+    "root_supplement": "56a64be6c5f2b3b757f93c6ff2435a476f23465380743119f4092b392d12a5c9",
+    "merged_acceptance": "542bda8b7f871de582852567fbd258609ee14810b40988ee42fbdd2d91968e75"
+  },
+  "readiness": {
+    "J1": "ACCEPTED_SOURCE_HELPER_ONLY",
+    "J2": "SCOPED_SOURCE_IN_PROGRESS_NOT_ACCEPTED",
+    "J3_J4_J5": "NOT_ACCEPTED",
+    "J6": "OPEN",
+    "production_enabled": false,
+    "scientific_execution_qualified": false,
+    "native_Python_interoperability_qualified": false,
+    "actual_host_qualified": false,
+    "trusted_deletion": false,
+    "storage_enforcement": false,
+    "real_data_admission": false
+  },
+  "limits": [
+    "Actual configured Linux race test-only fixture/helper evidence for this exact source, binary and assets; no compiler attestation.",
+    "Whole-job margin is only five seconds nominal, with whole-second API precision; robust fit remains unknown.",
+    "Raw archives/logs are retained separately by digest; hosted artifact availability is not guaranteed indefinitely.",
+    "Earlier failures and precise unknown historical branches remain retained. No timing-only retry or timeout inflation.",
+    "Separate post-merge workflow observations do not replace this exact reviewed PR-run acceptance."
+  ]
+}

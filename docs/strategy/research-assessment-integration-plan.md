@@ -40,6 +40,13 @@ full-journey implementation hold; operational gates remain open.
 
 ## Ordered implementation and acceptance
 
+J1 is complete: [session seed source acceptance](../research/2026-10-20-session-seed-source-acceptance.md)
+records merged Outfitter #23 at `6a974671f008640ddccd32547131ca6e696fefa4`,
+independent review and the actual exercised helper retained by passing PR CI.
+The job had only five seconds nominal headroom; robust timing fit remains unknown.
+J2 begins with the separately typed private state layer. Its peer/native and
+connected-service gates remain unperformed; J3–J6 are not accepted by J1.
+
 | Stage | Reuse and concrete delivery | Tests and release gate |
 | --- | --- | --- |
 | J1 secure external helper setup | Factor existing test-only Go seed/config/binding construction; one fixed seed selector creates only exclusive fresh synthetic two-slot assets. Original parent S/D120 and actual descriptor origin retained. No production initializer, migration, reset or fake real grant. | Freeze request/result/assets vectors and source. Negative existing/symlink/partial/malformed/expiry/write-close/ambiguous result controls; actual standalone helper process, stdio/FD checks, two-slot lifecycle and final triggered status. Independent immutable source/evidence and configured regression CI before merge. |
