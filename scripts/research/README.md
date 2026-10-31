@@ -2,10 +2,10 @@
 
 Change/checkpoint, October 31, 2026. Checkout:
 `/Users/gregchism/dev/.educloud-worktrees/educloud-rq2a-model-inputs`, branch
-`codex/rq2a-model-inputs`, base `8ba9a84aecd6565f7b6e964c224f267706856433`.
-The checkout was clean before this additive change. Only this README, the
-exporter and its unit tests were added. No commit, push or PR is authorized yet.
-The parent will transfer these new files onto its reviewed current base.
+`codex/rq2a-model-inputs`, base `5c0092a81e65f25c84e0b390c4f48b5e814a3e6f`.
+The additive implementation was transferred onto the current remote main;
+unrelated primary-checkout changes and frozen inputs remain untouched. The
+exporter, tests, this record and its documentation-index link form the change.
 
 ## Purpose and reuse
 
@@ -109,6 +109,9 @@ Performed results on October 31:
   `fb94df14d94159d2464ab161695b544c68d0caf4b3e97efe343483a96c7b8e48`.
   Tests SHA-256:
   `a3fbd2f13ed73d51f32866a0f1cf4ea67f6fc4db723b6ed8e6e6c59c5876435b`.
+- Parent verification after transfer onto current main: **17 tests PASS in
+  0.042s**, under a 25-second limit; output hashes, counts and private modes
+  independently rechecked without another model-input export.
 
 Tests use tiny invented fixtures rather than adding source case content to Git.
 They check hidden-marker exclusion, exact serialization, full-context dedup,
@@ -120,6 +123,7 @@ pinned CLI exports or evidence of real-data readiness.
 Application/J2/runtime tests, benchmarks, inference/provider calls, educator
 annotation, private-data access and institutional submission: **NOT RUN**.
 Educator acceptance, model behavior, operational custody and any later execution
-remain unresolved. Next action: parent independent source/output review, then
-transfer only these files onto its current base; do not silently resume runtime
-work or expand the importer. This local README is the bounded change record.
+remain unresolved. Independent source review and a reviewable pull request
+precede merge. A later model adapter must submit only one validated context,
+retain per-task dependence and repeat authorization checks in its own scope;
+this export does not activate it. This README is the bounded change record.
