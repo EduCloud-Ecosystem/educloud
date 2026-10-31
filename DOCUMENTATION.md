@@ -8,6 +8,11 @@ Outfitter (new).*
 
 ## Platform definition (read first)
 
+The [offline RQ2A input exporter](scripts/research/README.md) prepares only the
+pinned fabricated evaluation cases. It separates model contexts from authored
+answers/reviewer metadata and blocks disabled or unauthorized requests. It
+provides no model dispatch or private-data/runtime authority.
+
 | Doc | What it is |
 |---|---|
 | `educloud/SYSTEM.md` | **The canonical internal definition**: names, module boundaries, the platform invariant, shared contracts (including contract 9, bounded AI management), the scale table, and the two-line resource allocation. Where an older document conflicts, SYSTEM.md wins. |
