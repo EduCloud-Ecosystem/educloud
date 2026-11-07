@@ -81,3 +81,18 @@ RozhinYs has pending invitations to all six repositories. The pre-existing
 Belay-classroom admin invitation is preserved; five new invitations request write
 access. Invitations are not active access until accepted. No original Belay
 membership or issue was changed. Component issues are linked in the adjacent JSON.
+
+## First slice delivered for review
+
+Belay-classroom commit `b4b2c3c58539b8b7258cd61bfd9c911ffcddab25` is pushed in
+[draft PR #5](https://github.com/EduCloud-Ecosystem/belay-classroom/pull/5).
+Local: 16 focused integration passes, full SQLite 1,082 passes / 20 skips, zero
+failures; lint/format/mypy pass. Hosted actual-component integration, SQLite,
+PostgreSQL and quality checks all completed SUCCESS. The adjacent validation JSON
+records exact run/job/step results. Earlier local failures and cancelled superseded
+push CI remain preserved; passing final results do not rewrite those histories.
+
+Coordination is in [draft PR #57](https://github.com/EduCloud-Ecosystem/educloud/pull/57).
+Neither PR is merged or deployed. Identity binding, presenter integration, receipt
+cutover and native-provider/human acceptance remain open; no whole-stack completion
+is claimed.

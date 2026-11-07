@@ -1,0 +1,250 @@
+{
+  "component": "belay-classroom",
+  "source": "b4b2c3c58539b8b7258cd61bfd9c911ffcddab25",
+  "implementation_pr": "https://github.com/EduCloud-Ecosystem/belay-classroom/pull/5",
+  "scope": "Initial controlled provider connection only; not full-stack classroom or actual-model acceptance",
+  "local": {
+    "focused_passed": 16,
+    "sqlite_passed": 1082,
+    "sqlite_skipped": 20,
+    "failures": 0,
+    "quality": "PASS"
+  },
+  "hosted_runs": [
+    {
+      "id": 42335401729,
+      "url": "https://github.com/EduCloud-Ecosystem/belay-classroom/actions/runs/42335401729",
+      "head_sha": "b4b2c3c58539b8b7258cd61bfd9c911ffcddab25",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "synthetic-integration",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install locked dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Exercise actual gateway with synthetic upstream only",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 42335401733,
+      "url": "https://github.com/EduCloud-Ecosystem/belay-classroom/actions/runs/42335401733",
+      "head_sha": "b4b2c3c58539b8b7258cd61bfd9c911ffcddab25",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "test (sqlite)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Initialize containers",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run suite (SQLite \u2014 zero-config default)",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run suite (Postgres \u2014 opt-in via DATABASE_URL)",
+              "conclusion": "skipped"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Stop containers",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "quality (ruff + mypy)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "ruff check (lint)",
+              "conclusion": "success"
+            },
+            {
+              "name": "ruff format --check",
+              "conclusion": "success"
+            },
+            {
+              "name": "mypy (type-check)",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Learner request lifecycle and control messages",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "test (postgres)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Initialize containers",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run suite (SQLite \u2014 zero-config default)",
+              "conclusion": "skipped"
+            },
+            {
+              "name": "Run suite (Postgres \u2014 opt-in via DATABASE_URL)",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Stop containers",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "not_run": [
+    "New presenter/browser journey",
+    "Institutional identity binding",
+    "Actual model qualification",
+    "Native Outfitter full lifecycle",
+    "Real students/human pilot acceptance"
+  ],
+  "merge": "NOT_MERGED",
+  "deployment": "NOT_DEPLOYED"
+}
