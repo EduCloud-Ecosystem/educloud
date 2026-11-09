@@ -152,3 +152,60 @@ succeeded at the exact PR6 head. Downloaded JUnit independently confirms all
 21 actual-Portage synthetic controls passed, zero skips/errors/failures. Main
 SQLite/PostgreSQL/quality CI remains in progress at this checkpoint; the earlier
 push run was superseded/cancelled, not reclassified as a pass.
+
+## Finite enrollment producer/consumer delivered for review
+
+Cairn [draft PR #38](https://github.com/EduCloud-Ecosystem/cairn/pull/38),
+`0cf3158fdf5bbbecc52d3cc9cd88ef33bdfb63fc`, exports finite grants from a consistent,
+read-only snapshot of the existing SQLite roster and assignment records. The
+operator explicitly reviews the Waypoint issuer/subject-to-Cairn immutable account
+binding and the assignment/exercise mapping. No inferred username/email join is
+allowed. Output excludes host account IDs, usernames, grades and learner content.
+
+Belay-classroom [draft PR #7](https://github.com/EduCloud-Ecosystem/belay-classroom/pull/7),
+`656d6ec1e4be5f9ef7267f5a2bb5145a90238dfe`, is stacked on PR6. It consumes this
+proposed versioned interface: `authority` with `schema_version=1`, `authority_id`,
+`issuer`, `audience`, monotonically increasing `revision`, `issued_at`, `expires_at`;
+existing `subjects` and `exercise_versions`; roster members with `grant_generation`.
+The authority ID is pinned during explicit consumer-watermark initialization.
+
+Cairn owns issuance history and preserves unchanged grant generations, rotating
+on observed withdrawal, binding change or expiry gap. Belay checks finite lifetime
+(maximum 300 seconds), current signed identity and durable rollback history at HTTP
+and worker boundaries. Older revisions, same-revision conflicts, wrong authority,
+missing history and legacy downgrade fail closed. The CLI/file handoff does not
+create a new roster service or change Waypoint admission, Cairn submission/grading,
+Portage budgets/accounting or Outfitter lifecycle authority.
+
+Verified local evidence: producer build/vet/full race and dashboard typecheck,
+25 tests/build pass. Consumer full backend 1,132 passed, 22 explicitly skipped;
+lint/format/mypy pass. The separate native-component evaluator passes all 22 checks
+without skips, including actual signed identity, current worker recheck, Portage
+SDK/gateway/ledger transport, revocation/replay refusal and regrant. The two native
+fixture tests skipped in the ordinary suite are executed by this evaluator.
+Initial refused fixture mutations, mismatched Portage scope and the existing
+synthetic-runner CLI timeout remain preserved; no failed control is erased.
+
+Cairn's exact-head hosted main CI, recovery rehearsal and synthetic Outfitter
+consumer workflows succeeded. The adjacent JSON tracks the new consumer's hosted
+checks separately. These remain draft, unmerged and undeployed changes.
+
+This is an operator-mediated synthetic enrollment path. Automatic institutional
+identity linking and live IdP qualification remain open. Revocation between exports
+is bounded by the original expiry; a remove/reactivate event between observations
+is not detected. A privileged rollback of both issuance and consumer history is not
+prevented. Portage account/budget setup and its current-membership responder remain
+separate operator-managed controls; the acceptance responder is synthetic.
+
+Next observable outcome: replace the historical Waypoint presenter's fixed test
+identity with an explicit roster-bound profile and finite credential lifecycle,
+then verify notebook -> private tutor -> selected saved-file submission -> Cairn
+receipt/reopen. Preserve result verification and owned-resource cleanup as separate
+checks. No model launch, institutional enrollment or live provisioning is implied.
+
+Final hosted result at the exact PR7 head: SQLite, PostgreSQL, quality, Portage
+and native enrollment workflows all succeeded. Downloaded native-enrollment
+JUnit independently confirms 22/22 controls passed with no skips/errors/failures
+(run 42547539745). The superseded push CI cancellation remains recorded.
+The current integration increment is ready for code/interface review; the
+notebook journey and real classroom launch remain unqualified.
