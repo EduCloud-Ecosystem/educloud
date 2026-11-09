@@ -96,3 +96,59 @@ Coordination is in [draft PR #57](https://github.com/EduCloud-Ecosystem/educloud
 Neither PR is merged or deployed. Identity binding, presenter integration, receipt
 cutover and native-provider/human acceptance remain open; no whole-stack completion
 is claimed.
+
+## Next consumer slice: roster identity and grant generation
+
+The development continuation owns
+`/Users/gregchism/dev/.educloud-worktrees/belay-classroom-roster-identity-v1`,
+branch `codex/classroom-roster-identity-v1`, based on the existing provider head
+`b4b2c3c58539b8b7258cd61bfd9c911ffcddab25`. This work is stacked on classroom PR5;
+it does not modify original Belay or the provider dependency worktree.
+
+The proposed consumer contract accepts an existing 32-character lowercase hex
+Cairn roster ID unchanged when trusted authorization explicitly selects
+`learner_id_kind: cairn_roster_v1`. It also requires a 32-character lowercase hex
+`grant_generation`, supplied and never reused by the trusted authority. It does
+not mint learner identities, hash legacy labels, or trust browser-selected scopes.
+Legacy authorization and execution references remain compatible.
+
+A changed generation invalidates old execution references and prevents the new
+grant from retrieving or publishing the old unsaved job. Reservations, accounting
+and uncertain liabilities remain intact. This is a consumer mechanism, not a
+complete revocation service: restoring an identical old authorization file still
+restores its reference. The Waypoint/Cairn producer must implement durable grant
+issuance, freshness/deadlines, monotonic revocation, rollback prevention and verified
+issuer/subject-to-roster binding before this can support a live course.
+
+The existing Cairn roster format is implementation evidence. Selecting it as a
+cross-component label and the new generation field remains a proposed interface
+for review; no live authority integration or institutional enrollment acceptance
+is claimed. Legacy Quad payloads and the historical synthetic notebook bridge
+retain their existing contracts.
+
+The next useful integration outcome after this consumer review is the trusted
+producer/export path, with stale/missing/conflicting authority refusal and
+revocation/regrant controls across both Belay-classroom and Portage. Keep operator
+CLI/file steps where sufficient; do not create a second roster authority.
+
+Consumer implementation is now published at commit
+`0be46ae9a3154e9f9e17917cc8a6d6d3aafe8433` in
+[draft classroom PR #6](https://github.com/EduCloud-Ecosystem/belay-classroom/pull/6),
+stacked on PR #5. Fresh hash-locked local validation: 229 focused passes; full
+SQLite 1,112 passes and 20 explicit skips, zero failures/errors; lint/format/mypy
+pass. Actual Portage gateway/SDK/ledger paths use a synthetic upstream. Hosted
+results are tracked separately in the adjacent validation JSON. This remains
+unmerged and undeployed; source/CI evidence does not establish course readiness.
+
+Next executable integration gate: pin the authoritative Waypoint/Cairn producer
+revisions and implement the smallest trusted enrollment export consumed here.
+Use one synthetic principal and existing Cairn roster entry; prove that revoked,
+stale, conflicting and rolled-back authority cannot dispatch work. Then exercise
+one notebook-to-tutor-to-explicit-Cairn-submission journey, preserving distinct
+submission confirmation, grading/result verification and resource cleanup.
+
+Hosted integration run [42537799758](https://github.com/EduCloud-Ecosystem/belay-classroom/actions/runs/42537799758)
+succeeded at the exact PR6 head. Downloaded JUnit independently confirms all
+21 actual-Portage synthetic controls passed, zero skips/errors/failures. Main
+SQLite/PostgreSQL/quality CI remains in progress at this checkpoint; the earlier
+push run was superseded/cancelled, not reclassified as a pass.
