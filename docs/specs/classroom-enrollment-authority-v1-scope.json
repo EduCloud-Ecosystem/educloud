@@ -30,7 +30,8 @@
   "boundaries": [
     "Cairn internal/enrollment/**, cmd/enrollment-export/**, internal/store/sqlite read-only opener and tests, docs/classroom-enrollment-export-v1.md",
     "Belay backend/app/auth.py, config.py, authority_state.py, focused tests, deployment/enrollment/**, docs/development/classroom-enrollment-authority-v1.md",
-    "EduCloud existing full-stack coordination records"
+    "EduCloud existing full-stack coordination records",
+    "Belay .github/workflows/enrollment-integration.yml: exact pinned producer/consumer evaluator on pull requests; no deployment"
   ],
   "acceptance": [
     "Native Cairn SQLite fixture export -> actual Belay authentication and worker checks",
@@ -55,5 +56,6 @@
     "Protection if privileged operator rolls back both issuance journal and consumer watermark",
     "Production readiness or full notebook/submission journey"
   ],
-  "ownership": "This chat owns new isolated worktrees; preserves primary dirt, other registered worktrees, original Belay and stopped research panels"
+  "ownership": "This chat owns new isolated worktrees; preserves primary dirt, other registered worktrees, original Belay and stopped research panels",
+  "scope_amendment": "Add dedicated pinned native-component CI because the ordinary backend suite must skip cross-repository fixtures when absent; no relaxation of ordinary gates."
 }
