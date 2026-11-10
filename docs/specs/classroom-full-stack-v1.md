@@ -2,6 +2,16 @@
 
 Tracking: https://github.com/EduCloud-Ecosystem/educloud/issues/56
 
+Current checkpoint (2026-11-10): Waypoint draft PR59 at
+`3ec286f5d41e857622d9b24f23b3c31e6f248605` passes the local synthetic notebook
+journey, including native editor Save, optional stub tutoring, refused help,
+no-AI explicit submission and receipt/reopen after restart. Exact-head hosted CI
+is tracked separately in the adjacent JSON. This is ready for an independent
+human synthetic walkthrough; institutional login, live GenAI, portable image
+distribution, merge and deployment remain separate gates. The source maps and
+intermediate checkpoints below preserve history; the latest presenter section
+and validation JSON identify the active integration pins.
+
 Greg selected **Belay-classroom** as the classroom pilot application. Original
 Belay is excluded from this implementation. Reuse the existing classroom/notebook,
 submission/review, inference gateway and compute broker before adding new services.
@@ -265,3 +275,39 @@ snapshot, not the local pass, to determine CI status. These are draft, unmerged,
 undeployed changes. Next executable step: review this stack, close the specific
 presenter usability controls, inspect exact-head CI, then perform a human synthetic
 walkthrough. No real learner data or model endpoint is needed for that next gate.
+
+
+### Presenter follow-up completed; current review checkpoint
+
+Final Waypoint head: `3ec286f5d41e857622d9b24f23b3c31e6f248605`;
+implementation follow-up: `349d734` (full hash in the adjacent JSON).
+Cairn `0cf3158fdf5bbbecc52d3cc9cd88ef33bdfb63fc` and Belay-classroom
+`656d6ec1e4be5f9ef7267f5a2bb5145a90238dfe` were rechecked unchanged/clean.
+The current branch/worktree remains `codex/classroom-roster-presenter-v1` in the
+Waypoint worktree named above. No ownership transfer or merge occurred.
+
+The earlier stale wording and unexecuted native Save controls are now resolved.
+A refused request updates the help notice and disables further asks while keeping
+code/question intact. Capture text no longer says nothing was sent after a hint.
+The actual Jupyter file editor is clicked, edited and saved with its keyboard
+command; the saved bytes then pass the unchanged preview, confirmation, receipt,
+reopening and restart controls. The restored kernel chooser is handled through
+its ordinary No Kernel action. No notebook code or model endpoint is executed.
+Screenshots were independently inspected after the final run.
+
+There are two passing complete journeys (the earlier API-save path and final
+native-editor path), six retained failed journeys, and the original test-fixture
+failure. The explicit follow-up scope and its extensions are recorded before
+execution in the scope JSON; original completed allowances were preserved.
+Preparation, failure and reviewer effort are not a research performance result.
+Final application accounting remains one completed job, a settled queue attempt
+and three settled deterministic stub attempts, with zero external transport or
+SDK retry. All owned runtime resources were cleaned after every attempt.
+
+Final-head hosted CI is still in progress at this checkpoint; completed HTTPS,
+maintenance, ownership/recovery checks are distinct from unfinished workflows.
+The manually dispatched continuity job is skipped, not a pass. The next useful
+step is dependency/interface review plus an independent human synthetic
+walkthrough with `ROSTER-PRESENTER.md`. There is no remaining observed failure in
+the final local journey. Human usability, cross-machine image delivery,
+institutional SSO and the approved live GenAI endpoint remain unqualified.
