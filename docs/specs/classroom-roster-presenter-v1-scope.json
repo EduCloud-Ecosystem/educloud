@@ -72,10 +72,12 @@
       "existing evidence/runbook/coordination records"
     ],
     "limits": {
-      "runs": 1,
-      "runtime_seconds": 180,
+      "runs": 2,
+      "runtime_seconds": 300,
       "model_calls": 0
     },
-    "required_evidence": "Actual editor click, Save writes solution.py, unchanged receipt/reopen and refusal controls; record this extra preparation cost separately."
+    "required_evidence": "Actual editor click, Save writes solution.py, unchanged receipt/reopen and refusal controls; record this extra preparation cost separately.",
+    "retained_failure": "Run7: native click was correctly blocked by a visible Jupyter kernel-selection dialog restored on file navigation. No forced click or weakened byte assertion is permitted.",
+    "extension": "One additional bounded run handles the same observed kernel dialog through its ordinary No Kernel action. Record the extension and both attempts; no new candidate, model call or application scope."
   }
 }
