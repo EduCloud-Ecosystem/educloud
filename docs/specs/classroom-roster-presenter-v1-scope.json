@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-10",
+  "owner": "This chat only; delegated sole implementation owner",
+  "issue": "EduCloud #56 / Waypoint #58",
+  "outcome": "Explicit roster-bound notebook presenter with finite server-held credentials; preserved no-AI saved-file submission and receipt/reopen",
+  "bases": {
+    "waypoint": "5c9df179a3f914e5ae9e6038f2bf7b95bf6bf824",
+    "cairn": "0cf3158fdf5bbbecc52d3cc9cd88ef33bdfb63fc",
+    "belay-classroom": "656d6ec1e4be5f9ef7267f5a2bb5145a90238dfe",
+    "portage": "79742746b10ace18e498111dd5a8f3227edd995c"
+  },
+  "worktree": "/Users/gregchism/dev/.educloud-worktrees/waypoint-classroom-roster-presenter-v1",
+  "branch": "codex/classroom-roster-presenter-v1",
+  "base_rationale": "Merged classroom-notebook implementation; relevant proxy, submission and course fixture files exactly match previously inspected 1e588874; no open Waypoint PR overlap",
+  "boundaries": [
+    "course-workspace/course/waypoint_belay/**",
+    "course-workspace/tests/test_roster_presenter.py",
+    "course-workspace/rehearsal/roster_presenter*",
+    "course-workspace/ROSTER-PRESENTER.md",
+    ".github/workflows/course-workspace.yml",
+    "EduCloud existing coordination records"
+  ],
+  "reuse": "Existing Jupyter cookie/XSRF proxy and explicit selected-file submission; Cairn authoritative enrollment exporter, signed Belay auth/worker recheck, Portage budgets. No new roster or grading authority.",
+  "controls": [
+    "Strict operator principal/roster/class/assignment binding from current finite Cairn snapshot",
+    "Credential rotation without browser token exposure; expired or mismatched credentials refuse",
+    "Disabled assistance makes zero provider attempts; saved work and explicit submission remain available",
+    "Rendered default/expiry/refusal/no-AI flow and human-help route",
+    "Receipt/reopen stays distinct from grading and computation",
+    "Only invocation-owned local fixture resources cleaned; raw failures retained"
+  ],
+  "limits": {
+    "model_calls": 0,
+    "cloud_provisioning": 0,
+    "real_records": 0,
+    "runtime_seconds": 900,
+    "focused_correction_rounds": 4,
+    "containers": 3
+  },
+  "dependencies": "Live U of A GenAI and institutional SSO remain separate. Missing local fixture images are a concrete reproduction gap; pinned public images may be prepared for local synthetic tests only.",
+  "merge": "No new merge/release authorization inferred; draft review state retained"
+}
