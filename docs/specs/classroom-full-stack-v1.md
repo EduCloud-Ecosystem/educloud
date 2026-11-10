@@ -209,3 +209,59 @@ JUnit independently confirms 22/22 controls passed with no skips/errors/failures
 (run 42547539745). The superseded push CI cancellation remains recorded.
 The current integration increment is ready for code/interface review; the
 notebook journey and real classroom launch remain unqualified.
+
+
+## 2026-11-10 roster presenter and synthetic integrated journey
+
+Waypoint [draft PR59](https://github.com/EduCloud-Ecosystem/waypoint/pull/59)
+is at `fb53908077651121aabe194c77d6a50454878300`; implementation is
+`1fdbcdc` (full pin and content hashes in the adjacent validation record).
+Worktree: `/Users/gregchism/dev/.educloud-worktrees/waypoint-classroom-roster-presenter-v1`,
+branch `codex/classroom-roster-presenter-v1`, based on merged
+`5c9df179a3f914e5ae9e6038f2bf7b95bf6bf824`. No application edits were made to
+Cairn, Belay-classroom, Portage, Outfitter, original Belay or their active owners'
+checkouts. The dependent Cairn/Belay revisions remain the draft pins above.
+
+The existing notebook proxy now accepts an explicit private roster profile,
+current grant generation and finite server-held credential. The browser never
+chooses its learner identity or receives the bearer token. Operator-disabled or
+expired help cannot admit work. A small optional-hints page reuses Belay job
+recovery and links to the existing saved-file submission bridge and human help.
+No new enrollment service, registry, provider or grading authority was added.
+
+Local acceptance: 742 course tests, four notebook snapshot checks, and the native
+synthetic journey pass. The journey exercises actual Forgejo OAuth and Cairn
+roster/assignment records, Cairn's exporter, signed Belay HTTP/jobs/worker, native
+Jupyter selected-cell capture, optional deterministic stub help, expired and
+disabled refusal, no-AI selected-file preview/confirmation, a real repository
+receipt, byte-identical reopening, and receipt recovery after restart and explicit
+student re-login. Keyboard/axe and desktop/390px inspection pass. Saving itself is
+through the authenticated Contents API; manual save-button interaction is not
+claimed. One job, one queue attempt and three stub attempts settled; no model
+transport, SDK retry, paid call or inference occurred. Owned cleanup was verified.
+
+Four failed integration runs and the original test-fixture failure are retained.
+Corrections were the launcher configuration/packaged extension fixture, request
+schema, isolated notebook kernel chooser, and the actual student re-login route.
+The scope's four correction rounds are complete. No stopped research was resumed.
+The new runbook is `course-workspace/ROSTER-PRESENTER.md`; the finite start/check/
+stop evaluator and complete Python dependency lock are in `rehearsal/roster_presenter*`.
+Private fixture evidence remains in the worktree output directory; the committed
+record exposes allowlisted results/hashes only. Do not publish raw credentials,
+course databases or private logs.
+
+Remaining gates are explicit. Human usability is not accepted: rendered review
+found that initial capture wording still says nothing was sent after a hint, and
+the policy banner remains hints-permitted after a credential refusal. Correct
+those states and exercise manual save interaction in the next bounded slice.
+The HTTP refusal and saved-work controls passed. Institutional SSO, the actual
+U of A GenAI interface, Portage operational membership/budget setup and live
+hosting/Outfitter remain separate. Cross-machine reproduction needs distribution
+of the two pinned local images; rebuilding the checkout image currently uses
+mutable package acquisition. The stub is no evidence of educational quality.
+
+Hosted workflows were pending at publication; use the adjacent JSON's exact-head
+snapshot, not the local pass, to determine CI status. These are draft, unmerged,
+undeployed changes. Next executable step: review this stack, close the specific
+presenter usability controls, inspect exact-head CI, then perform a human synthetic
+walkthrough. No real learner data or model endpoint is needed for that next gate.
