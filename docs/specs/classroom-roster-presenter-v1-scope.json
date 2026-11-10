@@ -40,5 +40,28 @@
   },
   "dependencies": "Live U of A GenAI and institutional SSO remain separate. Missing local fixture images are a concrete reproduction gap; pinned public images may be prepared for local synthetic tests only.",
   "merge": "No new merge/release authorization inferred; draft review state retained",
-  "amendment": "2026-11-10: Full course tests exposed existing symlinked extension asset HTTP 403 under pinned Jupyter. Permit copying the unchanged extension into the disposable fixture as the course image does; retain original failure and all acceptance assertions. Four correction rounds remain the total limit."
+  "amendment": "2026-11-10: Full course tests exposed existing symlinked extension asset HTTP 403 under pinned Jupyter. Permit copying the unchanged extension into the disposable fixture as the course image does; retain original failure and all acceptance assertions. Four correction rounds remain the total limit.",
+  "completed_batch": {
+    "runs": 5,
+    "correction_rounds": 4,
+    "result": "native synthetic journey passed; rendered review identified stale labels and manual save interaction remains unexecuted",
+    "evidence": "waypoint fb53908077651121aabe194c77d6a50454878300"
+  },
+  "followup_slice": {
+    "purpose": "Close the two observed presenter wording defects and replace API-only saving acceptance with native editor Save interaction before handoff. Existing authorized classroom integration scope; no new workload intake.",
+    "paths": [
+      "course-workspace/course/waypoint_belay/roster.js",
+      "course-workspace/rehearsal/roster_presenter.py",
+      "course-workspace/ROSTER-PRESENTER.md",
+      "course-workspace/rehearsal/roster_presenter-verification.json",
+      "existing EduCloud coordination records"
+    ],
+    "limits": {
+      "runtime_seconds": 180,
+      "correction_rounds": 1,
+      "model_calls": 0,
+      "containers": 3
+    },
+    "stop": "One fresh local synthetic rerun; if it fails, retain failure and hand off exact blocker. Original allowances/history remain complete."
+  }
 }
