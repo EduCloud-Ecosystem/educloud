@@ -18,7 +18,8 @@
     "course-workspace/rehearsal/roster_presenter*",
     "course-workspace/ROSTER-PRESENTER.md",
     ".github/workflows/course-workspace.yml",
-    "EduCloud existing coordination records"
+    "EduCloud existing coordination records",
+    "course-workspace/tests/test_submission_bridge_server.py fixture packaging only"
   ],
   "reuse": "Existing Jupyter cookie/XSRF proxy and explicit selected-file submission; Cairn authoritative enrollment exporter, signed Belay auth/worker recheck, Portage budgets. No new roster or grading authority.",
   "controls": [
@@ -38,5 +39,6 @@
     "containers": 3
   },
   "dependencies": "Live U of A GenAI and institutional SSO remain separate. Missing local fixture images are a concrete reproduction gap; pinned public images may be prepared for local synthetic tests only.",
-  "merge": "No new merge/release authorization inferred; draft review state retained"
+  "merge": "No new merge/release authorization inferred; draft review state retained",
+  "amendment": "2026-11-10: Full course tests exposed existing symlinked extension asset HTTP 403 under pinned Jupyter. Permit copying the unchanged extension into the disposable fixture as the course image does; retain original failure and all acceptance assertions. Four correction rounds remain the total limit."
 }
