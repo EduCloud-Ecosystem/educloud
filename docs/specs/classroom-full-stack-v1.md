@@ -2,6 +2,11 @@
 
 Tracking: https://github.com/EduCloud-Ecosystem/educloud/issues/56
 
+2026-11-12 continuation: [System One shadow pilot](system-one-pilot-v1.md)
+adds typed advisory decisions to synthetic Portage/Belay traffic. See its source
+map and validation record; it does not alter the historical evidence below or
+establish trained-model or live-classroom acceptance.
+
 Current checkpoint (2026-11-10): Waypoint draft PR59 at
 `3ec286f5d41e857622d9b24f23b3c31e6f248605` passes the local synthetic notebook
 journey, including native editor Save, optional stub tutoring, refused help,

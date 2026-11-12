@@ -1,0 +1,323 @@
+{
+  "schema": "educloud.system-one-pilot-validation.v1",
+  "observed_at_utc": "2026-11-12T18:26:18.581086+00:00",
+  "scope": "ordinary synthetic software preparation; no trained model or comparative experiment",
+  "sources": {
+    "portage": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1",
+      "base": "79742746b10ace18e498111dd5a8f3227edd995c",
+      "head": "709f5aba85dd2e56f87e9f5c32a2ac7438268ee5",
+      "branch": "codex/system-one-shadow-pilot-v1",
+      "status": "",
+      "files": {
+        "src/portage/decisions.py": "689080458e68e25cfa357294886792ab17e038ea8759e759f7b977cb9cc237a0",
+        "src/portage/pilot_ledger.py": "bbe7bef390cae5e74feb1b34d6db1e64bf8007e17056eff6d28f8cdbdfb8dddf",
+        "integrations/ai_pilot/gateway.py": "6f212990d5fc480a85f4722b773e9b156b981ce038100df1243998b3c22f3279",
+        "integrations/ai_pilot/decision_demo.py": "95d815b70d70b3f98e8333bce2dffa11ad754e4588c493a61ea9e431f339ceec",
+        "tests/test_system_one.py": "187ed8d6c1108ce9bc3a68dafd06dd878ccdadc1076ab0e7105798a4d352ee46",
+        "uv.lock": "434732cdb329e541abed8dd64d54899640216bfbb00f463f33faf4e69c9ebef4",
+        "pyproject.toml": "724da0964986bf5f03ef32af4f06358a565a560827e8d0143d49a47faee12914"
+      }
+    },
+    "belay-classroom": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1",
+      "base": "656d6ec1e4be5f9ef7267f5a2bb5145a90238dfe",
+      "head": "c5a27073e74b9eeb7ab697190915378b50132883",
+      "branch": "codex/system-one-classroom-consumer-v1",
+      "status": "",
+      "files": {
+        "backend/tests/test_portage_integration.py": "b2a220eb14123f4fa30449f4dde369e615032efdc2b29847e37940a2c33b0512",
+        "backend/tests/test_system_one_portage.py": "11c3d41ec26f4220d1c0d8a2e08363672e7360d6f5102c1558cd9b8ea217d09e",
+        "deployment/enrollment/sources.json": "f7cecf88552a60cbe8b6a8e099dfe2cd5234fe7d4821ffdf3554ecabebbb04be",
+        "deployment/portage/requirements.lock": "37fceed6273fcd647413d4e78cdd12b2177c586ec1d258b56d971b859f025a5f"
+      }
+    },
+    "cairn": {
+      "head": "0cf3158fdf5bbbecc52d3cc9cd88ef33bdfb63fc",
+      "scope": "read-only native exporter; source unchanged"
+    },
+    "waypoint": {
+      "head": "3ec286f5d41e857622d9b24f23b3c31e6f248605",
+      "scope": "clean source rechecked; historical browser evidence not rerun"
+    },
+    "educloud": {
+      "branch": "codex/system-one-pilot-coordination-v1",
+      "base": "9897c92371400fcb991619c4a46d438a960ef404",
+      "scope": "coordination only"
+    }
+  },
+  "environment": {
+    "test_python": "3.12.13",
+    "standalone_demo_python": "3.14.5",
+    "uv": "0.11.16",
+    "platform": "macOS arm64",
+    "dependency_install": "fresh worktree environments; offline cache; Portage uv --locked; Belay uv pip sync --require-hashes"
+  },
+  "checks": {
+    "portage_full": {
+      "tests": 545,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 6,
+      "passed": 539,
+      "skip_reasons": {
+        "verifier-contract sibling checkout not present": 6
+      },
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/all-tests-2.xml",
+        "bytes": 77064,
+        "sha256": "95a2c2894d107a2dd2739f22e92a2ba1fac0d2fce08f55dd5c3e943dfad1489b"
+      }
+    },
+    "belay_full": {
+      "tests": 1160,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 22,
+      "passed": 1138,
+      "skip_reasons": {
+        "set RUN_LLM_EVALS=1 with a reachable tutor + judge endpoint": 1,
+        "PowerShell unavailable": 2,
+        "requires isolated CONTROL_TEST_DATABASE_URL PostgreSQL database": 6,
+        "disposable PostgreSQL DSN not configured": 1,
+        "native Cairn exporter fixtures not configured": 2,
+        "requires isolated CONTROL_TEST_DATABASE_URL PostgreSQL": 4,
+        "verifier-contract sibling checkout not present; set VERIFIER_CONTRACT_DIR": 6
+      },
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/backend-final.xml",
+        "bytes": 158359,
+        "sha256": "2979c63998542c3132aee09b666d4f230475c98c701ee91141820cb7dfdc988e"
+      }
+    },
+    "native_enrollment": {
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 22,
+      "skip_reasons": {},
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/native-final/acceptance.xml",
+        "bytes": 2699,
+        "sha256": "5678172cb121db7485cd1b06717ccc17b62599696a470c4914df37cb2e25553c"
+      }
+    },
+    "actual_sdk_shadow": {
+      "tests": 28,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 28,
+      "skip_reasons": {},
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/consumer-final.xml",
+        "bytes": 4041,
+        "sha256": "2682cc68daa4db0587f8f8e3a88ce7903da6a499df70ac0421e812338b422caa"
+      }
+    },
+    "portage_direct_controls": {
+      "status": "PASS",
+      "cases": 175,
+      "passed": 175,
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/direct-controls/record.json",
+        "bytes": 23751,
+        "sha256": "8686ace1991e33dc0daf41d6da58b0ea7522ff399abf347c09fa240b7a5d9fd8"
+      },
+      "runtime_qualification": "DEFER: no model or capacity qualified; no deployment authorized"
+    },
+    "standalone_demo": {
+      "readiness": "synthetic_software_only",
+      "passed": true,
+      "checks": {
+        "http_success_and_revocation": true,
+        "typed_rules_advice": true,
+        "strong_advice_does_not_reroute": true,
+        "unknown_abstains": true,
+        "one_event_per_admitted_chat": true,
+        "revoked_request_has_no_transport": true,
+        "settled_synthetic_usage": true
+      },
+      "http_statuses": [
+        200,
+        200,
+        200,
+        403
+      ],
+      "actual_loopback_inference_requests": 3,
+      "external_model_requests": 0,
+      "sdk_retries": 0,
+      "trained_decision_model_executed": false,
+      "cleanup": "owned_servers_closed_and_temporary_state_removed"
+    },
+    "quality": {
+      "portage_ruff": "PASS",
+      "portage_changed_files_format": "PASS",
+      "portage_render_checks": "3/3 PASS",
+      "belay_ruff": "PASS",
+      "belay_format": "196 files PASS",
+      "belay_mypy": "PASS 189 source files",
+      "diff_check": "PASS"
+    }
+  },
+  "retained_failures": [
+    {
+      "finding": "Oversized numeric score overflow; fixed bounded validation before float conversion",
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/focused-1.log",
+        "bytes": 3388,
+        "sha256": "cea3d783274514fdcbfa102f1cd90e139a169f9ad914e8fe0ce2782d80b120db"
+      }
+    },
+    {
+      "finding": "Refusal response raced unknown liability finalization; settle before acknowledgement",
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/focused-1.log",
+        "bytes": 3388,
+        "sha256": "cea3d783274514fdcbfa102f1cd90e139a169f9ad914e8fe0ce2782d80b120db"
+      }
+    },
+    {
+      "finding": "Initial import ordering lint failure",
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/lint-1.log",
+        "bytes": 1255,
+        "sha256": "59430b81335b3c79d732e5c29f9cfd61a3a14d4087a7c42f09c0da3e37d51b40"
+      }
+    },
+    {
+      "finding": "Optional hook accessed qualification test handler; guard exclusion fixed, full regression passes",
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/all-tests.log",
+        "bytes": 3908,
+        "sha256": "ee59b02b7333cf620d76cdd12bc0cd3a30324e0edb98a0bdbfc62add483a1fd7"
+      }
+    },
+    {
+      "finding": "Initial consumer run lacked native fixtures; 27 passed/1 skipped; supplied via exporter, final 28/28",
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/integration.xml",
+        "bytes": 4317,
+        "sha256": "49beb6500f1c59303b034f3a48d9d4e59d4b08d909940df2168855d449265b1c"
+      }
+    },
+    {
+      "finding": "Consumer import order and fixture-name lint findings fixed",
+      "evidence": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/lint.log",
+        "bytes": 2624,
+        "sha256": "3bc9e34085b8c626eb44ff25c2a95fdad3c7304ff7ee44152e32f52a232a52eb"
+      }
+    },
+    {
+      "finding": "Reused 120-second native fixtures expired in long broad run; two expected refusals. Preserved expiry and split broad/native gates; no product deadline changed",
+      "counts": {
+        "tests": 1160,
+        "failures": 2,
+        "errors": 0,
+        "skipped": 20,
+        "passed": 1138,
+        "skip_reasons": {
+          "set RUN_LLM_EVALS=1 with a reachable tutor + judge endpoint": 1,
+          "PowerShell unavailable": 2,
+          "requires isolated CONTROL_TEST_DATABASE_URL PostgreSQL database": 6,
+          "disposable PostgreSQL DSN not configured": 1,
+          "requires isolated CONTROL_TEST_DATABASE_URL PostgreSQL": 4,
+          "verifier-contract sibling checkout not present; set VERIFIER_CONTRACT_DIR": 6
+        },
+        "evidence": {
+          "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/backend-full.xml",
+          "bytes": 160982,
+          "sha256": "a0356e7ec942e409598e77890517dc3fe2cb2a92478c534aa0e27b2e04949265"
+        }
+      }
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/demo-final.json",
+      "bytes": 3790,
+      "sha256": "2cb19cb1a8c778c349d08b059d2fde40e2b6e856c225604821a713d11299b1c3"
+    },
+    {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/lint-final.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/render-scale1.example.log",
+      "bytes": 35,
+      "sha256": "e564d768c0ec709a05be163459fce0bf0c2c8f2525cbcb2f5fb2cef312bafb79"
+    },
+    {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/render-scale2.educloud.student.log",
+      "bytes": 35,
+      "sha256": "e564d768c0ec709a05be163459fce0bf0c2c8f2525cbcb2f5fb2cef312bafb79"
+    },
+    {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/portage-system-one-shadow-pilot-v1/.qualification/system-one-v1/render-scale2.educloud.staff.log",
+      "bytes": 35,
+      "sha256": "e564d768c0ec709a05be163459fce0bf0c2c8f2525cbcb2f5fb2cef312bafb79"
+    },
+    {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/lint-final.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/format-final.log",
+      "bytes": 28,
+      "sha256": "d7c211682ac4a89663dc79f242647c3da0b4c4dc492b512acf58d7f76cf9b71c"
+    },
+    {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/mypy.log",
+      "bytes": 657,
+      "sha256": "efeeaf70cfd80e58e5bb14c5fe8974a1d07e246db3e0f2c79f514419faf2ca8a"
+    },
+    {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/output/system-one-v1/native-final/commands.json",
+      "bytes": 1493,
+      "sha256": "7a6e6705445fb046def6fdb793444f65e3be3f6bf2d3dff8223ef28b611e08f0"
+    }
+  ],
+  "readiness": {
+    "typed_shadow_software": "PASS_SYNTHETIC_ONLY",
+    "ordinary_rules_baseline": "implemented",
+    "trained_system_one_model": "NOT_IMPLEMENTED_OR_QUALIFIED",
+    "live_generative_service": "NOT_QUALIFIED",
+    "scientific_acceptance": "NOT_CLAIMED",
+    "full_classroom_deployment": "NOT_READY",
+    "colonies": "NOT_LAUNCHED"
+  },
+  "release": {
+    "portage_branch": "pushed",
+    "belay_branch": "pushed",
+    "merge": "none",
+    "deployment": "none",
+    "portage_pr": "not opened: existing PR workflow automatically calls a paid model reviewer",
+    "belay_hosted_ci": {
+      "run": 43279039475,
+      "url": "https://github.com/EduCloud-Ecosystem/belay-classroom/actions/runs/43279039475",
+      "observed_status": "in_progress",
+      "quality": "success",
+      "postgres": "in_progress",
+      "sqlite": "in_progress"
+    }
+  },
+  "accounting_notes": [
+    "Decision elapsed_ns and backend calls retained, including failed attempts; no measured dollar savings.",
+    "model_forward_calls counts adapter attempts in synthetic fixtures; no real tensor-forward measurement or trained-model execution is claimed.",
+    "Demo: three loopback inference requests. Actual SDK controls independently count explicit repair as two transports and failed upstream as one; no hidden SDK retry.",
+    "Fixture token usage is synthetic and is not real model cost. Preparation and reviewer effort are not scientific performance results. No paid inference, cloud provisioning or learner data."
+  ],
+  "remaining_blockers": [
+    "Approved generative endpoint and pinned model/runtime/precision/capability/usage qualification for a live pilot.",
+    "Pinned trained decision backend and independently labeled non-sensitive evaluation with quality, abstention and calibration evidence.",
+    "Institutional login, supported hosting/image delivery, human pilot walkthrough and acceptance; Outfitter native lifecycle/expiry remains separate."
+  ],
+  "next_executable_step": {
+    "now": "Run python3 integrations/ai_pilot/decision_demo.py at pinned Portage head; stdlib only and self-cleaning.",
+    "next_engineering_gate": "Prepare one approved generative endpoint qualification; keep the decision step shadow-only. Do not start paid/model/cloud execution from this record."
+  }
+}
