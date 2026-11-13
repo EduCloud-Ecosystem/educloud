@@ -137,6 +137,22 @@ for an outcome is out of contract.
    `docs/policy/check_destinations.py` against that document's own register.
    Module pointers: `cairn/PRIVACY.md`, `belay/PRIVACY.md`.
 
+Resource-constrained service development follows the
+[resource-efficiency record](docs/specs/resource-efficiency-v1.md): preserve a
+complete AI-off task and human-help path, use reviewed materials and ordinary
+deterministic tools before adding inference, and compare full task effort and
+usefulness rather than token counts alone. Browser notebooks may replace hosted
+work only after the exact task, packages, device, persistence, export, network
+boundary and accessible hosted fallback have been accepted. Portage remains the
+sole inference admission/accounting authority; any eventual retry or escalation
+is a distinct bounded attempt. An approved institutional endpoint is the service
+target, with external public/synthetic research routes separately qualified.
+No campus API, GPU inventory, pooled personal credits or allocation is assumed.
+Independent batch jobs precede fleet/model sharding; experimental distributed
+inference or autonomous managers do not become a classroom dependency merely
+because an offline fixture passes. The first tools prepare evidence only and
+do not establish a deployed service or measured savings.
+
 The [research workspace contract](docs/specs/research-workspace-pilot.md) applies
 these boundaries to reviewed Python/R evidence and coordinated local recovery:
 Waypoint owns access/artifacts, Outfitter owns finite admission and one-way
