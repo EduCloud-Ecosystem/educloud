@@ -2,16 +2,25 @@
 
 ## November 13 resource-efficiency development
 
-Local branches `codex/resource-efficiency-v1` (umbrella) and
-`codex/browser-notebook-bundle-v1` (Waypoint) add an offline paired-experiment
-planner/importer and reviewed learner-only notebook bundle. These are evidence
-preparation tools; no runtime deployment, browser qualification, campus endpoint
-acceptance or measured savings. The release harness tests, 15 new bundle tests and four Node
-controls pass. After a precise test-only expiry correction, all 758 Waypoint
-Python tests pass at the selected source base; earlier failed logs are retained.
-Independent release branches still need exact-head CI. See the [change record](docs/specs/resource-efficiency-v1.md) for exact
-pins, ownership, checks, remaining gates and the next action. Earlier status
-entries below keep their original dates and are not refreshed by this change.
+The user selected **versioned downloadable releases** for the two offline operator
+tools. The [E1 experiment-tool prerelease](https://github.com/EduCloud-Ecosystem/educloud/releases/tag/resource-efficiency-v1.0.0-rc.1)
+is published from `979c5c08248158f81e64f33e68a5d1579126e754`; its Python 3.12/3.14
+CI passes and downloaded assets match the tested checksums. The
+[Waypoint learner-source packager prerelease](https://github.com/EduCloud-Ecosystem/waypoint/releases/tag/browser-bundle-v1.0.0-rc.1)
+is published from `8fa848639c6aa435d849b55e152d5337c8f72140`; all 14 automatic CI
+jobs pass, with the manual continuity check unrun and unit-suite skips recorded
+separately. Its uploaded assets were downloaded and matched the tested bytes.
+The two pull requests remain open for
+separate merge review: [EduCloud #58](https://github.com/EduCloud-Ecosystem/educloud/pull/58)
+and [Waypoint #60](https://github.com/EduCloud-Ecosystem/waypoint/pull/60).
+
+These tools prepare evidence and reviewed source bundles. Browser-runtime
+qualification, actual endpoint approval, independent task review and measured
+savings remain open. Earlier timing, image-fixture and synthetic retention
+failures are retained in the module records; their corrections preserve
+production deadlines and retention policy. See the [change record](docs/specs/resource-efficiency-v1.md)
+for exact pins, checks and next actions. Historical entries below retain their
+original dates and acceptance boundaries.
 
 Research-pilot update: October 19, 2026. The classroom/AI assessment below retains
 its October 6–7 review boundary unless explicitly updated. Its historical vendor

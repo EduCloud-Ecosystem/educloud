@@ -181,3 +181,76 @@ match main. Preserve the feature checkpoints, then transplant only owned commits
 onto main for independent pull requests. Verify exact resulting heads in CI; the
 758-test local result is source-base evidence, not post-transplant hosted CI.
 No merge approval or production acceptance follows from CI or a release artifact.
+
+
+## Published operator-tool delivery checkpoint, 13 November 2026
+
+This is the current delivery state; earlier preparation checkpoints above retain
+their historical verification boundaries. The user explicitly selected
+**versioned downloadable releases**. Both prereleases are published, not drafts.
+The pull requests remain open and unmerged for separate merge review.
+
+| Tool | Pinned release source | Download | Open pull request |
+| --- | --- | --- | --- |
+| E1 offline experiment planner/importer | `979c5c08248158f81e64f33e68a5d1579126e754` | [resource-efficiency-v1.0.0-rc.1](https://github.com/EduCloud-Ecosystem/educloud/releases/tag/resource-efficiency-v1.0.0-rc.1) | [EduCloud #58](https://github.com/EduCloud-Ecosystem/educloud/pull/58) |
+| Reviewed learner-source packager | `8fa848639c6aa435d849b55e152d5337c8f72140` | [browser-bundle-v1.0.0-rc.1](https://github.com/EduCloud-Ecosystem/waypoint/releases/tag/browser-bundle-v1.0.0-rc.1) | [Waypoint #60](https://github.com/EduCloud-Ecosystem/waypoint/pull/60) |
+
+Both branches were based directly on fetched main, excluding unrelated draft
+PRs #57/#59. Preintegration feature checkpoints remain on backup branches.
+Signed commits are pushed; existing root checkouts and unrelated edits remain
+preserved. Published release tags pin the tested feature commits; this final
+umbrella documentation follow-up does not move either tag or replace its assets.
+
+Verification and retained limits:
+
+- E1 [source-head CI](https://github.com/EduCloud-Ecosystem/educloud/actions/runs/43482619045)
+  passes **28 tests each on Python 3.12 and 3.14**, plus deterministic release
+  building. The extracted source tool's 25 tests and unmeasured
+  plan/template/report roundtrip pass with expected unavailable/incomplete
+  outcomes. No model requests or performance measurements were made.
+- Waypoint's **14 automatic jobs pass** on the pinned head. The
+  [synthetic course run](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43488688496)
+  completes the full course, upgrade/fresh recovery and protected retirement,
+  including saved bytes, protected snapshot retention, closed restore and owned
+  cleanup. The corrected retention command passes with CI Restic 0.18.1; the
+  separate local fresh-repository regression used Restic 0.19.1.
+- [Authenticated Python/R runtime](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43488688699),
+  [worker-channel recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43488688517),
+  [institutional recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43488688497)
+  and [worker operations](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43488716171)
+  also pass. These are bounded CI/synthetic controls, not real-course acceptance.
+- Waypoint's policy job ran **751 tests with one integration-dependency skip**.
+  That exact authenticated JupyterLab/browser boundary control passed separately
+  in the equipped saved-file bridge job; four Node controls and all nine browser
+  bridge tests pass there. Rehearsal units ran **335 tests with three explicit
+  root/optional-Docker-SDK skips**. The manual-dispatch-only continuity job was
+  **not run** and is not counted as a pass. No gate was removed or weakened.
+- All **15 bundle tests pass after extracting the source ZIP**. Published assets
+  were downloaded and compared byte-for-byte with tested local artifacts;
+  GitHub asset SHA-256 digests and tag targets also match. ZIP SHA-256:
+  E1 `4dfb2bd196f2d4b6af7675ae506dfcd0113fb55dcba925948173c67e6b0312fc`;
+  Waypoint `35913e635e2230c7bbece9826ed5d75a11cb7e000e9ba964641abaf77ea6126d`.
+- Earlier timing failures, independently rebuilt-image failures and the
+  synthetic retirement grouping failure remain documented with retained logs
+  in the Waypoint ignored output directories. Corrections affect test/rehearsal
+  setup; production deadlines, image recipes and retention policy remain intact.
+  The real three-second TLS control was preserved. New source package bytes are
+  allowlisted operator tools; old unmeasured-label evidence is not distributed.
+
+Working checkpoint: umbrella checkout
+`/Users/gregchism/dev/.educloud-worktrees/educloud-resource-efficiency-v1`, branch
+`codex/resource-efficiency-v1`, source revision `979c5c08248158f81e64f33e68a5d1579126e754`;
+this documentation follow-up changes only `EDUCLOUD-STATUS.md` and this record.
+Waypoint checkout
+`/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1`, branch
+`codex/browser-notebook-bundle-v1`, is clean and pushed at the release pin above.
+Ignored release assets, published-byte verification and the machine-readable
+recovery checkpoint remain local; no secrets or private learner work are added.
+No UI source changed, so no new rendered UI acceptance is claimed.
+
+Next concrete action: merge review for the two open PRs, then operator review of
+the fixed task/source catalogs and separately bounded browser-kernel/fallback
+qualification. Actual campus endpoint access and an E1-specific finite execution
+envelope remain required before inference measurement. Download publication is
+complete; hosted classroom deployment, real-student acceptance, measured savings,
+provider entitlement and institutional service approval remain unestablished.
