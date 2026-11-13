@@ -1,0 +1,24 @@
+name: Resource efficiency offline tools
+on:
+  pull_request:
+    paths: ['experiments/demand-reduction-v1/**', 'docs/specs/resource-efficiency-v1.md', '.github/workflows/resource-efficiency.yml']
+  push:
+    branches: [main]
+    paths: ['experiments/demand-reduction-v1/**', 'docs/specs/resource-efficiency-v1.md', '.github/workflows/resource-efficiency.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        python: ['3.12', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s experiments/demand-reduction-v1 -p 'test_*.py' -v
+      - run: python experiments/demand-reduction-v1/release.py --version v1.0.0-rc.1 --out "${{ runner.temp }}/e1-release"

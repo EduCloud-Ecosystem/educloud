@@ -1,0 +1,122 @@
+{
+  "schema": "educloud-resource-efficiency-verification-v2",
+  "evidence_kind": "local_precommit_snapshot_not_hosted_ci",
+  "checkouts": {
+    "educloud": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/educloud-resource-efficiency-v1",
+      "branch": "codex/resource-efficiency-v1",
+      "base": "9897c92371400fcb991619c4a46d438a960ef404",
+      "files_sha256": {
+        "SYSTEM.md": "7a2c829ebceff91e2352653d235c1af31dd9cc10a4d363f08b9e3ef7a88ba9e4",
+        "DOCUMENTATION.md": "1dd7f3ea877d8d5366698c7c9df8a9f150bc92d004f17e3914aaf763ac56eb4d",
+        "EDUCLOUD-STATUS.md": "dd95cb123522af529e003a75c070ff722f24df757006825c19ba4593d649dd42",
+        "docs/specs/resource-efficiency-v1.md": "60acc62b5f9bcc2b475dedeb0b70b0b91ac4f04d98eaaeaeebdc816bff81059e",
+        ".github/workflows/resource-efficiency.yml": "55fea81f2de21b832f4e1f190a6c8fb17b4af9c5aec01d3f80280f7a1b0b8c10",
+        "experiments/demand-reduction-v1/.gitignore": "8f7fd1e73fb1cbc8e47bfd36db3838c72bf5cfc7dc7de29404db8b0405b5d24a",
+        "experiments/demand-reduction-v1/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "experiments/demand-reduction-v1/LICENSING.md": "ee426116a7cb6adc9b4f2041d68b48a40ac507b7029e7f5c6f3818718476d495",
+        "experiments/demand-reduction-v1/README.md": "0bce4781b2e073425b5194ffdac2b2f6308f77c0ce7a867fee4b1f4cf6ff5fa7",
+        "experiments/demand-reduction-v1/e1.py": "c995b38c0623ef6d6dedd0387c65ca1beeddf65b1d3ec7680101942037e3eecc",
+        "experiments/demand-reduction-v1/evidence/preparation-v2/checks.json": "f9692f2180dddc34a78396d571f43830dcfc1b4740d5ffe1c6974cad0d31c92e",
+        "experiments/demand-reduction-v1/evidence/preparation-v2/plan.json": "eb39da28254e0dc44879bebd40bbb50f6c09b4c23ac627553f4a71fbcad7a405",
+        "experiments/demand-reduction-v1/evidence/preparation-v2/report.json": "e0dd40b4f69426f12a220b3590fe3c99cfcd22416cb7ee87cc14839cd544c39d",
+        "experiments/demand-reduction-v1/evidence/preparation-v2/results-unavailable.json": "07aa38e0bfd6700baa64d8479c551613b0604ee26b03bd97db3c35e8b147e20d",
+        "experiments/demand-reduction-v1/release.py": "1057a3a88757c8ed00fa255d159911cc4d5ffaeed4ae5515a524c09dfcd463b6",
+        "experiments/demand-reduction-v1/tasks.json": "575a74a45f5f05e7839c796776846df02d8080856cf76a0876c643cfe2b546c4",
+        "experiments/demand-reduction-v1/test_e1.py": "8e7539b8936eac0f007466ee7b2c4d7f488a40f6e8b0a5df1bece9d294bf7506",
+        "experiments/demand-reduction-v1/test_release.py": "7c6789bb84bce0b6d60402ec23283ab64121d47c1633177d3f8f0255e410cbdb"
+      }
+    },
+    "waypoint": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1",
+      "branch": "codex/browser-notebook-bundle-v1",
+      "base": "3ec286f5d41e857622d9b24f23b3c31e6f248605",
+      "files_sha256": {
+        "course-workspace/README.md": "df63147f24f73ee0012a8aaf037aa891ca4ae459b80f7820f6095bce266564b4",
+        "course-workspace/classroom/BROWSER-BUNDLE.md": "d8be5aa608c7095d6c8480cf390349df22080b3027513e3a931352ce43bf58cd",
+        "course-workspace/classroom/browser_bundle.py": "60a3879673bba7b1debce672dc83dff94f9dbf4ecff87d7df9c24e372b5a26f5",
+        "course-workspace/classroom/browser_bundle_sources.json": "9b8ab126cd89caf723daaeca6de0b4c1077c204a6348b732737348f948b16364",
+        "course-workspace/classroom/browser_bundle.LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "course-workspace/tests/test_browser_bundle.py": "472ffade1517259bb1df6cd6483aa809e320c110ae31047357640f9a8ba22e69",
+        "course-workspace/tests/test_worker_runtime.py": "40d1ae250d2c96a51aa7a853d3023b65447a42d04f314fcdb6c9fceac860ff11"
+      }
+    }
+  },
+  "checks": [
+    {
+      "check": "E1 plus extracted release tests",
+      "python": "3.12.13",
+      "tests": 28,
+      "result": "pass"
+    },
+    {
+      "check": "E1 plus extracted release tests",
+      "python": "3.14.5",
+      "tests": 28,
+      "result": "pass"
+    },
+    {
+      "check": "Waypoint full Python suite after expiry test diagnosis",
+      "tests": 758,
+      "result": "pass",
+      "seconds": 94.183,
+      "base": "3ec286f5d41e857622d9b24f23b3c31e6f248605"
+    },
+    {
+      "check": "Node selected-code controls",
+      "tests": 4,
+      "result": "pass"
+    },
+    {
+      "check": "Ruff correctness, artifact digests and whitespace",
+      "result": "pass"
+    }
+  ],
+  "waypoint_logs": {
+    "composed-real-budget-unchanged-pass.log": {
+      "sha256": "02e1022a8940cb7dca7f95759b7a3f3ca9b4467f294520f6db8b1741fa68cb3c",
+      "location": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1/course-workspace/output/browser-bundle-validation-2026-11-13/composed-real-budget-unchanged-pass.log"
+    },
+    "existing-runtime-focused-pass.log": {
+      "sha256": "548472113ccce16ba60b10631c8c62f8d73b474c0dae2f71c8edd9978af52d9d",
+      "location": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1/course-workspace/output/browser-bundle-validation-2026-11-13/existing-runtime-focused-pass.log"
+    },
+    "existing-session-focused-pass.log": {
+      "sha256": "3e48bd7c938e73b3f7aa0d0e529917a449aa99a8342b76d5d426e75e7e6dad6a",
+      "location": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1/course-workspace/output/browser-bundle-validation-2026-11-13/existing-session-focused-pass.log"
+    },
+    "expiry-after-stop-fixed-pass.log": {
+      "sha256": "e90acfb9d52aacd4670059c6dc5cabcf44bf5e5cd883290eb618f5a146ad54cc",
+      "location": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1/course-workspace/output/browser-bundle-validation-2026-11-13/expiry-after-stop-fixed-pass.log"
+    },
+    "expiry-before-stop-fixed-pass.log": {
+      "sha256": "436c5f5c4574fa27b7d5fde00e42edb870b9187b5f3739ca6f8eeb69eda96b35",
+      "location": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1/course-workspace/output/browser-bundle-validation-2026-11-13/expiry-before-stop-fixed-pass.log"
+    },
+    "expiry-before-stop-initial-injection-failed.log": {
+      "sha256": "b7c88c9c4b206c857013f47b1f463aa3cd0795f53128e47ae618af65cf297c85",
+      "location": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1/course-workspace/output/browser-bundle-validation-2026-11-13/expiry-before-stop-initial-injection-failed.log"
+    },
+    "python-suite-bounded-rerun-failed.log": {
+      "sha256": "3added4264bdeb8e693c6852e808819e8e0fe68f876e7cd50ccd8c20262c32a1",
+      "location": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1/course-workspace/output/browser-bundle-validation-2026-11-13/python-suite-bounded-rerun-failed.log"
+    },
+    "python-suite-original-failed.log": {
+      "sha256": "48aaf13a4bf195fbfef7ff4826d66a868785933df72a0f398e317fa9d5f074ab",
+      "location": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1/course-workspace/output/browser-bundle-validation-2026-11-13/python-suite-original-failed.log"
+    },
+    "python-suite-postdiagnosis-pass.log": {
+      "sha256": "3830c5bd49b7b44c9dd5a104d400cc28be3f1f1c2b11d0fa91d016b8cce17670",
+      "location": "/Users/gregchism/dev/.educloud-worktrees/waypoint-browser-notebook-bundle-v1/course-workspace/output/browser-bundle-validation-2026-11-13/python-suite-postdiagnosis-pass.log"
+    }
+  },
+  "limits": {
+    "model_experiment_calls": 0,
+    "new_cloud_resources": 0,
+    "merge": false,
+    "deployment": false,
+    "browser_qualified": false,
+    "endpoint_qualified": false
+  },
+  "historical_evidence": "Original preparation-v1 files and initial verification retained under ignored .local; incorrect measured/order label corrected in preparation-v2 before publication."
+}

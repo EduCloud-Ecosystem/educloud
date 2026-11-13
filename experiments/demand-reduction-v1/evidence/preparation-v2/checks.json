@@ -1,0 +1,66 @@
+[
+  {
+    "command": [
+      "python3",
+      "experiments/demand-reduction-v1/e1.py",
+      "plan",
+      "--manifest",
+      "experiments/demand-reduction-v1/tasks.json",
+      "--out",
+      "experiments/demand-reduction-v1/evidence/preparation-v2/plan.json"
+    ],
+    "expected_exit": 0,
+    "observed_exit": 0,
+    "stdout": {
+      "output": "experiments/demand-reduction-v1/evidence/preparation-v2/plan.json",
+      "state": "execution_unavailable"
+    }
+  },
+  {
+    "command": [
+      "python3",
+      "experiments/demand-reduction-v1/e1.py",
+      "template",
+      "--plan",
+      "experiments/demand-reduction-v1/evidence/preparation-v2/plan.json",
+      "--out",
+      "experiments/demand-reduction-v1/evidence/preparation-v2/results-unavailable.json"
+    ],
+    "expected_exit": 0,
+    "observed_exit": 0,
+    "stdout": {
+      "output": "experiments/demand-reduction-v1/evidence/preparation-v2/results-unavailable.json",
+      "state": null
+    }
+  },
+  {
+    "command": [
+      "python3",
+      "experiments/demand-reduction-v1/e1.py",
+      "report",
+      "--plan",
+      "experiments/demand-reduction-v1/evidence/preparation-v2/plan.json",
+      "--results",
+      "experiments/demand-reduction-v1/evidence/preparation-v2/results-unavailable.json",
+      "--out",
+      "experiments/demand-reduction-v1/evidence/preparation-v2/report.json"
+    ],
+    "expected_exit": 1,
+    "observed_exit": 1,
+    "stdout": {
+      "output": "experiments/demand-reduction-v1/evidence/preparation-v2/report.json",
+      "state": "incomplete"
+    }
+  },
+  {
+    "preparation_state": "unavailable_no_execution",
+    "evidence_kind": "preparation",
+    "actual_order": null,
+    "model_calls": 0,
+    "files": {
+      "plan.json": "eb39da28254e0dc44879bebd40bbb50f6c09b4c23ac627553f4a71fbcad7a405",
+      "report.json": "e0dd40b4f69426f12a220b3590fe3c99cfcd22416cb7ee87cc14839cd544c39d",
+      "results-unavailable.json": "07aa38e0bfd6700baa64d8479c551613b0604ee26b03bd97db3c35e8b147e20d"
+    }
+  }
+]

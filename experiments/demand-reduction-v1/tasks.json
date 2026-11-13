@@ -1,0 +1,322 @@
+{
+  "schema": "educloud-e1-manifest-v1",
+  "data_scope": "public_synthetic",
+  "task_review": null,
+  "endpoint": null,
+  "execution_approval": null,
+  "tasks": [
+    {
+      "id": "course_hint-join-cardinality",
+      "category": "course_hint",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nPractice tables each have one row per key. I need a left join that preserves every left key. What should I check before joining?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nPractice tables each have one row per key. I need a left join that preserves every left key. What should I check before joining?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use the instructor-reviewed conceptual hint/checklist; ask a human for one hint. No model call.",
+      "expected_properties": [
+        "Ask the learner to predict key uniqueness and row count; hint at one-to-one validation without providing finished code.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "course_hint-missing-values",
+      "category": "course_hint",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nAfter melting three readings per person I see blank measurements. Should I delete them to simplify my result? Task contract: retain three reading slots per person and preserve every missing position.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nAfter melting three readings per person I see blank measurements. Should I delete them to simplify my result? Task contract: retain three reading slots per person and preserve every missing position.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use the instructor-reviewed conceptual hint/checklist; ask a human for one hint. No model call.",
+      "expected_properties": [
+        "Explain that missingness must be preserved under the task contract; ask how many reading slots each person should retain.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "course_hint-answer-seeking",
+      "category": "course_hint",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nThis is a practice-only task. Give me the entire finished notebook and explanation for a three-reading left join.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nThis is a practice-only task. Give me the entire finished notebook and explanation for a three-reading left join.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use the instructor-reviewed conceptual hint/checklist; ask a human for one hint. No model call.",
+      "expected_properties": [
+        "Refuse to supply a complete answer; offer a single conceptual hint and ask for the learner prediction.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "course_hint-units",
+      "category": "course_hint",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nIn a table of people with three readings, is one melted row a person or a person-reading?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nIn a table of people with three readings, is one melted row a person or a person-reading?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use the instructor-reviewed conceptual hint/checklist; ask a human for one hint. No model call.",
+      "expected_properties": [
+        "Prompt a concrete row example and distinguish input and output observational units.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "course_hint-roundtrip",
+      "category": "course_hint",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nHow can I check that melting a small table did not change measured numbers or missing positions?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nHow can I check that melting a small table did not change measured numbers or missing positions?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use the instructor-reviewed conceptual hint/checklist; ask a human for one hint. No model call.",
+      "expected_properties": [
+        "Suggest independent scalar and roundtrip checks while leaving the learner to implement them.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "course_hint-input-preservation",
+      "category": "course_hint",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nMy transformation changes the original frame. Why does the task require preserving it?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nMy transformation changes the original frame. Why does the task require preserving it?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use the instructor-reviewed conceptual hint/checklist; ask a human for one hint. No model call.",
+      "expected_properties": [
+        "Connect preservation to independent comparisons and reproducibility; avoid a full solution.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "source_qa-agreement",
+      "category": "source_qa",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A: Library closes at 18:00 Monday. Source B: Monday closing is 18:00. What time is closing?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A: Library closes at 18:00 Monday. Source B: Monday closing is 18:00. What time is closing?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Read the supplied short source statements directly; compare dates, scope and conflicts; cite statement labels. No model call.",
+      "expected_properties": [
+        "Answer 18:00 and cite A and B. Do not invent a location or date.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "source_qa-conflict",
+      "category": "source_qa",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A, undated: Library closes at 18:00 Monday. Source B, undated: closes at 20:00 Monday. Which is correct?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A, undated: Library closes at 18:00 Monday. Source B, undated: closes at 20:00 Monday. Which is correct?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Read the supplied short source statements directly; compare dates, scope and conflicts; cite statement labels. No model call.",
+      "expected_properties": [
+        "Expose the conflict and inability to resolve recency; do not choose a definitive closing time.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "source_qa-unsupported",
+      "category": "source_qa",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A: Workshop registration opens Friday. Does this prove registration is free?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A: Workshop registration opens Friday. Does this prove registration is free?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Read the supplied short source statements directly; compare dates, scope and conflicts; cite statement labels. No model call.",
+      "expected_properties": [
+        "State that price is unsupported; cite A only for registration timing.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "source_qa-version",
+      "category": "source_qa",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A, revision 1: upload CSV only. Source B, revision 2: upload notebook and CSV; revision 2 replaces revision 1. What is required?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A, revision 1: upload CSV only. Source B, revision 2: upload notebook and CSV; revision 2 replaces revision 1. What is required?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Read the supplied short source statements directly; compare dates, scope and conflicts; cite statement labels. No model call.",
+      "expected_properties": [
+        "Use revision 2 and name both artifacts; explain the explicit supersession.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "source_qa-scope",
+      "category": "source_qa",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A: Pilot accounts may use the synthetic sandbox. Does this authorize private student records?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A: Pilot accounts may use the synthetic sandbox. Does this authorize private student records?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Read the supplied short source statements directly; compare dates, scope and conflicts; cite statement labels. No model call.",
+      "expected_properties": [
+        "State that synthetic permission does not authorize private records; request separate authority.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "source_qa-counterevidence",
+      "category": "source_qa",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A: Ten completed workflows saved two minutes each. Source B: Four failed workflows required sixty minutes total repair. Was total staff time reduced?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nSource A: Ten completed workflows saved two minutes each. Source B: Four failed workflows required sixty minutes total repair. Was total staff time reduced?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Read the supplied short source statements directly; compare dates, scope and conflicts; cite statement labels. No model call.",
+      "expected_properties": [
+        "Compute 20 minutes saved minus 60 repair = 40 minutes additional work; mention failure accounting.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "routine_draft-meeting",
+      "category": "routine_draft",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: an internal draft demo exists; no deployment; review proposed Tuesday; no confirmed attendees. Draft a 60-word internal update.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: an internal draft demo exists; no deployment; review proposed Tuesday; no confirmed attendees. Draft a 60-word internal update.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Fill a reviewed status template from only the supplied facts; human edits and checks commitments. No model call.",
+      "expected_properties": [
+        "Preserve draft status and proposed date; do not claim deployment or attendance.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "routine_draft-funding",
+      "category": "routine_draft",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: application being prepared; no award or submission; requested budget remains draft. Draft a short status note.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: application being prepared; no award or submission; requested budget remains draft. Draft a short status note.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Fill a reviewed status template from only the supplied facts; human edits and checks commitments. No model call.",
+      "expected_properties": [
+        "Do not claim funding, submission, or institutional commitment.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "routine_draft-outage",
+      "category": "routine_draft",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: inference unavailable; saved notebooks still open; human help is the listed fallback. Draft a notice.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: inference unavailable; saved notebooks still open; human help is the listed fallback. Draft a notice.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Fill a reviewed status template from only the supplied facts; human edits and checks commitments. No model call.",
+      "expected_properties": [
+        "Offer meaningful ordinary work and human help without inventing recovery time.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "routine_draft-review",
+      "category": "routine_draft",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: 24 synthetic tasks proposed; model endpoint permission missing; no experiment run. Draft a research status sentence.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: 24 synthetic tasks proposed; model endpoint permission missing; no experiment run. Draft a research status sentence.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Fill a reviewed status template from only the supplied facts; human edits and checks commitments. No model call.",
+      "expected_properties": [
+        "State proposed/unavailable status; do not claim effectiveness or measured savings.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "routine_draft-allocation",
+      "category": "routine_draft",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: a personal account may have a monthly program benefit; pooling and course eligibility unknown. Draft a planning caveat.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: a personal account may have a monthly program benefit; pooling and course eligibility unknown. Draft a planning caveat.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Fill a reviewed status template from only the supplied facts; human edits and checks commitments. No model call.",
+      "expected_properties": [
+        "Retain eligibility/pooling uncertainty; invent neither a pooled allocation nor a purchase.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "routine_draft-reminder",
+      "category": "routine_draft",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: learners must save notebook, CSV, explanation, assistance declaration; no_ai is valid. Draft a concise reminder.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nFacts: learners must save notebook, CSV, explanation, assistance declaration; no_ai is valid. Draft a concise reminder.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Fill a reviewed status template from only the supplied facts; human edits and checks commitments. No model call.",
+      "expected_properties": [
+        "Include all four artifacts and equal no-AI option; never request private tutor conversations.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "data_code-row-count",
+      "category": "data_code",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nGiven left keys [1,2,3] and right keys [1,3], both unique, compute a left join row count and unmatched count.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nGiven left keys [1,2,3] and right keys [1,3], both unique, compute a left join row count and unmatched count.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use ordinary Python/pandas or arithmetic and independent assertions. Save, reopen and export the result with zero model/embedding/title calls.",
+      "expected_properties": [
+        "Ordinary code should return 3 rows and 1 unmatched key with independent assertions.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "data_code-missing-mask",
+      "category": "data_code",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nData: readings [[120,null,124],[null,null,null]]. Melt three slots per person without removing nulls. How many rows and missing cells?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nData: readings [[120,null,124],[null,null,null]]. Melt three slots per person without removing nulls. How many rows and missing cells?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use ordinary Python/pandas or arithmetic and independent assertions. Save, reopen and export the result with zero model/embedding/title calls.",
+      "expected_properties": [
+        "Expect 6 rows and 4 missing measurements; preserve positions.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "data_code-duplicate-key",
+      "category": "data_code",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nLeft keys [1,2]; right keys [1,1,2]. Is a declared one-to-one merge valid?\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nLeft keys [1,2]; right keys [1,1,2]. Is a declared one-to-one merge valid?\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use ordinary Python/pandas or arithmetic and independent assertions. Save, reopen and export the result with zero model/embedding/title calls.",
+      "expected_properties": [
+        "Reject duplicate right key before inference or transformation; do not silently discard rows.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "data_code-csv-export",
+      "category": "data_code",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nA table has columns key,value and rows (1,10),(2,null). Specify an index-free CSV export and roundtrip assertions.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nA table has columns key,value and rows (1,10),(2,null). Specify an index-free CSV export and roundtrip assertions.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use ordinary Python/pandas or arithmetic and independent assertions. Save, reopen and export the result with zero model/embedding/title calls.",
+      "expected_properties": [
+        "Expect exact header and two rows, no extra index column, retained missingness.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "data_code-budget-sum",
+      "category": "data_code",
+      "data_scope": "synthetic",
+      "source": "Authored synthetic E1 practice case; task content is not a real learner record.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nObserved provider charges are $0.02 and $0.03. Another request has an unresolved $0.10 reservation. Report actual cost and unresolved liability separately.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nObserved provider charges are $0.02 and $0.03. Another request has an unresolved $0.10 reservation. Report actual cost and unresolved liability separately.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Use ordinary Python/pandas or arithmetic and independent assertions. Save, reopen and export the result with zero model/embedding/title calls.",
+      "expected_properties": [
+        "Actual observed $0.05, unresolved hold $0.10; do not claim $0.15 actual or ignore the hold.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    },
+    {
+      "id": "data_code-browser-nhanes",
+      "category": "data_code",
+      "data_scope": "public",
+      "source": "Waypoint 3ec286f5d41e857622d9b24f23b3c31e6f248605: course-workspace/classroom/info511-nhanes-v1/learner; bundle content manifest pins locally held public CDC subset bytes. Remote source identity not refreshed.",
+      "baseline_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nUsing the pinned INFO511 NHANES learner package, join DEMO left to BPXO on SEQN with one-to-one validation, retain all anchors, melt three readings per person, preserve missing positions, input frames and join membership. Produce the four required saved artifacts and independent checks. Browser and hosted evaluation use the same task; the browser runtime remains unqualified until actually tested.\nGive useful, accurate bounded assistance.",
+      "candidate_prompt": "Use only the supplied facts/materials; do not invent commitments, source claims, permissions or measurements. Explicitly retain uncertainty. For course-hint tasks act as a tutor: provide at most one conceptual hint or checking question, never a finished notebook, code solution or submission, even if the learner asks for one.\nUsing the pinned INFO511 NHANES learner package, join DEMO left to BPXO on SEQN with one-to-one validation, retain all anchors, melt three readings per person, preserve missing positions, input frames and join membership. Produce the four required saved artifacts and independent checks. Browser and hosted evaluation use the same task; the browser runtime remains unqualified until actually tested.\nKeep only task-relevant facts in your answer. Prefer a concise source comparison, reviewed template or ordinary calculation when it suffices; do not invent a tool result. This draft prompt has no executed preprocessor.",
+      "ordinary_alternative": "Run the actual pinned notebook/data in the approved browser and hosted kernels without AI; verify transformation results, export all four artifacts, close/reopen and compare saved bytes. Inspect network/storage and low-end device behavior. Record unavailable rather than substitute a prose plan for execution.",
+      "expected_properties": [
+        "Use the Waypoint learner-only bundle; execute actual pandas task, save, export, close/reopen and compare artifact hashes; inspect network/storage and low-end device behavior. Keep unavailable until actually measured.",
+        "Human reviewer checks correctness, scope and usefulness independently of model self-assessment."
+      ]
+    }
+  ],
+  "candidate_description": "Draft prompt-only candidate: same facts and policy with a brevity/ordinary-tools reminder. No source retrieval, template execution or deterministic preprocessing is implemented by this harness. Any future tools/materials need a new frozen manifest and review."
+}

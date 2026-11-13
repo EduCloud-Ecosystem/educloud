@@ -8,6 +8,11 @@ Outfitter (new).*
 
 ## Platform definition (read first)
 
+Resource-efficiency development: `docs/specs/resource-efficiency-v1.md` coordinates
+the offline E1 comparison harness in `experiments/demand-reduction-v1/` and the
+separate Waypoint learner-only bundle. These are preparation tools, with no live
+experiment, endpoint qualification, deployment or measured saving implied.
+
 | Doc | What it is |
 |---|---|
 | `educloud/SYSTEM.md` | **The canonical internal definition**: names, module boundaries, the platform invariant, shared contracts (including contract 9, bounded AI management), the scale table, and the two-line resource allocation. Where an older document conflicts, SYSTEM.md wins. |

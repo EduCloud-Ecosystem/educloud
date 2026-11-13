@@ -1,5 +1,18 @@
 # EduCloud status and computing-continuity priority
 
+## November 13 resource-efficiency development
+
+Local branches `codex/resource-efficiency-v1` (umbrella) and
+`codex/browser-notebook-bundle-v1` (Waypoint) add an offline paired-experiment
+planner/importer and reviewed learner-only notebook bundle. These are evidence
+preparation tools; no runtime deployment, browser qualification, campus endpoint
+acceptance or measured savings. The release harness tests, 15 new bundle tests and four Node
+controls pass. After a precise test-only expiry correction, all 758 Waypoint
+Python tests pass at the selected source base; earlier failed logs are retained.
+Independent release branches still need exact-head CI. See the [change record](docs/specs/resource-efficiency-v1.md) for exact
+pins, ownership, checks, remaining gates and the next action. Earlier status
+entries below keep their original dates and are not refreshed by this change.
+
 Research-pilot update: October 19, 2026. The classroom/AI assessment below retains
 its October 6–7 review boundary unless explicitly updated. Its historical vendor
 prices and component heads are not current quotes or new deployment decisions.
