@@ -335,3 +335,38 @@ a sidecar with a dangling relationship. Workflow lint passed. Review the
 pull request and its hosted checks before deciding whether to merge or use
 the builder for a new release. The published prerelease remains pinned to
 the source and assets recorded above.
+
+## Published E1 v1.0.0-rc.2 checkpoint, 13 November 2026
+
+[E1 v1.0.0-rc.2](https://github.com/EduCloud-Ecosystem/educloud/releases/tag/resource-efficiency-v1.0.0-rc.2)
+is a published prerelease. Its tag, `resource-efficiency-v1.0.0-rc.2`, points
+to verified EduCloud main at `5fa4ef469357e60a4c6b8303e12138ab26cfc32e`, the
+merge commit for [EduCloud #60](https://github.com/EduCloud-Ecosystem/educloud/pull/60).
+The download includes the E1 source ZIP, its SPDX 2.3 JSON SBOM, and
+`SHA256SUMS` covering both files.
+
+| Published asset | SHA-256 |
+| --- | --- |
+| `educloud-e1-v1.0.0-rc.2.zip` | `f8332ebb4bd2a2590ad9188019f89d0982ee6fe3a22f183e885d594478277b50` |
+| `educloud-e1-v1.0.0-rc.2.spdx.json` | `5d0c4ac13dcee9f57446cd63cfce0c670928afa5c401492792d037a6d8d45a08` |
+| `SHA256SUMS` | `8a3afb88380154037380b760545507762e837ad640c1c6010bc53655a7f06aaa` |
+
+- [Exact-commit main CI](https://github.com/EduCloud-Ecosystem/educloud/actions/runs/43502810024)
+  passed on Python 3.12 and 3.14, including 29 tests per version, release
+  checksums, and SPDX validation.
+- Before publication, local rc.2 builds on Python 3.12 and 3.14 produced
+  byte-identical ZIPs. All ten ZIP members matched the SBOM inventory and
+  file checksums. The nine packaged source files matched the pinned Git
+  contents and internal manifest hashes. All 29 tests passed from the
+  extracted release. SPDX tools-python 0.8.5 accepted both local sidecars.
+- The three assets downloaded from the draft and again after publication
+  matched the verified local files byte for byte. Both downloads passed
+  `SHA256SUMS` and SPDX validation. The published tag was checked against
+  the exact source commit.
+- Before and after rc.2 publication, the existing rc.1 tag still pointed to
+  `979c5c08248158f81e64f33e68a5d1579126e754`, and the rc.1 ZIP and
+  `SHA256SUMS` downloads were byte-identical.
+
+The SBOM inventories the offline E1 source archive. External datasets,
+notebooks, services, and the installed Python runtime are outside that
+inventory. The release evidence covers packaging and offline verification.
