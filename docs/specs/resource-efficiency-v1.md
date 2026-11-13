@@ -298,3 +298,40 @@ branches, original checkouts, unrelated edits and ignored failure evidence are
 preserved. This scoped documentation follow-up records the verified main
 results. Operator catalog review and separately bounded actual
 browser/fallback and endpoint qualification remain the next product gates.
+
+## E1 SPDX inventory pilot, 13 November 2026
+
+The existing builder produces an allowlisted, deterministic ZIP with an
+internal SHA-256 manifest. The pilot extends the CLI to emit an SPDX JSON
+sidecar for that exact ZIP and lists both artifacts in `SHA256SUMS`. The
+existing ZIP layout, manifest schema, and source allowlist still define the
+distribution. The sidecar includes the generated manifest as a ZIP member
+and carries no copies of the catalog or other source content.
+
+[SPDX 2.3](https://github.com/spdx/spdx-spec/releases/tag/v2.3) provides the
+package, file, checksum, relationship, and license fields needed here. The
+[SPDX Python validator](https://pypi.org/project/spdx-tools/0.8.5/) supports
+SPDX 2.2 and 2.3. This pilot records SHA-256 file checksums alongside the
+required SHA-1. [SPDX 3.0.1](https://spdx.github.io/spdx-spec/v3.0.1/serializations/)
+uses JSON-LD with schema and semantic validation, and the selected tool has
+experimental write-only support for 3.0. Dataset and AI profiles would need
+their own inputs and review. This pilot covers only the E1 source archive.
+
+Source evidence comes from the archive bytes, its Git revision, and the
+Python files' existing SPDX headers and scoped license notice. The aggregate
+license, unreviewed file licenses, and dependency inventory use `NOASSERTION`.
+The external Python requirement is documented. The sidecar does not assess
+redistribution rights or verify the availability, terms, or licenses of
+referenced notebooks, datasets, or services.
+
+Checkpoint: clean starting checkout
+`/Users/gregchism/.codex/worktrees/educloud-spdx-pilot/educloud`, branch
+`codex/e1-spdx-sbom`, based on verified `origin/main` at
+`add1bb2abd1170f9d87e5a990df2be19ca23007a`. Changes are scoped to the E1
+release builder, its tests and README, its CI workflow, and this record.
+The 29-test suite passed locally on Python 3.12 and 3.14. The SPDX project's
+`pyspdxtools` 0.8.5 accepted a generated sidecar on both versions and rejected
+a sidecar with a dangling relationship. Workflow lint passed. Review the
+pull request and its hosted checks before deciding whether to merge or use
+the builder for a new release. The published prerelease remains pinned to
+the source and assets recorded above.
