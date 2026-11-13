@@ -10,9 +10,14 @@ CI passes and downloaded assets match the tested checksums. The
 is published from `8fa848639c6aa435d849b55e152d5337c8f72140`; all 14 automatic CI
 jobs pass, with the manual continuity check unrun and unit-suite skips recorded
 separately. Its uploaded assets were downloaded and matched the tested bytes.
-The two pull requests remain open for
-separate merge review: [EduCloud #58](https://github.com/EduCloud-Ecosystem/educloud/pull/58)
+The two implementation pull requests are merged under the user's explicit
+merge authorization: [EduCloud #58](https://github.com/EduCloud-Ecosystem/educloud/pull/58)
 and [Waypoint #60](https://github.com/EduCloud-Ecosystem/waypoint/pull/60).
+Merge commits are `e66ae6c56e479eb4d539f8be57181b6d316cd2a4` (EduCloud) and
+`aab24cf32987e6593715e84b24050ccc8fb64746` (Waypoint), with source trees identical
+to the passing PR heads. Both repositories' automatic post-merge checks pass; Waypoint's
+manual continuity check remains unrun. Published tags and tested download bytes retain
+their original immutable pins.
 
 These tools prepare evidence and reviewed source bundles. Browser-runtime
 qualification, actual endpoint approval, independent task review and measured

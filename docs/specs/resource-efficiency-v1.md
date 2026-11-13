@@ -188,9 +188,10 @@ No merge approval or production acceptance follows from CI or a release artifact
 This is the current delivery state; earlier preparation checkpoints above retain
 their historical verification boundaries. The user explicitly selected
 **versioned downloadable releases**. Both prereleases are published, not drafts.
-The pull requests remain open and unmerged for separate merge review.
+Both implementation pull requests were subsequently merged under explicit user
+authorization; the merge checkpoint below records post-merge verification.
 
-| Tool | Pinned release source | Download | Open pull request |
+| Tool | Pinned release source | Download | Implementation pull request |
 | --- | --- | --- | --- |
 | E1 offline experiment planner/importer | `979c5c08248158f81e64f33e68a5d1579126e754` | [resource-efficiency-v1.0.0-rc.1](https://github.com/EduCloud-Ecosystem/educloud/releases/tag/resource-efficiency-v1.0.0-rc.1) | [EduCloud #58](https://github.com/EduCloud-Ecosystem/educloud/pull/58) |
 | Reviewed learner-source packager | `8fa848639c6aa435d849b55e152d5337c8f72140` | [browser-bundle-v1.0.0-rc.1](https://github.com/EduCloud-Ecosystem/waypoint/releases/tag/browser-bundle-v1.0.0-rc.1) | [Waypoint #60](https://github.com/EduCloud-Ecosystem/waypoint/pull/60) |
@@ -248,9 +249,52 @@ Ignored release assets, published-byte verification and the machine-readable
 recovery checkpoint remain local; no secrets or private learner work are added.
 No UI source changed, so no new rendered UI acceptance is claimed.
 
-Next concrete action: merge review for the two open PRs, then operator review of
-the fixed task/source catalogs and separately bounded browser-kernel/fallback
+Next concrete action: operator review of the fixed task/source catalogs and
+separately bounded browser-kernel/fallback
 qualification. Actual campus endpoint access and an E1-specific finite execution
 envelope remain required before inference measurement. Download publication is
 complete; hosted classroom deployment, real-student acceptance, measured savings,
 provider entitlement and institutional service approval remain unestablished.
+
+
+## Merge acceptance and main verification, 13 November 2026
+
+The user explicitly authorized merging ready work. Both implementation PRs were
+rechecked for exact heads, clean mergeability, passing automatic checks and
+unresolved review threads (none). They were merged with expected-head guards;
+no unrelated draft PR was merged and no branch protection was bypassed.
+
+| Repository | Merged PR | Merge commit | Source tree |
+| --- | --- | --- | --- |
+| EduCloud | [#58](https://github.com/EduCloud-Ecosystem/educloud/pull/58) | `e66ae6c56e479eb4d539f8be57181b6d316cd2a4` | `439bcdb41551e8e0c54b9c675508968d3388cc65` |
+| Waypoint | [#60](https://github.com/EduCloud-Ecosystem/waypoint/pull/60) | `aab24cf32987e6593715e84b24050ccc8fb64746` | `869bc324efbead383fd28b05cb4ae17aef0e34ea` |
+
+Both merge trees exactly match their passing PR heads. The GitHub connector
+could not merge because its integration lacked permission; the configured
+GitHub account completed the explicitly authorized merges with SHA guards.
+
+Post-merge evidence is separate from the pre-merge 14-job Waypoint result:
+
+- [EduCloud main CI](https://github.com/EduCloud-Ecosystem/educloud/actions/runs/43493109318)
+  passes both Python 3.12 and 3.14 test/release-building jobs at `e66ae6c`.
+- Waypoint's [policy/HTTPS](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43493071564),
+  [worker operations](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43493071623)
+  and [worker-channel recovery](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43493071694)
+  pass at `aab24cf`; the [authenticated runtime](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43493071406)
+  also passes: all six automatic main-push jobs succeed. The
+  manual-dispatch-only continuity job remains unrun and is not counted as a pass.
+- Synthetic-course and institutional-recovery workflows are configured for PR
+  events, not main pushes; their earlier passing same-tree results remain
+  pre-merge evidence. No post-merge replay of those workflows is claimed.
+- Published tags, original source pins and ZIP digests were independently
+  rechecked after merging and are unchanged. Release descriptions and PR
+  summaries now reflect the confirmed merges. No hosted service, inference
+  experiment, browser-kernel qualification or institutional acceptance is implied.
+
+Documentation checkpoint: the existing umbrella checkout is reused on
+`codex/resource-efficiency-merge-record-v1`, based on `e66ae6c`; only
+`EDUCLOUD-STATUS.md` and this change record are modified. The implementation
+branches, original checkouts, unrelated edits and ignored failure evidence are
+preserved. This scoped documentation follow-up records the verified main
+results. Operator catalog review and separately bounded actual
+browser/fallback and endpoint qualification remain the next product gates.
