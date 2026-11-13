@@ -21,15 +21,50 @@ application or an approved model service. From a clean committed source tree:
 
 ```sh
 python3 experiments/demand-reduction-v1/release.py \
-  --version v1.0.0-rc.1 --out /absolute/existing-parent/fresh-release
+  --version v0.0.0-rc.1 --out /absolute/existing-parent/fresh-release
 ```
 
-The output directory must be new. Extract the ZIP, keep its directory layout,
-check the manifest/checksums, and run the commands below from the extracted
-root. The source release excludes local evidence stores, credentials, model
-outputs and unrelated platform documents. Its tests exercise the extracted tool
-and the expected unavailable roundtrip. Release-candidate status does not grant
-endpoint permission or establish measured performance.
+The output directory must be new. The version above is for a local trial.
+From the output directory, run `shasum -a 256 -c SHA256SUMS` to verify the ZIP
+and its `.spdx.json` sidecar. Extract the ZIP, keep its directory layout,
+check the internal `RELEASE-MANIFEST.json`, and run the commands below from
+the extracted root. The source release excludes local evidence stores,
+credentials, model outputs and unrelated platform documents. Its tests
+exercise the extracted tool and the expected unavailable roundtrip.
+Release-candidate status does not grant endpoint permission or establish
+measured performance.
+
+### SPDX inventory
+
+The [SPDX 2.3 JSON](https://spdx.github.io/spdx-spec/v2.3.1/) sidecar lists each
+ZIP member, including the generated release manifest. It records the ZIP's
+SHA-256 digest, the Git revision, file checksums, and the SPDX package
+verification code. The ZIP is reproducible for a given version and revision.
+The sidecar records its UTC creation time, so builds at different times can
+produce distinct sidecars for the same ZIP.
+
+Python source and tests report the Apache-2.0 identifiers present in their
+headers. Package-wide licensing, file license conclusions, and unreviewed
+catalog and documentation licensing use `NOASSERTION`. The SPDX document's
+`CC0-1.0` data license applies to the SBOM metadata. The referenced NHANES
+notebook and datasets, model services, and the operator's Python installation
+are outside the ZIP inventory. E1 requires external Python 3.12+ and its standard
+library. The inventory makes no assertion about the installed runtime's
+dependency graph. See [license scope](LICENSING.md) for the source license.
+
+CI validates the generated sidecar with the
+[SPDX project's Python tools](https://github.com/spdx/tools-python). To repeat
+validation locally, install the validator in a separate virtual environment:
+
+```sh
+python3 -m venv /absolute/path/to/spdx-validator
+/absolute/path/to/spdx-validator/bin/python -m pip install spdx-tools==0.8.5
+/absolute/path/to/spdx-validator/bin/pyspdxtools -i educloud-e1-v0.0.0-rc.1.spdx.json
+```
+
+Validation checks the SPDX document structure and relationships. The release
+tests independently compare its inventory and hashes with the ZIP. The builder
+and E1 tool use only the Python standard library.
 
 The supplied candidate is explicitly a **draft prompt-only** comparison, with
 the same facts and tutor policy in both arms. This harness does not implement

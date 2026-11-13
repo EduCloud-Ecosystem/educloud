@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Build a bounded, deterministic E1 source release; no network or execution."""
 import argparse
+from datetime import UTC, datetime
 import hashlib
 import io
 import json
@@ -44,6 +45,76 @@ def build(root, version, revision):
     return output.getvalue()
 
 
+def build_sbom(raw, name, version, revision, created):
+    """Describe the emitted ZIP using only its bytes and known source provenance."""
+    package_id = 'SPDXRef-E1-Source'
+    files = []
+    with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+        for index, path in enumerate(archive.namelist(), start=1):
+            payload = archive.read(path)
+            header = b'# SPDX-License-Identifier: Apache-2.0'
+            # The release license scope covers its Python tools and tests.
+            license_in_file = 'NOASSERTION'
+            if path.endswith('.py') and header in payload.splitlines()[:2]:
+                license_in_file = 'Apache-2.0'
+            files.append({
+                'SPDXID': f'SPDXRef-File-{index}',
+                'fileName': './' + path,
+                'checksums': [
+                    {'algorithm': 'SHA1', 'checksumValue': hashlib.sha1(payload, usedforsecurity=False).hexdigest()},
+                    {'algorithm': 'SHA256', 'checksumValue': hashlib.sha256(payload).hexdigest()},
+                ],
+                'licenseInfoInFiles': [license_in_file],
+                'licenseConcluded': 'NOASSERTION',
+                'copyrightText': 'NOASSERTION',
+            })
+    file_sha1s = sorted(file['checksums'][0]['checksumValue'] for file in files)
+    document = {
+        'spdxVersion': 'SPDX-2.3',
+        'dataLicense': 'CC0-1.0',
+        'SPDXID': 'SPDXRef-DOCUMENT',
+        'name': name,
+        'creationInfo': {
+            'created': created,
+            'creators': ['Tool: educloud-e1-release-' + version],
+        },
+        'packages': [{
+            'SPDXID': package_id,
+            'name': 'educloud-e1',
+            'versionInfo': version,
+            'packageFileName': name,
+            'downloadLocation': 'NOASSERTION',
+            'filesAnalyzed': True,
+            'packageVerificationCode': {
+                'packageVerificationCodeValue': hashlib.sha1(
+                    ''.join(file_sha1s).encode('ascii'), usedforsecurity=False
+                ).hexdigest(),
+            },
+            'checksums': [{'algorithm': 'SHA256', 'checksumValue': hashlib.sha256(raw).hexdigest()}],
+            'sourceInfo': 'EduCloud Git revision https://github.com/EduCloud-Ecosystem/educloud/commit/' + revision,
+            'licenseDeclared': 'NOASSERTION',
+            'licenseConcluded': 'NOASSERTION',
+            'licenseComments': 'Python headers have limited scope. See the bundled LICENSING.md.',
+            'copyrightText': 'NOASSERTION',
+        }],
+        'files': files,
+        'relationships': [
+            {'spdxElementId': 'SPDXRef-DOCUMENT', 'relationshipType': 'DESCRIBES',
+             'relatedSpdxElement': package_id},
+            {'spdxElementId': package_id, 'relationshipType': 'DEPENDS_ON',
+             'relatedSpdxElement': 'NOASSERTION',
+             'comment': 'Requires external Python 3.12+ and its standard library. '
+                        'The specific runtime and its transitive dependencies are outside this source inventory.'},
+            *({'spdxElementId': package_id, 'relationshipType': 'CONTAINS',
+               'relatedSpdxElement': file['SPDXID']} for file in files),
+        ],
+    }
+    # A change to the inventory or its creation metadata gets a distinct namespace.
+    digest = hashlib.sha256(json.dumps(document, sort_keys=True).encode()).hexdigest()
+    document['documentNamespace'] = 'https://github.com/EduCloud-Ecosystem/educloud/spdx/e1/' + digest
+    return (json.dumps(document, indent=2, sort_keys=True) + '\n').encode()
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--version', required=True)
@@ -55,11 +126,19 @@ def main():
         if dirty:
             raise ValueError('commit all release source before building')
         raw = build(ROOT, args.version, revision)
-        args.out.mkdir(parents=False, exist_ok=False)
         name = 'educloud-e1-' + args.version + '.zip'
-        (args.out / name).write_bytes(raw)
-        (args.out / 'SHA256SUMS').write_text(hashlib.sha256(raw).hexdigest() + '  ' + name + '\n')
+        sbom_name = 'educloud-e1-' + args.version + '.spdx.json'
+        created = datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
+        artifacts = {name: raw, sbom_name: build_sbom(raw, name, args.version, revision, created)}
+        args.out.mkdir(parents=False, exist_ok=False)
+        for filename, payload in artifacts.items():
+            (args.out / filename).write_bytes(payload)
+        (args.out / 'SHA256SUMS').write_text(''.join(
+            hashlib.sha256(payload).hexdigest() + '  ' + filename + '\n'
+            for filename, payload in artifacts.items()
+        ))
         print(json.dumps({'source_revision': revision, 'archive': str(args.out / name),
+                          'sbom': str(args.out / sbom_name),
                           'sha256': hashlib.sha256(raw).hexdigest()}))
         return 0
     except (OSError, ValueError, subprocess.CalledProcessError) as exc:

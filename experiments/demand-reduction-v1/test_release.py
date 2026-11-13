@@ -45,6 +45,61 @@ class ReleaseTests(unittest.TestCase):
             self.assertEqual(report['evidence_kind'], 'preparation')
             self.assertEqual(report['disposition'], 'incomplete')
 
+    def test_sbom_matches_archive_and_limits_license_claims(self):
+        version = 'v1.0.0-rc.1'
+        name = f'educloud-e1-{version}.zip'
+        revision = 'a' * 40
+        created = '2026-11-13T20:00:00Z'
+        raw = release.build(release.ROOT, version, revision)
+        sbom = release.build_sbom(raw, name, version, revision, created)
+        self.assertEqual(sbom, release.build_sbom(raw, name, version, revision, created))
+        doc = json.loads(sbom)
+        later = json.loads(release.build_sbom(raw, name, version, revision, '2026-11-13T20:00:01Z'))
+        self.assertNotEqual(doc['documentNamespace'], later['documentNamespace'])
+        self.assertEqual(doc['spdxVersion'], 'SPDX-2.3')
+        self.assertEqual(doc['dataLicense'], 'CC0-1.0')
+        self.assertEqual(doc['creationInfo']['created'], created)
+
+        package, = doc['packages']
+        self.assertEqual(package['packageFileName'], name)
+        self.assertEqual(package['versionInfo'], version)
+        self.assertTrue(package['sourceInfo'].endswith('/commit/' + revision))
+        self.assertEqual(package['checksums'], [
+            {'algorithm': 'SHA256', 'checksumValue': hashlib.sha256(raw).hexdigest()}
+        ])
+        for field in ('licenseDeclared', 'licenseConcluded', 'downloadLocation', 'copyrightText'):
+            self.assertEqual(package[field], 'NOASSERTION')
+
+        files = {file['fileName']: file for file in doc['files']}
+        ids = {file['SPDXID'] for file in doc['files']}
+        self.assertEqual(len(ids), len(doc['files']))
+        sha1s = []
+        with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+            self.assertCountEqual([file['fileName'] for file in doc['files']],
+                                  ['./' + path for path in archive.namelist()])
+            for path in archive.namelist():
+                with self.subTest(path=path):
+                    file = files['./' + path]
+                    payload = archive.read(path)
+                    sha1 = hashlib.sha1(payload, usedforsecurity=False).hexdigest()
+                    sha1s.append(sha1)
+                    self.assertEqual(
+                        {entry['algorithm']: entry['checksumValue'] for entry in file['checksums']},
+                        {'SHA1': sha1, 'SHA256': hashlib.sha256(payload).hexdigest()},
+                    )
+                    expected = 'Apache-2.0' if path.endswith('.py') else 'NOASSERTION'
+                    self.assertEqual(file['licenseInfoInFiles'], [expected])
+                    self.assertEqual(file['licenseConcluded'], 'NOASSERTION')
+        self.assertEqual(package['packageVerificationCode']['packageVerificationCodeValue'],
+                         hashlib.sha1(''.join(sorted(sha1s)).encode(), usedforsecurity=False).hexdigest())
+        self.assertCountEqual(
+            [(rel['spdxElementId'], rel['relationshipType'], rel['relatedSpdxElement'])
+             for rel in doc['relationships']],
+            [(doc['SPDXID'], 'DESCRIBES', package['SPDXID']),
+             (package['SPDXID'], 'DEPENDS_ON', 'NOASSERTION'),
+             *((package['SPDXID'], 'CONTAINS', file_id) for file_id in ids)],
+        )
+
     def test_version_and_symlink_refusal(self):
         with self.assertRaises(ValueError):
             release.build(release.ROOT, '../unsafe', 'a' * 40)
