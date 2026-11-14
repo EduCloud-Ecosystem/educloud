@@ -58,16 +58,16 @@
     {
       "id": "G5",
       "name": "Notebook/R runtime reliability",
-      "status": "source_fixed_targeted_synthetic_pass_hosted_R_pending",
+      "status": "merged_ci_synthetic_pass_hosted_R_editor_pending",
       "owner": "Waypoint chat 01a1d5c1-a9f0-7a50-bb3c-bb91a4389d84",
       "acceptance": "Locate failure layer, correct actionable defects, verify Python/R execution, save/restart, refusal and cleanup on exact candidate. Record recurrence, failure denominator and limitations. Prior passes do not establish historical cause.",
-      "next_action": "Integrate the reviewed secure-WebSocket probe patch through normal review/CI; prepare windowed diagnostics and role-specific host inventory. Qualify the selected R/editor candidate and Python/R save/restart on the actual hosted topology. No blind full-runtime rerun.",
+      "next_action": "Prepare windowed diagnostics and role-specific host inventory; qualify the selected R/editor candidate and actual hosted deployment. Secure-WebSocket repair is merged. Preserve unresolved historical 503 cause and student-release hold.",
       "evidence": {
         "branch": "codex/waypoint-runtime-release",
         "worktree": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint",
         "base": "946f11bf0e64b7230b92631607e88e7c2dc4d4db",
         "source": "100fdfa2317e1ce7705e0bbd94276770ba304723",
-        "integration": "PR open; exact-head CI in progress; not merged or deployed",
+        "integration": "Merged in Waypoint PR68; no deployment",
         "plan": "docs/runtime-student-release-plan.md",
         "control": "docs/evidence/2026-11-14-runtime-release/PROXY-CONTROL.json",
         "independent_inspection": "Coordinator inspected source, control logic and committed report; all four tested source hashes match commit. No runtime rerun by coordinator.",
@@ -94,12 +94,37 @@
           "cleanup_verified": true
         },
         "limitations": [
-          "Loopback synthetic proxy control only; no kernel execution",
+          "Original loopback proxy control did not execute a kernel; later PR CI exercised the existing Python/R image",
           "Historical 503 cause unproven",
-          "No R or Rocker runtime executed",
-          "Hosted sign-in, Linux ownership, recovery and student readiness not established"
+          "Rocker and VS Code R qualification not run",
+          "Hosted sign-in, independent-host recovery and student readiness not established"
         ],
-        "pull_request": "https://github.com/EduCloud-Ecosystem/waypoint/pull/68"
+        "pull_request": "https://github.com/EduCloud-Ecosystem/waypoint/pull/68",
+        "merge": "96cc2b8c1922f06bb28933908d426a2efa849599",
+        "tree": "d9d1f2c1241aeda84e1920f20041260c928619fa",
+        "ci_test_merge": "6a518aa0f1cc3e2197ed73bd06253c128ee8d99d",
+        "ci_acceptance": {
+          "applicable_passed": 14,
+          "manual_continuity_skipped": 1,
+          "policy_tests_run": 763,
+          "policy_tests_passed": 762,
+          "policy_tests_skipped": 1,
+          "policy_skip": "Browser integration dependencies; separately passing saved-file browser job inspected by status",
+          "runtime_reports_inspected": {
+            "worker_channel_phases": 17,
+            "authenticated_phases": 12,
+            "enrollment_phases": 10,
+            "all_statuses": "PASS",
+            "all_cleanup_verified": true,
+            "source_hashes_matched": [
+              28,
+              15,
+              20
+            ]
+          },
+          "scope": "Synthetic GitHub Linux runtime, one Docker daemon; not hosted student acceptance, independent-host recovery or Rocker qualification",
+          "tree_identity": "Reviewed head, PR test merge and actual main merge have identical trees"
+        }
       }
     },
     {
@@ -149,7 +174,7 @@
     "current_findings": [
       "ide-pilot contains Python tooling but no R or R extension; not evidence of broken R in VSCode",
       "historical503 is Jupyter/CHP before execution",
-      "HTTPS-to-WSS probe conversion repaired at 100fdfa; coordinator reviewed implementation and inspected targeted synthetic control evidence. Historical 503 cause remains unproven."
+      "HTTPS-to-WSS repair merged at 96cc2b8; all applicable PR CI passed, including existing Python/R image controls. Rocker/editor qualification and historical 503 cause remain unresolved."
     ],
     "candidate": {
       "image": "docker.io/rocker/r-ver:4.6.2@sha256:3adf31fa5c953bdee2709023366d1bfba306e6dcbe8eb34bf8a668119e37d2ca",
@@ -198,5 +223,12 @@
       "hosted recovery and human acceptance"
     ],
     "student_admission": "closed"
+  },
+  "integration_checkpoint": {
+    "waypoint_pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/68",
+    "waypoint_merge": "96cc2b8c1922f06bb28933908d426a2efa849599",
+    "educloud_pr": "https://github.com/EduCloud-Ecosystem/educloud/pull/62",
+    "postmerge_ci": "automatic workflows running; no success claim yet",
+    "evidence": "../evidence/classroom-student-release-2026-11-14.json"
   }
 }

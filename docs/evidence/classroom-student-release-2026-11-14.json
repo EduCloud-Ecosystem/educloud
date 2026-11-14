@@ -1,0 +1,379 @@
+{
+  "version": "classroom-student-release-merge-v1",
+  "waypoint_merge": {
+    "headRefOid": "100fdfa2317e1ce7705e0bbd94276770ba304723",
+    "mergeCommit": {
+      "oid": "96cc2b8c1922f06bb28933908d426a2efa849599"
+    },
+    "mergedAt": "2026-11-14T21:11:07Z",
+    "state": "MERGED",
+    "url": "https://github.com/EduCloud-Ecosystem/waypoint/pull/68"
+  },
+  "pr_checks": {
+    "baseRefOid": "946f11bf0e64b7230b92631607e88e7c2dc4d4db",
+    "headRefOid": "100fdfa2317e1ce7705e0bbd94276770ba304723",
+    "mergeStateStatus": "CLEAN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T21:10:32Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980889/job/132585199827",
+        "name": "Actual mTLS Hub Python R runtime",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Authenticated local runtime"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T20:56:11Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980841/job/132585199951",
+        "name": "policy",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Course workspace"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T20:59:41Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980887/job/132585199771",
+        "name": "institutional-recovery",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Institutional workspace recovery"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T20:56:08Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980917/job/132585199955",
+        "name": "Saved-file bridge browser boundaries",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Synthetic course rehearsal"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T20:54:59Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980871/job/132585199942",
+        "name": "independent-worker-recovery",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Worker operations"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T21:07:48Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980905/job/132585199821",
+        "name": "Actual worker-channel Python R and Guardian recovery",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Worker-channel notebooks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T20:54:59Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980841/job/132585199848",
+        "name": "https-configuration",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Course workspace"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T21:08:46Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980917/job/132585199914",
+        "name": "course",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Synthetic course rehearsal"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T20:55:09Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980871/job/132585199685",
+        "name": "maintenance",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Worker operations"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T20:54:47Z",
+        "conclusion": "SKIPPED",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980841/job/132585200770",
+        "name": "continuity",
+        "startedAt": "2026-11-14T20:54:47Z",
+        "status": "COMPLETED",
+        "workflowName": "Course workspace"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T21:02:42Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980917/job/132585199989",
+        "name": "Multiple course allocation and isolation",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Synthetic course rehearsal"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T21:05:06Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980917/job/132585199981",
+        "name": "Course resource amendments",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Synthetic course rehearsal"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T21:04:22Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980917/job/132585199902",
+        "name": "Reviewed replacement cutover",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Synthetic course rehearsal"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T20:54:59Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980917/job/132585199746",
+        "name": "Logical-worker ownership and fencing contract",
+        "startedAt": "2026-11-14T20:54:49Z",
+        "status": "COMPLETED",
+        "workflowName": "Synthetic course rehearsal"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-14T20:55:15Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43639980917/job/132585199993",
+        "name": "Reviewed pending-transfer reconciliation",
+        "startedAt": "2026-11-14T20:54:50Z",
+        "status": "COMPLETED",
+        "workflowName": "Synthetic course rehearsal"
+      }
+    ]
+  },
+  "postmerge_runs_at_checkpoint": [
+    {
+      "conclusion": "",
+      "databaseId": 43641457278,
+      "event": "push",
+      "headSha": "96cc2b8c1922f06bb28933908d426a2efa849599",
+      "name": "Authenticated local runtime",
+      "status": "in_progress"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 43641457326,
+      "event": "push",
+      "headSha": "96cc2b8c1922f06bb28933908d426a2efa849599",
+      "name": "Course workspace",
+      "status": "in_progress"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 43641457317,
+      "event": "push",
+      "headSha": "96cc2b8c1922f06bb28933908d426a2efa849599",
+      "name": "Worker operations",
+      "status": "in_progress"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 43641457351,
+      "event": "push",
+      "headSha": "96cc2b8c1922f06bb28933908d426a2efa849599",
+      "name": "Worker-channel notebooks",
+      "status": "in_progress"
+    }
+  ],
+  "runtime_reports": [
+    {
+      "file": "REMOTE-NOTEBOOKS.json",
+      "artifact_sha256": "f3373f1e4ffdf778f43da546efef6b3ee7084644b5e6f738a9143aae4b39bf00",
+      "status": "PASS",
+      "source": "6a518aa0f1cc3e2197ed73bd06253c128ee8d99d",
+      "cleanup_verified": true,
+      "scope": "actual-local-docker-one-daemon-two-worker-services-synthetic-notebooks",
+      "flags": {
+        "actual_mtls_worker_channels": true,
+        "actual_python_r": true,
+        "actual_two_host_isolation": false,
+        "course_capacity_acceptance": false,
+        "encrypted_backup": false,
+        "independent_host_file_transfer": false,
+        "off_host_backup": false,
+        "one_docker_daemon": true,
+        "production_ready": false
+      },
+      "phases": [
+        "central_has_no_socket_homes_or_worker_state",
+        "disjoint_worker_state_guardian_mounts_and_actual_caps",
+        "managed_enrollment_and_nonowner_role_scope_refusal",
+        "source_and_peer_real_python_r_saved_bytes",
+        "central_service_loss_guardians_stop_and_retain_homes",
+        "local_recovery_helper_stages_exact_stopped_home",
+        "post_fence_interruption_quarantines_both_endpoints",
+        "stale_approval_refused_fresh_reconciliation_preserves_peer",
+        "receiver_real_python_r_retained_work_no_automatic_start",
+        "restarted_source_hub_cannot_revive",
+        "worker_channel_loss_stops_receiver_preserves_peer",
+        "worker_service_restart_retains_floors_journal_and_work",
+        "guardian_loss_worker_watchdog_stops_receiver_preserves_peer",
+        "managed_hub_rotation_staged_inert_overlap_and_retire",
+        "rotated_hub_restarts_with_real_python_r_and_work",
+        "guardian_revocation_stops_only_its_worker",
+        "owned_cleanup_and_final_source_verified"
+      ],
+      "images": {
+        "controller": "sha256:d3e086cf3d0f140feede77f3099447ce1b04fd9f4d47b201b4a94504b723a8bc",
+        "course": "sha256:453460017918ecbea8862ac13eee97c8982f2c80673355c2bf286670e67ade07",
+        "hub": "sha256:f6cb2688278851e4c131086efa1c01ecda5d01bb2d7f24538c24df5ea0702a54"
+      },
+      "code_sha256": {
+        "authority_access.py": "e18ab042e0b76985a2a01ecd5b144259db644e753a7f5c9938c9f8d953d4d0ff",
+        "authority_operator.py": "5e1e24e48ef1dc16e7a06e62226549626da993dd3b9834be33fcc6e8f5c4bd3d",
+        "hub/authority_client.py": "3ab5357dce2129eba68046c56ddc66f127132a324bdb98bf56cf4ec56464e183",
+        "hub/authority_spawner.py": "29744c7afeb30e52dfc9b02de53c9c5b2e3be7950ff1a8d9dfe42cb9fb0a00c7",
+        "hub/home_policy.py": "70fb841e7a9585d24adb69e855ec8ea36b6a7429467bc0d126583598d75f0a9f",
+        "hub/jupyterhub_config.py": "e4934085217bc34576ec9efec463261a672c6b97545e5f2a5944b4a19a8ef4df",
+        "hub/settings.py": "7323278e2f87abd2e83bcdd7c7321136fa10411151d7d3dc38546f9751b74174",
+        "ownership_contract.py": "13522735af83b96f097af44ee31ace76e1f9f599d647878d1fd0b9020ae94570",
+        "rehearsal/authenticated_evidence.py": "32612487bcad6a1c4a2c7f401c3933d811c8735b951836c0b0a92d98af08f748",
+        "rehearsal/authenticated_fixture.py": "9fac5f423e09c08915279c160be809fe9cdfcd6e72a5ce3d1fd90fd6b2299124",
+        "rehearsal/remote_notebook_fixture.py": "dd901b660d51e4360256d1811d7b4680f1f524247b4eff628b34096cb6370979",
+        "rehearsal/test_remote_notebook_fixture.py": "f9195b4e7bbff3688f5166bfb79d9f9cfde15ba8161c9673451288dc9223928d",
+        "rehearsal/verify_authenticated_runtime.py": "0610e92a047fbd6a6539c33441ed0a13a88bfca7cd5d49557b3a387ff60a5437",
+        "rehearsal/verify_remote_notebooks.py": "9cd5e0c544bd1a98b2aa092720b5ead61ea9d20faf52d6f093fb76224802b13f",
+        "remote_backend.py": "d1bfb0a3c552bafc4195bc1a051091ed091f1b8e29ed50300b42e1ea9c36a8d3",
+        "remote_control.py": "f017c412775ad1e67ac59733b5d37fc77a80c3758e14a44430efc7427eab1b7a",
+        "remote_credentials.py": "7f2229cd123ec8884daa35372121460167677bcc697fdccb5124d289718e702f",
+        "remote_runtime_service.py": "9b1c16e32b8b7eea24194b6d0395f09d7b914c3f96e8236844316acc98ebaa01",
+        "runtime_authority.py": "1922670f2911d3345aa1b007527909fb2f2312fa94b85e7dba027bb55ede7ec3",
+        "runtime_guardian.py": "e971371a3f02160795dddbee03a99913dc5d6cad182f5391756ca8c51ef1a934",
+        "smoke.py": "69e17ef4c2e0b30ba4da890f1d23bce60ac8adbc7d3638859154b1caaf5bab99",
+        "tests/authority_test_pki.py": "b95bff1a965dfa2fc08c7eeb0abe555e456f820b7615e8460574b1b431ea8d76",
+        "volume_archive.py": "be5ff7c46256a9fff6482b49ed1d22032dec687bfe08615611b190da075b9052",
+        "worker_channel_state.py": "69f95856ba836a671b3b81f1ae9a35d32fc68927b8f784c84e29ef5c8740e5ef",
+        "worker_credentials.py": "12945d1aed23eddb46e0de9ce87b9c3e0ecd41287e89c09903150f4005bfac74",
+        "worker_enrollment.py": "103cd8116aef9b7915a439ea0eaceb1dc741ae355c42168243480188d6308744",
+        "worker_runtime.py": "128916dea7433e9292ca2f210ca886638e6edf80f69b6c2a931c501c953ffac3",
+        "worker_transport.py": "3fc7e30fa02c6f158cea6a452c5adea4ff9c754aea04a77bd17a33165f8e1da8"
+      }
+    },
+    {
+      "file": "waypoint-replay-contention.json",
+      "artifact_sha256": "d18e7c74dab2af0aff621143df8a6a96c285634bbf807d87dc1d3de1ef552c86",
+      "status": "PASS",
+      "scope": "local-single-process-eight-thread-real-sqlite"
+    },
+    {
+      "file": "AUTHENTICATED-RUNTIME.json",
+      "artifact_sha256": "747325c08699413606c4b1c21a3249c7d089de10d4d555dec49894a536ac38fd",
+      "status": "PASS",
+      "source": "6a518aa0f1cc3e2197ed73bd06253c128ee8d99d",
+      "source_dirty": false,
+      "cleanup_verified": true,
+      "scope": "actual-local-docker-one-daemon-two-logical-workers-synthetic-learners",
+      "phases": [
+        "mtls_role_course_and_nonowner_refusal",
+        "source_real_python_r_saved_home_and_socketless_hub",
+        "peer_real_python_r_saved_home_and_socketless_hub",
+        "authority_outage_stops_actual_notebooks",
+        "interrupted_transfer_durable_pending_denies_both_endpoints",
+        "authenticated_reconciliation_retains_history_and_peer_runtime",
+        "restarted_source_hub_cannot_revive_fenced_epoch",
+        "receiver_real_python_r_and_coursework_continuity",
+        "guardian_loss_authority_watchdog_stops_receiver_preserves_peer",
+        "guardian_certificate_revocation_stops_only_its_worker",
+        "hub_certificate_revocation_refuses_fresh_access",
+        "service_restart_retains_authority_incarnation_epoch_and_barriers"
+      ],
+      "images": {
+        "controller": "sha256:81bbb5af2248df402c995688480f15d122351ff973433ca46da45b835efdab6a",
+        "course": "sha256:79fff1e76c6980d030cb9fb31047d72b13afca0eac4207b47bfbea1c2c14dd4f",
+        "hub": "sha256:874e7cb027870fee84f01a6fb5d969b117e6528aad55a58c74208dfedd5dfad2"
+      },
+      "code_sha256": {
+        "authority_access.py": "e18ab042e0b76985a2a01ecd5b144259db644e753a7f5c9938c9f8d953d4d0ff",
+        "authority_operator.py": "5e1e24e48ef1dc16e7a06e62226549626da993dd3b9834be33fcc6e8f5c4bd3d",
+        "controller_service.py": "bc3a8c9270a9466e2b2603e71fd78d086e193ff748d1b20634daa5484ce75dab",
+        "hub/authority_client.py": "3ab5357dce2129eba68046c56ddc66f127132a324bdb98bf56cf4ec56464e183",
+        "hub/authority_spawner.py": "29744c7afeb30e52dfc9b02de53c9c5b2e3be7950ff1a8d9dfe42cb9fb0a00c7",
+        "hub/home_policy.py": "70fb841e7a9585d24adb69e855ec8ea36b6a7429467bc0d126583598d75f0a9f",
+        "hub/jupyterhub_config.py": "e4934085217bc34576ec9efec463261a672c6b97545e5f2a5944b4a19a8ef4df",
+        "hub/settings.py": "7323278e2f87abd2e83bcdd7c7321136fa10411151d7d3dc38546f9751b74174",
+        "ownership_contract.py": "13522735af83b96f097af44ee31ace76e1f9f599d647878d1fd0b9020ae94570",
+        "rehearsal/authenticated_evidence.py": "32612487bcad6a1c4a2c7f401c3933d811c8735b951836c0b0a92d98af08f748",
+        "rehearsal/authenticated_fixture.py": "9fac5f423e09c08915279c160be809fe9cdfcd6e72a5ce3d1fd90fd6b2299124",
+        "rehearsal/verify_authenticated_runtime.py": "0610e92a047fbd6a6539c33441ed0a13a88bfca7cd5d49557b3a387ff60a5437",
+        "runtime_authority.py": "1922670f2911d3345aa1b007527909fb2f2312fa94b85e7dba027bb55ede7ec3",
+        "runtime_guardian.py": "e971371a3f02160795dddbee03a99913dc5d6cad182f5391756ca8c51ef1a934",
+        "tests/authority_test_pki.py": "b95bff1a965dfa2fc08c7eeb0abe555e456f820b7615e8460574b1b431ea8d76"
+      }
+    },
+    {
+      "file": "ENROLLMENT-RUNTIME.json",
+      "artifact_sha256": "17cd113fb9fa30af29390645ac149038127b18eb2033f75818b279a9ae5d2560",
+      "status": "PASS",
+      "source": "6a518aa0f1cc3e2197ed73bd06253c128ee8d99d",
+      "source_dirty": false,
+      "cleanup_verified": true,
+      "scope": "actual-local-docker-one-daemon-two-logical-workers-synthetic-learners",
+      "phases": [
+        "unenrolled_legacy_acl_and_unknown_worker_refused",
+        "reviewed_worker_enrollment_digest_and_replay",
+        "enrolled_python_r_saved_home_and_socketless_hubs",
+        "staged_fresh_key_rotation_inert_after_restart",
+        "bounded_overlap_old_new_mutual_tls",
+        "retired_hub_denied_new_hub_coursework_continues",
+        "guardian_overlap_expiry_stops_own_worker_preserves_peer",
+        "rotated_guardian_recovers_saved_coursework",
+        "worker_revocation_stops_own_worker_and_blocks_reenrollment",
+        "service_restart_preserves_enrollment_and_ownership"
+      ],
+      "images": {
+        "controller": "sha256:81bbb5af2248df402c995688480f15d122351ff973433ca46da45b835efdab6a",
+        "course": "sha256:79fff1e76c6980d030cb9fb31047d72b13afca0eac4207b47bfbea1c2c14dd4f",
+        "hub": "sha256:874e7cb027870fee84f01a6fb5d969b117e6528aad55a58c74208dfedd5dfad2"
+      },
+      "code_sha256": {
+        "authority_access.py": "e18ab042e0b76985a2a01ecd5b144259db644e753a7f5c9938c9f8d953d4d0ff",
+        "authority_operator.py": "5e1e24e48ef1dc16e7a06e62226549626da993dd3b9834be33fcc6e8f5c4bd3d",
+        "controller_service.py": "bc3a8c9270a9466e2b2603e71fd78d086e193ff748d1b20634daa5484ce75dab",
+        "hub/authority_client.py": "3ab5357dce2129eba68046c56ddc66f127132a324bdb98bf56cf4ec56464e183",
+        "hub/authority_spawner.py": "29744c7afeb30e52dfc9b02de53c9c5b2e3be7950ff1a8d9dfe42cb9fb0a00c7",
+        "hub/home_policy.py": "70fb841e7a9585d24adb69e855ec8ea36b6a7429467bc0d126583598d75f0a9f",
+        "hub/jupyterhub_config.py": "e4934085217bc34576ec9efec463261a672c6b97545e5f2a5944b4a19a8ef4df",
+        "hub/settings.py": "7323278e2f87abd2e83bcdd7c7321136fa10411151d7d3dc38546f9751b74174",
+        "ownership_contract.py": "13522735af83b96f097af44ee31ace76e1f9f599d647878d1fd0b9020ae94570",
+        "rehearsal/authenticated_evidence.py": "32612487bcad6a1c4a2c7f401c3933d811c8735b951836c0b0a92d98af08f748",
+        "rehearsal/authenticated_fixture.py": "9fac5f423e09c08915279c160be809fe9cdfcd6e72a5ce3d1fd90fd6b2299124",
+        "rehearsal/enrollment_fixture.py": "5c6f9b91f6a498b207fd80d0d87ed4222d8b3effd0ca4443b62a364a5ba63793",
+        "rehearsal/verify_authenticated_runtime.py": "0610e92a047fbd6a6539c33441ed0a13a88bfca7cd5d49557b3a387ff60a5437",
+        "rehearsal/verify_worker_enrollment.py": "2db782a061c609bf68b26bacfbb5ab13f72ef6dcdab5c5af538f5dfa66ce8acf",
+        "rehearsal/worker_enrollment_evidence.py": "ad700b12219826f560de7ed165b347af67737dfb46922007180bfe0a833589ed",
+        "runtime_authority.py": "1922670f2911d3345aa1b007527909fb2f2312fa94b85e7dba027bb55ede7ec3",
+        "runtime_guardian.py": "e971371a3f02160795dddbee03a99913dc5d6cad182f5391756ca8c51ef1a934",
+        "tests/authority_test_pki.py": "b95bff1a965dfa2fc08c7eeb0abe555e456f820b7615e8460574b1b431ea8d76",
+        "worker_credentials.py": "12945d1aed23eddb46e0de9ce87b9c3e0ecd41287e89c09903150f4005bfac74",
+        "worker_enrollment.py": "103cd8116aef9b7915a439ea0eaceb1dc741ae355c42168243480188d6308744"
+      }
+    }
+  ],
+  "deployment": "NOT_ATTEMPTED_NO_VERIFIED_HOST",
+  "student_admission": "CLOSED"
+}
