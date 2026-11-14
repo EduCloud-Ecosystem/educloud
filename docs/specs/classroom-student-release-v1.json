@@ -26,10 +26,10 @@
     {
       "id": "G1",
       "name": "Course and assignment acceptance",
-      "status": "awaiting_selection",
+      "status": "course_selected_qualification_in_progress",
       "owner": "Greg, with classroom coordination",
       "acceptance": "Select course, assignment/template revision, datasets, rubric, tutoring policy, submission files and intended participants. Run that actual package through the notebook-to-receipt flow and preserve wrong-answer/refusal controls.",
-      "next_action": "Course selection question is pending; inventory existing INFO511 packages without activating their historical source-only bindings."
+      "next_action": "Waypoint owner to bind nhanes-v1 to a disposable synthetic assignment, verify source/checker pins and run notebook-to-receipt controls. Student course IDs remain unset."
     },
     {
       "id": "G2",
@@ -37,7 +37,7 @@
       "status": "awaiting_environment",
       "owner": "Waypoint runtime chat; identity administrator to be named",
       "acceptance": "On selected host and real identity provider, verify canonical issuer/subject, current roster grants, learner/instructor separation, cross-course denial, revocation, expired sessions and restart. Storage creation must never grant admission.",
-      "next_action": "Identify existing approved host/identity provider, then prepare private configuration references and exact acceptance cases."
+      "next_action": "Prepare Keycloak-brokered GitHub browser login and later SAML mapping against existing OIDC contract; actual AWS host, issuer/client and roster not selected. No live identity configuration."
     },
     {
       "id": "G3",
@@ -50,10 +50,10 @@
     {
       "id": "G4",
       "name": "Instructional quality and no-AI fallback",
-      "status": "awaiting_course",
+      "status": "selected_course_review_pending",
       "owner": "Greg or named instructor reviewer",
       "acceptance": "Review real tutor outputs for the selected task against a fixed case set; preserve bad/uncertain results; demonstrate that tutoring never submits or grades and refusal/outage retains work and permits non-AI completion.",
-      "next_action": "Prepare review cases now; defer actual model execution until endpoint, allowed inputs and finite budget are pinned."
+      "next_action": "Prepare NHANES-specific misconception, missingness, incorrect join, provenance and no-AI cases; human review remains required and no paid model run is authorized here."
     },
     {
       "id": "G5",
@@ -153,7 +153,7 @@
     }
   ],
   "decisions": {
-    "course": null,
+    "course": "INFO 511 \u2014 existing NHANES task",
     "assignment_revision": null,
     "initial_participants": null,
     "host": null,
@@ -203,22 +203,23 @@
     "Outfitter live/native placement unless explicitly selected"
   ],
   "coordination": {
-    "umbrella_branch": "codex/student-release-gates-integration",
-    "umbrella_base": "923bb8f1014fee67bcd45352b4580a332b31e708",
+    "umbrella_branch": "codex/info511-nhanes-release-preparation",
+    "umbrella_base": "22460845df672ee97338cb19a08a5c17994f55ed",
     "umbrella_worktree": "/Users/gregchism/dev/.educloud-worktrees/educloud-classroom-full-stack-v1",
     "runtime_owner_chat": "01a1d5c1-a9f0-7a50-bb3c-bb91a4389d84",
     "runtime_limits": "maximum3 hypothesis-specific local runtime attempts /45min, retained failures, no blind retries or weakening controls",
     "preservation": "Dirty umbrella main and previous branch/evidence preserved; runtime owner uses an isolated branch; no writes to private evidence or other owners namespaces.",
     "preparation_branch": "codex/student-release-gates-v1",
     "preparation_commit": "8d02617a018ff81bde8533f9c144c726bb6e7e11",
-    "integration_scope": "Only this release record and documentation index; older full-stack records preserved on preparation branch."
+    "integration_scope": "Only this release record and documentation index; older full-stack records preserved on preparation branch.",
+    "course_qualification_limits": "One initial native synthetic NHANES journey plus one hypothesis-specific correction attempt /45min runtime; zero provider transports; preserve failure and cleanup evidence; no cloud provisioning, student records or mobile changes."
   },
   "deployment": {
     "status": "not_ready_no_verified_target",
     "inspected": "Waypoint GitHub deployment list empty; runtime owner confirms no verified hosted nonstudent target. Finite loopback reviewer is not a persistent deployment; deferred mobile container is not a substitute.",
     "pending": [
-      "approved host and identity provider",
-      "course and initial cohort",
+      "approved AWS host and identity configuration",
+      "published assignment binding and initial cohort",
       "student data/inference configuration",
       "hosted recovery and human acceptance"
     ],
@@ -228,7 +229,43 @@
     "waypoint_pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/68",
     "waypoint_merge": "96cc2b8c1922f06bb28933908d426a2efa849599",
     "educloud_pr": "https://github.com/EduCloud-Ecosystem/educloud/pull/62",
-    "postmerge_ci": "automatic workflows running; no success claim yet",
+    "postmerge_ci": "All four automatic workflows passed at 96cc2b8; coordinator independently inspected main worker17/auth12/enrollment10 reports, verified cleanup and 28/15/20 source hashes.",
     "evidence": "../evidence/classroom-student-release-2026-11-14.json"
+  },
+  "course_selection": {
+    "selected_by": "Greg",
+    "date": "2026-11-14",
+    "task_id": "info511-nhanes-wrangling",
+    "task_version": "info511-nhanes-wrangling-v1",
+    "policy_id": "info511-nhanes-hints-v1",
+    "source": "96cc2b8c1922f06bb28933908d426a2efa849599",
+    "path": "course-workspace/classroom/info511-nhanes-v1/task.json",
+    "sha256": "90ce990e48fda333e5f8c3346e86cb20a66fb5c04976e0cad02011432667d8fa",
+    "submission_files": [
+      "nhanes-wrangling.ipynb",
+      "tidy-nhanes.csv",
+      "explanation.md",
+      "assistance.md"
+    ],
+    "expected_rows": 192,
+    "dataset": "public CDC selected nonrepresentative subset; synthetic learner identities for preparation",
+    "assignment_id": null,
+    "published_template_commit": null,
+    "acceptance": "Course selection confirmed; runtime binding and instructional review still pending"
+  },
+  "hosting_direction": {
+    "provider_intent": "AWS",
+    "specific_host_selected": false,
+    "institutional_login_candidate": "Shibboleth/SAML through Keycloak broker; not configured or accepted",
+    "interim_login_recommendation": "GitHub browser login through Keycloak -> existing OIDC consumer; explicit course roster bound to canonical stable subject, verified account association, revocation and rename/account-link controls",
+    "user_suggestion": "Allowlisted GitHub usernames with SSH as possible interim",
+    "ssh_boundary": "Operator administration or separately governed development transport; not browser authentication or course admission",
+    "decision_status": "Architecture recommendation only; final identity provider and deployment configuration unchosen",
+    "source": "https://www.keycloak.org/docs/latest/server_admin/",
+    "source_inspection": [
+      "course-workspace/hub/jupyterhub_config.py uses GenericOAuthenticator, Keycloak endpoints, sub and allowed subjects",
+      "course-workspace/hub/settings.py requires trusted HTTPS Keycloak realm and approved subject IDs"
+    ],
+    "migration": "Explicit verified account linking to preserve identity; do not auto-link accounts by a matching username or email"
   }
 }
