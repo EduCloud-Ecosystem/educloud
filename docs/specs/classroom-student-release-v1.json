@@ -1,0 +1,202 @@
+{
+  "version": "classroom-student-release-v1",
+  "date": "2026-11-14",
+  "tracking_issue": "https://github.com/EduCloud-Ecosystem/educloud/issues/56",
+  "decision": "NO_GO_STUDENT_ADMISSION",
+  "scope": "desktop classroom pilot with Belay-classroom, Cairn, Waypoint and Portage; original Belay excluded",
+  "baseline": {
+    "waypoint_merge": "946f11bf0e64b7230b92631607e88e7c2dc4d4db",
+    "waypoint_test_source": "045a54283ba89a3d78b47f96355d7434bc004f0f",
+    "tree": "2ba0a52f81a99abd0807523893cd2ecd70746bae",
+    "cairn_merge": "d28f7e48cd905cf18e08331572a6d467347ebd58",
+    "belay_classroom_merge": "979d7fbbd55021beeae768f151bfd80462243d82",
+    "portage_merge": "2c9031dcf3a016b355c861e0a3c6398b234022de",
+    "acceptance": "synthetic only; 11 fresh desktop checks, 15 PR checks and four postmerge workflows passed; exact evidence retained in Waypoint output",
+    "fresh_desktop_report": "/Users/gregchism/.codex/worktrees/classroom-live-notebook/waypoint/output/playwright/classroom-synthetic-2026-11-13/REPORT.json"
+  },
+  "gates": [
+    {
+      "id": "G0",
+      "name": "Merged synthetic baseline",
+      "status": "passed_synthetic",
+      "owner": "Classroom coordination",
+      "acceptance": "Retain exact source/tree, current browser report, CI and cleanup evidence.",
+      "next_action": "No further baseline reruns without changed source or a specific regression hypothesis."
+    },
+    {
+      "id": "G1",
+      "name": "Course and assignment acceptance",
+      "status": "awaiting_selection",
+      "owner": "Greg, with classroom coordination",
+      "acceptance": "Select course, assignment/template revision, datasets, rubric, tutoring policy, submission files and intended participants. Run that actual package through the notebook-to-receipt flow and preserve wrong-answer/refusal controls.",
+      "next_action": "Course selection question is pending; inventory existing INFO511 packages without activating their historical source-only bindings."
+    },
+    {
+      "id": "G2",
+      "name": "Real sign-in and current course admission",
+      "status": "awaiting_environment",
+      "owner": "Waypoint runtime chat; identity administrator to be named",
+      "acceptance": "On selected host and real identity provider, verify canonical issuer/subject, current roster grants, learner/instructor separation, cross-course denial, revocation, expired sessions and restart. Storage creation must never grant admission.",
+      "next_action": "Identify existing approved host/identity provider, then prepare private configuration references and exact acceptance cases."
+    },
+    {
+      "id": "G3",
+      "name": "Student data and inference route",
+      "status": "blocked_configuration",
+      "owner": "Greg for data-flow decision; classroom coordination for component contract",
+      "acceptance": "Approved destinations for submissions, membership, tutor payloads, logs, usage ledger, exports and backups; exact active endpoint/model/profile; no forbidden fallback. Account for actual transport attempts including SDK/proxy retries, failed calls and unknown liabilities.",
+      "next_action": "Current OpenRouter adapter accepts only fixed synthetic content. Student registry contains placeholder model names/unverified metadata and retries; it is not an accepted live deployment. Qualify an approved course-bound route before student tutoring."
+    },
+    {
+      "id": "G4",
+      "name": "Instructional quality and no-AI fallback",
+      "status": "awaiting_course",
+      "owner": "Greg or named instructor reviewer",
+      "acceptance": "Review real tutor outputs for the selected task against a fixed case set; preserve bad/uncertain results; demonstrate that tutoring never submits or grades and refusal/outage retains work and permits non-AI completion.",
+      "next_action": "Prepare review cases now; defer actual model execution until endpoint, allowed inputs and finite budget are pinned."
+    },
+    {
+      "id": "G5",
+      "name": "Notebook/R runtime reliability",
+      "status": "source_fixed_targeted_synthetic_pass_hosted_R_pending",
+      "owner": "Waypoint chat 01a1d5c1-a9f0-7a50-bb3c-bb91a4389d84",
+      "acceptance": "Locate failure layer, correct actionable defects, verify Python/R execution, save/restart, refusal and cleanup on exact candidate. Record recurrence, failure denominator and limitations. Prior passes do not establish historical cause.",
+      "next_action": "Integrate the reviewed secure-WebSocket probe patch through normal review/CI; prepare windowed diagnostics and role-specific host inventory. Qualify the selected R/editor candidate and Python/R save/restart on the actual hosted topology. No blind full-runtime rerun.",
+      "evidence": {
+        "branch": "codex/waypoint-runtime-release",
+        "worktree": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint",
+        "base": "946f11bf0e64b7230b92631607e88e7c2dc4d4db",
+        "source": "100fdfa2317e1ce7705e0bbd94276770ba304723",
+        "integration": "PR open; exact-head CI in progress; not merged or deployed",
+        "plan": "docs/runtime-student-release-plan.md",
+        "control": "docs/evidence/2026-11-14-runtime-release/PROXY-CONTROL.json",
+        "independent_inspection": "Coordinator inspected source, control logic and committed report; all four tested source hashes match commit. No runtime rerun by coordinator.",
+        "test_provenance": "Report retains dirty-at-test base; file hashes bind tested code to committed candidate.",
+        "reported_unit_results": {
+          "kernel_transport_passed": 3,
+          "fixture_total": 46,
+          "fixture_passed": 44,
+          "fixture_skipped": 2,
+          "skip_reasons": [
+            "optional host Docker SDK absent",
+            "Linux/root ownership control unavailable on Mac"
+          ]
+        },
+        "inspected_runtime_report": {
+          "attempts": 1,
+          "maximum_attempts": 3,
+          "total_budget_seconds": 2700,
+          "elapsed_seconds": 0.354,
+          "tls_verified_upgrade": 101,
+          "refused_upstream": 503,
+          "refused_transport_diagnostic_count": 1,
+          "application_503_added_transport_diagnostics": 0,
+          "cleanup_verified": true
+        },
+        "limitations": [
+          "Loopback synthetic proxy control only; no kernel execution",
+          "Historical 503 cause unproven",
+          "No R or Rocker runtime executed",
+          "Hosted sign-in, Linux ownership, recovery and student readiness not established"
+        ],
+        "pull_request": "https://github.com/EduCloud-Ecosystem/waypoint/pull/68"
+      }
+    },
+    {
+      "id": "G6",
+      "name": "Hosted storage, capacity and recovery",
+      "status": "awaiting_environment",
+      "owner": "Waypoint runtime chat; host and backup operators to be named",
+      "acceptance": "Actual worker TLS/subdomains, quotas, reboot, certificate renewal, measured admission cap; independent backup destination/key custody and second-worker restore preserving current identity, files and revoked-user denial. Measure approved RPO/RTO; verify cleanup and teach-out/export.",
+      "next_action": "Prepare executable hosted acceptance from existing runbooks; no cloud provisioning or student admission until host/resource/owner decisions are supplied."
+    },
+    {
+      "id": "G7",
+      "name": "Desktop accessibility and human usability",
+      "status": "pending_human_review",
+      "owner": "Instructor and accessibility reviewer to be named",
+      "acceptance": "Keyboard-only essential flow, screen reader navigation/errors, 200%/400% zoom, clear save/submission/receipt distinctions and usable non-AI fallback; record actual browser/AT versions and unresolved barriers.",
+      "next_action": "Use the prepared desktop session with a real reviewer. Automated axe/viewport checks are supporting evidence only; phone/mobile remains deferred."
+    },
+    {
+      "id": "G8",
+      "name": "Operations and final pilot admission",
+      "status": "awaiting_owners",
+      "owner": "Greg plus named primary/backup operators",
+      "acceptance": "Named support/incident and backup coverage, initial duration/cohort, tested rollback/export, monitoring response, allowed data/retention, finite resource and inference limits. All included critical gates accepted for exact configuration before admission.",
+      "next_action": "Assemble release card and independent operator rehearsal; do not infer approval from an IRB, existing key, allocation, commit or passing synthetic tests."
+    }
+  ],
+  "decisions": {
+    "course": null,
+    "assignment_revision": null,
+    "initial_participants": null,
+    "host": null,
+    "identity_provider": null,
+    "approved_data_flow": null,
+    "student_inference_endpoint": null,
+    "inference_budget": null,
+    "primary_operator": null,
+    "backup_operator": null,
+    "rpo_rto": null,
+    "human_accessibility_acceptance": null
+  },
+  "runtime_direction": {
+    "preferred_R_fallback": "Rocker images; choose exact image against course needs and existing controls",
+    "historical_failure": "Jupyter/CHP WebSocket503, not established VSCode failure",
+    "verse_note": "rocker/verse includes RStudio and publishing/TeX dependencies; not a drop-in proof of a transport fix",
+    "source": "https://rocker-project.org/images/versioned/rstudio",
+    "current_findings": [
+      "ide-pilot contains Python tooling but no R or R extension; not evidence of broken R in VSCode",
+      "historical503 is Jupyter/CHP before execution",
+      "HTTPS-to-WSS probe conversion repaired at 100fdfa; coordinator reviewed implementation and inspected targeted synthetic control evidence. Historical 503 cause remains unproven."
+    ],
+    "candidate": {
+      "image": "docker.io/rocker/r-ver:4.6.2@sha256:3adf31fa5c953bdee2709023366d1bfba306e6dcbe8eb34bf8a668119e37d2ca",
+      "platform": "linux/amd64",
+      "status": "metadata-only candidate; not pulled or runtime-tested",
+      "evidence": "Waypoint docs/evidence/2026-11-14-runtime-release/ROCKER-CANDIDATE.json",
+      "fallback": "If R passes but VS Code editing/debugging does not, qualify Rocker RStudio under the same admission/storage/lifecycle controls. Select tidyverse or verse when course packages/publishing require them.",
+      "required_checks": [
+        "Pinned course package snapshot and R editor tooling",
+        "Plain R calculation/plot and intentional error",
+        "Edit/run/debug/interrupt and save/reopen",
+        "Jupyter IRkernel/TLS if retained",
+        "Nonroot identity, quotas, resource/network isolation and peer denial",
+        "Current admission/expiry, restore and verified cleanup"
+      ]
+    }
+  },
+  "exclusions": [
+    "physical phone/mobile acceptance",
+    "original Belay",
+    "automatic grade publication or real Brightspace passback",
+    "new cloud provisioning",
+    "paid inference in this preparation",
+    "private learner/IRB data acquisition",
+    "colony experiments",
+    "Outfitter live/native placement unless explicitly selected"
+  ],
+  "coordination": {
+    "umbrella_branch": "codex/student-release-gates-integration",
+    "umbrella_base": "923bb8f1014fee67bcd45352b4580a332b31e708",
+    "umbrella_worktree": "/Users/gregchism/dev/.educloud-worktrees/educloud-classroom-full-stack-v1",
+    "runtime_owner_chat": "01a1d5c1-a9f0-7a50-bb3c-bb91a4389d84",
+    "runtime_limits": "maximum3 hypothesis-specific local runtime attempts /45min, retained failures, no blind retries or weakening controls",
+    "preservation": "Dirty umbrella main and previous branch/evidence preserved; runtime owner uses an isolated branch; no writes to private evidence or other owners namespaces.",
+    "preparation_branch": "codex/student-release-gates-v1",
+    "preparation_commit": "8d02617a018ff81bde8533f9c144c726bb6e7e11",
+    "integration_scope": "Only this release record and documentation index; older full-stack records preserved on preparation branch."
+  },
+  "deployment": {
+    "status": "not_ready_no_verified_target",
+    "inspected": "Waypoint GitHub deployment list empty; runtime owner confirms no verified hosted nonstudent target. Finite loopback reviewer is not a persistent deployment; deferred mobile container is not a substitute.",
+    "pending": [
+      "approved host and identity provider",
+      "course and initial cohort",
+      "student data/inference configuration",
+      "hosted recovery and human acceptance"
+    ],
+    "student_admission": "closed"
+  }
+}

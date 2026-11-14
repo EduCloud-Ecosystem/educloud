@@ -22,6 +22,10 @@ experiment, endpoint qualification, deployment or measured saving implied.
 | `educloud/EDUCLOUD-INVENTORY.md` | The July 21 orientation pass: directory map, document inventory, duplicates, staleness flags. |
 | `educloud/START-HERE.md` | June umbrella index + next-step gates. **Stale** (old names, superseded PESOSE date) — retained until SYSTEM.md/name propagation lands. |
 
+## Classroom student release
+
+[Student release gates](docs/specs/classroom-student-release-v1.md) records the desktop synthetic baseline, exact component pins, runtime repair and remaining course, hosting, data-flow, recovery and human acceptance gates. Student admission remains closed; synthetic checks are not deployment acceptance.
+
 ## Module documentation
 
 **Cairn** (`cairn/`): `KICKOFF-PROMPT.md` (the pilot-sprint session brief),
