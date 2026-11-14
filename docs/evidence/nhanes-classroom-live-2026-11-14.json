@@ -1,0 +1,586 @@
+{
+  "version": "nhanes-classroom-live-2026-11-14",
+  "decision": "READY_BOUNDED_LOCAL_SYNTHETIC_INSTRUCTOR_TEST",
+  "student_admission": false,
+  "deployed": false,
+  "instructional_acceptance": "pending_Greg_review",
+  "mode": "public_NHANES_extract_synthetic_accounts_operator_authored_solution",
+  "source": {
+    "waypoint": {
+      "path": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint",
+      "branch": "codex/nhanes-live-tutoring",
+      "commit": "3376e097240d56f822b9d9a64af52b804aabd9af",
+      "tree": "dde94c2b31cbfc395e1e01ca75b003d35b4e4502",
+      "tracked_clean": true,
+      "pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/69",
+      "integration": "draft PR; CI in progress at record creation"
+    },
+    "cairn": {
+      "path": "/Users/gregchism/.codex/worktrees/cairn-nhanes-handoff/cairn",
+      "branch": "codex/cairn-nhanes-handoff",
+      "commit": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+      "tree": "6dcdf667652d795175e59b9b7856ead8a52351b2",
+      "tracked_clean": true,
+      "pr": "https://github.com/EduCloud-Ecosystem/cairn/pull/40",
+      "merge": "3d351086274fa12a4b4bd5e9d29b24394867eb21",
+      "ci": "8 PR checks and all 3 automatic postmerge workflows passed; agentic CI skipped; merged tree equals tested tree"
+    },
+    "portage": {
+      "path": "/Users/gregchism/.codex/worktrees/classroom-live-tutoring/portage",
+      "branch": "codex/nhanes-live-tutoring-v1",
+      "commit": "b72881f009e61e1311b6e46b92b42841991fd163",
+      "tree": "a283b67bd26ea23ade65a96536d81d6d052c3de9",
+      "tracked_clean": true,
+      "pr": "https://github.com/EduCloud-Ecosystem/portage/pull/18",
+      "merge": "cdbc8af75c549bd4088d71fa268eb5f67c53a27f",
+      "ci": "deterministic PR gate passed; paid review skipped, variable absent; no postmerge workflow configured for this patch; merged tree equals tested tree"
+    },
+    "belay_classroom": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1",
+      "branch": "codex/system-one-classroom-consumer-v1",
+      "commit": "c5a27073e74b9eeb7ab697190915378b50132883",
+      "tree": "afd7a700902c011515af973b24cfd16ad20d3470",
+      "tracked_clean": true
+    }
+  },
+  "attempts": [
+    {
+      "scope": "synthetic-local-NHANES-stub-notebook-submission",
+      "sources": {
+        "cairn": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+        "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+        "waypoint": "0fa9f31290084d4693a6ee457bf0074de8d02395",
+        "waypoint_dirty": false
+      },
+      "passed": [],
+      "failed": [
+        "AssertionError: Locator expected to contain text 'It is not a grade'\nActual value: The request's result is not confirmed. It may still be running. Please contact your course support team before submitting again. Your saved work is unchanged. Use the notebook, submission, or human help links. \nCall log:\n  - Expect \"to_contain_text\" locator(\"#status\") with timeout 180000ms\n  - waiting for locator(\"#status\")\n    2 \u00d7 locator resolved to <p id=\"status\" role=\"status\" aria-live=\"polite\">Checking permitted help\u2026</p>\n  "
+      ],
+      "cleanup": true,
+      "model_transports": 0,
+      "tutoring_tested": false,
+      "elapsed_seconds": 214.86,
+      "live_review": null,
+      "name": "stub-001",
+      "evidence": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/output/nhanes-live-v1/stub-001/result.json",
+      "sha256": "391991aab85db1a3a79c48dccf97dc70817f75b2295334499d0d8fbe11b19847"
+    },
+    {
+      "scope": "synthetic-local-NHANES-stub-notebook-submission",
+      "sources": {
+        "cairn": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+        "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+        "waypoint": "710c927cf19f14366b3ee79e62cb4cb3b3dafd31",
+        "waypoint_dirty": false
+      },
+      "passed": [
+        "missing-checkpoint-refused-before-admission",
+        "NHANES-signed-job-stub-hint",
+        "expired-and-disabled-help-no-extra-attempts",
+        "native-python-NHANES-execution-and-save"
+      ],
+      "failed": [
+        "ValueError: CW1 attempt is incomplete; use local completeness guidance"
+      ],
+      "cleanup": true,
+      "model_transports": 0,
+      "tutoring_tested": true,
+      "elapsed_seconds": 38.6,
+      "live_review": null,
+      "name": "stub-002",
+      "evidence": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/output/nhanes-live-v1/stub-002/result.json",
+      "sha256": "d1436ccda384e00c645cfbe7aba3487d024a9e1a70f254492dc3e43983e2895d"
+    },
+    {
+      "scope": "synthetic-local-NHANES-stub-notebook-submission",
+      "sources": {
+        "cairn": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+        "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+        "waypoint": "fd6fbf94b225f1d0b0210929c6d696f24ffb315b",
+        "waypoint_dirty": false
+      },
+      "passed": [
+        "missing-checkpoint-refused-before-admission",
+        "NHANES-signed-job-stub-hint",
+        "expired-and-disabled-help-no-extra-attempts",
+        "native-python-NHANES-execution-and-save",
+        "wrong-numeric-output-fails-real-pinned-checker",
+        "explicit-four-file-native-bridge-and-byte-exact-receipt",
+        "changed-preview-payload-refused-409",
+        "receipt-persists-after-restart"
+      ],
+      "failed": [],
+      "cleanup": true,
+      "model_transports": 0,
+      "tutoring_tested": true,
+      "elapsed_seconds": 69.4,
+      "live_review": null,
+      "name": "stub-003",
+      "evidence": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/output/nhanes-live-v1/stub-003/result.json",
+      "sha256": "b26458f90e4ef271e0013b8cfaec5e22058ca112fb137e4788d8821980d40917"
+    },
+    {
+      "scope": "synthetic-local-NHANES-live-notebook-submission",
+      "sources": {
+        "cairn": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+        "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+        "waypoint": "f6513ef48d2eb0642119876beceaeb7566fbd5d2",
+        "waypoint_dirty": false
+      },
+      "passed": [],
+      "failed": [
+        "ValueError: external smoke requires the fixed bounded profile"
+      ],
+      "cleanup": true,
+      "model_transports": 0,
+      "tutoring_tested": false,
+      "elapsed_seconds": 23.5,
+      "live_review": null,
+      "name": "live-001",
+      "evidence": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/output/nhanes-live-v1/live-001/result.json",
+      "sha256": "a719d06c446e2f937533b8ecec331bf65773a5ce4f055bb273ecd4fc8bdb28a0",
+      "provider_accounting": {
+        "prior_reserved_usd": 0,
+        "prior_consumed_cases": [],
+        "attempts": [],
+        "dispatch_claims": 0,
+        "sdk_retries": 0,
+        "provider_internal_retries": "unobservable",
+        "unknown_liability_usd": 0,
+        "reported_cost_usd": 0
+      }
+    },
+    {
+      "scope": "synthetic-local-NHANES-live-notebook-submission",
+      "sources": {
+        "cairn": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+        "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+        "waypoint": "5fb4360cd70cd8b4ec9fd6d83498d86046bbdb79",
+        "waypoint_dirty": false
+      },
+      "passed": [
+        "missing-checkpoint-refused-before-admission",
+        "NHANES-signed-job-live-hint",
+        "expired-and-disabled-help-no-extra-attempts",
+        "native-python-NHANES-execution-and-save",
+        "wrong-numeric-output-fails-real-pinned-checker",
+        "explicit-four-file-native-bridge-and-byte-exact-receipt",
+        "changed-preview-payload-refused-409",
+        "receipt-persists-after-restart"
+      ],
+      "failed": [],
+      "cleanup": true,
+      "model_transports": 3,
+      "tutoring_tested": true,
+      "elapsed_seconds": 111.08,
+      "live_review": null,
+      "name": "live-002",
+      "evidence": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/output/nhanes-live-v1/live-002/result.json",
+      "sha256": "7566104ecda839cac6b50d8806eefc057307978e7d52ec64bbf24552e0a171c1",
+      "provider_accounting": {
+        "prior_reserved_usd": 0,
+        "prior_consumed_cases": [],
+        "attempts": [
+          {
+            "case": "01-planner",
+            "request_id": "d7b3b2c7ead1504b25a6990385e4270e",
+            "state": "complete",
+            "reserved_usd": 0.024999999999999998,
+            "dispatches": 1,
+            "provider": "OpenAI",
+            "model": "openai/gpt-4.1-mini",
+            "usage": {
+              "prompt_tokens": 3053,
+              "completion_tokens": 99,
+              "total_tokens": 3152,
+              "cost": 0.0013796,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0013796,
+                "upstream_inference_prompt_cost": 0.0012212,
+                "upstream_inference_completions_cost": 0.0001584
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          {
+            "case": "02-reasoner",
+            "request_id": "db577e9b0057a368a6de0353ab2fa08e",
+            "state": "complete",
+            "reserved_usd": 0.024999999999999998,
+            "dispatches": 1,
+            "provider": "OpenAI",
+            "model": "openai/gpt-4.1-mini",
+            "usage": {
+              "prompt_tokens": 3591,
+              "completion_tokens": 178,
+              "total_tokens": 3769,
+              "cost": 0.0017212,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0017212,
+                "upstream_inference_prompt_cost": 0.0014364,
+                "upstream_inference_completions_cost": 0.0002848
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          {
+            "case": "03-self_eval",
+            "request_id": "862ea0270958b1b20ea2e70921f066c9",
+            "state": "complete",
+            "reserved_usd": 0.024999999999999998,
+            "dispatches": 1,
+            "provider": "OpenAI",
+            "model": "openai/gpt-4.1-mini",
+            "usage": {
+              "prompt_tokens": 1067,
+              "completion_tokens": 60,
+              "total_tokens": 1127,
+              "cost": 0.0005228,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0005228,
+                "upstream_inference_prompt_cost": 0.0004268,
+                "upstream_inference_completions_cost": 9.6e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          }
+        ],
+        "dispatch_claims": 3,
+        "sdk_retries": 0,
+        "provider_internal_retries": "unobservable",
+        "unknown_liability_usd": 0,
+        "reported_cost_usd": 0.0036236
+      }
+    },
+    {
+      "scope": "synthetic-local-NHANES-live-notebook-submission",
+      "sources": {
+        "cairn": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+        "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+        "waypoint": "cd431af8797ae3efd1fe18044eeea7a6531bfae8",
+        "waypoint_dirty": false
+      },
+      "passed": [
+        "native-python-NHANES-execution-and-save",
+        "wrong-numeric-output-fails-real-pinned-checker",
+        "explicit-four-file-native-bridge-and-byte-exact-receipt",
+        "changed-preview-payload-refused-409",
+        "receipt-persists-after-restart"
+      ],
+      "failed": [],
+      "cleanup": true,
+      "model_transports": 0,
+      "tutoring_tested": false,
+      "elapsed_seconds": 93.7,
+      "live_review": {
+        "elapsed_seconds": 1.0,
+        "human_acceptance_recorded": false
+      },
+      "name": "review-001",
+      "evidence": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/output/nhanes-live-v1/review-001/result.json",
+      "sha256": "e56f7a34e20ea04c77efa6b8c64006da081d6cdc1a2c7021594b49c6d9fe8587",
+      "provider_accounting": {
+        "prior_reserved_usd": 0,
+        "prior_consumed_cases": [],
+        "attempts": [],
+        "dispatch_claims": 0,
+        "sdk_retries": 0,
+        "provider_internal_retries": "unobservable",
+        "unknown_liability_usd": 0,
+        "reported_cost_usd": 0
+      }
+    },
+    {
+      "scope": "synthetic-local-NHANES-live-notebook-submission",
+      "sources": {
+        "cairn": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+        "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+        "waypoint": "3376e097240d56f822b9d9a64af52b804aabd9af",
+        "waypoint_dirty": false
+      },
+      "passed": [
+        "native-python-NHANES-execution-and-save",
+        "wrong-numeric-output-fails-real-pinned-checker",
+        "explicit-four-file-native-bridge-and-byte-exact-receipt",
+        "changed-preview-payload-refused-409",
+        "receipt-persists-after-restart"
+      ],
+      "failed": [],
+      "cleanup": true,
+      "model_transports": 0,
+      "tutoring_tested": false,
+      "elapsed_seconds": 87.48,
+      "live_review": {
+        "elapsed_seconds": 1.01,
+        "human_acceptance_recorded": false
+      },
+      "name": "review-002",
+      "evidence": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/output/nhanes-live-v1/review-002/result.json",
+      "sha256": "2d2ecaebe1468567fbb7adff1acbd0e56de626345033c8b45856a7d144322440",
+      "provider_accounting": {
+        "prior_reserved_usd": 0,
+        "prior_consumed_cases": [],
+        "attempts": [],
+        "dispatch_claims": 0,
+        "sdk_retries": 0,
+        "provider_internal_retries": "unobservable",
+        "unknown_liability_usd": 0,
+        "reported_cost_usd": 0
+      }
+    }
+  ],
+  "live_evidence": {
+    "source_at_test": {
+      "cairn": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+      "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+      "waypoint": "5fb4360cd70cd8b4ec9fd6d83498d86046bbdb79",
+      "waypoint_dirty": false
+    },
+    "actual_requests": 3,
+    "sdk_retries": 0,
+    "provider_internal_retries": "unobservable",
+    "reported_cost_usd": 0.0036236,
+    "unknown_liability_usd": 0,
+    "historical_unresolved_liability_usd": 0.025,
+    "no_automatic_followup_paid_run": true,
+    "hint_visual_review": "rendered correctly, asks about left join and bpxo_match; no full assessed pipeline supplied; not instructor acceptance",
+    "wrong_output_score": "0/4 source_value failure",
+    "correct_output_score": "4/4 CSV check only",
+    "images": {
+      "grader": "sha256:d8e7745e5644f4e4c4dd49902981a8953485cc188a2263d866ba042aa0e4fab7",
+      "checkout": "sha256:bc9bc6929aafd69d37158bbd273a11818a2b222539242949d5d3c3066d02db8c"
+    },
+    "kernel": {
+      "python": "3.12.13 (main, May 10 2026, 19:20:41) [Clang 22.1.3 ]",
+      "packages": [
+        [
+          "Pygments",
+          "2.21.0"
+        ],
+        [
+          "appnope",
+          "1.0.0"
+        ],
+        [
+          "asttokens",
+          "3.0.2"
+        ],
+        [
+          "comm",
+          "0.2.3"
+        ],
+        [
+          "debugpy",
+          "1.8.22"
+        ],
+        [
+          "executing",
+          "2.3.0"
+        ],
+        [
+          "ipykernel",
+          "7.4.0"
+        ],
+        [
+          "ipython",
+          "9.18.1"
+        ],
+        [
+          "ipython_pygments_lexers",
+          "1.1.1"
+        ],
+        [
+          "jedi",
+          "0.20.1"
+        ],
+        [
+          "jupyter_client",
+          "8.10.0"
+        ],
+        [
+          "jupyter_core",
+          "5.9.1"
+        ],
+        [
+          "matplotlib-inline",
+          "0.2.2"
+        ],
+        [
+          "nest-asyncio2",
+          "1.7.4"
+        ],
+        [
+          "numpy",
+          "2.5.4"
+        ],
+        [
+          "packaging",
+          "26.3"
+        ],
+        [
+          "pandas",
+          "2.3.3"
+        ],
+        [
+          "parso",
+          "0.8.7"
+        ],
+        [
+          "pexpect",
+          "4.9.0"
+        ],
+        [
+          "platformdirs",
+          "4.14.5"
+        ],
+        [
+          "prompt_toolkit",
+          "3.0.53"
+        ],
+        [
+          "psutil",
+          "7.2.2"
+        ],
+        [
+          "ptyprocess",
+          "0.7.0"
+        ],
+        [
+          "pure_eval",
+          "0.2.4"
+        ],
+        [
+          "python-dateutil",
+          "4.0.0"
+        ],
+        [
+          "pytz",
+          "2026.6"
+        ],
+        [
+          "pyzmq",
+          "27.3.0"
+        ],
+        [
+          "stack-data",
+          "0.6.3"
+        ],
+        [
+          "tornado",
+          "6.6.1"
+        ],
+        [
+          "traitlets",
+          "5.16.1"
+        ],
+        [
+          "typing_extensions",
+          "4.16.0"
+        ],
+        [
+          "tzdata",
+          "2026.6"
+        ],
+        [
+          "wcwidth",
+          "0.9.4"
+        ]
+      ],
+      "lock_sha256": "850c920e279a24048b9c04c1a50925702fe178507cd338d240e6a30b7ebd5676"
+    },
+    "checker_binding": {
+      "path_in_belay": "backend/app/packs/datascience/nhanes_check.py",
+      "sha256": "0316e63d9f2ee54a088a5f1ca9b1c24977eb54c5a00a11ceeda06bfd66443f80",
+      "repository": "https://github.com/EduCloud-Ecosystem/belay-classroom",
+      "revision": "bbc45bb3d4b8d135dc531fb130a40abf66d1e008",
+      "status": "SOURCE_BOUND_RUNTIME_PENDING",
+      "function": "check_nhanes(original_demo, original_bpxo, preserved_demo, preserved_bpxo, result)",
+      "no_model": true,
+      "source_files": {
+        "DEMO_L_selected.csv": "4a9c6d40ccbd4cb8a3886b20e2ec506e74c70c8e641347a941b9209f61369587",
+        "BPXO_L_selected.csv": "4ae89d264da5da4020fd6e8fdd0171ae188b7ed9191aeb8b18af20b30c1556a9"
+      },
+      "limitation": "CSV correctness cannot prove notebook method, source-frame immutability, kernel execution or authorship."
+    },
+    "task_sha256": "90ce990e48fda333e5f8c3346e86cb20a66fb5c04976e0cad02011432667d8fa"
+  },
+  "prior_no_ai_evidence": "/Users/gregchism/.codex/worktrees/waypoint-nhanes-qualification/waypoint/output/nhanes-qualification-v1/HANDOFF.json",
+  "local_controls": {
+    "waypoint_policy": {
+      "passed": 763,
+      "seconds": 99.111
+    },
+    "focused_nhanes": {
+      "passed": 6
+    },
+    "portage_before_gateway_fix": {
+      "passed": 582,
+      "skipped": 9
+    },
+    "gateway_fix": "44 passed, 3 optional skipped; Ruff passed; actual Gateway constructor, mutated-profile and wrong-guard refusal",
+    "offline_echo_and_nhanes_orchestration": "passed; zero transports; source-fixed context and realistic planner plan",
+    "launcher_preflight": "passed; final one-second review control zero transports, original completed cell preserved and cleanup passed"
+  },
+  "environment": {
+    "private_inventory": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/output/nhanes-live-v1/environment.json",
+    "sha256": "49be1db86066042716c7ed0b2f9cb9b418ceeb29daa45ada26516c09d6d98900",
+    "locks": {
+      "course-workspace/rehearsal/roster_presenter-requirements.lock": "c392cad086ca7cbbc8fef16570e8f2211b03298ea4e179384c007f556e59a3f2",
+      "course-workspace/rehearsal/nhanes-kernel-requirements.lock": "850c920e279a24048b9c04c1a50925702fe178507cd338d240e6a30b7ebd5676",
+      "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/backend/uv.lock": "e50d5e0518d8b4f23b09d4c04f71f5b34c60435e774c40ec598c413c449fa80a",
+      "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1/deployment/portage/requirements.lock": "37fceed6273fcd647413d4e78cdd12b2177c586ec1d258b56d971b859f025a5f",
+      "/Users/gregchism/.codex/worktrees/classroom-live-tutoring/portage/uv.lock": "434732cdb329e541abed8dd64d54899640216bfbb00f463f33faf4e69c9ebef4"
+    }
+  },
+  "launch": {
+    "command": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/course-workspace/launch-nhanes-instructor.command --live",
+    "guide": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/course-workspace/NHANES-LIVE-TESTING.md",
+    "max_reserved_usd": 0.175,
+    "max_transport_requests": 7,
+    "human_window_seconds": 240,
+    "whole_run_seconds": 600,
+    "expiry": "never renewed; setup shortens original credential window",
+    "required_action": "operator deliberately starts a fresh window and clicks Ask; only source-authored question admitted"
+  },
+  "remaining_student_gates": [
+    "human instructional and accessibility review",
+    "actual AWS host and DNS/TLS",
+    "real identity provider, canonical roster and admission",
+    "student data destinations and general tutoring route approval",
+    "measured capacity, backup/independent-host recovery and operators",
+    "explicit cohort release"
+  ]
+}
