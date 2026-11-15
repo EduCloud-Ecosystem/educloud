@@ -24,8 +24,7 @@ python3 tools/pilot/status.py check
 ```
 
 The status collector uses only allowlisted public GitHub metadata. Scheduled
-maintenance proposes changes for review; it never merges, deploys, runs models or
-updates manual readiness. Failed collection preserves the previous snapshot.
+maintenance produces a verified proposal artifact and opens a PR only when organization policy permits; it never merges, deploys, runs models or updates manual readiness. Failed collection preserves the previous snapshot.
 Report security concerns privately to the repository owner; do not publish
 exploit details or personal data in an issue. Public automated findings require
 source-based triage before any vulnerability or compliance claim.

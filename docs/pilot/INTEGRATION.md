@@ -69,8 +69,8 @@ handoff requirements. Use component documentation for exact runtime configuratio
 this guide is not a second identity, reservation, budget or grading authority.
 
 The current local Studio rehearsal is pinned in
-[Waypoint verification v2](https://github.com/EduCloud-Ecosystem/waypoint/blob/codex/studio-classic-v1/docs/studio-classic-verification-v2.json)
-and its [testing guide](https://github.com/EduCloud-Ecosystem/waypoint/blob/codex/studio-classic-v1/docs/studio-classic-testing-v1.md).
+[Waypoint verification v2](https://github.com/EduCloud-Ecosystem/waypoint/blob/9b815043c8ec9162463fcc0ef2d4ef44b86255fe/docs/studio-classic-verification-v2.json)
+and its [testing guide](https://github.com/EduCloud-Ecosystem/waypoint/blob/9b815043c8ec9162463fcc0ef2d4ef44b86255fe/docs/studio-classic-testing-v1.md).
 Those records distinguish actual synthetic integration, injected UI controls,
 failed runs, model transport counts and cleanup. The machine-specific instructor
 launcher has `--verify-stub`, `--stub` and separately authorized `--live` modes.
