@@ -21,17 +21,17 @@ A connected learning workspace: notebooks, governed AI tutoring, explicit submis
 
 **Local synthetic instructor testing: verified. Student deployment: pending.**
 
-GitHub snapshot: 2026-11-15T20:26:11.389513+00:00. Refreshes are proposed by automation.
+GitHub snapshot: 2026-11-15T20:32:18.093123+00:00. Refreshes are proposed by automation.
 Check counts are observations at each listed main commit, including advisory tools; they are not a release verdict.
 
 | Component | Pilot role | Main revision | Declared protocol | Observed checks | Open PRs |
 | --- | --- | --- | --- | --- | --- |
-| [educloud](https://github.com/EduCloud-Ecosystem/educloud) | Guide and release record | [ab8e7951](https://github.com/EduCloud-Ecosystem/educloud/commit/ab8e7951cf61cc9739aa7b2b9ddc78097bb56c68) | not installed | 0 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 2 |
-| [belay-classroom](https://github.com/EduCloud-Ecosystem/belay-classroom) | Required for live tutoring | [59bb84c6](https://github.com/EduCloud-Ecosystem/belay-classroom/commit/59bb84c6cd6d91af773417bd0e42acb0eb0d8eea) | not installed | 4 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 0 |
-| [cairn](https://github.com/EduCloud-Ecosystem/cairn) | Required for submission and grading | [22930438](https://github.com/EduCloud-Ecosystem/cairn/commit/229304381b7312bbb9bf2014c63b201132965e24) | not installed | 8 passed, 0 failed, 0 pending, 4 skipped/or/cancelled | 0 |
-| [waypoint](https://github.com/EduCloud-Ecosystem/waypoint) | Required for notebook workspace | [dfdd8c69](https://github.com/EduCloud-Ecosystem/waypoint/commit/dfdd8c696ef13885cad45ef824efacdf0ea4fa7b) | not installed | 1 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 3 |
-| [portage](https://github.com/EduCloud-Ecosystem/portage) | Required for governed live model calls | [97ef5cbd](https://github.com/EduCloud-Ecosystem/portage/commit/97ef5cbdf1fd10479de917203602ded3c42cda0e) | not installed | 0 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 8 |
-| [outfitter](https://github.com/EduCloud-Ecosystem/outfitter) | Conditional on broker-managed compute | [cc3ea6f1](https://github.com/EduCloud-Ecosystem/outfitter/commit/cc3ea6f1a9bc5ef4f03c5d3ee61acb3d682fc472) | not installed | 2 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 0 |
+| [educloud](https://github.com/EduCloud-Ecosystem/educloud) | Guide and release record | [65f3010b](https://github.com/EduCloud-Ecosystem/educloud/commit/65f3010b87e09ce60865edc5aa23a9605d105b37) | v1 matches | 1 passed, 0 failed, 1 pending, 0 skipped/or/cancelled | 2 |
+| [belay-classroom](https://github.com/EduCloud-Ecosystem/belay-classroom) | Required for live tutoring | [9455a528](https://github.com/EduCloud-Ecosystem/belay-classroom/commit/9455a5283b6097e5b65e3269cc287efc23c8c277) | v1 matches | 2 passed, 0 failed, 3 pending, 0 skipped/or/cancelled | 0 |
+| [cairn](https://github.com/EduCloud-Ecosystem/cairn) | Required for submission and grading | [e03cb424](https://github.com/EduCloud-Ecosystem/cairn/commit/e03cb42405ed14014150cc3d4e33df8679476bb8) | v1 matches | 7 passed, 0 failed, 2 pending, 1 skipped/or/cancelled | 0 |
+| [waypoint](https://github.com/EduCloud-Ecosystem/waypoint) | Required for notebook workspace | [63104113](https://github.com/EduCloud-Ecosystem/waypoint/commit/631041130c3f3d42ef23d06f5c0a713cd18760af) | v1 matches | 2 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 3 |
+| [portage](https://github.com/EduCloud-Ecosystem/portage) | Required for governed live model calls | [e3366502](https://github.com/EduCloud-Ecosystem/portage/commit/e3366502107e546f2651933e4549dd8da53c507a) | v1 matches | 1 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 8 |
+| [outfitter](https://github.com/EduCloud-Ecosystem/outfitter) | Conditional on broker-managed compute | [bfc3ac48](https://github.com/EduCloud-Ecosystem/outfitter/commit/bfc3ac48acbae7fafb7893ee35a9332f848d5c15) | v1 matches | 2 passed, 0 failed, 1 pending, 0 skipped/or/cancelled | 0 |
 
 Readiness is reviewed separately in [the evidence and release gates](pilot/readiness.json).
 Outstanding: selected host/sign-in, approved data flow and retention, deployed backup/restore and cleanup, and human course acceptance.
