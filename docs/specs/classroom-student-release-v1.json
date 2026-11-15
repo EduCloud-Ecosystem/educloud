@@ -283,7 +283,10 @@
         "tree": "dde94c2b31cbfc395e1e01ca75b003d35b4e4502",
         "tracked_clean": true,
         "pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/69",
-        "integration": "draft PR; CI in progress at record creation"
+        "integration": "Merged PR69; merged tree equals reviewed head and CI test merge",
+        "merge": "82e5593f5fafb4f7f6f85c5c4d9e5d91af11e333",
+        "ci": "14 applicable PR checks passed; manual continuity skipped",
+        "postmerge": "Four automatic workflows queued/running at handoff; no postmerge success claim"
       },
       "cairn": {
         "path": "/Users/gregchism/.codex/worktrees/cairn-nhanes-handoff/cairn",
