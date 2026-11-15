@@ -26,10 +26,10 @@
     {
       "id": "G1",
       "name": "Course and assignment acceptance",
-      "status": "course_selected_qualification_in_progress",
+      "status": "synthetic_course_workflow_passed_instructor_acceptance_pending",
       "owner": "Greg, with classroom coordination",
       "acceptance": "Select course, assignment/template revision, datasets, rubric, tutoring policy, submission files and intended participants. Run that actual package through the notebook-to-receipt flow and preserve wrong-answer/refusal controls.",
-      "next_action": "Waypoint owner to bind nhanes-v1 to a disposable synthetic assignment, verify source/checker pins and run notebook-to-receipt controls. Student course IDs remain unset."
+      "next_action": "Greg tests the finite local NHANES launcher and reviews course/rubric/assistance behavior. Actual student course and participants remain unset."
     },
     {
       "id": "G2",
@@ -45,15 +45,15 @@
       "status": "blocked_configuration",
       "owner": "Greg for data-flow decision; classroom coordination for component contract",
       "acceptance": "Approved destinations for submissions, membership, tutor payloads, logs, usage ledger, exports and backups; exact active endpoint/model/profile; no forbidden fallback. Account for actual transport attempts including SDK/proxy retries, failed calls and unknown liabilities.",
-      "next_action": "Current OpenRouter adapter accepts only fixed synthetic content. Student registry contains placeholder model names/unverified metadata and retries; it is not an accepted live deployment. Qualify an approved course-bound route before student tutoring."
+      "next_action": "Prepared synthetic NHANES question is qualified through bounded OpenRouter/OpenAI routing with actual transport accounting. Define and approve student data flows and general course tutoring before admitting learner payloads."
     },
     {
       "id": "G4",
       "name": "Instructional quality and no-AI fallback",
-      "status": "selected_course_review_pending",
+      "status": "live_synthetic_hint_demonstrated_human_review_pending",
       "owner": "Greg or named instructor reviewer",
       "acceptance": "Review real tutor outputs for the selected task against a fixed case set; preserve bad/uncertain results; demonstrate that tutoring never submits or grades and refusal/outage retains work and permits non-AI completion.",
-      "next_action": "Prepare NHANES-specific misconception, missingness, incorrect join, provenance and no-AI cases; human review remains required and no paid model run is authorized here."
+      "next_action": "Review the qualified prepared NHANES hint and complete a misconception/quality case set. No-AI path and expiry/disabled refusals passed; one model hint does not establish instructional acceptance."
     },
     {
       "id": "G5",
@@ -267,5 +267,54 @@
       "course-workspace/hub/settings.py requires trusted HTTPS Keycloak realm and approved subject IDs"
     ],
     "migration": "Explicit verified account linking to preserve identity; do not auto-link accounts by a matching username or email"
+  },
+  "nhanes_instructor_testing": {
+    "decision": "READY_BOUNDED_LOCAL_SYNTHETIC_INSTRUCTOR_TEST",
+    "evidence": "docs/evidence/nhanes-classroom-live-2026-11-14.json",
+    "launcher": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint/course-workspace/launch-nhanes-instructor.command --live",
+    "student_admission": false,
+    "live_requests": 3,
+    "reported_cost_usd": 0.0036236,
+    "source": {
+      "waypoint": {
+        "path": "/Users/gregchism/.codex/worktrees/waypoint-runtime-release/waypoint",
+        "branch": "codex/nhanes-live-tutoring",
+        "commit": "3376e097240d56f822b9d9a64af52b804aabd9af",
+        "tree": "dde94c2b31cbfc395e1e01ca75b003d35b4e4502",
+        "tracked_clean": true,
+        "pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/69",
+        "integration": "Merged PR69; merged tree equals reviewed head and CI test merge",
+        "merge": "82e5593f5fafb4f7f6f85c5c4d9e5d91af11e333",
+        "ci": "14 applicable PR checks passed; manual continuity skipped",
+        "postmerge": "Four automatic workflows queued/running at handoff; no postmerge success claim"
+      },
+      "cairn": {
+        "path": "/Users/gregchism/.codex/worktrees/cairn-nhanes-handoff/cairn",
+        "branch": "codex/cairn-nhanes-handoff",
+        "commit": "2eb0a0415f791f7d53734d5909a3a3d7454e34f0",
+        "tree": "6dcdf667652d795175e59b9b7856ead8a52351b2",
+        "tracked_clean": true,
+        "pr": "https://github.com/EduCloud-Ecosystem/cairn/pull/40",
+        "merge": "3d351086274fa12a4b4bd5e9d29b24394867eb21",
+        "ci": "8 PR checks and all 3 automatic postmerge workflows passed; agentic CI skipped; merged tree equals tested tree"
+      },
+      "portage": {
+        "path": "/Users/gregchism/.codex/worktrees/classroom-live-tutoring/portage",
+        "branch": "codex/nhanes-live-tutoring-v1",
+        "commit": "b72881f009e61e1311b6e46b92b42841991fd163",
+        "tree": "a283b67bd26ea23ade65a96536d81d6d052c3de9",
+        "tracked_clean": true,
+        "pr": "https://github.com/EduCloud-Ecosystem/portage/pull/18",
+        "merge": "cdbc8af75c549bd4088d71fa268eb5f67c53a27f",
+        "ci": "deterministic PR gate passed; paid review skipped, variable absent; no postmerge workflow configured for this patch; merged tree equals tested tree"
+      },
+      "belay_classroom": {
+        "path": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-system-one-consumer-v1",
+        "branch": "codex/system-one-classroom-consumer-v1",
+        "commit": "c5a27073e74b9eeb7ab697190915378b50132883",
+        "tree": "afd7a700902c011515af973b24cfd16ad20d3470",
+        "tracked_clean": true
+      }
+    }
   }
 }

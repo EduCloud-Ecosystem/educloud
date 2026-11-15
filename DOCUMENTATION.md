@@ -24,7 +24,7 @@ experiment, endpoint qualification, deployment or measured saving implied.
 
 ## Classroom student release
 
-[Student release gates](docs/specs/classroom-student-release-v1.md) records the desktop synthetic baseline, exact component pins, runtime repair and remaining course, hosting, data-flow, recovery and human acceptance gates. Student admission remains closed; synthetic checks are not deployment acceptance.
+[Student release gates](docs/specs/classroom-student-release-v1.md) records the desktop synthetic baseline, exact component pins, runtime repair and remaining course, hosting, data-flow, recovery and human acceptance gates. Student admission remains closed; synthetic checks are not deployment acceptance. The [NHANES live evidence record](docs/evidence/nhanes-classroom-live-2026-11-14.json) pins the now-tested notebook/tutoring/submission path, instructor launcher, failures and actual request accounting.
 
 ## Module documentation
 
