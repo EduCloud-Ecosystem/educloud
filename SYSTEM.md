@@ -11,6 +11,17 @@ one, this one wins.*
 contract), and resource allocation, consolidating `LINE-P-ROADMAP.md`
 (claude-lanes) and `LINE-E-ROADMAP.md` (this folder).*
 
+## Current classroom implementation (November 2026)
+
+The pilot tutor is **belay-classroom**, a separate repository from original Belay.
+Waypoint's classroom line includes the notebook, admission and saved-file handoff;
+Cairn owns submission and grading. See [the current integration guide](docs/pilot/INTEGRATION.md)
+and [central status](README.md#pilot-status). Older host/product examples below are
+architecture history, not evidence of a current deployment. The [pilot protocol](docs/development/PILOT_PROTOCOL_V1.md)
+is the shared development minimum. Each repository's actual LICENSE/LICENSING and
+path-specific SPDX declarations govern; no blanket Apache license applies to all
+components. Current public repositories and readiness are recorded in `pilot/`.
+
 ## 1. Names
 
 Names are settled as of July 2026. Prior working names appear throughout the
@@ -18,11 +29,11 @@ June corpus and in repo paths; they map as follows.
 
 | Current | Prior names | Repo (local) | Remote |
 |---|---|---|---|
-| **Cairn** | Quad | `~/dev/quad` | `EduCloud-Ecosystem/cairn` |
-| **Belay** | Sol; repo placeholder "peer-tutor-framework" | `~/dev/belay` (renamed 2026-07-28) | `EduCloud-Ecosystem/belay` (GitHub transfer + rename pending) |
-| **Waypoint** | "HOST"; the EduCloud Registry | `~/dev/waypoint` (renamed 2026-07-28) | `EduCloud-Ecosystem/waypoint` (GitHub rename pending) |
-| **Portage** | Commons; claude-lanes; "inference plane" | `~/dev/portage` | `EduCloud-Ecosystem/portage` (pushed; local commits ahead) |
-| **Outfitter** | "compute brokering layer" | `~/dev/outfitter` | `EduCloud-Ecosystem/outfitter` (pushed; local commits ahead) |
+| **Cairn** | Quad | `~/dev/cairn` | `EduCloud-Ecosystem/cairn` |
+| **Belay** | Sol; repo placeholder "peer-tutor-framework" | `~/dev/belay` (renamed 2026-07-28) | `EduCloud-Ecosystem/belay` |
+| **Waypoint** | "HOST"; the EduCloud Registry | `~/dev/waypoint` (renamed 2026-07-28) | `EduCloud-Ecosystem/waypoint` |
+| **Portage** | Commons; claude-lanes; "inference plane" | `~/dev/portage` | `EduCloud-Ecosystem/portage` |
+| **Outfitter** | "compute brokering layer" | `~/dev/outfitter` | `EduCloud-Ecosystem/outfitter` |
 
 Repo directory renames are deliberate, separate decisions; the remote names
 are canonical. New documents use current names; old documents get a mapping
@@ -96,9 +107,11 @@ for an outcome is out of contract.
    behind capability aliases in Portage, domains as packs in Belay), each
    with a conformance test. Provider quirks live inside that provider's
    adapter only.
-6. **Governance floor** in every repo: Apache-2.0 (code), DCO sign-off, CoC,
-   CONTRIBUTING. Current gaps: Cairn lacks a DCO file; Waypoint lacks README,
-   LICENSE, and the governance set; Belay is the reference implementation.
+6. **Governance floor.** Respect each repository's actual LICENSE/LICENSING and
+   path-specific exceptions, DCO sign-off, contribution guidance and the shared
+   pilot implementation protocol. The current adoption inventory lives in
+   `pilot/components.json`; old July file-gap lists are not current evidence.
+
 7. **One org.** All five repos live under `EduCloud-Ecosystem`. Pending as of
    July 2026: push Portage and Outfitter (remotes set, unpushed); transfer
    Belay from the personal account; rename HOST → waypoint.

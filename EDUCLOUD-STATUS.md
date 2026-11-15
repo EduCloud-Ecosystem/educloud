@@ -1,5 +1,7 @@
 # EduCloud status and computing-continuity priority
 
+> Current pilot entry point: [README status](README.md#pilot-status), [integration guide](docs/pilot/INTEGRATION.md), and [reviewed readiness](pilot/readiness.json). Material below retains its original dates; it is historical unless independently refreshed.
+
 ## November 13 resource-efficiency development
 
 The user selected **versioned downloadable releases** for the two offline operator

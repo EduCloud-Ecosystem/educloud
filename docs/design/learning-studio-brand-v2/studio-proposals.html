@@ -1,0 +1,214 @@
+<div id="educloud-brand-v2">
+  <div class="viz-carousel" aria-label="Learning Studio design alternatives">
+    <section data-variant="Studio Classic" aria-label="Studio Classic"><div class="ec-product classic" data-studio="classic" aria-label="Studio Classic design"></div></section>
+    <section data-variant="Studio Focus" aria-label="Studio Focus" hidden><div class="ec-product focus" data-studio="focus" aria-label="Studio Focus design"></div></section>
+  </div>
+</div>
+<style>
+#educloud-brand-v2 .ec-product{--navy:#0c234b;--red:#ab0520;--ink:light-dark(#172b48,#f1f3f5);--muted:light-dark(#506075,#bdc5d1);--paper:light-dark(#fff,#20252d);--canvas:light-dark(#f7f9fc,#181d24);--soft:light-dark(#e5eff7,#303d4e);--line:light-dark(#d9e0e8,#4c5868);--control-line:light-dark(#6f7e91,#909caa);--focus:light-dark(#106ab1,#91caff);--accent-visible:light-dark(#ab0520,#ff9dad);--code:light-dark(#f8fafc,#252c36);--good:light-dark(#245943,#9ed2b9);--radius:5px;font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--paper);border:1px solid var(--line);min-height:758px;box-sizing:border-box;position:relative;isolation:isolate;color-scheme:light}
+#educloud-brand-v2 .ec-product *{box-sizing:border-box}
+#educloud-brand-v2 .ec-product [hidden]{display:none!important}
+#educloud-brand-v2 .ec-product button,#educloud-brand-v2 .ec-product select,#educloud-brand-v2 .ec-product input,#educloud-brand-v2 .ec-product textarea{font:inherit;color:inherit}
+#educloud-brand-v2 .ec-product button{background:transparent;border:1px solid transparent;border-radius:var(--radius);padding:7px 10px;display:inline-flex;align-items:center;justify-content:center;gap:7px;line-height:1.35;min-height:34px}
+#educloud-brand-v2 .ec-product button:hover{background:var(--soft)}
+#educloud-brand-v2 .ec-product button:disabled{opacity:.55;cursor:not-allowed}
+#educloud-brand-v2 .ec-product :focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+#educloud-brand-v2 .ec-product svg{width:17px;height:17px;flex-shrink:0}
+#educloud-brand-v2 .ec-product .primary{background:var(--red);color:#fff;border-color:var(--accent-visible)}
+#educloud-brand-v2 .ec-product .primary:hover{background:#850000}
+#educloud-brand-v2 .ec-product .secondary{border-color:var(--control-line);background:var(--paper)}
+#educloud-brand-v2 .ec-product .text-button{color:light-dark(#0c234b,#b4d4f0);text-decoration:underline;text-underline-offset:3px;padding-inline:0}
+#educloud-brand-v2 .ec-product h1,#educloud-brand-v2 .ec-product h2,#educloud-brand-v2 .ec-product h3,#educloud-brand-v2 .ec-product p{margin:0}
+#educloud-brand-v2 .ec-product h1{font-size:27px;line-height:1.2;font-weight:650;letter-spacing:-.6px}
+#educloud-brand-v2 .ec-product h2{font-size:19px;line-height:1.3;font-weight:650;letter-spacing:-.2px}
+#educloud-brand-v2 .ec-product h3{font-size:15px;font-weight:650}
+#educloud-brand-v2 .ec-product small{font-size:13px;color:var(--muted)}
+#educloud-brand-v2 .ec-product .muted{color:var(--muted)}
+#educloud-brand-v2 .ec-product .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#educloud-brand-v2 .ec-product .push{margin-left:auto}
+#educloud-brand-v2 .ec-product .masthead{height:59px;padding:0 20px;border-top:4px solid var(--red);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:15px;background:var(--paper)}
+#educloud-brand-v2 .ec-product .brand{font-size:17px;font-weight:700;letter-spacing:-.4px;white-space:nowrap}
+#educloud-brand-v2 .ec-product .brand span{font-weight:400;color:var(--muted);font-size:13px;margin-left:9px;letter-spacing:0}
+#educloud-brand-v2 .ec-product .course-name{font-size:13px;border-left:1px solid var(--line);padding-left:16px}
+#educloud-brand-v2 .ec-product .avatar{background:var(--soft);border-radius:50%;width:29px;height:29px;display:grid;place-items:center;font-size:12px;font-weight:600}
+#educloud-brand-v2 .ec-product .workspace{display:flex;min-height:617px;background:var(--canvas)}
+#educloud-brand-v2 .ec-product .rail{width:43px;flex-shrink:0;background:var(--paper);border-right:1px solid var(--line);padding:10px 4px;display:flex;flex-direction:column;gap:12px}
+#educloud-brand-v2 .ec-product .rail button{padding:8px}
+#educloud-brand-v2 .ec-product .rail button[aria-pressed=true]{color:light-dark(#ab0520,#ff9dad);background:var(--soft)}
+#educloud-brand-v2 .ec-product .files{width:190px;flex-shrink:0;padding:20px 8px;background:var(--paper);border-right:1px solid var(--line)}
+#educloud-brand-v2 .ec-product .files-heading{font-size:13px;font-weight:650;letter-spacing:.03em;padding:0 10px 13px}
+#educloud-brand-v2 .ec-product .file{width:100%;justify-content:flex-start;text-align:left;padding:9px 10px;font-size:13px;overflow-wrap:anywhere}
+#educloud-brand-v2 .ec-product .file.active{background:var(--soft);font-weight:600;border-left:3px solid var(--accent-visible)}
+#educloud-brand-v2 .ec-product .file svg{width:14px}
+#educloud-brand-v2 .ec-product .file-note{padding:24px 10px 0;font-size:13px;color:var(--muted)}
+#educloud-brand-v2 .ec-product .work{flex:1;min-width:0;background:var(--paper)}
+#educloud-brand-v2 .ec-product .tabbar{background:var(--canvas);border-bottom:1px solid var(--line);padding:0 14px;display:flex;align-items:center;gap:10px;min-height:42px;font-size:13px;flex-wrap:wrap}
+#educloud-brand-v2 .ec-product .tabbar .active-tab{padding:10px 4px 8px;border-bottom:2px solid var(--accent-visible);overflow-wrap:anywhere}
+#educloud-brand-v2 .ec-product .toolbar{display:flex;align-items:center;gap:3px;padding:7px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+#educloud-brand-v2 .ec-product .toolbar button{font-size:13px;min-height:30px;padding:6px 8px}
+#educloud-brand-v2 .ec-product .document{padding:32px 28px 28px;max-width:880px;margin:auto}
+#educloud-brand-v2 .ec-product .eyebrow{color:var(--muted);font-size:12px;font-weight:650;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px}
+#educloud-brand-v2 .ec-product .intro{margin:12px 0 19px;max-width:570px;font-size:14px;color:var(--muted)}
+#educloud-brand-v2 .ec-product .instruction{margin-bottom:26px;border-left:2px solid var(--line);padding-left:13px}
+#educloud-brand-v2 .ec-product .instruction summary{font-size:13px;font-weight:600}
+#educloud-brand-v2 .ec-product details p{padding-top:10px;font-size:13px;color:var(--muted)}
+#educloud-brand-v2 .ec-product .cell-label{font-size:13px;font-weight:650;display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+#educloud-brand-v2 .ec-product .codebox{position:relative;border:1px solid var(--control-line);border-left:3px solid light-dark(#1e5288,#81ceeb);border-radius:3px;background:var(--code)}
+#educloud-brand-v2 .ec-product textarea.code{display:block;width:100%;height:174px;resize:vertical;padding:15px;border:0;background:transparent;font:14px/1.85 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:4;border-radius:3px}
+#educloud-brand-v2 .ec-product .output{padding:15px 3px 0}
+#educloud-brand-v2 .ec-product table{border-collapse:collapse;width:100%;font-size:13px}
+#educloud-brand-v2 .ec-product th{text-align:left;font-weight:600;color:var(--muted);padding:9px 10px;border-bottom:1px solid var(--line)}
+#educloud-brand-v2 .ec-product td{padding:10px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+#educloud-brand-v2 .ec-product .output th:first-child,#educloud-brand-v2 .ec-product .output td:first-child{padding-left:0}
+#educloud-brand-v2 .ec-product .output-note{font-size:12px;color:var(--muted);margin-top:8px}
+#educloud-brand-v2 .ec-product .next-note{display:flex;gap:8px;align-items:flex-start;margin-top:26px;font-size:13px;color:var(--muted)}
+#educloud-brand-v2 .ec-product .tutor{width:285px;flex-shrink:0;background:var(--paper);border-left:1px solid var(--line);padding:19px;min-width:0}
+#educloud-brand-v2 .ec-product .tutor-heading{margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+#educloud-brand-v2 .ec-product .tutor .helper{font-size:13px;color:var(--muted);margin-bottom:18px}
+#educloud-brand-v2 .ec-product label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}
+#educloud-brand-v2 .ec-product textarea.question,#educloud-brand-v2 .ec-product textarea.prediction{width:100%;border:1px solid var(--control-line);border-radius:var(--radius);padding:11px;background:var(--paper);font-size:14px;resize:vertical;margin-bottom:10px;min-height:88px}
+#educloud-brand-v2 .ec-product .tutor details{border-top:1px solid var(--line);margin-top:17px;padding-top:14px;font-size:13px}
+#educloud-brand-v2 .ec-product .hint{border-left:3px solid var(--focus);padding:2px 0 2px 12px;margin:19px 0;font-size:14px}
+#educloud-brand-v2 .ec-product .checkpoint{margin:14px 0;border-top:1px solid var(--line);padding-top:16px}
+#educloud-brand-v2 .ec-product .checkline{display:flex;gap:8px;align-items:flex-start;font-weight:400;line-height:1.5}
+#educloud-brand-v2 .ec-product input[type=checkbox]{accent-color:light-dark(#0c234b,#91caff);flex-shrink:0;margin-top:3px;width:18px;height:18px}
+#educloud-brand-v2 .ec-product .statusbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:7px 15px;border-top:1px solid var(--line);background:var(--canvas);font-size:12px;color:var(--muted);min-height:32px}
+#educloud-brand-v2 .ec-product .previewbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 15px;background:var(--paper);border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+#educloud-brand-v2 .ec-product .previewbar button{font-size:12px;padding:4px 7px;min-height:28px}
+#educloud-brand-v2 .ec-product .previewbar button[aria-pressed=true]{background:var(--soft);color:var(--ink)}
+#educloud-brand-v2 .ec-product .notice{font-size:13px;background:var(--soft);padding:12px 18px;display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line)}
+#educloud-brand-v2 .ec-product .notice strong{display:block;margin-bottom:2px}
+#educloud-brand-v2 .ec-product .sheet{position:absolute;inset:59px 0 76px;background:light-dark(#0c234b36,#0009);z-index:5;display:flex;align-items:flex-start;justify-content:center;padding:30px 22px;overflow:auto}
+#educloud-brand-v2 .ec-product .dialog{width:min(600px,100%);padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 18px 70px #03132e33}
+#educloud-brand-v2 .ec-product .dialog .lead{color:var(--muted);font-size:13px;margin:9px 0 20px}
+#educloud-brand-v2 .ec-product .dialog .actions{margin-top:23px;display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+#educloud-brand-v2 .ec-product .dialog .checkline{margin-top:20px}
+#educloud-brand-v2 .ec-product .receipt-mark{width:43px;height:43px;background:var(--soft);color:var(--good);border-radius:50%;display:grid;place-items:center;margin-bottom:15px}
+#educloud-brand-v2 .ec-product .receipt-mark svg{width:23px;height:23px}
+#educloud-brand-v2 .ec-product .receipt-line{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;flex-wrap:wrap}
+#educloud-brand-v2 .ec-product .receipt-line strong{font-weight:600}
+#educloud-brand-v2 .ec-product .file-editor{padding-top:18px}
+#educloud-brand-v2 .ec-product .file-editor textarea{width:100%;min-height:210px;background:var(--code);border:1px solid var(--control-line);border-radius:3px;padding:18px;font:14px/1.8 ui-monospace,monospace;resize:vertical}
+#educloud-brand-v2 .ec-product .instructor{padding:38px 38px 50px;min-height:617px;background:var(--paper)}
+#educloud-brand-v2 .ec-product .instructor .intro{max-width:650px}
+#educloud-brand-v2 .ec-product .assignment-row{margin-top:28px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center}
+#educloud-brand-v2 .ec-product .table-wrap{overflow-x:auto;margin-top:20px}
+#educloud-brand-v2 .ec-product .instructor table{min-width:420px}
+#educloud-brand-v2 .ec-product .instructor details{margin-top:25px;font-size:13px}
+#educloud-brand-v2 .ec-product .review-note{margin-top:18px;padding:15px;background:var(--soft);font-size:13px}
+#educloud-brand-v2 .ec-product.focus .masthead{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line);border-top-color:var(--red);height:67px;padding-inline:23px}
+#educloud-brand-v2 .ec-product.focus .rail{width:51px;padding:14px 8px;background:var(--canvas)}
+#educloud-brand-v2 .ec-product.focus .tabbar{background:var(--paper);padding:8px 24px;border:0;min-height:47px}
+#educloud-brand-v2 .ec-product.focus .active-tab{border:0;font-size:13px}
+#educloud-brand-v2 .ec-product.focus .toolbar{padding:4px 24px 13px;gap:6px}
+#educloud-brand-v2 .ec-product.focus .document{padding:35px 44px 32px;max-width:780px}
+#educloud-brand-v2 .ec-product.focus h1{font-size:31px;letter-spacing:-.8px}
+#educloud-brand-v2 .ec-product.focus .intro{font-size:15px;margin-top:14px;margin-bottom:24px;max-width:560px}
+#educloud-brand-v2 .ec-product.focus .workspace{min-height:609px}
+#educloud-brand-v2 .ec-product.focus .tutor{width:290px;background:var(--canvas);padding:23px}
+#educloud-brand-v2 .ec-product.focus .sheet{top:67px}
+#educloud-brand-v2 .ec-product.focus .statusbar{background:var(--paper)}
+#educloud-brand-v2 .ec-product .appearance{margin:0 0 0 auto;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;flex-shrink:0}
+#educloud-brand-v2 .ec-product .appearance select{background:var(--paper);color:var(--ink);border:1px solid var(--control-line);border-radius:5px;padding:6px 8px;min-height:36px;font-size:14px;max-width:110px}
+#educloud-brand-v2 .ec-product textarea::placeholder{color:var(--muted);opacity:1}
+#educloud-brand-v2 .ec-product .rail button[aria-pressed=true]{border-left:3px solid var(--accent-visible)}
+#educloud-brand-v2 .ec-product .previewbar button[aria-pressed=true]{text-decoration:underline;text-underline-offset:4px;font-weight:600}
+#educloud-brand-v2 .ec-product .file.active span{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:850px){#educloud-brand-v2 .ec-product .files{width:165px}#educloud-brand-v2 .ec-product .document{padding:25px 20px}#educloud-brand-v2 .ec-product.focus .document{padding:28px}#educloud-brand-v2 .ec-product.has-tutor .files{display:none}#educloud-brand-v2 .ec-product .course-name{display:none}}
+@media(max-width:620px){#educloud-brand-v2 .ec-product{min-height:1020px}#educloud-brand-v2 .ec-product .masthead,#educloud-brand-v2 .ec-product.focus .masthead{padding-inline:12px}#educloud-brand-v2 .ec-product .brand span{display:none}#educloud-brand-v2 .ec-product .workspace{display:block;position:relative;min-height:870px}#educloud-brand-v2 .ec-product.focus .workspace{min-height:862px}#educloud-brand-v2 .ec-product .rail{width:auto!important;flex-direction:row;padding:4px 9px!important;border-right:0;border-bottom:1px solid var(--line);gap:5px}#educloud-brand-v2 .ec-product .files{width:100%;border-right:0;border-bottom:1px solid var(--line);padding:12px;display:grid;grid-template-columns:1fr 1fr}#educloud-brand-v2 .ec-product .file-note{display:none}#educloud-brand-v2 .ec-product .files-heading{grid-column:1/-1;padding-bottom:5px}#educloud-brand-v2 .ec-product .document,#educloud-brand-v2 .ec-product.focus .document{padding:24px 18px}#educloud-brand-v2 .ec-product .tutor,#educloud-brand-v2 .ec-product.focus .tutor{width:100%;border:0;border-top:1px solid var(--line);padding:22px}#educloud-brand-v2 .ec-product.has-tutor .work{display:none}#educloud-brand-v2 .ec-product .toolbar,#educloud-brand-v2 .ec-product.focus .toolbar{padding:8px}#educloud-brand-v2 .ec-product .tabbar,#educloud-brand-v2 .ec-product.focus .tabbar{padding:5px 15px}#educloud-brand-v2 .ec-product h1,#educloud-brand-v2 .ec-product.focus h1{font-size:26px}#educloud-brand-v2 .ec-product .dialog{padding:20px 16px}#educloud-brand-v2 .ec-product .sheet{padding:18px 10px}#educloud-brand-v2 .ec-product .dialog td{padding:9px 4px;font-size:12px}#educloud-brand-v2 .ec-product .instructor{padding:28px 18px;min-height:870px}#educloud-brand-v2 .ec-product .assignment-row{align-items:flex-start;flex-direction:column}#educloud-brand-v2 .ec-product .previewbar{align-items:flex-start;flex-direction:column}#educloud-brand-v2 .ec-product .statusbar .push{margin-left:0}}
+@media(pointer:coarse){#educloud-brand-v2 .ec-product button{min-height:44px}#educloud-brand-v2 .ec-product textarea{font-size:16px!important}}
+@media(prefers-reduced-motion:reduce){#educloud-brand-v2 .ec-product *{scroll-behavior:auto!important}}
+@media(max-width:1000px){#educloud-brand-v2 .ec-product .course-name{display:none}}
+@media(max-width:620px){#educloud-brand-v2 .ec-product .masthead [data-act=course],#educloud-brand-v2 .ec-product .avatar{display:none}#educloud-brand-v2 .ec-product .masthead{gap:8px}#educloud-brand-v2 .ec-product .appearance{font-size:13px}#educloud-brand-v2 .ec-product .appearance select{font-size:16px;min-height:44px}}
+@media(forced-colors:active){#educloud-brand-v2 .ec-product{--ink:CanvasText;--muted:CanvasText;--paper:Canvas;--canvas:Canvas;--soft:Canvas;--line:GrayText;--control-line:ButtonText;--focus:Highlight;--accent-visible:Highlight;--code:Canvas;--good:CanvasText}#educloud-brand-v2 .ec-product .primary{background:ButtonFace;color:ButtonText;border:2px solid ButtonText}#educloud-brand-v2 .ec-product :focus-visible{outline:3px solid Highlight}#educloud-brand-v2 .ec-product .file.active{border-left:3px solid Highlight}#educloud-brand-v2 .ec-product button:disabled{opacity:1;color:GrayText}}
+</style>
+<script>
+(()=>{
+ const root=document.getElementById('educloud-brand-v2');
+ const names=['nhanes-wrangling.ipynb','tidy-nhanes.csv','explanation.md','assistance.md'];
+ const initialCode='# Keep every participant; identify missing exam records.\ntidy = demographics.merge(\n    blood_pressure, on="SEQN", how="left", indicator=True\n)\ntidy["bpxo_match"] = tidy["_merge"].eq("both")\ntidy[["SEQN", "bpxo_match"]].head(3)';
+ const icon=n=>`<i data-lucide="${n}" aria-hidden="true"></i>`;
+ const instances=[];
+ const systemAppearance=window.matchMedia('(prefers-color-scheme: dark)');
+ let appearance='light';
+ const applyAppearance=choice=>{
+  appearance=['light','dark','system'].includes(choice)?choice:'light';
+  const resolved=appearance==='system'?(systemAppearance.matches?'dark':'light'):appearance;
+  root.querySelectorAll('[data-studio]').forEach(p=>{p.style.colorScheme=resolved;p.dataset.appearance=appearance;const select=p.querySelector('[data-appearance]');if(select)select.value=appearance});
+ };
+ systemAppearance.addEventListener('change',()=>{if(appearance==='system')applyAppearance(appearance)});
+ root.querySelectorAll('[data-studio]').forEach(p=>{
+  const id=p.dataset.studio;const state={file:names[0],dirty:false,ran:false,tutor:false,expired:false,predicted:false,hint:false,received:false,role:'student',files:id==='classic'};
+  p.innerHTML=`
+   <header class="masthead"><div class="brand">EduCloud<span>Learning Studio</span></div><div class="course-name">INFO 511 <span aria-hidden="true">/</span> Data wrangling</div><label class="appearance">Theme<select data-appearance aria-label="Appearance"><option value="light">Light</option><option value="dark">Dark</option><option value="system">System</option></select></label><button data-act="course" aria-label="Show course instructions">${icon('book-open')}<span>Course</span></button><span class="avatar" aria-label="Demo learner">DL</span></header>
+   <div class="notice" data-expiry hidden>${icon('clock')}<div><strong>Tutoring has paused. Your work is still here.</strong>Save or submit within the workspace's separately authorized time. <small>Proposed recovery state; no deadline is extended.</small></div></div>
+   <div class="workspace" data-workspace>
+    <nav class="rail" aria-label="Workspace tools"><button data-act="files" aria-label="Toggle files" aria-pressed="${state.files}">${icon('files')}</button><button data-act="instructions" aria-label="Show assignment instructions">${icon('book-open')}</button><button data-act="tutor" aria-label="Toggle tutor" aria-pressed="false">${icon('messages-square')}</button></nav>
+    <aside class="files" ${state.files?'':'hidden'}><div class="files-heading">ASSIGNMENT FILES</div>${names.map((n,i)=>`<button class="file ${i===0?'active':''}" data-file="${n}">${icon(i===0?'notebook-text':i===1?'table-2':'file-text')}<span>${n}</span></button>`).join('')}<p class="file-note">Four files to submit.<br>Everything stays here until you confirm.</p></aside>
+    <main class="work"><div class="tabbar"><span class="active-tab" data-filename>nhanes-wrangling.ipynb</span><small class="push" data-saved>Saved</small></div>
+     <div class="toolbar"><button data-act="save">${icon('save')}Save</button><button data-act="run">${icon('play')}Run cell</button><span class="push"></span><button data-act="tutor">${icon('messages-square')}Ask tutor</button><button class="primary" data-act="review">Review &amp; submit ${icon('arrow-right')}</button></div>
+     <article class="document" data-notebook><div class="eyebrow">INFO 511 · NHANES lab</div><h1>Make missingness visible.</h1><p class="intro">Join demographic and blood-pressure records without losing the people who have no examination record.</p>
+      <details class="instruction"><summary>Assignment instructions</summary><p>Join by SEQN. Distinguish an absent examination record from a missing measurement. Save the tidy data, explain your decisions, and declare any AI assistance. This design preview uses synthetic examples.</p></details>
+      <div class="cell-label"><span>Join and inspect</span><small>Python 3</small></div><div class="codebox"><textarea class="code" spellcheck="false" aria-label="Notebook code cell"></textarea></div>
+      <div class="output" data-output hidden><table aria-label="Synthetic cell output"><thead><tr><th>SEQN</th><th>bpxo_match</th><th>Interpretation</th></tr></thead><tbody><tr><td>DEMO-01</td><td>True</td><td>Exam record present</td></tr><tr><td>DEMO-02</td><td>False</td><td>No exam record</td></tr><tr><td>DEMO-03</td><td>True</td><td>Exam record present</td></tr></tbody></table><p class="output-note">Illustrative output · no code executed</p></div>
+      <div class="next-note">${icon('corner-down-right')}<span>Next, explain the difference between a missing record and a missing value in <strong>explanation.md</strong>.</span></div>
+     </article><article class="document file-editor" data-file-editor hidden><div class="eyebrow">Assignment file</div><h2 data-editor-title></h2><p class="intro">Edit, save, then review the exact files you intend to submit.</p><textarea aria-label="File contents" data-editor spellcheck="false"></textarea></article>
+    </main>
+    <aside class="tutor" aria-label="Tutor" hidden><div class="tutor-heading"><h2>Think it through.</h2><button data-act="close-tutor" aria-label="Close tutor">${icon('x')}</button></div><p class="helper">A hint to help you move forward. Your reasoning stays your own.</p>
+     <label for="question-${id}">What are you working through?</label><textarea id="question-${id}" class="question">How can I distinguish a missing measurement from no examination record?</textarea>
+     <button class="primary" data-act="ask">Get a hint ${icon('arrow-right')}</button>
+     <div class="checkpoint" hidden><label for="prediction-${id}">First, what do you expect to happen?</label><textarea id="prediction-${id}" class="prediction" placeholder="Write your prediction…"></textarea><label class="checkline"><input type="checkbox" data-share>Share this question, my prediction and the selected code cell with the tutor.</label><button class="primary" data-act="send-hint">Share &amp; get hint</button><p class="helper" data-prediction-error role="alert" hidden>Write a prediction and confirm what you want to share.</p></div>
+     <div class="hint" hidden><strong>Try separating two questions.</strong><p>Does this person have an exam record? If so, is this particular measurement missing? Which of those can your merge indicator answer?</p></div>
+     <div data-hint-note hidden><p class="helper">Describe this help in your assistance declaration before submitting.</p><button class="text-button" data-act="declaration">Review assistance.md</button></div>
+     <details><summary>What the tutor can see</summary><p>Only the question, prediction and selected code you confirm. Files and grades are not shared automatically.</p><p>Live pilot route: OpenRouter · GPT-4.1 mini. This preview sends no requests.</p></details>
+     <p class="helper" style="margin-top:20px" data-tutor-status>Optional help · you can complete the task without it.</p>
+    </aside>
+   </div>
+   <main class="instructor" hidden><div class="eyebrow">Instructor · INFO 511</div><div class="row"><h1>A clear view of the work.</h1><button class="secondary push" data-act="student">Open student view ${icon('arrow-up-right')}</button></div><p class="intro">Review submitted work, see what the checks establish, and make the final assessment.</p>
+    <div class="assignment-row"><div><h2>NHANES · Data wrangling</h2><p class="muted">Four required files · hints permitted · instructor-reviewed grades</p></div><button class="secondary" data-act="policy">View assignment policy</button></div>
+    <div class="table-wrap"><table aria-label="Synthetic submission review"><thead><tr><th>Submission</th><th>Files received</th><th>Automated checks</th><th>Instructor review</th></tr></thead><tbody><tr><td><button class="text-button" data-act="inspect-demo">Demo learner</button></td><td>4 of 4</td><td>4 of 4 passed</td><td>Not reviewed</td></tr></tbody></table></div><div class="review-note" hidden><strong>Checks are evidence, not a grade.</strong><p>The synthetic output checks passed. Review the notebook, explanation and assistance declaration before assigning or publishing a grade.</p><button class="text-button" data-act="receipt-demo">Open example receipt</button></div>
+    <details data-policy><summary>Assignment and access policy</summary><p>Roster and admission stay under instructor control. Help is optional. Submitted files require explicit confirmation. Automated results do not publish a grade.</p></details>
+    <details><summary>Workspace operations</summary><p>Waypoint owns access and retention. Portage governs model requests. Outfitter owns compute placement and cleanup. Cairn owns submission receipts and grading. Operational status must come from those authorities, not from this screen.</p></details>
+   </main>
+   <footer class="statusbar"><span data-kernel>Python 3 · ready</span><span data-status aria-live="polite">All changes saved</span><span class="push">INFO 511 / NHANES</span></footer>
+   <div class="previewbar"><span>Interactive design preview · synthetic · nothing is sent</span><div class="row" role="group" aria-label="Preview states"><button data-act="student" aria-pressed="true">Student</button><button data-act="instructor" aria-pressed="false">Instructor</button><button data-act="expiry" aria-pressed="false">Help expires</button></div></div>
+   <div class="sheet" hidden><section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title-${id}"></section></div>`;
+  const q=s=>p.querySelector(s);q('.code').value=initialCode;
+  const texts={'tidy-nhanes.csv':'SEQN,bpxo_match\nDEMO-01,True\nDEMO-02,False\nDEMO-03,True','explanation.md':'A left join preserves participants who have no examination record.\n\nThe merge indicator tells me whether a record matched. A missing measurement within a matched record is a separate case.','assistance.md':'Task version: info511-nhanes-v1\nDeclaration: none\nSummary: No AI assistance used.'};
+  const icons=()=>{if(globalThis.lucide)globalThis.lucide.createIcons({attrs:{width:17,height:17}})};
+  const say=s=>{q('[data-status]').textContent=s};
+  const remember=()=>{window.openai?.setWidgetState?.({modelContent:{design:id,view:state.role,appearance},privateContent:{}})?.catch(()=>{})};
+  const save=()=>{state.dirty=false;q('[data-saved]').textContent='Saved';say('All changes saved · preview only')};
+  const tutor=on=>{state.tutor=on;q('.tutor').hidden=!on;p.classList.toggle('has-tutor',on);q('.rail [data-act=tutor]').setAttribute('aria-pressed',on);if(on)q('.question').focus()};
+  let returnFocus=null;
+  const close=()=>{q('.sheet').hidden=true;q('[data-workspace]').inert=false;q('.instructor').inert=false;q('.masthead').inert=false;q('.previewbar').inert=false;if(returnFocus?.isConnected)returnFocus.focus()};
+  const dialog=html=>{if(q('.sheet').hidden)returnFocus=document.activeElement;q('.dialog').innerHTML=html;q('.sheet').hidden=false;q('[data-workspace]').inert=true;q('.instructor').inert=true;q('.masthead').inert=true;q('.previewbar').inert=true;icons();q('.dialog button')?.focus()};
+  const receipt=()=>dialog(`<div class="receipt-mark">${icon('check')}</div><div class="eyebrow">Example receipt · DEMO-511</div><h2 id="dialog-title-${id}">Your work is received.</h2><p class="lead">The four selected files are attached to this example receipt. You can return to your notebook.</p><div class="receipt-line"><span>Submission</span><strong>Received · 4 files</strong></div><div class="receipt-line"><span>Automated output checks</span><strong>4 of 4 passed</strong></div><div class="receipt-line"><span>Instructor assessment</span><strong>Not reviewed</strong></div><p class="lead" style="margin-top:16px">Passing these checks is not a course grade. This is a simulated receipt, not a published submission.</p><details><summary>Files and verification details</summary><p>${names.join('<br>')}<br><br>Production receipts retain exact file hashes and task identity. No hash or publication has been created in this preview.</p></details><div class="actions"><button class="primary" data-act="close-dialog">Return to work</button></div>`);
+  const review=()=>{if(state.dirty){dialog(`<h2 id="dialog-title-${id}">Save your latest changes.</h2><p class="lead">Submission uses saved files. Save this draft before reviewing what will be sent.</p><div class="actions"><button class="secondary" data-act="close-dialog">Keep editing</button><button class="primary" data-act="save-review">Save &amp; review</button></div>`);return;}dialog(`<div class="row"><div class="eyebrow">INFO 511 · NHANES</div><button class="push" data-act="close-dialog" aria-label="Close submission review">${icon('x')}</button></div><h2 id="dialog-title-${id}">Review before you submit.</h2><p class="lead">Only these saved files will be included. Your notebook stays available after submission.</p><table aria-label="Files selected for submission"><thead><tr><th>File</th><th>State</th></tr></thead><tbody>${names.map(n=>`<tr><td>${n}</td><td>Saved</td></tr>`).join('')}</tbody></table><details style="margin-top:16px"><summary>Task identity and file verification</summary><p>INFO 511 · info511-nhanes-v1. The real submission flow rechecks file hashes before accepting the preview. Changed files require a new preview.</p></details><label class="checkline"><input type="checkbox" data-confirm>I reviewed these four files and my assistance declaration.</label><div class="actions"><button class="secondary" data-act="close-dialog">Back to work</button><button class="primary" data-act="submit" disabled>Confirm submission ${icon('arrow-right')}</button></div>`)};
+  const switchFile=n=>{state.file=n;q('[data-filename]').textContent=n;q('[data-notebook]').hidden=n!==names[0];q('[data-file-editor]').hidden=n===names[0];q('[data-editor-title]').textContent=n;q('[data-editor]').value=texts[n]||'';p.querySelectorAll('[data-file]').forEach(b=>b.classList.toggle('active',b.dataset.file===n));say('Opened '+n);};
+  const role=r=>{state.role=r;q('[data-workspace]').hidden=r!=='student';q('.instructor').hidden=r!=='instructor';q('[data-expiry]').hidden=!state.expired||r!=='student';p.querySelectorAll('.previewbar [data-act]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.act==='expiry'?state.expired:b.dataset.act===r));say(r==='instructor'?'Synthetic review example · no learner records':state.dirty?'Changes not yet saved':'All changes saved');remember()};
+  p.addEventListener('input',e=>{if(e.target.matches('.code,[data-editor]')){state.dirty=true;q('[data-saved]').textContent='Unsaved changes';say('Changes not yet saved');if(e.target.matches('[data-editor]'))texts[state.file]=e.target.value}});
+  p.addEventListener('change',e=>{if(e.target.matches('[data-confirm]'))q('[data-act=submit]').disabled=!e.target.checked;if(e.target.matches('[data-appearance]')){applyAppearance(e.target.value);say('Appearance: '+appearance);remember()}});
+  p.addEventListener('keydown',e=>{if(e.key==='Escape'&&!q('.sheet').hidden)close();if(e.key==='Tab'&&!q('.sheet').hidden){const fs=[...q('.dialog').querySelectorAll('button:not(:disabled),input,summary,textarea')];if(e.shiftKey&&document.activeElement===fs[0]){e.preventDefault();fs.at(-1).focus()}else if(!e.shiftKey&&document.activeElement===fs.at(-1)){e.preventDefault();fs[0].focus()}}});
+  p.addEventListener('click',e=>{const f=e.target.closest('[data-file]');if(f){switchFile(f.dataset.file);return}const b=e.target.closest('[data-act]');if(!b)return;switch(b.dataset.act){
+   case 'files':state.files=!state.files;q('.files').hidden=!state.files;b.setAttribute('aria-pressed',state.files);break;
+   case 'course':case 'instructions':role('student');switchFile(names[0]);q('.instruction').open=!q('.instruction').open;break;
+   case 'tutor':tutor(!state.tutor);break;case 'close-tutor':tutor(false);break;
+   case 'save':save();break;
+   case 'run':state.ran=true;q('[data-output]').hidden=false;say('Example output shown · code was not executed');break;
+   case 'ask':if(state.expired){say('Tutoring paused; working and saving remain available');break}q('.checkpoint').hidden=false;q('.prediction').focus();b.hidden=true;break;
+   case 'send-hint':if(!q('.question').value.trim()||!q('.prediction').value.trim()||!q('[data-share]').checked){q('[data-prediction-error]').hidden=false;break}state.predicted=true;state.hint=true;q('.checkpoint').hidden=true;q('.hint').hidden=false;q('[data-hint-note]').hidden=false;say('Example hint shown · review your assistance declaration');break;
+   case 'declaration':tutor(false);switchFile('assistance.md');q('[data-editor]').focus();break;
+   case 'review':review();break;case 'save-review':save();review();break;case 'close-dialog':close();break;case 'submit':if(q('[data-confirm]')?.checked){state.received=true;receipt();say('Example receipt created · no files sent')}break;
+   case 'student':role('student');break;case 'instructor':role('instructor');break;
+   case 'expiry':state.expired=!state.expired;role('student');q('[data-expiry]').hidden=!state.expired;b.setAttribute('aria-pressed',state.expired);q('[data-act=ask]').disabled=state.expired;q('[data-act=send-hint]').disabled=state.expired;q('[data-tutor-status]').textContent=state.expired?'Tutoring paused. Your notebook and submission remain available.':'Optional help · you can complete the task without it.';say(state.expired?'Proposed recovery: save and submit remain available':'Tutoring available in this preview');break;
+   case 'inspect-demo':q('.review-note').hidden=!q('.review-note').hidden;break;case 'receipt-demo':receipt();break;case 'policy':q('[data-policy]').open=!q('[data-policy]').open;break;
+  }});
+  if(globalThis.Tweak){const design={spacious:id==='focus'};const tweak=new Tweak({container:p,onChange:()=>{p.querySelector('.document').style.padding=design.spacious?'35px 32px':'25px 20px'}});tweak.addToggle(design,'spacious',{label:'Roomier notebook'});}
+  instances.push({p,state,role});
+ });
+ const restore=s=>{const saved=s?.modelContent;applyAppearance(saved?.appearance||'light');if(saved?.view&&['student','instructor'].includes(saved.view)){const i=instances.find(i=>i.state&&i.p.dataset.studio===saved.design);if(i){i.state.role=saved.view;i.p.querySelector('[data-workspace]').hidden=saved.view!=='student';i.p.querySelector('.instructor').hidden=saved.view!=='instructor';}}};
+ restore(window.openai?.widgetState);window.addEventListener('openai:set_globals',e=>restore(e.detail?.globals?.widgetState));
+ if(globalThis.lucide)globalThis.lucide.createIcons({attrs:{width:17,height:17}});
+})();
+</script>

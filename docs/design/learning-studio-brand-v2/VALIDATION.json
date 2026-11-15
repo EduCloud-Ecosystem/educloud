@@ -1,0 +1,53 @@
+{
+  "status": "interactive_design_proposals_not_deployed",
+  "sha256": "7146715c7878d6a19dfd9f3f1dde4e436af5cbbb98bdfcd6e7b36c6dd99c3c35",
+  "bytes": 33684,
+  "node_version": "v26.7.0",
+  "passed": [
+    "javascript_syntax",
+    "two_named_variants",
+    "fragment_under_1MB",
+    "no_external_urls_or_transport_apis",
+    "canonical_and_chat_copy_identical"
+  ],
+  "contrast_ratios": {
+    "red_white": 7.57,
+    "blue_white": 15.47,
+    "secondary_white": 6.42,
+    "secondary_cloud": 5.51,
+    "main_white": 14.23,
+    "dark_secondary_surface": 8.87
+  },
+  "blocked": [
+    {
+      "check": "rendered_browser_preview",
+      "reason": "Browser URL policy rejected file protocol; no bypass attempted."
+    }
+  ],
+  "unexecuted": [
+    "rendered_interactions",
+    "narrow_layout",
+    "keyboard_and_focus",
+    "dark_theme_visual_review",
+    "human_accessibility",
+    "new_design_live_workflow"
+  ],
+  "source_review_corrections": [
+    "removed automatic assistance declaration rewrite",
+    "preserved unsaved status across role preview",
+    "restored dialog initiating focus",
+    "removed implied deadline extension"
+  ],
+  "network_or_paid_requests": 0,
+  "application_source_edits": false,
+  "merged": false,
+  "deployed": false,
+  "preparation_failures": [
+    {
+      "step": "refresh_preview_wrapper",
+      "exit_code": 2,
+      "reason": "destination already exists; pass --force to replace it",
+      "resolution": "Regenerated only the task-owned preview wrapper using --force; original prototypes untouched."
+    }
+  ]
+}

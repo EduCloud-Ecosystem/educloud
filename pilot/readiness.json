@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-11-15",
+  "qualification": "local_synthetic_instructor_testing",
+  "deployment": false,
+  "student_admission": false,
+  "scientific_acceptance": false,
+  "restricted_data_approval": false,
+  "sources": {
+    "cairn": "240b8b9c9f802e759175f6941b34c194f780e84c",
+    "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+    "waypoint": "d75b90e57eea5c74f6b30b7275f0a5ca50aeceb4",
+    "waypoint_dirty": false
+  },
+  "evidence": [
+    "https://github.com/EduCloud-Ecosystem/waypoint/blob/9b815043c8ec9162463fcc0ef2d4ef44b86255fe/docs/studio-classic-verification-v2.json"
+  ],
+  "verified_controls": {
+    "integrated_workflow": 13,
+    "supplementary_ui": 7,
+    "actual_model_requests": 0
+  },
+  "open_gates": [
+    "Selected maintained host, TLS and current identity/membership authority",
+    "Approved tutoring data destinations, retention and privacy review",
+    "Selected-host capacity, backup/restore, rollback, expiry/export and owned-resource cleanup",
+    "Human instructor and learner acceptance for INFO 511",
+    "Native Outfitter provider qualification if broker-managed compute is selected"
+  ],
+  "readiness_owner": "Gchism94",
+  "update_rule": "Human-reviewed acceptance evidence only; metadata automation cannot edit this file"
+}

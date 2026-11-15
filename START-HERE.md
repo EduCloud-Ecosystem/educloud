@@ -1,5 +1,7 @@
 # EduCloud — Project Folder
 
+> Current pilot entry point: [README status](README.md#pilot-status), [integration guide](docs/pilot/INTEGRATION.md), and [reviewed readiness](pilot/readiness.json). Material below retains its original dates; it is historical unless independently refreshed.
+
 *Start here · June 2026*
 
 > **July 2026 update.** Names are settled: Cairn (was Quad), Belay (was Sol),

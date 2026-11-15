@@ -4,7 +4,7 @@ This repo (`educloud`) is the umbrella of the EduCloud ecosystem: strategy,
 platform-wide decisions, funding, governance, and the canonical definitions
 every module repo implements against. It is not itself a module — it has no
 `CC-<series>*` prompt series of its own. Module repos: `cairn`
-(classroom/LMS), `belay` (AI tutor), `portage` (LLM routing engine),
+(classroom/LMS), `belay-classroom` (classroom tutor; original `belay` is a separate line), `portage` (LLM routing engine),
 `outfitter` (compute broker), `waypoint` (hosting/identity). `portage-local`
 is a separate personal deployment, currently on hold — not part of this
 ecosystem's active work.
@@ -78,3 +78,7 @@ module repo from within this repo, still check that module's own
 - `docs/decisions/`, `docs/policy/`, `docs/specs/`, `docs/research/`,
   `docs/strategy/` — cross-module decisions and research; see "Where a
   decision belongs" above before adding here
+
+## Current pilot maintenance
+
+Read `AGENTS.md`, `docs/development/PILOT_PROTOCOL_V1.md` and `docs/pilot/INTEGRATION.md`. `README.md` is the centralized dated pilot status; `pilot/readiness.json` is manual acceptance, while `pilot/status.json` is automated public metadata. Preserve historical evidence and do not equate check status with deployment.

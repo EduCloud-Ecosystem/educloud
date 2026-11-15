@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-11-15T20:26:11.389513+00:00",
+  "scope": "public main-head GitHub checks only; not runtime acceptance",
+  "components": [
+    {
+      "repository": "educloud",
+      "head": "ab8e7951cf61cc9739aa7b2b9ddc78097bb56c68",
+      "declared_protocol": "not installed",
+      "checks": {
+        "passed": 0,
+        "failed": 0,
+        "pending": 0,
+        "skipped_or_cancelled": 0
+      },
+      "checks_truncated": false,
+      "open_prs_observed": 2,
+      "prs_truncated": false
+    },
+    {
+      "repository": "belay-classroom",
+      "head": "59bb84c6cd6d91af773417bd0e42acb0eb0d8eea",
+      "declared_protocol": "not installed",
+      "checks": {
+        "passed": 4,
+        "failed": 0,
+        "pending": 0,
+        "skipped_or_cancelled": 0
+      },
+      "checks_truncated": false,
+      "open_prs_observed": 0,
+      "prs_truncated": false
+    },
+    {
+      "repository": "cairn",
+      "head": "229304381b7312bbb9bf2014c63b201132965e24",
+      "declared_protocol": "not installed",
+      "checks": {
+        "passed": 8,
+        "failed": 0,
+        "pending": 0,
+        "skipped_or_cancelled": 4
+      },
+      "checks_truncated": false,
+      "open_prs_observed": 0,
+      "prs_truncated": false
+    },
+    {
+      "repository": "waypoint",
+      "head": "dfdd8c696ef13885cad45ef824efacdf0ea4fa7b",
+      "declared_protocol": "not installed",
+      "checks": {
+        "passed": 1,
+        "failed": 0,
+        "pending": 0,
+        "skipped_or_cancelled": 0
+      },
+      "checks_truncated": false,
+      "open_prs_observed": 3,
+      "prs_truncated": false
+    },
+    {
+      "repository": "portage",
+      "head": "97ef5cbdf1fd10479de917203602ded3c42cda0e",
+      "declared_protocol": "not installed",
+      "checks": {
+        "passed": 0,
+        "failed": 0,
+        "pending": 0,
+        "skipped_or_cancelled": 0
+      },
+      "checks_truncated": false,
+      "open_prs_observed": 8,
+      "prs_truncated": false
+    },
+    {
+      "repository": "outfitter",
+      "head": "cc3ea6f1a9bc5ef4f03c5d3ee61acb3d682fc472",
+      "declared_protocol": "not installed",
+      "checks": {
+        "passed": 2,
+        "failed": 0,
+        "pending": 0,
+        "skipped_or_cancelled": 0
+      },
+      "checks_truncated": false,
+      "open_prs_observed": 0,
+      "prs_truncated": false
+    }
+  ]
+}
