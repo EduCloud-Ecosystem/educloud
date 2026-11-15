@@ -1,0 +1,28 @@
+/* Proposed shared design tokens. Not imported into application code.
+ * Primary brand colors: https://marcom.arizona.edu/brand-guidelines/colors
+ * Proxima Nova is not bundled; use only when separately licensed/provided.
+ */
+.educloud-theme {
+  color-scheme: light dark;
+  --ec-arizona-blue: #0c234b;
+  --ec-arizona-red: #ab0520;
+  --ec-cloud: #e5eff7;
+  --ec-caliche: #f2efea;
+  --ec-white: #ffffff;
+  --ec-surface: light-dark(#ffffff, #111d30);
+  --ec-canvas: light-dark(#f7f9fc, #0b1525);
+  --ec-text: light-dark(#172b48, #e5eff7);
+  --ec-text-secondary: light-dark(#506075, #afbdd0);
+  --ec-border: light-dark(#d9e0e8, #37465d);
+  --ec-selection: light-dark(#e5eff7, #23334c);
+  --ec-primary-action: var(--ec-arizona-red);
+  --ec-primary-action-text: var(--ec-white);
+  --ec-primary-action-hover: #850000;
+  --ec-focus: #106ab1;
+  --ec-positive-text: light-dark(#245943, #9ed2b9);
+  --ec-ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --ec-code-font: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --ec-radius-control: 5px;
+  --ec-radius-dialog: 8px;
+  --ec-space-unit: 4px;
+}
