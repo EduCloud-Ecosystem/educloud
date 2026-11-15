@@ -2,3 +2,7 @@
 
 # device-bridge git lock workaround (bridge cannot unlink)
 _git_locks_to_delete/
+
+# Local stdlib verification artifacts
+__pycache__/
+*.py[cod]

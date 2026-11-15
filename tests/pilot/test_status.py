@@ -75,10 +75,16 @@ class StatusControls(unittest.TestCase):
                          {'passed': 0, 'failed': 1, 'pending': 1, 'skipped_or_cancelled': 0})
 
     def test_acquisition_failure_does_not_write_previous_snapshot(self):
-        old = (ROOT / 'pilot/readiness.json').read_bytes()
-        with patch.object(status, 'api', side_effect=RuntimeError('offline')):
-            with self.assertRaises(RuntimeError): status.collect()
-        self.assertEqual((ROOT / 'pilot/readiness.json').read_bytes(), old)
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); (root / 'pilot').mkdir()
+            (root / 'pilot/readiness.json').write_text(json.dumps(self.readiness))
+            (root / 'pilot/status.json').write_text('retained status')
+            (root / 'README.md').write_text('retained README')
+            with patch.object(status, 'ROOT', root), patch.object(status, 'api', side_effect=RuntimeError('offline')), patch('sys.argv', ['status.py', 'refresh']):
+                with self.assertRaises(RuntimeError): status.main()
+            self.assertEqual((root / 'pilot/status.json').read_text(), 'retained status')
+            self.assertEqual((root / 'README.md').read_text(), 'retained README')
+            self.assertEqual(json.loads((root / 'pilot/readiness.json').read_text()), self.readiness)
 
     def test_existing_proposal_prevents_duplicate_writes(self):
         with patch.object(status, 'api', return_value=[{'head': {'ref': 'codex/pilot-status-existing'}}]) as api:
