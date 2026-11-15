@@ -41,8 +41,7 @@ PR prevents duplicate proposals. It never updates readiness, merges, provisions,
 executes models or deploys. It uses the main checkout and pinned actions; no
 untrusted PR code runs with write credentials. It explicitly dispatches the
 protocol check for its branch because bot-token PR events may not trigger CI.
-If GitHub disallows PR creation, the job fails visibly; do not silently change
-organization permissions or claim the updater works.
+The organization currently disallows bot PR creation (confirmed by a rejected repository-level enablement request). The updater detects that policy before any branch/tree writes and reports **REPORT ONLY**, retaining a verified two-file artifact for 14 days. An owner can apply that artifact in a reviewed PR. Enabling automatic PR creation remains an explicit organization-policy decision; no organization permission was changed. Unexpected API failures still fail the job visibly.
 
 ## Agent implementation and review
 
@@ -58,3 +57,5 @@ rollback, approved data handling and human course acceptance. See the integratio
 guide and readiness record. The current local instructor test is not a selected
 host deployment. Required-check configuration, workflow execution and actual
 readiness are reported separately in the rollout record.
+
+Current protections require a PR, an up-to-date `pilot-protocol` check from GitHub Actions, and block main-branch deletion/force pushes. They do not require Sonar/CodeRabbit or pretend every path-filtered runtime workflow is always triggered. Component runtime verification remains mandatory under the implementation protocol.

@@ -44,6 +44,16 @@
           "run": "python3 tools/pilot/status.py refresh\npython3 tools/pilot/status.py check"
         },
         {
+          "name": "Retain verified proposed snapshot",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "pilot-status-proposal",
+            "path": "README.md\npilot/status.json",
+            "if-no-files-found": "error",
+            "retention-days": 14
+          }
+        },
+        {
           "name": "Propose reviewed documentation only",
           "env": {
             "GH_TOKEN": "${{ github.token }}"
