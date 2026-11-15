@@ -25,3 +25,5 @@ pinned and retains failures. See CI-AND-BADGES.md for the preceding review pass.
 ## Organization-policy finding
 
 The first real maintenance run, 43758610325, collected and validated public metadata but failed when organization policy denied the bot PR. The repository-level enablement request returned HTTP 409; organization settings were not changed. The generated proposal branch and failed run remain evidence. The repair checks policy before remote writes and retains an artifact in report-only mode. The fallback and two-file write allowlist have dedicated offline controls. PR automation remains policy-blocked until explicitly enabled by the organization owner.
+
+The second run, 43758931667, successfully uploaded artifact 14179566581 but failed when the bot queried administrator-only workflow permissions. The final implementation uses a reviewed local maintenance-mode declaration and read-only workflow credentials; report-only needs no administrative API access and performs no writes. Both failed runs remain available. A subsequent live workflow result must confirm the corrected behavior.
