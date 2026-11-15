@@ -2,6 +2,18 @@
 
 Prepared 2026-11-14 (America/Los_Angeles). Status: two interactive design proposals, not deployed application changes. The working classroom pilot is preserved.
 
+## Accessibility and appearance revision — 2026-11-14
+
+Greg requested a lighter treatment, explicit light/dark modes and a separate full UI audit. This revision supersedes the original description of Focus's solid navy masthead below. Both variants now default to light, use a neutral masthead, and expose a labeled Light / Dark / System selector. The selected appearance applies across both proposals and is retained in optional preview state. System mode tracks the operating-system preference. Dark mode uses neutral charcoal surfaces and brighter text rather than a deep navy canvas. Arizona Blue and Red remain brand accents.
+
+Increased small labels and code text, separated decorative rules from meaningful control boundaries, added theme-specific focus and selection indicators, specified placeholder contrast and forced-colors treatment, and paired selected states with borders/underlines. The change preserves the native notebook arrangement and existing explicit confirmation steps. No application source was changed.
+
+The earlier light input border measured only **1.331:1** against white. The earlier dark focus ring measured **2.993:1** against its surface; rounding would conceal that it falls below 3:1. Both were corrected. The updated source palette passes **58 authored foreground/background checks**, using 4.5:1 for normal text and 3:1 for meaningful control/focus/selection indicators. Minimum checked normal text is 5.509:1 in light mode and 6.343:1 in dark mode. These are calculations on specified colors, not browser-computed CSS or WCAG certification. Sources: [W3C text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) and [W3C non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html).
+
+Current source hash and all calculated pairs are in `THEME_VALIDATION.json`. `VALIDATION.json` is retained as the original revision's historical evidence. JavaScript syntax passed again. Rendered theme switching, reflow, keyboard and assistive-technology acceptance remain pending. The earlier browser protocol-policy block is preserved; it has not been bypassed.
+
+Independent audit chat: **01a1ddb6-8f4c-7491-b3f4-7fabf316b658**. It owns only the report namespace `docs/audits/learning-studio-ui-2026-11-14`, is auditing actual component source and available provider-disabled synthetic workflows, and must report ranked findings with explicit checked/unchecked coverage. It does not own these proposal files or authorize application changes. At this revision's checkpoint it is in progress, with source pins confirmed and a provider-disabled rehearsal identified; no audit completion claim is made here.
+
 ## Recommendation
 
 Use **Studio Classic** as the classroom pilot direction. Retain Jupyter's familiar file tree, notebook tabs, code cells, run/save controls and explicit submission. Apply a unified Arizona palette and simplify the tutoring and submission handoffs. **Studio Focus** offers the same workflow with a collapsed file tree, quieter tool rail, wider reading area and navy course masthead. It is an alternative default, not a separate student product.
