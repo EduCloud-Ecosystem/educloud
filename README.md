@@ -38,6 +38,8 @@ Outstanding: selected host/sign-in, approved data flow and retention, deployed b
 The latest synthetic rehearsal passed 13 workflow controls and seven supplementary UI controls, with no model requests. It does not qualify restricted data or student admission.
 <!-- educloud-pilot-status:end -->
 
+Scheduled maintenance currently produces verified **report-only artifacts**. Organization policy blocks bot-created PRs; automatic README publication is not enabled.
+
 ## Product lines
 
 **Learning Studio** is the classroom notebook/tutor/submission experience. **Inquiry** is a separate research-driven course/capstone experience. Research POC, benchmarking and agentic science have separate evidence and release gates; classroom tests do not establish scientific validity or a self-organization advantage.

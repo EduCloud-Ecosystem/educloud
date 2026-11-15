@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "proposal_mode": "report-only",
+  "reason": "Organization policy prohibits GitHub Actions PR creation; bot credentials cannot inspect administrator permission settings.",
+  "enablement_requires": "Owner-approved organization policy and reviewed workflow write permissions; no automatic promotion."
+}

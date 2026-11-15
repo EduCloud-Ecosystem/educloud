@@ -41,7 +41,7 @@ PR prevents duplicate proposals. It never updates readiness, merges, provisions,
 executes models or deploys. It uses the main checkout and pinned actions; no
 untrusted PR code runs with write credentials. It explicitly dispatches the
 protocol check for its branch because bot-token PR events may not trigger CI.
-The organization currently disallows bot PR creation (confirmed by a rejected repository-level enablement request). The updater detects that policy before any branch/tree writes and reports **REPORT ONLY**, retaining a verified two-file artifact for 14 days. An owner can apply that artifact in a reviewed PR. Enabling automatic PR creation remains an explicit organization-policy decision; no organization permission was changed. Unexpected API failures still fail the job visibly.
+The organization currently disallows bot PR creation (confirmed by a rejected repository-level enablement request). The reviewed `pilot/maintenance.json` fixes the deployed mode to **REPORT ONLY**, and the scheduled job has read-only repository permissions. It does not query administrator-only settings. It reports that limitation and retaining a verified two-file artifact for 14 days. An owner can apply that artifact in a reviewed PR. Enabling automatic PR creation requires an explicit organization-policy decision, reviewed mode change and narrowly scoped workflow write permissions; no organization permission was changed. Unexpected API failures still fail the job visibly.
 
 ## Agent implementation and review
 

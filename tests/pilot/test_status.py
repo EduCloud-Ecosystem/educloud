@@ -87,26 +87,29 @@ class StatusControls(unittest.TestCase):
             self.assertEqual(json.loads((root / 'pilot/readiness.json').read_text()), self.readiness)
 
     def test_existing_proposal_prevents_duplicate_writes(self):
-        with patch.object(status, 'api', return_value=[{'head': {'ref': 'codex/pilot-status-existing'}}]) as api:
-            status.propose()
-        self.assertEqual(api.call_count, 1)
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); (root / 'pilot').mkdir()
+            (root / 'pilot/maintenance.json').write_text('{"proposal_mode":"open-pull-request"}')
+            with patch.object(status, 'api', return_value=[{'head': {'ref': 'codex/pilot-status-existing'}}]) as api:
+                status.propose(root)
+            self.assertEqual(api.call_count, 1)
 
-    def test_org_policy_refusal_is_report_only_without_writes(self):
-        with patch.object(status, 'api', side_effect=[[], {'can_approve_pull_request_reviews': False}]) as api, patch.dict(status.os.environ, {}, clear=True):
+    def test_report_only_needs_no_administrative_access_or_writes(self):
+        with patch.object(status, 'api', side_effect=RuntimeError('No API access needed')) as api, patch.dict(status.os.environ, {}, clear=True):
             status.propose()
-        self.assertEqual(api.call_count, 2)
-        self.assertTrue(all(len(call.args) == 1 for call in api.call_args_list))
+        api.assert_not_called()
 
     def test_write_proposal_has_exact_allowlist_and_no_ready_file(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder); (root / 'pilot').mkdir()
             (root / 'README.md').write_text('reviewed README')
             (root / 'pilot/status.json').write_text('{}')
-            answers = [[], {'can_approve_pull_request_reviews': True}, {'object': {'sha': 'a' * 40}}, {'tree': {'sha': 'b' * 40}},
+            (root / 'pilot/maintenance.json').write_text('{"proposal_mode":"open-pull-request"}')
+            answers = [[], {'object': {'sha': 'a' * 40}}, {'tree': {'sha': 'b' * 40}},
                        {'sha': 'c' * 40}, {'sha': 'd' * 40}, {}, {'html_url': 'https://github.com/example/pr'}, None]
             with patch.object(status, 'api', side_effect=answers) as api, patch.object(status.subprocess, 'check_output', return_value='a' * 40):
                 status.propose(root)
-            tree = api.call_args_list[4].args[1]['tree']
+            tree = api.call_args_list[3].args[1]['tree']
             self.assertEqual([entry['path'] for entry in tree], ['README.md', 'pilot/status.json'])
             self.assertTrue(api.call_args_list[-1].args[0].endswith('/pilot-protocol.yml/dispatches'))
 

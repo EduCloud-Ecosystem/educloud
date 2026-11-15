@@ -133,21 +133,23 @@ def update_readme(text, block):
 
 
 def propose(root=ROOT):
-    prefix = 'repos/' + ORG + '/educloud'
-    pulls = api(prefix + '/pulls?state=open&per_page=100')
-    if len(pulls) == 100:
-        raise ValueError('PR inventory limit reached; manual triage required')
-    if any(p['head']['ref'].startswith('codex/pilot-status-') for p in pulls):
-        print('An existing maintenance PR awaits review; no new proposal created')
-        return
-    permissions = api(prefix + '/actions/permissions/workflow')
-    if not permissions.get('can_approve_pull_request_reviews', False):
+    mode = json.loads((root / 'pilot/maintenance.json').read_text())['proposal_mode']
+    if mode not in ('report-only', 'open-pull-request'):
+        raise ValueError('Unknown maintenance mode')
+    if mode == 'report-only':
         message = 'REPORT ONLY: organization/repository policy blocks bot pull requests. Review the verified pilot-status-proposal artifact; no readiness or repository files were changed remotely.'
         print(message)
         summary = os.environ.get('GITHUB_STEP_SUMMARY')
         if summary:
             with open(summary, 'a', encoding='utf-8') as stream:
                 stream.write('## Pilot status maintenance\n\n' + message + '\n')
+        return
+    prefix = 'repos/' + ORG + '/educloud'
+    pulls = api(prefix + '/pulls?state=open&per_page=100')
+    if len(pulls) == 100:
+        raise ValueError('PR inventory limit reached; manual triage required')
+    if any(p['head']['ref'].startswith('codex/pilot-status-') for p in pulls):
+        print('An existing maintenance PR awaits review; no new proposal created')
         return
     branch = 'codex/pilot-status-' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     head = api(prefix + '/git/ref/heads/main')['object']['sha']
