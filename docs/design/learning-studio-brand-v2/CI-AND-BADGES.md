@@ -38,3 +38,5 @@ A fresh integrated rehearsal at Waypoint `febf0b7` failed because its observer r
 ## Post-review integrated result
 
 Waypoint `d75b90e57eea5c74f6b30b7275f0a5ca50aeceb4` with Cairn `240b8b9c9f802e759175f6941b34c194f780e84c` passed all 13 actual local synthetic NHANES controls, 200.51 seconds, zero model transports, cleanup true. The v2 evidence records the prior failed save observation and seven supplemental UI controls. Waypoint documentation-only descendant `9b815043c8ec9162463fcc0ef2d4ef44b86255fe` publishes the record; it does not change the tested application tree. Cairn #44 merged after all CI and advisory reviews completed successfully. Waypoint #73 retains its advisory Sonar failure; other component CI and merge state must be checked at the final head. No new student deployment or live model call was performed.
+
+Final merge/protection/maintenance evidence is recorded in [the pilot rollout](../../development/PILOT_ROLLOUT_V1.md). Waypoint #73 is merged with applicable deterministic CI passed, manual continuity skipped and the advisory Sonar failure retained.

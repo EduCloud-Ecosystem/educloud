@@ -21,15 +21,15 @@ A connected learning workspace: notebooks, governed AI tutoring, explicit submis
 
 **Local synthetic instructor testing: verified. Student deployment: pending.**
 
-GitHub snapshot: 2026-11-15T20:33:47.241103+00:00. Refreshes are proposed by automation.
+GitHub snapshot: 2026-11-15T20:38:52.786709+00:00. Refreshes are proposed by automation.
 Check counts are observations at each listed main commit, including advisory tools; they are not a release verdict.
 
 | Component | Pilot role | Main revision | Declared protocol | Observed checks | Open PRs |
 | --- | --- | --- | --- | --- | --- |
-| [educloud](https://github.com/EduCloud-Ecosystem/educloud) | Guide and release record | [65f3010b](https://github.com/EduCloud-Ecosystem/educloud/commit/65f3010b87e09ce60865edc5aa23a9605d105b37) | v1 matches | 1 passed, 1 failed, 0 pending, 0 skipped/or/cancelled | 2 |
-| [belay-classroom](https://github.com/EduCloud-Ecosystem/belay-classroom) | Required for live tutoring | [9455a528](https://github.com/EduCloud-Ecosystem/belay-classroom/commit/9455a5283b6097e5b65e3269cc287efc23c8c277) | v1 matches | 3 passed, 0 failed, 2 pending, 0 skipped/or/cancelled | 0 |
+| [educloud](https://github.com/EduCloud-Ecosystem/educloud) | Guide and release record | [a7f59abb](https://github.com/EduCloud-Ecosystem/educloud/commit/a7f59abbce40258a8da44980c3e2886513062f96) | v1 matches | 0 passed, 0 failed, 2 pending, 0 skipped/or/cancelled | 2 |
+| [belay-classroom](https://github.com/EduCloud-Ecosystem/belay-classroom) | Required for live tutoring | [9455a528](https://github.com/EduCloud-Ecosystem/belay-classroom/commit/9455a5283b6097e5b65e3269cc287efc23c8c277) | v1 matches | 5 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 0 |
 | [cairn](https://github.com/EduCloud-Ecosystem/cairn) | Required for submission and grading | [e03cb424](https://github.com/EduCloud-Ecosystem/cairn/commit/e03cb42405ed14014150cc3d4e33df8679476bb8) | v1 matches | 9 passed, 0 failed, 0 pending, 4 skipped/or/cancelled | 0 |
-| [waypoint](https://github.com/EduCloud-Ecosystem/waypoint) | Required for notebook workspace | [63104113](https://github.com/EduCloud-Ecosystem/waypoint/commit/631041130c3f3d42ef23d06f5c0a713cd18760af) | v1 matches | 2 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 3 |
+| [waypoint](https://github.com/EduCloud-Ecosystem/waypoint) | Required for notebook workspace | [2112a380](https://github.com/EduCloud-Ecosystem/waypoint/commit/2112a380c99580b4aa250d4096bf6254d77c1f10) | v1 matches | 5 passed, 1 failed, 2 pending, 1 skipped/or/cancelled | 2 |
 | [portage](https://github.com/EduCloud-Ecosystem/portage) | Required for governed live model calls | [e3366502](https://github.com/EduCloud-Ecosystem/portage/commit/e3366502107e546f2651933e4549dd8da53c507a) | v1 matches | 1 passed, 0 failed, 0 pending, 0 skipped/or/cancelled | 8 |
 | [outfitter](https://github.com/EduCloud-Ecosystem/outfitter) | Conditional on broker-managed compute | [bfc3ac48](https://github.com/EduCloud-Ecosystem/outfitter/commit/bfc3ac48acbae7fafb7893ee35a9332f848d5c15) | v1 matches | 2 passed, 0 failed, 1 pending, 0 skipped/or/cancelled | 0 |
 

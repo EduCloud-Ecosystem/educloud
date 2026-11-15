@@ -28,6 +28,7 @@ experiment, endpoint qualification, deployment or measured saving implied.
 - `docs/pilot/INTEGRATION.md`: current component responsibilities and complete classroom journey.
 - `docs/development/PILOT_PROTOCOL_V1.md`: shared implementation and agent-maintenance protocol.
 - `docs/development/MAINTENANCE.md`: deterministic CI and bounded status proposal automation.
+- `docs/development/PILOT_ROLLOUT_V1.md`: merged adoption, verified protections, actual maintenance run/artifact and preserved failures.
 - `pilot/components.json`: component/workflow inventory; `pilot/readiness.json`: manual acceptance; `pilot/status.json`: machine-collected observations.
 - `CONTRIBUTING.md`: current umbrella contribution guide. The older `project-docs` material is retained for historical component design.
 

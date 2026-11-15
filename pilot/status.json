@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-11-15T20:33:47.241103+00:00",
+  "observed_at": "2026-11-15T20:38:52.786709+00:00",
   "scope": "public main-head GitHub checks only; not runtime acceptance",
   "components": [
     {
       "repository": "educloud",
-      "head": "65f3010b87e09ce60865edc5aa23a9605d105b37",
+      "head": "a7f59abbce40258a8da44980c3e2886513062f96",
       "declared_protocol": "v1 matches",
       "checks": {
-        "passed": 1,
-        "failed": 1,
-        "pending": 0,
+        "passed": 0,
+        "failed": 0,
+        "pending": 2,
         "skipped_or_cancelled": 0
       },
       "checks_truncated": false,
@@ -22,9 +22,9 @@
       "head": "9455a5283b6097e5b65e3269cc287efc23c8c277",
       "declared_protocol": "v1 matches",
       "checks": {
-        "passed": 3,
+        "passed": 5,
         "failed": 0,
-        "pending": 2,
+        "pending": 0,
         "skipped_or_cancelled": 0
       },
       "checks_truncated": false,
@@ -47,16 +47,16 @@
     },
     {
       "repository": "waypoint",
-      "head": "631041130c3f3d42ef23d06f5c0a713cd18760af",
+      "head": "2112a380c99580b4aa250d4096bf6254d77c1f10",
       "declared_protocol": "v1 matches",
       "checks": {
-        "passed": 2,
-        "failed": 0,
-        "pending": 0,
-        "skipped_or_cancelled": 0
+        "passed": 5,
+        "failed": 1,
+        "pending": 2,
+        "skipped_or_cancelled": 1
       },
       "checks_truncated": false,
-      "open_prs_observed": 3,
+      "open_prs_observed": 2,
       "prs_truncated": false
     },
     {
