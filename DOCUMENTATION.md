@@ -22,6 +22,15 @@ experiment, endpoint qualification, deployment or measured saving implied.
 | `educloud/EDUCLOUD-INVENTORY.md` | The July 21 orientation pass: directory map, document inventory, duplicates, staleness flags. |
 | `educloud/START-HERE.md` | June umbrella index + next-step gates. **Stale** (old names, superseded PESOSE date) — retained until SYSTEM.md/name propagation lands. |
 
+## Pilot maintenance and current status
+
+- `README.md`: generated public GitHub observations and separately reviewed readiness.
+- `docs/pilot/INTEGRATION.md`: current component responsibilities and complete classroom journey.
+- `docs/development/PILOT_PROTOCOL_V1.md`: shared implementation and agent-maintenance protocol.
+- `docs/development/MAINTENANCE.md`: deterministic CI and bounded status proposal automation.
+- `pilot/components.json`: component/workflow inventory; `pilot/readiness.json`: manual acceptance; `pilot/status.json`: machine-collected observations.
+- `CONTRIBUTING.md`: current umbrella contribution guide. The older `project-docs` material is retained for historical component design.
+
 ## Classroom student release
 
 [Student release gates](docs/specs/classroom-student-release-v1.md) records the desktop synthetic baseline, exact component pins, runtime repair and remaining course, hosting, data-flow, recovery and human acceptance gates. Student admission remains closed; synthetic checks are not deployment acceptance. The [NHANES live evidence record](docs/evidence/nhanes-classroom-live-2026-11-14.json) pins the now-tested notebook/tutoring/submission path, instructor launcher, failures and actual request accounting.
@@ -291,6 +300,12 @@ naming) · Belay's full set (`DCO`, `LICENSING.md`, `CODE_OF_CONDUCT.md`,
 | `mesa/educloud-mesa-integration.html` + `educloud-mesa-pitch.pdf` | MESA/Tyson — interactive integration page + one-pager. |
 
 ## Known gaps (tracked in EDUCLOUD-STATUS.md)
+
+Current classroom gates are recorded in `pilot/readiness.json`: host/sign-in,
+approved data destinations and retention, deployed recovery/cleanup and human
+course acceptance. The synthetic instructor workflow is verified, not deployed.
+The research records below retain their original scope and dates.
+
 
 October 19 assessment development is active; the new temporary mode is not yet
 accepted or deployed as a complete service. The first manifest/preview and pure

@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "components": [
+    {
+      "protocol_version": "educloud-pilot-v1",
+      "protocol_sha256": "099b676f0763440c7979657971260ed417750c73dd2954960ff8cb81bf9c6ce6",
+      "repository": "educloud",
+      "authority": "Coordination and shared contracts",
+      "pilot_role": "Guide and release record",
+      "required_workflows": [
+        "resource-efficiency.yml"
+      ],
+      "local_verification": "python3 -m unittest discover -s tests/pilot -v",
+      "integration_verification": "Review producer/consumer pins and the complete classroom acceptance record."
+    },
+    {
+      "protocol_version": "educloud-pilot-v1",
+      "protocol_sha256": "099b676f0763440c7979657971260ed417750c73dd2954960ff8cb81bf9c6ce6",
+      "repository": "belay-classroom",
+      "authority": "Tutoring policy and assistance",
+      "pilot_role": "Required for live tutoring",
+      "required_workflows": [
+        "ci.yml",
+        "enrollment-integration.yml",
+        "portage-integration.yml"
+      ],
+      "local_verification": "Use docs/development/codex-workflow.md and CI for locked backend/frontend commands.",
+      "integration_verification": "Exercise authenticated tutoring through Portage, refusal, retry, expiry and notebook handoff."
+    },
+    {
+      "protocol_version": "educloud-pilot-v1",
+      "protocol_sha256": "099b676f0763440c7979657971260ed417750c73dd2954960ff8cb81bf9c6ce6",
+      "repository": "cairn",
+      "authority": "Roster, submission, publication, grading and instructor review",
+      "pilot_role": "Required for submission and grading",
+      "required_workflows": [
+        "ci.yml",
+        "recovery.yml",
+        "synthetic-outfitter.yml"
+      ],
+      "local_verification": "go build ./...; go vet ./...; go test ./...; use web/package-lock.json and web scripts for dashboard checks.",
+      "integration_verification": "Exercise actual saved-file preview/confirmation, immutable receipt, grading, refresh and restoration."
+    },
+    {
+      "protocol_version": "educloud-pilot-v1",
+      "protocol_sha256": "099b676f0763440c7979657971260ed417750c73dd2954960ff8cb81bf9c6ce6",
+      "repository": "waypoint",
+      "authority": "Workspace admission, identity, isolation, fencing and retention",
+      "pilot_role": "Required for notebook workspace",
+      "required_workflows": [
+        "course-workspace.yml",
+        "course-rehearsal.yml",
+        "authenticated-runtime.yml",
+        "institutional-recovery.yml",
+        "remote-notebooks.yml",
+        "worker-operations.yml",
+        "workspace-quotas.yml",
+        "workspace-recovery.yml"
+      ],
+      "local_verification": "Use course-workspace/VALIDATION.md and the matching workflow; run unittest controls with the pinned environment.",
+      "integration_verification": "Run the pinned NHANES notebook/tutor/save/submission journey and actual recovery/expiry controls."
+    },
+    {
+      "protocol_version": "educloud-pilot-v1",
+      "protocol_sha256": "099b676f0763440c7979657971260ed417750c73dd2954960ff8cb81bf9c6ce6",
+      "repository": "portage",
+      "authority": "Model routing, admission and transport/usage accounting",
+      "pilot_role": "Required for governed live model calls",
+      "required_workflows": [
+        "portage-ci.yml",
+        "direct-qualification.yml"
+      ],
+      "local_verification": "uv run pytest -q; retain generated profile re-render checks in portage-ci.yml.",
+      "integration_verification": "Run Belay-classroom consumer controls, real transport retry/accounting controls; paid endpoint qualification is separately authorized."
+    },
+    {
+      "protocol_version": "educloud-pilot-v1",
+      "protocol_sha256": "099b676f0763440c7979657971260ed417750c73dd2954960ff8cb81bf9c6ce6",
+      "repository": "outfitter",
+      "authority": "Placement, finite lifetime, cleanup and resource liabilities",
+      "pilot_role": "Conditional on broker-managed compute",
+      "required_workflows": [
+        "broker.yml"
+      ],
+      "local_verification": "Use broker.yml for Go race/static checks and pinned Docker acceptance.",
+      "integration_verification": "Preserve placement/reservation authority; qualify actual provider cleanup before adoption. Local Docker is not native cloud acceptance."
+    }
+  ]
+}

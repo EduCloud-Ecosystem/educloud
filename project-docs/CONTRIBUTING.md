@@ -1,3 +1,5 @@
+> Historical Quad/component contribution material. For the current EduCloud umbrella, use [CONTRIBUTING.md](../CONTRIBUTING.md) and the [pilot protocol](../docs/development/PILOT_PROTOCOL_V1.md). Component LICENSE/LICENSING files remain authoritative.
+
 # Contributing to Quad
 
 Thanks for your interest in contributing! Quad is an open-source project, and contributions of all kinds are welcome.
