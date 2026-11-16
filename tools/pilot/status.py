@@ -99,12 +99,17 @@ def validate(snapshot, readiness, root=ROOT):
         raise ValueError('This pilot has no admitted deployment; a new release contract is required')
     if not readiness.get('evidence') or not readiness.get('open_gates'):
         raise ValueError('Readiness needs evidence and remaining gates')
+    controls = readiness.get('verified_controls', {})
+    if any(type(controls.get(key)) is not int or controls[key] < 0
+           for key in ('integrated_workflow', 'supplementary_ui', 'actual_model_requests')):
+        raise ValueError('Reviewed control counts must be nonnegative integers')
     inventory(root)
 
 
 def render(snapshot, readiness, root=ROOT):
     validate(snapshot, readiness, root)
     roles = {r['repository']: r['pilot_role'] for r in inventory(root)}
+    controls = readiness['verified_controls']
     lines = [START, '## Pilot status', '',
              '**Local synthetic instructor testing: verified. Student deployment: pending.**', '',
              'GitHub snapshot: ' + snapshot['observed_at'] + '. Refreshes are proposed by automation.',
@@ -119,7 +124,7 @@ def render(snapshot, readiness, root=ROOT):
         lines.append(f'| [{repo}](https://github.com/{ORG}/{repo}) | {roles[repo]} | [{sha[:8]}](https://github.com/{ORG}/{repo}/commit/{sha}) | {row['declared_protocol']} | {checks} | {prs} |')
     lines += ['', 'Readiness is reviewed separately in [the evidence and release gates](pilot/readiness.json).',
               'Outstanding: selected host/sign-in, approved data flow and retention, deployed backup/restore and cleanup, and human course acceptance.',
-              'The latest synthetic rehearsal passed 13 workflow controls and seven supplementary UI controls, with no model requests. It does not qualify restricted data or student admission.',
+              f"Reviewed synthetic evidence: {controls['integrated_workflow']} workflow controls and {controls['supplementary_ui']} supplementary UI controls passed. Actual model requests in this evidence: {controls['actual_model_requests']}. This does not qualify restricted data or student admission.",
               END]
     return '\n'.join(lines)
 

@@ -30,6 +30,20 @@ class StatusControls(unittest.TestCase):
         self.assertIn('Student deployment: pending', text)
         self.assertIn('not a release verdict', text)
 
+    def test_reviewed_counts_refresh_without_stale_prose(self):
+        self.readiness['verified_controls'] = {'integrated_workflow': 13, 'supplementary_ui': 9, 'actual_model_requests': 3}
+        text = status.render(self.snapshot, self.readiness)
+        self.assertIn('13 workflow controls and 9 supplementary UI controls', text)
+        self.assertIn('Actual model requests in this evidence: 3', text)
+        self.assertNotIn('seven supplementary', text)
+        self.assertIn('Student deployment: pending', text)
+
+    def test_invalid_readiness_counts_rejected(self):
+        for value in (-1, True, '3'):
+            with self.subTest(value=value):
+                self.readiness['verified_controls']['actual_model_requests'] = value
+                with self.assertRaises(ValueError): status.render(self.snapshot, self.readiness)
+
     def test_readiness_cannot_be_promoted_by_metadata(self):
         self.readiness['student_admission'] = True
         with self.assertRaises(ValueError): status.render(self.snapshot, self.readiness)
