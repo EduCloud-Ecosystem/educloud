@@ -1,0 +1,136 @@
+{
+  "reviewed_at": "2026-11-16",
+  "scope": "public NHANES data and disposable synthetic course accounts; local instructor qualification",
+  "sources": {
+    "cairn": "533c16a414b9fef1979d0de783b3436f31dd03a7",
+    "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+    "waypoint": "de701887e06c3ae19292b05639a6c9e83ba53d3c",
+    "waypoint_dirty": false,
+    "portage": "b72881f009e61e1311b6e46b92b42841991fd163"
+  },
+  "images": {
+    "grader": "sha256:d8e7745e5644f4e4c4dd49902981a8953485cc188a2263d866ba042aa0e4fab7",
+    "checkout": "sha256:bc9bc6929aafd69d37158bbd273a11818a2b222539242949d5d3c3066d02db8c"
+  },
+  "kernel_python": "3.12.13 (main, May 10 2026, 19:20:41) [Clang 22.1.3 ]",
+  "kernel_lock_sha256": "850c920e279a24048b9c04c1a50925702fe178507cd338d240e6a30b7ebd5676",
+  "task_sha256": "90ce990e48fda333e5f8c3346e86cb20a66fb5c04976e0cad02011432667d8fa",
+  "synthetic_controls": [
+    "native-notebook-and-tutor-light-dark-system",
+    "missing-checkpoint-refused-before-admission",
+    "NHANES-signed-job-stub-hint",
+    "expired-and-disabled-help-no-extra-attempts",
+    "native-python-NHANES-execution-and-save",
+    "wrong-numeric-output-fails-real-pinned-checker",
+    "appearance-preserved-through-cross-origin-handoff",
+    "studio-320-keyboard-pane-switch",
+    "cairn-320-keyboard-preview-and-committed-receipt",
+    "workspace-save-and-cairn-submit-after-tutor-expiry",
+    "explicit-four-file-native-bridge-and-byte-exact-receipt",
+    "changed-preview-payload-refused-409",
+    "receipt-persists-after-restart"
+  ],
+  "live_controls": [
+    "missing-checkpoint-refused-before-admission",
+    "NHANES-signed-job-live-hint",
+    "expired-and-disabled-help-no-extra-attempts",
+    "native-python-NHANES-execution-and-save",
+    "wrong-numeric-output-fails-real-pinned-checker",
+    "explicit-four-file-native-bridge-and-byte-exact-receipt",
+    "changed-preview-payload-refused-409",
+    "receipt-persists-after-restart"
+  ],
+  "supplementary_ui_controls": [
+    "real-detail-response-after-injected-503-and-keyboard-retry",
+    "work-refresh-preserves-focused-expanded-history",
+    "injected-metadata-and-grade-revisions-refresh-open-closed-and-inflight-history",
+    "attempt-history-hides-commits-until-requested",
+    "theme-handoff-consumed-once-preserving-query-and-fragment",
+    "injected-assignment-retry-is-single-flight-and-retains-selected-files",
+    "injected-sign-in-and-expired-preview-recover-selected-files-by-keyboard",
+    "student-three-modes-reload-and-320-reflow",
+    "built-instructor-console-dark-persistence-and-320-reflow"
+  ],
+  "failed_controls": [],
+  "negative_evaluator": {
+    "scope": "deliberately incomplete loopback page, negative evaluator control only",
+    "returncode": 1,
+    "failure_preserved": true,
+    "assertion_preserved": true,
+    "stop_marker_written": true,
+    "provider_calls": 0
+  },
+  "tests": {
+    "waypoint_workspace": {
+      "passed": 769,
+      "failed": 0
+    },
+    "pilot_status": {
+      "passed": 16,
+      "failed": 0
+    }
+  },
+  "actual_provider_requests": 3,
+  "sdk_retries": 0,
+  "provider_internal_retries": "unobservable",
+  "provider_reported_cost_usd": 0.0035692,
+  "reserved_usd": 0.075,
+  "new_unknown_liability_usd": 0,
+  "historical_unknown_liability_usd": 0.025,
+  "portage_ledger": {
+    "committed": 7999,
+    "active": 0,
+    "unresolved": 0
+  },
+  "cleanup": true,
+  "live_model": "openai/gpt-4.1-mini via OpenRouter",
+  "live_hint_review": "Response stayed on key coverage versus missing measurements and did not supply the completed solution. This one review is not broader instructional acceptance.",
+  "submitted_declaration": "ai_assisted; explicitly labels automated synthetic fixture and separate authored solution",
+  "result": {
+    "rows": 192,
+    "correct_score": 4,
+    "max_score": 4,
+    "wrong_score": 0,
+    "submitted_files": 4,
+    "receipt_recovered_after_restart": true
+  },
+  "live_elapsed_seconds": 102.71,
+  "synthetic_elapsed_seconds": 147.45,
+  "raw_evidence": {
+    "synthetic": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/waypoint-studio-classic-v1/output/nhanes-instructor-20261116T182933Z-15058/result.json",
+      "sha256": "936b56466aada04a9fb708388a3715e24e6c145345c5d1b7eb4e984d51c8520f"
+    },
+    "live": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/waypoint-studio-classic-v1/output/final-workflow-20261116/live/result.json",
+      "sha256": "5c3125a585408818ca945af8db5a34896db1ca1b7c7c20dc550b0cd519146879"
+    },
+    "ui": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/cairn-studio-classic-v1/output/final-workflow-20261116-fixture/browser-result.json",
+      "sha256": "7c4d70f5d41f33633d1766ea7816a4e911ce1242df1beb879deed5f9613acc57"
+    },
+    "negative_evaluator": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/waypoint-studio-classic-v1/output/final-workflow-20261116/failure-control/control-result.json",
+      "sha256": "12d899c2139d3e421c9015bb9e8fe11cd81a1b87e731a6564196bad87f6fc89c"
+    },
+    "synthetic_pre_disclosure": {
+      "path": "/Users/gregchism/dev/.educloud-worktrees/waypoint-studio-classic-v1/output/nhanes-instructor-20261116T182214Z-11402/result.json",
+      "sha256": "da331c8b9630e53529c6b2c3439608112c998047d1f8045f6b74c4628c508972"
+    }
+  },
+  "deployment": false,
+  "student_admission": false,
+  "human_course_acceptance": false,
+  "manual_screen_reader_acceptance": false,
+  "waypoint_pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/76",
+  "merge_state": "pending hosted checks",
+  "live_sources": {
+    "cairn": "533c16a414b9fef1979d0de783b3436f31dd03a7",
+    "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
+    "waypoint": "33a24e4ace69448e842d274e9823ebd46801346c",
+    "waypoint_dirty": false,
+    "portage": "b72881f009e61e1311b6e46b92b42841991fd163"
+  },
+  "observer_only_followup": "de70188 adds explicit visible/hidden receipt assertions and documentation; application tree unchanged from successful live run 33a24e4.",
+  "receipt_disclosure_visibility": "keyboard expand and collapse verified by actual visibility assertions"
+}

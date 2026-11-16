@@ -35,7 +35,7 @@ Check counts are observations at each listed main commit, including advisory too
 
 Readiness is reviewed separately in [the evidence and release gates](pilot/readiness.json).
 Outstanding: selected host/sign-in, approved data flow and retention, deployed backup/restore and cleanup, and human course acceptance.
-The latest synthetic rehearsal passed 13 workflow controls and seven supplementary UI controls, with no model requests. It does not qualify restricted data or student admission.
+Reviewed synthetic evidence: 13 workflow controls and 9 supplementary UI controls passed. Actual model requests in this evidence: 3. This does not qualify restricted data or student admission.
 <!-- educloud-pilot-status:end -->
 
 Scheduled maintenance currently produces verified **report-only artifacts**. Organization policy blocks bot-created PRs; automatic README publication is not enabled.

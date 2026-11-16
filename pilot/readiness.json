@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-11-15",
+  "reviewed_at": "2026-11-16",
   "qualification": "local_synthetic_instructor_testing",
   "deployment": false,
   "student_admission": false,
@@ -9,17 +9,20 @@
   "sources": {
     "cairn": "533c16a414b9fef1979d0de783b3436f31dd03a7",
     "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
-    "waypoint": "3fd02fff7d72ee33774fb04704b0308dce443039",
-    "waypoint_dirty": false
+    "waypoint": "de701887e06c3ae19292b05639a6c9e83ba53d3c",
+    "waypoint_dirty": false,
+    "portage": "b72881f009e61e1311b6e46b92b42841991fd163"
   },
   "evidence": [
     "https://github.com/EduCloud-Ecosystem/waypoint/blob/9b815043c8ec9162463fcc0ef2d4ef44b86255fe/docs/studio-classic-verification-v2.json",
-    "https://github.com/EduCloud-Ecosystem/waypoint/blob/98092ad92baae1d0bc0a9f3dca1d93c29d82349c/docs/studio-readability-integration-verification.json"
+    "https://github.com/EduCloud-Ecosystem/waypoint/blob/98092ad92baae1d0bc0a9f3dca1d93c29d82349c/docs/studio-readability-integration-verification.json",
+    "pilot/evidence/studio-workflow-2026-11-16.json"
   ],
   "verified_controls": {
     "integrated_workflow": 13,
     "supplementary_ui": 9,
-    "actual_model_requests": 0
+    "actual_model_requests": 3,
+    "live_workflow": 8
   },
   "open_gates": [
     "Selected maintained host, TLS and current identity/membership authority",
