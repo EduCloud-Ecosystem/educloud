@@ -416,3 +416,51 @@ assets. [Published rc.2](https://github.com/EduCloud-Ecosystem/waypoint/releases
 The SBOM covers the offline operator archive. The packaged learner starter
 bytes match rc.1. Browser qualification, the installed browser runtime and
 packages, and hosted fallback access are outside this release evidence.
+
+## Published Cairn control-plane v0.1.0-rc.1 checkpoint, 16 November 2026
+
+Cairn published its first Linux/amd64 control-plane image prerelease on
+16 November 2026 Pacific time. The tag `v0.1.0-rc.1` points to verified
+Cairn main at `39a010eb73f822aa15c6c30407438f311f6b8fa4`, the merge commit
+for the image SPDX pilot. [Published rc.1](https://github.com/EduCloud-Ecosystem/cairn/releases/tag/v0.1.0-rc.1)
+· [Cairn PR #48](https://github.com/EduCloud-Ecosystem/cairn/pull/48)
+
+The exact Linux/amd64 OCI manifest digest is
+`sha256:93b11edde04f283821806ee830d0a936be6268afd9433fe016e6cd8af3cf3563`.
+`SHA256SUMS` covers the OCI archive, raw manifest, SPDX 2.3 JSON SBOM, and
+`OCI-DIGEST`.
+
+| Published asset | SHA-256 |
+| --- | --- |
+| `cairn-v0.1.0-rc.1-linux-amd64.oci.tar` | `c025481a536ed7def0221aaae1c53f477823bb1bf12c53b99972ae492895f5f3` |
+| `cairn-linux-amd64.manifest.json` | `93b11edde04f283821806ee830d0a936be6268afd9433fe016e6cd8af3cf3563` |
+| `cairn-linux-amd64.spdx.json` | `468d31815ab7d32c146eb24ada25c7c76f4f130bb981cb2989cb560fad0a5e1b` |
+| `OCI-DIGEST` | `48d8b9524d70e2f11d15d4d3c197b072ed51821a0dc5a167ce43eff4e498cee5` |
+| `SHA256SUMS` | `d8dcaaf3729763fab8f182187cca4d5af9ff281a0491b1c35e92e40813a9e4e1` |
+
+- The exact source commit passed Cairn CI, Pilot protocol, Recovery
+  rehearsal, and Synthetic Outfitter consumer. Agentic CI was skipped.
+  [Exact-commit main CI](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/43961985564)
+- The release build verified the image manifest, config, layers, source
+  revision, and Linux/amd64 platform. SPDX tools-python 0.8.5 accepted the
+  digest-bound inventory of 29 installed Alpine packages, 15 Go
+  dependencies plus the standard library, and three bundled dashboard
+  packages (React, React DOM, and Scheduler). The image passed its Trivy
+  gate. The build retained the verified bytes when the initial registry
+  copy failed on archive ownership. The retry pushed those same bytes
+  and verified the manifest by both tag and digest.
+  [Build and inventory verification](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/43973477343)
+  · [Registry verification](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/43973917343)
+- All five assets downloaded from the draft and again after publication
+  matched the verified files byte for byte. The archive digest, layer
+  hashes, SPDX validation, and release checksums passed on both downloads.
+  The published Git tag was checked against the exact source commit.
+
+EduCloud's organization settings restrict the
+[GHCR package](https://github.com/EduCloud-Ecosystem/cairn/pkgs/container/cairn)
+to authenticated accounts with package access. Anonymous pulls are
+unavailable. The same image is available in the
+[public OCI archive](https://github.com/EduCloud-Ecosystem/cairn/releases/download/v0.1.0-rc.1/cairn-v0.1.0-rc.1-linux-amd64.oci.tar).
+This checkpoint records publication and verification of the control-plane
+artifact. The grading worker, deployment, and classroom acceptance have
+separate evidence.
