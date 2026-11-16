@@ -11,3 +11,7 @@ The evaluator now re-raises after retaining a traceback. A deliberately incomple
 Exact source/environment pins, raw evidence hashes, accounting and remaining acceptance boundaries are in pilot/evidence/studio-workflow-2026-11-16.json. This proves bounded local feasibility with one prepared live question, not general teaching effectiveness, institutional sign-in, human accessibility acceptance or a student release. Merge status is recorded separately after hosted checks finish.
 
 The final provider-disabled repetition on de70188 also passed all 13 controls with explicit keyboard visibility checks on receipt details. The live run remains pinned to 33a24e4; the only subsequent differences are those test assertions and documentation, not application behavior. Both raw results are retained.
+
+## Merge completion
+
+Waypoint PR76 merged as df6ee645556939819e4cd4b76bf6a544c0733cb2 after 19 successful PR checks, including Sonar and CodeRabbit. The only skipped check, continuity, runs only on manual workflow dispatch. The merged source tree exactly matches tested head de701887e06c3ae19292b05639a6c9e83ba53d3c. Post-merge CI is a separate execution; the merge does not assert a deployed host or student admission.

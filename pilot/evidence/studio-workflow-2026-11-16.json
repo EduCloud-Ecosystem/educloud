@@ -123,7 +123,7 @@
   "human_course_acceptance": false,
   "manual_screen_reader_acceptance": false,
   "waypoint_pr": "https://github.com/EduCloud-Ecosystem/waypoint/pull/76",
-  "merge_state": "pending hosted checks",
+  "merge_state": "merged",
   "live_sources": {
     "cairn": "533c16a414b9fef1979d0de783b3436f31dd03a7",
     "belay": "c5a27073e74b9eeb7ab697190915378b50132883",
@@ -132,5 +132,111 @@
     "portage": "b72881f009e61e1311b6e46b92b42841991fd163"
   },
   "observer_only_followup": "de70188 adds explicit visible/hidden receipt assertions and documentation; application tree unchanged from successful live run 33a24e4.",
-  "receipt_disclosure_visibility": "keyboard expand and collapse verified by actual visibility assertions"
+  "receipt_disclosure_visibility": "keyboard expand and collapse verified by actual visibility assertions",
+  "waypoint_merge_commit": "df6ee645556939819e4cd4b76bf6a544c0733cb2",
+  "merged_at": "2026-11-16T18:44:41Z",
+  "merged_tree_matches_tested_head": true,
+  "pr_checks": [
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/runs/133518086531",
+      "name": "SonarCloud",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://app.coderabbit.ai/change-stack/EduCloud-Ecosystem/waypoint/pull/76?scope=ghh_OusAJGA4HG8ljoOV0wJvVx8NmnZIjc2DdjmxOu0xZWA",
+      "name": "CodeRabbit",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://sonarcloud.io/dashboard?id=EduCloud-Ecosystem_waypoint&pullRequest=76",
+      "name": "SonarCloud Code Analysis",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360612/job/133517327991",
+      "name": "Reviewed replacement cutover",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929361035/job/133517329390",
+      "name": "policy",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360781/job/133517328682",
+      "name": "pilot-protocol",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360612/job/133517327788",
+      "name": "Saved-file bridge browser boundaries",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360773/job/133517328782",
+      "name": "Actual mTLS Hub Python R runtime",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360612/job/133517328889",
+      "name": "course",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360580/job/133517328015",
+      "name": "maintenance",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929361035/job/133517328758",
+      "name": "https-configuration",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360612/job/133517328196",
+      "name": "Reviewed pending-transfer reconciliation",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360580/job/133517327971",
+      "name": "independent-worker-recovery",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360612/job/133517328086",
+      "name": "Course resource amendments",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360612/job/133517327897",
+      "name": "Logical-worker ownership and fencing contract",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360612/job/133517328002",
+      "name": "Multiple course allocation and isolation",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929361035/job/133517329243",
+      "name": "operator-source-release",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360590/job/133517327051",
+      "name": "Actual worker-channel Python R and Guardian recovery",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929360623/job/133517327229",
+      "name": "institutional-recovery",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43929361035/job/133517332216",
+      "name": "continuity",
+      "state": "SKIPPED"
+    }
+  ],
+  "post_merge_ci": "separate executions; not required to reinterpret the identical tested tree as a new runtime test"
 }
