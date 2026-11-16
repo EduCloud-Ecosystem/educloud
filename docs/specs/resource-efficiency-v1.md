@@ -370,3 +370,49 @@ The download includes the E1 source ZIP, its SPDX 2.3 JSON SBOM, and
 The SBOM inventories the offline E1 source archive. External datasets,
 notebooks, services, and the installed Python runtime are outside that
 inventory. The release evidence covers packaging and offline verification.
+
+## Published Waypoint browser-bundle v1.0.0-rc.2 checkpoint, 15 November 2026
+
+Waypoint published the operator source prerelease on 15 November 2026 Pacific
+time. The tag `browser-bundle-v1.0.0-rc.2` points to verified Waypoint main at
+`462d079b2eff7d18540890760d2d25acc038d8fe`, the merge commit for the operator
+release builder and SPDX inventory. The download contains the operator ZIP,
+source manifest, SPDX 2.3 JSON SBOM, and `SHA256SUMS` covering the other three
+assets. [Published rc.2](https://github.com/EduCloud-Ecosystem/waypoint/releases/tag/browser-bundle-v1.0.0-rc.2)
+· [Waypoint PR #65](https://github.com/EduCloud-Ecosystem/waypoint/pull/65)
+
+| Published asset | SHA-256 |
+| --- | --- |
+| `waypoint-browser-bundle-v1.0.0-rc.2.zip` | `06fd527c693d2ca69a2720fd0d4d1f124c787e4ac4b5b182aea37aa53297afa6` |
+| `SOURCE-MANIFEST.json` | `7abc8359d410d547d7a437dd2ecb4068457a105a699a3dea59176cc0c0aa2ceb` |
+| `waypoint-browser-bundle-v1.0.0-rc.2.spdx.json` | `4f99a98ee08382b23a7c986bad67b42b8300b58f72572f3b0a63d7aa23c800b7` |
+| `SHA256SUMS` | `3f02affe8e2279815ad49cd4fa15f26d029cebe5106c766da2878459891c4c5d` |
+
+- All five automatic workflows passed on the exact merge commit. The course
+  workspace workflow built a test release, checked its hashes, ran the
+  extracted-tool tests, and validated SPDX. Its manual continuity job was
+  skipped. [Course workspace](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43797919966)
+  · [Pilot protocol](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43797920066)
+  · [Authenticated runtime](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43797919962)
+  · [Worker-channel notebooks](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43797919959)
+  · [Worker operations](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43797920018)
+- The synthetic course rehearsal passed on the reviewed PR head
+  `9c546343cb35dabb8b4f8f8eb5b127ca8214433b`, including retired-course
+  export and protected recovery. The merged Git tree matched that head.
+  [PR rehearsal](https://github.com/EduCloud-Ecosystem/waypoint/actions/runs/43795343234)
+- Local rc.2 builds on Python 3.12 and 3.14 produced byte-identical ZIPs
+  and source manifests. All 20 focused tests passed on each version, and
+  all 15 learner bundle tests passed from each extracted ZIP. Each archived
+  file matched the pinned Git bytes and the manifest and SBOM checksums.
+  SPDX tools-python 0.8.5 accepted both sidecars.
+- All four assets downloaded from the draft and again after publication
+  matched the verified local files byte for byte. Both downloads passed
+  checksum and SPDX validation. The published tag was checked against the
+  exact source commit.
+- The rc.1 tag still pointed to `8fa848639c6aa435d849b55e152d5337c8f72140`
+  after rc.2 publication. All four rc.1 assets were byte-identical before
+  and after publication.
+
+The SBOM covers the offline operator archive. The packaged learner starter
+bytes match rc.1. Browser qualification, the installed browser runtime and
+packages, and hosted fallback access are outside this release evidence.
