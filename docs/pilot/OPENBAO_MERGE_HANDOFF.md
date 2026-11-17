@@ -2,7 +2,28 @@
 
 Scope: prepare source and CI, with **default activation closed**. No deployment,
 new model requests, custody import or student admission occurred in this
-preparation. All three PRs remain drafts without auto-merge.
+preparation. All three PRs were prepared as drafts without auto-merge.
+
+## Owner-authorized merge update — November 16, 2026 (Pacific)
+
+Greg subsequently authorized merging ready changes while explicitly keeping
+OpenBao activation gated on his password-manager and backup steps plus verified
+recovery. The reviewed heads and base revisions were unchanged and CI was green.
+No outstanding review findings were present; draft automated reviews were skipped,
+not counted as approvals. No branch-rule bypass or auto-merge was used.
+
+- Portage PR 22 merged as `4f7ac0d3e839012664d4b8272c8446376efc8f1b`.
+- Waypoint PR 77 merged as `73c77271094e5b07c72e277c8fdbf9ef84b5e4ef`.
+- Both used merge commits. GitHub's comparison confirms each reviewed head is an
+  ancestor of its `main`; Waypoint's exact Portage dependency remains reachable.
+- EduCloud PR 75 carries this update and the custody instructions; its GitHub
+  merge record supplies the umbrella merge commit after its final check passes.
+
+**Activation remains closed.** Vault import, separate-backup retrieval and the
+target-instance recovery drill are still unconfirmed. No default launcher,
+runtime configuration, deployment or student-admission state changed. Historical
+verification JSON below retains its original pre-merge snapshot and source pins;
+this update does not rewrite or promote that evidence.
 
 | Component | Review | Proposed source | Purpose |
 | --- | --- | --- | --- |
