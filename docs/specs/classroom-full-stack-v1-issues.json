@@ -1,0 +1,22 @@
+{
+  "belay-classroom": {
+    "number": 4,
+    "url": "https://github.com/EduCloud-Ecosystem/belay-classroom/issues/4"
+  },
+  "portage": {
+    "number": 16,
+    "url": "https://github.com/EduCloud-Ecosystem/portage/issues/16"
+  },
+  "waypoint": {
+    "number": 58,
+    "url": "https://github.com/EduCloud-Ecosystem/waypoint/issues/58"
+  },
+  "cairn": {
+    "number": 37,
+    "url": "https://github.com/EduCloud-Ecosystem/cairn/issues/37"
+  },
+  "educloud": {
+    "number": 56,
+    "url": "https://github.com/EduCloud-Ecosystem/educloud/issues/56"
+  }
+}

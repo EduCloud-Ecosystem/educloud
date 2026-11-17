@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-08",
+  "issue": "https://github.com/EduCloud-Ecosystem/educloud/issues/56",
+  "outcome": "Operator-mediated finite Cairn enrollment snapshot consumed with persistent rollback protection by Belay-classroom; no second roster authority",
+  "bases": {
+    "cairn": {
+      "revision": "04a9fe0a80f66ae5fa9da224b4be10aa184f9956",
+      "branch": "codex/classroom-enrollment-export-v1",
+      "worktree": "/Users/gregchism/dev/.educloud-worktrees/cairn-classroom-enrollment-export-v1",
+      "reason": "Merged verified roster identity and submission paths; no open Cairn PRs; untouched main checkout has unrelated edits"
+    },
+    "belay-classroom": {
+      "revision": "0be46ae9a3154e9f9e17917cc8a6d6d3aafe8433",
+      "branch": "codex/classroom-enrollment-authority-v1",
+      "worktree": "/Users/gregchism/dev/.educloud-worktrees/belay-classroom-enrollment-authority-v1",
+      "reason": "Required roster consumer in draft PR6, now all hosted gates pass"
+    },
+    "waypoint": {
+      "revision": "1e588874051bd97733d7f292c88e158fc3a6077b",
+      "worktree": "/Users/gregchism/dev/.educloud-worktrees/waypoint-classroom-notebook",
+      "purpose": "Read-only existing OIDC seam and notebook contract; no notebook changes in this outcome"
+    },
+    "portage": {
+      "revision": "79742746b10ace18e498111dd5a8f3227edd995c",
+      "purpose": "Unchanged integration dependency"
+    }
+  },
+  "reuse": "Cairn Store roster status plus verified host user ID and assignment records; existing RS256 validation/authorization/worker recheck; stdlib SQLite for consumer watermark; existing Go SQLite dependency for issuance journal",
+  "interface": "Explicit reviewed issuer/subject -> roster/verified host ID binding, pinned assignment digest and tutor exercise version. Private CLI snapshot with authority ID, sequence, issued_at, expires_at <=300s. Journal preserves grant generations across unchanged refreshes, rotates after observed withdrawal or binding changes. Consumer rejects downgrade, expired/future/conflicting/replayed older snapshots with durable watermark. No bearer tokens exported.",
+  "boundaries": [
+    "Cairn internal/enrollment/**, cmd/enrollment-export/**, internal/store/sqlite read-only opener and tests, docs/classroom-enrollment-export-v1.md",
+    "Belay backend/app/auth.py, config.py, authority_state.py, focused tests, deployment/enrollment/**, docs/development/classroom-enrollment-authority-v1.md",
+    "EduCloud existing full-stack coordination records",
+    "Belay .github/workflows/enrollment-integration.yml: exact pinned producer/consumer evaluator on pull requests; no deployment"
+  ],
+  "acceptance": [
+    "Native Cairn SQLite fixture export -> actual Belay authentication and worker checks",
+    "Inactive/missing/unverified/wrong-class/digest-mismatched records cannot grant",
+    "Expiry, wrong issuer/audience/authority, lower sequence, changed same sequence, missing state and downgrade fail closed",
+    "Unchanged refresh preserves generation; observed withdrawal/regrant invalidates original job",
+    "No names, emails, host usernames or host account IDs exported",
+    "Actual SDK/Portage synthetic tests and required component checks"
+  ],
+  "limits": {
+    "source_files": 40,
+    "source_bytes": 300000,
+    "focused_correction_rounds": 4,
+    "test_timeout_seconds": 600,
+    "live_models": 0,
+    "cloud": 0,
+    "private_records": 0
+  },
+  "not_claimed": [
+    "Automatic institutional account linking; operator attestation remains necessary",
+    "Immediate revocation between exports; maximum exposure bounded by expiry",
+    "Protection if privileged operator rolls back both issuance journal and consumer watermark",
+    "Production readiness or full notebook/submission journey"
+  ],
+  "ownership": "This chat owns new isolated worktrees; preserves primary dirt, other registered worktrees, original Belay and stopped research panels",
+  "scope_amendment": "Add dedicated pinned native-component CI because the ordinary backend suite must skip cross-repository fixtures when absent; no relaxation of ordinary gates."
+}

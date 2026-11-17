@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-10",
+  "owner": "This chat only; delegated sole implementation owner",
+  "issue": "EduCloud #56 / Waypoint #58",
+  "outcome": "Explicit roster-bound notebook presenter with finite server-held credentials; preserved no-AI saved-file submission and receipt/reopen",
+  "bases": {
+    "waypoint": "5c9df179a3f914e5ae9e6038f2bf7b95bf6bf824",
+    "cairn": "0cf3158fdf5bbbecc52d3cc9cd88ef33bdfb63fc",
+    "belay-classroom": "656d6ec1e4be5f9ef7267f5a2bb5145a90238dfe",
+    "portage": "79742746b10ace18e498111dd5a8f3227edd995c"
+  },
+  "worktree": "/Users/gregchism/dev/.educloud-worktrees/waypoint-classroom-roster-presenter-v1",
+  "branch": "codex/classroom-roster-presenter-v1",
+  "base_rationale": "Merged classroom-notebook implementation; relevant proxy, submission and course fixture files exactly match previously inspected 1e588874; no open Waypoint PR overlap",
+  "boundaries": [
+    "course-workspace/course/waypoint_belay/**",
+    "course-workspace/tests/test_roster_presenter.py",
+    "course-workspace/rehearsal/roster_presenter*",
+    "course-workspace/ROSTER-PRESENTER.md",
+    ".github/workflows/course-workspace.yml",
+    "EduCloud existing coordination records",
+    "course-workspace/tests/test_submission_bridge_server.py fixture packaging only"
+  ],
+  "reuse": "Existing Jupyter cookie/XSRF proxy and explicit selected-file submission; Cairn authoritative enrollment exporter, signed Belay auth/worker recheck, Portage budgets. No new roster or grading authority.",
+  "controls": [
+    "Strict operator principal/roster/class/assignment binding from current finite Cairn snapshot",
+    "Credential rotation without browser token exposure; expired or mismatched credentials refuse",
+    "Disabled assistance makes zero provider attempts; saved work and explicit submission remain available",
+    "Rendered default/expiry/refusal/no-AI flow and human-help route",
+    "Receipt/reopen stays distinct from grading and computation",
+    "Only invocation-owned local fixture resources cleaned; raw failures retained"
+  ],
+  "limits": {
+    "model_calls": 0,
+    "cloud_provisioning": 0,
+    "real_records": 0,
+    "runtime_seconds": 900,
+    "focused_correction_rounds": 4,
+    "containers": 3
+  },
+  "dependencies": "Live U of A GenAI and institutional SSO remain separate. Missing local fixture images are a concrete reproduction gap; pinned public images may be prepared for local synthetic tests only.",
+  "merge": "No new merge/release authorization inferred; draft review state retained",
+  "amendment": "2026-11-10: Full course tests exposed existing symlinked extension asset HTTP 403 under pinned Jupyter. Permit copying the unchanged extension into the disposable fixture as the course image does; retain original failure and all acceptance assertions. Four correction rounds remain the total limit.",
+  "completed_batch": {
+    "runs": 5,
+    "correction_rounds": 4,
+    "result": "native synthetic journey passed; rendered review identified stale labels and manual save interaction remains unexecuted",
+    "evidence": "waypoint fb53908077651121aabe194c77d6a50454878300"
+  },
+  "followup_slice": {
+    "purpose": "Close the two observed presenter wording defects and replace API-only saving acceptance with native editor Save interaction before handoff. Existing authorized classroom integration scope; no new workload intake.",
+    "paths": [
+      "course-workspace/course/waypoint_belay/roster.js",
+      "course-workspace/rehearsal/roster_presenter.py",
+      "course-workspace/ROSTER-PRESENTER.md",
+      "course-workspace/rehearsal/roster_presenter-verification.json",
+      "existing EduCloud coordination records"
+    ],
+    "limits": {
+      "runtime_seconds": 180,
+      "correction_rounds": 1,
+      "model_calls": 0,
+      "containers": 3
+    },
+    "stop": "One fresh local synthetic rerun; if it fails, retain failure and hand off exact blocker. Original allowances/history remain complete.",
+    "closed_result": "Run6: corrected wording and refusal states passed; native Save failed. Saved solution.py stayed empty and Jupyter logged saving assignment.ipynb. Original failed output retained, no submission acceptance claimed."
+  },
+  "save_focus_correction": {
+    "rationale": "Read-only failure diagnosis identifies evaluator focus: programmatic content fill did not activate the file editor, so Save targeted the still-active notebook. Perform the ordinary click before typing; retain identical saved-byte and receipt criteria. Routine completion of authorized integration, not an experimental allowance reset.",
+    "paths": [
+      "course-workspace/rehearsal/roster_presenter.py",
+      "existing evidence/runbook/coordination records"
+    ],
+    "limits": {
+      "runs": 2,
+      "runtime_seconds": 300,
+      "model_calls": 0
+    },
+    "required_evidence": "Actual editor click, Save writes solution.py, unchanged receipt/reopen and refusal controls; record this extra preparation cost separately.",
+    "retained_failure": "Run7: native click was correctly blocked by a visible Jupyter kernel-selection dialog restored on file navigation. No forced click or weakened byte assertion is permitted.",
+    "extension": "One additional bounded run handles the same observed kernel dialog through its ordinary No Kernel action. Record the extension and both attempts; no new candidate, model call or application scope."
+  }
+}
