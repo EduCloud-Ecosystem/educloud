@@ -77,6 +77,11 @@ launcher has `--verify-stub`, `--stub` and separately authorized `--live` modes.
 Use the recorded checkout/dependency/image pins; do not substitute latest main and
 assume the same result. Never put the provider key in the repository.
 
+The [OpenBao adoption review](OPENBAO_ADOPTION_REVIEW.md) records the optional
+local credential-service integration, separate service identity and operator
+recovery custody. Default/persistent adoption is pending confirmed institutional
+vault import and backup; it does not change the current readiness pins.
+
 ## Release and operations
 
 The target AWS host and institutional sign-in remain deployment decisions. The
