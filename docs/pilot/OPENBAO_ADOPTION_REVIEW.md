@@ -45,6 +45,8 @@ its launchers and provider key were not changed. The new path remains opt-in on
 separate branches. Evidence and remaining controls are recorded in the adjacent
 [verification record](../../pilot/evidence/openbao-adoption-2026-11-16.json).
 
+See [the exact password-manager and backup checklist](OPENBAO_CUSTODY_CHECKLIST.md).
+
 ## Before persistent/default adoption
 
 1. Import the private package into the restricted institutional password manager,
