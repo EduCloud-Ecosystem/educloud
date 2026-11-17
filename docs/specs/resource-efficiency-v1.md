@@ -464,3 +464,50 @@ unavailable. The same image is available in the
 This checkpoint records publication and verification of the control-plane
 artifact. The grading worker, deployment, and classroom acceptance have
 separate evidence.
+
+## Published Cairn checkout image v0.1.0-rc.1 checkpoint, 16 November 2026
+
+Cairn published its first Linux/amd64 checkout-image prerelease on
+16 November 2026 Pacific time. The tag `checkout-v0.1.0-rc.1` points to
+verified Cairn main at `a3b624b8e0b81efce0fbe2e4e54a48df2ea96569`, the
+merge commit for the checkout-image SPDX pilot. The image is the repository
+acquisition helper used by grading and assessment.
+[Published checkout rc.1](https://github.com/EduCloud-Ecosystem/cairn/releases/tag/checkout-v0.1.0-rc.1)
+· [Cairn PR #49](https://github.com/EduCloud-Ecosystem/cairn/pull/49)
+
+The exact Linux/amd64 OCI manifest digest is
+`sha256:12e667d237873b8b52f20800096bd13a91aaf8fc1df4316c38f696110071b327`.
+`SHA256SUMS` covers the OCI archive, raw manifest, SPDX 2.3 JSON SBOM, and
+`OCI-DIGEST`.
+
+| Published asset | SHA-256 |
+| --- | --- |
+| `cairn-checkout-v0.1.0-rc.1-linux-amd64.oci.tar` | `3c2dd7a42ea862ab597f5133a1f1244d04a3addc6328b1461cf322ec8b703431` |
+| `cairn-checkout-linux-amd64.manifest.json` | `12e667d237873b8b52f20800096bd13a91aaf8fc1df4316c38f696110071b327` |
+| `cairn-checkout-linux-amd64.spdx.json` | `23cd9bbdfded02ff4164de6bfd586139e59008863a853bbf9df6c2de4654cd46` |
+| `OCI-DIGEST` | `ea40e7577abf83074ec287b7c8160c149d9f6748e090f0bbbf72e0152aefe5b0` |
+| `SHA256SUMS` | `4db8dad843590eae877e0587690a7883d37826af6e0ea1d66a82e199f9b485e8` |
+
+- The exact source commit passed Cairn CI, Pilot protocol, Recovery
+  rehearsal, and Synthetic Outfitter consumer. Agentic CI was skipped.
+  [Exact-commit main CI](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/43989074068)
+- The release build verified the manifest, platform, source revision,
+  config, compressed layer digests, and uncompressed root filesystem
+  hashes. All 30 installed Alpine package names and versions matched
+  the Trivy report for the same image config digest. The high/critical
+  scan gate passed, and SPDX tools-python 0.8.5 accepted the SBOM.
+  [Release build and Alpine scan](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/44005628922)
+- The registry tag and digest reference returned the exact raw manifest
+  from the release archive. All five assets downloaded from the draft and
+  again after publication matched the verified files byte for byte.
+  The published Git tag was checked against the exact source commit.
+  [Registry verification](https://github.com/EduCloud-Ecosystem/cairn/actions/runs/44005888475)
+- The control-plane `v0.1.0-rc.1` tag, asset IDs, and asset digests matched
+  their prepublication values.
+
+The [checkout GHCR package](https://github.com/EduCloud-Ecosystem/cairn/pkgs/container/cairn-checkout)
+requires an authenticated account with package access. Anonymous pulls
+are unavailable. The same image is available in the
+[public OCI archive](https://github.com/EduCloud-Ecosystem/cairn/releases/download/checkout-v0.1.0-rc.1/cairn-checkout-v0.1.0-rc.1-linux-amd64.oci.tar).
+This checkpoint covers the checkout image's Alpine inventory and release
+verification. Deployment and classroom acceptance have separate evidence.
