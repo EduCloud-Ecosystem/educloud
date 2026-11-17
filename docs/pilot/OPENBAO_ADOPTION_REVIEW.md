@@ -1,5 +1,7 @@
 # OpenBao local pilot adoption review — November 16, 2026
 
+Current source/CI and merge sequencing: [merge handoff](OPENBAO_MERGE_HANDOFF.md).
+
 Greg authorized review, service identity and recovery custody, integration when
 ready and another full classroom workflow. This follow-up integrates an optional
 local instructor path; it does not replace the default working pilot, merge the
