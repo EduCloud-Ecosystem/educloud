@@ -28,6 +28,8 @@ both failure arrays were empty and cleanup was confirmed. Artifact `14285579636`
 has SHA-256 `8b15edd57a42d85db237e62727bf0bd77679b0c2bd2419417f2485d7927085a9`.
 It contains sanitized results/control logs, not recovery material, storage or
 private TLS keys. CI makes no model requests. Artifact retention is finite.
+The runtime source is GitHub's proposed merge ref
+`431e9774d52d065e1243eabfef12374110386a49`, which contains the named PR head.
 
 Portage's `src/`, `integrations/` and `tests/` are identical to historically
 live-tested `124da40`. The descendant adds current-main protocol files, checker
@@ -41,7 +43,20 @@ runner's deliberate refusal of disabled assertions. That guard remains;
 optimized mode is unsupported, not a passing test. The earlier Sonar failure
 and older CI runs remain in GitHub history. Broader course/worker/recovery checks
 must settle successfully at the proposed head before merge; PR 77 gives current
-results. The dispatch-only continuity check is intentionally skipped.
+results. Final observation: 18 checks passed and the dispatch-only continuity
+check was intentionally skipped. All seven hosted workflows succeeded for this
+head. The course job includes 354 rehearsal tests plus 11 load tests; its log
+confirms the new invalid-image regression passed.
+
+The downloaded authenticated-runtime artifact `14287472972` independently shows
+both runtime and enrollment results as `PASS`, each with cleanup verified. Its
+zip SHA-256 is `798f7b6b530e99b58ff6862e099356a6ef23b38ae3a1f5defa9748d8e6bd3be1`.
+Its source is GitHub's proposed merge ref
+`3d7a8a3f77ca25dca42caa2033b7d7a9616c4f1e`; the API confirms parents
+`df6ee645556939819e4cd4b76bf6a544c0733cb2` (base) and `83aa20e` (PR head).
+This is actual local Docker enforcement with synthetic learners on the CI host,
+not hosted-pilot acceptance. Three still-running checks from superseded head
+`2f4e0bf` were cancelled to avoid duplicate work; their history is retained.
 
 EduCloud passed the protocol verifier, 16 status tests and generated-status
 consistency before this documentation addition. Its PR check gives the final
