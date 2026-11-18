@@ -1,0 +1,15 @@
+# INFO 511 first-cohort release card
+
+Draft for instructor and service-owner review, November 17, 2026. Admission is closed. This card implements the [student-release specification](../specs/classroom-student-release-v1.md#release-card-to-complete). Record decisions and sanitized evidence references here as they become available.
+
+| Decision | Current position | Owner and remaining evidence |
+|---|---|---|
+| Assignment and tools | INFO 511 NHANES wrangling, Python/pandas in Jupyter, one notebook and three accompanying files. The proposed rubric totals 10 points. A no-AI route is available. | Greg reviews the [learner package](https://github.com/EduCloud-Ecosystem/waypoint/pull/79), full rubric, assistance guidance and student support contact. Record approved revision. |
+| Scope and support | Local desktop rehearsal with synthetic accounts. Cohort size, class period, dates, primary and backup operator, and staffed contact remain open. | Greg and service owner choose the cohort and operating window before capacity testing. |
+| Host and membership | AWS is the intended host family. Institutional sign-in is preferred. The interim allowlisted-account option requires an accepted mapping to the course roster. | Host and identity owners to be named. Record target host, TLS, issuer/client, stable learner identifier, roster authority, and evidence of active-session revocation. |
+| Storage and export | The workflow creates notebook homes, saved-file repositories, receipts, grading records and exports. | Course and data owners record each approved destination, retention period, backup/restore location, export owner and deletion procedure. |
+| Tutor and accounting | Local live evidence covers a prepared public question via Belay-classroom and Portage. The manual blank starter uses no inference. | Data and service owners select the permitted student route, input categories, downstream providers, temporary content, log/ledger retention, concurrency and spend. Qualify expiry, outage, and unknown usage before student tutoring. |
+| Operations | A four-file receipt survived a local restart. OpenBao activation awaits custody, independent backup and target recovery. | Operators record exact deployed versions, capacities, backup interval and restore target. Rehearse restore on the selected host arrangement, loss of the original host, rollback and resource cleanup. |
+| Release decision | Local engineering evidence is available. Institutional acceptance, human accessibility testing, and student admission are pending. | Greg and service owner record accepted configuration, evidence, date and go/no-go. |
+
+The next hosted test uses two synthetic identities to exercise sign-in, own-work access, peer denial and revocation. Select the host and identity owner first. Use the [running checklist](INFO511_CHECKLIST.md) for the full build sequence.
