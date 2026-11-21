@@ -11,6 +11,7 @@ A connected learning workspace: notebooks, governed AI tutoring, explicit submis
 
 ## Start here
 
+- [INFO 511 build checklist and feature priorities](docs/pilot/INFO511_CHECKLIST.md)
 - [How the components connect](docs/pilot/INTEGRATION.md): responsibilities, learner journey, contracts, recovery and release gates.
 - [Shared implementation protocol](docs/development/PILOT_PROTOCOL_V1.md): one development and evidence standard across the six pilot repositories.
 - [Automated maintenance](docs/development/MAINTENANCE.md): bounded checks and reviewable updates.
