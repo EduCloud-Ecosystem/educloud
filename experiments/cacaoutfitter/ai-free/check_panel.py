@@ -74,17 +74,31 @@ def check(args):
             page.set_viewport_size({"width": 1280, "height": 900})
             select("learner-work", "print(6 * 7)")
             expect(panel.get_by_role("status")).to_contain_text("Concepts for this assignment")
+            page.evaluate("""() => {
+              const panels = Array.from(window.jupyterapp.shell.widgets('right'));
+              panels.find(w => w.id === 'belay-math-inspector').close();
+            }""")
+            expect(panel).to_have_count(0)
             page.evaluate("() => window.jupyterapp.commands.execute('notebook:run-cell')")
             expect(page.locator(".jp-OutputArea-output").filter(has_text="42").first).to_be_visible(timeout=60000)
             page.evaluate("() => window.jupyterapp.commands.execute('docmanager:save')")
             saved = json.loads(docker("exec", server, "cat", "/home/learner/work/INFO-511-NHANES/nhanes-wrangling.ipynb"))
             cell, = [c for c in saved["cells"] if c["id"] == "learner-work"]
             assert "42" in str(cell["outputs"])
+            # Concept selection must still work after the kernel has been shut down.
+            page.evaluate("""async () => {
+              const app=window.jupyterapp, ctx=app.shell.currentWidget.sessionContext;
+              await ctx.shutdown();
+              if (ctx.session?.kernel) throw Error('Kernel is still running');
+              await app.commands.execute('belay-math:open');
+            }""")
+            select("learner-work", "joined = demographics.merge(bp_readings)")
+            expect(panel.get_by_role("status")).to_contain_text("Joining tables")
             browser.close()
         assert not blocked, "Browser attempted external requests"
     print(json.dumps(dict(image=image, assignment="info511-nhanes-wrangling-v1",
                           conceptual_cues=["merge", "melt", "explicit prediction", "open prediction"],
-                          notebook_result=42, notebook_saved=True, external_browser_requests=len(blocked))))
+                          notebook_result=42, notebook_saved_with_panel_closed=True, recognized_with_kernel_off=True, external_browser_requests=len(blocked))))
 
 
 if __name__ == "__main__":

@@ -10,7 +10,7 @@ import tarfile
 import tempfile
 
 WAYPOINT = "af44909f8a0757b1f15c35d74414a7d47f559a39"
-IDE = "a9b9e9db605e13fe52616f996547b51159f0859f"
+IDE = "b95a3d65bb01c996c126d70dc5042008d112d274"
 PACK = "course-workspace/classroom/info511-nhanes-v1/learner"
 
 
