@@ -50,7 +50,7 @@ def check(args):
                 else:
                     request.continue_()
             page.route("**/*", route)
-            page.goto(base + "/lab/tree/INFO-511-NHANES/nhanes-wrangling.ipynb?token=" + token)
+            page.goto(base + "/lab/tree/nhanes-wrangling.ipynb?token=" + token)
             panel = page.locator("#belay-math-inspector")
             expect(panel).to_be_visible(timeout=90000)
             def select(cell_id, source=None):
@@ -82,7 +82,7 @@ def check(args):
             page.evaluate("() => window.jupyterapp.commands.execute('notebook:run-cell')")
             expect(page.locator(".jp-OutputArea-output").filter(has_text="42").first).to_be_visible(timeout=60000)
             page.evaluate("() => window.jupyterapp.commands.execute('docmanager:save')")
-            saved = json.loads(docker("exec", server, "cat", "/home/learner/work/INFO-511-NHANES/nhanes-wrangling.ipynb"))
+            saved = json.loads(docker("exec", server, "cat", "/home/learner/work/nhanes-wrangling.ipynb"))
             cell, = [c for c in saved["cells"] if c["id"] == "learner-work"]
             assert "42" in str(cell["outputs"])
             # Concept selection must still work after the kernel has been shut down.

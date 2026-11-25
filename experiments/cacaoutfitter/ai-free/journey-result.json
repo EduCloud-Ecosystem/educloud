@@ -1,0 +1,29 @@
+{
+  "scope": "Disposable synthetic learner on local Docker, Cairn and Forgejo",
+  "finished_at": "2026-11-25T06:27:17.073209+00:00",
+  "waypoint": "af44909f8a0757b1f15c35d74414a7d47f559a39",
+  "ide": "b95a3d65bb01c996c126d70dc5042008d112d274",
+  "cairn": "a3b624b8e0b81efce0fbe2e4e54a48df2ea96569",
+  "course_and_grader_image": "sha256:86660d969da794621553e06a855ced8b16d76c95e9ea9b2c86c167db41982e3f",
+  "checkout_image": "sha256:6c6e6991e810c2ef88147fb47e9d98493095b8d2ad17e51e22f157fd87aae065",
+  "forgejo_image": "sha256:cf5f5ae6acf2ababca0ee3d255705b83a47f35b25e07fc931d694d60664053fe",
+  "assignment": "info511-nhanes-wrangling-v1",
+  "jupyter_root": "/home/learner/work",
+  "starter_predictions_and_code_saved": true,
+  "kernel": "Python",
+  "executed_code_cells": 2,
+  "generated_csv_rows": 192,
+  "explicit_preview_and_confirmation": true,
+  "files_read_back_byte_exactly": [
+    "assistance.md",
+    "explanation.md",
+    "nhanes-wrangling.ipynb",
+    "tidy-nhanes.csv"
+  ],
+  "receipt_survived_cairn_restart": true,
+  "csv_correctness_points": [
+    4,
+    4
+  ],
+  "owned_services_cleaned_up": true
+}

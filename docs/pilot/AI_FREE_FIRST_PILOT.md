@@ -29,6 +29,8 @@ Use the university course's Panopto assignment folder with peer viewing disabled
 
 ## Before teaching
 
+Use the [pilot testing guide](AI_FREE_TESTING.md) to assign owners, run the local tests and record the hosted and human results.
+
 1. Have an instructor review the authored cues and scoring examples against the actual assignment, and rehearse the alternate submission with a test student account. Confirm the institutional recording/accessibility arrangements and the course's assessment policy.
 2. On the selected host, verify a rostered learner can open the assignment, inspect a concept, run, save, preview, submit to the intended private GitHub repository and recover the receipt while inference services are absent. Repeat with the panel closed. Test keyboard navigation, zoom and a screen reader with the intended course workflow.
 3. Rehearse the largest staggered group (nine learners plus an instructor), restore saved work on a replacement host and test access revocation. If AI is enabled in a later course profile, review its independent data-flow, placement, endpoint and instructional gates before activation.
