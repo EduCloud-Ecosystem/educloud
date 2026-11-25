@@ -1,0 +1,32 @@
+# Testing the first AI-free INFO 511 class
+
+Plan for up to 25 learners in three groups. A 9/8/8 split needs ten running notebooks in the largest session, including the instructor. With two groups of 13 and 12, the largest session needs fourteen. Keep a separate persistent home for every enrolled learner and the instructor across rotations. Test the exact concurrency the timetable requires before inviting students.
+
+## Work owners and handoffs
+
+| Who | Work to run | Evidence to hand back |
+|---|---|---|
+| Course developer | Open the learner's NHANES notebook, select a join and a reshape, try a prediction, close the panel, execute and save. Rehearse the submission through Cairn. | Identify the image and assignment, show the saved output and receipt, and name the repository provider used in the test. [Math Inspector test](../../experiments/cacaoutfitter/ai-free/README.md) · [Submission test](../../experiments/cacaoutfitter/ai-free/journey.md) |
+| Classroom operator | Start independent accounts together on the intended host. Have every user do notebook work and save. Reopen their work and verify access boundaries. | Record successful seats out of seats requested, start and work timings, resource pressure and persistence failures. [Capacity commands and local measurement](../../experiments/cacaoutfitter/ai-free/capacity.md) |
+| Instructor and volunteer | Use the same assignment with keyboard, zoom and screen reader. Try an unrecognized answer. Score a synthetic submission independently and compare. If offering the explanation route, rehearse the private recording or equivalent assessment. | Return observed obstacles, scores and a decision for each case. Use the [instructor rehearsal worksheet](AI_FREE_INSTRUCTOR_REHEARSAL.md). |
+| Hosting operator and course administrator | Rehearse institutional sign-in, real private GitHub submission, storage recovery and revocation on the chosen AWS worker. | Return a dated private acceptance record tied to the host, image digest, roster configuration and tested recovery point. |
+
+The course developer, classroom operator and instructor can start in parallel once they have the same assignment and image. The hosted trial then repeats the learner workflow and largest group on that candidate. Schedule the optional Panopto exercise only if that route will be offered in the course.
+
+## Local learner evidence
+
+The rebuilt course image passed the [Math Inspector browser check](../../experiments/cacaoutfitter/ai-free/local-result.json) and the [saved submission test](../../experiments/cacaoutfitter/ai-free/journey-result.json). The packaged starter ran both Python cells and produced 192 CSV rows. Cairn previewed the four saved files, committed them on confirmation and recovered the receipt after restart and sign-in. The test verified the four files byte for byte at the commit and earned 4/4 on the CSV check. Local Forgejo supplied the disposable repository. The hosted case below exercises the course’s GitHub destination.
+
+## Automated preflight
+
+The pull-request checks run four Terraform plan cases against a mock AWS provider and the pinned Cairn GitHub adapter tests against fixture services. These catch configuration and adapter regressions before a host or test organization is available. For the November 24 local run, all four plan cases and all 22 top-level adapter tests passed. The checks cover private networking and retained encrypted storage, incompatible network or volume settings, and the GitHub adapter behavior exercised by Cairn's suites. [Workflow and pinned revisions](../../.github/workflows/ai-free-pilot.yml)
+
+## Hosted acceptance session
+
+Use synthetic institutional test accounts and an approved private GitHub test destination. Set the maximum acceptable time for classroom start, notebook work and recovery with the instructor before the run. Keep identities, repository URLs, recording links and operational logs in the course's restricted location.
+
+1. **Host and homes.** The local evidence uses a Linux arm64 image. Build and repeat the tests on the selected worker architecture before pinning its registry digest. Import the CACAO recipe in the intended environment. Render the Waypoint manifest with the tested course-image digest and validate the retained, quota-enabled XFS homes volume after a reboot. Check the byte and inode limits, room for the full roster and backup space. Leave model services and credentials out of the manifest. [Host experiment](../../experiments/cacaoutfitter/README.md) · [Waypoint hosted pilot](https://github.com/EduCloud-Ecosystem/waypoint/blob/af44909f8a0757b1f15c35d74414a7d47f559a39/course-workspace/HOSTED-PILOT.md)
+2. **Identity and submission.** Sign in through the course HTTPS address using the institutional test learner. Open the Math Inspector, run, save, preview and confirm the submission. Match the receipt's commit to the files visible at that exact revision in the intended private GitHub repository. Reopen the receipt after sign-out and sign-in. Repeat with the panel closed. Use a second test learner to verify peer work and the receipt are inaccessible. [Cairn GitHub App setup](https://github.com/EduCloud-Ecosystem/cairn/blob/a3b624b8e0b81efce0fbe2e4e54a48df2ea96569/docs/github-setup.md)
+3. **Seat limit and rotation.** Use the real host configuration with the target number active. Try one additional rostered account at the limit. Verify current sessions keep working, then release a seat and admit the waiting account. Rotate groups and check that returning users recover their own files. Record starts, saves, pressure and failures against the agreed thresholds.
+4. **Recovery and removal.** Back up the synthetic homes and control-plane state, restore to a separate worker using the recovery instructions, and reopen the saved notebook and receipt. Record elapsed recovery time and the latest recovered save. Revoke one test user's membership and verify their access ends within the configured revocation window while a current member can still work. [Waypoint recovery procedure](https://github.com/EduCloud-Ecosystem/waypoint/blob/af44909f8a0757b1f15c35d74414a7d47f559a39/course-workspace/RECOVERY.md)
+5. **Decision.** Record each case as passed, failed or unrun. The instructor signs off on the learner experience and the operator signs off on the tested group size, identity, submission destination and recovery. Assign each failure an owner and repeat that case after the fix. Record course acceptance through the [pilot readiness process](INTEGRATION.md).
