@@ -1,0 +1,36 @@
+{
+  "seats": 3,
+  "instructor_notebooks": 1,
+  "learner_notebooks": 2,
+  "distinct_homes": 3,
+  "distinct_networks": 3,
+  "saved_outputs_restored": 3,
+  "cross_seat_read_http": 403,
+  "full_classroom_spawn_http": 429,
+  "waiting_learner_admitted_after_release": true,
+  "continuing_seats_verified": 2,
+  "cpu_per_seat": 1,
+  "memory_limit_mib_per_seat": 768,
+  "all_servers_ready_seconds": 8.76,
+  "joins_and_reshapes_per_seat": 30,
+  "output_rows_per_seat": 192,
+  "workload_seconds_range": [
+    1.885,
+    1.901
+  ],
+  "all_seat_workload_overlap_seconds": 1.884,
+  "cgroup_peak_mib_per_seat_range": [
+    172.4,
+    337.8
+  ],
+  "notebook_oom_kills": 0,
+  "observed_utc": "2026-11-25T06:30:45+00:00",
+  "docker_os": "OrbStack",
+  "docker_cpus": 8,
+  "docker_available_mib_at_start": 4043,
+  "course_image": "sha256:86660d969da794621553e06a855ced8b16d76c95e9ea9b2c86c167db41982e3f",
+  "hub_image": "sha256:8a5801c49ad6a659e39a2f7c91ea611c126b8a58f355f462597ff233659f00f7",
+  "waypoint": "af44909f8a0757b1f15c35d74414a7d47f559a39",
+  "scope": "disposable loopback Hub, local-test accounts",
+  "cleanup_verified": true
+}
