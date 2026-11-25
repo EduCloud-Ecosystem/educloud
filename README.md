@@ -11,6 +11,8 @@ A connected learning workspace: notebooks, governed AI tutoring, explicit submis
 
 ## Start here
 
+The first INFO 511 pilot uses the [AI-free notebook and conceptual Math Inspector](docs/pilot/AI_FREE_FIRST_PILOT.md). Tutoring and model-device reservations can be added separately.
+
 - [How the components connect](docs/pilot/INTEGRATION.md): responsibilities, learner journey, contracts, recovery and release gates.
 - [Shared implementation protocol](docs/development/PILOT_PROTOCOL_V1.md): one development and evidence standard across the six pilot repositories.
 - [Automated maintenance](docs/development/MAINTENANCE.md): bounded checks and reviewable updates.

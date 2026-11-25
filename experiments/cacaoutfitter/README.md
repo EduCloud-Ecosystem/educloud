@@ -2,6 +2,8 @@
 
 Use CACAO to describe the AWS course host, Waypoint to divide its notebook capacity among learners, and Outfitter to reserve scarce resources for finite periods. A learner's normal workspace lasts across group sessions. Ending a model or worker reservation must leave that workspace usable.
 
+The [AI-free course image](ai-free/README.md) is the first classroom profile. The device reservation experiment below applies to a subsequent deployment with scarce compute.
+
 ## Division of responsibility
 
 | Component | Operation | Lifetime |

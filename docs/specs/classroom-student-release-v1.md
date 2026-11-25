@@ -48,7 +48,7 @@ Implementation and acceptance boundaries are in Waypoint `docs/runtime-student-r
 3. Synthetic login and local restore do not establish real identity, student-data hosting, separate-host recovery, support coverage or accessibility acceptance. Existing allocation, API key and IRB statements do not fill those records automatically.
 4. The data-destination policy in the primary umbrella checkout contains dated implementation statements. Treat it as the current repository constraint to review, not a fresh compliance finding or proof that every documented control exists. Do not change destination policy or classify linked student work as public to make a pilot pass.
 
-The no-AI path is a required fallback. It is not permission to silently remove tutoring from the requested Belay-classroom MVP and call the full pilot complete.
+The November 14 checks below describe the tutoring-enabled configuration. The instructor subsequently selected the [AI-free profile for the first classroom pilot](../pilot/AI_FREE_FIRST_PILOT.md). Belay and Portage qualification still applies when a course enables tutoring.
 
 ## Instructor and failure case sheet
 

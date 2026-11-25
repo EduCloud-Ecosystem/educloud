@@ -17,16 +17,18 @@ check the [readiness record](../../pilot/readiness.json) before a release.
 | Outfitter | Optional compute placement/lifecycle integration | Reservation identity, original finite deadline, owned-resource cleanup and charges |
 | educloud | Shared interfaces, implementation protocol and evidence index | Cross-component decisions and the release record; no runtime authority |
 
-The first four runtime components form the governed notebook-to-tutoring-to-
-submission MVP. A maintained single-host workspace does not need a new generalized
-broker. Outfitter becomes required when the selected deployment actually uses its
-placement service; it is still held to the same development standard. Original
+The first student pilot selects the [AI-free classroom profile](AI_FREE_FIRST_PILOT.md).
+Waypoint hosts the notebook and authored conceptual Math Inspector. Cairn handles
+submission and grading. The AI-enabled configuration adds Belay Classroom and
+Portage; Outfitter is needed when a deployment requests broker-managed compute.
+The diagram below includes those optional services. Original
 Belay, portage-local, HOST and mobile Wayfare are outside this pilot release line.
 
 ```mermaid
 flowchart LR
   S[Student] --> W[Waypoint notebook]
-  W --> B[Belay classroom tutor]
+  W --> H[Authored Math Inspector]
+  W -. optional .-> B[Belay classroom tutor]
   B --> P[Portage admission and routing]
   P --> M[Approved model endpoint]
   W -->|Explicit saved files| C[Cairn preview and confirmation]
@@ -87,8 +89,8 @@ vault import and backup; it does not change the current readiness pins.
 ## Release and operations
 
 The target AWS host and institutional sign-in remain deployment decisions. The
-pilot needs an accepted identity/membership path, approved tutoring destinations
-and retention, bounded capacity/spend, secrets management, TLS, backup restore and
+pilot needs an accepted identity/membership path, approved data destinations
+and retention for the enabled components, bounded capacity/spend, secrets management, TLS, backup restore and
 rollback rehearsal, expiry/export/cleanup evidence, and human instructor/student
 workflow acceptance. Mobile is deferred. No badge or proposal-ready synthetic POC
 opens student admission.

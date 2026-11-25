@@ -13,7 +13,7 @@ contract), and resource allocation, consolidating `LINE-P-ROADMAP.md`
 
 ## Current classroom implementation (November 2026)
 
-The pilot tutor is **belay-classroom**, a separate repository from original Belay.
+The first INFO 511 classroom profile uses the notebook, authored Math Inspector and Cairn without generative AI. The optional pilot tutor is **belay-classroom**, a separate repository from original Belay.
 Waypoint's classroom line includes the notebook, admission and saved-file handoff;
 Cairn owns submission and grading. See [the current integration guide](docs/pilot/INTEGRATION.md)
 and [central status](README.md#pilot-status). Older host/product examples below are
