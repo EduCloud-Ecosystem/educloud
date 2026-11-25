@@ -36,6 +36,8 @@ flowchart LR
   O[Outfitter if selected] -. finite worker placement .-> W
 ```
 
+The [Cacaoutfitter classroom pilot](../../experiments/cacaoutfitter/README.md) uses CACAO’s AWS template format for a course host, Waypoint for per-learner notebooks and Outfitter for finite access to shared resources. The local rehearsal tests notebook continuity through resource expiry.
+
 ## One complete learner journey
 
 1. An approved course identity and current membership admit the learner to an

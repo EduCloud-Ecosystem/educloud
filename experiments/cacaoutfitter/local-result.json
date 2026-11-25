@@ -1,0 +1,30 @@
+{
+  "synthetic_learners": 2,
+  "cpu_limit_each": 1,
+  "memory_mib_each": 768,
+  "distinct_home_volumes": 2,
+  "distinct_learner_networks": 2,
+  "both_saved_during_lease": true,
+  "both_executed_after_expiry": true,
+  "both_recovered_after_hub_restart": true,
+  "outfitter_job": {
+    "status": "cancelled",
+    "deadline": "2026-11-25T04:22:00.593572Z",
+    "finished_at": "2026-11-25T04:22:00.878774Z",
+    "error": "execution deadline or cancellation reached",
+    "cleanup_verified": true,
+    "unresolved_liability": false,
+    "compute": {
+      "reserved_cpu_seconds": 20,
+      "charged_cpu_seconds": 20,
+      "provenance": "estimated_upper_bound"
+    }
+  },
+  "cleanup_verified": true,
+  "hub_image": "sha256:8a5801c49ad6a659e39a2f7c91ea611c126b8a58f355f462597ff233659f00f7",
+  "course_image": "sha256:a15ae3729b3d73e98797e275922368879726f3c8d90c916189a5a3a3850fec2f",
+  "job_image": "sha256:726d304906fa5eb468e5531e366548d1903286352f5adb54ef508ac01fbd80c6",
+  "broker_sha256": "9a94721f1ee80203dfcd21925fca2f23420f5d426ee918695be3ef54e57d8c29",
+  "waypoint_revision": "af44909f8a0757b1f15c35d74414a7d47f559a39",
+  "outfitter_revision": "bfc3ac48acbae7fafb7893ee35a9332f848d5c15"
+}

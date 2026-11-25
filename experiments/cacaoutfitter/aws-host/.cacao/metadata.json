@@ -1,0 +1,61 @@
+{
+  "schema_url": "https://gitlab.com/cyverse/cacao-common/-/raw/master/template/metadata-schemas/v3/schema.json",
+  "schema_version": "3",
+  "name": "EduCloud course host",
+  "author": "EduCloud",
+  "description": "One private AWS host for Waypoint JupyterHub with separately owned course storage.",
+  "template_type": "aws_terraform",
+  "purpose": "aws_compute",
+  "cacao_pre_tasks": [],
+  "cacao_post_tasks": [],
+  "parameters": [
+    {
+      "name": "course",
+      "type": "string",
+      "description": "Waypoint course instance name and EduCloudCourse tag on the retained volume.",
+      "required": true
+    },
+    {
+      "name": "region",
+      "type": "cacao_provider_region",
+      "description": "AWS region containing the course resources.",
+      "required": true
+    },
+    {
+      "name": "account_id",
+      "type": "string",
+      "description": "Approved AWS account ID.",
+      "required": true
+    },
+    {
+      "name": "image",
+      "type": "cacao_provider_image",
+      "description": "Reviewed Waypoint host AMI with course services disabled until storage and identity are verified.",
+      "required": true
+    },
+    {
+      "name": "flavor",
+      "type": "cacao_provider_flavor",
+      "description": "Operator-selected CPU instance size for the active group.",
+      "required": true
+    },
+    {
+      "name": "subnet_id",
+      "type": "string",
+      "description": "Existing subnet with a private route from the course edge.",
+      "required": true
+    },
+    {
+      "name": "security_group_id",
+      "type": "string",
+      "description": "Existing course security group.",
+      "required": true
+    },
+    {
+      "name": "home_volume_id",
+      "type": "string",
+      "description": "Existing encrypted course home volume in the same availability zone.",
+      "required": true
+    }
+  ]
+}
