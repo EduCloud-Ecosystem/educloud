@@ -1,0 +1,56 @@
+name: AI-free pilot preflight
+on:
+  pull_request:
+    paths:
+      - 'experiments/cacaoutfitter/ai-free/**'
+      - 'experiments/cacaoutfitter/aws-host/**'
+      - 'docs/pilot/AI_FREE*.md'
+      - '.github/workflows/ai-free-pilot.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/cacaoutfitter/ai-free/**'
+      - 'experiments/cacaoutfitter/aws-host/**'
+      - 'docs/pilot/AI_FREE*.md'
+      - '.github/workflows/ai-free-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ai-free-pilot-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  host-template:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: experiments/cacaoutfitter/aws-host
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          terraform_version: 1.12.2
+          terraform_wrapper: false
+      - run: terraform fmt -check
+      - run: terraform init -backend=false -input=false -lockfile=readonly
+      - run: terraform validate
+      - run: terraform test -no-color
+
+  github-adapter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: EduCloud-Ecosystem/cairn
+          ref: a3b624b8e0b81efce0fbe2e4e54a48df2ea96569
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version-file: go.mod
+      - name: Exercise GitHub submission and classroom adapters with fixture services
+        run: go test -count=1 -v ./pkg/adapter/github/...
